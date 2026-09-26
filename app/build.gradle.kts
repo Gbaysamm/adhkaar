@@ -76,7 +76,7 @@ androidComponents {
 }
 
 dependencies {
-    val composeBom = platform("androidx.compose:compose-bom:2025.05.01")
+    val composeBom = platform("androidx.compose:compose-bom:2026.09.00")
     implementation(composeBom)
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.material3:material3")
@@ -88,7 +88,7 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview")
     debugImplementation("androidx.compose.ui:ui-tooling")
 
-    implementation("androidx.core:core-ktx:1.16.0")
+    implementation("androidx.core:core-ktx:1.19.1")
     implementation("androidx.activity:activity-compose:1.10.1")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.9.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")
@@ -101,7 +101,7 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     // Screenshot tests: render Compose screens on the JVM (no emulator needed).
     testImplementation("org.robolectric:robolectric:4.14.1")
-    testImplementation("androidx.test.ext:junit:1.2.1")
+    testImplementation("androidx.test.ext:junit:1.3.0")
     testImplementation("androidx.compose.ui:ui-test-junit4")
     testImplementation("io.github.takahirom.roborazzi:roborazzi:1.43.0")
     testImplementation("io.github.takahirom.roborazzi:roborazzi-compose:1.43.0")
