@@ -147,8 +147,11 @@
   /* last, so it wins on phones */
   @media (max-width: 720px) {
     /* A single phone fills the width, less the page's gutters, instead of floating in space. */
-    .step .phone, .visual:not(.two) .phone, .modes-wrap .phone { width: min(100%, 360px); }
-    .card .shot img { width: min(100%, 320px); }
+    .step .phone, .visual:not(.two) .phone, .modes-wrap .phone { width: 100%; }
+    .step .phone { justify-self: stretch; }
+    .visual .glow { display: none; }
+    .card .shot img { width: 100%; }
+    .card { padding: 22px 20px 0; }
     .try .phone { width: min(78%, 300px); }
     .hero .container { text-align: left; }
     .hero .lead { margin-inline: 0; }
