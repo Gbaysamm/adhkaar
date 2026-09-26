@@ -33,27 +33,46 @@ h1, h2, h3 { font-weight: 400; text-wrap: balance; }
 @media (max-width: 720px) { :root { --gutter: 20px; } }
 .container { width: 100%; max-width: 1200px; margin: 0 auto; padding-inline: var(--gutter); }
 
-/* ---------- header ---------- */
-.site-header { position: sticky; top: 0; z-index: 50; transition: background .3s, border-color .3s; border-bottom: 1px solid transparent; }
-.site-header.scrolled { background: rgba(5, 7, 15, .72); backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4); border-color: var(--line); }
-.site-header .container { display: flex; align-items: center; height: 72px; gap: 32px; }
-.logo { display: inline-flex; align-items: center; gap: 12px; }
-.logo img { width: 36px; height: 36px; border-radius: 10px; box-shadow: 0 6px 24px -6px rgba(75, 116, 255, .7); }
-.logo span { font: 400 26px/1 var(--serif); letter-spacing: -.3px; }
-.nav { display: flex; gap: 28px; font-size: 15px; color: var(--text-2); }
-.nav a { position: relative; padding: 6px 0; }
-.nav a:hover, .nav a[aria-current="page"] { color: var(--text); }
-.header-cta { margin-left: auto; display: flex; gap: 10px; align-items: center; }
-.menu-btn { display: none; width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--line-2); background: rgba(255,255,255,.05); color: var(--text); cursor: pointer; }
-.menu-btn span { display: block; width: 18px; height: 2px; margin: 4px auto; background: currentColor; border-radius: 2px; }
+/* ---------- header: a floating liquid-glass bar, like the app's tab bar ---------- */
+/* It floats over the page: the content starts under it (the negative margin), so there's no band behind it. */
+.site-header { position: sticky; top: 0; z-index: 50; height: 88px; margin-bottom: -88px; padding: max(12px, env(safe-area-inset-top, 0px)) var(--gutter) 0; pointer-events: none; }
+.site-header .container {
+  pointer-events: auto; display: flex; align-items: center; gap: 28px; height: 64px; max-width: 1160px;
+  padding: 0 10px 0 16px; border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 18px 50px -20px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.14);
+  backdrop-filter: blur(22px) saturate(1.6); -webkit-backdrop-filter: blur(22px) saturate(1.6);
+}
+.site-header.scrolled .container { background: linear-gradient(180deg, rgba(30,33,48,.72), rgba(15,17,28,.62)); }
+.logo { display: inline-flex; align-items: center; gap: 10px; }
+.logo img { width: 34px; height: 34px; border-radius: 10px; box-shadow: 0 6px 20px -6px rgba(75, 116, 255, .7); }
+.logo span { font: 400 24px/1 var(--serif); letter-spacing: -.3px; }
+.nav { display: flex; gap: 4px; font-size: 14.5px; color: var(--text-2); }
+.nav a { padding: 9px 14px; border-radius: 12px; transition: background .2s, color .2s; }
+.nav a:hover { color: var(--text); background: rgba(255,255,255,.06); }
+.nav a[aria-current="page"] { color: var(--text); background: rgba(255,255,255,.1); }
+.header-cta { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+.menu-btn { display: none; width: 44px; height: 44px; border-radius: 14px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.07); color: var(--text); cursor: pointer; }
+.menu-btn span { display: block; width: 18px; height: 2px; margin: 4px auto; background: currentColor; border-radius: 2px; transition: transform .25s, opacity .2s; }
+.menu-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 @media (max-width: 880px) {
-  .nav { display: none; position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; gap: 0; padding: 8px var(--gutter) 20px; background: rgba(5,7,15,.96); border-bottom: 1px solid var(--line); }
-  .nav.open { display: flex; }
-  .nav a { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 17px; }
+  .site-header .container { position: relative; gap: 12px; }
+  /* The menu floats under the bar as its own glass panel. */
+  .nav {
+    display: flex; position: absolute; top: calc(100% + 10px); left: 0; right: 0; flex-direction: column; gap: 2px; padding: 10px;
+    border-radius: 22px; background: linear-gradient(180deg, rgba(30,33,50,.96), rgba(14,16,28,.95));
+    border: 1px solid rgba(255,255,255,.14); box-shadow: 0 30px 70px -20px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,255,255,.12);
+    backdrop-filter: blur(24px) saturate(1.6); -webkit-backdrop-filter: blur(24px) saturate(1.6);
+    opacity: 0; transform: translateY(-8px) scale(.98); pointer-events: none; transition: opacity .2s, transform .25s;
+  }
+  .nav.open { opacity: 1; transform: none; pointer-events: auto; }
+  .nav a { padding: 14px 16px; font-size: 16px; color: var(--text); }
   .menu-btn { display: block; }
   .header-cta .btn.ghost { display: none; }
 }
-
 /* ---------- buttons ---------- */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 48px; padding: 0 22px; border-radius: 999px; font: 600 15px/1 var(--sans); cursor: pointer; border: 1px solid transparent; white-space: nowrap; transition: transform .15s, box-shadow .2s, background .2s; }
 .btn:active { transform: scale(.97); }
