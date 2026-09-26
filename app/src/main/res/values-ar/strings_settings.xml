@@ -162,9 +162,9 @@
     <string name="req_full_screen">تنبيهات ملء الشاشة</string>
     <string name="req_full_screen_why">يفتح الأذكار فوق شاشة القفل، كالمنبّه.</string>
     <string name="req_overlay">الظهور فوق التطبيقات الأخرى</string>
-    <string name="req_overlay_why">يفتح الأذكار أثناء استخدامك تطبيقًا آخر، ويوقف التطبيقات الأخرى في وضع القفل.</string>
+    <string name="req_overlay_why">يفتح الأذكار وأنت تستخدم تطبيقًا آخر، ويوقف التطبيقات الأخرى في وضع الإغلاق. إن ظهرت قائمة، فاضغط على الأذكار واسمح له.</string>
     <string name="req_usage_access">الوصول إلى بيانات الاستخدام</string>
-    <string name="req_usage_access_why">يتيح لوضع القفل معرفة التطبيق المفتوح. لا يُسجَّل شيء، ولا يغادر شيء هاتفك.</string>
+    <string name="req_usage_access_why">يتيح للإغلاق معرفة التطبيق المفتوح. لا يُسجَّل شيء ولا يغادر هاتفك. في القائمة، اضغط على الأذكار وفعّله.</string>
     <string name="req_battery">بطارية غير مقيّدة</string>
     <string name="req_battery_why">يمنع أندرويد من إيقاف التطبيق فيفوتك وقت أذكارك.</string>
 
@@ -216,4 +216,6 @@
     <string name="settings_language">لغة التطبيق</string>
     <!-- Option to use the phone's own language instead of choosing one. -->
     <string name="settings_language_system">لغة الهاتف</string>
+    <string name="req_usage_access_find">ابحث عن الأذكار في القائمة، واضغط عليه، وفعّل الوصول إلى الاستخدام.</string>
+    <string name="req_overlay_find">ابحث عن الأذكار في القائمة، واضغط عليه، واسمح له.</string>
 </resources>

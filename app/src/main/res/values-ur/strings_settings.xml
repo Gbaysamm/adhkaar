@@ -157,9 +157,9 @@
     <string name="req_full_screen">پوری اسکرین والی اطلاعات</string>
     <string name="req_full_screen_why">الارم کلاک کی طرح لاک اسکرین پر اذکار کھولتا ہے۔</string>
     <string name="req_overlay">دیگر ایپس کے اوپر دکھائیں</string>
-    <string name="req_overlay_why">دوسری ایپ استعمال کرتے وقت اذکار کھولتا ہے، اور لاک ڈاؤن میں دوسری ایپس روکتا ہے۔</string>
+    <string name="req_overlay_why">دوسری ایپ استعمال کرتے ہوئے اذکار کھولتا ہے، اور لاک ڈاؤن میں دوسری ایپس روکتا ہے۔ اگر فہرست کھلے تو Adhkaar پر ٹیپ کر کے اجازت دیں۔</string>
     <string name="req_usage_access">استعمال تک رسائی</string>
-    <string name="req_usage_access_why">لاک ڈاؤن کو یہ دیکھنے دیتا ہے کہ کون سی ایپ کھلی ہے۔ نہ کچھ محفوظ ہوتا ہے، نہ آپ کے فون سے باہر جاتا ہے۔</string>
+    <string name="req_usage_access_why">لاک ڈاؤن کو پتا چلتا ہے کہ کون سی ایپ کھلی ہے۔ کچھ ریکارڈ نہیں ہوتا نہ فون سے باہر جاتا ہے۔ فہرست میں Adhkaar پر ٹیپ کریں اور آن کریں۔</string>
     <string name="req_battery">غیر محدود بیٹری</string>
     <string name="req_battery_why">Android کو ایپ سلانے اور آپ کے اذکار کا وقت چھوٹنے سے روکتا ہے۔</string>
 
@@ -211,4 +211,6 @@
     <string name="settings_language">ایپ کی زبان</string>
     <!-- Option to use the phone's own language instead of choosing one. -->
     <string name="settings_language_system">فون کے مطابق</string>
+    <string name="req_usage_access_find">فہرست میں Adhkaar تلاش کریں، اس پر ٹیپ کریں اور استعمال تک رسائی آن کریں۔</string>
+    <string name="req_overlay_find">فہرست میں Adhkaar تلاش کریں، اس پر ٹیپ کریں اور اجازت دیں۔</string>
 </resources>

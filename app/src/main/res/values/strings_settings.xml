@@ -157,9 +157,9 @@
     <string name="req_full_screen">Full-screen alerts</string>
     <string name="req_full_screen_why">Opens the adhkaar over the lock screen, like an alarm clock.</string>
     <string name="req_overlay">Display over other apps</string>
-    <string name="req_overlay_why">Opens the adhkaar while you’re using another app, and pauses other apps in Lockdown.</string>
+    <string name="req_overlay_why">Opens the adhkaar while you’re using another app, and pauses other apps in Lockdown. If a list opens, tap Adhkaar and allow it.</string>
     <string name="req_usage_access">Usage access</string>
-    <string name="req_usage_access_why">Lets Lockdown see which app is open. Nothing is recorded or leaves your phone.</string>
+    <string name="req_usage_access_why">Lets Lockdown see which app is open. Nothing is recorded or leaves your phone. In the list, tap Adhkaar and turn it on.</string>
     <string name="req_battery">Unrestricted battery</string>
     <string name="req_battery_why">Stops Android from putting the app to sleep and missing your adhkaar time.</string>
 
@@ -212,4 +212,6 @@
     <string name="settings_language">App language</string>
     <!-- Option to use the phone's own language instead of choosing one. -->
     <string name="settings_language_system">Follow phone</string>
+    <string name="req_usage_access_find">Find Adhkaar in the list, tap it, and turn on usage access.</string>
+    <string name="req_overlay_find">Find Adhkaar in the list, tap it, and allow it.</string>
 </resources>

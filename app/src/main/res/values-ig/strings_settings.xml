@@ -155,9 +155,9 @@
     <string name="req_full_screen">Ọkwa ihuenyo niile</string>
     <string name="req_full_screen_why">Na-emepe adhkaar n\'elu ihuenyo mkpọchi, dịka elekere mkpu.</string>
     <string name="req_overlay">Gosi n\'elu ngwa ndị ọzọ</string>
-    <string name="req_overlay_why">Na-emepe adhkaar mgbe ị na-eji ngwa ọzọ, ma na-akwụsịtụ ngwa ndị ọzọ n\'oge Mkpọchi.</string>
+    <string name="req_overlay_why">Ọ na-emepe adhkaar mgbe ị na-eji ngwa ọzọ, ọ na-akwụsịkwa ndị ọzọ na Mkpọchi. Ọ bụrụ na ndepụta mepere, pịa Adhkaar ma kwe ya.</string>
     <string name="req_usage_access">Ohere ojiji ngwa</string>
-    <string name="req_usage_access_why">Na-enye Mkpọchi ohere ịmata ngwa mepere emepe. Ọ dịghị ihe a na-edekọ, ọ dịghịkwa ihe na-apụ n\'ekwentị gị.</string>
+    <string name="req_usage_access_why">Ọ na-eme ka Mkpọchi mara ngwa mepere emepe. Ọ dịghị ihe a na-edekọ ma ọ bụ na-apụ na ekwentị gị. N’ime ndepụta, pịa Adhkaar ma gbanye ya.</string>
     <string name="req_battery">Batrị na-enweghị mmachi</string>
     <string name="req_battery_why">Na-egbochi Android ime ka ngwa a hie ụra ma tụfuo oge adhkaar gị.</string>
 
@@ -210,4 +210,6 @@
     <string name="settings_language">Asụsụ ngwa</string>
     <!-- Option to use the phone's own language instead of choosing one. -->
     <string name="settings_language_system">Dịka ekwentị</string>
+    <string name="req_usage_access_find">Chọta Adhkaar n’ime ndepụta, pịa ya, ma gbanye ohere ojiji.</string>
+    <string name="req_overlay_find">Chọta Adhkaar n’ime ndepụta, pịa ya, ma kwe ya.</string>
 </resources>

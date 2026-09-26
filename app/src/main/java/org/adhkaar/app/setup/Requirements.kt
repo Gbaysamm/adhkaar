@@ -99,6 +99,14 @@ enum class Requirement(
 
         /** Opens the settings screen, retrying without the package URI (some OEMs reject it). */
         fun open(context: Context, requirement: Requirement) {
+            // Some phones (Samsung among them) open the whole list for these two rather than
+            // Adhkaar's own switch, so say what to look for as the list opens.
+            val hint = when (requirement) {
+                USAGE_ACCESS -> R.string.req_usage_access_find
+                OVERLAY -> R.string.req_overlay_find
+                else -> null
+            }
+            hint?.let { android.widget.Toast.makeText(context, context.getString(it), android.widget.Toast.LENGTH_LONG).show() }
             val intent = requirement.settingsIntent(context).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             try {
                 context.startActivity(intent)

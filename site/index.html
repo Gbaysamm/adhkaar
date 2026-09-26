@@ -159,12 +159,9 @@
   .people b { display: block; font-weight: 600; margin-bottom: 4px; }
   .people p { color: var(--text-2); font-size: 14.5px; }
   @media (max-width: 560px) { .people { grid-template-columns: minmax(0, 1fr); } }
-  .story { position: relative; height: 640px; }
-  .story .phone { position: absolute; }
-  .chat-phone { width: 300px; left: 0; top: 0; transform: rotate(-3deg); }
-  .app-phone { width: 250px; right: 0; top: 150px; transform: rotate(4deg); z-index: 2; }
-  .tag-chat { position: absolute; left: 28%; bottom: -6px; padding: 7px 14px; border-radius: 99px; background: rgba(10,13,28,.9); border: 1px solid var(--line-2); font-size: 13px; color: var(--text-2); z-index: 3; }
-  @media (max-width: 560px) { .story { height: 600px; } .chat-phone { width: 82%; } .app-phone { width: 52%; top: 210px; } .tag-chat { left: 6%; } }
+  .story { display: flex; justify-content: center; }
+  .chat-phone { width: 340px; max-width: 100%; transform: rotate(-2deg); }
+  @media (max-width: 720px) { .chat-phone { width: 100%; transform: none; } }
   .chat { background: #0b141a; display: flex; flex-direction: column; font-family: var(--sans); }
   .chat-status { display: flex; justify-content: space-between; padding: 12px 20px 4px; font: 600 11px/1 var(--sans); color: #d9dee2; }
   .chat-status .dots i { display: inline-block; width: 4px; height: 4px; margin-left: 3px; border-radius: 50%; background: currentColor; }
@@ -183,6 +180,9 @@
   .chat .msg small em { font-style: normal; color: #53bdeb; margin-left: 3px; }
   .chat .msg .who { display: block; font-size: 10.5px; font-weight: 600; color: #53bdeb; margin-bottom: 1px; }
   .chat .msg .who.c2 { color: #ffb86b; }
+  .chat .msg .who.c3 { color: #7fd6a8; }
+  .chat .msg .who.c4 { color: #d6a3ff; }
+  .chat .msg .media { display: block; margin: 2px 0 5px; height: 64px; border-radius: 6px; background: linear-gradient(135deg, #2b3a44, #16222a); color: #e9edef; font-size: 11px; padding: 44px 0 0 8px; }
   .chat .msg .react { position: absolute; left: 8px; bottom: -10px; font-size: 9.5px; padding: 1px 6px; border-radius: 99px; background: #202c33; border: 1px solid #0b141a; color: #e9edef; }
   .chat .msg + .msg { margin-top: 2px; }
   .chat .msg:has(.react) { margin-bottom: 10px; }
@@ -293,10 +293,10 @@
         </div>
       </div>
 
-      <div class="story" aria-label="A morning in a group chat, and the same morning with Adhkaar">
+      <div class="story" aria-label="A morning in a group chat">
         <div class="phone chat-phone">
           <div class="screen chat">
-            <div class="chat-status"><span>6:04</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+            <div class="chat-status"><span>7:41</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
             <div class="chat-head">
               <span class="back" aria-hidden="true">‹</span>
               <span class="av" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2 4h-4l2-4zm-7 8a7 7 0 0114 0v1H5v-1zm-1 3h16v9h-5v-5h-6v5H4v-9z"/></svg></span>
@@ -308,15 +308,14 @@
                 <span class="react">🤲 24 · ❤️ 11</span></div>
               <div class="msg"><span class="who c2">Aisha</span>Jazakallahu khairan, done ✅<small>6:03 AM</small></div>
               <div class="msg me">In sha Allah, after I check a few things 👍<small>6:04 AM <em>✓✓</em></small></div>
-              <div class="toast" role="note"><span class="ico" aria-hidden="true">◔</span><div><b>Digital Wellbeing</b><span>1 h 36 min on your phone this morning</span></div><time>7:40</time></div>
-              <div class="msg"><span class="who">Imam Yusuf · admin</span>Evening adhkaar after Asr, don't miss them 🌇<small>4:41 PM</small></div>
-              <span class="missed">Your morning adhkaar: missed again</span>
+              <div class="msg"><span class="who c3">Ibrahim</span><span class="media" aria-hidden="true">▶ 0:58</span>Did you all see this? 😂<small>6:21 AM</small></div>
+              <div class="msg me">😂😂 send the full one<small>6:22 AM <em>✓✓</em></small></div>
+              <div class="msg"><span class="who c4">Musa</span>Traffic on the bridge already, leave early<small>7:12 AM</small></div>
+              <span class="missed">7:30 AM · your morning adhkaar: missed again</span>
             </div>
             <div class="composer" aria-hidden="true"><span>Message</span><i></i></div>
           </div>
         </div>
-        <div class="phone app-phone"><div class="screen"><img src="img/today.webp" alt="The same morning with Adhkaar: It's time, at 6:05 AM" loading="lazy" width="786" height="1704"></div></div>
-        <span class="tag tag-chat">The same morning, twice</span>
       </div>
     </div>
   </section>

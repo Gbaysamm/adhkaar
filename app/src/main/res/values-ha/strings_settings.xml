@@ -156,9 +156,9 @@
     <string name="req_full_screen">Sanarwar cikakken allo</string>
     <string name="req_full_screen_why">Tana buɗe azkar a kan allon kulle, kamar agogon ƙararrawa.</string>
     <string name="req_overlay">Nunawa a kan sauran manhajoji</string>
-    <string name="req_overlay_why">Tana buɗe azkar yayin da kake amfani da wata manhaja, kuma tana dakatar da sauran manhajoji a yanayin Kulle.</string>
+    <string name="req_overlay_why">Yana buɗe azkar yayin da kake amfani da wata manhaja, kuma yana dakatar da sauran a Kulle. Idan jeri ya buɗe, taɓa Adhkaar ka ba shi izini.</string>
     <string name="req_usage_access">Damar ganin amfani</string>
-    <string name="req_usage_access_why">Yana bar wa Kulle ganin wace manhaja ce a buɗe. Ba a rubuta komai, kuma babu abin da ke fita daga wayarka.</string>
+    <string name="req_usage_access_why">Yana ba Kulle damar ganin wace manhaja ke buɗe. Ba a rubuta komai kuma ba ya barin wayarka. A cikin jerin, taɓa Adhkaar ka kunna shi.</string>
     <string name="req_battery">Batir ba tare da taƙaitawa ba</string>
     <string name="req_battery_why">Yana hana Android sa manhajar barci har ta rasa lokacin azkar ɗinka.</string>
 
@@ -210,4 +210,6 @@
     <string name="settings_language">Harshen manhaja</string>
     <!-- Option to use the phone's own language instead of choosing one. -->
     <string name="settings_language_system">Bi harshen waya</string>
+    <string name="req_usage_access_find">Nemi Adhkaar a cikin jerin, taɓa shi, ka kunna samun damar amfani.</string>
+    <string name="req_overlay_find">Nemi Adhkaar a cikin jerin, taɓa shi, ka ba shi izini.</string>
 </resources>

@@ -139,9 +139,9 @@
     <string name="req_full_screen">Ìkìlọ̀ ojú-ìbojú kíkún</string>
     <string name="req_full_screen_why">Ó ń ṣí adhkaar lórí ojú títìpa, bí aago ìdágìrì.</string>
     <string name="req_overlay">Hàn lórí àwọn áàpù mìíràn</string>
-    <string name="req_overlay_why">Ó ń ṣí adhkaar nígbà tí ẹ ń lo áàpù mìíràn, ó sì ń dá àwọn áàpù mìíràn dúró nínú Títìpa.</string>
+    <string name="req_overlay_why">Ó ń ṣí adhkaar nígbà tí o bá ń lo ohun èlò mìíràn, ó sì ń dá àwọn mìíràn dúró ní Ìtìpa. Tí àkójọ bá ṣí, tẹ Adhkaar kí o sì gbà á láàyè.</string>
     <string name="req_usage_access">Ààyè ìlò áàpù</string>
-    <string name="req_usage_access_why">Ó jẹ́ kí Títìpa mọ áàpù tó ṣí. A kò kọ nǹkankan sílẹ̀, kò sì sí ohun tó kúrò lórí fóònù yín.</string>
+    <string name="req_usage_access_why">Ó jẹ́ kí Ìtìpa mọ ohun èlò tó ṣí. A kì í kọ nǹkan sílẹ̀, kò sì kúrò lórí fóònù rẹ. Nínú àkójọ, tẹ Adhkaar kí o sì tàn án.</string>
     <string name="req_battery">Bátìrì láìsí ìdíwọ́</string>
     <string name="req_battery_why">Kò ní jẹ́ kí Android mú áàpù sùn, kí àkókò adhkaar yín má bàa kọjá.</string>
 
@@ -190,4 +190,6 @@
     <string name="settings_language">Èdè áàpù</string>
     <!-- Option to use the phone's own language instead of choosing one. -->
     <string name="settings_language_system">Tẹ̀lé fóònù</string>
+    <string name="req_usage_access_find">Wá Adhkaar nínú àkójọ, tẹ ẹ, kí o sì tan ààyè sí ìlò.</string>
+    <string name="req_overlay_find">Wá Adhkaar nínú àkójọ, tẹ ẹ, kí o sì gbà á láàyè.</string>
 </resources>
