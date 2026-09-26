@@ -211,7 +211,25 @@ class SessionState private constructor(context: Context) {
             ?.let { type to it }
     }.toMap()
 
+    /** The first day the app ran; nothing before it can have been missed. */
+    fun firstSeen(): LocalDate {
+        prefs.getString(KEY_FIRST_SEEN, null)?.let { saved -> runCatching { LocalDate.parse(saved) }.getOrNull()?.let { return it } }
+        val today = LocalDate.now()
+        prefs.edit().putString(KEY_FIRST_SEEN, today.toString()).apply()
+        return today
+    }
+
+    /** Missed sessions ("date|type") whose card has been shown. */
+    fun missedSeen(): Set<String> = prefs.getStringSet(KEY_MISSED_SEEN, emptySet())!!.toSet()
+
+    fun markMissedSeen(key: String) {
+        val next = (missedSeen() + key).sorted().takeLast(60).toSet()
+        prefs.edit().putStringSet(KEY_MISSED_SEEN, next).apply()
+    }
+
     companion object {
+        private const val KEY_FIRST_SEEN = "first_seen"
+        private const val KEY_MISSED_SEEN = "missed_seen"
         private const val KEY_PENDING = "pending"
         private const val KEY_PROGRESS = "progress"
         private const val KEY_PAGE = "page"

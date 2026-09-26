@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="missed_notif_morning">صبح کے اذکار رہ گئے</string>
+    <string name="missed_notif_evening">شام کے اذکار رہ گئے</string>
+    <string name="missed_notif_text">ایسا ہو جاتا ہے۔ اگلے اذکار نئی شروعات ہیں۔ دیکھیں ان میں کیا ہے۔</string>
+    <string name="missed_title_morning">صبح کے اذکار رہ گئے</string>
+    <string name="missed_title_evening">شام کے اذکار رہ گئے</string>
+    <string name="missed_title_yesterday">کل شام کے اذکار رہ گئے</string>
+    <string name="missed_body">ایسا ہم سب کے ساتھ ہوتا ہے۔ اصل بات اگلی بار ہے، اور ہر چھوٹا قدم اہم ہے۔</string>
+    <string name="missed_next">اگلا: %1$s، %2$s پر</string>
+    <string name="missed_held">ان میں کیا تھا</string>
+    <string name="missed_hadith">اللہ کو سب سے محبوب عمل وہ ہے جو ہمیشہ کیا جائے، چاہے تھوڑا ہو۔</string>
+    <string name="missed_hadith_source">صحیح بخاری ۶۴۶۴</string>
+    <string name="missed_ok">اگلی بار ضرور</string>
+    <string name="missed_read">پھر بھی پڑھیں</string>
+    <string name="missed_name_morning">صبح کے اذکار</string>
+    <string name="missed_name_evening">شام کے اذکار</string>
+</resources>

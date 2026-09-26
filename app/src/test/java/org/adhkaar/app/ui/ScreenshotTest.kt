@@ -410,6 +410,14 @@ class ScreenshotTest {
     fun testKit() = shoot("test-kit") { Screen { org.adhkaar.app.ui.settings.TestKitScreen(onBack = {}, onOpenSetup = {}) } }
 
     @Test
+    fun missed() {
+        compose.setContent { Screen(SessionType.MORNING) { org.adhkaar.app.ui.home.MissedSheet(org.adhkaar.app.session.MissedAdhkaar.Missed(SessionType.MORNING, LocalDate.now()), {}, {}) } }
+        compose.mainClock.advanceTimeBy(3_000)
+        compose.waitForIdle()
+        captureScreenRoboImage("../docs/screenshots/missed.png")
+    }
+
+    @Test
     fun completion() = shoot("complete") {
         AdhkaarTheme(Auras.dawn) { CompletionView(SessionType.MORNING, Summary(19, 8, 5), onDone = {}) }
     }

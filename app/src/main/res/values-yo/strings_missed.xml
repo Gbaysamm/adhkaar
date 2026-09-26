@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="missed_notif_morning">Adhkaar òwúrọ̀ kọjá</string>
+    <string name="missed_notif_evening">Adhkaar ìrọ̀lẹ́ kọjá</string>
+    <string name="missed_notif_text">Ó máa ń ṣẹlẹ̀. Àwọn tó ń bọ̀ jẹ́ ìbẹ̀rẹ̀ tuntun. Tẹ láti rí ohun tí wọ́n ní.</string>
+    <string name="missed_title_morning">Adhkaar òwúrọ̀ kọjá</string>
+    <string name="missed_title_evening">Adhkaar ìrọ̀lẹ́ kọjá</string>
+    <string name="missed_title_yesterday">Adhkaar ìrọ̀lẹ́ àná kọjá</string>
+    <string name="missed_body">Ó máa ń ṣẹlẹ̀ sí gbogbo wa. Ohun tó ṣe pàtàkì ni ìgbà tó ń bọ̀, gbogbo ìgbésẹ̀ kékeré sì níye lórí.</string>
+    <string name="missed_next">Èyí tó kàn: %1$s ní %2$s</string>
+    <string name="missed_held">Ohun tí wọ́n ní</string>
+    <string name="missed_hadith">Iṣẹ́ tí Allah fẹ́ràn jù ni èyí tí a ń ṣe déédéé, bí ó tilẹ̀ kéré.</string>
+    <string name="missed_hadith_source">Sahih al-Bukhari 6464</string>
+    <string name="missed_ok">Màá wà níbẹ̀ nígbà míì</string>
+    <string name="missed_read">Kà wọ́n bẹ́ẹ̀ náà</string>
+    <string name="missed_name_morning">Adhkaar òwúrọ̀</string>
+    <string name="missed_name_evening">Adhkaar ìrọ̀lẹ́</string>
+</resources>

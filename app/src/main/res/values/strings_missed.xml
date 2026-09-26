@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="missed_notif_morning">Morning adhkaar missed</string>
+    <string name="missed_notif_evening">Evening adhkaar missed</string>
+    <string name="missed_notif_text">It happens. The next ones are a fresh start. Tap to see what they hold.</string>
+    <string name="missed_title_morning">The morning adhkaar were missed</string>
+    <string name="missed_title_evening">The evening adhkaar were missed</string>
+    <string name="missed_title_yesterday">Yesterday\'s evening adhkaar were missed</string>
+    <string name="missed_body">It happens to all of us. What matters is the next time, and every small step counts.</string>
+    <string name="missed_next">Next: %1$s at %2$s</string>
+    <string name="missed_held">What they held</string>
+    <string name="missed_hadith">The most beloved deeds to Allah are the most consistent, even if they are few.</string>
+    <string name="missed_hadith_source">Sahih al-Bukhari 6464</string>
+    <string name="missed_ok">I\'ll be there next time</string>
+    <string name="missed_read">Read them anyway</string>
+    <string name="missed_name_morning">Morning adhkaar</string>
+    <string name="missed_name_evening">Evening adhkaar</string>
+</resources>

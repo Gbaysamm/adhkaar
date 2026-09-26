@@ -42,6 +42,7 @@ object Notifications {
     const val CALENDAR_ID = 1003
     const val COLLECTION_ID = 1004
     const val SALAH_ID = 1005
+    const val MISSED_ID = 1006
     const val EXTRA_OPEN_COLLECTION = "open_collection"
 
     fun createChannels(context: Context) {
@@ -152,6 +153,23 @@ object Notifications {
             .setAutoCancel(true)
             .setContentIntent(PendingIntent.getActivity(
                 context, 303, Intent(context, MainActivity::class.java),
+                PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
+            ))
+            .build())
+    }
+
+    /** "Morning adhkaar missed": said once, kindly, when their time ends unread. Opens the app's card. */
+    fun showMissed(context: Context, type: SessionType) {
+        val title = context.getString(if (type == SessionType.MORNING) R.string.missed_notif_morning else R.string.missed_notif_evening)
+        val text = context.getString(R.string.missed_notif_text)
+        post(context, MISSED_ID, NotificationCompat.Builder(context, CHANNEL_GENTLE)
+            .setSmallIcon(R.drawable.ic_notification)
+            .setContentTitle(title)
+            .setContentText(text)
+            .setStyle(NotificationCompat.BigTextStyle().bigText(text))
+            .setAutoCancel(true)
+            .setContentIntent(PendingIntent.getActivity(
+                context, 306, Intent(context, MainActivity::class.java),
                 PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
             ))
             .build())

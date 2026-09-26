@@ -181,6 +181,18 @@ object AlarmScheduler {
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
         )
 
+    /** When [type]'s adhkaar time ends today: checks whether they were read (MissedAdhkaar). */
+    fun scheduleWindowEnd(context: Context, type: SessionType, atMillis: Long) {
+        val intent = PendingIntent.getBroadcast(
+            context, 130 + type.ordinal,
+            Intent(context, SessionAlarmReceiver::class.java)
+                .setAction(SessionAlarmReceiver.ACTION_WINDOW_END)
+                .putExtra(SessionAlarmReceiver.EXTRA_TYPE, type.key),
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
+        )
+        setWakeup(context, atMillis, intent)
+    }
+
     /** Fires a session shortly from now, so users (and testers) can check it works on their phone. */
     fun scheduleTest(context: Context, type: SessionType, delayMs: Long) {
         setAlarm(context, System.currentTimeMillis() + delayMs, sessionIntent(context, type, TEST_REQUEST, test = true))

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="missed_notif_morning">Adhkaar ụtụtụ gafere</string>
+    <string name="missed_notif_evening">Adhkaar mgbede gafere</string>
+    <string name="missed_notif_text">Ọ na-eme. Ndị na-esote bụ mmalite ọhụrụ. Pịa ka ị hụ ihe ha nwere.</string>
+    <string name="missed_title_morning">Adhkaar ụtụtụ gafere</string>
+    <string name="missed_title_evening">Adhkaar mgbede gafere</string>
+    <string name="missed_title_yesterday">Adhkaar mgbede ụnyahụ gafere</string>
+    <string name="missed_body">Ọ na-eme anyị niile. Ihe dị mkpa bụ oge ọzọ, na nzọụkwụ nta ọ bụla bara uru.</string>
+    <string name="missed_next">Na-esote: %1$s na %2$s</string>
+    <string name="missed_held">Ihe ha nwere</string>
+    <string name="missed_hadith">Omume Allah kacha hụ n\'anya bụ nke a na-eme mgbe niile, ọ bụrụgodị na ọ dị ntakịrị.</string>
+    <string name="missed_hadith_source">Sahih al-Bukhari 6464</string>
+    <string name="missed_ok">Aga m anọ ebe ahụ oge ọzọ</string>
+    <string name="missed_read">Gụọ ha n\'agbanyeghị</string>
+    <string name="missed_name_morning">Adhkaar ụtụtụ</string>
+    <string name="missed_name_evening">Adhkaar mgbede</string>
+</resources>

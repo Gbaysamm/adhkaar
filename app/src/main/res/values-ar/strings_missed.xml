@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="missed_notif_morning">فاتتك أذكار الصباح</string>
+    <string name="missed_notif_evening">فاتتك أذكار المساء</string>
+    <string name="missed_notif_text">يحدث هذا. القادمة بداية جديدة. اضغط لترى ما تحمله.</string>
+    <string name="missed_title_morning">فاتتك أذكار الصباح</string>
+    <string name="missed_title_evening">فاتتك أذكار المساء</string>
+    <string name="missed_title_yesterday">فاتتك أذكار مساء الأمس</string>
+    <string name="missed_body">يحدث هذا لنا جميعًا. المهم هو المرة القادمة، وكل خطوة صغيرة لها قيمتها.</string>
+    <string name="missed_next">القادم: %1$s في %2$s</string>
+    <string name="missed_held">ما كانت تحمله</string>
+    <string name="missed_hadith">أحب الأعمال إلى الله أدومها وإن قل.</string>
+    <string name="missed_hadith_source">صحيح البخاري ٦٤٦٤</string>
+    <string name="missed_ok">سأكون هناك في المرة القادمة</string>
+    <string name="missed_read">اقرأها على أي حال</string>
+    <string name="missed_name_morning">أذكار الصباح</string>
+    <string name="missed_name_evening">أذكار المساء</string>
+</resources>

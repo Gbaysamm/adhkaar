@@ -46,6 +46,11 @@ object SessionLauncher {
         val settings = SettingsStore.get(context).current
         val now = System.currentTimeMillis()
         SessionState.get(context).start(type, LocalDate.now(), now, enforced = true, test = test)
+        // When the adhkaar time ends, a check: were they read? (Not for a test.)
+        if (!test) {
+            val closes = AdhkaarWindows.window(settings, type, LocalDate.now(), java.time.ZoneId.systemDefault()).closes
+            AlarmScheduler.scheduleWindowEnd(context, type, closes.toInstant().toEpochMilli())
+        }
         AdhkaarWidget.refresh(context)
         Notifications.show(context, type, fullScreen = settings.strictness != Strictness.GENTLE)
         if (settings.strictness == Strictness.LOCKDOWN) AlarmScheduler.scheduleWatchdog(context)

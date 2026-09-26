@@ -108,6 +108,7 @@ import org.adhkaar.app.schedule.Congregation
 import org.adhkaar.app.schedule.PrayerClock
 import org.adhkaar.app.schedule.PrayerTime
 import org.adhkaar.app.schedule.SessionTimeCalculator
+import org.adhkaar.app.session.MissedAdhkaar
 import org.adhkaar.app.session.SessionLauncher
 import org.adhkaar.app.setup.Requirement
 import org.adhkaar.app.ui.components.DayRing
@@ -346,6 +347,14 @@ fun TodayScreen(
 
     if (showStreak) StreakSheet(history, today) { showStreak = false }
     if (showReminder) DayReminderSheet(today) { showReminder = false }
+    // A missed morning or evening, said once and kindly.
+    var missed by remember { mutableStateOf(MissedAdhkaar.latest(context)) }
+    missed?.let { m ->
+        MissedSheet(m, onRead = { MissedAdhkaar.markSeen(context, m); missed = null; onOpenShelf(m.type.key) }) {
+            MissedAdhkaar.markSeen(context, m)
+            missed = null
+        }
+    }
 }
 
 @Composable

@@ -18,6 +18,8 @@ class SessionAlarmReceiver : BroadcastReceiver() {
             ACTION_PRE -> SessionType.fromKey(intent.getStringExtra(EXTRA_TYPE))
                 ?.let { SessionLauncher.onPreReminder(context, it) }
             ACTION_RERING -> SessionLauncher.onReRing(context)
+            ACTION_WINDOW_END -> SessionType.fromKey(intent.getStringExtra(EXTRA_TYPE))
+                ?.let { org.adhkaar.app.session.MissedAdhkaar.onWindowEnd(context, it) }
             ACTION_SILENCE -> SessionLauncher.silence(context)
             ACTION_CALENDAR -> CalendarReminders.onEveningCheck(context)
             ACTION_FRIDAY -> CalendarReminders.onFriday(context)
@@ -40,6 +42,7 @@ class SessionAlarmReceiver : BroadcastReceiver() {
         const val ACTION_WATCHDOG = "org.adhkaar.app.action.WATCHDOG"
         const val ACTION_PRE = "org.adhkaar.app.action.PRE"
         const val ACTION_RERING = "org.adhkaar.app.action.RERING"
+        const val ACTION_WINDOW_END = "org.adhkaar.app.action.WINDOW_END"
         const val ACTION_SILENCE = "org.adhkaar.app.action.SILENCE"
         const val ACTION_CALENDAR = "org.adhkaar.app.action.CALENDAR"
         const val ACTION_FRIDAY = "org.adhkaar.app.action.FRIDAY"
