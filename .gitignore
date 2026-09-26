@@ -18,3 +18,5 @@ alert.md
 *.keystore
 *.apk
 *.aab
+
+site/sim/raw/

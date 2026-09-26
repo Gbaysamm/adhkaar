@@ -1,0 +1,98 @@
+/* Adhkaar website. Dark by design, like the app: its aurora, glass and type. */
+:root {
+  color-scheme: dark;
+  --ink: #05070F;
+  --ink-2: #0A0D1C;
+  --text: #F5F7FF;
+  --text-2: rgba(245, 247, 255, .70);
+  --text-3: rgba(245, 247, 255, .46);
+  --line: rgba(255, 255, 255, .09);
+  --line-2: rgba(255, 255, 255, .15);
+  --dawn: #FFB88A;
+  --dawn-deep: #FF8E5E;
+  --rose: #E0567E;
+  --night: #8FB1FF;
+  --blue: #4B74FF;
+  --gold: #F2CF8A;
+  --action: linear-gradient(100deg, #FF8E5E 0%, #E0567E 100%);
+  --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --quran: "Amiri Quran", "Amiri", "Noto Naskh Arabic", serif;
+  --gutter: clamp(18px, 5vw, 48px);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+body { margin: 0; background: var(--ink); color: var(--text); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { font-weight: 400; text-wrap: balance; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 10px; }
+[hidden] { display: none !important; }
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding-inline: var(--gutter); }
+
+/* ---------- header ---------- */
+.site-header { position: sticky; top: 0; z-index: 50; transition: background .3s, border-color .3s; border-bottom: 1px solid transparent; }
+.site-header.scrolled { background: rgba(5, 7, 15, .72); backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4); border-color: var(--line); }
+.site-header .container { display: flex; align-items: center; height: 72px; gap: 32px; }
+.logo { display: inline-flex; align-items: center; gap: 12px; }
+.logo img { width: 36px; height: 36px; border-radius: 10px; box-shadow: 0 6px 24px -6px rgba(75, 116, 255, .7); }
+.logo span { font: 400 26px/1 var(--serif); letter-spacing: -.3px; }
+.nav { display: flex; gap: 28px; font-size: 15px; color: var(--text-2); }
+.nav a { position: relative; padding: 6px 0; }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--text); }
+.header-cta { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+.menu-btn { display: none; width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--line-2); background: rgba(255,255,255,.05); color: var(--text); cursor: pointer; }
+.menu-btn span { display: block; width: 18px; height: 2px; margin: 4px auto; background: currentColor; border-radius: 2px; }
+@media (max-width: 880px) {
+  .nav { display: none; position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; gap: 0; padding: 8px var(--gutter) 20px; background: rgba(5,7,15,.96); border-bottom: 1px solid var(--line); }
+  .nav.open { display: flex; }
+  .nav a { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 17px; }
+  .menu-btn { display: block; }
+  .header-cta .btn.ghost { display: none; }
+}
+
+/* ---------- buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 48px; padding: 0 22px; border-radius: 999px; font: 600 15px/1 var(--sans); cursor: pointer; border: 1px solid transparent; white-space: nowrap; transition: transform .15s, box-shadow .2s, background .2s; }
+.btn:active { transform: scale(.97); }
+.btn.primary { background: var(--action); color: #fff; box-shadow: 0 12px 36px -12px rgba(255, 110, 90, .75), inset 0 1px 0 rgba(255,255,255,.25); }
+.btn.primary:hover { box-shadow: 0 16px 44px -12px rgba(255, 110, 90, .9), inset 0 1px 0 rgba(255,255,255,.25); }
+.btn.ghost { background: rgba(255,255,255,.06); border-color: var(--line-2); color: var(--text); }
+.btn.ghost:hover { background: rgba(255,255,255,.1); }
+.btn.small { height: 40px; padding: 0 16px; font-size: 14px; }
+.btn svg { width: 18px; height: 18px; }
+
+/* ---------- phone frame (real app screens go inside) ---------- */
+.phone { position: relative; width: 300px; max-width: 100%; aspect-ratio: 786 / 1704; border-radius: 48px; padding: 11px;
+  background: linear-gradient(150deg, #3a3d48 0%, #15171e 22%, #0b0c11 60%, #26282f 100%);
+  box-shadow: 0 50px 100px -30px rgba(0,0,0,.85), 0 0 0 1px rgba(255,255,255,.07), inset 0 0 0 1.5px rgba(255,255,255,.08); }
+.phone::before { content: ""; position: absolute; top: 20px; left: 50%; width: 11px; height: 11px; margin-left: -5.5px; border-radius: 50%; background: #06070b; box-shadow: inset 0 0 0 2px #15161c; z-index: 3; }
+.phone .screen { position: relative; width: 100%; height: 100%; border-radius: 38px; overflow: hidden; background: #05070F; }
+.phone .screen > img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- aurora background pieces ---------- */
+.aurora { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+.aurora i { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .55; }
+.aurora .a1 { width: 620px; height: 620px; left: -160px; top: -220px; background: #FF7A59; }
+.aurora .a2 { width: 560px; height: 560px; right: -180px; top: -120px; background: #6A4CFF; opacity: .45; }
+.aurora .a3 { width: 520px; height: 520px; left: 30%; top: 260px; background: #2B5BFF; opacity: .32; }
+
+/* ---------- typography helpers ---------- */
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font: 600 12px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--dawn); }
+.display { font: 400 clamp(44px, 7.2vw, 88px)/1 var(--serif); letter-spacing: -1.6px; }
+.display em, .title em { font-style: italic; color: var(--dawn); }
+.title { font: 400 clamp(36px, 4.8vw, 60px)/1.04 var(--serif); letter-spacing: -.8px; }
+.lead { font-size: clamp(17px, 1.6vw, 19px); color: var(--text-2); max-width: 36em; }
+.muted { color: var(--text-2); }
+
+/* ---------- footer ---------- */
+.site-footer { position: relative; margin-top: 40px; border-top: 1px solid var(--line); background: linear-gradient(180deg, rgba(10,13,28,.6), var(--ink)); }
+.footer-top { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 40px; padding-block: 64px 48px; }
+.footer-brand p { margin-top: 16px; color: var(--text-2); font-size: 15px; max-width: 26em; }
+.footer-brand .dhikr { margin-top: 22px; font: 400 28px/1.6 var(--quran); color: var(--gold); direction: rtl; text-align: left; }
+.footer-col h4 { margin: 0 0 16px; font: 600 12px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); }
+.footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; font-size: 15px; color: var(--text-2); }
+.footer-col a:hover { color: var(--text); }
+.footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding-block: 22px 32px; border-top: 1px solid var(--line); font-size: 13px; color: var(--text-3); }
+@media (max-width: 880px) { .footer-top { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .footer-brand { grid-column: 1 / -1; } }

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#05070F">
+<title>Try Adhkaar in your browser</title>
+<meta name="description" content="The Adhkaar app's real screens, working in your browser: the morning alarm, counting, breaks, Lockdown and salah reminders.">
+<link rel="icon" href="img/icon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .sim-page { position: relative; overflow: hidden; padding-block: 32px 80px; }
+  .sim-head { position: relative; z-index: 1; text-align: center; }
+  .sim-head .title { margin-top: 14px; }
+  .sim-head .lead { margin: 14px auto 0; }
+  .sim-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 330px) auto minmax(0, 330px); gap: clamp(24px, 4vw, 56px); justify-content: center; align-items: start; margin-top: 44px; }
+  @media (max-width: 1080px) { .sim-grid { grid-template-columns: auto minmax(0, 360px); } .scenarios { grid-column: 1 / -1; order: 3; } }
+  @media (max-width: 720px) { .sim-grid { grid-template-columns: minmax(0, 1fr); } .device-col { order: 0; } .notes { order: 1; } }
+
+  /* scenarios */
+  .scenarios h2, .notes h2 { font: 600 12px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 14px; }
+  .scenarios ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  @media (max-width: 1080px) and (min-width: 721px) { .scenarios ol { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .scenario { width: 100%; text-align: left; display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: 18px; border: 1px solid var(--line); background: rgba(255,255,255,.03); color: var(--text); cursor: pointer; font: inherit; }
+  .scenario:hover { background: rgba(255,255,255,.06); }
+  .scenario[aria-current="true"] { border-color: rgba(255,184,138,.45); background: linear-gradient(160deg, rgba(255,142,94,.16), rgba(255,255,255,.03)); }
+  .scenario .n { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line-2); font: 600 13px/1 var(--sans); color: var(--dawn); }
+  .scenario b { display: block; font-weight: 600; font-size: 15px; }
+  .scenario span { display: block; font-size: 13px; color: var(--text-2); margin-top: 2px; }
+
+  /* device */
+  .device-col { display: grid; justify-items: center; gap: 14px; }
+  .device { position: relative; width: min(360px, 86vw); }
+  .device .phone { width: 100%; }
+  .screen { touch-action: pan-x; }
+  .frame { position: absolute; inset: 0; }
+  .frame img { width: 100%; height: 100%; object-fit: cover; user-select: none; -webkit-user-drag: none; }
+  .frame.enter { animation: fadein .28s ease-out; }
+  .frame.up { animation: slideup .32s ease-out; }
+  .frame.down { animation: slidedown .32s ease-out; }
+  @keyframes fadein { from { opacity: 0; transform: scale(.985); } }
+  @keyframes slideup { from { transform: translateY(18%); opacity: .3; } }
+  @keyframes slidedown { from { transform: translateY(-18%); opacity: .3; } }
+  .hot { position: absolute; border: 0; padding: 0; background: transparent; cursor: pointer; border-radius: 14px; }
+  .hot:focus-visible { outline: 2px solid var(--gold); }
+  .hot.dead { cursor: default; }
+  .hot.hint { box-shadow: 0 0 0 3px rgba(242,207,138,.9), 0 0 0 10px rgba(242,207,138,.18); animation: hint 1.6s ease-in-out infinite; }
+  @keyframes hint { 50% { box-shadow: 0 0 0 3px rgba(242,207,138,.5), 0 0 0 16px rgba(242,207,138,0); } }
+  .ripple { position: absolute; width: 16px; height: 16px; margin: -8px 0 0 -8px; border-radius: 50%; background: rgba(255,255,255,.45); pointer-events: none; animation: rip .5s ease-out forwards; }
+  @keyframes rip { to { transform: scale(7); opacity: 0; } }
+  .holdfill { position: absolute; border-radius: 999px; overflow: hidden; pointer-events: none; }
+  .holdfill i { display: block; height: 100%; width: 0; background: rgba(255,184,138,.34); }
+  .scrollbar { position: absolute; right: 5px; top: 16%; bottom: 16%; width: 3px; border-radius: 3px; background: rgba(255,255,255,.08); z-index: 5; pointer-events: none; }
+  .scrollbar i { position: absolute; left: 0; right: 0; border-radius: 3px; background: rgba(255,255,255,.45); transition: top .3s, height .3s; }
+  .pager { display: flex; gap: 10px; align-items: center; color: var(--text-3); font-size: 13px; }
+  .pager button { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line-2); background: rgba(255,255,255,.05); color: var(--text); cursor: pointer; font-size: 16px; }
+  .pager button:disabled { opacity: .35; cursor: default; }
+
+  /* stand-in phone states the app doesn't draw itself */
+  .mock { position: absolute; inset: 0; display: flex; flex-direction: column; font-family: var(--sans); }
+  .lock { background: radial-gradient(90% 60% at 20% 10%, rgba(255,122,89,.45), transparent 60%), radial-gradient(90% 60% at 90% 30%, rgba(106,76,255,.4), transparent 60%), linear-gradient(#10121f, #05070F); align-items: center; padding-top: 18%; }
+  .lock .t { font: 300 76px/1 var(--sans); letter-spacing: -3px; }
+  .lock .d { color: var(--text-2); font-size: 14px; margin-top: 8px; }
+  .lock .bottom { margin-top: auto; margin-bottom: 30px; font-size: 12px; color: var(--text-3); }
+  .n-card { width: 92%; margin-top: 26px; display: flex; gap: 10px; align-items: center; padding: 12px; border-radius: 20px; background: rgba(40, 42, 56, .92); font-size: 12.5px; line-height: 1.35; animation: fadein .4s ease-out; text-align: left; }
+  .n-card img { width: 34px; height: 34px; border-radius: 9px; flex: none; }
+  .n-card b { display: block; font-size: 13.5px; }
+  .n-card span { color: var(--text-2); }
+  .ringing { animation: ring 1s ease-in-out infinite; }
+  @keyframes ring { 0%,100% { transform: rotate(0); } 20% { transform: rotate(-2deg); } 40% { transform: rotate(2deg); } 60% { transform: rotate(-1deg); } }
+  .other { background: #0e1014; }
+  .other header { padding: 44px 16px 12px; font-weight: 700; font-size: 18px; border-bottom: 1px solid rgba(255,255,255,.07); }
+  .other .row { display: flex; gap: 12px; padding: 12px 16px; align-items: center; border-bottom: 1px solid rgba(255,255,255,.05); font-size: 13px; }
+  .other .av { width: 40px; height: 40px; border-radius: 50%; flex: none; }
+  .other .row b { display: block; font-size: 14px; }
+  .other .row span { color: var(--text-3); }
+  .dialer { background: #0e1014; align-items: center; padding-top: 30%; gap: 10px; }
+  .dialer .keys { display: grid; grid-template-columns: repeat(3, 64px); gap: 14px; margin-top: 24px; }
+  .dialer .keys i { width: 64px; height: 64px; border-radius: 50%; background: rgba(255,255,255,.07); display: grid; place-items: center; font-style: normal; font-size: 22px; }
+  .banner { position: absolute; left: 8px; right: 8px; top: 28px; z-index: 6; }
+  .banner .n-card { width: 100%; margin: 0; box-shadow: 0 12px 30px rgba(0,0,0,.5); cursor: pointer; animation: drop .45s ease-out; }
+  @keyframes drop { from { transform: translateY(-140%); } }
+
+  /* notes */
+  .notes .box { padding: 22px; border-radius: 24px; border: 1px solid var(--line); background: rgba(255,255,255,.035); }
+  .notes .where { font: 600 11px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--dawn); }
+  .notes h3 { font: 400 28px/1.1 var(--serif); margin-top: 10px; }
+  .notes p { margin-top: 10px; color: var(--text-2); font-size: 15px; }
+  .notes .next { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 14px; color: var(--text); }
+  .notes .next::before { content: "Try: "; color: var(--gold); font-weight: 600; }
+  .toast { margin-top: 12px; min-height: 22px; font-size: 13.5px; color: var(--gold); }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <div class="container">
+    <a class="logo" href="index.html" aria-label="Adhkaar home"><img src="img/icon.webp" alt="" width="36" height="36"><span>Adhkaar</span></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#modes">Modes</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#open">Open source</a>
+      <a href="try.html" aria-current="page">Try it</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn primary small" href="index.html#download">Download</a>
+      <button class="menu-btn" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main class="sim-page">
+  <div class="aurora" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>
+  <div class="container">
+    <div class="sim-head">
+      <span class="eyebrow">Simulator</span>
+      <h1 class="title">Try Adhkaar, <em>right here.</em></h1>
+      <p class="lead">These are the app's real screens. Tap them as you would on your phone, scroll the longer pages, or follow a moment of the day on the left.</p>
+    </div>
+
+    <div class="sim-grid">
+      <aside class="scenarios" aria-label="Moments to try">
+        <h2>Moments of the day</h2>
+        <ol id="scenarios"></ol>
+      </aside>
+
+      <div class="device-col">
+        <div class="device">
+          <div class="phone"><div class="screen" id="screen" aria-live="polite"></div></div>
+        </div>
+        <div class="pager" id="pager" hidden>
+          <button type="button" id="up" aria-label="Scroll up">↑</button>
+          <span id="pos">1 / 1</span>
+          <button type="button" id="down" aria-label="Scroll down">↓</button>
+        </div>
+      </div>
+
+      <aside class="notes" aria-label="What's happening">
+        <h2>What's happening</h2>
+        <div class="box">
+          <span class="where" id="n-where"></span>
+          <h3 id="n-title"></h3>
+          <p id="n-text"></p>
+          <p class="next" id="n-next"></p>
+        </div>
+        <p class="toast" id="toast" role="status"></p>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:0">
+      <span>© 2026 The Adhkaar Authors · <a href="index.html">Home</a> · <a href="https://github.com/Gbaysamm/adhkaar" target="_blank" rel="noopener">GitHub</a></span>
+      <span>Screens rendered from the app's code.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="sim/screens.js"></script>
+<script src="sim/engine.js"></script>
+<script>
+  (function () {
+    var menu = document.getElementById("menu"), nav = document.getElementById("nav"), header = document.getElementById("header");
+    menu.addEventListener("click", function () { var o = nav.classList.toggle("open"); menu.setAttribute("aria-expanded", o); });
+    var s = function () { header.classList.toggle("scrolled", scrollY > 10); }; s(); addEventListener("scroll", s, { passive: true });
+  })();
+</script>
+</body>
+</html>
