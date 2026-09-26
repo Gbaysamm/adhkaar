@@ -41,15 +41,6 @@
   .trust span { display: inline-flex; align-items: center; gap: 10px; }
   .trust svg { width: 18px; height: 18px; color: var(--dawn); }
 
-  /* how it works */
-  .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); margin-top: 64px; }
-  .step { display: grid; gap: 18px; justify-items: start; text-align: left; align-content: start; }
-  .step .phone { justify-self: center; margin-bottom: 8px; }
-  .step .phone { width: 240px; }
-  .step .num { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line-2); font: 600 14px/1 var(--sans); color: var(--dawn); }
-  .step h3 { font: 400 28px/1.1 var(--serif); }
-  .step p { color: var(--text-2); font-size: 15px; max-width: 22em; }
-  @media (max-width: 880px) { .steps { grid-template-columns: minmax(0, 1fr); gap: 56px; } }
 
   /* modes */
   .modes-wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 360px); gap: clamp(32px, 6vw, 96px); align-items: center; }
@@ -159,24 +150,61 @@
   .faq .a p + p { margin-top: 10px; }
 
 
-  /* why it exists */
-  .why { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 440px); gap: clamp(32px, 6vw, 96px); align-items: center; }
-  @media (max-width: 880px) { .why { grid-template-columns: minmax(0, 1fr); } }
+  /* why it exists: the story, then the same morning twice */
+  .why { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); gap: clamp(32px, 6vw, 88px); align-items: center; }
+  @media (max-width: 960px) { .why { grid-template-columns: minmax(0, 1fr); } }
   .why .lead + .lead { margin-top: 14px; }
-  .chat { border-radius: 28px; border: 1px solid var(--line-2); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); padding: 18px; display: grid; gap: 10px; }
-  .chat-head { display: flex; align-items: center; gap: 12px; padding: 4px 4px 12px; border-bottom: 1px solid var(--line); }
-  .chat-head .av { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, #2e7d5b, #1b4d3a); display: grid; place-items: center; font-weight: 700; font-size: 14px; }
-  .chat-head b { display: block; font-size: 15px; }
-  .chat-head span { font-size: 12.5px; color: var(--text-3); }
-  .msg { max-width: 86%; padding: 10px 13px 8px; border-radius: 16px 16px 16px 4px; background: rgba(255,255,255,.07); font-size: 14.5px; line-height: 1.45; }
-  .msg small { display: block; margin-top: 4px; font-size: 11px; color: var(--text-3); text-align: right; font-variant-numeric: tabular-nums; }
-  .msg .who { display: block; font-size: 12px; font-weight: 600; color: #7fd6a8; margin-bottom: 2px; }
-  .msg.me { justify-self: end; border-radius: 16px 16px 4px 16px; background: rgba(38, 110, 80, .55); }
-  .gap { justify-self: center; font-size: 12px; color: var(--text-3); padding: 4px 10px; border-radius: 99px; background: rgba(255,255,255,.04); border: 1px solid var(--line); font-variant-numeric: tabular-nums; }
-  .missed { justify-self: center; font-size: 13px; color: var(--dawn); font-weight: 600; }
-  .founder { margin-top: 30px; padding: 22px 24px; border-radius: 24px; border: 1px solid rgba(255,184,138,.28); background: linear-gradient(160deg, rgba(255,142,94,.12), rgba(255,255,255,.02)); }
-  .founder p { font: 400 22px/1.35 var(--serif); color: var(--text); }
-  .founder small { display: block; margin-top: 12px; font-size: 13px; color: var(--text-3); }
+  .people { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; margin-top: 14px; max-width: 640px; }
+  .people > div { padding: 16px 18px; border-radius: 18px; border: 1px solid var(--line); background: rgba(255,255,255,.03); }
+  .people b { display: block; font-weight: 600; margin-bottom: 4px; }
+  .people p { color: var(--text-2); font-size: 14.5px; }
+  @media (max-width: 560px) { .people { grid-template-columns: minmax(0, 1fr); } }
+  .story { position: relative; height: 640px; }
+  .story .phone { position: absolute; }
+  .chat-phone { width: 300px; left: 0; top: 0; transform: rotate(-3deg); }
+  .app-phone { width: 250px; right: 0; top: 150px; transform: rotate(4deg); z-index: 2; }
+  .tag-chat { position: absolute; left: 28%; bottom: -6px; padding: 7px 14px; border-radius: 99px; background: rgba(10,13,28,.9); border: 1px solid var(--line-2); font-size: 13px; color: var(--text-2); z-index: 3; }
+  @media (max-width: 560px) { .story { height: 600px; } .chat-phone { width: 82%; } .app-phone { width: 52%; top: 210px; } .tag-chat { left: 6%; } }
+  .chat { background: #0b141a; display: flex; flex-direction: column; font-family: var(--sans); }
+  .chat-status { display: flex; justify-content: space-between; padding: 12px 20px 4px; font: 600 11px/1 var(--sans); color: #d9dee2; }
+  .chat-status .dots i { display: inline-block; width: 4px; height: 4px; margin-left: 3px; border-radius: 50%; background: currentColor; }
+  .chat-head { display: flex; align-items: center; gap: 8px; padding: 8px 12px 10px; background: #1f2c34; }
+  .chat-head .back { font-size: 22px; line-height: 1; color: #d9dee2; }
+  .chat-head .av { width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; background: #2a3942; color: #8fa3ad; }
+  .chat-head .av svg { width: 18px; height: 18px; }
+  .chat-head b { display: block; font-size: 12.5px; color: #e9edef; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .chat-head span:not(.av):not(.back) { display: block; font-size: 10px; color: #8696a0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .chat-head > div { min-width: 0; }
+  .chat-body { position: relative; flex: 1; display: flex; flex-direction: column; gap: 6px; padding: 10px 10px 8px; overflow: hidden;
+    background-color: #0b141a; background-image: radial-gradient(rgba(255,255,255,.035) 1px, transparent 1px); background-size: 14px 14px; }
+  .chat-body .day { align-self: center; font-size: 10px; color: #8696a0; background: #182229; padding: 4px 9px; border-radius: 7px; text-transform: uppercase; letter-spacing: .06em; }
+  .chat .msg { position: relative; max-width: 86%; padding: 6px 8px 5px; border-radius: 0 8px 8px 8px; background: #202c33; color: #e9edef; font-size: 11.5px; line-height: 1.38; }
+  .chat .msg small { display: block; margin-top: 2px; text-align: right; font-size: 9.5px; color: #8696a0; font-variant-numeric: tabular-nums; }
+  .chat .msg small em { font-style: normal; color: #53bdeb; margin-left: 3px; }
+  .chat .msg .who { display: block; font-size: 10.5px; font-weight: 600; color: #53bdeb; margin-bottom: 1px; }
+  .chat .msg .who.c2 { color: #ffb86b; }
+  .chat .msg .react { position: absolute; left: 8px; bottom: -10px; font-size: 9.5px; padding: 1px 6px; border-radius: 99px; background: #202c33; border: 1px solid #0b141a; color: #e9edef; }
+  .chat .msg + .msg { margin-top: 2px; }
+  .chat .msg:has(.react) { margin-bottom: 10px; }
+  .chat .msg.me { align-self: flex-end; border-radius: 8px 0 8px 8px; background: #005c4b; }
+  .chat .toast { display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; gap: 8px; align-items: center; margin: 4px -2px; padding: 9px 10px; border-radius: 14px; background: rgba(46, 52, 64, .97); box-shadow: 0 10px 24px rgba(0,0,0,.5); color: #e9edef; }
+  .chat .toast .ico { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: #3c8f6a; font-size: 14px; }
+  .chat .toast b { display: block; font-size: 10.5px; }
+  .chat .toast span:not(.ico) { display: block; font-size: 11px; color: #c4ccd2; }
+  .chat .toast time { font-size: 9.5px; color: #8696a0; }
+  .chat .missed { align-self: center; margin-top: 4px; font-size: 11px; font-weight: 700; color: #ffb88a; padding: 5px 10px; border-radius: 99px; background: rgba(255,142,94,.14); border: 1px solid rgba(255,142,94,.35); }
+  .composer { display: flex; align-items: center; gap: 8px; padding: 8px 10px 14px; background: #0b141a; }
+  .composer span { flex: 1; padding: 8px 12px; border-radius: 99px; background: #202c33; font-size: 11px; color: #8696a0; }
+  .composer i { width: 30px; height: 30px; border-radius: 50%; background: #00a884; }
+
+  /* how it helps: a row of moments, each read top to bottom */
+  .steps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 36px); margin: 56px 0 0; }
+  .step { display: flex; flex-direction: column; gap: 10px; padding: 24px 24px 0; border-radius: 28px; border: 1px solid var(--line); background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015)); overflow: hidden; }
+  .step .when { align-self: flex-start; font: 600 11.5px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--dawn); padding: 7px 11px; border-radius: 99px; background: rgba(255,184,138,.1); border: 1px solid rgba(255,184,138,.25); }
+  .step h3 { margin-top: 6px; font: 400 28px/1.1 var(--serif); }
+  .step p { color: var(--text-2); font-size: 15px; }
+  .step .phone { width: 78%; margin: 18px auto -26%; }
+  @media (max-width: 880px) { .steps { grid-template-columns: minmax(0, 1fr); } .step .phone { width: 72%; } }
 
   /* before / with Adhkaar: the story, carried through every section */
   .shift { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1px; margin-top: 26px; max-width: 640px; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); background: var(--line); }
@@ -190,8 +218,7 @@
   /* last, so it wins on phones */
   @media (max-width: 720px) {
     /* A single phone fills the width, less the page's gutters, instead of floating in space. */
-    .step .phone, .visual:not(.two) .phone, .modes-wrap .phone { width: 100%; }
-    .step .phone { justify-self: stretch; }
+    .visual:not(.two) .phone, .modes-wrap .phone { width: 100%; }
     .visual .glow { display: none; }
     .card .shot img { width: 100%; }
     .card { padding: 22px 20px 0; }
@@ -256,51 +283,69 @@
     <div class="container why">
       <div>
         <span class="eyebrow">Why Adhkaar exists</span>
-        <h2 class="title" style="margin-top:16px">We know the adhkaar. <em>The phone wins anyway.</em></h2>
-        <p class="lead" style="margin-top:18px">Every morning the reminder arrives in a WhatsApp group. We know what the adhkaar are worth, and we know they take only a few minutes. Then we pick up the phone for something else, and the time is gone.</p>
-        <p class="lead">A reminder you can swipe away doesn't change that. What helps is the adhkaar themselves, on your screen, right when the phone is already in your hand, and a little firmness on the days you need it.</p>
-        <div class="founder">
-          <p>“I saw the adhkaar reminders in my WhatsApp groups every day, and I knew the benefits. The truth is I didn't make time for them, because I spend a lot of time on my phone. I needed something to make me do it. It only takes a few minutes, and now I've seen how much it helps.”</p>
-          <small>From the person who built Adhkaar</small>
+        <h2 class="title" style="margin-top:16px">We know the adhkaar.<br><em>The phone wins anyway.</em></h2>
+        <p class="lead" style="margin-top:18px">Every morning the reminder arrives in a WhatsApp group. We know what the adhkaar are worth, and that they take only a few minutes. Then we pick up the phone for something else, and the time is gone.</p>
+        <p class="lead">A reminder you can swipe away doesn't change that. What helps is the adhkaar themselves, on your screen, the moment the phone is in your hand.</p>
+        <div class="shift"><div><b>Before</b><p>A reminder in a group chat, and a promise to do it later.</p></div><div><b>With Adhkaar</b><p>The adhkaar open on your screen, ready to read, with the counter waiting.</p></div></div>
+        <div class="people">
+          <div><b>Always on your phone?</b><p>The adhkaar open as soon as they're due, and in Lockdown the other apps wait until you've read them.</p></div>
+          <div><b>Hardly touch it?</b><p>Whenever you pick it up during the adhkaar time, they're the first thing you see, until they're done or the time ends.</p></div>
         </div>
       </div>
-      <div class="chat" aria-label="A typical morning, as a group chat">
-        <div class="chat-head"><span class="av" aria-hidden="true">MA</span><div><b>Masjid announcements</b><span>184 members</span></div></div>
-        <div class="msg"><span class="who">Admin</span>Assalamu alaikum. Don't forget your morning adhkaar today, a few minutes to start the day with Allah. 🌅<small>6:02 AM</small></div>
-        <div class="msg me">In sha Allah, after I check a few things 👍<small>6:04 AM</small></div>
-        <span class="gap">You spent 1 h 36 min on your phone</span>
-        <div class="msg"><span class="who">Admin</span>Evening adhkaar after Asr, don't miss them 🌇<small>4:41 PM</small></div>
-        <span class="missed">Morning adhkaar: missed again</span>
+
+      <div class="story" aria-label="A morning in a group chat, and the same morning with Adhkaar">
+        <div class="phone chat-phone">
+          <div class="screen chat">
+            <div class="chat-status"><span>6:04</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+            <div class="chat-head">
+              <span class="back" aria-hidden="true">‹</span>
+              <span class="av" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2 4h-4l2-4zm-7 8a7 7 0 0114 0v1H5v-1zm-1 3h16v9h-5v-5h-6v5H4v-9z"/></svg></span>
+              <div><b>Masjid Nur · Announcements</b><span>Aisha, Ibrahim, Musa, You and 180 others</span></div>
+            </div>
+            <div class="chat-body">
+              <span class="day">Today</span>
+              <div class="msg"><span class="who">Imam Yusuf · admin</span>Assalamu alaikum. Don't forget your morning adhkaar today, a few minutes to start the day with Allah. 🌅<small>6:02 AM</small>
+                <span class="react">🤲 24 · ❤️ 11</span></div>
+              <div class="msg"><span class="who c2">Aisha</span>Jazakallahu khairan, done ✅<small>6:03 AM</small></div>
+              <div class="msg me">In sha Allah, after I check a few things 👍<small>6:04 AM <em>✓✓</em></small></div>
+              <div class="toast" role="note"><span class="ico" aria-hidden="true">◔</span><div><b>Digital Wellbeing</b><span>1 h 36 min on your phone this morning</span></div><time>7:40</time></div>
+              <div class="msg"><span class="who">Imam Yusuf · admin</span>Evening adhkaar after Asr, don't miss them 🌇<small>4:41 PM</small></div>
+              <span class="missed">Your morning adhkaar: missed again</span>
+            </div>
+            <div class="composer" aria-hidden="true"><span>Message</span><i></i></div>
+          </div>
+        </div>
+        <div class="phone app-phone"><div class="screen"><img src="img/today.webp" alt="The same morning with Adhkaar: It's time, at 6:05 AM" loading="lazy" width="786" height="1704"></div></div>
+        <span class="tag tag-chat">The same morning, twice</span>
       </div>
     </div>
   </section>
 
   <section class="pad" id="how" style="padding-top:0">
-    <div class="container center">
+    <div class="container">
       <span class="eyebrow">How it helps</span>
-      <h2 class="title" style="margin-top:16px">The adhkaar come to you. <em>You don't have to remember.</em></h2>
+      <h2 class="title" style="margin-top:16px">The adhkaar come to you.<br><em>You don't have to remember.</em></h2>
       <p class="lead" style="margin-top:18px">Set your masjid's times once. After that the adhkaar arrive when you've just prayed and your phone is in your hand, the moment they usually slip away.</p>
-      <div class="shift"><div><b>Before</b><p>A reminder in a group chat, and a promise to do it later.</p></div><div><b>With Adhkaar</b><p>The adhkaar open on your screen, ready to read, with the counter waiting.</p></div></div>
-      <div class="steps">
-        <div class="step">
-          <div class="phone"><div class="screen"><img src="img/reminders.webp" alt="Salah reminders with editable times" loading="lazy" width="786" height="1704"></div></div>
-          <span class="num">1</span>
+      <ol class="steps">
+        <li class="step">
+          <span class="when">Once</span>
           <h3>Set your masjid's times</h3>
-          <p>Once. From then on you never have to think about when; the app follows the times you pray.</p>
-        </div>
-        <div class="step">
-          <div class="phone"><div class="screen"><img src="img/session.webp" alt="The morning adhkaar, opened after Fajr" loading="lazy" width="786" height="1704"></div></div>
-          <span class="num">2</span>
+          <p>From then on you never think about when; the app follows the times you pray.</p>
+          <div class="phone"><div class="screen"><img src="img/reminders.webp" alt="Salah reminders with editable times" loading="lazy" width="786" height="1704"></div></div>
+        </li>
+        <li class="step">
+          <span class="when">6:00 AM · 4:45 PM</span>
           <h3>They open after salah</h3>
-          <p>Around 6:00 AM and 4:45 PM, nothing to search for. Tap to count and each dhikr moves on by itself, so a few minutes is all it takes.</p>
-        </div>
-        <div class="step">
-          <div class="phone"><div class="screen"><img src="img/complete.webp" alt="Done: your day begins in His care" loading="lazy" width="786" height="1704"></div></div>
-          <span class="num">3</span>
+          <p>Nothing to search for. Tap to count, and each dhikr moves on by itself.</p>
+          <div class="phone"><div class="screen"><img src="img/session.webp" alt="The morning adhkaar, opened after Fajr" loading="lazy" width="786" height="1704"></div></div>
+        </li>
+        <li class="step">
+          <span class="when">About 7 minutes later</span>
           <h3>You see the habit grow</h3>
-          <p>Every finished session adds to your streak and your month. Missing a day becomes something you notice, and don't want.</p>
-        </div>
-      </div>
+          <p>Each session adds to your streak and your month, so a missed day is something you notice.</p>
+          <div class="phone"><div class="screen"><img src="img/complete.webp" alt="Done: your day begins in His care" loading="lazy" width="786" height="1704"></div></div>
+        </li>
+      </ol>
     </div>
   </section>
 
