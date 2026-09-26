@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Salah reminders (Settings → Salah reminders): one time per prayer to get ready for it, the default or the user's masjid's. They are NOT the exact prayer times; keep that clear in every language. -->
+    <!-- Notification channel, shown in the phone's notification settings -->
+    <string name="channel_salah_name">Salah reminders</string>
+    <string name="channel_salah_description">A gentle reminder to get ready for each prayer, at times you set</string>
+    <!-- Notification title. %1$s = prayer name, e.g. "Dhuhr" -->
+    <string name="notif_salah_title">Time to get ready for %1$s</string>
+    <string name="notif_salah_text">A reminder to prepare for salah — follow your masjid\'s adhan.</string>
+    <!-- Under the Calculation section of the Salah reminders screen -->
+    <string name="prayer_times_begin_note">With your location, each prayer also shows when its time begins by calculation. It\'s only for comparison: the app always follows your times above.</string>
+    <string name="salah_reminders_title">Salah reminders</string>
+    <string name="salah_reminders_note">Reminders to get ready for salah, not the exact prayer times. Set your masjid\'s times and they\'ll replace these.</string>
+    <!-- Caption under the prayer times on the Today screen -->
+    <string name="today_prayer_times_caption">Times to get ready for salah, not the exact prayer times.</string>
+    <!-- Overline of the Today card with the verse or hadith of the day, followed by its kind, e.g. "Reminder for today · From the Qur'an" -->
+    <string name="today_day_reminder">Reminder for today</string>
+    <string name="channel_reminder_name">Reminders</string>
+    <string name="channel_reminder_description">After salah, before sleep and the heads-up before the adhkaar. They ring and vibrate.</string>
+    <string name="popup_salah_body">Leave what you are doing for a few minutes. Make wudu, and head to the masjid if you can.</string>
+    <string name="popup_step_wudu">Wudu</string>
+    <string name="popup_step_masjid">Masjid</string>
+    <string name="popup_step_phone">Phone down</string>
+    <string name="popup_salah_hadith">The most beloved deed to Allah: salah at its proper time.</string>
+    <string name="popup_salah_source">Sahih al-Bukhari 527</string>
+    <string name="popup_ready">I\'m getting ready</string>
+    <string name="popup_open">Open</string>
+    <string name="popup_later">Later</string>
+</resources>

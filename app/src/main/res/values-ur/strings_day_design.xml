@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Urdu translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="day_design_share_image">تصویر شیئر کریں</string>
+    <string name="day_design_save">محفوظ کریں</string>
+    <string name="day_design_year_ah">%1$s ھ</string>
+    <string name="day_design_salam">السلام علیکم</string>
+    <string name="hero_reminder_in">یاد دہانی %1$s میں</string>
+    <string name="moment_around">%1$s · تقریباً %2$s</string>
+    <string name="moment_now">%1$s · ابھی</string>
+    <string name="moment_tonight_around">آج رات · تقریباً %1$s</string>
+    <string name="moment_title_after_salah">نماز کے بعد کے اذکار</string>
+    <string name="moment_title_before_sleep">سونے سے پہلے کے اذکار</string>
+    <string name="moment_title_waking">جاگنے کے اذکار</string>
+    <string name="hero_best_until">%1$s سے پہلے بہتر</string>
+    <string name="hero_best_read_times">%1$s سے %2$s تک پڑھنا بہتر ہے۔</string>
+</resources>

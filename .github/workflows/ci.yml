@@ -1,0 +1,85 @@
+# Builds, tests and lints every pull request and every push to main.
+# "Build, test and lint" is the required check for main (see GOVERNANCE.md).
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build, test and lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      # Caches Gradle's dependencies and build cache between runs.
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Test, lint and build
+        run: ./gradlew testDebugUnitTest lintDebug assembleDebug --stacktrace
+
+      - name: Upload test and lint reports
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports
+          path: |
+            app/build/reports/
+            app/build/test-results/
+          retention-days: 14
+
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: adhkaar-debug-${{ github.sha }}
+          path: app/build/outputs/apk/debug/*.apk
+          retention-days: 30
+
+  screenshots:
+    name: Screenshot check
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    # Informative only: it shows which screens changed, but doesn't block a merge. Font and
+    # rendering differences between machines can make images differ by a few pixels.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      # Needs the Roborazzi Gradle plugin (io.github.takahirom.roborazzi) applied in app/build.gradle.kts,
+      # and the always-on "roborazzi.test.record" system property there made conditional. Until then
+      # this job fails, which is expected and doesn't block merging.
+      - name: Compare screenshots with docs/screenshots
+        run: ./gradlew verifyRoborazziDebug --stacktrace
+
+      - name: Upload screenshot differences
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-diffs
+          path: |
+            app/build/outputs/roborazzi/
+            app/build/reports/roborazzi/
+          if-no-files-found: ignore
+          retention-days: 14

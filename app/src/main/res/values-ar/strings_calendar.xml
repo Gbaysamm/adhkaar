@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arabic translation. Draft by Claude; please have a native speaker review before release. -->
+<!-- The dual Hijri/Gregorian calendar (Today and Insights) and the streak sheet on Today. -->
+<resources>
+    <string name="calendar_hijri">هجري</string>
+    <string name="calendar_gregorian">ميلادي</string>
+    <string name="calendar_gregorian_span">%1$s – %2$s %3$d</string>
+    <string name="calendar_gregorian_span_years">%1$s %2$d – %3$s %4$d</string>
+    <string name="calendar_day_dates">%1$s · %2$s</string>
+    <string name="calendar_open_reminder">افتح تذكير هذا اليوم</string>
+    <string-array name="calendar_weekdays_arabic">
+        <item>الأحد</item>
+        <item>الاثنين</item>
+        <item>الثلاثاء</item>
+        <item>الأربعاء</item>
+        <item>الخميس</item>
+        <item>الجمعة</item>
+        <item>السبت</item>
+    </string-array>
+
+    <string name="streak_title">مواظبتك</string>
+    <string name="streak_open_cd">تفاصيل المواظبة</string>
+    <plurals name="streak_to_milestone">
+        <item quantity="zero">الهدف التالي %2$d · بقي %1$d</item>
+        <item quantity="one">الهدف التالي %2$d · بقي %1$d</item>
+        <item quantity="two">الهدف التالي %2$d · بقي %1$d</item>
+        <item quantity="few">الهدف التالي %2$d · بقي %1$d</item>
+        <item quantity="many">الهدف التالي %2$d · بقي %1$d</item>
+        <item quantity="other">الهدف التالي %2$d · بقي %1$d</item>
+    </plurals>
+    <string name="streak_line_start">كل مواظبة تبدأ بيوم واحد، وقد يكون اليوم هو ذلك اليوم.</string>
+    <string name="streak_line_waiting">أذكار اليوم تُكمل مواظبتك.</string>
+    <string name="streak_line_best">هذه أطول مواظبة لك حتى الآن. حافظ عليها برفق، يومًا بيوم.</string>
+    <string name="streak_line_done">اليوم محسوب. تقبّل الله منك.</string>
+    <string name="streak_close">إغلاق</string>
+</resources>

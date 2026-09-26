@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arabic translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="day_design_share_image">مشاركة الصورة</string>
+    <string name="day_design_save">حفظ</string>
+    <string name="day_design_year_ah">%1$s هـ</string>
+    <string name="day_design_salam">السلام عليكم</string>
+    <string name="hero_reminder_in">التذكير بعد %1$s</string>
+    <string name="moment_around">%1$s · نحو %2$s</string>
+    <string name="moment_now">%1$s · الآن</string>
+    <string name="moment_tonight_around">الليلة · نحو %1$s</string>
+    <string name="moment_title_after_salah">أذكار بعد الصلاة</string>
+    <string name="moment_title_before_sleep">أذكار النوم</string>
+    <string name="moment_title_waking">أذكار الاستيقاظ</string>
+    <string name="hero_best_until">الأفضل قبل %1$s</string>
+    <string name="hero_best_read_times">الأفضل قراءتها من %1$s حتى %2$s.</string>
+</resources>

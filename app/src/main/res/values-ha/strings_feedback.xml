@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="contact_title">Tuntuɓe mu</string>
+    <string name="contact_intro">Faɗa mana wata matsala, shawara ko kuskure a rubutu. Muna karanta kowane saƙo.</string>
+    <string name="contact_topic_label">Game da</string>
+    <string name="contact_topic_problem">Matsala</string>
+    <string name="contact_topic_suggestion">Shawara</string>
+    <string name="contact_topic_correction">Gyara</string>
+    <string name="contact_topic_other">Wani abu</string>
+    <string name="contact_message_problem">Me ya faru?</string>
+    <string name="contact_message_suggestion">Shawararka</string>
+    <string name="contact_message_correction">Me ya kamata a gyara?</string>
+    <string name="contact_message_other">Saƙonka</string>
+    <string name="contact_placeholder_problem">Me kake yi, kuma me ya lalace?</string>
+    <string name="contact_placeholder_suggestion">Me zai sa manhajar ta fi maka amfani?</string>
+    <string name="contact_placeholder_correction">Wane zikiri ko fassara, kuma me ya kamata ya ce?</string>
+    <string name="contact_placeholder_other">Rubuta mana a nan</string>
+    <string name="contact_reply_label">Imel ko lambar wayarka (don mu ba ka amsa)</string>
+    <string name="contact_reply_placeholder">Ba dole ba</string>
+    <string name="contact_details_title">Bayanan da muke haɗawa</string>
+    <string name="contact_details_note">Waɗannan kawai, don mu gano matsaloli. Babu wani abu na sirri.</string>
+    <string name="contact_min_hint">Ƙara wasu kalmomi kafin a aika</string>
+    <string name="contact_send">Aika</string>
+    <string name="contact_sending">Ana aikawa…</string>
+    <string name="contact_failed">Ba a iya aikawa ba. Duba intanet ɗinka.</string>
+    <string name="contact_try_again">Sake gwadawa</string>
+    <string name="contact_email_instead">Aika ta imel maimakon haka</string>
+    <string name="contact_sent_title">JazakAllahu khayran</string>
+    <string name="contact_sent_body">Saƙonka ya iso mana. Idan ka bar hanyar da za mu same ka, za mu ba ka amsa a can.</string>
+    <string name="contact_back">Koma zuwa Saituna</string>
+    <string name="contact_copy">Kwafi saƙo da bayanan waya</string>
+    <string name="contact_copied">An kwafa. Manna shi ko\'ina don aiko mana.</string>
+</resources>

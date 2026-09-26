@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Yoruba translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="reminder_sources_title">Àwọn orísun ìránlétí ojoojúmọ́</string>
+    <string name="reminder_sources_quran_arabic">Ọ̀rọ̀ Lárúbáwá Kùránì: Tanzil Quran Text (Uthmani, ẹ̀dà %1$s), © Tanzil Project, lábẹ́ ìwé-àṣẹ Creative Commons Attribution 3.0, láìsí àyípadà. tanzil.net</string>
+    <string name="reminder_sources_quran_meaning">Ìtumọ̀ Kùránì: English Translation – Rowwad Translation Center, ẹ̀dà %1$s, láti QuranEnc.com.</string>
+    <string name="reminder_sources_hadith">Hadith ní Lárúbáwá àti Gẹ̀ẹ́sì: HadeethEnc.com (Encyclopedia of Translated Prophetic Hadiths), ẹ̀dà %1$s.</string>
+    <string name="reminder_sources_unchanged">A ń fi ọ̀rọ̀ àwọn orísun wọ̀nyí hàn gẹ́gẹ́ bí wọ́n ṣe tẹ̀ wọ́n jáde gan-an.</string>
+</resources>

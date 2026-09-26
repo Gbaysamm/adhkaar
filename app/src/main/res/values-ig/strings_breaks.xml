@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Igbo translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="break_take">Zuru ike ntakịrị</string>
+    <string name="break_title">Ị chọrọ obere oge?</string>
+    <string name="break_rings_again">Ekwentị gị nọ n’efu ruo mgbe izu ike ahụ gwụrụ. Mgbe ahụ, mkpu ga-ada ọzọ.</string>
+    <string name="break_no_time">Oge fọdụrụ ezughị maka izu ike</string>
+    <string name="break_done_by">A ga-emecha ya tupu %1$s</string>
+    <plurals name="break_option_minutes">
+        <item quantity="other">Nkeji %1$d</item>
+    </plurals>
+    <plurals name="break_option_hours">
+        <item quantity="other">Awa %1$d</item>
+    </plurals>
+    <string name="break_notification">Na-ezu ike ruo %1$s · a ga-emecha ya tupu %2$s</string>
+    <string name="session_lockdown_toast">Mechaa adhkaar gị, ma ọ bụ zuru ike ntakịrị</string>
+    <plurals name="break_left">
+        <item quantity="one">Dhikr %1$d fọdụrụ</item>
+        <item quantity="other">Adhkaar %1$d fọdụrụ</item>
+    </plurals>
+    <string name="break_back_at">Ị ga-alọta na %1$s. Mgbe ahụ mkpu ahụ ga-akụ ọzọ.</string>
+    <string name="break_keep_reading">Gaa n\'ihu ịgụ</string>
+    <string name="break_pick_time">Họrọ oge</string>
+    <string name="break_pause_for">Kwụsịtụ maka %1$s</string>
+    <string name="break_unit_min">nkeji</string>
+    <string name="break_unit_hour">elekere</string>
+    <string name="break_confirm_title">Tupu ị kwụsịtụ</string>
+    <plurals name="break_confirm_left">
+        <item quantity="one">Naanị dhikr %1$d fọdụrụ. Nkeji ole na ole, adhkaar taa agwụla.</item>
+        <item quantity="other">Naanị adhkaar %1$d fọdụrụ. Nkeji ole na ole, adhkaar taa agwụla.</item>
+    </plurals>
+    <plurals name="break_confirm_streak">
+        <item quantity="one">Ị debela ha ụbọchị %1$d n\'usoro.</item>
+        <item quantity="other">Ị debela ha ụbọchị %1$d n\'usoro. Ekwela ka taa bụrụ oghere.</item>
+    </plurals>
+    <string name="break_confirm_hadith">Ihe atụ nke onye na-echeta Onyenwe ya na onye na-adịghị echeta Ya dị ka onye dị ndụ na onye nwụrụ anwụ.</string>
+    <string name="break_confirm_source">Sahih al-Bukhari 6407</string>
+    <string name="break_confirm_stay">Nọrọ ma mechaa</string>
+    <string name="break_confirm_pause">Kwụsịtụ maka %1$s n\'agbanyeghị</string>
+    <string name="session_end_test">Nnwale · Kwụsị nnwale</string>
+</resources>

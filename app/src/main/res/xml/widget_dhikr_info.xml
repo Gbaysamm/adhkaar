@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dhikr of the moment: a short dhikr that changes every three hours.
+     The style (and for the shortcut, the collection) is chosen in WidgetConfigActivity when the
+     widget is added; on Android 12+ it can be changed later with Reconfigure. -->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/widget_desc_dhikr"
+    android:previewImage="@drawable/widget_preview_orb"
+    android:previewLayout="@layout/widget_preview_dhikr"
+    android:initialLayout="@layout/glance_default_loading_layout"
+    android:configure="org.adhkaar.app.widget.WidgetConfigActivity"
+    android:widgetFeatures="reconfigurable"
+    android:minWidth="250dp"
+    android:minHeight="110dp"
+    android:minResizeWidth="180dp"
+    android:minResizeHeight="96dp"
+    android:targetCellWidth="4"
+    android:targetCellHeight="2"
+    android:maxResizeWidth="420dp"
+    android:maxResizeHeight="260dp"
+    android:resizeMode="horizontal|vertical"
+    android:widgetCategory="home_screen"
+    android:updatePeriodMillis="1800000" />

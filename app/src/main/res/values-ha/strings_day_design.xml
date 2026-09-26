@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hausa translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="day_design_share_image">Raba hoto</string>
+    <string name="day_design_save">Ajiye</string>
+    <string name="day_design_year_ah">%1$s AH</string>
+    <string name="day_design_salam">Assalamu alaikum</string>
+    <string name="hero_reminder_in">Tunatarwa cikin %1$s</string>
+    <string name="moment_around">%1$s · wajen %2$s</string>
+    <string name="moment_now">%1$s · yanzu</string>
+    <string name="moment_tonight_around">Daren yau · wajen %1$s</string>
+    <string name="moment_title_after_salah">Azkar bayan sallah</string>
+    <string name="moment_title_before_sleep">Azkar kafin barci</string>
+    <string name="moment_title_waking">Azkar na farkawa</string>
+    <string name="hero_best_until">Mafi kyau kafin %1$s</string>
+    <string name="hero_best_read_times">Mafi kyau a karanta daga %1$s zuwa %2$s.</string>
+</resources>

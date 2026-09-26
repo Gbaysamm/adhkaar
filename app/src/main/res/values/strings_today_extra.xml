@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Adhkaar time windows, on-time insights, the Hijri calendar and collections on Today. -->
+    <!-- Today and Adhkaar: the morning/evening adhkaar can't be started yet. %1$s = prayer name (Fajr or Asr), %2$s = clock time, e.g. "Opens at Asr · 4:05 PM". -->
+    <!-- As window_opens_prayer, when it opens tomorrow. %1$s = prayer name, %2$s = clock time. -->
+    <!-- Without a location (no prayer times). %1$s = clock time. -->
+    <string name="window_opens_time">Opens at %1$s</string>
+    <!-- Without a location, opening tomorrow. %1$s = clock time. -->
+    <string name="window_opens_time_tomorrow">Opens tomorrow at %1$s</string>
+    <!-- Short, gentle status: the adhkaar are being said after their best time (after sunrise or Maghrib) but are still allowed. -->
+    <string name="window_late">Late</string>
+    <!-- Gentle hint while late. %1$s = clock time after which starting is no longer possible (Dhuhr or Isha). -->
+    <string name="window_late_open_until">Past the best time · open until %1$s</string>
+
+    <!-- Insights: share of sessions said in their best time. -->
+    <string name="insights_on_time">On time</string>
+    <!-- Insights: sessions said on time this month. %1$d = on time, %2$d = all sessions with a recorded time (chooses the plural form). -->
+    <plurals name="insights_on_time_count">
+        <item quantity="one">%1$d of %2$d session this month</item>
+        <item quantity="other">%1$d of %2$d sessions this month</item>
+    </plurals>
+    <!-- Explains what counts as on time. -->
+    <string name="insights_on_time_body">In the best time: Fajr to sunrise, Asr to Maghrib</string>
+    <!-- No sessions with a recorded time this month. -->
+    <string name="insights_on_time_none">No sessions this month yet</string>
+    <!-- Calendar day detail: the morning session was completed after its best time. -->
+    <string name="insights_day_late_morning">Morning adhkaar said after their best time</string>
+    <!-- Calendar day detail: the evening session was completed after its best time. -->
+    <string name="insights_day_late_evening">Evening adhkaar said after their best time</string>
+    <!-- Calendar day detail: both sessions were completed after their best time. -->
+    <string name="insights_day_late_both">Both said after their best time</string>
+    <!-- Screen reader label for a calendar day with a late session. %1$s = the day's usual label (insights_day_cd). -->
+    <string name="insights_day_cd_late">%1$s, late</string>
+    <!-- Calendar header when the Gregorian month falls in one Hijri month. %1$s = Hijri month name, %2$d = Hijri year. -->
+    <string name="insights_hijri_month">%1$s %2$d</string>
+    <!-- Calendar header, the Hijri months a Gregorian month spans. %1$s = first month, %2$s = last month, %3$d = Hijri year. -->
+    <string name="insights_hijri_span">%1$s – %2$s %3$d</string>
+    <!-- As insights_hijri_span across a Hijri new year. %1$s %2$d = first month and year, %3$s %4$d = last month and year. -->
+    <string name="insights_hijri_span_years">%1$s %2$d – %3$s %4$d</string>
+
+    <!-- Today screen section listing the collections (After salah, Before sleep, On waking, Everyday duas). -->
+    <string name="today_section_collections">Collections</string>
+    <!-- Overline on the collection suggested for this time of day, shown in capitals. -->
+    <string name="today_collection_now">For this moment</string>
+    <!-- Overline on the after-salah collection, shown in capitals. %1$s = prayer name, e.g. "After Asr". -->
+    <string name="today_collection_after_prayer">After %1$s</string>
+    <string name="today_collection_next_after">Next · %1$s · %2$s</string>
+    <string name="today_collection_next_at">Next · %1$s</string>
+</resources>

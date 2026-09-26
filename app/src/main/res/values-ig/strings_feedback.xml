@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="contact_title">Kpọtụrụ anyị</string>
+    <string name="contact_intro">Gwa anyị gbasara nsogbu, echiche ma ọ bụ njehie dị n\'ederede. Anyị na-agụ ozi ọ bụla.</string>
+    <string name="contact_topic_label">Gbasara</string>
+    <string name="contact_topic_problem">Nsogbu</string>
+    <string name="contact_topic_suggestion">Aro</string>
+    <string name="contact_topic_correction">Mmezi</string>
+    <string name="contact_topic_other">Ihe ọzọ</string>
+    <string name="contact_message_problem">Gịnị mere?</string>
+    <string name="contact_message_suggestion">Echiche gị</string>
+    <string name="contact_message_correction">Gịnị kwesịrị ịgbanwe?</string>
+    <string name="contact_message_other">Ozi gị</string>
+    <string name="contact_placeholder_problem">Gịnị ka ị na-eme, gịnị mehiekwara?</string>
+    <string name="contact_placeholder_suggestion">Gịnị ga-eme ka ngwa a ka mma nye gị?</string>
+    <string name="contact_placeholder_correction">Kedu zikr ma ọ bụ ntụgharị, gịnị ka o kwesịrị ikwu?</string>
+    <string name="contact_placeholder_other">Dee anyị ebe a</string>
+    <string name="contact_reply_label">Email ma ọ bụ ekwentị gị (ka anyị zaa gị)</string>
+    <string name="contact_reply_placeholder">Ọ bụghị iwu</string>
+    <string name="contact_details_title">Nkọwa anyị na-etinye</string>
+    <string name="contact_details_note">Naanị ndị a, iji nyere anyị aka ịchọta nsogbu. Ọ nweghị ihe nzuzo.</string>
+    <string name="contact_min_hint">Dee okwu ole na ole ọzọ tupu i zipu</string>
+    <string name="contact_send">Zipu</string>
+    <string name="contact_sending">A na-ezipu…</string>
+    <string name="contact_failed">Enweghị ike izipu. Lelee njikọ ịntanetị gị.</string>
+    <string name="contact_try_again">Nwaa ọzọ</string>
+    <string name="contact_email_instead">Zipu site na email</string>
+    <string name="contact_sent_title">JazakAllahu khayran</string>
+    <string name="contact_sent_body">Ozi gị eruola anyị aka. Ọ bụrụ na ị hapụrụ ụzọ anyị ga-esi kpọtụrụ gị, anyị ga-aza gị ebe ahụ.</string>
+    <string name="contact_back">Laghachi na Ntọala</string>
+    <string name="contact_copy">Detuo ozi na nkọwa ekwentị</string>
+    <string name="contact_copied">E detuola. Mado ya ebe ọ bụla iji ziga anyị ya.</string>
+</resources>

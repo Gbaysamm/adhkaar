@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Urdu translation. Draft by Claude; please have a native speaker review before release. -->
+<!-- The session alert (ringing, Settings > Alert sound) and the Lockdown blocking screen. -->
+<resources>
+
+    <!-- Notification button that stops the ringing alert. -->
+    <string name="alert_stop">روکیں</string>
+
+    <!-- Lockdown blocking screen, shown over other apps until the user returns to the session. "Adhkaar" = the daily remembrances of Allah (transliterated Arabic); "dhikr" = one of them. -->
+    <string name="block_title_morning">آپ کے صبح کے اذکار منتظر ہیں</string>
+    <string name="block_title_evening">آپ کے شام کے اذکار منتظر ہیں</string>
+    <string name="block_body">دوسری ایپس ابھی رکی ہوئی ہیں۔ اللہ کے ساتھ چند پرسکون منٹ، پھر یہ سب دوبارہ آپ کا ہے۔</string>
+    <!-- %1$d = adhkaar not yet finished in this session. -->
+    <plurals name="block_remaining">
+        <item quantity="one">%1$d ذکر باقی ہے</item>
+        <item quantity="other">%1$d اذکار باقی ہیں</item>
+    </plurals>
+    <string name="block_start">اپنے اذکار شروع کریں</string>
+    <string name="block_return">اپنے اذکار کی طرف لوٹیں</string>
+    <string name="block_call">کال یا ہنگامی صورت</string>
+
+    <!-- Settings > Reminders > Alert sound. -->
+    <string name="settings_alert_sound">الرٹ کی آواز</string>
+    <!-- %1$d = minutes until the second ring (10). -->
+    <plurals name="settings_alert_sound_hint">
+        <item quantity="one">نشست کے وقت ایک منٹ بجتا ہے، اور اگر نہ کھولی جائے تو %1$d منٹ بعد ایک بار پھر</item>
+        <item quantity="other">نشست کے وقت ایک منٹ بجتا ہے، اور اگر نہ کھولی جائے تو %1$d منٹ بعد ایک بار پھر</item>
+    </plurals>
+    <!-- The two choices: the app’s own bell sound, or the user’s recorded voice. -->
+    <string name="settings_alert_chime">گھنٹی</string>
+    <string name="settings_alert_recording">میری ریکارڈنگ</string>
+    <string name="settings_alert_chime_title">اذکار کی گھنٹی</string>
+    <string name="settings_alert_chime_text">ایک نرم، ابھرتی ہوئی گھنٹی، اسی ایپ کے لیے بنائی گئی</string>
+    <string name="settings_alert_your_recording">آپ کا الرٹ</string>
+    <string name="settings_alert_repeats">بجنے کے دوران مختصر وقفوں کے ساتھ دہرایا جاتا ہے</string>
+    <string name="settings_alert_record_prompt">اپنا الرٹ خود ریکارڈ کریں</string>
+    <string name="settings_alert_record_example">مثلاً کہیں: ”صبح کے اذکار کا وقت ہو گیا ہے۔“ تب تک گھنٹی بجے گی۔</string>
+</resources>

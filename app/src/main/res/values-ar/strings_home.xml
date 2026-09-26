@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arabic translation. Draft by Claude; please have a native speaker review before release. -->
+<resources>
+    <!-- Shared formatting -->
+    <!-- Countdown when the target time has arrived (lowercase, used inline). -->
+    <string name="format_now">الآن</string>
+    <!-- Compact countdown. %1$d = hours, %2$d = minutes; س = ساعة, د = دقيقة. -->
+    <string name="format_hours_minutes">%1$d س %2$d د</string>
+    <!-- Compact countdown under an hour. %1$d = minutes. -->
+    <string name="format_minutes">%1$d د</string>
+    <!-- Full date. %1$s = weekday name, %2$d = day of month, %3$s = month name. -->
+    <string name="format_gregorian_date">%1$s، %2$d %3$s</string>
+
+    <!-- Prayer names -->
+    <string name="prayer_fajr">الفجر</string>
+    <!-- Sunrise time shown alongside the prayer times (not a prayer itself). -->
+    <string name="prayer_sunrise">الشروق</string>
+    <string name="prayer_dhuhr">الظهر</string>
+    <string name="prayer_asr">العصر</string>
+    <string name="prayer_maghrib">المغرب</string>
+    <string name="prayer_isha">العشاء</string>
+
+    <!-- Today screen -->
+    <!-- Greeting. %1$s = time-of-day word (today_greeting_morning etc.), shown in italics. -->
+    <string name="today_greeting">%1$s الخير</string>
+    <string name="today_greeting_morning">صباح</string>
+    <string name="today_greeting_afternoon">مساء</string>
+    <string name="today_greeting_evening">مساء</string>
+
+    <string name="today_section_prayer_times">تذكيرات الصلاة</string>
+    <string name="today_section_this_week">هذا الأسبوع</string>
+    <string name="today_section_last_30_days">آخر ٣٠ يومًا</string>
+    <!-- Section header for today's morning and evening sessions. -->
+    <string name="today_section_today">اليوم</string>
+
+    <!-- %1$d = number of consecutive days. -->
+    <plurals name="today_streak_days">
+        <item quantity="zero">%1$d يوم على التوالي</item>
+        <item quantity="one">يوم واحد على التوالي</item>
+        <item quantity="two">يومان على التوالي</item>
+        <item quantity="few">%1$d أيام على التوالي</item>
+        <item quantity="many">%1$d يومًا على التوالي</item>
+        <item quantity="other">%1$d يوم على التوالي</item>
+    </plurals>
+    <string name="today_start_streak">ابدأ مواظبتك اليوم</string>
+    <!-- %1$d = days with adhkaar done, %2$d = total days in the period (30).
+         The noun agrees with the total (30 → يومًا), so all forms are the same. -->
+    <plurals name="today_days_of_total">
+        <item quantity="zero">%1$d من %2$d يومًا</item>
+        <item quantity="one">%1$d من %2$d يومًا</item>
+        <item quantity="two">%1$d من %2$d يومًا</item>
+        <item quantity="few">%1$d من %2$d يومًا</item>
+        <item quantity="many">%1$d من %2$d يومًا</item>
+        <item quantity="other">%1$d من %2$d يومًا</item>
+    </plurals>
+
+    <!-- Chart legend and session tile names. -->
+    <string name="today_morning">الصباح</string>
+    <string name="today_evening">المساء</string>
+    <!-- Chart legend: days on which both morning and evening were done. -->
+    <string name="today_both">كلاهما</string>
+
+    <string name="today_stat_sessions">الجلسات</string>
+    <string name="today_stat_full_days">أيام مكتملة</string>
+    <string name="today_stat_best_streak">أطول مواظبة</string>
+
+    <!-- Session status pills. -->
+    <string name="today_status_done">تمّ</string>
+    <string name="today_status_waiting">بانتظارك</string>
+    <!-- The session is switched off in settings. -->
+    <string name="today_status_off">متوقف</string>
+    <string name="today_status_upcoming">قادم</string>
+    <string name="today_status_not_done">لم يتمّ</string>
+    <string name="today_turned_off">موقوف</string>
+    <!-- %1$s = a clock time, e.g. "5:26 AM". -->
+    <string name="today_today_at">اليوم، %1$s</string>
+
+    <string name="today_hero_morning">أذكار الصباح</string>
+    <string name="today_hero_evening">أذكار المساء</string>
+    <!-- Overline on the main card (shown in capitals in Latin scripts). -->
+    <string name="today_hero_waiting">بانتظارك</string>
+    <!-- Overline on the main card. -->
+    <string name="today_hero_up_next">التالي</string>
+    <string name="today_hero_its_time">حان الوقت</string>
+    <string name="today_hero_not_scheduled">غير مجدول</string>
+    <string name="today_today">اليوم</string>
+    <string name="today_tomorrow">غدًا</string>
+    <!-- %1$d = number of adhkaar (remembrances) in the session. -->
+    <plurals name="today_adhkaar_count">
+        <item quantity="zero">%1$d ذكر</item>
+        <item quantity="one">ذكر واحد</item>
+        <item quantity="two">ذكران</item>
+        <item quantity="few">%1$d أذكار</item>
+        <item quantity="many">%1$d ذكرًا</item>
+        <item quantity="other">%1$d ذكر</item>
+    </plurals>
+    <!-- Estimated duration. %1$d = minutes. -->
+    <plurals name="today_about_minutes">
+        <item quantity="zero">نحو %1$d دقيقة</item>
+        <item quantity="one">نحو دقيقة</item>
+        <item quantity="two">نحو دقيقتين</item>
+        <item quantity="few">نحو %1$d دقائق</item>
+        <item quantity="many">نحو %1$d دقيقة</item>
+        <item quantity="other">نحو %1$d دقيقة</item>
+    </plurals>
+    <string name="today_continue">متابعة</string>
+    <string name="today_begin_now">ابدأ الآن</string>
+    <!-- Timeline label above the time the user's adhkaar begin. -->
+    <string name="today_timeline_begin">البدء</string>
+
+    <!-- Overline above today's special occasions. -->
+    <string name="today_events_overline">اليوم</string>
+
+    <!-- %1$s = prayer name. -->
+    <string name="today_prayer_now">%1$s الآن</string>
+    <!-- %1$s = prayer name, %2$s = countdown such as "1h 20m". -->
+    <string name="today_prayer_in">%1$s بعد %2$s</string>
+    <!-- Label on the next upcoming prayer's pill (الصلاة is feminine). -->
+    <string name="today_next_prayer">التالية</string>
+
+    <string name="today_setup_title">أكمل إعداد الهاتف</string>
+    <!-- %1$s = reminder mode name (Gentle, Full screen, Lockdown), %2$d = number of missing permissions. -->
+    <plurals name="today_setup_body">
+        <item quantity="zero">يحتاج وضع «%1$s» إلى %2$d إذن إضافي ليعمل بثبات.</item>
+        <item quantity="one">يحتاج وضع «%1$s» إلى إذن إضافي واحد ليعمل بثبات.</item>
+        <item quantity="two">يحتاج وضع «%1$s» إلى إذنين إضافيين ليعمل بثبات.</item>
+        <item quantity="few">يحتاج وضع «%1$s» إلى %2$d أذونات إضافية ليعمل بثبات.</item>
+        <item quantity="many">يحتاج وضع «%1$s» إلى %2$d إذنًا إضافيًا ليعمل بثبات.</item>
+        <item quantity="other">يحتاج وضع «%1$s» إلى %2$d إذن إضافي ليعمل بثبات.</item>
+    </plurals>
+
+    <!-- Insights screen -->
+    <string name="insights_title">إحصاءات</string>
+    <string name="insights_subtitle">ذكرك لله على مرّ الأيام</string>
+    <!-- Label under the current streak number; the number is shown separately. -->
+    <plurals name="insights_day_streak">
+        <item quantity="zero">يوم متتالٍ</item>
+        <item quantity="one">يوم متتالٍ</item>
+        <item quantity="two">يومان متتاليان</item>
+        <item quantity="few">أيام متتالية</item>
+        <item quantity="many">يومًا متتاليًا</item>
+        <item quantity="other">يوم متتالٍ</item>
+    </plurals>
+    <string name="insights_best_streak">أطول مواظبة</string>
+    <string name="insights_sessions_this_month">جلسات هذا الشهر</string>
+    <string name="insights_full_days_this_month">أيام مكتملة هذا الشهر</string>
+    <string name="insights_section_calendar">التقويم</string>
+    <string name="insights_section_rhythm">إيقاعك</string>
+    <string name="insights_section_collections">مجموعات هذا الشهر</string>
+    <string name="insights_morning">الصباح</string>
+    <string name="insights_evening">المساء</string>
+    <!-- Chart legend: days on which both morning and evening were done. -->
+    <string name="insights_both">كلاهما</string>
+    <string name="insights_weekday_title">أيام الأذكار · آخر ٨ أسابيع</string>
+    <!-- How many times a collection was read. %1$d = count; "×" means "times". -->
+    <string name="insights_collection_count">×%1$d</string>
+    <string name="insights_not_enough_data">لا توجد بيانات كافية بعد</string>
+    <!-- Caption under the user's typical completion time. -->
+    <string name="insights_usually_around">عادةً نحو</string>
+    <!-- Calendar header. %1$s = month name, %2$d = year. -->
+    <string name="insights_month_year">%1$s %2$d</string>
+    <string name="insights_previous_month">الشهر السابق</string>
+    <string name="insights_next_month">الشهر التالي</string>
+    <string name="insights_day_both_done">أُتمّت أذكار الصباح والمساء</string>
+    <string name="insights_day_morning_done">أُتمّت أذكار الصباح</string>
+    <string name="insights_day_evening_done">أُتمّت أذكار المساء</string>
+    <string name="insights_day_still_to_come">لم يأتِ بعد</string>
+    <string name="insights_day_none">لم تُسجَّل أذكار</string>
+    <!-- Screen reader label for a calendar day. %1$s = date (ISO, e.g. 2026-09-25), %2$s = what was done (insights_day_cd_*). -->
+    <string name="insights_day_cd">%1$s: %2$s</string>
+    <string name="insights_day_cd_both">الصباح والمساء</string>
+    <string name="insights_day_cd_morning">الصباح</string>
+    <string name="insights_day_cd_evening">المساء</string>
+    <string name="insights_day_cd_none">لا شيء</string>
+    <!-- Screen reader label for a weekday bar. %1$s = weekday name, %2$d = days done, %3$d = total days.
+         Noun omitted so the phrase stays grammatical whichever number drives the quantity. -->
+    <plurals name="insights_weekday_cd">
+        <item quantity="zero">%1$s: %2$d من %3$d</item>
+        <item quantity="one">%1$s: %2$d من %3$d</item>
+        <item quantity="two">%1$s: %2$d من %3$d</item>
+        <item quantity="few">%1$s: %2$d من %3$d</item>
+        <item quantity="many">%1$s: %2$d من %3$d</item>
+        <item quantity="other">%1$s: %2$d من %3$d</item>
+    </plurals>
+
+    <!-- Home-screen widget -->
+    <string name="widget_morning">الصباح</string>
+    <string name="widget_evening">المساء</string>
+    <!-- Shown in place of a time when the session is due now. -->
+    <string name="widget_now">الآن</string>
+    <string name="widget_waiting">بانتظارك</string>
+    <!-- %1$d = number of consecutive days. -->
+    <plurals name="widget_streak_days">
+        <item quantity="zero">%1$d يوم على التوالي</item>
+        <item quantity="one">يوم واحد على التوالي</item>
+        <item quantity="two">يومان على التوالي</item>
+        <item quantity="few">%1$d أيام على التوالي</item>
+        <item quantity="many">%1$d يومًا على التوالي</item>
+        <item quantity="other">%1$d يوم على التوالي</item>
+    </plurals>
+    <string name="widget_continue">متابعة</string>
+    <string name="widget_opens_at">يُفتح %1$s</string>
+    <string name="widget_begin">ابدأ</string>
+    <string name="widget_done">تمّ</string>
+    <string name="widget_today">اليوم</string>
+    <string name="widget_tomorrow">غدًا</string>
+    <!-- After the countdown: "6:52 left". -->
+</resources>

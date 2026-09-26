@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Igbo translation. DRAFT by Claude: must be reviewed by a native Igbo speaker before release. -->
+<resources>
+    <string name="prayer_times_group_calculation">Ngụkọ</string>
+    <string name="prayer_times_calculated">Mmalite ngụkọ %1$s</string>
+    <string name="prayer_times_reset">Laghachi na nke mbụ</string>
+    <string name="settings_prayer_times_adjusted">Edobere ya n\'oge ụlọ salah gị</string>
+    <string name="settings_prayer_times_default">Oge mbụ iji kwadebe maka salah</string>
+</resources>

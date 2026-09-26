@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Yoruba translation. DRAFT by Claude: must be reviewed by a native Yoruba speaker before release. -->
+<!-- Strings used outside the Compose UI: notifications, calendar reminders, Hijri calendar, Lockdown overlay. -->
+<resources>
+
+    <!-- Notification channels -->
+    <string name="channel_session_name">Àkókò adhkaar</string>
+    <string name="channel_session_description">Ó ń ṣí adhkaar àárọ̀ àti ìrọ̀lẹ́ yín ní àkókò tí ẹ yàn</string>
+    <string name="channel_gentle_name">Ìránlétí</string>
+    <string name="channel_gentle_description">Ìránlétí ṣáájú ìjókòó, ìránlétí Jímọ̀ àti ti ọjọ́ ààwẹ̀</string>
+
+    <!-- Session notifications -->
+    <string name="notif_title_morning">Adhkaar àárọ̀</string>
+    <string name="notif_title_evening">Adhkaar ìrọ̀lẹ́</string>
+    <string name="notif_session_text_morning">Àkókò adhkaar àárọ̀ yín ti tó. Ẹ tẹ̀ láti bẹ̀rẹ̀.</string>
+    <string name="notif_session_text_evening">Àkókò adhkaar ìrọ̀lẹ́ yín ti tó. Ẹ tẹ̀ láti bẹ̀rẹ̀.</string>
+    <!-- %1$d = number of minutes the session is postponed. -->
+    <!-- %1$s = session title, %2$d = minutes until it starts. -->
+    <plurals name="notif_pre_reminder_title">
+        <item quantity="other">%1$s: ó kù ìṣẹ́jú %2$d</item>
+    </plurals>
+    <string name="notif_pre_reminder_text">Ìṣẹ́jú díẹ̀ láti parí ohun tí ẹ ń ṣe.</string>
+
+    <!-- Collection reminders -->
+    <string name="reminder_after_salah_title">Lẹ́yìn ìrun</string>
+    <string name="reminder_after_salah_text">Dhikr díẹ̀ láti fi kádìí ìrun yín.</string>
+    <string name="reminder_before_sleep_title">Ṣáájú oorun</string>
+    <string name="reminder_before_sleep_text">Ẹ fi adhkaar òru parí ọjọ́ yín.</string>
+
+    <!-- Calendar reminders. %1$s = the event title. -->
+    <string name="reminder_eve_title">Ọ̀la: %1$s</string>
+    <string name="reminder_friday_title">Jímọ̀ Mubarak</string>
+    <string name="reminder_friday_body">Ẹ ka Surah al-Kahf lónìí, kí ẹ sì ṣe salawat púpọ̀ fún Ànọ́bì ﷺ.</string>
+
+    <!-- Special days of the Islamic calendar -->
+    <string name="event_jumuah_title">Jímọ̀</string>
+    <string name="event_jumuah_body">Ẹ ka Surah al-Kahf, kí ẹ sì ṣe salawat púpọ̀ fún Ànọ́bì ﷺ.</string>
+    <string name="event_last_ten_nights_title">Òru mẹ́wàá tó kẹ́yìn</string>
+    <!-- Transliterated Arabic duʿa kept as is. -->
+    <string name="event_last_ten_nights_body">Ẹ wá Laylat al-Qadr. Ẹ sọ pé: Allāhumma innaka ʿafuwwun tuḥibbul-ʿafwa faʿfu ʿannī.</string>
+    <string name="event_ramadan_title">Ààwẹ̀ Ramadan</string>
+    <string name="event_ramadan_body">Oṣù Kùránì. Ẹ ṣe àlékún kíkà Kùránì àti àdúà yín.</string>
+    <string name="event_eid_al_fitr_title">Ọdún Ìtúnu Ààwẹ̀</string>
+    <string name="event_eid_al_fitr_body">Eid Mubarak. Ẹ ké takbir, kí ẹ sì san zakat al-fitr ṣáájú ìrun bí ẹ kò bá tíì san án.</string>
+    <string name="event_dhul_hijjah_ten_title">Ọjọ́ mẹ́wàá tó lóore jùlọ</string>
+    <!-- Transliterated Arabic phrases kept as is. -->
+    <string name="event_dhul_hijjah_ten_body">Ẹ ṣe àlékún tahlil, takbir àti tahmid: lā ilāha illallāh, Allāhu akbar, al-ḥamdu lillāh.</string>
+    <string name="event_arafah_title">Ọjọ́ Arafah</string>
+    <string name="event_arafah_body">Ààwẹ̀ òní ń pa ẹ̀ṣẹ̀ ọdún tó kọjá àti ti ọdún tó ń bọ̀ rẹ́.</string>
+    <string name="event_eid_al_adha_title">Ọdún Iléyá</string>
+    <string name="event_eid_al_adha_body">Eid Mubarak. Ẹ máa rántí Allah pẹ̀lú takbir ní gbogbo ọjọ́ tashriq.</string>
+    <string name="event_tasua_title">Tasuʿa</string>
+    <string name="event_tasua_body">Ẹ gba ààwẹ̀ lónìí pẹ̀lú Ashura lọ́la, gẹ́gẹ́ bí Ànọ́bì ﷺ ti gbèrò.</string>
+    <string name="event_ashura_title">Ashura</string>
+    <string name="event_ashura_body">Ààwẹ̀ òní ń pa ẹ̀ṣẹ̀ ọdún tó kọjá rẹ́.</string>
+    <string name="event_white_days_title">Àwọn ọjọ́ funfun</string>
+    <string name="event_white_days_body">Gbígba ààwẹ̀ ọjọ́ 13, 14 àti 15 oṣù jẹ́ sunnah.</string>
+
+    <!-- Hijri month names, transliterated from Arabic. -->
+    <string name="hijri_month_muharram">Muharram</string>
+    <string name="hijri_month_safar">Safar</string>
+    <string name="hijri_month_rabi_al_awwal">Rabiʿ al-Awwal</string>
+    <string name="hijri_month_rabi_al_thani">Rabiʿ al-Thani</string>
+    <string name="hijri_month_jumada_al_ula">Jumada al-Ula</string>
+    <string name="hijri_month_jumada_al_akhirah">Jumada al-Akhirah</string>
+    <string name="hijri_month_rajab">Rajab</string>
+    <string name="hijri_month_shaban">Shaʿban</string>
+    <string name="hijri_month_ramadan">Ramadan</string>
+    <string name="hijri_month_shawwal">Shawwal</string>
+    <string name="hijri_month_dhu_al_qadah">Dhu al-Qaʿdah</string>
+    <string name="hijri_month_dhu_al_hijjah">Dhu al-Hijjah</string>
+    <!-- %1$d = day of month, %2$s = month name, %3$d = Hijri year. -->
+    <string name="hijri_month_date_format">%1$d %2$s %3$d</string>
+
+    <!-- Lockdown overlay -->
+</resources>

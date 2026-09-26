@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The day sky for the widget picker's preview: the arc, the path so far, the sun on it. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="300dp"
+    android:height="84dp"
+    android:viewportWidth="300"
+    android:viewportHeight="84">
+    <path
+        android:strokeColor="#40FFFFFF"
+        android:strokeWidth="1"
+        android:pathData="M0,72 L300,72" />
+    <path
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="1.5"
+        android:pathData="M30,72 Q150,-28 270,72" />
+    <path
+        android:strokeColor="#D9FFB88A"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M30,72 Q78,32 126,24" />
+    <path android:pathData="M104,24 A22,22 0 1,0 148,24 A22,22 0 1,0 104,24 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="126"
+                android:centerY="24"
+                android:gradientRadius="22">
+                <item android:offset="0" android:color="#88FF7A59" />
+                <item android:offset="1" android:color="#00FF7A59" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:pathData="M117,24 A9,9 0 1,0 135,24 A9,9 0 1,0 117,24 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="126"
+                android:startY="15"
+                android:endX="126"
+                android:endY="33">
+                <item android:offset="0" android:color="#FFFFFFFF" />
+                <item android:offset="1" android:color="#FFFFE2B0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

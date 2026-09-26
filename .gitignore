@@ -1,0 +1,20 @@
+.gradle/
+build/
+local.properties
+.idea/
+*.iml
+.DS_Store
+captures/
+.kotlin/
+
+# Written by tools/moonsighting/update.py when the reports disagree
+alert.md
+
+# Local secrets (TAVILY_API_KEY for tools/moonsighting)
+.env
+
+# Signing keys and built apps
+*.jks
+*.keystore
+*.apk
+*.aab

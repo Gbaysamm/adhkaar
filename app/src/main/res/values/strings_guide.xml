@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guide_title">Guide</string>
+    <string name="guide_intro">How Adhkaar works, and how to make it fit your day.</string>
+    <string name="guide_group_times">Times</string>
+    <string name="guide_times_title">When the adhkaar open</string>
+    <string name="guide_times_body">Morning adhkaar open 10 minutes after Fajr is prayed in congregation (about 6:00 AM) and are best read by 7:30 AM. Evening adhkaar open about 30 minutes after Asr is prayed (about 4:45 PM) and are best read before Maghrib; they can still be read until Isha. Everything follows your salah times, so set those first.</string>
+    <string name="guide_salah_title">Your salah times</string>
+    <string name="guide_salah_body">The app starts with common local times. Change them to your masjid\'s in Settings › Salah reminders: tap a time to edit it. Your times replace the defaults completely, and you can switch each salah reminder on or off there.</string>
+    <string name="guide_group_modes">Modes</string>
+    <string name="guide_modes_intro">The mode decides how firmly the app holds you to the morning and evening adhkaar. It applies only to those two; everything else is a notification.</string>
+    <string name="guide_gentle_body">One soft chime and a notification when the adhkaar open. It does not ring again.</string>
+    <string name="guide_gentle_pros">Calm and never in the way. Good if you already have the habit.</string>
+    <string name="guide_gentle_cons">Easy to swipe away and forget.</string>
+    <string name="guide_full_body">The adhkaar open by themselves, even on the lock screen. The alert rings for a minute, and once more 10 minutes later if you haven\'t opened them. After that it stays quiet, but each time you unlock your phone they come back, until you finish or the time ends.</string>
+    <string name="guide_full_pros">Hard to miss, without stopping you from using your phone.</string>
+    <string name="guide_full_cons">It interrupts you. Closing it isn\'t the end: it comes back the next time you unlock your phone.</string>
+    <string name="guide_lockdown_body">Like Full screen, and other apps are covered until you finish the adhkaar or their time ends (7:30 AM in the morning, Isha in the evening). Calls always work. It is not a reminder that ends early: it lifts when you finish or when the time is over.</string>
+    <string name="guide_lockdown_pros">The strongest help for building the habit: the phone waits until you have read them.</string>
+    <string name="guide_lockdown_cons">Strict by design. Use a break if you truly can\'t read now.</string>
+    <string name="guide_pros">Good</string>
+    <string name="guide_cons">Keep in mind</string>
+    <string name="guide_breaks_title">Breaks</string>
+    <string name="guide_breaks_body">Busy when the adhkaar open? Take a break of 10, 20, 30 or 60 minutes. The reminder comes back when the break ends, as long as the adhkaar time is still open.</string>
+    <string name="guide_group_more">More</string>
+    <string name="guide_collections_title">Other reminders</string>
+    <string name="guide_collections_body">Sleep, waking, after salah and the other collections remind you with a notification only; the modes don\'t apply to them. Turn them on in Settings › Reminders.</string>
+    <string name="guide_calendar_title">Calendar</string>
+    <string name="guide_calendar_body">The Islamic calendar follows the moon sightings announced in Nigeria when they are available, and calculated dates otherwise. It marks Jumu\'ah, the white days, Ramadan and other special days.</string>
+    <string name="guide_widgets_title">Widgets</string>
+    <string name="guide_widgets_body">Add Adhkaar widgets from your home screen: long-press an empty space, tap Widgets and find Adhkaar. Each comes in three styles.</string>
+    <string name="guide_phone_title">Keep it working on your phone</string>
+    <string name="guide_phone_body">Some phones stop apps in the background to save battery. If a reminder doesn\'t come, open Settings › Permissions and allow everything listed, then use Test morning or Test evening to check.</string>
+    <string name="settings_guide">Guide</string>
+    <string name="settings_guide_hint">How the times and modes work</string>
+    <string name="settings_group_help">Help</string>
+    <string name="settings_report_bug">Contact us</string>
+    <string name="settings_report_bug_hint">Report a problem or share an idea</string>
+</resources>

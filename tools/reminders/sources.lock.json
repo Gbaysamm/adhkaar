@@ -1,0 +1,29 @@
+{
+  "english_rwwad.sqlite": {
+    "url": "https://quranenc.com/downloads/sqlite/english_rwwad.sqlite",
+    "sha256": "77e2ede3d8e6d6b5c6e16ff78eda2d2b6cc0a6b7489c94a5dde4f7481f5fdee8",
+    "version": "1.0.19"
+  },
+  "hadeethenc-en.xlsx": {
+    "url": "https://hadeethenc.com/browse/download/en",
+    "sha256": "339d148eb7425b7f2d48dd7521a969e4aa4a35b5d35a7c4a1c1b67043b5ee218",
+    "version": "v1.25.0"
+  },
+  "hadeethenc-api.json": {
+    "url": "https://hadeethenc.com/api/v1/hadeeths/multiple/?language=ar",
+    "sha256": "11b4d6a8f7c3c65643aa5511e4777d11712007ec2d67f147bedce487d8c2c87c"
+  },
+  "ara-bukhari.json": {
+    "url": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@df57907be35291c91ad6a6691180e22ca9920784/editions/ara-bukhari.min.json",
+    "sha256": "f887d8724f75fb6e1d5d29342a173af5346ad9b933173c85e6e3cb570063ea33"
+  },
+  "ara-muslim.json": {
+    "url": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@df57907be35291c91ad6a6691180e22ca9920784/editions/ara-muslim.min.json",
+    "sha256": "2cb296f3455ff8a3da9f6a0ca3de75da675788b2fb446ad316df297838e48217"
+  },
+  "tanzil-uthmani.txt": {
+    "url": "https://tanzil.net/pub/download/index.php?marks=true&sajdah=true&rub=false&quranType=uthmani&outType=txt-2&agree=true",
+    "sha256": "7f30c647331a61100ebf24a80507dc0fcdd9f2df97f1312b5b2dfcb982a7f326",
+    "version": "1.1"
+  }
+}

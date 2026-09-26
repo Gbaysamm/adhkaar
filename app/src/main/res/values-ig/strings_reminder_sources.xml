@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Igbo translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="reminder_sources_title">Ebe ncheta kwa ụbọchị si</string>
+    <string name="reminder_sources_quran_arabic">Ederede Arabik nke Kur\'an: Tanzil Quran Text (Uthmani, mbipụta %1$s), © Tanzil Project, n\'okpuru ikike Creative Commons Attribution 3.0, n\'agbanweghị ya. tanzil.net</string>
+    <string name="reminder_sources_quran_meaning">Ihe Kur\'an pụtara: English Translation – Rowwad Translation Center, mbipụta %1$s, site na QuranEnc.com.</string>
+    <string name="reminder_sources_hadith">Hadith n\'Arabik na Bekee: HadeethEnc.com (Encyclopedia of Translated Prophetic Hadiths), mbipụta %1$s.</string>
+    <string name="reminder_sources_unchanged">A na-egosi ederede sitere n\'ebe ndị a dị ka e bipụtara ha.</string>
+</resources>

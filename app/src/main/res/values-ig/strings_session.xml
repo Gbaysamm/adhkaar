@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Igbo translation. DRAFT by Claude: must be reviewed by a native Igbo speaker before release. -->
+<resources>
+    <!-- ===== Session (morning / evening / collection sessions) ===== -->
+    <!-- Overline above the position counter at the top of a session -->
+    <string name="session_overline_morning">ADHKAAR ỤTỤTỤ</string>
+    <string name="session_overline_evening">ADHKAAR MGBEDE</string>
+    <!-- Play / pause the recitation of the current dhikr -->
+    <string name="session_listen">Gee ntị</string>
+    <string name="session_pause">Kwụsịtụ</string>
+    <string name="session_tap_hint">Pịa okirikiri ma ọ bụ kaadị iji gụọ ọnụ</string>
+    <string name="session_close">Mechie</string>
+    <!-- Position in the session, e.g. "3 of 19". %1$d = current, %2$d = total -->
+    <string name="session_position">%1$d n\'ime %2$d</string>
+    <string name="session_reading_options">Nhọrọ ọgụgụ</string>
+    <string name="session_reading_overline">ỌGỤGỤ</string>
+    <string name="session_arabic_size">Nha Arabik</string>
+    <!-- Arabic text size as a percentage. %1$d = percent -->
+    <string name="session_arabic_scale_percent">%1$d%%</string>
+    <string name="session_transliteration">Ndegharị ụda</string>
+    <string name="session_translation">Nsụgharị</string>
+    <string name="session_auto_advance">Gaa n\'ihu n\'onwe ya</string>
+    <string name="session_auto_play_recitation">Kpọọ ọgụgụ n\'onwe ya</string>
+    <string name="session_haptics">Ịma jijiji</string>
+    <!-- Pill on a dhikr card once it has been said the required number of times -->
+    <string name="session_done">Emechaala</string>
+    <!-- Accessibility labels for the heart button -->
+    <string name="session_favourite_add">Tinye na ọkacha mmasị</string>
+    <string name="session_favourite_remove">Wepụ na ọkacha mmasị</string>
+
+    <!-- ===== Counter ===== -->
+    <!-- How many times a dhikr is said, e.g. "×3". %1$d = repetitions -->
+    <plurals name="counter_times">
+        <item quantity="other">×%1$d</item>
+    </plurals>
+    <!-- Under the big count in the counter orb, e.g. "of 33". %1$d = target count -->
+    <string name="counter_of_target">n\'ime %1$d</string>
+    <!-- Accessibility label for the check mark shown when the count is complete -->
+    <string name="counter_done">Emechaala</string>
+
+    <!-- ===== Completion screen ===== -->
+    <string name="completion_morning_headline">Ụbọchị gị na-amalite\nn\'okpuru nlekọta Ya</string>
+    <string name="completion_evening_headline">Abalị gị na-ezu ike\nn\'okpuru nlekọta Ya</string>
+    <!-- Hadith (Abu Dawud 5088), morning wording -->
+    <string name="completion_morning_quote">Onye kwuru ya ugboro atọ n\'ụtụtụ, ọdachi mberede agaghị adakwasị ya ruo mgbede.</string>
+    <!-- Same hadith, evening wording -->
+    <string name="completion_evening_quote">Onye kwuru ya ugboro atọ na mgbede, ọdachi mberede agaghị adakwasị ya ruo ụtụtụ.</string>
+    <!-- Source line under the hadith: opening words of the dhikr (transliterated) and the hadith reference -->
+    <string name="completion_reference">Bismillāhil-ladhī lā yaḍurru… · Abu Dawud 5088</string>
+    <!-- Wraps the hadith text in quotation marks. %1$s = the quote -->
+    <string name="completion_quote_format">“%1$s”</string>
+    <!-- Headline when a collection has no completion text of its own. %1$s = collection name -->
+    <string name="completion_collection_headline">%1$s\nemechaala</string>
+    <!-- Stat label under the number of adhkaar said -->
+    <plurals name="completion_stat_adhkaar">
+        <item quantity="other">Adhkaar</item>
+    </plurals>
+    <!-- Stat label under the time taken -->
+    <string name="completion_stat_time">Oge</string>
+    <!-- Time taken, shown as a stat. %1$d = minutes -->
+    <string name="completion_minutes">Nkeji %1$d</string>
+    <!-- Stat label under the streak length (in days) -->
+    <plurals name="completion_day_streak">
+        <item quantity="other">Ụbọchị n\'usoro</item>
+    </plurals>
+    <!-- Stat label under how many times a collection has been completed today -->
+    <plurals name="completion_times_today">
+        <item quantity="other">Ugboro taa</item>
+    </plurals>
+    <string name="completion_done">Emechaala</string>
+
+    <!-- ===== Library (Adhkaar tab) ===== -->
+    <string name="library_title">Adhkaar</string>
+    <string name="library_subtitle">Site na Hisn al-Muslim, ya na isi mmalite ha</string>
+    <string name="library_every_day">Kwa ụbọchị</string>
+    <string name="library_morning">Ụtụtụ</string>
+    <string name="library_evening">Mgbede</string>
+    <!-- Morning shelf tile. %1$d = number of adhkaar; Fajr is the dawn prayer -->
+    <plurals name="library_morning_tile">
+        <item quantity="other">Adhkaar %1$d · mgbe Fajr gasịrị</item>
+    </plurals>
+    <!-- Evening shelf tile. %1$d = number of adhkaar; Asr is the afternoon prayer -->
+    <plurals name="library_evening_tile">
+        <item quantity="other">Adhkaar %1$d · mgbe Asr gasịrị</item>
+    </plurals>
+    <string name="library_collections">Nchịkọta</string>
+    <!-- Number of items in a collection. %1$d = count -->
+    <plurals name="library_count_adhkaar">
+        <item quantity="other">Adhkaar %1$d</item>
+    </plurals>
+    <!-- Number of items in a reference collection of duas. %1$d = count -->
+    <plurals name="library_count_duas">
+        <item quantity="other">Dua %1$d</item>
+    </plurals>
+    <string name="library_favourites">Ọkacha mmasị</string>
+    <string name="library_favourites_none">Ọ dịbeghị</string>
+    <!-- Favourites tile subtitle. %1$d = number of saved adhkaar -->
+    <plurals name="library_favourites_saved">
+        <item quantity="other">%1$d echekwara</item>
+    </plurals>
+    <string name="library_my_duas">Dua m</string>
+    <string name="library_my_duas_empty">Dee nke gị</string>
+    <!-- My duas tile subtitle. %1$d = number of duas the user has written -->
+    <plurals name="library_my_duas_written">
+        <item quantity="other">%1$d edere</item>
+    </plurals>
+    <string name="library_morning_title">Adhkaar ụtụtụ</string>
+    <string name="library_evening_title">Adhkaar mgbede</string>
+    <!-- When the morning adhkaar are said -->
+    <string name="library_morning_subtitle">Mgbe Fajr gasịrị, ruo elekere 7:30 ụtụtụ</string>
+    <!-- When the evening adhkaar are said -->
+    <string name="library_evening_subtitle">Mgbe Asr gasịrị, ruo Maghrib</string>
+    <string name="library_favourites_subtitle">Adhkaar ị chekwara</string>
+    <!-- Shelf subtitle with its size. %1$s = subtitle, %2$s = count such as "Adhkaar 12" -->
+    <string name="library_detail_subtitle">%1$s · %2$s</string>
+    <string name="library_back">Laghachi</string>
+    <string name="library_begin">Malite</string>
+    <string name="library_favourites_empty_title">Ọ dịbeghị ọkacha mmasị</string>
+    <string name="library_favourites_empty_body">Pịa obi dị na dhikr ọ bụla ka ọ nọrọ ebe a.</string>
+    <string name="library_my_duas_description">Okwu nke gị nye Allah, echekwara ebe a, ma tinye ya n\'adhkaar gị ma ọ bụrụ na ị họrọ.</string>
+    <string name="library_write_dua">Dee dua</string>
+
+    <!-- ===== Dua editor ===== -->
+    <string name="dua_new">Dua ọhụrụ</string>
+    <string name="dua_edit">Dezie dua</string>
+    <string name="dua_intro">Dee ya n\'Arabik, n\'asụsụ nke gị, ma ọ bụ ha abụọ.</string>
+    <string name="dua_field_title">Aha</string>
+    <!-- Placeholder in the dua title field -->
+    <string name="dua_field_title_placeholder">dịka: Maka ndị mụrụ m</string>
+    <string name="dua_field_arabic">Arabik</string>
+    <string name="dua_field_transliteration">Ndegharị ụda</string>
+    <string name="dua_field_transliteration_placeholder">Ọ bụghị iwu</string>
+    <!-- Label of the field for the dua's meaning / translation -->
+    <string name="dua_field_meaning">Ihe ọ pụtara</string>
+    <string name="dua_field_meaning_placeholder">Ihe ị na-arịọ</string>
+    <!-- How many times the dua is repeated -->
+    <string name="dua_repeat">Ugboro ole</string>
+    <string name="dua_in_morning">N\'adhkaar ụtụtụ m</string>
+    <string name="dua_in_evening">N\'adhkaar mgbede m</string>
+    <string name="dua_delete">Hichapụ dua a</string>
+    <string name="dua_invalid_hint">Tinye aha, na Arabik ma ọ bụ ihe ọ pụtara.</string>
+    <string name="dua_save">Chekwaa</string>
+    <string name="dua_voice_overline">OLU GỊ</string>
+    <string name="dua_voice_recording">Na-edekọ</string>
+    <string name="dua_voice_stop">Kwụsị</string>
+    <string name="dua_voice_play">Kpọọ</string>
+    <string name="dua_voice_pause">Kwụsịtụ</string>
+    <string name="dua_voice_your_recording">Ndekọ gị</string>
+    <string name="dua_voice_plays_with">Ọ na-akpọ ya na dua a n\'oge nnọkọ gị</string>
+    <string name="dua_voice_record_again">Dekọọ ọzọ</string>
+    <string name="dua_voice_delete">Hichapụ ndekọ</string>
+    <string name="dua_voice_record">Dekọọ</string>
+    <string name="dua_voice_record_prompt">Dekọọ ya n\'olu gị</string>
+    <string name="dua_voice_mic_denied">A jụrụ ikike maịkrofọn. Ị nwere ike ikwe ya na ntọala ekwentị.</string>
+    <!-- The recording limit is 3 minutes (MAX_SECONDS in DuaEditor.kt) -->
+    <string name="dua_voice_limit">Ruo nkeji 3. Ọ na-anọ naanị n\'ekwentị a.</string>
+
+    <!-- ===== Share ===== -->
+    <string name="share_action">Kesaa</string>
+    <string name="share_cancel">Kagbuo</string>
+    <!-- Title of the system share chooser -->
+    <string name="share_chooser_title">Kesaa dhikr</string>
+    <!-- Recitation mini player (inside the dhikr card). -->
+    <string name="player_play">Kpọọ ọgụgụ</string>
+    <string name="player_pause">Kwụsịtụ ọgụgụ</string>
+    <string name="player_repeat">Kpọghachi ọgụgụ</string>
+    <!-- Share card looks. Midnight: dark blue night. Dawn: sunrise colours. Parchment: ink and gold on paper. -->
+    <string name="share_style_midnight">Etiti abalị</string>
+    <string name="share_style_dawn">Chi ọbụbọ</string>
+    <string name="share_style_parchment">Akwụkwọ ochie</string>
+    <string name="library_done_today">Emechara taa</string>
+    <string name="library_read_again">Gụọ ọzọ</string>
+    <string name="prayer_times_edit_hint">Pịa oge iji gbanwee ya ka ọ dị ka nke ụlọ alakụba gị.</string>
+    <string name="collection_after_salah">Mgbe salah gasịrị</string>
+    <string name="collection_after_salah_subtitle">Mgbe salah ọ bụla e nyere n\'iwu</string>
+    <string name="collection_before_sleep">Tupu ụra</string>
+    <string name="collection_before_sleep_subtitle">Mgbe ị dinara n\'abalị</string>
+    <string name="collection_waking">Mgbe i tetara</string>
+    <string name="collection_waking_subtitle">Okwu mbụ nke ụbọchị</string>
+    <string name="collection_daily">Dua kwa ụbọchị</string>
+    <string name="collection_daily_subtitle">Maka oge dị iche iche nke ụbọchị</string>
+</resources>

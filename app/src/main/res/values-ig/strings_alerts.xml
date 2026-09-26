@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Igbo translation. DRAFT by Claude: must be reviewed by a native Igbo speaker before release. -->
+<!-- The session alert (ringing, Settings > Alert sound) and the Lockdown blocking screen. -->
+<resources>
+
+    <!-- Notification button that stops the ringing alert. -->
+    <string name="alert_stop">Kwụsị</string>
+
+    <!-- Lockdown blocking screen, shown over other apps until the user returns to the session. "Adhkaar" = the daily remembrances of Allah (transliterated Arabic); "dhikr" = one of them. -->
+    <string name="block_title_morning">Adhkaar ụtụtụ gị na-eche gị</string>
+    <string name="block_title_evening">Adhkaar mgbede gị na-eche gị</string>
+    <string name="block_body">Ngwa ndị ọzọ akwụsịtụla ugbu a. Nkeji ole na ole n\'udo na Allah, mgbe ahụ ha ga-alaghachikwute gị.</string>
+    <!-- %1$d = adhkaar not yet finished in this session. -->
+    <plurals name="block_remaining">
+        <item quantity="other">Adhkaar %1$d fọdụrụ</item>
+    </plurals>
+    <string name="block_start">Malite adhkaar gị</string>
+    <string name="block_return">Laghachi na adhkaar gị</string>
+    <string name="block_call">Oku ma ọ bụ mberede</string>
+
+    <!-- Settings > Reminders > Alert sound. -->
+    <string name="settings_alert_sound">Ụda ọkwa</string>
+    <!-- %1$d = minutes until the second ring (10). -->
+    <plurals name="settings_alert_sound_hint">
+        <item quantity="other">Ọ na-akụ otu nkeji n\'oge nnọkọ, ma kụọ ọzọ otu ugboro mgbe nkeji %1$d gachara ma ọ bụrụ na emepeghị ya</item>
+    </plurals>
+    <!-- The two choices: the app’s own bell sound, or the user’s recorded voice. -->
+    <string name="settings_alert_chime">Mgbịrịgba</string>
+    <string name="settings_alert_recording">Ndekọ m</string>
+    <string name="settings_alert_chime_title">Mgbịrịgba Adhkaar</string>
+    <string name="settings_alert_chime_text">Mgbịrịgba dị nro na-arị elu, e mere ya maka ngwa a</string>
+    <string name="settings_alert_your_recording">Ọkwa gị</string>
+    <string name="settings_alert_repeats">Ọ na-emegharị onwe ya na obere nkwụsịtụ mgbe ọ na-akụ</string>
+    <string name="settings_alert_record_prompt">Dekọọ ọkwa nke gị</string>
+    <string name="settings_alert_record_example">Kwuo ihe dị ka “Oge eruola maka adhkaar ụtụtụ gị.” Ruo mgbe ahụ, mgbịrịgba ga-akụ.</string>
+</resources>

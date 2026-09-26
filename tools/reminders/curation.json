@@ -1,0 +1,43 @@
+{
+  "about": "Reviewer decisions that the heuristics in build.py can't make. exclude: ids (q<surah>_<ayah>[_<last ayah>] or h<HadeethEnc id>) never to show as an everyday reminder, each with the reason in reasons. Re-run build.py after editing.",
+  "exclude": [
+    "q3_87",
+    "q3_123",
+    "q3_125",
+    "q4_41",
+    "q5_47",
+    "q9_97",
+    "q15_77",
+    "q20_54",
+    "q23_30",
+    "q33_33",
+    "q43_60",
+    "q51_9",
+    "q53_17",
+    "q55_68",
+    "q68_3",
+    "q70_38",
+    "q73_11",
+    "q83_12"
+  ],
+  "reasons": {
+    "q3_87": "\"such people\" points to the verses before",
+    "q3_123": "about the battle of Badr; needs its context",
+    "q3_125": "about a battle; needs its context",
+    "q4_41": "\"these\" points to the verses before",
+    "q5_47": "addressed to the people of the Gospel; needs its context",
+    "q9_97": "about particular Bedouins of the time; needs its context",
+    "q15_77": "\"in this\" points to the story before",
+    "q20_54": "\"in this\" points to the verses before",
+    "q23_30": "\"in this\" points to the story before",
+    "q33_33": "addressed to the Prophet's wives; needs its context",
+    "q43_60": "reply within an argument; needs its context",
+    "q51_9": "\"it\" points to the verses before",
+    "q53_17": "about the Prophet's vision; needs its context",
+    "q55_68": "\"in each\" points to the verses before",
+    "q68_3": "addressed to the Prophet; reads as a promise to the reader",
+    "q70_38": "\"of them\" points to the verses before",
+    "q73_11": "addressed to the Prophet about particular deniers",
+    "q83_12": "\"it\" points to the verse before"
+  }
+}

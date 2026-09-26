@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arabic translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="channel_salah_name">تذكيرات الصلاة</string>
+    <string name="channel_salah_description">تذكير لطيف بالاستعداد لكل صلاة، في الأوقات التي تحددها</string>
+    <string name="notif_salah_title">حان وقت الاستعداد لصلاة %1$s</string>
+    <string name="notif_salah_text">تذكير بالاستعداد للصلاة — اتبع أذان مسجدك.</string>
+    <string name="prayer_times_begin_note">عند تحديد موقعك، تُظهر كل صلاة أيضًا بداية وقتها حسابًا. هذا للمقارنة فقط: التطبيق يتبع دائمًا أوقاتك في الأعلى.</string>
+    <string name="salah_reminders_title">تذكيرات الصلاة</string>
+    <string name="salah_reminders_note">تذكيرات بالاستعداد للصلاة، وليست مواقيت الصلاة الدقيقة. اضبط مواقيت مسجدك وستحل محل هذه.</string>
+    <string name="today_prayer_times_caption">أوقات للاستعداد للصلاة، وليست مواقيت الصلاة الدقيقة.</string>
+    <string name="today_day_reminder">تذكرة اليوم</string>
+    <string name="channel_reminder_name">التذكيرات</string>
+    <string name="channel_reminder_description">بعد الصلاة وقبل النوم والتنبيه قبل الأذكار. ترن وتهتز.</string>
+    <string name="popup_salah_body">اترك ما بيدك دقائق قليلة. توضأ، واذهب إلى المسجد إن استطعت.</string>
+    <string name="popup_step_wudu">الوضوء</string>
+    <string name="popup_step_masjid">المسجد</string>
+    <string name="popup_step_phone">اترك الهاتف</string>
+    <string name="popup_salah_hadith">أحب الأعمال إلى الله: الصلاة على وقتها.</string>
+    <string name="popup_salah_source">صحيح البخاري ٥٢٧</string>
+    <string name="popup_ready">أستعد الآن</string>
+    <string name="popup_open">افتح</string>
+    <string name="popup_later">لاحقًا</string>
+</resources>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand wordmark shown in the home-screen widget header. -->
+    <string name="app_brand_caps" translatable="false">ADHKAAR</string>
+
+    <!-- Shared formatting -->
+    <!-- Countdown when the target time has arrived (lowercase, used inline). -->
+    <string name="format_now">now</string>
+    <!-- Compact countdown. %1$d = hours, %2$d = minutes; "h" and "m" are one-letter unit abbreviations for hours and minutes. -->
+    <string name="format_hours_minutes">%1$dh %2$dm</string>
+    <!-- Compact countdown under an hour. %1$d = minutes; "m" is the one-letter abbreviation for minutes. -->
+    <string name="format_minutes">%1$dm</string>
+    <!-- Full date, e.g. "Thursday, 25 September". %1$s = weekday name, %2$d = day of month, %3$s = month name. -->
+    <string name="format_gregorian_date">%1$s, %2$d %3$s</string>
+
+    <!-- Prayer names -->
+    <string name="prayer_fajr">Fajr</string>
+    <!-- Sunrise time shown alongside the prayer times (not a prayer itself). -->
+    <string name="prayer_sunrise">Sunrise</string>
+    <string name="prayer_dhuhr">Dhuhr</string>
+    <string name="prayer_asr">Asr</string>
+    <string name="prayer_maghrib">Maghrib</string>
+    <string name="prayer_isha">Isha</string>
+
+    <!-- Today screen -->
+    <!-- Greeting. %1$s = time-of-day word (today_greeting_morning etc.), shown in italics. -->
+    <string name="today_greeting">Good %1$s</string>
+    <string name="today_greeting_morning">morning</string>
+    <string name="today_greeting_afternoon">afternoon</string>
+    <string name="today_greeting_evening">evening</string>
+
+    <string name="today_section_prayer_times">Salah reminders</string>
+    <string name="today_section_this_week">This week</string>
+    <string name="today_section_last_30_days">Last 30 days</string>
+    <!-- Section header for today's morning and evening sessions. -->
+    <string name="today_section_today">Today</string>
+
+    <!-- %1$d = number of consecutive days. -->
+    <plurals name="today_streak_days">
+        <item quantity="one">%1$d-day streak</item>
+        <item quantity="other">%1$d-day streak</item>
+    </plurals>
+    <string name="today_start_streak">Start your streak today</string>
+    <!-- %1$d = days with adhkaar done, %2$d = total days in the period (30). -->
+    <plurals name="today_days_of_total">
+        <item quantity="one">%1$d of %2$d day</item>
+        <item quantity="other">%1$d of %2$d days</item>
+    </plurals>
+
+    <!-- Chart legend and session tile names. -->
+    <string name="today_morning">Morning</string>
+    <string name="today_evening">Evening</string>
+    <!-- Chart legend: days on which both morning and evening were done. -->
+    <string name="today_both">Both</string>
+
+    <string name="today_stat_sessions">Sessions</string>
+    <string name="today_stat_full_days">Full days</string>
+    <string name="today_stat_best_streak">Best streak</string>
+
+    <!-- Session status pills. -->
+    <string name="today_status_done">Done</string>
+    <string name="today_status_waiting">Waiting</string>
+    <!-- The session is switched off in settings. -->
+    <string name="today_status_off">Off</string>
+    <string name="today_status_upcoming">Upcoming</string>
+    <string name="today_status_not_done">Not done</string>
+    <string name="today_turned_off">Turned off</string>
+    <!-- %1$s = a clock time, e.g. "5:26 AM". -->
+    <string name="today_today_at">Today, %1$s</string>
+
+    <string name="today_hero_morning">Morning adhkaar</string>
+    <string name="today_hero_evening">Evening adhkaar</string>
+    <!-- Overline on the main card, shown in capitals. -->
+    <string name="today_hero_waiting">WAITING FOR YOU</string>
+    <!-- Overline on the main card, shown in capitals. -->
+    <string name="today_hero_up_next">UP NEXT</string>
+    <string name="today_hero_its_time">It’s time</string>
+    <string name="today_hero_not_scheduled">Not scheduled</string>
+    <string name="today_today">Today</string>
+    <string name="today_tomorrow">Tomorrow</string>
+    <!-- %1$d = number of adhkaar (remembrances) in the session. -->
+    <plurals name="today_adhkaar_count">
+        <item quantity="one">%1$d adhkaar</item>
+        <item quantity="other">%1$d adhkaar</item>
+    </plurals>
+    <!-- Estimated duration. %1$d = minutes. -->
+    <plurals name="today_about_minutes">
+        <item quantity="one">about %1$d min</item>
+        <item quantity="other">about %1$d min</item>
+    </plurals>
+    <string name="today_continue">Continue</string>
+    <string name="today_begin_now">Begin now</string>
+    <!-- Timeline label above the time the user's adhkaar begin. -->
+    <string name="today_timeline_begin">Begin</string>
+
+    <!-- Overline above today's special occasions, shown in capitals. -->
+    <string name="today_events_overline">TODAY</string>
+
+    <!-- %1$s = prayer name. -->
+    <string name="today_prayer_now">%1$s now</string>
+    <!-- %1$s = prayer name, %2$s = countdown such as "1h 20m". -->
+    <string name="today_prayer_in">%1$s in %2$s</string>
+    <!-- Label on the next upcoming prayer's pill. -->
+    <string name="today_next_prayer">Next</string>
+
+    <string name="today_setup_title">Finish phone setup</string>
+    <!-- %1$s = reminder mode name (Gentle, Full screen, Lockdown), %2$d = number of missing permissions. -->
+    <plurals name="today_setup_body">
+        <item quantity="one">%1$s needs %2$d more permission to work reliably.</item>
+        <item quantity="other">%1$s needs %2$d more permissions to work reliably.</item>
+    </plurals>
+
+    <!-- Insights screen -->
+    <string name="insights_title">Insights</string>
+    <string name="insights_subtitle">Your remembrance, over time</string>
+    <!-- Label under the current streak number; the number is shown separately. -->
+    <plurals name="insights_day_streak">
+        <item quantity="one">Day streak</item>
+        <item quantity="other">Day streak</item>
+    </plurals>
+    <string name="insights_best_streak">Best streak</string>
+    <string name="insights_sessions_this_month">Sessions this month</string>
+    <string name="insights_full_days_this_month">Full days this month</string>
+    <string name="insights_section_calendar">Calendar</string>
+    <string name="insights_section_rhythm">Your rhythm</string>
+    <string name="insights_section_collections">Collections this month</string>
+    <string name="insights_morning">Morning</string>
+    <string name="insights_evening">Evening</string>
+    <!-- Chart legend: days on which both morning and evening were done. -->
+    <string name="insights_both">Both</string>
+    <string name="insights_weekday_title">Days with adhkaar · last 8 weeks</string>
+    <!-- How many times a collection was read. %1$d = count; "×" means "times". -->
+    <string name="insights_collection_count">×%1$d</string>
+    <string name="insights_not_enough_data">Not enough data yet</string>
+    <!-- Caption under the user's typical completion time. -->
+    <string name="insights_usually_around">Usually around</string>
+    <!-- Calendar header. %1$s = month name, %2$d = year. -->
+    <string name="insights_month_year">%1$s %2$d</string>
+    <string name="insights_previous_month">Previous month</string>
+    <string name="insights_next_month">Next month</string>
+    <string name="insights_day_both_done">Morning and evening adhkaar done</string>
+    <string name="insights_day_morning_done">Morning adhkaar done</string>
+    <string name="insights_day_evening_done">Evening adhkaar done</string>
+    <string name="insights_day_still_to_come">Still to come</string>
+    <string name="insights_day_none">No adhkaar recorded</string>
+    <!-- Screen reader label for a calendar day. %1$s = date (ISO, e.g. 2026-09-25), %2$s = what was done (insights_day_cd_*). -->
+    <string name="insights_day_cd">%1$s: %2$s</string>
+    <string name="insights_day_cd_both">morning and evening</string>
+    <string name="insights_day_cd_morning">morning</string>
+    <string name="insights_day_cd_evening">evening</string>
+    <string name="insights_day_cd_none">none</string>
+    <!-- Screen reader label for a weekday bar. %1$s = weekday name, %2$d = days done, %3$d = total days. -->
+    <plurals name="insights_weekday_cd">
+        <item quantity="one">%1$s: %2$d of %3$d day</item>
+        <item quantity="other">%1$s: %2$d of %3$d days</item>
+    </plurals>
+
+    <!-- Home-screen widget -->
+    <string name="widget_morning">Morning</string>
+    <string name="widget_evening">Evening</string>
+    <!-- Shown in place of a time when the session is due now. -->
+    <string name="widget_now">Now</string>
+    <string name="widget_waiting">Waiting for you</string>
+    <!-- %1$d = number of consecutive days. -->
+    <plurals name="widget_streak_days">
+        <item quantity="one">%1$d-day streak</item>
+        <item quantity="other">%1$d-day streak</item>
+    </plurals>
+    <string name="widget_continue">Continue</string>
+    <string name="widget_opens_at">Opens %1$s</string>
+    <string name="widget_begin">Begin</string>
+    <string name="widget_done">Done</string>
+    <string name="widget_today">Today</string>
+    <string name="widget_tomorrow">Tomorrow</string>
+    <!-- After the countdown: "6:52 left". -->
+</resources>

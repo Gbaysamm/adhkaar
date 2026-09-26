@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Igbo translation. DRAFT by Claude: must be reviewed by a native Igbo speaker before release. -->
+<resources>
+    <!-- ===== Pacing and leaving a session ===== -->
+    <string name="pacing_take_your_time">Were nwayọọ gụọ nke a</string>
+    <string name="pacing_leave_collection">Ị ga-apụ tupu i mechaa?</string>
+    <string name="pacing_remaining">Ọ fọdụrụ %1$d n\'ime %2$d</string>
+    <string name="pacing_keep_going">Gaa n\'ihu</string>
+    <string name="pacing_leave">Pụọ</string>
+</resources>

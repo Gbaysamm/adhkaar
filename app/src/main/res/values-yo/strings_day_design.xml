@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Yoruba translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="day_design_share_image">Pín àwòrán</string>
+    <string name="day_design_save">Fi pamọ́</string>
+    <string name="day_design_year_ah">%1$s AH</string>
+    <string name="day_design_salam">Assalamu alaikum</string>
+    <string name="hero_reminder_in">Ìránnilétí ní %1$s</string>
+    <string name="moment_around">%1$s · ní nǹkan bí %2$s</string>
+    <string name="moment_now">%1$s · nísinsìnyí</string>
+    <string name="moment_tonight_around">Lálẹ́ òní · ní nǹkan bí %1$s</string>
+    <string name="moment_title_after_salah">Àdúà lẹ́yìn ìrun</string>
+    <string name="moment_title_before_sleep">Àdúà ṣáájú oorun</string>
+    <string name="moment_title_waking">Àdúà ìjí</string>
+    <string name="hero_best_until">Ó dára jù ṣáájú %1$s</string>
+    <string name="hero_best_read_times">Ó dára jù láti kà á láti %1$s títí di %2$s.</string>
+</resources>

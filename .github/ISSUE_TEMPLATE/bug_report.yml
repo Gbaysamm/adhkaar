@@ -1,0 +1,75 @@
+# For contributors reporting on GitHub. People using the app report from Settings > Contact us,
+# which reaches the maintainers without a GitHub account (tools/report-worker).
+name: Bug report
+description: Something doesn't work as it should. (In the app, Settings > Contact us is quicker.)
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting. Using the app? **Settings > Contact us** sends a report with your phone details for you.
+        Phone brands handle alarms very differently, so the phone and Android version really help.
+  - type: input
+    id: device
+    attributes:
+      label: Phone model
+      description: Brand and model, e.g. Xiaomi Redmi Note 13, Samsung Galaxy A15, Tecno Spark 20.
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Android version
+      description: Settings > About phone. Add the brand's version if you know it, e.g. Android 14 (HyperOS 1.0).
+    validations:
+      required: true
+  - type: input
+    id: app_version
+    attributes:
+      label: App version
+      description: At the bottom of Settings in the app, e.g. 0.1.0 (1).
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      description: The mode set for the morning and evening adhkaar.
+      options:
+        - Gentle
+        - Full screen
+        - Lockdown
+        - Not related to a mode
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: App language
+      description: e.g. English, Arabic, Urdu, Hausa, Yoruba, Igbo.
+    validations:
+      required: false
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What you did, step by step. For timing problems, say whether the phone was locked, the screen was on, another app was open, or the phone had restarted.
+      placeholder: |
+        1. Set morning to Full screen
+        2. Tapped Test morning in Settings and locked the phone
+        3. Waited two minutes
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened instead
+      description: Screenshots or a screen recording help a lot.
+    validations:
+      required: true

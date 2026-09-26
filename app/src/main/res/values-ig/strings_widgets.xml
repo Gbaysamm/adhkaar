@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Igbo translation. DRAFT by Claude: must be reviewed by a native Igbo speaker before release. -->
+<resources>
+    <!-- Home-screen widgets: names and one-line descriptions shown in the launcher's widget picker. -->
+    <string name="widget_name_today">Taa</string>
+    <string name="widget_name_next">Oge na-esote</string>
+    <string name="widget_name_sky">Mbara igwe ụbọchị</string>
+    <string name="widget_name_dhikr">Dhikr nke oge a</string>
+    <string name="widget_name_hijri">Ụbọchị Hijri</string>
+    <string name="widget_name_streak">Usoro ụbọchị</string>
+    <string name="widget_name_collection">Ụzọ mkpirisi nchịkọta</string>
+    <string name="widget_desc_today">Adhkaar gị na-esote, oge fọdụrụ, na otu mmetụ iji malite</string>
+    <string name="widget_desc_next">Adhkaar gị na-esote na mgbe ọ ga-abụ</string>
+    <string name="widget_desc_sky">Ụbọchị site na Fajr ruo Maghrib, ya na anyanwụ ebe ọ nọ ugbu a</string>
+    <string name="widget_desc_dhikr">Dhikr dị mkpirikpi na nkọwa ya, ọhụrụ kwa awa ole na ole</string>
+    <string name="widget_desc_hijri">Ụbọchị Hijri taa na ụbọchị pụrụ iche na-abịa</string>
+    <string name="widget_desc_streak">Usoro gị, na ụtụtụ na mgbede izu a</string>
+    <string name="widget_desc_collection">Otu mmetụ banye na Mgbe salah gasịrị, Tupu ụra, Mgbe i tetara ma ọ bụ Ekpere kwa ụbọchị</string>
+
+    <!-- Widget styles, chosen when a widget is added. -->
+    <string name="widget_style_glass">Iko</string>
+    <string name="widget_style_glass_desc">Gbara ọchịchịrị, na-enwu nwayọọ, dị ka ngwa ahụ</string>
+    <string name="widget_style_parchment">Akwụkwọ ochie</string>
+    <string name="widget_style_parchment_desc">Agba ude na-ekpo ọkụ, ink gbara ọchịchịrị na ọla edo</string>
+    <string name="widget_style_clear">Doro anya</string>
+    <string name="widget_style_clear_desc">Enweghị azụ: ederede ọcha n\'elu foto azụ ekwentị gị</string>
+
+    <!-- Widget configuration screen. -->
+    <string name="widget_config_subtitle">Họrọ ka ọ ga-esi pụta na ihuenyo ụlọ gị.</string>
+    <string name="widget_config_style_title">Ụdị</string>
+    <string name="widget_config_collection_title">Ọ na-emepe</string>
+    <string name="widget_config_save">Chekwaa</string>
+
+    <string name="widget_countdown_in">n\'ime %1$s</string>
+
+    <string name="widget_event_today">%1$s taa</string>
+    <string name="widget_event_tomorrow">%1$s echi</string>
+    <!-- Always two days or more away. %1$s = the day's name, %2$d = days. -->
+    <plurals name="widget_event_in_days">
+        <item quantity="one">%1$s n\'ime ụbọchị %2$d</item>
+        <item quantity="other">%1$s n\'ime ụbọchị %2$d</item>
+    </plurals>
+    <string name="widget_hijri_month_year">%1$s %2$d</string>
+
+    <plurals name="widget_days_in_a_row">
+        <item quantity="one">ụbọchị n\'usoro</item>
+        <item quantity="other">ụbọchị n\'usoro</item>
+    </plurals>
+    <string name="widget_streak_start">Malite usoro gị taa</string>
+
+    <string name="widget_preview_days_in_a_row">ụbọchị n\'usoro</string>
+    <string name="widget_preview_dhikr_meaning">Otuto dịrị Allāh, ekele dịkwara Ya.</string>
+</resources>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arabic translation. Draft by Claude; please have a native speaker review before release. -->
+<resources>
+    <!-- Bottom tab bar -->
+    <string name="tab_today">اليوم</string>
+    <!-- Tab that opens the library of adhkaar (remembrances), not the app name -->
+    <string name="tab_adhkaar">الأذكار</string>
+    <string name="tab_insights">إحصاءات</string>
+    <string name="tab_settings">الإعدادات</string>
+
+    <!-- Reminder modes (strictness levels) -->
+    <string name="mode_gentle">لطيف</string>
+    <string name="mode_full_screen">ملء الشاشة</string>
+    <string name="mode_lockdown">القفل</string>
+    <string name="mode_gentle_description">يذكّرك إشعار في وقت الأذكار.</string>
+    <string name="mode_full_screen_description">تُفتح الأذكار تلقائيًا، حتى على شاشة القفل.</string>
+    <string name="mode_lockdown_description">تتوقف التطبيقات الأخرى حتى تُتمّ أذكارك. تعمل المكالمات دائمًا.</string>
+    <!-- Small badge next to the recommended mode -->
+    <string name="mode_recommended">موصى به</string>
+
+    <!-- Prayer-time calculation methods -->
+    <string name="calc_muslim_world_league">رابطة العالم الإسلامي</string>
+    <string name="calc_egyptian">الهيئة المصرية العامة للمساحة</string>
+    <string name="calc_karachi">جامعة العلوم الإسلامية، كراتشي</string>
+    <string name="calc_umm_al_qura">أم القرى، مكة المكرمة</string>
+    <string name="calc_dubai">دبي</string>
+    <string name="calc_qatar">قطر</string>
+    <string name="calc_kuwait">الكويت</string>
+    <string name="calc_moonsighting_committee">لجنة رؤية الهلال</string>
+    <string name="calc_singapore">سنغافورة</string>
+    <string name="calc_north_america">ISNA (أمريكا الشمالية)</string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">الإعدادات</string>
+    <string name="settings_group_mode">الوضع</string>
+    <string name="settings_mode_locked">يمكنك تغيير الوضع بعد انتهاء هذه الجلسة.</string>
+    <string name="settings_group_morning">الصباح</string>
+    <string name="settings_group_evening">المساء</string>
+    <string name="settings_group_prayer_times">مواقيت الصلاة</string>
+    <string name="settings_calc_method">طريقة الحساب</string>
+    <string name="settings_asr_time">وقت العصر</string>
+    <!-- Asr calculation: the majority (Shafi'i, Maliki, Hanbali) method -->
+    <string name="settings_asr_standard">الجمهور</string>
+    <!-- Asr calculation: the Hanafi method (later Asr) -->
+    <string name="settings_asr_hanafi">الحنفي</string>
+    <!-- After the maximum time, Lockdown stops and only a reminder remains -->
+    <!-- Short duration: %1$d = minutes (د = دقيقة) -->
+    <string name="settings_duration_minutes">%1$d د</string>
+    <!-- Short duration: %1$d = hours (س = ساعة) -->
+    <string name="settings_duration_hours">%1$d س</string>
+    <!-- Short duration: %1$d = hours, %2$d = minutes -->
+    <string name="settings_duration_hours_minutes">%1$d س %2$d د</string>
+    <string name="settings_group_reminders">التذكيرات</string>
+    <!-- A notification sent a few minutes before each session -->
+    <string name="settings_heads_up">تنبيه مسبق</string>
+    <string name="settings_heads_up_hint">قبل كل جلسة</string>
+    <!-- Value shown when a reminder is switched off -->
+    <string name="settings_off">متوقف</string>
+    <!-- Short number of minutes: %1$d = minutes -->
+    <string name="settings_minutes_short">%1$d د</string>
+    <string name="settings_after_salah">بعد الصلاة</string>
+    <!-- %1$d = number of minutes after each of the five daily prayers -->
+    <string name="settings_after_salah_hint">تذكير لطيف بعد كل صلاة بـ%1$d د</string>
+    <string name="settings_before_sleep">قبل النوم</string>
+    <string name="settings_before_sleep_hint">المس لتغيير الوقت</string>
+    <string name="settings_islamic_calendar">التقويم الإسلامي</string>
+    <!-- "White days" = the 13th, 14th and 15th of each Hijri month (ayyam al-bid) -->
+    <string name="settings_islamic_calendar_hint">الجمعة، الأيام البيض، رمضان، يوم عرفة، عاشوراء</string>
+    <string name="settings_friday_reminder">تذكير الجمعة</string>
+    <string name="settings_friday_reminder_hint">سورة الكهف والصلاة على النبي ﷺ</string>
+    <string name="settings_group_hijri">التاريخ الهجري</string>
+    <string name="settings_hijri_date">التاريخ الهجري</string>
+    <!-- Explains the Hijri day offset. The Sultan of Sokoto example is replaced by a generic
+         "the authority in your country". The −1 is wrapped in LTR isolate marks (U+2066/U+2069)
+         so the minus sign stays before the digit in right-to-left text. -->
+    <string name="settings_moon_sighting">اتباع رؤية الهلال في نيجيريا</string>
+    <string name="settings_moon_sighting_hint">التواريخ كما تعلنها لجنة رؤية الهلال التابعة لسلطان سوكوتو. تُحدَّث مرة كل يوم.</string>
+    <string name="settings_hijri_hint">إذا لم يُعلَن الشهر بعد، يُستخدم التاريخ المحسوب. عدّله هنا عند الحاجة؛ فمثلًا إذا أعلن سلطان سوكوتو بداية الشهر بعد التاريخ المحسوب بيوم، اختر −١.</string>
+    <string name="settings_group_reading">القراءة</string>
+    <string name="settings_arabic_size">حجم الخط العربي</string>
+    <!-- Text size as a percentage: %1$d = percent -->
+    <string name="settings_percent">%1$d%%</string>
+    <string name="settings_auto_advance">الانتقال التلقائي</string>
+    <string name="settings_auto_advance_hint">الانتقال إلى التالي عند اكتمال العدّ</string>
+    <string name="settings_auto_play">تشغيل التلاوة تلقائيًا</string>
+    <string name="settings_auto_play_hint">عند توفّر تسجيل</string>
+    <string name="settings_haptics">الاهتزاز</string>
+    <string name="settings_haptics_hint">اهتزاز خفيف مع كل عدّة</string>
+    <string name="settings_transliteration">الكتابة الصوتية</string>
+    <string name="settings_translation">الترجمة</string>
+    <string name="settings_group_phone">الهاتف</string>
+    <string name="settings_permissions">الأذونات والبطارية</string>
+    <string name="settings_permissions_hint">لتصلك أذكارك في وقتها</string>
+    <string name="settings_test_hint">جرّب على هذا الهاتف: تبدأ جلسة بعد دقيقة واحدة بوضعك الحالي. اقفل الشاشة أو افتح تطبيقًا آخر أثناء الانتظار.</string>
+    <string name="settings_test_morning">تجربة الصباح</string>
+    <string name="settings_test_evening">تجربة المساء</string>
+    <!-- Toast after scheduling a test session -->
+    <string name="settings_test_toast">تبدأ بعد دقيقة</string>
+    <!-- Shown under the app name and version at the bottom of Settings -->
+    <string name="settings_footer_tagline">مفتوح المصدر · بلا إعلانات · بلا تتبّع</string>
+    <string name="settings_prayer_fajr">الفجر</string>
+    <string name="settings_prayer_asr">العصر</string>
+    <string name="settings_morning_adhkaar">أذكار الصباح</string>
+    <string name="settings_evening_adhkaar">أذكار المساء</string>
+    <!-- %1$s = time of the next session, e.g. "6:15 AM" -->
+    <string name="settings_next_at">الموعد التالي %1$s</string>
+    <!-- Segmented option: %1$s = prayer name (Fajr or Asr) -->
+    <string name="settings_after_prayer">بعد %1$s</string>
+    <string name="settings_fixed_time">وقت ثابت</string>
+    <!-- %1$s = prayer name (Fajr or Asr) -->
+    <string name="settings_minutes_after_prayer">الدقائق بعد %1$s</string>
+    <string name="settings_time">الوقت</string>
+    <string name="settings_choose_time">اختر وقتًا</string>
+    <string name="settings_set_time">تعيين الوقت</string>
+    <!-- Accessibility label for the stepper's minus button -->
+    <string name="settings_decrease">إنقاص</string>
+    <!-- Accessibility label for the stepper's plus button -->
+    <string name="settings_increase">زيادة</string>
+    <string name="settings_location_error">تعذّر تحديد الموقع. شغّل خدمة الموقع وحاول مجددًا.</string>
+    <string name="settings_location_denied">رُفض إذن الموقع. ستُستخدم الأوقات الثابتة.</string>
+    <string name="settings_location_set">تم تحديد الموقع</string>
+    <string name="settings_use_location">استخدم موقعي</string>
+    <!-- %1$s = latitude, %2$s = longitude, already formatted like "6.52" -->
+    <string name="settings_location_coords">%1$s°، %2$s° · المس للتحديث</string>
+    <string name="settings_location_hint">يُستخدم مرة واحدة لحساب وقتي الفجر والعصر على هذا الهاتف</string>
+
+    <!-- Phone setup screen -->
+    <!-- Accessibility label for the back arrow -->
+    <string name="setup_back">رجوع</string>
+    <string name="setup_title">إعداد الهاتف</string>
+    <string name="setup_intro">يوفّر أندرويد البطارية بإيقاف التطبيقات في الخلفية. اسمح بهذه الإعدادات مرة واحدة لتصلك أذكارك في وقتها، كل مرة.</string>
+    <string name="setup_all_set">كل شيء جاهز</string>
+    <!-- Progress: %1$d = steps done, %2$d = total steps. Same wording for every quantity. -->
+    <plurals name="setup_ready_count">
+        <item quantity="zero">%1$d من %2$d جاهزة</item>
+        <item quantity="one">%1$d من %2$d جاهزة</item>
+        <item quantity="two">%1$d من %2$d جاهزة</item>
+        <item quantity="few">%1$d من %2$d جاهزة</item>
+        <item quantity="many">%1$d من %2$d جاهزة</item>
+        <item quantity="other">%1$d من %2$d جاهزة</item>
+    </plurals>
+    <!-- %1$s = phone brand(s), e.g. "Samsung" or "Xiaomi / Redmi / POCO" -->
+    <string name="setup_oem_title">هواتف %1$s</string>
+    <string name="setup_oem_body">يوقف هاتفك التطبيقات العاملة في الخلفية ما لم تسمح لها.</string>
+    <string name="setup_open_settings">افتح الإعدادات</string>
+    <!-- Button that opens an online guide for this phone brand -->
+    <string name="setup_guide">الدليل</string>
+    <string name="setup_oem_done">لقد فعلت ذلك</string>
+    <!-- Small badge on a permission card -->
+    <string name="setup_required">مطلوب</string>
+    <!-- Small badge on a permission card -->
+    <string name="setup_recommended">موصى به</string>
+    <!-- Accessibility label for the tick on a granted permission -->
+    <string name="setup_allowed">مسموح</string>
+    <string name="setup_allow">اسمح</string>
+
+    <!-- Permission requirements -->
+    <string name="req_notifications">الإشعارات</string>
+    <string name="req_notifications_why">ليتمكّن التطبيق من تنبيهك في وقت الأذكار.</string>
+    <string name="req_exact_alarms">المنبّهات والتذكيرات</string>
+    <string name="req_exact_alarms_why">يبدأ جلستك في الدقيقة المحددة، حتى والهاتف في وضع السكون.</string>
+    <string name="req_full_screen">تنبيهات ملء الشاشة</string>
+    <string name="req_full_screen_why">يفتح الأذكار فوق شاشة القفل، كالمنبّه.</string>
+    <string name="req_overlay">الظهور فوق التطبيقات الأخرى</string>
+    <string name="req_overlay_why">يفتح الأذكار أثناء استخدامك تطبيقًا آخر، ويوقف التطبيقات الأخرى في وضع القفل.</string>
+    <string name="req_usage_access">الوصول إلى بيانات الاستخدام</string>
+    <string name="req_usage_access_why">يتيح لوضع القفل معرفة التطبيق المفتوح. لا يُسجَّل شيء، ولا يغادر شيء هاتفك.</string>
+    <string name="req_battery">بطارية غير مقيّدة</string>
+    <string name="req_battery_why">يمنع أندرويد من إيقاف التطبيق فيفوتك وقت أذكارك.</string>
+
+    <!-- Brand-specific auto-start steps. Quoted names are the labels in the phone maker's own settings screens;
+         the Arabic labels below are descriptive and should be checked against each brand's Arabic UI. -->
+    <string name="oem_xiaomi_step_autostart">فعّل «التشغيل التلقائي» لتطبيق Adhkaar</string>
+    <string name="oem_xiaomi_step_other_permissions">في «أذونات أخرى»، اسمح بـ«عرض النوافذ المنبثقة أثناء العمل في الخلفية» و«العرض على شاشة القفل»</string>
+    <string name="oem_xiaomi_step_battery">موفّر البطارية: اضبط Adhkaar على «بلا قيود»</string>
+    <string name="oem_oppo_step_autolaunch">اسمح بـ«التشغيل التلقائي» لتطبيق Adhkaar</string>
+    <string name="oem_oppo_step_battery">البطارية: اسمح بالنشاط في الخلفية</string>
+    <string name="oem_vivo_step_autostart">اسمح بـ«التشغيل التلقائي» لتطبيق Adhkaar</string>
+    <string name="oem_vivo_step_battery">البطارية: اسمح باستهلاك طاقة عالٍ في الخلفية</string>
+    <string name="oem_huawei_step_app_launch">تشغيل التطبيقات: اضبط Adhkaar على «الإدارة يدويًا» وفعّل المفاتيح الثلاثة</string>
+    <string name="oem_samsung_step_sleeping">البطارية: تأكّد أن Adhkaar ليس ضمن «التطبيقات الخاملة» أو «التطبيقات الخاملة بعمق»</string>
+    <string name="oem_samsung_step_never_sleeping">أضفه إلى «التطبيقات التي لا تخمل أبدًا»</string>
+    <string name="oem_oneplus_step_autolaunch">اسمح بـ«التشغيل التلقائي» لتطبيق Adhkaar</string>
+    <string name="oem_oneplus_step_battery">تحسين البطارية: «عدم التحسين»</string>
+    <string name="oem_tecno_step_autostart">Phone Master ← التشغيل التلقائي: اسمح لـ Adhkaar</string>
+    <string name="oem_tecno_step_power_saving">أوقف قيود «توفير الطاقة» عن Adhkaar</string>
+    <string name="oem_asus_step_autostart">Mobile Manager ← التشغيل التلقائي: اسمح لـ Adhkaar</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_finish_blocked">اسمح بكل ما سبق لإكمال الإعداد. إن لم يسمح هاتفك بأحدها، فارجع واختر وضعًا ألطف.</string>
+    <string name="setup_oem_checked_ok">تم التحقق على هاتفك: مسموح.</string>
+    <string name="setup_oem_checked_missing">غير مسموح بعد. افتح الإعدادات وفعّل هذه الخيارات، ثم عُد.</string>
+    <string name="onboarding_finish">إنهاء</string>
+    <string name="onboarding_continue">متابعة</string>
+    <!-- Qur'an 2:152 in its original Arabic. %1$s is replaced by onboarding_verse_emphasis, shown in italics. -->
+    <string name="onboarding_verse">فَاذْكُرُونِي\n%1$s</string>
+    <!-- The emphasised (italic) last word of onboarding_verse -->
+    <string name="onboarding_verse_emphasis">أَذْكُرْكُمْ</string>
+    <!-- Qur'an reference: surah Al-Baqarah, chapter 2, verse 152 -->
+    <string name="onboarding_verse_reference">البقرة: ١٥٢</string>
+    <string name="onboarding_pill_on_time">في وقتها</string>
+    <string name="onboarding_pill_focused">بتركيز</string>
+    <string name="onboarding_pill_private">بخصوصية</string>
+    <string name="onboarding_get_started">لنبدأ</string>
+    <string name="onboarding_mode_title">ما مدى حزم\nالتذكير؟</string>
+    <string name="onboarding_mode_body">يمكنك تغيير ذلك في أي وقت. تعمل المكالمات ومكالمات الطوارئ دائمًا.</string>
+    <string name="onboarding_times_title">متى تبدأ\nالأذكار؟</string>
+    <string name="onboarding_times_body">تبدأ أذكار الصباح بعد صلاة الفجر، وأذكار المساء بعد صلاة العصر. الأوقات مضبوطة على الأوقات المحلية الشائعة، ويمكنك تغييرها إلى أوقات مسجدك متى شئت.</string>
+    <string name="onboarding_morning">الصباح</string>
+    <string name="onboarding_evening">المساء</string>
+    <!-- %1$d = minutes, %2$s = prayer name (Fajr or Asr) -->
+    <string name="onboarding_minutes_after_prayer">%1$d د بعد %2$s</string>
+    <string name="onboarding_fine_tune">يمكنك ضبط الوقتين بدقة من الإعدادات.</string>
+    <!-- Language setting -->
+    <string name="settings_group_language">اللغة</string>
+    <string name="settings_language">لغة التطبيق</string>
+    <!-- Option to use the phone's own language instead of choosing one. -->
+    <string name="settings_language_system">لغة الهاتف</string>
+</resources>

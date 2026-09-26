@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Urdu translation. Draft by Claude; please have a native speaker review before release. -->
+<!-- Strings used outside the Compose UI: notifications, calendar reminders, Hijri calendar, Lockdown overlay. -->
+<resources>
+
+    <!-- Notification channels (shown in the system notification settings) -->
+    <string name="channel_session_name">اذکار کا وقت</string>
+    <string name="channel_session_description">آپ کے منتخب کردہ وقت پر صبح اور شام کے اذکار کھولتا ہے</string>
+    <string name="channel_gentle_name">یاد دہانیاں</string>
+    <string name="channel_gentle_description">نشست سے پہلے پیشگی اطلاع، جمعہ اور روزے کے دنوں کی یاد دہانیاں</string>
+
+    <!-- Session notifications. -->
+    <string name="notif_title_morning">صبح کے اذکار</string>
+    <string name="notif_title_evening">شام کے اذکار</string>
+    <string name="notif_session_text_morning">صبح کے اذکار کا وقت ہو گیا ہے۔ شروع کرنے کے لیے ٹیپ کریں۔</string>
+    <string name="notif_session_text_evening">شام کے اذکار کا وقت ہو گیا ہے۔ شروع کرنے کے لیے ٹیپ کریں۔</string>
+    <!-- Notification action button. %1$d = number of minutes the session is postponed. -->
+    <!-- Heads-up before a session. %1$s = session title, %2$d = minutes until it starts. -->
+    <plurals name="notif_pre_reminder_title">
+        <item quantity="one">%1$s، %2$d منٹ میں</item>
+        <item quantity="other">%1$s، %2$d منٹ میں</item>
+    </plurals>
+    <string name="notif_pre_reminder_text">جو کام کر رہے ہیں اسے سمیٹنے کا ایک لمحہ۔</string>
+
+    <!-- Collection reminders. -->
+    <string name="reminder_after_salah_title">نماز کے بعد</string>
+    <string name="reminder_after_salah_text">چند لمحے ذکر کے، اپنی نماز کی تکمیل کے لیے۔</string>
+    <string name="reminder_before_sleep_title">سونے سے پہلے</string>
+    <string name="reminder_before_sleep_text">اپنے دن کا اختتام رات کے اذکار کے ساتھ کریں۔</string>
+
+    <!-- Calendar reminders. %1$s = the event title, e.g. "The Day of Arafah". -->
+    <string name="reminder_eve_title">کل: %1$s</string>
+    <!-- Friday greeting. ﷺ kept as is. -->
+    <string name="reminder_friday_title">جمعہ مبارک</string>
+    <string name="reminder_friday_body">آج سورۃ الکہف پڑھیں، اور نبی ﷺ پر کثرت سے درود بھیجیں۔</string>
+
+    <!-- Special days of the Islamic calendar. Arabic phrases are written in Arabic script for Urdu readers. -->
+    <string name="event_jumuah_title">جمعہ</string>
+    <string name="event_jumuah_body">سورۃ الکہف پڑھیں اور نبی ﷺ پر کثرت سے درود بھیجیں۔</string>
+    <string name="event_last_ten_nights_title">آخری دس راتیں</string>
+    <string name="event_last_ten_nights_body">لیلۃ القدر تلاش کریں۔ یہ دعا پڑھیں: اَللّٰهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي</string>
+    <string name="event_ramadan_title">رمضان</string>
+    <string name="event_ramadan_body">قرآن کا مہینہ۔ اپنی تلاوت اور دعا میں اضافہ کریں۔</string>
+    <string name="event_eid_al_fitr_title">عید الفطر</string>
+    <string name="event_eid_al_fitr_body">عید مبارک۔ تکبیر کہیں، اور اگر ابھی ادا نہیں کیا تو نماز سے پہلے صدقۂ فطر ادا کریں۔</string>
+    <string name="event_dhul_hijjah_ten_title">بہترین دس دن</string>
+    <string name="event_dhul_hijjah_ten_body">تہلیل، تکبیر اور تحمید کثرت سے کریں: لَا إِلٰهَ إِلَّا اللّٰهُ، اَللّٰهُ أَكْبَرُ، اَلْحَمْدُ لِلّٰهِ۔</string>
+    <string name="event_arafah_title">یومِ عرفہ</string>
+    <string name="event_arafah_body">آج کا روزہ گزشتہ اور آئندہ سال کے گناہوں کا کفارہ ہے۔</string>
+    <string name="event_eid_al_adha_title">عید الاضحیٰ</string>
+    <string name="event_eid_al_adha_body">عید مبارک۔ ایامِ تشریق میں تکبیر کے ساتھ اللہ کو یاد کریں۔</string>
+    <!-- "Tasuʿa" = the 9th of Muharram. -->
+    <string name="event_tasua_title">تاسوعا</string>
+    <string name="event_tasua_body">کل عاشورہ کے ساتھ آج بھی روزہ رکھیں، جیسا کہ نبی ﷺ کا ارادہ تھا۔</string>
+    <!-- "Ashura" = the 10th of Muharram. -->
+    <string name="event_ashura_title">عاشورہ</string>
+    <string name="event_ashura_body">آج کا روزہ گزشتہ سال کے گناہوں کا کفارہ ہے۔</string>
+    <!-- The 13th, 14th and 15th of each Hijri month. -->
+    <string name="event_white_days_title">ایامِ بیض</string>
+    <string name="event_white_days_body">مہینے کی 13، 14 اور 15 تاریخ کا روزہ سنت ہے۔</string>
+
+    <!-- Hijri (Islamic lunar) month names, customary Urdu spelling. -->
+    <string name="hijri_month_muharram">محرم</string>
+    <string name="hijri_month_safar">صفر</string>
+    <string name="hijri_month_rabi_al_awwal">ربیع الاول</string>
+    <string name="hijri_month_rabi_al_thani">ربیع الثانی</string>
+    <string name="hijri_month_jumada_al_ula">جمادی الاولیٰ</string>
+    <string name="hijri_month_jumada_al_akhirah">جمادی الثانیہ</string>
+    <string name="hijri_month_rajab">رجب</string>
+    <string name="hijri_month_shaban">شعبان</string>
+    <string name="hijri_month_ramadan">رمضان</string>
+    <string name="hijri_month_shawwal">شوال</string>
+    <string name="hijri_month_dhu_al_qadah">ذوالقعدہ</string>
+    <string name="hijri_month_dhu_al_hijjah">ذوالحجہ</string>
+    <!-- Hijri date, e.g. "14 Rabiʿ al-Thani 1448". %1$d = day of month, %2$s = month name, %3$d = Hijri year. -->
+    <string name="hijri_month_date_format">%1$d %2$s %3$d</string>
+
+    <!-- Lockdown overlay, drawn over other apps until the session is completed. -->
+</resources>

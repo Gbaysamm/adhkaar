@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Urdu translation. Draft by Claude; please have a native speaker review before release. -->
+<!-- The dual Hijri/Gregorian calendar (Today and Insights) and the streak sheet on Today. -->
+<resources>
+    <string name="calendar_hijri">ہجری</string>
+    <string name="calendar_gregorian">عیسوی</string>
+    <string name="calendar_gregorian_span">%1$s – %2$s %3$d</string>
+    <string name="calendar_gregorian_span_years">%1$s %2$d – %3$s %4$d</string>
+    <string name="calendar_day_dates">%1$s · %2$s</string>
+    <string name="calendar_open_reminder">اس دن کی یاد دہانی کھولیں</string>
+    <string-array name="calendar_weekdays_arabic">
+        <item>Ahd</item>
+        <item>Ith</item>
+        <item>Thul</item>
+        <item>Arb</item>
+        <item>Kha</item>
+        <item>Jum</item>
+        <item>Sabt</item>
+    </string-array>
+
+    <string name="streak_title">آپ کا تسلسل</string>
+    <string name="streak_open_cd">تسلسل کی تفصیل</string>
+    <plurals name="streak_to_milestone">
+        <item quantity="one">%2$d دن کے تسلسل تک %1$d دن باقی</item>
+        <item quantity="other">%2$d دن کے تسلسل تک %1$d دن باقی</item>
+    </plurals>
+    <string name="streak_line_start">ہر تسلسل ایک دن سے شروع ہوتا ہے، اور آج وہ دن ہو سکتا ہے۔</string>
+    <string name="streak_line_waiting">آج کے اذکار آپ کے تسلسل کو آگے بڑھائیں گے۔</string>
+    <string name="streak_line_best">یہ اب تک آپ کا سب سے لمبا تسلسل ہے۔ نرمی سے، دن بہ دن اسے قائم رکھیں۔</string>
+    <string name="streak_line_done">آج کا دن شمار ہو گیا۔ اللہ آپ سے قبول فرمائے۔</string>
+    <string name="streak_close">بند کریں</string>
+</resources>

@@ -1,0 +1,56 @@
+name: Content correction
+description: A mistake in the Arabic, transliteration, translation, reference, a daily reminder or a Hijri date.
+labels: ["content", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Content changes are checked by a content reviewer and need a source (see GOVERNANCE.md).
+        Daily reminders from Tanzil, QuranEnc and HadeethEnc are shown exactly as published. If the mistake is in their text, we'll pass it on to the publisher.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where is it?
+      options:
+        - Morning or evening adhkaar
+        - Another collection (after salah, sleep, waking, everyday duas)
+        - Daily reminder (verse or hadith)
+        - Special-day reminder (Friday, Ramadan, Eid and others)
+        - Meaning in another language
+        - Hijri date
+        - Audio recitation
+    validations:
+      required: true
+  - type: input
+    id: item
+    attributes:
+      label: Which item?
+      description: The title, the first words, or the date shown. A screenshot is welcome below.
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What the app shows now
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: What it should be
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: Book and hadith number, edition and page, or the publisher's URL. For Hijri dates, the official announcement.
+    validations:
+      required: true
+  - type: input
+    id: background
+    attributes:
+      label: Your background (optional)
+      description: e.g. student of hadith, Arabic teacher, native Hausa speaker. It helps the reviewers, but anyone may report.
+    validations:
+      required: false

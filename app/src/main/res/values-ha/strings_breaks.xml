@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hausa translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="break_take">Ɗauki hutu</string>
+    <string name="break_title">Kana bukatar ɗan lokaci?</string>
+    <string name="break_rings_again">Wayarka a buɗe take har hutun ya ƙare. Sannan ƙararrawa za ta sake yin ƙara.</string>
+    <string name="break_no_time">Babu isasshen lokaci da ya rage don hutu</string>
+    <string name="break_done_by">Dole a kammala kafin %1$s</string>
+    <plurals name="break_option_minutes">
+        <item quantity="one">Minti %1$d</item>
+        <item quantity="other">Minti %1$d</item>
+    </plurals>
+    <plurals name="break_option_hours">
+        <item quantity="one">Awa %1$d</item>
+        <item quantity="other">Awa %1$d</item>
+    </plurals>
+    <string name="break_notification">Ana hutu har %1$s · dole a kammala kafin %2$s</string>
+    <string name="session_lockdown_toast">Kammala azkar, ko ka ɗauki hutu</string>
+    <plurals name="break_left">
+        <item quantity="one">Saura zikiri %1$d</item>
+        <item quantity="other">Saura azkar %1$d</item>
+    </plurals>
+    <string name="break_back_at">Za ka dawo ƙarfe %1$s. Sannan faɗakarwa za ta sake ƙara.</string>
+    <string name="break_keep_reading">Ci gaba da karatu</string>
+    <string name="break_pick_time">Zaɓi lokaci</string>
+    <string name="break_pause_for">Dakata na %1$s</string>
+    <string name="break_unit_min">minti</string>
+    <string name="break_unit_hour">awa</string>
+    <string name="break_confirm_title">Kafin ka dakata</string>
+    <plurals name="break_confirm_left">
+        <item quantity="one">Saura zikiri %1$d kawai. Mintuna kaɗan, azkar na yau sun cika.</item>
+        <item quantity="other">Saura azkar %1$d kawai. Mintuna kaɗan, azkar na yau sun cika.</item>
+    </plurals>
+    <plurals name="break_confirm_streak">
+        <item quantity="one">Ka kiyaye su kwana %1$d a jere.</item>
+        <item quantity="other">Ka kiyaye su kwanaki %1$d a jere. Kada yau ta zama giɓi.</item>
+    </plurals>
+    <string name="break_confirm_hadith">Misalin wanda ke ambaton Ubangijinsa da wanda ba ya ambatonSa kamar rayayye ne da matacce.</string>
+    <string name="break_confirm_source">Sahih al-Bukhari 6407</string>
+    <string name="break_confirm_stay">Tsaya ka gama</string>
+    <string name="break_confirm_pause">Duk da haka, dakata na %1$s</string>
+    <string name="session_end_test">Gwaji · Kammala gwaji</string>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Urdu translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="reminder_date_both">%1$s · %2$s</string>
+    <string name="reminder_gregorian_date">%1$s %2$d %3$s %4$d</string>
+    <string name="reminder_kind_verse">قرآن سے</string>
+    <string name="reminder_kind_hadith">سنت سے</string>
+    <string name="reminder_kind_fact">اس دن کے بارے میں</string>
+    <string name="reminder_save_image">تصویر محفوظ کریں</string>
+    <string name="reminder_saved">Pictures/Adhkaar میں محفوظ ہو گئی</string>
+    <string name="reminder_save_failed">تصویر محفوظ نہیں ہو سکی</string>
+    <string name="reminder_share_chooser">یاد دہانی شیئر کریں</string>
+    <string name="reminder_image_preview">شیئر کی جانے والی تصویر کا پیش منظر</string>
+
+    <string name="day_card_today_is">آج %1$s ہے</string>
+    <string name="day_card_tag_month">%1$s %2$s</string>
+    <string name="day_card_year_ah">%1$s ھ</string>
+    <string name="day_card_pill">%1$s %2$s %3$s %4$s  ›  %5$s %6$s %7$s</string>
+    <string-array name="day_card_month_short">
+        <item>محرم</item>
+        <item>صفر</item>
+        <item>ربیع الاول</item>
+        <item>ربیع الثانی</item>
+        <item>جمادی الاولیٰ</item>
+        <item>جمادی الثانیہ</item>
+        <item>رجب</item>
+        <item>شعبان</item>
+        <item>رمضان</item>
+        <item>شوال</item>
+        <item>ذوالقعدہ</item>
+        <item>ذوالحجہ</item>
+    </string-array>
+    <string-array name="day_card_weekdays">
+        <item>أحد</item>
+        <item>إثنين</item>
+        <item>ثلاثاء</item>
+        <item>أربعاء</item>
+        <item>خميس</item>
+        <item>جمعة</item>
+        <item>سبت</item>
+    </string-array>
+</resources>

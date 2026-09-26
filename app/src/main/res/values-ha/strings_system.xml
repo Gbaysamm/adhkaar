@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hausa translation. DRAFT by Claude: must be reviewed by a native Hausa speaker before release. -->
+<!-- Strings used outside the Compose UI: notifications, calendar reminders, Hijri calendar, Lockdown overlay. -->
+<resources>
+
+    <!-- Notification channels (shown in the system notification settings) -->
+    <string name="channel_session_name">Lokacin azkar</string>
+    <string name="channel_session_description">Yana buɗe azkar na safe da na yamma a lokacin da ka zaɓa</string>
+    <string name="channel_gentle_name">Tunatarwa</string>
+    <string name="channel_gentle_description">Sanarwa kafin zama, tunatarwar Juma\'a da ta ranakun azumi</string>
+
+    <!-- Session notifications. -->
+    <string name="notif_title_morning">Azkar na safe</string>
+    <string name="notif_title_evening">Azkar na yamma</string>
+    <string name="notif_session_text_morning">Lokacin azkar na safe ya yi. Taɓa don farawa.</string>
+    <string name="notif_session_text_evening">Lokacin azkar na yamma ya yi. Taɓa don farawa.</string>
+    <!-- Notification action button. %1$d = number of minutes the session is postponed. -->
+    <!-- Heads-up before a session. %1$s = session title, %2$d = minutes until it starts. -->
+    <plurals name="notif_pre_reminder_title">
+        <item quantity="one">%1$s nan da minti %2$d</item>
+        <item quantity="other">%1$s nan da minti %2$d</item>
+    </plurals>
+    <string name="notif_pre_reminder_text">Ɗan lokaci don kammala abin da kake yi.</string>
+
+    <!-- Collection reminders. -->
+    <string name="reminder_after_salah_title">Bayan sallah</string>
+    <string name="reminder_after_salah_text">Ɗan zikiri kaɗan don rufe sallarka.</string>
+    <string name="reminder_before_sleep_title">Kafin barci</string>
+    <string name="reminder_before_sleep_text">Rufe ranarka da azkar na dare.</string>
+
+    <!-- Calendar reminders. %1$s = the event title, e.g. "Ranar Arafa". -->
+    <string name="reminder_eve_title">Gobe: %1$s</string>
+    <!-- Friday greeting. ﷺ kept as is. -->
+    <string name="reminder_friday_title">Barka da Juma\'a</string>
+    <string name="reminder_friday_body">Karanta Suratul Kahfi yau, kuma ka yawaita salati ga Annabi ﷺ.</string>
+
+    <!-- Special days of the Islamic calendar. -->
+    <string name="event_jumuah_title">Juma\'a</string>
+    <string name="event_jumuah_body">Karanta Suratul Kahfi, kuma ka yawaita salati ga Annabi ﷺ.</string>
+    <string name="event_last_ten_nights_title">Darare goma na ƙarshe</string>
+    <!-- Contains a transliterated Arabic duʿa; kept as is. -->
+    <string name="event_last_ten_nights_body">Nemi Lailatul Ƙadari. Ka ce: Allāhumma innaka ʿafuwwun tuḥibbul-ʿafwa faʿfu ʿannī.</string>
+    <string name="event_ramadan_title">Ramadan</string>
+    <string name="event_ramadan_body">Watan Ƙur\'ani. Ƙara karatunka da addu\'arka.</string>
+    <string name="event_eid_al_fitr_title">Ƙaramar Sallah</string>
+    <string name="event_eid_al_fitr_body">Barka da Sallah. Yi kabbara, kuma ka fitar da zakkar fid da kai kafin sallar Idi idan ba ka yi ba.</string>
+    <string name="event_dhul_hijjah_ten_title">Kwanaki goma mafi falala</string>
+    <!-- Contains transliterated Arabic phrases; kept as is. -->
+    <string name="event_dhul_hijjah_ten_body">Ƙara tahlili, kabbara da tahmidi: lā ilāha illallāh, Allāhu akbar, al-ḥamdu lillāh.</string>
+    <string name="event_arafah_title">Ranar Arafa</string>
+    <string name="event_arafah_body">Azumin yau yana kankare zunuban shekarar da ta wuce da ta shekara mai zuwa.</string>
+    <string name="event_eid_al_adha_title">Babbar Sallah</string>
+    <string name="event_eid_al_adha_body">Barka da Sallah. Ka ambaci Allah da kabbara a cikin kwanakin Tashriƙ.</string>
+    <!-- "Tasu'a" = the 9th of Muharram. -->
+    <string name="event_tasua_title">Tasu\'a</string>
+    <string name="event_tasua_body">Yi azumin yau tare da na Ashura gobe, kamar yadda Annabi ﷺ ya yi niyya.</string>
+    <!-- "Ashura" = the 10th of Muharram. -->
+    <string name="event_ashura_title">Ashura</string>
+    <string name="event_ashura_body">Azumin yau yana kankare zunuban shekarar da ta wuce.</string>
+    <!-- The 13th, 14th and 15th of each Hijri month (Ayyamul Bidh). -->
+    <string name="event_white_days_title">Kwanaki farare</string>
+    <string name="event_white_days_body">Azumin 13, 14 da 15 ga wata sunna ne.</string>
+
+    <!-- Hijri (Islamic lunar) month names, in customary Hausa spelling. -->
+    <string name="hijri_month_muharram">Muharram</string>
+    <string name="hijri_month_safar">Safar</string>
+    <string name="hijri_month_rabi_al_awwal">Rabi\'ul Awwal</string>
+    <string name="hijri_month_rabi_al_thani">Rabi\'us Sani</string>
+    <string name="hijri_month_jumada_al_ula">Jimada Ula</string>
+    <string name="hijri_month_jumada_al_akhirah">Jimada Sani</string>
+    <string name="hijri_month_rajab">Rajab</string>
+    <string name="hijri_month_shaban">Sha\'aban</string>
+    <string name="hijri_month_ramadan">Ramadan</string>
+    <string name="hijri_month_shawwal">Shawwal</string>
+    <string name="hijri_month_dhu_al_qadah">Zul Ƙa\'ada</string>
+    <string name="hijri_month_dhu_al_hijjah">Zul Hijja</string>
+    <!-- Hijri date, e.g. "14 ga Rabi'us Sani 1448". %1$d = day of month, %2$s = month name, %3$d = Hijri year. -->
+    <string name="hijri_month_date_format">%1$d ga %2$s %3$d</string>
+
+    <!-- Lockdown overlay, drawn over other apps until the session is completed. -->
+</resources>

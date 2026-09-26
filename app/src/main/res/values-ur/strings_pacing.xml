@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Urdu translation. Draft by Claude; please have a native speaker review before release. -->
+<resources>
+    <!-- ===== Pacing and leaving a session ===== -->
+    <string name="pacing_take_your_time">اسے اطمینان سے پڑھیں</string>
+    <string name="pacing_leave_collection">مکمل کیے بغیر چھوڑ دیں؟</string>
+    <string name="pacing_remaining">%2$d میں سے %1$d باقی</string>
+    <string name="pacing_keep_going">جاری رکھیں</string>
+    <string name="pacing_leave">چھوڑ دیں</string>
+</resources>

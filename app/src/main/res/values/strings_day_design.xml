@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The day's reminder sheet, the day card image, and the best-time line and greeting on Today. -->
+<resources>
+    <!-- Main button in the day sheet: share the day card image. Keep short. -->
+    <string name="day_design_share_image">Share image</string>
+    <!-- Second button in the day sheet: save the day card image to the phone's gallery. Keep short. -->
+    <string name="day_design_save">Save</string>
+    <!-- A Hijri year, e.g. "1448 AH". %1$s = the year. -->
+    <string name="day_design_year_ah">%1$s AH</string>
+    <!-- Caption above the line on Today's main card showing the window for the session, from its prayer to its end. -->
+    <!-- Label on the marker for the current moment on that line. Keep very short. -->
+    <!-- Label on the mark for the time the session reminder is set. %1$s = time, e.g. "Reminder 4:12 PM". -->
+    <!-- The Islamic greeting over the time-of-day greeting on Today, in Latin letters. Arabic and Urdu show the Arabic form instead. -->
+    <string name="day_design_salam">Assalamu alaikum</string>
+    <!-- The greeting in Arabic script, shown in every language. -->
+    <string name="day_design_salam_arabic" translatable="false">السلام عليكم</string>
+    <string name="hero_reminder_in">Reminder in %1$s</string>
+    <string name="moment_around">%1$s · around %2$s</string>
+    <string name="moment_now">%1$s · now</string>
+    <string name="moment_tonight_around">Tonight · around %1$s</string>
+    <string name="moment_title_after_salah">Adhkaar after salah</string>
+    <string name="moment_title_before_sleep">Adhkaar before sleep</string>
+    <string name="moment_title_waking">Adhkaar on waking</string>
+    <string name="hero_best_until">Best before %1$s</string>
+    <string name="hero_best_read_times">Best read from %1$s until %2$s.</string>
+</resources>

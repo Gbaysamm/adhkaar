@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Urdu translation. Draft by Claude; please have a native speaker review before release. -->
+<resources>
+    <!-- Shared formatting -->
+    <!-- Countdown when the target time has arrived (lowercase, used inline). -->
+    <string name="format_now">ابھی</string>
+    <!-- Compact countdown. %1$d = hours, %2$d = minutes. -->
+    <string name="format_hours_minutes">%1$d گھنٹے %2$d منٹ</string>
+    <!-- Compact countdown under an hour. %1$d = minutes. -->
+    <string name="format_minutes">%1$d منٹ</string>
+    <!-- Full date, e.g. "Thursday, 25 September". %1$s = weekday name, %2$d = day of month, %3$s = month name. -->
+    <string name="format_gregorian_date">%1$s، %2$d %3$s</string>
+
+    <!-- Prayer names -->
+    <string name="prayer_fajr">فجر</string>
+    <!-- Sunrise time shown alongside the prayer times (not a prayer itself). -->
+    <string name="prayer_sunrise">طلوعِ آفتاب</string>
+    <string name="prayer_dhuhr">ظہر</string>
+    <string name="prayer_asr">عصر</string>
+    <string name="prayer_maghrib">مغرب</string>
+    <string name="prayer_isha">عشاء</string>
+
+    <!-- Today screen -->
+    <!-- Greeting. %1$s = time-of-day word (today_greeting_morning etc.), shown in italics. -->
+    <string name="today_greeting">%1$s بخیر</string>
+    <string name="today_greeting_morning">صبح</string>
+    <string name="today_greeting_afternoon">سہ پہر</string>
+    <string name="today_greeting_evening">شام</string>
+
+    <string name="today_section_prayer_times">نماز کی یاد دہانیاں</string>
+    <string name="today_section_this_week">اس ہفتے</string>
+    <string name="today_section_last_30_days">پچھلے 30 دن</string>
+    <!-- Section header for today's morning and evening sessions. -->
+    <string name="today_section_today">آج</string>
+
+    <!-- %1$d = number of consecutive days. -->
+    <plurals name="today_streak_days">
+        <item quantity="one">مسلسل %1$d دن</item>
+        <item quantity="other">مسلسل %1$d دن</item>
+    </plurals>
+    <string name="today_start_streak">آج سے اپنا تسلسل شروع کریں</string>
+    <!-- %1$d = days with adhkaar done, %2$d = total days in the period (30). -->
+    <plurals name="today_days_of_total">
+        <item quantity="one">%2$d میں سے %1$d دن</item>
+        <item quantity="other">%2$d میں سے %1$d دن</item>
+    </plurals>
+
+    <!-- Chart legend and session tile names. -->
+    <string name="today_morning">صبح</string>
+    <string name="today_evening">شام</string>
+    <!-- Chart legend: days on which both morning and evening were done. -->
+    <string name="today_both">دونوں</string>
+
+    <string name="today_stat_sessions">نشستیں</string>
+    <string name="today_stat_full_days">مکمل دن</string>
+    <string name="today_stat_best_streak">بہترین تسلسل</string>
+
+    <!-- Session status pills. -->
+    <string name="today_status_done">مکمل</string>
+    <string name="today_status_waiting">منتظر</string>
+    <!-- The session is switched off in settings. -->
+    <string name="today_status_off">بند</string>
+    <string name="today_status_upcoming">آنے والا</string>
+    <string name="today_status_not_done">ادا نہیں ہوا</string>
+    <string name="today_turned_off">بند ہے</string>
+    <!-- %1$s = a clock time, e.g. "5:26 AM". -->
+    <string name="today_today_at">آج، %1$s</string>
+
+    <string name="today_hero_morning">صبح کے اذکار</string>
+    <string name="today_hero_evening">شام کے اذکار</string>
+    <!-- Overline on the main card, shown in capitals. -->
+    <string name="today_hero_waiting">آپ کے منتظر</string>
+    <!-- Overline on the main card, shown in capitals. -->
+    <string name="today_hero_up_next">اگلا</string>
+    <string name="today_hero_its_time">وقت ہو گیا</string>
+    <string name="today_hero_not_scheduled">مقرر نہیں</string>
+    <string name="today_today">آج</string>
+    <string name="today_tomorrow">کل</string>
+    <!-- %1$d = number of adhkaar (remembrances) in the session. -->
+    <plurals name="today_adhkaar_count">
+        <item quantity="one">%1$d ذکر</item>
+        <item quantity="other">%1$d اذکار</item>
+    </plurals>
+    <!-- Estimated duration. %1$d = minutes. -->
+    <plurals name="today_about_minutes">
+        <item quantity="one">تقریباً %1$d منٹ</item>
+        <item quantity="other">تقریباً %1$d منٹ</item>
+    </plurals>
+    <string name="today_continue">جاری رکھیں</string>
+    <string name="today_begin_now">ابھی شروع کریں</string>
+    <!-- Timeline label above the time the user's adhkaar begin. -->
+    <string name="today_timeline_begin">آغاز</string>
+
+    <!-- Overline above today's special occasions, shown in capitals. -->
+    <string name="today_events_overline">آج</string>
+
+    <!-- %1$s = prayer name. -->
+    <string name="today_prayer_now">اب %1$s</string>
+    <!-- %1$s = prayer name, %2$s = countdown such as "1h 20m". -->
+    <string name="today_prayer_in">%1$s، %2$s میں</string>
+    <!-- Label on the next upcoming prayer's pill. -->
+    <string name="today_next_prayer">اگلی</string>
+
+    <string name="today_setup_title">فون کی ترتیب مکمل کریں</string>
+    <!-- %1$s = reminder mode name (Gentle, Full screen, Lockdown), %2$d = number of missing permissions. -->
+    <plurals name="today_setup_body">
+        <item quantity="one">%1$s کو درست طور پر کام کرنے کے لیے %2$d مزید اجازت درکار ہے۔</item>
+        <item quantity="other">%1$s کو درست طور پر کام کرنے کے لیے %2$d مزید اجازتیں درکار ہیں۔</item>
+    </plurals>
+
+    <!-- Insights screen -->
+    <string name="insights_title">جائزہ</string>
+    <string name="insights_subtitle">وقت کے ساتھ آپ کا ذکر</string>
+    <!-- Label under the current streak number; the number is shown separately. -->
+    <plurals name="insights_day_streak">
+        <item quantity="one">دن مسلسل</item>
+        <item quantity="other">دن مسلسل</item>
+    </plurals>
+    <string name="insights_best_streak">بہترین تسلسل</string>
+    <string name="insights_sessions_this_month">اس ماہ کی نشستیں</string>
+    <string name="insights_full_days_this_month">اس ماہ کے مکمل دن</string>
+    <string name="insights_section_calendar">کیلنڈر</string>
+    <string name="insights_section_rhythm">آپ کا معمول</string>
+    <string name="insights_section_collections">اس ماہ کے مجموعے</string>
+    <string name="insights_morning">صبح</string>
+    <string name="insights_evening">شام</string>
+    <!-- Chart legend: days on which both morning and evening were done. -->
+    <string name="insights_both">دونوں</string>
+    <string name="insights_weekday_title">اذکار والے دن · پچھلے 8 ہفتے</string>
+    <!-- How many times a collection was read. %1$d = count; "×" means "times". -->
+    <string name="insights_collection_count">×%1$d</string>
+    <string name="insights_not_enough_data">ابھی کافی ڈیٹا نہیں</string>
+    <!-- Caption under the user's typical completion time. -->
+    <string name="insights_usually_around">عموماً تقریباً</string>
+    <!-- Calendar header. %1$s = month name, %2$d = year. -->
+    <string name="insights_month_year">%1$s %2$d</string>
+    <string name="insights_previous_month">پچھلا مہینہ</string>
+    <string name="insights_next_month">اگلا مہینہ</string>
+    <string name="insights_day_both_done">صبح اور شام کے اذکار مکمل</string>
+    <string name="insights_day_morning_done">صبح کے اذکار مکمل</string>
+    <string name="insights_day_evening_done">شام کے اذکار مکمل</string>
+    <string name="insights_day_still_to_come">ابھی باقی ہے</string>
+    <string name="insights_day_none">کوئی اذکار درج نہیں</string>
+    <!-- Screen reader label for a calendar day. %1$s = date (ISO, e.g. 2026-09-25), %2$s = what was done (insights_day_cd_*). -->
+    <string name="insights_day_cd">%1$s: %2$s</string>
+    <string name="insights_day_cd_both">صبح اور شام</string>
+    <string name="insights_day_cd_morning">صبح</string>
+    <string name="insights_day_cd_evening">شام</string>
+    <string name="insights_day_cd_none">کوئی نہیں</string>
+    <!-- Screen reader label for a weekday bar. %1$s = weekday name, %2$d = days done, %3$d = total days. -->
+    <plurals name="insights_weekday_cd">
+        <item quantity="one">%1$s: %3$d میں سے %2$d دن</item>
+        <item quantity="other">%1$s: %3$d میں سے %2$d دن</item>
+    </plurals>
+
+    <!-- Home-screen widget -->
+    <string name="widget_morning">صبح</string>
+    <string name="widget_evening">شام</string>
+    <!-- Shown in place of a time when the session is due now. -->
+    <string name="widget_now">ابھی</string>
+    <string name="widget_waiting">آپ کے منتظر</string>
+    <!-- %1$d = number of consecutive days. -->
+    <plurals name="widget_streak_days">
+        <item quantity="one">مسلسل %1$d دن</item>
+        <item quantity="other">مسلسل %1$d دن</item>
+    </plurals>
+    <string name="widget_continue">جاری رکھیں</string>
+    <string name="widget_opens_at">کھلے گا %1$s</string>
+    <string name="widget_begin">شروع کریں</string>
+    <string name="widget_done">مکمل</string>
+    <string name="widget_today">آج</string>
+    <string name="widget_tomorrow">کل</string>
+    <!-- After the countdown: "6:52 left". -->
+</resources>

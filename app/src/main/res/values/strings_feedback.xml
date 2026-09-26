@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Contact us screen (Settings > Help) -->
+    <string name="contact_title">Contact us</string>
+    <string name="contact_intro">Tell us about a problem, an idea or a mistake in the text. We read every message.</string>
+    <string name="contact_topic_label">About</string>
+    <string name="contact_topic_problem">Problem</string>
+    <string name="contact_topic_suggestion">Suggestion</string>
+    <string name="contact_topic_correction">Correction</string>
+    <string name="contact_topic_other">Other</string>
+    <string name="contact_message_problem">What happened?</string>
+    <string name="contact_message_suggestion">Your idea</string>
+    <string name="contact_message_correction">What should change?</string>
+    <string name="contact_message_other">Your message</string>
+    <string name="contact_placeholder_problem">What were you doing, and what went wrong?</string>
+    <string name="contact_placeholder_suggestion">What would make the app better for you?</string>
+    <string name="contact_placeholder_correction">Which dhikr or translation, and what should it say?</string>
+    <string name="contact_placeholder_other">Write to us here</string>
+    <string name="contact_reply_label">Your email or phone (so we can reply)</string>
+    <string name="contact_reply_placeholder">Optional</string>
+    <string name="contact_details_title">Details we include</string>
+    <string name="contact_details_note">Only these, to help us find problems. Nothing personal.</string>
+    <string name="contact_min_hint">Write a few more words to send</string>
+    <string name="contact_send">Send</string>
+    <string name="contact_sending">Sending…</string>
+    <string name="contact_failed">Couldn\'t send. Check your connection.</string>
+    <string name="contact_try_again">Try again</string>
+    <string name="contact_email_instead">Email instead</string>
+    <string name="contact_sent_title">JazakAllahu khayran</string>
+    <string name="contact_sent_body">Your message has reached us. If you left a way to reach you, we\'ll reply there.</string>
+    <string name="contact_back">Back to Settings</string>
+    <string name="contact_copy">Copy message and phone details</string>
+    <string name="contact_copied">Copied. Paste it anywhere to send it to us.</string>
+</resources>

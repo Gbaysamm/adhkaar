@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Igbo translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="channel_salah_name">Ncheta salah</string>
+    <string name="channel_salah_description">Ncheta dị nwayọọ ịkwadebe maka salah ọ bụla, n\'oge ị họọrọ</string>
+    <string name="notif_salah_title">Oge ịkwadebe maka %1$s</string>
+    <string name="notif_salah_text">Ncheta ịkwadebe maka salah — soro adhan ụlọ salah gị.</string>
+    <string name="prayer_times_begin_note">Mgbe ị tọrọ ebe ị nọ, salah ọ bụla ga-egosikwa mgbe oge ya na-amalite site na ngụkọ. Ọ bụ naanị maka ntụnyere: ngwa a na-agbaso oge gị dị n\'elu mgbe niile.</string>
+    <string name="salah_reminders_title">Ncheta salah</string>
+    <string name="salah_reminders_note">Ndị a bụ ncheta ịkwadebe maka salah, ọ bụghị oge salah kpọmkwem. Tọọ oge ụlọ salah gị, ha ga-anọchi ndị a.</string>
+    <string name="today_prayer_times_caption">Oge ịkwadebe maka salah, ọ bụghị oge salah kpọmkwem.</string>
+    <string name="today_day_reminder">Ncheta nke taa</string>
+    <string name="channel_reminder_name">Ncheta</string>
+    <string name="channel_reminder_description">Mgbe salah gasịrị, tupu ụra na ọkwa tupu adhkaar. Ha na-akụ ma na-ama jijiji.</string>
+    <string name="popup_salah_body">Hapụ ihe ị na-eme nkeji ole na ole. Mee alwala, gaa ụlọ alakụba ma ọ bụrụ na ị nwere ike.</string>
+    <string name="popup_step_wudu">Alwala</string>
+    <string name="popup_step_masjid">Ụlọ alakụba</string>
+    <string name="popup_step_phone">Debe ekwentị</string>
+    <string name="popup_salah_hadith">Omume Allah kacha hụ n\'anya: salah n\'oge ya.</string>
+    <string name="popup_salah_source">Sahih al-Bukhari 527</string>
+    <string name="popup_ready">Ana m akwado</string>
+    <string name="popup_open">Mepee</string>
+    <string name="popup_later">Emesịa</string>
+</resources>

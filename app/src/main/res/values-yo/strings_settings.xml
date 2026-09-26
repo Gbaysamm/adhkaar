@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Yoruba translation. DRAFT by Claude: must be reviewed by a native Yoruba speaker before release. -->
+<resources>
+    <!-- Bottom tab bar -->
+    <string name="tab_today">Òní</string>
+    <!-- Tab that opens the library of adhkaar, not the app name -->
+    <string name="tab_adhkaar">Adhkaar</string>
+    <string name="tab_insights">Àgbéyẹ̀wò</string>
+    <string name="tab_settings">Ètò</string>
+
+    <!-- Reminder modes (strictness levels) -->
+    <string name="mode_gentle">Jẹ́jẹ́</string>
+    <string name="mode_full_screen">Ojú-ìbojú kíkún</string>
+    <string name="mode_lockdown">Títìpa</string>
+    <string name="mode_gentle_description">Ìfitónilétí yóò rán yín létí ní àkókò adhkaar.</string>
+    <string name="mode_full_screen_description">Adhkaar yóò ṣí fúnra wọn, kódà lórí ojú títìpa fóònù.</string>
+    <string name="mode_lockdown_description">Àwọn áàpù mìíràn yóò dúró títí ẹ ó fi parí. Ìpè máa ń ṣiṣẹ́ nígbà gbogbo.</string>
+    <string name="mode_recommended">A DÁBÀÁ RẸ̀</string>
+
+    <!-- Prayer-time calculation methods (institution names kept as proper nouns) -->
+    <string name="calc_muslim_world_league">Muslim World League</string>
+    <string name="calc_egyptian">Egyptian General Authority</string>
+    <string name="calc_karachi">University of Islamic Sciences, Karachi</string>
+    <string name="calc_umm_al_qura">Umm al-Qura, Makkah</string>
+    <string name="calc_dubai">Dubai</string>
+    <string name="calc_qatar">Qatar</string>
+    <string name="calc_kuwait">Kuwait</string>
+    <string name="calc_moonsighting_committee">Moonsighting Committee</string>
+    <string name="calc_singapore">Singapore</string>
+    <string name="calc_north_america">ISNA (Àríwá Amẹ́ríkà)</string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">Ètò</string>
+    <string name="settings_group_mode">Ìpele ìránlétí</string>
+    <string name="settings_mode_locked">Ẹ lè yí ìpele padà lẹ́yìn tí ìjókòó yìí bá parí.</string>
+    <string name="settings_group_morning">Àárọ̀</string>
+    <string name="settings_group_evening">Ìrọ̀lẹ́</string>
+    <string name="settings_group_prayer_times">Àkókò ìrun</string>
+    <string name="settings_calc_method">Ọ̀nà ìṣirò</string>
+    <string name="settings_asr_time">Àkókò Ààsàn</string>
+    <!-- Asr calculation: the majority (Shafi'i, Maliki, Hanbali) method -->
+    <string name="settings_asr_standard">Déédéé</string>
+    <string name="settings_asr_hanafi">Hanafi</string>
+    <!-- Short duration: %1$d = minutes -->
+    <string name="settings_duration_minutes">%1$dm</string>
+    <!-- Short duration: %1$d = hours -->
+    <string name="settings_duration_hours">%1$dh</string>
+    <!-- Short duration: %1$d = hours, %2$d = minutes -->
+    <string name="settings_duration_hours_minutes">%1$dh %2$dm</string>
+    <string name="settings_group_reminders">Ìránlétí</string>
+    <string name="settings_heads_up">Ìránlétí ṣáájú</string>
+    <string name="settings_heads_up_hint">Ṣáájú ìjókòó kọ̀ọ̀kan</string>
+    <string name="settings_off">Pípa</string>
+    <string name="settings_minutes_short">Ìṣẹ́jú %1$d</string>
+    <string name="settings_after_salah">Lẹ́yìn ìrun</string>
+    <!-- %1$d = number of minutes after each of the five daily prayers -->
+    <string name="settings_after_salah_hint">Ìránlétí ní ìṣẹ́jú %1$d lẹ́yìn ìrun kọ̀ọ̀kan</string>
+    <string name="settings_before_sleep">Ṣáájú oorun</string>
+    <string name="settings_before_sleep_hint">Ẹ tẹ̀ ẹ́ láti yí àkókò padà</string>
+    <string name="settings_islamic_calendar">Kàlẹ́ńdà Ìsìláàmù</string>
+    <!-- "White days" = the 13th, 14th and 15th of each Hijri month (ayyam al-bid) -->
+    <string name="settings_islamic_calendar_hint">Jímọ̀, ọjọ́ funfun, Ramadan, Arafah, Ashura</string>
+    <string name="settings_friday_reminder">Ìránlétí Jímọ̀</string>
+    <string name="settings_friday_reminder_hint">Surah al-Kahf àti salawat</string>
+    <string name="settings_group_hijri">Ọjọ́ Hijri</string>
+    <string name="settings_hijri_date">Ọjọ́ Hijri</string>
+    <string name="settings_moon_sighting">Tẹ̀lé ìrí oṣù ní Nàìjíríà</string>
+    <string name="settings_moon_sighting_hint">Àwọn ọjọ́ tí ìgbìmọ̀ ìrí oṣù ti Sultan ti Sokoto kéde. A máa ń ṣàyẹ̀wò lẹ́ẹ̀kan lójúmọ́.</string>
+    <string name="settings_hijri_hint">Tí wọn kò bá tí ì kéde oṣù náà, ọjọ́ tí a ṣírò ni a ó lò. Ṣàtúnṣe rẹ̀ níbí tí ó bá yẹ; fún àpẹẹrẹ, tí Sultan ti Sokoto bá kéde ìbẹ̀rẹ̀ oṣù ní ọjọ́ kan lẹ́yìn èyí tí a ṣírò, yan −1.</string>
+    <string name="settings_group_reading">Kíkà</string>
+    <string name="settings_arabic_size">Ìtóbi Lárúbáwá</string>
+    <!-- Text size as a percentage: %1$d = percent -->
+    <string name="settings_percent">%1$d%%</string>
+    <string name="settings_auto_advance">Ìtẹ̀síwájú aládàáṣe</string>
+    <string name="settings_auto_advance_hint">Lọ sí èyí tó kàn nígbà tí iye bá pé</string>
+    <string name="settings_auto_play">Kíkà aládàáṣe</string>
+    <string name="settings_auto_play_hint">Bí ohùn kíkà bá wà</string>
+    <string name="settings_haptics">Ìgbọ̀nrìrì</string>
+    <string name="settings_haptics_hint">Ìgbọ̀nrìrì díẹ̀ pẹ̀lú kíkà kọ̀ọ̀kan</string>
+    <string name="settings_transliteration">Ìkọsílẹ̀ ìpè</string>
+    <string name="settings_translation">Ìtumọ̀</string>
+    <string name="settings_group_phone">Fóònù</string>
+    <string name="settings_permissions">Ìyọ̀ǹda &amp; bátìrì</string>
+    <string name="settings_permissions_hint">Ẹ rí i dájú pé adhkaar yín ń dé lásìkò</string>
+    <string name="settings_test_hint">Ẹ dán an wò lórí fóònù yìí: ìjókòó kan yóò bẹ̀rẹ̀ ní ìṣẹ́jú kan pẹ̀lú ìpele yín lọ́wọ́lọ́wọ́. Ẹ ti ojú fóònù pa tàbí kí ẹ ṣí áàpù mìíràn nígbà tí ẹ ń dúró.</string>
+    <string name="settings_test_morning">Dán àárọ̀ wò</string>
+    <string name="settings_test_evening">Dán ìrọ̀lẹ́ wò</string>
+    <string name="settings_test_toast">Yóò bẹ̀rẹ̀ ní ìṣẹ́jú 1</string>
+    <string name="settings_footer_tagline">Orísun ṣíṣí · Kò sí ìpolówó · Kò sí ìtọpinpin</string>
+    <string name="settings_prayer_fajr">Suubi</string>
+    <string name="settings_prayer_asr">Ààsàn</string>
+    <string name="settings_morning_adhkaar">Adhkaar àárọ̀</string>
+    <string name="settings_evening_adhkaar">Adhkaar ìrọ̀lẹ́</string>
+    <!-- %1$s = time of the next session, e.g. "6:15 AM" -->
+    <string name="settings_next_at">Èyí tó kàn: %1$s</string>
+    <!-- Segmented option: %1$s = prayer name -->
+    <string name="settings_after_prayer">Lẹ́yìn %1$s</string>
+    <string name="settings_fixed_time">Àkókò tí kò yí</string>
+    <!-- %1$s = prayer name -->
+    <string name="settings_minutes_after_prayer">Ìṣẹ́jú lẹ́yìn %1$s</string>
+    <string name="settings_time">Àkókò</string>
+    <string name="settings_choose_time">Yan àkókò</string>
+    <string name="settings_set_time">Ṣètò àkókò</string>
+    <string name="settings_decrease">Dín kù</string>
+    <string name="settings_increase">Fi kún</string>
+    <string name="settings_location_error">A kò rí ibi tí ẹ wà. Ẹ tan Location, kí ẹ sì tún gbìyànjú.</string>
+    <string name="settings_location_denied">A kò gba ìyọ̀ǹda ibi tí ẹ wà. Àkókò tí kò yí ni a ó lò.</string>
+    <string name="settings_location_set">A ti ṣètò ibi tí ẹ wà</string>
+    <string name="settings_use_location">Lo ibi tí mo wà</string>
+    <!-- %1$s = latitude, %2$s = longitude -->
+    <string name="settings_location_coords">%1$s°, %2$s° · ẹ tẹ̀ láti ṣàtúnṣe</string>
+    <string name="settings_location_hint">A ó lò ó lẹ́ẹ̀kan láti ṣírò Suubi àti Ààsàn lórí fóònù yìí</string>
+
+    <!-- Phone setup screen -->
+    <string name="setup_back">Padà</string>
+    <string name="setup_title">Ètò fóònù</string>
+    <string name="setup_intro">Android máa ń dá àwọn áàpù dúró lẹ́yìn láti ṣọ́ bátìrì. Ẹ gba ìwọ̀nyí láàyè lẹ́ẹ̀kan, kí adhkaar yín lè máa dé lásìkò nígbà gbogbo.</string>
+    <string name="setup_all_set">Gbogbo rẹ̀ ti ṣetán</string>
+    <!-- Progress: %1$d = steps done, %2$d = total steps. -->
+    <plurals name="setup_ready_count">
+        <item quantity="other">%1$d nínú %2$d ti ṣetán</item>
+    </plurals>
+    <!-- %1$s = phone brand(s), e.g. "Samsung" or "Xiaomi / Redmi / POCO" -->
+    <string name="setup_oem_title">Fóònù %1$s</string>
+    <string name="setup_oem_body">Fóònù yín máa ń dá àwọn áàpù tó ń ṣiṣẹ́ lẹ́yìn dúró àfi tí ẹ bá gbà wọ́n láàyè.</string>
+    <string name="setup_open_settings">Ṣí ètò</string>
+    <string name="setup_guide">Ìtọ́sọ́nà</string>
+    <string name="setup_oem_done">Mo ti ṣe é</string>
+    <string name="setup_required">DANDAN</string>
+    <string name="setup_recommended">A DÁBÀÁ RẸ̀</string>
+    <string name="setup_allowed">A ti gbà á láàyè</string>
+    <string name="setup_allow">Gbà á láàyè</string>
+
+    <!-- Permission requirements -->
+    <string name="req_notifications">Ìfitónilétí</string>
+    <string name="req_notifications_why">Kí áàpù lè sọ fún yín ní àkókò adhkaar.</string>
+    <string name="req_exact_alarms">Aago ìdágìrì &amp; ìránlétí</string>
+    <string name="req_exact_alarms_why">Ó ń bẹ̀rẹ̀ ìjókòó yín ní ìṣẹ́jú gan-an, kódà nígbà tí fóònù bá ń sùn.</string>
+    <string name="req_full_screen">Ìkìlọ̀ ojú-ìbojú kíkún</string>
+    <string name="req_full_screen_why">Ó ń ṣí adhkaar lórí ojú títìpa, bí aago ìdágìrì.</string>
+    <string name="req_overlay">Hàn lórí àwọn áàpù mìíràn</string>
+    <string name="req_overlay_why">Ó ń ṣí adhkaar nígbà tí ẹ ń lo áàpù mìíràn, ó sì ń dá àwọn áàpù mìíràn dúró nínú Títìpa.</string>
+    <string name="req_usage_access">Ààyè ìlò áàpù</string>
+    <string name="req_usage_access_why">Ó jẹ́ kí Títìpa mọ áàpù tó ṣí. A kò kọ nǹkankan sílẹ̀, kò sì sí ohun tó kúrò lórí fóònù yín.</string>
+    <string name="req_battery">Bátìrì láìsí ìdíwọ́</string>
+    <string name="req_battery_why">Kò ní jẹ́ kí Android mú áàpù sùn, kí àkókò adhkaar yín má bàa kọjá.</string>
+
+    <!-- Brand-specific auto-start steps. Quoted labels kept in English as shown in the phone maker's settings. -->
+    <string name="oem_xiaomi_step_autostart">Ẹ tan Autostart fún Adhkaar</string>
+    <string name="oem_xiaomi_step_other_permissions">Nínú Other permissions, ẹ gba “Display pop-up windows while running in the background” àti “Show on lock screen” láàyè</string>
+    <string name="oem_xiaomi_step_battery">Battery saver: ẹ yan “No restrictions” fún Adhkaar</string>
+    <string name="oem_oppo_step_autolaunch">Ẹ gba Auto launch láàyè fún Adhkaar</string>
+    <string name="oem_oppo_step_battery">Battery: ẹ gba background activity láàyè</string>
+    <string name="oem_vivo_step_autostart">Ẹ gba Auto-start láàyè fún Adhkaar</string>
+    <string name="oem_vivo_step_battery">Battery: ẹ gba high background power consumption láàyè</string>
+    <string name="oem_huawei_step_app_launch">App launch: ẹ yí Adhkaar sí “Manage manually”, kí ẹ sì tan gbogbo bọ́tìnnì mẹ́ta</string>
+    <string name="oem_samsung_step_sleeping">Battery: ẹ rí i dájú pé Adhkaar kò sí nínú “Sleeping apps” tàbí “Deep sleeping apps”</string>
+    <string name="oem_samsung_step_never_sleeping">Ẹ fi kún “Never sleeping apps”</string>
+    <string name="oem_oneplus_step_autolaunch">Ẹ gba Auto-launch láàyè fún Adhkaar</string>
+    <string name="oem_oneplus_step_battery">Battery optimisation: ẹ yan “Don’t optimise”</string>
+    <string name="oem_tecno_step_autostart">Phone Master → Auto-start: ẹ gba Adhkaar láàyè</string>
+    <string name="oem_tecno_step_power_saving">Ẹ pa ìdíwọ́ “Power saving” fún Adhkaar</string>
+    <string name="oem_asus_step_autostart">Mobile Manager → Auto-start: ẹ gba Adhkaar láàyè</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_finish_blocked">Fún gbogbo àṣẹ tó wà lókè láti parí. Tí fóònù rẹ kò bá gbà ọ̀kan, padà sẹ́yìn kí o yan ipò tó rọrùn.</string>
+    <string name="setup_oem_checked_ok">A ti ṣàyẹ̀wò lórí fóònù rẹ: a ti gbà á.</string>
+    <string name="setup_oem_checked_missing">A kò tí ì gbà á. Ṣí ètò kí o tan àwọn wọ̀nyí, lẹ́yìn náà padà wá.</string>
+    <string name="onboarding_finish">Parí</string>
+    <string name="onboarding_continue">Tẹ̀síwájú</string>
+    <!-- Qur'an 2:152. %1$s = onboarding_verse_emphasis, shown in italics. -->
+    <string name="onboarding_verse">Ẹ rántí Mi,\nÈmi yóò rántí %1$s</string>
+    <string name="onboarding_verse_emphasis">yín.</string>
+    <string name="onboarding_verse_reference">Al-Baqarah 2:152</string>
+    <string name="onboarding_pill_on_time">Lásìkò</string>
+    <string name="onboarding_pill_focused">Ìfọkànsí</string>
+    <string name="onboarding_pill_private">Àṣírí</string>
+    <string name="onboarding_get_started">Ẹ jẹ́ ká bẹ̀rẹ̀</string>
+    <string name="onboarding_mode_title">Báwo ni ìránlétí\nṣe gbọdọ̀ le tó?</string>
+    <string name="onboarding_mode_body">Ẹ lè yí èyí padà nígbàkúgbà. Ìpè àti ìpè pàjáwìrì máa ń ṣiṣẹ́ nígbà gbogbo.</string>
+    <string name="onboarding_times_title">Ìgbà wo ni\nkí ó bẹ̀rẹ̀?</string>
+    <string name="onboarding_times_body">Àdúà òwúrọ̀ máa ń bẹ̀rẹ̀ lẹ́yìn ìrun Subh, àdúà ìrọ̀lẹ́ sì lẹ́yìn Asr. A ti ṣètò àwọn àkókò sí àkókò àdúgbò tó wọ́pọ̀; yí wọn padà sí ti mọ́ṣáláṣí rẹ nígbàkígbà.</string>
+    <string name="onboarding_morning">Àárọ̀</string>
+    <string name="onboarding_evening">Ìrọ̀lẹ́</string>
+    <!-- %1$d = minutes, %2$s = prayer name -->
+    <string name="onboarding_minutes_after_prayer">Ìṣẹ́jú %1$d lẹ́yìn %2$s</string>
+    <string name="onboarding_fine_tune">Ẹ lè ṣàtúnṣe àkókò méjèèjì nínú Ètò.</string>
+    <!-- Language setting -->
+    <string name="settings_group_language">Èdè</string>
+    <string name="settings_language">Èdè áàpù</string>
+    <!-- Option to use the phone's own language instead of choosing one. -->
+    <string name="settings_language_system">Tẹ̀lé fóònù</string>
+</resources>

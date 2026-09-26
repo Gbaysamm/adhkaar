@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Day sky: the arc from Fajr to Maghrib.
+     The style (and for the shortcut, the collection) is chosen in WidgetConfigActivity when the
+     widget is added; on Android 12+ it can be changed later with Reconfigure. -->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/widget_desc_sky"
+    android:previewImage="@drawable/widget_preview_sky"
+    android:previewLayout="@layout/widget_preview_sky"
+    android:initialLayout="@layout/glance_default_loading_layout"
+    android:configure="org.adhkaar.app.widget.WidgetConfigActivity"
+    android:widgetFeatures="reconfigurable"
+    android:minWidth="250dp"
+    android:minHeight="110dp"
+    android:minResizeWidth="180dp"
+    android:minResizeHeight="96dp"
+    android:targetCellWidth="4"
+    android:targetCellHeight="2"
+    android:maxResizeWidth="420dp"
+    android:maxResizeHeight="220dp"
+    android:resizeMode="horizontal|vertical"
+    android:widgetCategory="home_screen"
+    android:updatePeriodMillis="1800000" />

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arabic translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="reminder_sources_title">مصادر التذكيرات اليومية</string>
+    <string name="reminder_sources_quran_arabic">نص القرآن الكريم: Tanzil Quran Text (الرسم العثماني، الإصدار %1$s)، © Tanzil Project، بترخيص Creative Commons Attribution 3.0، دون أي تغيير. tanzil.net</string>
+    <string name="reminder_sources_quran_meaning">معاني القرآن: English Translation – Rowwad Translation Center، الإصدار %1$s، من موقع QuranEnc.com (موسوعة القرآن الكريم).</string>
+    <string name="reminder_sources_hadith">الأحاديث بالعربية والإنجليزية: HadeethEnc.com (موسوعة الأحاديث النبوية المترجمة)، الإصدار %1$s.</string>
+    <string name="reminder_sources_unchanged">تُعرض نصوص هذه المصادر كما نُشرت تماماً.</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arabic translation. Draft by Claude; please have a native speaker review before release. -->
+<resources>
+    <string name="window_opens_time">يحين وقتها الساعة %1$s</string>
+    <string name="window_opens_time_tomorrow">يحين وقتها غدًا الساعة %1$s</string>
+    <string name="window_late">متأخرة</string>
+    <string name="window_late_open_until">فات أفضل وقتها · متاحة حتى %1$s</string>
+
+    <string name="insights_on_time">في وقتها</string>
+    <plurals name="insights_on_time_count">
+        <item quantity="zero">%1$d من %2$d هذا الشهر</item>
+        <item quantity="one">%1$d من %2$d هذا الشهر</item>
+        <item quantity="two">%1$d من %2$d هذا الشهر</item>
+        <item quantity="few">%1$d من %2$d هذا الشهر</item>
+        <item quantity="many">%1$d من %2$d هذا الشهر</item>
+        <item quantity="other">%1$d من %2$d هذا الشهر</item>
+    </plurals>
+    <string name="insights_on_time_body">في أفضل وقت: من الفجر إلى الشروق، ومن العصر إلى المغرب</string>
+    <string name="insights_on_time_none">لا جلسات هذا الشهر بعد</string>
+    <string name="insights_day_late_morning">قيلت أذكار الصباح بعد أفضل وقتها</string>
+    <string name="insights_day_late_evening">قيلت أذكار المساء بعد أفضل وقتها</string>
+    <string name="insights_day_late_both">قيلت كلتاهما بعد أفضل وقتهما</string>
+    <string name="insights_day_cd_late">%1$s، متأخرة</string>
+    <string name="insights_hijri_month">%1$s %2$d</string>
+    <string name="insights_hijri_span">%1$s – %2$s %3$d</string>
+    <string name="insights_hijri_span_years">%1$s %2$d – %3$s %4$d</string>
+
+    <string name="today_section_collections">المجموعات</string>
+    <string name="today_collection_now">لهذه اللحظة</string>
+    <string name="today_collection_after_prayer">بعد %1$s</string>
+    <string name="today_collection_next_after">التالي · %1$s · %2$s</string>
+    <string name="today_collection_next_at">التالي · %1$s</string>
+</resources>

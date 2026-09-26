@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Salah reminders screen (Settings → Salah reminders): one time per prayer, the default or the user's masjid's -->
+    <!-- Section with the location and calculation method, used only to show the calculated start for comparison -->
+    <string name="prayer_times_group_calculation">Calculation</string>
+    <!-- Quiet line under a prayer: when its time begins by calculation. %1$s = time, e.g. "3:47 PM" -->
+    <string name="prayer_times_calculated">Calculated start %1$s</string>
+    <!-- Puts every prayer back to the app's default time -->
+    <string name="prayer_times_reset">Reset to defaults</string>
+    <!-- Subtitle of the Salah reminders row in Settings when the user set any time of their own -->
+    <string name="settings_prayer_times_adjusted">Set to your masjid\'s times</string>
+    <!-- Subtitle of the Salah reminders row in Settings with the default times -->
+    <string name="settings_prayer_times_default">Default times to get ready for salah</string>
+</resources>

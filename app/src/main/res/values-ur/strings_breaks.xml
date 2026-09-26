@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Urdu translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="break_take">وقفہ لیں</string>
+    <string name="break_title">تھوڑی دیر چاہیے؟</string>
+    <string name="break_rings_again">وقفہ ختم ہونے تک آپ کا فون آزاد ہے، پھر الارم دوبارہ بجے گا۔</string>
+    <string name="break_no_time">وقفے کے لیے کافی وقت باقی نہیں</string>
+    <string name="break_done_by">%1$s تک مکمل کرنا ضروری ہے</string>
+    <plurals name="break_option_minutes">
+        <item quantity="one">%1$d منٹ</item>
+        <item quantity="other">%1$d منٹ</item>
+    </plurals>
+    <plurals name="break_option_hours">
+        <item quantity="one">%1$d گھنٹہ</item>
+        <item quantity="other">%1$d گھنٹے</item>
+    </plurals>
+    <string name="break_notification">%1$s تک وقفہ · %2$s تک مکمل کرنا ضروری ہے</string>
+    <string name="session_lockdown_toast">اپنے اذکار مکمل کریں، یا وقفہ لیں</string>
+    <plurals name="break_left">
+        <item quantity="one">%1$d ذکر باقی</item>
+        <item quantity="other">%1$d اذکار باقی</item>
+    </plurals>
+    <string name="break_back_at">%1$s پر واپسی، پھر الرٹ دوبارہ بجے گا۔</string>
+    <string name="break_keep_reading">پڑھتے رہیں</string>
+    <string name="break_pick_time">وقت چنیں</string>
+    <string name="break_pause_for">%1$s کے لیے روکیں</string>
+    <string name="break_unit_min">منٹ</string>
+    <string name="break_unit_hour">گھنٹہ</string>
+    <string name="break_confirm_title">رکنے سے پہلے</string>
+    <plurals name="break_confirm_left">
+        <item quantity="one">بس %1$d ذکر باقی ہے۔ چند منٹ، اور آج کے اذکار مکمل۔</item>
+        <item quantity="other">بس %1$d اذکار باقی ہیں۔ چند منٹ، اور آج کے اذکار مکمل۔</item>
+    </plurals>
+    <plurals name="break_confirm_streak">
+        <item quantity="one">آپ نے %1$d دن مسلسل انہیں پڑھا ہے۔</item>
+        <item quantity="other">آپ نے %1$d دن مسلسل انہیں پڑھا ہے۔ آج کو خالی نہ جانے دیں۔</item>
+    </plurals>
+    <string name="break_confirm_hadith">جو اپنے رب کو یاد کرتا ہے اور جو نہیں کرتا، ان کی مثال زندہ اور مردہ کی سی ہے۔</string>
+    <string name="break_confirm_source">صحیح بخاری ۶۴۰۷</string>
+    <string name="break_confirm_stay">رکیں اور مکمل کریں</string>
+    <string name="break_confirm_pause">پھر بھی %1$s کے لیے روکیں</string>
+    <string name="session_end_test">ٹیسٹ · ٹیسٹ ختم کریں</string>
+</resources>

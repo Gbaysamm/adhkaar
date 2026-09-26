@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Yoruba translation. DRAFT by Claude: must be reviewed by a native Yoruba speaker before release. -->
+<resources>
+    <!-- Home-screen widgets: names and one-line descriptions shown in the launcher's widget picker. -->
+    <string name="widget_name_today">Òní</string>
+    <string name="widget_name_next">Àkókò tó kàn</string>
+    <string name="widget_name_sky">Ojú ọ̀run ọjọ́</string>
+    <string name="widget_name_dhikr">Dhikr ìsinsìnyí</string>
+    <string name="widget_name_hijri">Ọjọ́ Hijri</string>
+    <string name="widget_name_streak">Ìtẹ̀léra</string>
+    <string name="widget_name_collection">Ọ̀nà àbùjá àkójọ</string>
+    <string name="widget_desc_today">Adhkaar rẹ tó kàn, àkókò tó kù, àti fọwọ́kan ẹ̀ẹ̀kan láti bẹ̀rẹ̀</string>
+    <string name="widget_desc_next">Adhkaar rẹ tó kàn àti ìgbà rẹ̀</string>
+    <string name="widget_desc_sky">Ọjọ́ láti Fajr dé Maghrib, pẹ̀lú oòrùn níbi tí ó wà báyìí</string>
+    <string name="widget_desc_dhikr">Dhikr kúkúrú àti ìtumọ̀ rẹ̀, tuntun ní gbogbo wákàtí díẹ̀</string>
+    <string name="widget_desc_hijri">Ọjọ́ Hijri òní àti ọjọ́ pàtàkì tó ń bọ̀</string>
+    <string name="widget_desc_streak">Ìtẹ̀léra rẹ, àti òwúrọ̀ àti ìrọ̀lẹ́ ọ̀sẹ̀ yìí</string>
+    <string name="widget_desc_collection">Fọwọ́kan ẹ̀ẹ̀kan lọ sí Lẹ́yìn ìrun, Kí o tó sùn, Nígbà tí o bá jí tàbí Àdúà ojoojúmọ́</string>
+
+    <!-- Widget styles, chosen when a widget is added. -->
+    <string name="widget_style_glass">Gíláàsì</string>
+    <string name="widget_style_glass_desc">Dúdú pẹ̀lú ìmọ́lẹ̀ jẹ́ẹ́jẹ́, bí áàpù náà</string>
+    <string name="widget_style_parchment">Ìwé àtijọ́</string>
+    <string name="widget_style_parchment_desc">Àwọ̀ ọ̀rá-wàrà gbígbóná, yíǹkì dúdú àti wúrà</string>
+    <string name="widget_style_clear">Kedere</string>
+    <string name="widget_style_clear_desc">Kò sí ẹ̀yìn: ọ̀rọ̀ funfun lórí àwòrán ẹ̀yìn fóònù rẹ</string>
+
+    <!-- Widget configuration screen. -->
+    <string name="widget_config_subtitle">Yan bí yóò ṣe hàn lójú ìbojú ilé rẹ.</string>
+    <string name="widget_config_style_title">Ìrísí</string>
+    <string name="widget_config_collection_title">Ó ń ṣí</string>
+    <string name="widget_config_save">Fi pamọ́</string>
+
+    <string name="widget_countdown_in">ní %1$s</string>
+
+    <string name="widget_event_today">%1$s lónìí</string>
+    <string name="widget_event_tomorrow">%1$s lọ́la</string>
+    <!-- Always two days or more away. %1$s = the day's name, %2$d = days. -->
+    <plurals name="widget_event_in_days">
+        <item quantity="one">%1$s ní ọjọ́ %2$d</item>
+        <item quantity="other">%1$s ní ọjọ́ %2$d</item>
+    </plurals>
+    <string name="widget_hijri_month_year">%1$s %2$d</string>
+
+    <plurals name="widget_days_in_a_row">
+        <item quantity="one">ọjọ́ ní títẹ̀léra</item>
+        <item quantity="other">ọjọ́ ní títẹ̀léra</item>
+    </plurals>
+    <string name="widget_streak_start">Bẹ̀rẹ̀ ìtẹ̀léra rẹ lónìí</string>
+
+    <string name="widget_preview_days_in_a_row">ọjọ́ ní títẹ̀léra</string>
+    <string name="widget_preview_dhikr_meaning">Ògo ni fún Allāh, ìyìn sì ni fún Un.</string>
+</resources>

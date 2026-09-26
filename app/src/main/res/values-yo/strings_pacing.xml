@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Yoruba translation. DRAFT by Claude: must be reviewed by a native Yoruba speaker before release. -->
+<resources>
+    <!-- ===== Pacing and leaving a session ===== -->
+    <string name="pacing_take_your_time">Ẹ fara balẹ̀ pẹ̀lú èyí</string>
+    <string name="pacing_leave_collection">Ṣé ẹ fẹ́ lọ kí ẹ tó parí?</string>
+    <string name="pacing_remaining">Ó ku %1$d nínú %2$d</string>
+    <string name="pacing_keep_going">Ẹ tẹ̀síwájú</string>
+    <string name="pacing_leave">Ẹ lọ</string>
+</resources>

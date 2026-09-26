@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Igbo translation. DRAFT by Claude: must be reviewed by a native Igbo speaker before release. -->
+<resources>
+    <!-- Shared formatting -->
+    <!-- Countdown when the target time has arrived (lowercase, used inline). -->
+    <string name="format_now">ugbu a</string>
+    <!-- Compact countdown. %1$d = hours, %2$d = minutes. "awa" = hour, "nk" = nkeji (minute). -->
+    <string name="format_hours_minutes">%1$d awa %2$d nk</string>
+    <!-- Compact countdown under an hour. %1$d = minutes. -->
+    <string name="format_minutes">%1$d nk</string>
+    <!-- Full date. %1$s = weekday name, %2$d = day of month, %3$s = month name. -->
+    <string name="format_gregorian_date">%1$s, %2$d %3$s</string>
+
+    <!-- Prayer names -->
+    <string name="prayer_fajr">Fajr</string>
+    <!-- Sunrise time shown alongside the prayer times (not a prayer itself). -->
+    <string name="prayer_sunrise">Ọwụwa anyanwụ</string>
+    <string name="prayer_dhuhr">Dhuhr</string>
+    <string name="prayer_asr">Asr</string>
+    <string name="prayer_maghrib">Maghrib</string>
+    <string name="prayer_isha">Isha</string>
+
+    <!-- Today screen -->
+    <!-- Greeting. %1$s = time-of-day word (today_greeting_morning etc.), shown in italics. Igbo: "Ụtụtụ ọma". -->
+    <string name="today_greeting">%1$s ọma</string>
+    <string name="today_greeting_morning">Ụtụtụ</string>
+    <string name="today_greeting_afternoon">Ehihie</string>
+    <string name="today_greeting_evening">Mgbede</string>
+
+    <string name="today_section_prayer_times">Ncheta salah</string>
+    <string name="today_section_this_week">Izu a</string>
+    <string name="today_section_last_30_days">Ụbọchị 30 gara aga</string>
+    <!-- Section header for today's morning and evening sessions. -->
+    <string name="today_section_today">Taa</string>
+
+    <!-- %1$d = number of consecutive days. -->
+    <plurals name="today_streak_days">
+        <item quantity="other">Ụbọchị %1$d n\'usoro</item>
+    </plurals>
+    <string name="today_start_streak">Malite usoro gị taa</string>
+    <!-- %1$d = days with adhkaar done, %2$d = total days in the period (30). -->
+    <plurals name="today_days_of_total">
+        <item quantity="other">%1$d n\'ime ụbọchị %2$d</item>
+    </plurals>
+
+    <!-- Chart legend and session tile names. -->
+    <string name="today_morning">Ụtụtụ</string>
+    <string name="today_evening">Mgbede</string>
+    <!-- Chart legend: days on which both morning and evening were done. -->
+    <string name="today_both">Ha abụọ</string>
+
+    <string name="today_stat_sessions">Nnọkọ</string>
+    <string name="today_stat_full_days">Ụbọchị zuru ezu</string>
+    <string name="today_stat_best_streak">Usoro kacha ogologo</string>
+
+    <!-- Session status pills. -->
+    <string name="today_status_done">Emechaala</string>
+    <string name="today_status_waiting">Na-eche</string>
+    <!-- The session is switched off in settings. -->
+    <string name="today_status_off">Agbanyụọ</string>
+    <string name="today_status_upcoming">Na-abịa</string>
+    <string name="today_status_not_done">Emebeghị</string>
+    <string name="today_turned_off">Agbanyụọla</string>
+    <!-- %1$s = a clock time, e.g. "5:26 AM". -->
+    <string name="today_today_at">Taa, %1$s</string>
+
+    <string name="today_hero_morning">Adhkaar ụtụtụ</string>
+    <string name="today_hero_evening">Adhkaar mgbede</string>
+    <!-- Overline on the main card, shown in capitals. -->
+    <string name="today_hero_waiting">NA-ECHE GỊ</string>
+    <!-- Overline on the main card, shown in capitals. -->
+    <string name="today_hero_up_next">NKE NA-ESO</string>
+    <string name="today_hero_its_time">Oge eruola</string>
+    <string name="today_hero_not_scheduled">Ahazibeghị</string>
+    <string name="today_today">Taa</string>
+    <string name="today_tomorrow">Echi</string>
+    <!-- %1$d = number of adhkaar (remembrances) in the session. -->
+    <plurals name="today_adhkaar_count">
+        <item quantity="other">Adhkaar %1$d</item>
+    </plurals>
+    <!-- Estimated duration. %1$d = minutes. -->
+    <plurals name="today_about_minutes">
+        <item quantity="other">ihe dịka nkeji %1$d</item>
+    </plurals>
+    <string name="today_continue">Gaa n\'ihu</string>
+    <string name="today_begin_now">Malite ugbu a</string>
+    <!-- Timeline label above the time the user's adhkaar begin. -->
+    <string name="today_timeline_begin">Mmalite</string>
+
+    <!-- Overline above today's special occasions, shown in capitals. -->
+    <string name="today_events_overline">TAA</string>
+
+    <!-- %1$s = prayer name. -->
+    <string name="today_prayer_now">%1$s ugbu a</string>
+    <!-- %1$s = prayer name, %2$s = countdown such as "1 awa 20 nk". -->
+    <string name="today_prayer_in">%1$s n\'ime %2$s</string>
+    <!-- Label on the next upcoming prayer's pill. -->
+    <string name="today_next_prayer">Nke ọzọ</string>
+
+    <string name="today_setup_title">Mechaa nhazi ekwentị</string>
+    <!-- %1$s = reminder mode name, %2$d = number of missing permissions. -->
+    <plurals name="today_setup_body">
+        <item quantity="other">%1$s chọrọ ikike %2$d ọzọ ka ọ rụọ ọrụ nke ọma.</item>
+    </plurals>
+
+    <!-- Insights screen -->
+    <string name="insights_title">Nlebanya</string>
+    <string name="insights_subtitle">Ncheta gị, ka oge na-aga</string>
+    <!-- Label under the current streak number; the number is shown separately. -->
+    <plurals name="insights_day_streak">
+        <item quantity="other">Ụbọchị n\'usoro</item>
+    </plurals>
+    <string name="insights_best_streak">Usoro kacha ogologo</string>
+    <string name="insights_sessions_this_month">Nnọkọ n\'ọnwa a</string>
+    <string name="insights_full_days_this_month">Ụbọchị zuru ezu n\'ọnwa a</string>
+    <string name="insights_section_calendar">Kalịnda</string>
+    <string name="insights_section_rhythm">Omume gị</string>
+    <string name="insights_section_collections">Nchịkọta n\'ọnwa a</string>
+    <string name="insights_morning">Ụtụtụ</string>
+    <string name="insights_evening">Mgbede</string>
+    <!-- Chart legend: days on which both morning and evening were done. -->
+    <string name="insights_both">Ha abụọ</string>
+    <string name="insights_weekday_title">Ụbọchị e mere adhkaar · izu 8 gara aga</string>
+    <!-- How many times a collection was read. %1$d = count; "×" means "times". -->
+    <string name="insights_collection_count">×%1$d</string>
+    <string name="insights_not_enough_data">Ozi ezubeghị ezu</string>
+    <!-- Caption under the user's typical completion time. -->
+    <string name="insights_usually_around">Ọtụtụ mgbe, ihe dịka</string>
+    <!-- Calendar header. %1$s = month name, %2$d = year. -->
+    <string name="insights_month_year">%1$s %2$d</string>
+    <string name="insights_previous_month">Ọnwa gara aga</string>
+    <string name="insights_next_month">Ọnwa na-abịa</string>
+    <string name="insights_day_both_done">E mere adhkaar ụtụtụ na mgbede</string>
+    <string name="insights_day_morning_done">E mere adhkaar ụtụtụ</string>
+    <string name="insights_day_evening_done">E mere adhkaar mgbede</string>
+    <string name="insights_day_still_to_come">Ka na-abịa</string>
+    <string name="insights_day_none">Enweghị adhkaar e dekọrọ</string>
+    <!-- Screen reader label for a calendar day. %1$s = date, %2$s = what was done (insights_day_cd_*). -->
+    <string name="insights_day_cd">%1$s: %2$s</string>
+    <string name="insights_day_cd_both">ụtụtụ na mgbede</string>
+    <string name="insights_day_cd_morning">ụtụtụ</string>
+    <string name="insights_day_cd_evening">mgbede</string>
+    <string name="insights_day_cd_none">ọ dịghị</string>
+    <!-- Screen reader label for a weekday bar. %1$s = weekday name, %2$d = days done, %3$d = total days. -->
+    <plurals name="insights_weekday_cd">
+        <item quantity="other">%1$s: %2$d n\'ime ụbọchị %3$d</item>
+    </plurals>
+
+    <!-- Home-screen widget -->
+    <string name="widget_morning">Ụtụtụ</string>
+    <string name="widget_evening">Mgbede</string>
+    <!-- Shown in place of a time when the session is due now. -->
+    <string name="widget_now">Ugbu a</string>
+    <string name="widget_waiting">Na-eche gị</string>
+    <!-- %1$d = number of consecutive days. -->
+    <plurals name="widget_streak_days">
+        <item quantity="other">Ụbọchị %1$d n\'usoro</item>
+    </plurals>
+    <string name="widget_continue">Gaa n\'ihu</string>
+    <string name="widget_opens_at">Ga-emepe %1$s</string>
+    <string name="widget_begin">Malite</string>
+    <string name="widget_done">Emechaala</string>
+    <string name="widget_today">Taa</string>
+    <string name="widget_tomorrow">Echi</string>
+    <!-- After the countdown: "6:52 left". -->
+</resources>

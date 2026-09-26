@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The morning orb for the widget picker's preview: halo, glass sphere, the sun half risen. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path android:pathData="M0,24 A24,24 0 1,0 48,24 A24,24 0 1,0 0,24 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="24"
+                android:centerY="24"
+                android:gradientRadius="24">
+                <item android:offset="0" android:color="#80FF7A59" />
+                <item android:offset="0.55" android:color="#29C04CFF" />
+                <item android:offset="1" android:color="#00C04CFF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:pathData="M9,24 A15,15 0 1,0 39,24 A15,15 0 1,0 9,24 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="24"
+                android:centerY="26"
+                android:gradientRadius="15">
+                <item android:offset="0" android:color="#D90A0F24" />
+                <item android:offset="0.62" android:color="#52FF7A59" />
+                <item android:offset="1" android:color="#BFC04CFF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path
+        android:fillColor="#FFFFE9C8"
+        android:pathData="M18.6,27.3 A5.4,5.4 0 0,1 29.4,27.3 Z" />
+    <path
+        android:strokeColor="#B3FFFFFF"
+        android:strokeWidth="0.8"
+        android:pathData="M12,27.3 L36,27.3" />
+    <path
+        android:strokeColor="#66FFFFFF"
+        android:strokeWidth="0.8"
+        android:pathData="M9.4,24 A14.6,14.6 0 1,0 38.6,24 A14.6,14.6 0 1,0 9.4,24 Z" />
+</vector>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hausa translation. DRAFT by Claude: must be reviewed by a native Hausa speaker before release. -->
+<resources>
+    <!-- Shared formatting -->
+    <!-- Countdown when the target time has arrived (lowercase, used inline). -->
+    <string name="format_now">yanzu</string>
+    <!-- Compact countdown. %1$d = hours, %2$d = minutes. -->
+    <string name="format_hours_minutes">awa %1$d, minti %2$d</string>
+    <!-- Compact countdown under an hour. %1$d = minutes. -->
+    <string name="format_minutes">minti %1$d</string>
+    <!-- Full date, e.g. "Alhamis, 25 ga Satumba". %1$s = weekday name, %2$d = day of month, %3$s = month name. -->
+    <string name="format_gregorian_date">%1$s, %2$d ga %3$s</string>
+
+    <!-- Prayer names -->
+    <string name="prayer_fajr">Asuba</string>
+    <!-- Sunrise time shown alongside the prayer times (not a prayer itself). -->
+    <string name="prayer_sunrise">Fitowar rana</string>
+    <string name="prayer_dhuhr">Azahar</string>
+    <string name="prayer_asr">La\'asar</string>
+    <string name="prayer_maghrib">Magariba</string>
+    <string name="prayer_isha">Isha</string>
+
+    <!-- Today screen -->
+    <!-- Greeting. %1$s = time-of-day word ("Barka da safiya / rana / yamma"). -->
+    <string name="today_greeting">Barka da %1$s</string>
+    <string name="today_greeting_morning">safiya</string>
+    <string name="today_greeting_afternoon">rana</string>
+    <string name="today_greeting_evening">yamma</string>
+
+    <string name="today_section_prayer_times">Tunatarwar sallah</string>
+    <string name="today_section_this_week">Wannan mako</string>
+    <string name="today_section_last_30_days">Kwanaki 30 da suka wuce</string>
+    <!-- Section header for today's morning and evening sessions. -->
+    <string name="today_section_today">Yau</string>
+
+    <!-- %1$d = number of consecutive days. -->
+    <plurals name="today_streak_days">
+        <item quantity="one">Kwana %1$d a jere</item>
+        <item quantity="other">Kwanaki %1$d a jere</item>
+    </plurals>
+    <string name="today_start_streak">Fara jerin kwanaki yau</string>
+    <!-- %1$d = days with adhkaar done, %2$d = total days in the period (30). -->
+    <plurals name="today_days_of_total">
+        <item quantity="one">Kwana %1$d cikin %2$d</item>
+        <item quantity="other">Kwanaki %1$d cikin %2$d</item>
+    </plurals>
+
+    <!-- Chart legend and session tile names. -->
+    <string name="today_morning">Safe</string>
+    <string name="today_evening">Yamma</string>
+    <!-- Chart legend: days on which both morning and evening were done. -->
+    <string name="today_both">Duka biyu</string>
+
+    <string name="today_stat_sessions">Zama</string>
+    <string name="today_stat_full_days">Cikakkun kwanaki</string>
+    <string name="today_stat_best_streak">Mafi tsawon jere</string>
+
+    <!-- Session status pills. -->
+    <string name="today_status_done">An gama</string>
+    <string name="today_status_waiting">Ana jira</string>
+    <!-- The session is switched off in settings. -->
+    <string name="today_status_off">A kashe</string>
+    <string name="today_status_upcoming">Mai zuwa</string>
+    <string name="today_status_not_done">Ba a yi ba</string>
+    <string name="today_turned_off">An kashe</string>
+    <!-- %1$s = a clock time, e.g. "5:26 AM". -->
+    <string name="today_today_at">Yau, %1$s</string>
+
+    <string name="today_hero_morning">Azkar na safe</string>
+    <string name="today_hero_evening">Azkar na yamma</string>
+    <!-- Overline on the main card, shown in capitals. -->
+    <string name="today_hero_waiting">SUNA JIRA</string>
+    <!-- Overline on the main card, shown in capitals. -->
+    <string name="today_hero_up_next">NA GABA</string>
+    <string name="today_hero_its_time">Lokaci ya yi</string>
+    <string name="today_hero_not_scheduled">Ba a tsara ba</string>
+    <string name="today_today">Yau</string>
+    <string name="today_tomorrow">Gobe</string>
+    <!-- %1$d = number of adhkaar (remembrances) in the session. -->
+    <plurals name="today_adhkaar_count">
+        <item quantity="one">Azkar %1$d</item>
+        <item quantity="other">Azkar %1$d</item>
+    </plurals>
+    <!-- Estimated duration. %1$d = minutes. -->
+    <plurals name="today_about_minutes">
+        <item quantity="one">kusan minti %1$d</item>
+        <item quantity="other">kusan minti %1$d</item>
+    </plurals>
+    <string name="today_continue">Ci gaba</string>
+    <string name="today_begin_now">Fara yanzu</string>
+    <!-- Timeline label above the time the user's adhkaar begin. -->
+    <string name="today_timeline_begin">Farawa</string>
+
+    <!-- Overline above today's special occasions, shown in capitals. -->
+    <string name="today_events_overline">YAU</string>
+
+    <!-- %1$s = prayer name. -->
+    <string name="today_prayer_now">%1$s yanzu</string>
+    <!-- %1$s = prayer name, %2$s = countdown such as "awa 1, minti 20". -->
+    <string name="today_prayer_in">%1$s nan da %2$s</string>
+    <!-- Label on the next upcoming prayer's pill. -->
+    <string name="today_next_prayer">Na gaba</string>
+
+    <string name="today_setup_title">Kammala saitin waya</string>
+    <!-- %1$s = reminder mode name, %2$d = number of missing permissions. -->
+    <plurals name="today_setup_body">
+        <item quantity="one">%1$s na buƙatar ƙarin izini %2$d don yin aiki yadda ya kamata.</item>
+        <item quantity="other">%1$s na buƙatar ƙarin izini %2$d don yin aiki yadda ya kamata.</item>
+    </plurals>
+
+    <!-- Insights screen -->
+    <string name="insights_title">Ƙididdiga</string>
+    <string name="insights_subtitle">Tarihin zikirinka a tsawon lokaci</string>
+    <!-- Label under the current streak number; the number is shown separately. -->
+    <plurals name="insights_day_streak">
+        <item quantity="one">Kwana a jere</item>
+        <item quantity="other">Kwanaki a jere</item>
+    </plurals>
+    <string name="insights_best_streak">Mafi tsawon jere</string>
+    <string name="insights_sessions_this_month">Zama a wannan wata</string>
+    <string name="insights_full_days_this_month">Cikakkun kwanaki a wannan wata</string>
+    <string name="insights_section_calendar">Kalanda</string>
+    <string name="insights_section_rhythm">Yadda kake yi</string>
+    <string name="insights_section_collections">Tarin azkar a wannan wata</string>
+    <string name="insights_morning">Safe</string>
+    <string name="insights_evening">Yamma</string>
+    <!-- Chart legend: days on which both morning and evening were done. -->
+    <string name="insights_both">Duka biyu</string>
+    <string name="insights_weekday_title">Kwanakin azkar · makonni 8 da suka wuce</string>
+    <!-- How many times a collection was read. %1$d = count; "×" means "times". -->
+    <string name="insights_collection_count">×%1$d</string>
+    <string name="insights_not_enough_data">Babu isassun bayanai tukuna</string>
+    <!-- Caption under the user's typical completion time. -->
+    <string name="insights_usually_around">Yawanci kusan</string>
+    <!-- Calendar header. %1$s = month name, %2$d = year. -->
+    <string name="insights_month_year">%1$s %2$d</string>
+    <string name="insights_previous_month">Watan da ya wuce</string>
+    <string name="insights_next_month">Wata mai zuwa</string>
+    <string name="insights_day_both_done">An yi azkar na safe da na yamma</string>
+    <string name="insights_day_morning_done">An yi azkar na safe</string>
+    <string name="insights_day_evening_done">An yi azkar na yamma</string>
+    <string name="insights_day_still_to_come">Bai zo ba tukuna</string>
+    <string name="insights_day_none">Ba a rubuta azkar ba</string>
+    <!-- Screen reader label for a calendar day. %1$s = date, %2$s = what was done (insights_day_cd_*). -->
+    <string name="insights_day_cd">%1$s: %2$s</string>
+    <string name="insights_day_cd_both">safe da yamma</string>
+    <string name="insights_day_cd_morning">safe</string>
+    <string name="insights_day_cd_evening">yamma</string>
+    <string name="insights_day_cd_none">babu</string>
+    <!-- Screen reader label for a weekday bar. %1$s = weekday name, %2$d = days done, %3$d = total days. -->
+    <plurals name="insights_weekday_cd">
+        <item quantity="one">%1$s: kwana %2$d cikin %3$d</item>
+        <item quantity="other">%1$s: kwanaki %2$d cikin %3$d</item>
+    </plurals>
+
+    <!-- Home-screen widget -->
+    <string name="widget_morning">Safe</string>
+    <string name="widget_evening">Yamma</string>
+    <!-- Shown in place of a time when the session is due now. -->
+    <string name="widget_now">Yanzu</string>
+    <string name="widget_waiting">Suna jira</string>
+    <!-- %1$d = number of consecutive days. -->
+    <plurals name="widget_streak_days">
+        <item quantity="one">Kwana %1$d a jere</item>
+        <item quantity="other">Kwanaki %1$d a jere</item>
+    </plurals>
+    <string name="widget_continue">Ci gaba</string>
+    <string name="widget_opens_at">Za a buɗe %1$s</string>
+    <string name="widget_begin">Fara</string>
+    <string name="widget_done">An gama</string>
+    <string name="widget_today">Yau</string>
+    <string name="widget_tomorrow">Gobe</string>
+    <!-- After the countdown: "6:52 left". -->
+</resources>

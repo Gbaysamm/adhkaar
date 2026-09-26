@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hausa translation. DRAFT by Claude: must be reviewed by a native Hausa speaker before release. -->
+<resources>
+    <string name="prayer_times_group_calculation">Lissafi</string>
+    <string name="prayer_times_calculated">Farkon lissafi %1$s</string>
+    <string name="prayer_times_reset">Koma ga na asali</string>
+    <string name="settings_prayer_times_adjusted">An saita da lokutan masallacinka</string>
+    <string name="settings_prayer_times_default">Lokutan asali na shirya wa sallah</string>
+</resources>

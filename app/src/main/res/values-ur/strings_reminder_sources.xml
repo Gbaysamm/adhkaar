@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Urdu translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="reminder_sources_title">روزانہ یاد دہانیوں کے ماخذ</string>
+    <string name="reminder_sources_quran_arabic">قرآن کا عربی متن: Tanzil Quran Text (رسمِ عثمانی، ورژن %1$s)، © Tanzil Project، Creative Commons Attribution 3.0 لائسنس کے تحت، بغیر کسی تبدیلی کے۔ tanzil.net</string>
+    <string name="reminder_sources_quran_meaning">قرآن کے معانی: English Translation – Rowwad Translation Center، ورژن %1$s، QuranEnc.com سے (موسوعۃ القرآن الکریم)۔</string>
+    <string name="reminder_sources_hadith">احادیث، عربی اور انگریزی میں: HadeethEnc.com (مترجم احادیثِ نبویہ کا انسائیکلوپیڈیا)، ورژن %1$s۔</string>
+    <string name="reminder_sources_unchanged">ان ماخذوں کے متن بالکل ویسے ہی دکھائے جاتے ہیں جیسے شائع ہوئے۔</string>
+</resources>

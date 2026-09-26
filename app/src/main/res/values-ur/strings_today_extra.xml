@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Urdu translation. Draft by Claude; please have a native speaker review before release. -->
+<resources>
+    <string name="window_opens_time">%1$s پر شروع ہوں گے</string>
+    <string name="window_opens_time_tomorrow">کل %1$s پر شروع ہوں گے</string>
+    <string name="window_late">تاخیر سے</string>
+    <string name="window_late_open_until">بہترین وقت گزر گیا · %1$s تک پڑھ سکتے ہیں</string>
+
+    <string name="insights_on_time">بروقت</string>
+    <plurals name="insights_on_time_count">
+        <item quantity="one">اس ماہ %2$d میں سے %1$d</item>
+        <item quantity="other">اس ماہ %2$d میں سے %1$d</item>
+    </plurals>
+    <string name="insights_on_time_body">بہترین وقت میں: فجر سے طلوعِ آفتاب تک، عصر سے مغرب تک</string>
+    <string name="insights_on_time_none">اس ماہ ابھی کوئی نشست نہیں</string>
+    <string name="insights_day_late_morning">صبح کے اذکار بہترین وقت کے بعد پڑھے گئے</string>
+    <string name="insights_day_late_evening">شام کے اذکار بہترین وقت کے بعد پڑھے گئے</string>
+    <string name="insights_day_late_both">دونوں بہترین وقت کے بعد پڑھے گئے</string>
+    <string name="insights_day_cd_late">%1$s، تاخیر سے</string>
+    <string name="insights_hijri_month">%1$s %2$d</string>
+    <string name="insights_hijri_span">%1$s – %2$s %3$d</string>
+    <string name="insights_hijri_span_years">%1$s %2$d – %3$s %4$d</string>
+
+    <string name="today_section_collections">مجموعے</string>
+    <string name="today_collection_now">اس گھڑی کے لیے</string>
+    <string name="today_collection_after_prayer">%1$s کے بعد</string>
+    <string name="today_collection_next_after">اگلا · %1$s · %2$s</string>
+    <string name="today_collection_next_at">اگلا · %1$s</string>
+</resources>

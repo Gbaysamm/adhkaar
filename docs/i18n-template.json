@@ -1,0 +1,250 @@
+{
+  "language": "<two-letter code, e.g. ha>",
+  "source": "<the published translation or scholar this is taken from>",
+  "reviewedBy": "<who checked it>",
+  "adhkaar": {
+    "ayat_al_kursi": {
+      "title": "Ayat al-Kursi",
+      "translation": "Allah — there is no god except Him, the Ever-Living, the Sustainer of all existence. Neither drowsiness overtakes Him nor sleep. To Him belongs whatever is in the heavens and whatever is on the earth. Who is it that can intercede with Him except by His permission? He knows what is before them and what will be after them, and they encompass nothing of His knowledge except for what He wills. His Kursi extends over the heavens and the earth, and their preservation tires Him not. And He is the Most High, the Most Great.",
+      "virtue": "Whoever says it in the morning is protected from the jinn until evening, and whoever says it in the evening is protected until morning."
+    },
+    "al_ikhlas": {
+      "title": "Surah al-Ikhlas",
+      "translation": "In the name of Allah, the Most Merciful, the Especially Merciful. Say: He is Allah, [who is] One. Allah, the Eternal Refuge. He neither begets nor is born, nor is there to Him any equivalent.",
+      "virtue": "Reciting the three Quls three times morning and evening suffices you against everything."
+    },
+    "al_falaq": {
+      "title": "Surah al-Falaq",
+      "translation": "In the name of Allah, the Most Merciful, the Especially Merciful. Say: I seek refuge in the Lord of daybreak, from the evil of that which He created, and from the evil of darkness when it settles, and from the evil of those who blow on knots, and from the evil of an envier when he envies."
+    },
+    "an_nas": {
+      "title": "Surah an-Nas",
+      "translation": "In the name of Allah, the Most Merciful, the Especially Merciful. Say: I seek refuge in the Lord of mankind, the Sovereign of mankind, the God of mankind, from the evil of the retreating whisperer — who whispers in the breasts of mankind — from among the jinn and mankind."
+    },
+    "asbahna_al_mulk": {
+      "title": "The dominion belongs to Allah",
+      "translation": "We have entered the morning and the dominion belongs to Allah, and all praise is for Allah. There is no god but Allah alone, without partner; His is the dominion and His is the praise, and He is over all things capable. My Lord, I ask You for the good of this day and the good of what follows it, and I seek refuge in You from the evil of this day and the evil of what follows it. My Lord, I seek refuge in You from laziness and the misery of old age. My Lord, I seek refuge in You from punishment in the Fire and punishment in the grave."
+    },
+    "bika_asbahna": {
+      "title": "By You we live and die",
+      "translation": "O Allah, by You we enter the morning and by You we enter the evening, by You we live and by You we die, and to You is the resurrection."
+    },
+    "sayyid_al_istighfar": {
+      "title": "Sayyid al-Istighfar",
+      "translation": "O Allah, You are my Lord; there is no god but You. You created me and I am Your servant, and I abide by Your covenant and promise as best I can. I seek refuge in You from the evil of what I have done. I acknowledge Your favour upon me and I acknowledge my sin, so forgive me, for none forgives sins except You.",
+      "virtue": "Whoever says it with certainty during the day and dies before evening is among the people of Paradise, and likewise at night."
+    },
+    "afini_fi_badani": {
+      "title": "Well-being in body, hearing and sight",
+      "translation": "O Allah, grant me well-being in my body. O Allah, grant me well-being in my hearing. O Allah, grant me well-being in my sight. There is no god but You. O Allah, I seek refuge in You from disbelief and poverty, and I seek refuge in You from the punishment of the grave. There is no god but You."
+    },
+    "al_afwa_wal_afiyah": {
+      "title": "Pardon and well-being",
+      "translation": "O Allah, I ask You for pardon and well-being in this world and the Hereafter. O Allah, I ask You for pardon and well-being in my religion, my worldly affairs, my family and my wealth. O Allah, conceal my faults and calm my fears. O Allah, protect me from in front of me and behind me, from my right and my left, and from above me, and I seek refuge in Your greatness from being taken unawares from beneath me."
+    },
+    "alim_al_ghayb": {
+      "title": "Knower of the unseen",
+      "translation": "O Allah, Knower of the unseen and the seen, Creator of the heavens and the earth, Lord and Sovereign of all things, I bear witness that there is no god but You. I seek refuge in You from the evil of my own self, from the evil of Shaytan and his call to shirk, and from committing wrong against myself or bringing it upon a Muslim."
+    },
+    "bismillah_la_yadurr": {
+      "title": "In the name of Allah, nothing harms",
+      "translation": "In the name of Allah, with whose name nothing on earth or in the heaven can cause harm, and He is the All-Hearing, the All-Knowing.",
+      "virtue": "Whoever says it three times in the morning and evening, nothing will harm him."
+    },
+    "raditu_billahi": {
+      "title": "Pleased with Allah as Lord",
+      "translation": "I am pleased with Allah as my Lord, with Islam as my religion, and with Muhammad ﷺ as my Prophet."
+    },
+    "ya_hayyu_ya_qayyum": {
+      "title": "O Ever-Living, O Sustainer",
+      "translation": "O Ever-Living, O Sustainer of all, by Your mercy I seek help. Set right all my affairs and do not leave me to myself even for the blink of an eye."
+    },
+    "fitrat_al_islam": {
+      "title": "Upon the fitrah of Islam",
+      "translation": "We have entered the morning upon the fitrah of Islam, upon the word of sincerity, upon the religion of our Prophet Muhammad ﷺ, and upon the way of our father Ibrahim, who was upright and a Muslim, and was not of those who associate partners with Allah."
+    },
+    "hasbiyallah": {
+      "title": "Allah is sufficient for me",
+      "translation": "Allah is sufficient for me; there is no god but Him. In Him I place my trust, and He is the Lord of the Mighty Throne."
+    },
+    "adada_khalqihi": {
+      "title": "Glory be to Allah, as many as His creation",
+      "translation": "Glory be to Allah and praise be to Him, as many times as the number of His creation, as much as pleases Him, as much as the weight of His Throne, and as much as the ink of His words."
+    },
+    "ilman_nafia": {
+      "title": "Beneficial knowledge",
+      "translation": "O Allah, I ask You for beneficial knowledge, good provision, and accepted deeds."
+    },
+    "kalimat_at_tammat": {
+      "title": "Refuge in Allah's perfect words",
+      "translation": "I seek refuge in the perfect words of Allah from the evil of what He has created.",
+      "virtue": "Whoever says it three times in the evening, no sting will harm him that night."
+    },
+    "la_ilaha_illallah_10": {
+      "title": "Tahlil",
+      "translation": "There is no god but Allah alone, without partner. His is the dominion and His is the praise, and He is over all things capable."
+    },
+    "subhanallahi_wa_bihamdihi": {
+      "title": "Tasbih",
+      "translation": "Glory be to Allah and praise be to Him.",
+      "virtue": "No one will come on the Day of Resurrection with anything better, except one who said the same or more."
+    },
+    "salah_istighfar": {
+      "title": "Seeking forgiveness",
+      "translation": "I seek the forgiveness of Allah."
+    },
+    "salah_antas_salam": {
+      "title": "You are Peace",
+      "translation": "O Allah, You are Peace and from You comes peace. Blessed are You, O Possessor of majesty and honour."
+    },
+    "salah_la_mani": {
+      "title": "None can withhold what You give",
+      "translation": "There is no god but Allah alone, without partner. His is the dominion and His is the praise, and He is over all things capable. O Allah, none can withhold what You give, none can give what You withhold, and the wealth of the wealthy cannot avail him against You."
+    },
+    "salah_subhanallah": {
+      "title": "Tasbih",
+      "translation": "Glory be to Allah."
+    },
+    "salah_alhamdulillah": {
+      "title": "Tahmid",
+      "translation": "All praise is for Allah."
+    },
+    "salah_allahu_akbar": {
+      "title": "Takbir",
+      "translation": "Allah is the Greatest."
+    },
+    "salah_completing_hundred": {
+      "title": "Completing the hundred",
+      "translation": "There is no god but Allah alone, without partner. His is the dominion and His is the praise, and He is over all things capable."
+    },
+    "salah_ainni": {
+      "title": "Help me remember You",
+      "translation": "O Allah, help me to remember You, to thank You, and to worship You well."
+    },
+    "sleep_amana_rasul": {
+      "title": "The last two verses of al-Baqarah",
+      "translation": "The Messenger believes in what was sent down to him from his Lord, and so do the believers. Each believes in Allah, His angels, His books and His messengers: \"We make no distinction between any of His messengers.\" And they say, \"We hear and we obey. Grant us Your forgiveness, our Lord; to You is the final return.\" Allah does not burden a soul beyond what it can bear. It will have the good it has earned, and bear the evil it has earned. \"Our Lord, do not hold us to account if we forget or make a mistake. Our Lord, do not place on us a burden like the one You placed on those before us. Our Lord, do not burden us with more than we can bear. Pardon us, forgive us, and have mercy on us. You are our Protector, so help us against the disbelieving people.\"",
+      "virtue": "Whoever recites these two verses at night, they will suffice him."
+    },
+    "sleep_subhanallah": {
+      "title": "Tasbih",
+      "translation": "Glory be to Allah.",
+      "virtue": "The Prophet ﷺ taught this to Fatimah and Ali: it is better for you than a servant."
+    },
+    "sleep_alhamdulillah": {
+      "title": "Tahmid",
+      "translation": "All praise is for Allah."
+    },
+    "sleep_allahu_akbar": {
+      "title": "Takbir",
+      "translation": "Allah is the Greatest."
+    },
+    "sleep_bismika_rabbi": {
+      "title": "In Your name I lie down",
+      "translation": "In Your name, my Lord, I lie down, and by You I rise. If You take my soul, have mercy on it; and if You send it back, protect it as You protect Your righteous servants."
+    },
+    "sleep_qini_adhabak": {
+      "title": "Protect me from Your punishment",
+      "translation": "O Allah, protect me from Your punishment on the Day You resurrect Your servants."
+    },
+    "sleep_aslamtu": {
+      "title": "I submit myself to You",
+      "translation": "O Allah, I submit myself to You, entrust my affair to You, turn my face to You, and rely on You, in hope of You and in awe of You. There is no refuge and no escape from You except to You. I believe in Your Book which You sent down, and in Your Prophet whom You sent.",
+      "virtue": "Make it the last thing you say. If you die that night, you die upon the fitrah."
+    },
+    "sleep_bismika_amutu": {
+      "title": "In Your name I die and live",
+      "translation": "In Your name, O Allah, I die and I live."
+    },
+    "waking_ahyana": {
+      "title": "Praise on waking",
+      "translation": "All praise is for Allah who gave us life after He had caused us to die, and to Him is the resurrection."
+    },
+    "waking_afani": {
+      "title": "Well-being restored",
+      "translation": "All praise is for Allah who restored my body to health, returned my soul to me, and permitted me to remember Him."
+    },
+    "waking_night": {
+      "title": "Waking in the night",
+      "translation": "There is no god but Allah alone, without partner; His is the dominion and His is the praise, and He is over all things capable. Glory be to Allah, all praise is for Allah, there is no god but Allah, Allah is the Greatest, and there is no power and no strength except with Allah. My Lord, forgive me.",
+      "virtue": "Whoever wakes at night and says this, then asks forgiveness, is forgiven; and if he prays, his prayer is accepted."
+    },
+    "daily_leaving_home": {
+      "title": "Leaving home",
+      "translation": "In the name of Allah, I place my trust in Allah, and there is no power and no strength except with Allah.",
+      "virtue": "It is said to him: you are guided, suffices and protected, and the devil turns away from him."
+    },
+    "daily_entering_home": {
+      "title": "Entering home",
+      "translation": "In the name of Allah.",
+      "virtue": "When a man mentions Allah on entering his home and at his meal, the devil says: no place to stay and no dinner for you."
+    },
+    "daily_before_eating": {
+      "title": "Before eating",
+      "translation": "In the name of Allah. (If you forget: In the name of Allah at its beginning and its end.)"
+    },
+    "daily_after_eating": {
+      "title": "After eating",
+      "translation": "All praise is for Allah who fed me this and provided it for me, without any power or strength from me."
+    },
+    "daily_entering_toilet": {
+      "title": "Entering the toilet",
+      "translation": "O Allah, I seek refuge in You from evil and from those who do evil."
+    },
+    "daily_leaving_toilet": {
+      "title": "Leaving the toilet",
+      "translation": "I ask for Your forgiveness."
+    },
+    "daily_entering_mosque": {
+      "title": "Entering the mosque",
+      "translation": "O Allah, open for me the gates of Your mercy."
+    },
+    "daily_leaving_mosque": {
+      "title": "Leaving the mosque",
+      "translation": "O Allah, I ask You of Your bounty."
+    },
+    "daily_travel": {
+      "title": "Setting off on a journey",
+      "translation": "Glory be to the One who has placed this at our service, when we could not have done so ourselves; and to our Lord we will surely return."
+    },
+    "daily_distress": {
+      "title": "In distress",
+      "translation": "There is no god but Allah, the Mighty, the Forbearing. There is no god but Allah, Lord of the Mighty Throne. There is no god but Allah, Lord of the heavens, Lord of the earth, and Lord of the Noble Throne."
+    },
+    "daily_anxiety": {
+      "title": "For worry and grief",
+      "translation": "O Allah, I seek refuge in You from worry and grief, from helplessness and laziness, from miserliness and cowardice, and from the burden of debt and being overpowered by others."
+    },
+    "daily_yunus": {
+      "title": "The supplication of Yunus",
+      "translation": "There is no god but You. Glory be to You; I have been among the wrongdoers.",
+      "virtue": "No Muslim ever supplicates with it for anything except that Allah answers him."
+    },
+    "daily_rain": {
+      "title": "When it rains",
+      "translation": "O Allah, let it be a beneficial rain."
+    },
+    "daily_sneezing": {
+      "title": "After sneezing",
+      "translation": "All praise is for Allah. (Reply: May Allah have mercy on you. Then: May Allah guide you and set your affairs right.)"
+    }
+  },
+  "collections": {
+    "after_salah": {
+      "title": "After salah",
+      "subtitle": "After each obligatory prayer"
+    },
+    "before_sleep": {
+      "title": "Before sleep",
+      "subtitle": "As you lie down at night"
+    },
+    "waking": {
+      "title": "On waking",
+      "subtitle": "The first words of the day"
+    },
+    "daily": {
+      "title": "Everyday duas",
+      "subtitle": "For the moments of the day"
+    }
+  }
+}

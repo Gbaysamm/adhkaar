@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Yoruba translation. DRAFT by Claude: must be reviewed by a native Yoruba speaker before release. -->
+<resources>
+    <!-- ===== Session (morning / evening / collection sessions) ===== -->
+    <string name="session_overline_morning">ADHKAAR ÀÁRỌ̀</string>
+    <string name="session_overline_evening">ADHKAAR ÌRỌ̀LẸ́</string>
+    <string name="session_listen">Gbọ́</string>
+    <string name="session_pause">Dá dúró</string>
+    <string name="session_tap_hint">Ẹ tẹ̀ àyíká náà tàbí káàdì láti kà</string>
+    <string name="session_close">Pa á dé</string>
+    <!-- Position in the session, e.g. "3 nínú 19". -->
+    <string name="session_position">%1$d nínú %2$d</string>
+    <string name="session_reading_options">Ètò kíkà</string>
+    <string name="session_reading_overline">KÍKÀ</string>
+    <string name="session_arabic_size">Ìtóbi Lárúbáwá</string>
+    <string name="session_arabic_scale_percent">%1$d%%</string>
+    <string name="session_transliteration">Ìkọsílẹ̀ ìpè</string>
+    <string name="session_translation">Ìtumọ̀</string>
+    <string name="session_auto_advance">Ìtẹ̀síwájú aládàáṣe</string>
+    <string name="session_auto_play_recitation">Kíkà aládàáṣe</string>
+    <string name="session_haptics">Ìgbọ̀nrìrì</string>
+    <string name="session_done">Ó ti parí</string>
+    <string name="session_favourite_add">Fi kún àyànfẹ́</string>
+    <string name="session_favourite_remove">Yọ kúrò nínú àyànfẹ́</string>
+
+    <!-- ===== Counter ===== -->
+    <plurals name="counter_times">
+        <item quantity="other">×%1$d</item>
+    </plurals>
+    <!-- Under the big count, e.g. "nínú 33". -->
+    <string name="counter_of_target">nínú %1$d</string>
+    <string name="counter_done">Ó ti parí</string>
+
+    <!-- ===== Completion screen ===== -->
+    <string name="completion_morning_headline">Ọjọ́ yín bẹ̀rẹ̀\nní abẹ́ ààbò Rẹ̀</string>
+    <string name="completion_evening_headline">Òru yín sinmi\nní abẹ́ ààbò Rẹ̀</string>
+    <!-- Hadith (Abu Dawud 5088), morning wording -->
+    <string name="completion_morning_quote">Ẹnikẹ́ni tí ó bá sọ ọ́ ní ẹ̀ẹ̀mẹ́ta ní àárọ̀, àjálù òjijì kò ní bá a títí di ìrọ̀lẹ́.</string>
+    <!-- Same hadith, evening wording -->
+    <string name="completion_evening_quote">Ẹnikẹ́ni tí ó bá sọ ọ́ ní ẹ̀ẹ̀mẹ́ta ní ìrọ̀lẹ́, àjálù òjijì kò ní bá a títí di àárọ̀.</string>
+    <string name="completion_reference">Bismillāhil-ladhī lā yaḍurru… · Abu Dawud 5088</string>
+    <string name="completion_quote_format">“%1$s”</string>
+    <!-- %1$s = collection name -->
+    <string name="completion_collection_headline">%1$s\nti parí</string>
+    <plurals name="completion_stat_adhkaar">
+        <item quantity="other">Adhkaar</item>
+    </plurals>
+    <string name="completion_stat_time">Àkókò</string>
+    <string name="completion_minutes">Ìṣẹ́jú %1$d</string>
+    <plurals name="completion_day_streak">
+        <item quantity="other">Ọjọ́ ní títẹ̀léra</item>
+    </plurals>
+    <plurals name="completion_times_today">
+        <item quantity="other">Ìgbà lónìí</item>
+    </plurals>
+    <string name="completion_done">Parí</string>
+
+    <!-- ===== Library (Adhkaar tab) ===== -->
+    <string name="library_title">Adhkaar</string>
+    <string name="library_subtitle">Láti inú Hisn al-Muslim, pẹ̀lú orísun wọn</string>
+    <string name="library_every_day">Ojoojúmọ́</string>
+    <string name="library_morning">Àárọ̀</string>
+    <string name="library_evening">Ìrọ̀lẹ́</string>
+    <plurals name="library_morning_tile">
+        <item quantity="other">Adhkaar %1$d · lẹ́yìn Suubi</item>
+    </plurals>
+    <plurals name="library_evening_tile">
+        <item quantity="other">Adhkaar %1$d · lẹ́yìn Ààsàn</item>
+    </plurals>
+    <string name="library_collections">Àkójọpọ̀</string>
+    <plurals name="library_count_adhkaar">
+        <item quantity="other">Adhkaar %1$d</item>
+    </plurals>
+    <plurals name="library_count_duas">
+        <item quantity="other">Àdúà %1$d</item>
+    </plurals>
+    <string name="library_favourites">Àyànfẹ́</string>
+    <string name="library_favourites_none">Kò tíì sí</string>
+    <plurals name="library_favourites_saved">
+        <item quantity="other">%1$d ní ìpamọ́</item>
+    </plurals>
+    <string name="library_my_duas">Àdúà mi</string>
+    <string name="library_my_duas_empty">Ẹ kọ tiyín</string>
+    <plurals name="library_my_duas_written">
+        <item quantity="other">%1$d tí ẹ kọ</item>
+    </plurals>
+    <string name="library_morning_title">Adhkaar àárọ̀</string>
+    <string name="library_evening_title">Adhkaar ìrọ̀lẹ́</string>
+    <string name="library_morning_subtitle">Lẹ́yìn Suubi, títí di agogo 7:30 òwúrọ̀</string>
+    <string name="library_evening_subtitle">Lẹ́yìn Ààsàn, títí di Mọ́gárí</string>
+    <string name="library_favourites_subtitle">Adhkaar tí ẹ fi pamọ́</string>
+    <!-- %1$s = subtitle, %2$s = count such as "Adhkaar 12" -->
+    <string name="library_detail_subtitle">%1$s · %2$s</string>
+    <string name="library_back">Padà</string>
+    <string name="library_begin">Bẹ̀rẹ̀</string>
+    <string name="library_favourites_empty_title">Kò tíì sí àyànfẹ́</string>
+    <string name="library_favourites_empty_body">Ẹ tẹ̀ àmì ọkàn lórí dhikr èyíkéyìí láti fi pamọ́ síbí.</string>
+    <string name="library_my_duas_description">Ọ̀rọ̀ tiyín sí Allah, tí a fi pamọ́ síbí, tí a sì lè fi kún adhkaar yín bí ẹ bá fẹ́.</string>
+    <string name="library_write_dua">Kọ àdúà</string>
+
+    <!-- ===== Dua editor ===== -->
+    <string name="dua_new">Àdúà tuntun</string>
+    <string name="dua_edit">Ṣàtúnṣe àdúà</string>
+    <string name="dua_intro">Ẹ kọ ọ́ ní Lárúbáwá, ní èdè yín, tàbí méjèèjì.</string>
+    <string name="dua_field_title">Àkọlé</string>
+    <string name="dua_field_title_placeholder">Àpẹẹrẹ: Fún àwọn òbí mi</string>
+    <string name="dua_field_arabic">Lárúbáwá</string>
+    <string name="dua_field_transliteration">Ìkọsílẹ̀ ìpè</string>
+    <string name="dua_field_transliteration_placeholder">Kò pọndandan</string>
+    <string name="dua_field_meaning">Ìtumọ̀</string>
+    <string name="dua_field_meaning_placeholder">Ohun tí ẹ ń béèrè</string>
+    <!-- How many times the dua is repeated -->
+    <string name="dua_repeat">Àtúnsọ</string>
+    <string name="dua_in_morning">Nínú adhkaar àárọ̀ mi</string>
+    <string name="dua_in_evening">Nínú adhkaar ìrọ̀lẹ́ mi</string>
+    <string name="dua_delete">Pa àdúà yìí rẹ́</string>
+    <string name="dua_invalid_hint">Ẹ fi àkọlé kún un, àti Lárúbáwá tàbí ìtumọ̀ rẹ̀.</string>
+    <string name="dua_save">Fi pamọ́</string>
+    <string name="dua_voice_overline">OHÙN YÍN</string>
+    <string name="dua_voice_recording">Ó ń gba ohùn sílẹ̀</string>
+    <string name="dua_voice_stop">Dúró</string>
+    <string name="dua_voice_play">Gbọ́</string>
+    <string name="dua_voice_pause">Dá dúró</string>
+    <string name="dua_voice_your_recording">Ohùn tí ẹ gbà sílẹ̀</string>
+    <string name="dua_voice_plays_with">Yóò máa dún pẹ̀lú àdúà yìí nínú ìjókòó yín</string>
+    <string name="dua_voice_record_again">Tún gbà sílẹ̀</string>
+    <string name="dua_voice_delete">Pa ohùn náà rẹ́</string>
+    <string name="dua_voice_record">Gbà sílẹ̀</string>
+    <string name="dua_voice_record_prompt">Ẹ gbà á sílẹ̀ ní ohùn yín</string>
+    <string name="dua_voice_mic_denied">Ẹ kò fún wa ní ààyè sí máíkì. Ẹ lè gbà á láàyè nínú ètò fóònù.</string>
+    <!-- The recording limit is 3 minutes -->
+    <string name="dua_voice_limit">Títí dé ìṣẹ́jú 3. Orí fóònù yìí nìkan ni yóò wà.</string>
+
+    <!-- ===== Share ===== -->
+    <string name="share_action">Pín</string>
+    <string name="share_cancel">Fagilé</string>
+    <string name="share_chooser_title">Pín dhikr</string>
+    <string name="player_play">Gbọ́ kíkà</string>
+    <string name="player_pause">Dá kíkà dúró</string>
+    <string name="player_repeat">Tún kíkà ṣe</string>
+    <!-- Share card looks. Midnight: dark blue night. Dawn: sunrise colours. Parchment: ink and gold on paper. -->
+    <string name="share_style_midnight">Ọ̀gànjọ́ òru</string>
+    <string name="share_style_dawn">Àfẹ̀mọ́jú</string>
+    <string name="share_style_parchment">Ìwé àtijọ́</string>
+    <string name="library_done_today">Ó ti parí lónìí</string>
+    <string name="library_read_again">Tún un kà</string>
+    <string name="prayer_times_edit_hint">Tẹ àkókò kan láti yí i padà sí ti mọ́ṣáláṣí rẹ.</string>
+    <string name="collection_after_salah">Lẹ́yìn ìrun</string>
+    <string name="collection_after_salah_subtitle">Lẹ́yìn ìrun ọ̀ranyàn kọ̀ọ̀kan</string>
+    <string name="collection_before_sleep">Kí o tó sùn</string>
+    <string name="collection_before_sleep_subtitle">Nígbà tí o bá dùbúlẹ̀ lóru</string>
+    <string name="collection_waking">Nígbà jíjí</string>
+    <string name="collection_waking_subtitle">Ọ̀rọ̀ àkọ́kọ́ ọjọ́</string>
+    <string name="collection_daily">Àdúà ojoojúmọ́</string>
+    <string name="collection_daily_subtitle">Fún àwọn àkókò ọjọ́</string>
+</resources>

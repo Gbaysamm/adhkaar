@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Urdu translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="channel_salah_name">نماز کی یاد دہانیاں</string>
+    <string name="channel_salah_description">ہر نماز کی تیاری کے لیے ایک نرم یاد دہانی، آپ کے مقرر کردہ اوقات پر</string>
+    <string name="notif_salah_title">%1$s کی تیاری کا وقت</string>
+    <string name="notif_salah_text">نماز کی تیاری کی یاد دہانی — اپنی مسجد کی اذان کی پیروی کریں۔</string>
+    <string name="prayer_times_begin_note">مقام متعین ہو تو ہر نماز کے ساتھ حساب سے اس کے وقت کا آغاز بھی دکھایا جاتا ہے۔ یہ صرف موازنے کے لیے ہے: ایپ ہمیشہ اوپر آپ کے اوقات پر چلتی ہے۔</string>
+    <string name="salah_reminders_title">نماز کی یاد دہانیاں</string>
+    <string name="salah_reminders_note">یہ نماز کی تیاری کی یاد دہانیاں ہیں، نماز کے عین اوقات نہیں۔ اپنی مسجد کے اوقات رکھیں، وہ ان کی جگہ لے لیں گے۔</string>
+    <string name="today_prayer_times_caption">نماز کی تیاری کے اوقات، نماز کے عین اوقات نہیں۔</string>
+    <string name="today_day_reminder">آج کی یاد دہانی</string>
+    <string name="channel_reminder_name">یاد دہانیاں</string>
+    <string name="channel_reminder_description">نماز کے بعد، سونے سے پہلے اور اذکار سے پہلے کی اطلاع۔ یہ بجتی اور وائبریٹ کرتی ہیں۔</string>
+    <string name="popup_salah_body">چند منٹ کے لیے جو کر رہے ہیں چھوڑ دیں۔ وضو کریں، اور ہو سکے تو مسجد کی طرف چلیں۔</string>
+    <string name="popup_step_wudu">وضو</string>
+    <string name="popup_step_masjid">مسجد</string>
+    <string name="popup_step_phone">فون رکھ دیں</string>
+    <string name="popup_salah_hadith">اللہ کو سب سے محبوب عمل: وقت پر نماز۔</string>
+    <string name="popup_salah_source">صحیح بخاری ۵۲۷</string>
+    <string name="popup_ready">میں تیاری کر رہا ہوں</string>
+    <string name="popup_open">کھولیں</string>
+    <string name="popup_later">بعد میں</string>
+</resources>

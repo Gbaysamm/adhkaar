@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Urdu translation. Draft by Claude; please have a native speaker review before release. -->
+<resources>
+    <string name="prayer_times_group_calculation">حساب</string>
+    <string name="prayer_times_calculated">حساب سے آغاز %1$s</string>
+    <string name="prayer_times_reset">پہلے سے طے شدہ پر واپس</string>
+    <string name="settings_prayer_times_adjusted">آپ کی مسجد کے اوقات کے مطابق</string>
+    <string name="settings_prayer_times_default">نماز کی تیاری کے لیے طے شدہ اوقات</string>
+</resources>

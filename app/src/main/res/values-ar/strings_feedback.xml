@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="contact_title">تواصل معنا</string>
+    <string name="contact_intro">أخبرنا عن مشكلة أو فكرة أو خطأ في النص. نقرأ كل رسالة.</string>
+    <string name="contact_topic_label">الموضوع</string>
+    <string name="contact_topic_problem">مشكلة</string>
+    <string name="contact_topic_suggestion">اقتراح</string>
+    <string name="contact_topic_correction">تصحيح</string>
+    <string name="contact_topic_other">أخرى</string>
+    <string name="contact_message_problem">ماذا حدث؟</string>
+    <string name="contact_message_suggestion">فكرتك</string>
+    <string name="contact_message_correction">ما الذي ينبغي تغييره؟</string>
+    <string name="contact_message_other">رسالتك</string>
+    <string name="contact_placeholder_problem">ماذا كنت تفعل، وما الذي حدث خطأ؟</string>
+    <string name="contact_placeholder_suggestion">ما الذي يجعل التطبيق أفضل لك؟</string>
+    <string name="contact_placeholder_correction">أي ذكر أو ترجمة، وما الصواب فيها؟</string>
+    <string name="contact_placeholder_other">اكتب لنا هنا</string>
+    <string name="contact_reply_label">بريدك أو رقم هاتفك (لنرد عليك)</string>
+    <string name="contact_reply_placeholder">اختياري</string>
+    <string name="contact_details_title">تفاصيل نرسلها معها</string>
+    <string name="contact_details_note">هذه فقط، لتساعدنا في إيجاد المشكلات. لا شيء شخصي.</string>
+    <string name="contact_min_hint">اكتب كلمات أكثر قليلًا للإرسال</string>
+    <string name="contact_send">إرسال</string>
+    <string name="contact_sending">جارٍ الإرسال…</string>
+    <string name="contact_failed">تعذّر الإرسال. تحقّق من اتصالك.</string>
+    <string name="contact_try_again">حاول مرة أخرى</string>
+    <string name="contact_email_instead">أرسل بالبريد بدلًا من ذلك</string>
+    <string name="contact_sent_title">جزاك الله خيرًا</string>
+    <string name="contact_sent_body">وصلتنا رسالتك. إن تركت وسيلة للتواصل فسنرد عليك بها.</string>
+    <string name="contact_back">العودة إلى الإعدادات</string>
+    <string name="contact_copy">انسخ الرسالة وتفاصيل الهاتف</string>
+    <string name="contact_copied">تم النسخ. الصقها في أي مكان لإرسالها إلينا.</string>
+</resources>

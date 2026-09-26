@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Yoruba translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="break_take">Ẹ sinmi díẹ̀</string>
+    <string name="break_title">Ṣé o nílò ìṣẹ́jú díẹ̀?</string>
+    <string name="break_rings_again">Fóònù yín wà ní òmìnira títí ìsinmi yóò fi parí. Lẹ́yìn náà, ìkìlọ̀ yóò tún dún.</string>
+    <string name="break_no_time">Àkókò kò tó fún ìsinmi mọ́</string>
+    <string name="break_done_by">Ó gbọ́dọ̀ parí kí ó tó di %1$s</string>
+    <plurals name="break_option_minutes">
+        <item quantity="other">Ìṣẹ́jú %1$d</item>
+    </plurals>
+    <plurals name="break_option_hours">
+        <item quantity="other">Wákàtí %1$d</item>
+    </plurals>
+    <string name="break_notification">Ní ìsinmi títí di %1$s · ó gbọ́dọ̀ parí kí ó tó di %2$s</string>
+    <string name="session_lockdown_toast">Ẹ parí adhkaar yín, tàbí ẹ sinmi díẹ̀</string>
+    <plurals name="break_left">
+        <item quantity="one">Adhkaar %1$d ló kù</item>
+        <item quantity="other">Adhkaar %1$d ló kù</item>
+    </plurals>
+    <string name="break_back_at">Wàá padà ní %1$s. Lẹ́yìn náà ìkìlọ̀ á tún dún.</string>
+    <string name="break_keep_reading">Máa kà á lọ</string>
+    <string name="break_pick_time">Yan àkókò</string>
+    <string name="break_pause_for">Dúró fún %1$s</string>
+    <string name="break_unit_min">ìṣẹ́jú</string>
+    <string name="break_unit_hour">wákàtí</string>
+    <string name="break_confirm_title">Kí o tó dúró</string>
+    <plurals name="break_confirm_left">
+        <item quantity="one">Dhikr %1$d péré ló kù. Ìṣẹ́jú díẹ̀, adhkaar òní á parí.</item>
+        <item quantity="other">Adhkaar %1$d péré ló kù. Ìṣẹ́jú díẹ̀, adhkaar òní á parí.</item>
+    </plurals>
+    <plurals name="break_confirm_streak">
+        <item quantity="one">O ti ń kà wọ́n fún ọjọ́ %1$d léraléra.</item>
+        <item quantity="other">O ti ń kà wọ́n fún ọjọ́ %1$d léraléra. Má ṣe jẹ́ kí òní jẹ́ àlàfo.</item>
+    </plurals>
+    <string name="break_confirm_hadith">Àpẹẹrẹ ẹni tó ń ṣe ìrántí Olúwa rẹ̀ àti ẹni tí kò ṣe é dàbí alààyè àti òkú.</string>
+    <string name="break_confirm_source">Sahih al-Bukhari 6407</string>
+    <string name="break_confirm_stay">Dúró kí o parí</string>
+    <string name="break_confirm_pause">Dúró fún %1$s bẹ́ẹ̀ náà</string>
+    <string name="session_end_test">Ìdánwò · Parí ìdánwò</string>
+</resources>

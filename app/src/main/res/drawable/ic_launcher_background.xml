@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Midnight with a soft azure glow from the upper left, matching the evening aura. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient
+        android:type="radial"
+        android:centerX="0.3"
+        android:centerY="0.25"
+        android:gradientRadius="90%p"
+        android:startColor="#2B4FD8"
+        android:centerColor="#101A4A"
+        android:endColor="#05070F" />
+</shape>

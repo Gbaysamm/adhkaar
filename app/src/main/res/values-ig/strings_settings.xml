@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Igbo translation. DRAFT by Claude: must be reviewed by a native Igbo speaker before release. -->
+<resources>
+    <!-- Bottom tab bar -->
+    <string name="tab_today">Taa</string>
+    <!-- Tab that opens the library of adhkaar (remembrances), not the app name -->
+    <string name="tab_adhkaar">Adhkaar</string>
+    <string name="tab_insights">Nlebanya</string>
+    <string name="tab_settings">Ntọala</string>
+
+    <!-- Reminder modes (strictness levels) -->
+    <string name="mode_gentle">Nwayọọ</string>
+    <string name="mode_full_screen">Ihuenyo niile</string>
+    <string name="mode_lockdown">Mkpọchi</string>
+    <string name="mode_gentle_description">Ọkwa na-echetara gị n\'oge adhkaar.</string>
+    <string name="mode_full_screen_description">Adhkaar na-emepe n\'onwe ha, ọbụna mgbe ekwentị kpọchiri.</string>
+    <string name="mode_lockdown_description">Ngwa ndị ọzọ na-akwụsịtụ ruo mgbe ị mechara. Oku na-arụ ọrụ mgbe niile.</string>
+    <!-- Small uppercase badge next to the recommended mode -->
+    <string name="mode_recommended">A TỤRỤ ARO YA</string>
+
+    <!-- Prayer-time calculation methods (proper names of institutions; kept in their international forms) -->
+    <string name="calc_muslim_world_league">Muslim World League</string>
+    <string name="calc_egyptian">Egyptian General Authority</string>
+    <string name="calc_karachi">University of Islamic Sciences, Karachi</string>
+    <string name="calc_umm_al_qura">Umm al-Qura, Makkah</string>
+    <string name="calc_dubai">Dubai</string>
+    <string name="calc_qatar">Qatar</string>
+    <string name="calc_kuwait">Kuwait</string>
+    <string name="calc_moonsighting_committee">Moonsighting Committee</string>
+    <string name="calc_singapore">Singapore</string>
+    <string name="calc_north_america">ISNA (North America)</string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">Ntọala</string>
+    <string name="settings_group_mode">Ụdị ncheta</string>
+    <string name="settings_mode_locked">Ị nwere ike ịgbanwe ụdị ncheta mgbe nnọkọ a gwụrụ.</string>
+    <string name="settings_group_morning">Ụtụtụ</string>
+    <string name="settings_group_evening">Mgbede</string>
+    <string name="settings_group_prayer_times">Oge salah</string>
+    <string name="settings_calc_method">Ụzọ ngụkọ</string>
+    <string name="settings_asr_time">Oge Asr</string>
+    <!-- Asr calculation: the majority (Shafi'i, Maliki, Hanbali) method -->
+    <string name="settings_asr_standard">Nke a na-ejikarị</string>
+    <!-- Asr calculation: the Hanafi method (later Asr) -->
+    <string name="settings_asr_hanafi">Hanafi</string>
+    <!-- After the maximum time, Lockdown stops and only a reminder remains -->
+    <!-- Short duration: %1$d = minutes ("nk" = nkeji) -->
+    <string name="settings_duration_minutes">%1$d nk</string>
+    <!-- Short duration: %1$d = hours ("awa" = hour) -->
+    <string name="settings_duration_hours">%1$d awa</string>
+    <!-- Short duration: %1$d = hours, %2$d = minutes -->
+    <string name="settings_duration_hours_minutes">%1$d awa %2$d nk</string>
+    <string name="settings_group_reminders">Ncheta</string>
+    <!-- A notification sent a few minutes before each session -->
+    <string name="settings_heads_up">Ọkwa mbụ</string>
+    <string name="settings_heads_up_hint">Tupu nnọkọ ọ bụla</string>
+    <!-- Value shown when a reminder is switched off -->
+    <string name="settings_off">Agbanyụọ</string>
+    <!-- Short number of minutes: %1$d = minutes -->
+    <string name="settings_minutes_short">Nkeji %1$d</string>
+    <string name="settings_after_salah">Mgbe salah gasịrị</string>
+    <!-- %1$d = number of minutes after each of the five daily prayers -->
+    <string name="settings_after_salah_hint">Ncheta nkeji %1$d mgbe salah ọ bụla gasịrị</string>
+    <string name="settings_before_sleep">Tupu ụra</string>
+    <string name="settings_before_sleep_hint">Pịa ka ịgbanwe oge</string>
+    <string name="settings_islamic_calendar">Kalịnda Islam</string>
+    <!-- "White days" = the 13th, 14th and 15th of each Hijri month (ayyam al-bid) -->
+    <string name="settings_islamic_calendar_hint">Jumuʿah, ụbọchị ọcha, Ramadan, Arafah, Ashura</string>
+    <string name="settings_friday_reminder">Ncheta Jumuʿah</string>
+    <string name="settings_friday_reminder_hint">Surah al-Kahf na salawat</string>
+    <string name="settings_group_hijri">Ụbọchị Hijri</string>
+    <string name="settings_hijri_date">Ụbọchị Hijri</string>
+    <!-- Explains the Hijri day offset. The Sultan of Sokoto example is kept. "−1" is the setting value. -->
+    <string name="settings_moon_sighting">Soro ịhụ ọnwa na Naịjirịa</string>
+    <string name="settings_moon_sighting_hint">Ụbọchị kọmitii ịhụ ọnwa nke Sultan nke Sokoto kwupụtara. A na-elele ya otu ugboro kwa ụbọchị.</string>
+    <string name="settings_hijri_hint">Ọ bụrụ na a kwupụtabeghị ọnwa ahụ, a na-eji ụbọchị a gbakọrọ agbakọ. Dozie ya ebe a ma ọ dị mkpa; dịka ọmụmaatụ, ọ bụrụ na Sultan nke Sokoto kwupụtara mmalite ọnwa otu ụbọchị mgbe nke a gbakọrọ, họrọ −1.</string>
+    <string name="settings_group_reading">Ọgụgụ</string>
+    <string name="settings_arabic_size">Nha Arabik</string>
+    <!-- Text size as a percentage: %1$d = percent -->
+    <string name="settings_percent">%1$d%%</string>
+    <string name="settings_auto_advance">Gaa n\'ihu n\'onwe ya</string>
+    <string name="settings_auto_advance_hint">Gaa n\'ihu mgbe ọnụ ọgụgụ zuru</string>
+    <string name="settings_auto_play">Kpọọ ọgụgụ n\'onwe ya</string>
+    <string name="settings_auto_play_hint">Mgbe ndekọ dị</string>
+    <string name="settings_haptics">Ịma jijiji</string>
+    <string name="settings_haptics_hint">Obere ịma jijiji n\'ọnụ ọgụgụ ọ bụla</string>
+    <string name="settings_transliteration">Ndegharị ụda</string>
+    <string name="settings_translation">Nsụgharị</string>
+    <string name="settings_group_phone">Ekwentị</string>
+    <string name="settings_permissions">Ikike &amp; batrị</string>
+    <string name="settings_permissions_hint">Hụ na adhkaar gị na-abịa n\'oge</string>
+    <string name="settings_test_hint">Nwalee n\'ekwentị a: nnọkọ ga-amalite n\'ime otu nkeji site n\'ụdị ncheta gị ugbu a. Kpọchie ihuenyo ma ọ bụ mepee ngwa ọzọ ka ị na-eche.</string>
+    <string name="settings_test_morning">Nwalee ụtụtụ</string>
+    <string name="settings_test_evening">Nwalee mgbede</string>
+    <!-- Toast after scheduling a test session -->
+    <string name="settings_test_toast">Ọ ga-amalite n\'ime nkeji 1</string>
+    <!-- Shown under the app name and version at the bottom of Settings -->
+    <string name="settings_footer_tagline">Koodu mepere emepe · Enweghị mgbasa ozi · Enweghị nsochi</string>
+    <string name="settings_prayer_fajr">Fajr</string>
+    <string name="settings_prayer_asr">Asr</string>
+    <string name="settings_morning_adhkaar">Adhkaar ụtụtụ</string>
+    <string name="settings_evening_adhkaar">Adhkaar mgbede</string>
+    <!-- %1$s = time of the next session, e.g. "6:15 AM" -->
+    <string name="settings_next_at">Nke ọzọ: %1$s</string>
+    <!-- Segmented option: %1$s = prayer name (Fajr or Asr) -->
+    <string name="settings_after_prayer">Mgbe %1$s gasịrị</string>
+    <string name="settings_fixed_time">Oge a kara aka</string>
+    <!-- %1$s = prayer name (Fajr or Asr) -->
+    <string name="settings_minutes_after_prayer">Nkeji mgbe %1$s gasịrị</string>
+    <string name="settings_time">Oge</string>
+    <string name="settings_choose_time">Họrọ oge</string>
+    <string name="settings_set_time">Tọọ oge</string>
+    <!-- Accessibility label for the stepper's minus button -->
+    <string name="settings_decrease">Belata</string>
+    <!-- Accessibility label for the stepper's plus button -->
+    <string name="settings_increase">Mụbaa</string>
+    <string name="settings_location_error">Enweghị ike ịchọta ebe ị nọ. Gbanye location ma nwaa ọzọ.</string>
+    <string name="settings_location_denied">A jụrụ ikike ebe ị nọ. A ga-eji oge a kara aka.</string>
+    <string name="settings_location_set">Etọọla ebe ị nọ</string>
+    <string name="settings_use_location">Jiri ebe m nọ</string>
+    <!-- %1$s = latitude, %2$s = longitude, already formatted like "6.52" -->
+    <string name="settings_location_coords">%1$s°, %2$s° · pịa ka ị melite ya</string>
+    <string name="settings_location_hint">A na-eji ya otu ugboro gbakọọ Fajr na Asr n\'ekwentị a</string>
+
+    <!-- Phone setup screen -->
+    <!-- Accessibility label for the back arrow -->
+    <string name="setup_back">Laghachi</string>
+    <string name="setup_title">Nhazi ekwentị</string>
+    <string name="setup_intro">Android na-echekwa batrị site n\'ịkwụsị ngwa ndị na-arụ ọrụ n\'azụ. Kwe ndị a otu ugboro ka adhkaar gị na-abịa n\'oge, mgbe niile.</string>
+    <string name="setup_all_set">Ihe niile adịla njikere</string>
+    <!-- Progress: %1$d = steps done, %2$d = total steps. -->
+    <plurals name="setup_ready_count">
+        <item quantity="other">%1$d n\'ime %2$d adịla njikere</item>
+    </plurals>
+    <!-- %1$s = phone brand(s), e.g. "Samsung" or "Xiaomi / Redmi / POCO" -->
+    <string name="setup_oem_title">Ekwentị %1$s</string>
+    <string name="setup_oem_body">Ekwentị gị na-akwụsị ngwa ndị na-arụ ọrụ n\'azụ ma ọ bụrụ na ị kweghị ha.</string>
+    <string name="setup_open_settings">Mepee ntọala</string>
+    <!-- Button that opens an online guide for this phone brand -->
+    <string name="setup_guide">Nduzi</string>
+    <string name="setup_oem_done">Emeela m nke a</string>
+    <!-- Small uppercase badge on a permission card -->
+    <string name="setup_required">Ọ DỊ MKPA</string>
+    <!-- Small uppercase badge on a permission card -->
+    <string name="setup_recommended">A TỤRỤ ARO YA</string>
+    <!-- Accessibility label for the tick on a granted permission -->
+    <string name="setup_allowed">Ekwere</string>
+    <string name="setup_allow">Kwe</string>
+
+    <!-- Permission requirements -->
+    <string name="req_notifications">Ọkwa</string>
+    <string name="req_notifications_why">Ka ngwa a nwee ike ịkpọtụrụ gị n\'oge adhkaar.</string>
+    <string name="req_exact_alarms">Mkpu &amp; ncheta</string>
+    <string name="req_exact_alarms_why">Na-amalite nnọkọ gị n\'otu nkeji ahụ kpọmkwem, ọbụna mgbe ekwentị na-ehi ụra.</string>
+    <string name="req_full_screen">Ọkwa ihuenyo niile</string>
+    <string name="req_full_screen_why">Na-emepe adhkaar n\'elu ihuenyo mkpọchi, dịka elekere mkpu.</string>
+    <string name="req_overlay">Gosi n\'elu ngwa ndị ọzọ</string>
+    <string name="req_overlay_why">Na-emepe adhkaar mgbe ị na-eji ngwa ọzọ, ma na-akwụsịtụ ngwa ndị ọzọ n\'oge Mkpọchi.</string>
+    <string name="req_usage_access">Ohere ojiji ngwa</string>
+    <string name="req_usage_access_why">Na-enye Mkpọchi ohere ịmata ngwa mepere emepe. Ọ dịghị ihe a na-edekọ, ọ dịghịkwa ihe na-apụ n\'ekwentị gị.</string>
+    <string name="req_battery">Batrị na-enweghị mmachi</string>
+    <string name="req_battery_why">Na-egbochi Android ime ka ngwa a hie ụra ma tụfuo oge adhkaar gị.</string>
+
+    <!-- Brand-specific auto-start steps. Quoted names are the labels in the phone maker's own settings screens;
+         phones do not offer an Igbo interface, so the English labels are kept as they appear on screen. -->
+    <string name="oem_xiaomi_step_autostart">Gbanye Autostart maka Adhkaar</string>
+    <string name="oem_xiaomi_step_other_permissions">Na Other permissions, kwe “Display pop-up windows while running in the background” na “Show on lock screen”</string>
+    <string name="oem_xiaomi_step_battery">Battery saver: họrọ “No restrictions” maka Adhkaar</string>
+    <string name="oem_oppo_step_autolaunch">Kwe Auto launch maka Adhkaar</string>
+    <string name="oem_oppo_step_battery">Battery: kwe ọrụ n\'azụ (background activity)</string>
+    <string name="oem_vivo_step_autostart">Kwe Auto-start maka Adhkaar</string>
+    <string name="oem_vivo_step_battery">Battery: kwe iji ọtụtụ ike batrị n\'azụ (high background power consumption)</string>
+    <string name="oem_huawei_step_app_launch">App launch: tụgharịa Adhkaar gaa “Manage manually” ma gbanye mgbanwe atọ ahụ niile</string>
+    <string name="oem_samsung_step_sleeping">Battery: hụ na Adhkaar anọghị na “Sleeping apps” ma ọ bụ “Deep sleeping apps”</string>
+    <string name="oem_samsung_step_never_sleeping">Tinye ya na “Never sleeping apps”</string>
+    <string name="oem_oneplus_step_autolaunch">Kwe Auto-launch maka Adhkaar</string>
+    <string name="oem_oneplus_step_battery">Battery optimisation: họrọ “Don’t optimise”</string>
+    <string name="oem_tecno_step_autostart">Phone Master → Auto-start: kwe Adhkaar</string>
+    <string name="oem_tecno_step_power_saving">Gbanyụọ mmachi “Power saving” maka Adhkaar</string>
+    <string name="oem_asus_step_autostart">Mobile Manager → Auto-start: kwe Adhkaar</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_finish_blocked">Nye ikike niile dị n\'elu iji mechaa. Ọ bụrụ na ekwentị gị anaghị ekwe otu n\'ime ha, laghachi azụ họrọ ụdị dị nro.</string>
+    <string name="setup_oem_checked_ok">E lelere ya na ekwentị gị: ekwere ya.</string>
+    <string name="setup_oem_checked_missing">Ekwebeghị ya. Mepee ntọala gbanye ndị a, wee lọghachi.</string>
+    <string name="onboarding_finish">Mechaa</string>
+    <string name="onboarding_continue">Gaa n\'ihu</string>
+    <!-- Translation of Qur'an 2:152. %1$s is replaced by onboarding_verse_emphasis, shown in italics. -->
+    <string name="onboarding_verse">Chetanụ M,\nM ga-echetakwa %1$s</string>
+    <!-- The emphasised (italic) last word(s) of onboarding_verse -->
+    <string name="onboarding_verse_emphasis">unu.</string>
+    <!-- Qur'an reference: surah Al-Baqarah, chapter 2, verse 152 -->
+    <string name="onboarding_verse_reference">Al-Baqarah 2:152</string>
+    <string name="onboarding_pill_on_time">N\'oge</string>
+    <string name="onboarding_pill_focused">Uche dị n\'otu</string>
+    <string name="onboarding_pill_private">Na nzuzo</string>
+    <string name="onboarding_get_started">Ka anyị bido</string>
+    <string name="onboarding_mode_title">Ncheta ahụ ọ ga-esi\nike ruo ole?</string>
+    <string name="onboarding_mode_body">Ị nwere ike ịgbanwe nke a mgbe ọ bụla. Oku na oku mberede na-arụ ọrụ mgbe niile.</string>
+    <string name="onboarding_times_title">Olee mgbe\nọ ga-amalite?</string>
+    <string name="onboarding_times_body">Adhkaar ụtụtụ na-amalite mgbe e kpechara Fajr, nke mgbede mgbe Asr gasịrị. Edebere oge ndị a n\'oge obodo a na-ahụkarị; gbanwee ha ka ha dị ka nke ụlọ alakụba gị mgbe ọ bụla.</string>
+    <string name="onboarding_morning">Ụtụtụ</string>
+    <string name="onboarding_evening">Mgbede</string>
+    <!-- %1$d = minutes, %2$s = prayer name (Fajr or Asr) -->
+    <string name="onboarding_minutes_after_prayer">Nkeji %1$d mgbe %2$s gasịrị</string>
+    <string name="onboarding_fine_tune">Ị nwere ike imezi oge abụọ ahụ na Ntọala.</string>
+
+    <!-- Language setting -->
+    <string name="settings_group_language">Asụsụ</string>
+    <string name="settings_language">Asụsụ ngwa</string>
+    <!-- Option to use the phone's own language instead of choosing one. -->
+    <string name="settings_language_system">Dịka ekwentị</string>
+</resources>

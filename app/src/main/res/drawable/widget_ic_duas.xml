@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Everyday duas: an open book. Tinted by the widget. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M12,6.5 C10.2,5.2 7.6,4.6 3,5 L3,18.5 C7.6,18.1 10.2,18.7 12,20 C13.8,18.7 16.4,18.1 21,18.5 L21,5 C16.4,4.6 13.8,5.2 12,6.5 Z M11.4,7.6 L12.6,7.6 L12.6,18.4 L11.4,18.4 Z" />
+</vector>

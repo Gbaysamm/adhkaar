@@ -1,0 +1,11 @@
+name = "adhkaar-report"
+main = "worker.js"
+compatibility_date = "2025-09-01"
+
+[vars]
+# The repository that receives the issues, as "owner/name".
+GITHUB_REPO = "adhkaar-app/adhkaar"
+
+# Secrets (never put them in this file):
+#   npx wrangler secret put GITHUB_TOKEN      (required)
+#   npx wrangler secret put CONTACT_WEBHOOK   (optional)

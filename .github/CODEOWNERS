@@ -1,0 +1,19 @@
+# Who must review what. The last matching line wins, so the defaults come first.
+# With "Require review from Code Owners" on (see GOVERNANCE.md), content paths need a content
+# reviewer's approval; a maintainer's approval alone isn't enough for them.
+
+# Everything: a maintainer.
+*                                                        @adhkaar-app/maintainers
+
+# Religious content: adhkaar, collections, daily reminders, meanings, audio, Hijri calendar.
+/app/src/main/assets/**                                  @adhkaar-app/content-reviewers
+/tools/reminders/**                                      @adhkaar-app/content-reviewers
+/app/src/main/res/values*/strings_reminder_sources.xml   @adhkaar-app/content-reviewers
+/docs/REMINDERS.md                                       @adhkaar-app/content-reviewers
+/docs/i18n-template.json                                 @adhkaar-app/content-reviewers
+/docs/AUDIO.md                                           @adhkaar-app/content-reviewers
+
+# Project rules, CI and releases: maintainers only.
+/.github/                                                @adhkaar-app/maintainers
+/GOVERNANCE.md                                           @adhkaar-app/maintainers
+/SECURITY.md                                             @adhkaar-app/maintainers

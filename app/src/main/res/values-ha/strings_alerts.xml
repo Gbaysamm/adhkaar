@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hausa translation. DRAFT by Claude: must be reviewed by a native Hausa speaker before release. -->
+<!-- The session alert (ringing, Settings > Alert sound) and the Lockdown blocking screen. -->
+<resources>
+
+    <!-- Notification button that stops the ringing alert. -->
+    <string name="alert_stop">Tsaya</string>
+
+    <!-- Lockdown blocking screen, shown over other apps until the user returns to the session. "Adhkaar" = the daily remembrances of Allah (transliterated Arabic); "dhikr" = one of them. -->
+    <string name="block_title_morning">Azkar na safe suna jiranka</string>
+    <string name="block_title_evening">Azkar na yamma suna jiranka</string>
+    <string name="block_body">Sauran manhajoji sun tsaya a yanzu. Ɗan mintuna cikin natsuwa tare da Allah, sannan su dawo gare ka.</string>
+    <!-- %1$d = adhkaar not yet finished in this session. -->
+    <plurals name="block_remaining">
+        <item quantity="one">Saura zikiri %1$d</item>
+        <item quantity="other">Saura azkar %1$d</item>
+    </plurals>
+    <string name="block_start">Fara azkar ɗinka</string>
+    <string name="block_return">Koma ga azkar ɗinka</string>
+    <string name="block_call">Kira ko gaggawa</string>
+
+    <!-- Settings > Reminders > Alert sound. -->
+    <string name="settings_alert_sound">Sautin faɗakarwa</string>
+    <!-- %1$d = minutes until the second ring (10). -->
+    <plurals name="settings_alert_sound_hint">
+        <item quantity="one">Yana ƙara na minti ɗaya a lokacin zama, sannan sau ɗaya kuma bayan minti %1$d idan ba a buɗe ba</item>
+        <item quantity="other">Yana ƙara na minti ɗaya a lokacin zama, sannan sau ɗaya kuma bayan minti %1$d idan ba a buɗe ba</item>
+    </plurals>
+    <!-- The two choices: the app’s own bell sound, or the user’s recorded voice. -->
+    <string name="settings_alert_chime">Ƙararrawa</string>
+    <string name="settings_alert_recording">Naɗina</string>
+    <string name="settings_alert_chime_title">Ƙararrawar Azkar</string>
+    <string name="settings_alert_chime_text">Ƙararrawa mai taushi mai hawa sama, an yi ta don wannan manhaja</string>
+    <string name="settings_alert_your_recording">Faɗakarwarka</string>
+    <string name="settings_alert_repeats">Yana maimaituwa da ɗan hutu yayin da yake ƙara</string>
+    <string name="settings_alert_record_prompt">Naɗa faɗakarwarka da muryarka</string>
+    <string name="settings_alert_record_example">Faɗi kamar “Lokacin azkar na safe ya yi.” Kafin nan, ƙararrawa ce za ta yi ƙara.</string>
+</resources>

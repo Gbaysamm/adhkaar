@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Urdu translation. Draft by Claude; please have a native speaker review before release. -->
+<resources>
+    <!-- Home-screen widgets: names and one-line descriptions shown in the launcher's widget picker. -->
+    <string name="widget_name_today">آج</string>
+    <string name="widget_name_next">اگلے اذکار</string>
+    <string name="widget_name_sky">دن کا آسمان</string>
+    <string name="widget_name_dhikr">اس لمحے کا ذکر</string>
+    <string name="widget_name_hijri">ہجری تاریخ</string>
+    <string name="widget_name_streak">تسلسل</string>
+    <string name="widget_name_collection">مجموعے کا شارٹ کٹ</string>
+    <string name="widget_desc_today">آپ کے اگلے اذکار، الٹی گنتی، اور شروع کرنے کے لیے ایک ٹچ</string>
+    <string name="widget_desc_next">آپ کے اگلے اذکار اور ان کا وقت</string>
+    <string name="widget_desc_sky">فجر سے مغرب تک کا دن، اور سورج جہاں وہ اس وقت ہے</string>
+    <string name="widget_desc_dhikr">ایک مختصر ذکر اور اس کا مطلب، ہر چند گھنٹے بعد نیا</string>
+    <string name="widget_desc_hijri">آج کی ہجری تاریخ اور اگلا خاص دن</string>
+    <string name="widget_desc_streak">آپ کا تسلسل، اور اس ہفتے کی صبحیں اور شامیں</string>
+    <string name="widget_desc_collection">ایک ٹچ میں نماز کے بعد، سونے سے پہلے، جاگنے پر یا روزمرہ کی دعائیں</string>
+
+    <!-- Widget styles, chosen when a widget is added. -->
+    <string name="widget_style_glass">شیشہ</string>
+    <string name="widget_style_glass_desc">گہرا اور ہلکی روشنی والا، ایپ کی طرح</string>
+    <string name="widget_style_parchment">کاغذ</string>
+    <string name="widget_style_parchment_desc">گرم کریم رنگ، گہری سیاہی اور سنہرا</string>
+    <string name="widget_style_clear">شفاف</string>
+    <string name="widget_style_clear_desc">کوئی پس منظر نہیں: آپ کے وال پیپر پر سفید متن</string>
+
+    <!-- Widget configuration screen. -->
+    <string name="widget_config_subtitle">منتخب کریں کہ یہ آپ کی ہوم اسکرین پر کیسا دکھے۔</string>
+    <string name="widget_config_style_title">انداز</string>
+    <string name="widget_config_collection_title">کھلتا ہے</string>
+    <string name="widget_config_save">محفوظ کریں</string>
+
+    <string name="widget_countdown_in">%1$s میں</string>
+
+    <string name="widget_event_today">آج %1$s</string>
+    <string name="widget_event_tomorrow">کل %1$s</string>
+    <!-- Always two days or more away. %1$s = the day's name, %2$d = days. -->
+    <plurals name="widget_event_in_days">
+        <item quantity="one">%2$d دن میں %1$s</item>
+        <item quantity="other">%2$d دن میں %1$s</item>
+    </plurals>
+    <string name="widget_hijri_month_year">%1$s %2$d ھ</string>
+
+    <plurals name="widget_days_in_a_row">
+        <item quantity="one">دن مسلسل</item>
+        <item quantity="other">دن مسلسل</item>
+    </plurals>
+    <string name="widget_streak_start">آج اپنا تسلسل شروع کریں</string>
+
+    <string name="widget_preview_days_in_a_row">دن مسلسل</string>
+    <string name="widget_preview_dhikr_meaning">اللہ پاک ہے اور اسی کی حمد ہے۔</string>
+</resources>

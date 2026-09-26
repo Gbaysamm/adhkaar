@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arabic translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="reminder_date_both">%1$s · %2$s</string>
+    <string name="reminder_gregorian_date">%1$s %2$d %3$s %4$d</string>
+    <string name="reminder_kind_verse">من القرآن</string>
+    <string name="reminder_kind_hadith">من السنة</string>
+    <string name="reminder_kind_fact">عن هذا اليوم</string>
+    <string name="reminder_save_image">حفظ الصورة</string>
+    <string name="reminder_saved">حُفظت في Pictures/Adhkaar</string>
+    <string name="reminder_save_failed">تعذّر حفظ الصورة</string>
+    <string name="reminder_share_chooser">مشاركة التذكير</string>
+    <string name="reminder_image_preview">معاينة الصورة التي ستُشارك</string>
+
+    <string name="day_card_today_is">اليوم %1$s</string>
+    <string name="day_card_tag_month">%1$s %2$s</string>
+    <string name="day_card_year_ah">%1$s هـ</string>
+    <string name="day_card_pill">%1$s %2$s %3$s %4$s  ›  %5$s %6$s %7$s</string>
+    <string-array name="day_card_month_short">
+        <item>محرم</item>
+        <item>صفر</item>
+        <item>ربيع الأول</item>
+        <item>ربيع الآخر</item>
+        <item>جمادى الأولى</item>
+        <item>جمادى الآخرة</item>
+        <item>رجب</item>
+        <item>شعبان</item>
+        <item>رمضان</item>
+        <item>شوال</item>
+        <item>ذو القعدة</item>
+        <item>ذو الحجة</item>
+    </string-array>
+    <string-array name="day_card_weekdays">
+        <item>أحد</item>
+        <item>إثنين</item>
+        <item>ثلاثاء</item>
+        <item>أربعاء</item>
+        <item>خميس</item>
+        <item>جمعة</item>
+        <item>سبت</item>
+    </string-array>
+    <!-- The local weekday names would only repeat the Arabic row. -->
+    <bool name="day_card_show_local_weekdays">false</bool>
+</resources>

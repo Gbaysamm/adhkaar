@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arabic translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="break_take">خذ استراحة</string>
+    <string name="break_title">تحتاج لحظة؟</string>
+    <string name="break_rings_again">هاتفك حرّ حتى تنتهي الاستراحة، ثم يرنّ التنبيه من جديد.</string>
+    <string name="break_no_time">لم يبقَ وقت كافٍ لاستراحة</string>
+    <string name="break_done_by">يجب إتمامها قبل %1$s</string>
+    <plurals name="break_option_minutes">
+        <item quantity="zero">%1$d دقيقة</item>
+        <item quantity="one">دقيقة واحدة</item>
+        <item quantity="two">دقيقتان</item>
+        <item quantity="few">%1$d دقائق</item>
+        <item quantity="many">%1$d دقيقة</item>
+        <item quantity="other">%1$d دقيقة</item>
+    </plurals>
+    <plurals name="break_option_hours">
+        <item quantity="zero">%1$d ساعة</item>
+        <item quantity="one">ساعة واحدة</item>
+        <item quantity="two">ساعتان</item>
+        <item quantity="few">%1$d ساعات</item>
+        <item quantity="many">%1$d ساعة</item>
+        <item quantity="other">%1$d ساعة</item>
+    </plurals>
+    <string name="break_notification">في استراحة حتى %1$s · يجب الإتمام قبل %2$s</string>
+    <string name="session_lockdown_toast">أتمّ أذكارك، أو خذ استراحة</string>
+    <plurals name="break_left">
+        <item quantity="one">بقي %1$d ذكر</item>
+        <item quantity="other">بقي %1$d أذكار</item>
+    </plurals>
+    <string name="break_back_at">تعود في %1$s، ثم يرن التنبيه من جديد.</string>
+    <string name="break_keep_reading">تابع القراءة</string>
+    <string name="break_pick_time">اختر مدة</string>
+    <string name="break_pause_for">توقف %1$s</string>
+    <string name="break_unit_min">دقيقة</string>
+    <string name="break_unit_hour">ساعة</string>
+    <string name="break_confirm_title">قبل أن تتوقف</string>
+    <plurals name="break_confirm_left">
+        <item quantity="one">بقي ذكر واحد فقط. دقائق قليلة وتتم أذكار اليوم.</item>
+        <item quantity="other">بقي %1$d أذكار فقط. دقائق قليلة وتتم أذكار اليوم.</item>
+    </plurals>
+    <plurals name="break_confirm_streak">
+        <item quantity="one">حافظت عليها يومًا متتاليًا.</item>
+        <item quantity="other">حافظت عليها %1$d أيام متتالية. لا تجعل اليوم فجوة.</item>
+    </plurals>
+    <string name="break_confirm_hadith">مثل الذي يذكر ربه والذي لا يذكر ربه مثل الحي والميت.</string>
+    <string name="break_confirm_source">صحيح البخاري ٦٤٠٧</string>
+    <string name="break_confirm_stay">ابقَ وأكمل</string>
+    <string name="break_confirm_pause">توقف %1$s على أي حال</string>
+    <string name="session_end_test">تجربة · إنهاء التجربة</string>
+</resources>

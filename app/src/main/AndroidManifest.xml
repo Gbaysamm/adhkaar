@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- Keeps the session alert ringing through its pauses with the screen off (one minute at most). -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Only to download the public moon-sighting list (data/MoonSighting.kt). Nothing is sent. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Only to record your own duas in your voice; asked the first time you tap Record. -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- Brand-specific auto-start / battery screens we deep-link to during onboarding. -->
+    <queries>
+        <package android:name="com.miui.securitycenter" />
+        <package android:name="com.coloros.safecenter" />
+        <package android:name="com.oppo.safe" />
+        <package android:name="com.iqoo.secure" />
+        <package android:name="com.vivo.permissionmanager" />
+        <package android:name="com.huawei.systemmanager" />
+        <package android:name="com.hihonor.systemmanager" />
+        <package android:name="com.samsung.android.lool" />
+        <package android:name="com.asus.mobilemanager" />
+        <package android:name="com.oneplus.security" />
+        <package android:name="com.transsion.phonemaster" />
+    </queries>
+
+    <application
+        android:name=".AdhkaarApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:localeConfig="@xml/locales_config"
+        android:theme="@style/Theme.Adhkaar">
+
+        <!-- alwaysRetainTaskState: never trim the task back to this screen after a long absence,
+             so a session open on top of it is still there when the user comes back. -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:alwaysRetainTaskState="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- In the app's own task (no separate taskAffinity): a session begun from the app, left and
+             reopened from the launcher icon comes back as the session, not the screen behind it. -->
+        <activity
+            android:name=".ui.SessionActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"
+            android:theme="@style/Theme.Adhkaar" />
+
+        <receiver
+            android:name=".schedule.SessionAlarmReceiver"
+            android:exported="false" />
+
+        <receiver
+            android:name=".schedule.SystemEventReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.app.action.SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.files"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- Home-screen widgets (widget/). Each has a style picked in WidgetConfigActivity. -->
+        <receiver
+            android:name=".widget.AdhkaarWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_name_today">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/adhkaar_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.NextSessionWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_name_next">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_next_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.DaySkyWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_name_sky">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_sky_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.DhikrWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_name_dhikr">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_dhikr_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.HijriWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_name_hijri">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_hijri_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.StreakWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_name_streak">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_streak_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.CollectionWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_name_collection">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_collection_info" />
+        </receiver>
+
+        <!-- Redraws the widgets every half hour while the phone is awake, and when the clock, the
+             time zone or the phone's language (and so the launcher's direction) changes. Exported
+             only for those system broadcasts. -->
+        <receiver
+            android:name=".widget.WidgetTickReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.LOCALE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Opened by the launcher when a widget is added (android:configure in each widget's info). -->
+        <activity
+            android:name=".widget.WidgetConfigActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:taskAffinity=""
+            android:theme="@style/Theme.Adhkaar">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".enforce.EnforcementService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Rings the alert for the adhkaar session the user scheduled and keeps that session active until they complete it or its time window ends. Runs only while a session is pending." />
+        </service>
+    </application>
+</manifest>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Igbo translation. DRAFT by Claude: must be reviewed by a native Igbo speaker before release. -->
+<!-- Strings used outside the Compose UI: notifications, calendar reminders, Hijri calendar, Lockdown overlay. -->
+<resources>
+
+    <!-- Notification channels (shown in the system notification settings) -->
+    <string name="channel_session_name">Oge adhkaar</string>
+    <string name="channel_session_description">Na-emepe adhkaar ụtụtụ na mgbede gị n\'oge ị họrọ</string>
+    <string name="channel_gentle_name">Ncheta</string>
+    <string name="channel_gentle_description">Ọkwa tupu nnọkọ, ncheta Jumuʿah na ụbọchị ibu ọnụ</string>
+
+    <!-- Session notifications. "Adhkaar" = the daily remembrances of Allah (transliterated Arabic). -->
+    <string name="notif_title_morning">Adhkaar ụtụtụ</string>
+    <string name="notif_title_evening">Adhkaar mgbede</string>
+    <string name="notif_session_text_morning">Oge eruola maka adhkaar ụtụtụ gị. Pịa ka ị malite.</string>
+    <string name="notif_session_text_evening">Oge eruola maka adhkaar mgbede gị. Pịa ka ị malite.</string>
+    <!-- Notification action button. %1$d = number of minutes the session is postponed. -->
+    <!-- Heads-up before a session. %1$s = session title, %2$d = minutes until it starts. -->
+    <plurals name="notif_pre_reminder_title">
+        <item quantity="other">%1$s n\'ime nkeji %2$d</item>
+    </plurals>
+    <string name="notif_pre_reminder_text">Obere oge iji mechaa ihe ị na-eme.</string>
+
+    <!-- Collection reminders. "Salah" = the ritual prayer; "dhikr" = remembrance of Allah. -->
+    <string name="reminder_after_salah_title">Mgbe salah gasịrị</string>
+    <string name="reminder_after_salah_text">Obere oge dhikr iji kpuchido salah gị.</string>
+    <string name="reminder_before_sleep_title">Tupu ụra</string>
+    <string name="reminder_before_sleep_text">Were adhkaar abalị mechie ụbọchị gị.</string>
+
+    <!-- Calendar reminders. %1$s = the event title, e.g. "Ụbọchị Arafah". -->
+    <string name="reminder_eve_title">Echi: %1$s</string>
+    <!-- Friday greeting. Keep the ʿ and ﷺ. -->
+    <string name="reminder_friday_title">Jumuʿah Mubarak</string>
+    <string name="reminder_friday_body">Gụọ Surah al-Kahf taa, zigakwa ọtụtụ salawat nye Onye Amụma ﷺ.</string>
+
+    <!-- Special days of the Islamic calendar. ﷺ = salla Allahu alayhi wa sallam, keep as is. -->
+    <string name="event_jumuah_title">Jumuʿah</string>
+    <string name="event_jumuah_body">Gụọ Surah al-Kahf, zigakwa ọtụtụ salawat nye Onye Amụma ﷺ.</string>
+    <string name="event_last_ten_nights_title">Abalị iri ikpeazụ</string>
+    <!-- Contains a transliterated Arabic duʿa; keep the transliteration as is. -->
+    <string name="event_last_ten_nights_body">Chọọ Laylat al-Qadr. Kwuo: Allāhumma innaka ʿafuwwun tuḥibbul-ʿafwa faʿfu ʿannī.</string>
+    <string name="event_ramadan_title">Ramadan</string>
+    <string name="event_ramadan_body">Ọnwa Qur’an. Mụbaa ọgụgụ Qur’an gị na dua gị.</string>
+    <string name="event_eid_al_fitr_title">Eid al-Fitr</string>
+    <string name="event_eid_al_fitr_body">Eid Mubarak. Kwuo takbir, nyekwa zakat al-fitr tupu salah ma ọ bụrụ na i nyebeghị ya.</string>
+    <string name="event_dhul_hijjah_ten_title">Ụbọchị iri kacha mma</string>
+    <!-- Contains transliterated Arabic phrases; keep them as is. -->
+    <string name="event_dhul_hijjah_ten_body">Mụbaa tahlil, takbir na tahmid: lā ilāha illallāh, Allāhu akbar, al-ḥamdu lillāh.</string>
+    <string name="event_arafah_title">Ụbọchị Arafah</string>
+    <string name="event_arafah_body">Ibu ọnụ taa na-ehichapụ mmehie nke afọ gara aga na nke afọ na-abịa.</string>
+    <string name="event_eid_al_adha_title">Eid al-Adha</string>
+    <string name="event_eid_al_adha_body">Eid Mubarak. Cheta Allah site na takbir n\'ụbọchị tashriq niile.</string>
+    <!-- "Tasuʿa" = the 9th of Muharram, transliterated; keep the ʿ. -->
+    <string name="event_tasua_title">Tasuʿa</string>
+    <string name="event_tasua_body">Bụọ ọnụ taa na Ashura echi, dịka Onye Amụma ﷺ zubere.</string>
+    <!-- "Ashura" = the 10th of Muharram, transliterated. -->
+    <string name="event_ashura_title">Ashura</string>
+    <string name="event_ashura_body">Ibu ọnụ taa na-ehichapụ mmehie nke afọ gara aga.</string>
+    <!-- The 13th, 14th and 15th of each Hijri month. -->
+    <string name="event_white_days_title">Ụbọchị ọcha</string>
+    <string name="event_white_days_body">Ibu ọnụ n\'ụbọchị nke 13, 14 na 15 nke ọnwa bụ sunnah.</string>
+
+    <!-- Hijri (Islamic lunar) month names, kept in their Arabic forms. -->
+    <string name="hijri_month_muharram">Muharram</string>
+    <string name="hijri_month_safar">Safar</string>
+    <string name="hijri_month_rabi_al_awwal">Rabiʿ al-Awwal</string>
+    <string name="hijri_month_rabi_al_thani">Rabiʿ al-Thani</string>
+    <string name="hijri_month_jumada_al_ula">Jumada al-Ula</string>
+    <string name="hijri_month_jumada_al_akhirah">Jumada al-Akhirah</string>
+    <string name="hijri_month_rajab">Rajab</string>
+    <string name="hijri_month_shaban">Shaʿban</string>
+    <string name="hijri_month_ramadan">Ramadan</string>
+    <string name="hijri_month_shawwal">Shawwal</string>
+    <string name="hijri_month_dhu_al_qadah">Dhu al-Qaʿdah</string>
+    <string name="hijri_month_dhu_al_hijjah">Dhu al-Hijjah</string>
+    <!-- Hijri date. %1$d = day of month, %2$s = month name, %3$d = Hijri year. -->
+    <string name="hijri_month_date_format">%1$d %2$s %3$d</string>
+
+    <!-- Lockdown overlay, drawn over other apps until the session is completed. -->
+</resources>

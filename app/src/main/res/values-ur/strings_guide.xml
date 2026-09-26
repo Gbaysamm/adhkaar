@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guide_title">رہنمائی</string>
+    <string name="guide_intro">ایپ کیسے کام کرتی ہے، اور اسے اپنے دن کے مطابق کیسے بنائیں۔</string>
+    <string name="guide_group_times">اوقات</string>
+    <string name="guide_times_title">اذکار کب کھلتے ہیں</string>
+    <string name="guide_times_body">صبح کے اذکار فجر کی جماعت کے دس منٹ بعد (تقریباً چھ بجے) کھلتے ہیں اور ساڑھے سات بجے تک پڑھنا بہتر ہے۔ شام کے اذکار عصر کی نماز کے تقریباً تیس منٹ بعد (پونے پانچ کے قریب) کھلتے ہیں، مغرب سے پہلے پڑھنا بہتر ہے، اور عشاء تک پڑھے جا سکتے ہیں۔ سب کچھ آپ کے نماز کے اوقات پر چلتا ہے، اس لیے پہلے وہ درست کریں۔</string>
+    <string name="guide_salah_title">آپ کے نماز کے اوقات</string>
+    <string name="guide_salah_body">ایپ عام مقامی اوقات سے شروع ہوتی ہے۔ انہیں ترتیبات › نماز کی یاد دہانیاں میں اپنی مسجد کے مطابق بدلیں: وقت پر ٹیپ کر کے تبدیل کریں۔ آپ کے اوقات پہلے سے طے شدہ اوقات کی جگہ لے لیتے ہیں، اور وہیں ہر نماز کی یاد دہانی آن یا آف کر سکتے ہیں۔</string>
+    <string name="guide_group_modes">موڈ</string>
+    <string name="guide_modes_intro">موڈ طے کرتا ہے کہ ایپ صبح و شام کے اذکار پر کتنی سختی کرے۔ یہ صرف انہی دونوں پر لاگو ہوتا ہے؛ باقی سب اطلاع ہے۔</string>
+    <string name="guide_gentle_body">اذکار کھلنے پر ایک نرم آواز اور ایک اطلاع۔ دوبارہ نہیں بجتی۔</string>
+    <string name="guide_gentle_pros">پرسکون اور رکاوٹ نہیں بنتی۔ اگر عادت پہلے سے ہے تو اچھی ہے۔</string>
+    <string name="guide_gentle_cons">آسانی سے ہٹا کر بھولا جا سکتا ہے۔</string>
+    <string name="guide_full_body">اذکار خود کھل جاتے ہیں، لاک اسکرین پر بھی۔ الرٹ ایک منٹ بجتا ہے، اور اگر آپ نے نہ کھولے تو دس منٹ بعد ایک بار پھر۔ اس کے بعد خاموش رہتا ہے، مگر جب بھی آپ فون ان لاک کریں وہ واپس آتے ہیں، جب تک آپ ختم نہ کریں یا وقت ختم نہ ہو۔</string>
+    <string name="guide_full_pros">چھوٹنا مشکل، مگر فون کا استعمال نہیں روکتا۔</string>
+    <string name="guide_full_cons">یہ آپ کو روکتا ہے۔ بند کرنا آخر نہیں: اگلی بار فون ان لاک کرنے پر یہ واپس آتا ہے۔</string>
+    <string name="guide_lockdown_body">فل اسکرین جیسا، اور دوسری ایپس ڈھک جاتی ہیں جب تک آپ اذکار ختم نہ کریں یا ان کا وقت ختم نہ ہو (صبح ساڑھے سات، شام عشاء)۔ کالیں ہمیشہ چلتی ہیں۔ یہ پہلے ختم نہیں ہوتا: ختم کرنے یا وقت پورا ہونے پر ہٹتا ہے۔</string>
+    <string name="guide_lockdown_pros">عادت بنانے میں سب سے مضبوط مدد: فون انتظار کرتا ہے جب تک آپ پڑھ نہ لیں۔</string>
+    <string name="guide_lockdown_cons">جان بوجھ کر سخت۔ اگر ابھی واقعی نہیں پڑھ سکتے تو وقفہ لیں۔</string>
+    <string name="guide_pros">خوبیاں</string>
+    <string name="guide_cons">دھیان رکھیں</string>
+    <string name="guide_breaks_title">وقفے</string>
+    <string name="guide_breaks_body">اذکار کھلنے پر مصروف ہیں؟ ۱۰، ۲۰، ۳۰ یا ۶۰ منٹ کا وقفہ لیں۔ وقفہ ختم ہونے پر یاد دہانی واپس آتی ہے، جب تک اذکار کا وقت باقی ہو۔</string>
+    <string name="guide_group_more">مزید</string>
+    <string name="guide_collections_title">دوسری یاد دہانیاں</string>
+    <string name="guide_collections_body">سونے، جاگنے، نماز کے بعد اور دوسرے مجموعے صرف اطلاع سے یاد دلاتے ہیں؛ موڈ ان پر لاگو نہیں ہوتے۔ انہیں ترتیبات › یاد دہانیاں میں آن کریں۔</string>
+    <string name="guide_calendar_title">کیلنڈر</string>
+    <string name="guide_calendar_body">اسلامی کیلنڈر دستیاب ہونے پر نائیجیریا میں اعلان کردہ رؤیتِ ہلال پر چلتا ہے، ورنہ حساب شدہ تاریخوں پر۔ اس میں جمعہ، ایامِ بیض، رمضان اور دوسرے خاص دن نمایاں ہیں۔</string>
+    <string name="guide_widgets_title">ویجٹس</string>
+    <string name="guide_widgets_body">ہوم اسکرین سے اذکار ویجٹس شامل کریں: خالی جگہ پر دیر تک دبائیں، ویجٹس پر ٹیپ کریں اور اذکار تلاش کریں۔ ہر ایک تین انداز میں ہے۔</string>
+    <string name="guide_phone_title">اپنے فون پر اسے چلتا رکھیں</string>
+    <string name="guide_phone_body">کچھ فون بیٹری بچانے کے لیے پس منظر میں ایپس روک دیتے ہیں۔ اگر یاد دہانی نہ آئے تو ترتیبات › اجازتیں کھولیں اور سب کی اجازت دیں، پھر صبح یا شام کا ٹیسٹ کریں۔</string>
+    <string name="settings_guide">رہنمائی</string>
+    <string name="settings_guide_hint">اوقات اور موڈ کیسے کام کرتے ہیں</string>
+    <string name="settings_group_help">مدد</string>
+    <string name="settings_report_bug">ہم سے رابطہ کریں</string>
+    <string name="settings_report_bug_hint">کسی مسئلے کی اطلاع دیں یا کوئی خیال بتائیں</string>
+</resources>

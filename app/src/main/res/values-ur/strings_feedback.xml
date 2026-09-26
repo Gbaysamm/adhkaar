@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="contact_title">ہم سے رابطہ کریں</string>
+    <string name="contact_intro">کسی مسئلے، خیال یا متن کی غلطی کے بارے میں بتائیں۔ ہم ہر پیغام پڑھتے ہیں۔</string>
+    <string name="contact_topic_label">موضوع</string>
+    <string name="contact_topic_problem">مسئلہ</string>
+    <string name="contact_topic_suggestion">تجویز</string>
+    <string name="contact_topic_correction">تصحیح</string>
+    <string name="contact_topic_other">دیگر</string>
+    <string name="contact_message_problem">کیا ہوا؟</string>
+    <string name="contact_message_suggestion">آپ کا خیال</string>
+    <string name="contact_message_correction">کیا بدلنا چاہیے؟</string>
+    <string name="contact_message_other">آپ کا پیغام</string>
+    <string name="contact_placeholder_problem">آپ کیا کر رہے تھے، اور کیا غلط ہوا؟</string>
+    <string name="contact_placeholder_suggestion">کیا چیز ایپ کو آپ کے لیے بہتر بنائے گی؟</string>
+    <string name="contact_placeholder_correction">کون سا ذکر یا ترجمہ، اور اس میں کیا ہونا چاہیے؟</string>
+    <string name="contact_placeholder_other">یہاں لکھیں</string>
+    <string name="contact_reply_label">آپ کا ای میل یا فون (تاکہ ہم جواب دے سکیں)</string>
+    <string name="contact_reply_placeholder">اختیاری</string>
+    <string name="contact_details_title">ساتھ بھیجی جانے والی تفصیلات</string>
+    <string name="contact_details_note">صرف یہی، تاکہ ہم مسئلے ڈھونڈ سکیں۔ کچھ بھی ذاتی نہیں۔</string>
+    <string name="contact_min_hint">بھیجنے کے لیے چند الفاظ اور لکھیں</string>
+    <string name="contact_send">بھیجیں</string>
+    <string name="contact_sending">بھیجا جا رہا ہے…</string>
+    <string name="contact_failed">بھیجا نہ جا سکا۔ اپنا انٹرنیٹ کنکشن دیکھیں۔</string>
+    <string name="contact_try_again">دوبارہ کوشش کریں</string>
+    <string name="contact_email_instead">اس کے بجائے ای میل کریں</string>
+    <string name="contact_sent_title">جزاک اللہ خیراً</string>
+    <string name="contact_sent_body">آپ کا پیغام ہم تک پہنچ گیا۔ اگر آپ نے رابطے کا ذریعہ دیا ہے تو ہم وہیں جواب دیں گے۔</string>
+    <string name="contact_back">ترتیبات پر واپس</string>
+    <string name="contact_copy">پیغام اور فون کی تفصیلات کاپی کریں</string>
+    <string name="contact_copied">کاپی ہو گیا۔ ہمیں بھیجنے کے لیے کہیں بھی پیسٹ کریں۔</string>
+</resources>

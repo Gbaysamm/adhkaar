@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hausa translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="reminder_sources_title">Majiyoyin tunatarwar yau da kullum</string>
+    <string name="reminder_sources_quran_arabic">Rubutun Larabci na Alƙur\'ani: Tanzil Quran Text (Uthmani, sigar %1$s), © Tanzil Project, ƙarƙashin lasisin Creative Commons Attribution 3.0, ba tare da an canza shi ba. tanzil.net</string>
+    <string name="reminder_sources_quran_meaning">Ma\'anonin Alƙur\'ani: English Translation – Rowwad Translation Center, sigar %1$s, daga QuranEnc.com.</string>
+    <string name="reminder_sources_hadith">Hadisai da Larabci da Turanci: HadeethEnc.com (Encyclopedia of Translated Prophetic Hadiths), sigar %1$s.</string>
+    <string name="reminder_sources_unchanged">Ana nuna rubutun waɗannan majiyoyi daidai yadda aka wallafa su.</string>
+</resources>

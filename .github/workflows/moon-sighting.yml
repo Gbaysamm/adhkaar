@@ -1,0 +1,63 @@
+# Keeps the Hijri dates in step with Nigeria's moon sighting (see docs/MOON_SIGHTING.md).
+# Every three hours: read the newspapers, update app/src/main/assets/calendar/ng.json if the
+# Sultan has declared a new month, and open an issue if the reports disagree.
+name: Moon sighting
+
+on:
+  schedule:
+    - cron: "15 */3 * * *"
+  workflow_dispatch: # "Run workflow" button, for checking by hand
+
+permissions:
+  contents: write # commit the updated dates
+  issues: write # report disagreements
+
+concurrency:
+  group: moon-sighting
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Test the reader
+        run: python -m unittest discover tools/moonsighting
+
+      - name: Read the news and update the dates
+        env:
+          # Optional: a free key from https://tavily.com adds Vanguard, The Nation, Guardian and others.
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+        run: python tools/moonsighting/update.py
+
+      - name: Save the dates
+        run: |
+          if git diff --quiet -- app/src/main/assets/calendar/ng.json; then
+            echo "No change."
+            exit 0
+          fi
+          git config user.name "moon-sighting bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/src/main/assets/calendar/ng.json
+          git commit -m "Hijri dates: $(python -c "import json; m=json.load(open('app/src/main/assets/calendar/ng.json'))['months'][-1]; print(m['hijri'], 'began', m['start'], '(' + m['decided'] + ')')")"
+          git push
+
+      - name: Ask a person when the reports disagree
+        if: hashFiles('alert.md') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # One open issue at a time; later alerts are added to it as comments.
+          open=$(gh issue list --label moon-sighting --state open --json number --jq '.[0].number')
+          if [ -n "$open" ]; then
+            gh issue comment "$open" --body-file alert.md
+          else
+            gh label create moon-sighting --color 6A8FEF --description "Hijri date needs a look" 2>/dev/null || true
+            gh issue create --title "Hijri date needs a look" --label moon-sighting --body-file alert.md
+          fi

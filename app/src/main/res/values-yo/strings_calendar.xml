@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Yoruba translation. DRAFT by Claude: must be reviewed by a native Yoruba speaker before release. -->
+<!-- The dual Hijri/Gregorian calendar (Today and Insights) and the streak sheet on Today. -->
+<resources>
+    <string name="calendar_hijri">Hìjírà</string>
+    <string name="calendar_gregorian">Òyìnbó</string>
+    <string name="calendar_gregorian_span">%1$s – %2$s %3$d</string>
+    <string name="calendar_gregorian_span_years">%1$s %2$d – %3$s %4$d</string>
+    <string name="calendar_day_dates">%1$s · %2$s</string>
+    <string name="calendar_open_reminder">Ṣí ìrántí ọjọ́ yìí</string>
+    <string-array name="calendar_weekdays_arabic">
+        <item>Ahd</item>
+        <item>Ith</item>
+        <item>Thul</item>
+        <item>Arb</item>
+        <item>Kha</item>
+        <item>Jum</item>
+        <item>Sabt</item>
+    </string-array>
+
+    <string name="streak_title">Ìtẹ̀léra yín</string>
+    <string name="streak_open_cd">Àlàyé ìtẹ̀léra</string>
+    <plurals name="streak_to_milestone">
+        <item quantity="other">Ọjọ́ %1$d ló kù sí ìtẹ̀léra ọjọ́ %2$d</item>
+    </plurals>
+    <string name="streak_line_start">Ìtẹ̀léra kọ̀ọ̀kan ń bẹ̀rẹ̀ pẹ̀lú ọjọ́ kan. Òní lè jẹ́ ọjọ́ náà.</string>
+    <string name="streak_line_waiting">Adhkaar òní yóò mú ìtẹ̀léra yín tẹ̀síwájú.</string>
+    <string name="streak_line_best">Èyí ni ìtẹ̀léra yín tó gùn jù lọ báyìí. Ẹ máa tọ́jú rẹ̀ díẹ̀díẹ̀, lójoojúmọ́.</string>
+    <string name="streak_line_done">A ti ka òní. Kí Allāhu gbà á lọ́wọ́ yín.</string>
+    <string name="streak_close">Pa á dé</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Next session: the orb, the session and its time.
+     The style (and for the shortcut, the collection) is chosen in WidgetConfigActivity when the
+     widget is added; on Android 12+ it can be changed later with Reconfigure. -->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/widget_desc_next"
+    android:previewImage="@drawable/widget_preview_orb"
+    android:previewLayout="@layout/widget_preview_next"
+    android:initialLayout="@layout/glance_default_loading_layout"
+    android:configure="org.adhkaar.app.widget.WidgetConfigActivity"
+    android:widgetFeatures="reconfigurable"
+    android:minWidth="110dp"
+    android:minHeight="110dp"
+    android:minResizeWidth="110dp"
+    android:minResizeHeight="96dp"
+    android:targetCellWidth="2"
+    android:targetCellHeight="2"
+    android:maxResizeWidth="250dp"
+    android:maxResizeHeight="220dp"
+    android:resizeMode="horizontal|vertical"
+    android:widgetCategory="home_screen"
+    android:updatePeriodMillis="1800000" />

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hausa translation. DRAFT by Claude: must be reviewed by a native Hausa speaker before release. -->
+<resources>
+    <!-- ===== Session (morning / evening / collection sessions) ===== -->
+    <!-- Overline above the position counter at the top of a session -->
+    <string name="session_overline_morning">AZKAR NA SAFE</string>
+    <string name="session_overline_evening">AZKAR NA YAMMA</string>
+    <!-- Play / pause the recitation of the current dhikr -->
+    <string name="session_listen">Saurara</string>
+    <string name="session_pause">Dakata</string>
+    <string name="session_tap_hint">Taɓa da\'irar ko katin don ƙirgawa</string>
+    <string name="session_close">Rufe</string>
+    <!-- Position in the session, e.g. "3 cikin 19". %1$d = current, %2$d = total -->
+    <string name="session_position">%1$d cikin %2$d</string>
+    <string name="session_reading_options">Zaɓuɓɓukan karatu</string>
+    <string name="session_reading_overline">KARATU</string>
+    <string name="session_arabic_size">Girman Larabci</string>
+    <!-- Arabic text size as a percentage. %1$d = percent -->
+    <string name="session_arabic_scale_percent">%1$d%%</string>
+    <string name="session_transliteration">Rubutun Boko</string>
+    <string name="session_translation">Fassara</string>
+    <string name="session_auto_advance">Wucewa kai tsaye</string>
+    <string name="session_auto_play_recitation">Kunna karatu kai tsaye</string>
+    <string name="session_haptics">Girgiza</string>
+    <!-- Pill on a dhikr card once it has been said the required number of times -->
+    <string name="session_done">An gama</string>
+    <!-- Accessibility labels for the heart button -->
+    <string name="session_favourite_add">Saka cikin zaɓaɓɓu</string>
+    <string name="session_favourite_remove">Cire daga zaɓaɓɓu</string>
+
+    <!-- ===== Counter ===== -->
+    <!-- How many times a dhikr is said, e.g. "×3". %1$d = repetitions -->
+    <plurals name="counter_times">
+        <item quantity="one">×%1$d</item>
+        <item quantity="other">×%1$d</item>
+    </plurals>
+    <!-- Under the big count in the counter orb, e.g. "cikin 33". %1$d = target count -->
+    <string name="counter_of_target">cikin %1$d</string>
+    <!-- Accessibility label for the check mark shown when the count is complete -->
+    <string name="counter_done">An gama</string>
+
+    <!-- ===== Completion screen ===== -->
+    <string name="completion_morning_headline">Ranarka ta fara\ncikin kiyayewar Allah</string>
+    <string name="completion_evening_headline">Darenka ya yi\ncikin kiyayewar Allah</string>
+    <!-- Hadith about the dhikr "Bismillahil-ladhi la yadurru…" (Abu Dawud 5088), morning wording -->
+    <string name="completion_morning_quote">Duk wanda ya faɗe ta sau uku da safe, wata musiba ta farat ɗaya ba za ta same shi ba har zuwa yamma.</string>
+    <!-- Same hadith, evening wording -->
+    <string name="completion_evening_quote">Duk wanda ya faɗe ta sau uku da yamma, wata musiba ta farat ɗaya ba za ta same shi ba har zuwa safiya.</string>
+    <!-- Source line under the hadith: opening words of the dhikr (transliterated) and the hadith reference -->
+    <string name="completion_reference">Bismillāhil-ladhī lā yaḍurru… · Abu Dawud 5088</string>
+    <!-- Wraps the hadith text in quotation marks. %1$s = the quote -->
+    <string name="completion_quote_format">“%1$s”</string>
+    <!-- Headline when a collection has no completion text of its own. %1$s = collection name -->
+    <string name="completion_collection_headline">An kammala\n%1$s</string>
+    <!-- Stat label under the number of adhkaar said -->
+    <plurals name="completion_stat_adhkaar">
+        <item quantity="one">Azkar</item>
+        <item quantity="other">Azkar</item>
+    </plurals>
+    <!-- Stat label under the time taken -->
+    <string name="completion_stat_time">Lokaci</string>
+    <!-- Time taken, shown as a stat. %1$d = minutes -->
+    <string name="completion_minutes">Minti %1$d</string>
+    <!-- Stat label under the streak length (in days) -->
+    <plurals name="completion_day_streak">
+        <item quantity="one">Kwana a jere</item>
+        <item quantity="other">Kwanaki a jere</item>
+    </plurals>
+    <!-- Stat label under how many times a collection has been completed today -->
+    <plurals name="completion_times_today">
+        <item quantity="one">Sau a yau</item>
+        <item quantity="other">Sau a yau</item>
+    </plurals>
+    <string name="completion_done">An gama</string>
+
+    <!-- ===== Library (Adhkaar tab) ===== -->
+    <string name="library_title">Azkar</string>
+    <string name="library_subtitle">Daga Hisnul Muslim, tare da madogararsu</string>
+    <string name="library_every_day">Kowace rana</string>
+    <string name="library_morning">Safe</string>
+    <string name="library_evening">Yamma</string>
+    <!-- Morning shelf tile. %1$d = number of adhkaar; Asuba = Fajr, the dawn prayer -->
+    <plurals name="library_morning_tile">
+        <item quantity="one">Azkar %1$d · bayan Asuba</item>
+        <item quantity="other">Azkar %1$d · bayan Asuba</item>
+    </plurals>
+    <!-- Evening shelf tile. %1$d = number of adhkaar; La'asar = Asr, the afternoon prayer -->
+    <plurals name="library_evening_tile">
+        <item quantity="one">Azkar %1$d · bayan La\'asar</item>
+        <item quantity="other">Azkar %1$d · bayan La\'asar</item>
+    </plurals>
+    <string name="library_collections">Tarin azkar</string>
+    <!-- Number of items in a collection. %1$d = count -->
+    <plurals name="library_count_adhkaar">
+        <item quantity="one">Azkar %1$d</item>
+        <item quantity="other">Azkar %1$d</item>
+    </plurals>
+    <!-- Number of items in a reference collection of duas. %1$d = count -->
+    <plurals name="library_count_duas">
+        <item quantity="one">Addu\'a %1$d</item>
+        <item quantity="other">Addu\'o\'i %1$d</item>
+    </plurals>
+    <string name="library_favourites">Zaɓaɓɓu</string>
+    <string name="library_favourites_none">Babu tukuna</string>
+    <!-- Favourites tile subtitle. %1$d = number of saved adhkaar -->
+    <plurals name="library_favourites_saved">
+        <item quantity="one">An adana %1$d</item>
+        <item quantity="other">An adana %1$d</item>
+    </plurals>
+    <string name="library_my_duas">Addu\'o\'ina</string>
+    <string name="library_my_duas_empty">Rubuta addu\'a</string>
+    <!-- My duas tile subtitle. %1$d = number of duas the user has written -->
+    <plurals name="library_my_duas_written">
+        <item quantity="one">An rubuta %1$d</item>
+        <item quantity="other">An rubuta %1$d</item>
+    </plurals>
+    <string name="library_morning_title">Azkar na safe</string>
+    <string name="library_evening_title">Azkar na yamma</string>
+    <!-- When the morning adhkaar are said -->
+    <string name="library_morning_subtitle">Bayan Asuba, har zuwa ƙarfe 7:30 na safe</string>
+    <!-- When the evening adhkaar are said -->
+    <string name="library_evening_subtitle">Bayan La\'asar, har zuwa Magariba</string>
+    <string name="library_favourites_subtitle">Azkar ɗin da aka adana</string>
+    <!-- Shelf subtitle with its size. %1$s = subtitle, %2$s = count such as "Azkar 12" -->
+    <string name="library_detail_subtitle">%1$s · %2$s</string>
+    <string name="library_back">Koma baya</string>
+    <string name="library_begin">Fara</string>
+    <string name="library_favourites_empty_title">Babu zaɓaɓɓu tukuna</string>
+    <string name="library_favourites_empty_body">Taɓa alamar zuciya a kan kowane zikiri don ajiye shi a nan.</string>
+    <string name="library_my_duas_description">Roƙonka ga Allah da kalmominka, ajiye a nan, kuma a saka su cikin azkar ɗinka idan ka so.</string>
+    <string name="library_write_dua">Rubuta addu\'a</string>
+
+    <!-- ===== Dua editor ===== -->
+    <string name="dua_new">Sabuwar addu\'a</string>
+    <string name="dua_edit">Gyara addu\'a</string>
+    <string name="dua_intro">Rubuta ta da Larabci, da harshenka, ko duka biyu.</string>
+    <string name="dua_field_title">Take</string>
+    <!-- Placeholder in the dua title field -->
+    <string name="dua_field_title_placeholder">Misali: Don iyayena</string>
+    <string name="dua_field_arabic">Larabci</string>
+    <string name="dua_field_transliteration">Rubutun Boko</string>
+    <string name="dua_field_transliteration_placeholder">Ba dole ba</string>
+    <!-- Label of the field for the dua's meaning / translation -->
+    <string name="dua_field_meaning">Ma\'ana</string>
+    <string name="dua_field_meaning_placeholder">Abin da ake roƙo</string>
+    <!-- How many times the dua is repeated -->
+    <string name="dua_repeat">Maimaitawa</string>
+    <string name="dua_in_morning">Cikin azkar ɗina na safe</string>
+    <string name="dua_in_evening">Cikin azkar ɗina na yamma</string>
+    <string name="dua_delete">Goge wannan addu\'a</string>
+    <string name="dua_invalid_hint">Saka take, da Larabci ko ma\'anarsa.</string>
+    <string name="dua_save">Ajiye</string>
+    <string name="dua_voice_overline">MURYARKA</string>
+    <string name="dua_voice_recording">Ana naɗawa</string>
+    <string name="dua_voice_stop">Tsaya</string>
+    <string name="dua_voice_play">Kunna</string>
+    <string name="dua_voice_pause">Dakata</string>
+    <string name="dua_voice_your_recording">Naɗin muryarka</string>
+    <string name="dua_voice_plays_with">Za a kunna shi tare da wannan addu\'a a lokacin zikiri</string>
+    <string name="dua_voice_record_again">Sake naɗawa</string>
+    <string name="dua_voice_delete">Goge naɗin</string>
+    <string name="dua_voice_record">Naɗa</string>
+    <string name="dua_voice_record_prompt">Naɗa ta da muryarka</string>
+    <string name="dua_voice_mic_denied">An ƙi ba da izinin makirufo. Za ka iya ba da izini a saitunan waya.</string>
+    <!-- The recording limit is 3 minutes (MAX_SECONDS in DuaEditor.kt) -->
+    <string name="dua_voice_limit">Har zuwa minti 3. Yana zama a wannan wayar kawai.</string>
+
+    <!-- ===== Share ===== -->
+    <string name="share_action">Raba</string>
+    <string name="share_cancel">Soke</string>
+    <!-- Title of the system share chooser -->
+    <string name="share_chooser_title">Raba zikiri</string>
+    <!-- Recitation mini player (inside the dhikr card). -->
+    <string name="player_play">Kunna karatu</string>
+    <string name="player_pause">Dakatar da karatu</string>
+    <string name="player_repeat">Maimaita karatu</string>
+    <!-- Share card looks. Midnight: dark blue night. Dawn: sunrise colours. Parchment: ink and gold on paper. -->
+    <string name="share_style_midnight">Tsakar dare</string>
+    <string name="share_style_dawn">Alfijir</string>
+    <string name="share_style_parchment">Tsohuwar takarda</string>
+    <string name="library_done_today">An yi yau</string>
+    <string name="library_read_again">Sake karantawa</string>
+    <string name="prayer_times_edit_hint">Taɓa lokaci don canza shi zuwa na masallacinka.</string>
+    <string name="collection_after_salah">Bayan sallah</string>
+    <string name="collection_after_salah_subtitle">Bayan kowace sallar farilla</string>
+    <string name="collection_before_sleep">Kafin barci</string>
+    <string name="collection_before_sleep_subtitle">Lokacin da ka kwanta da dare</string>
+    <string name="collection_waking">Lokacin farkawa</string>
+    <string name="collection_waking_subtitle">Kalmomin farko na rana</string>
+    <string name="collection_daily">Addu\'o\'in yau da kullum</string>
+    <string name="collection_daily_subtitle">Don lokutan yini</string>
+</resources>

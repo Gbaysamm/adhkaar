@@ -1,0 +1,289 @@
+{
+  "version": 1,
+  "note": "Special-day reminders, shown instead of the everyday rotation on the days of their event. The everyday rotation is in reminders/, built by tools/reminders/build.py from licensed sources (docs/REMINDERS.md). The English meanings here are the app's own wording, not a published translation, and need review by a qualified scholar before release. Qur'an Arabic is the Tanzil Uthmani text letter for letter; hadith Arabic is the wording of the first reference. build.py checks both against the downloaded sources.",
+  "schema": {
+    "id": "Unique, stable, snake_case. Never reuse or rename.",
+    "kind": "verse | hadith | fact",
+    "arabic": "Optional. The Arabic text, copied exactly from the source; for part of a verse or hadith only the quoted part.",
+    "meaning": "The meaning in clear modern English.",
+    "reference": "Where it is found, first reference first, e.g. \"Surah al-Jumu'ah 62:9\" or \"Sahih al-Bukhari 935; Sahih Muslim 852\". Outside al-Bukhari and Muslim, the grading goes in brackets after the first reference: \"Jami' at-Tirmidhi 761 (hasan)\".",
+    "tags": "Themes: dhikr, mercy, patience, gratitude, provision, tawakkul, prayer, dua, forgiveness, fasting, friday, ramadan, dhul-hijjah, muharram, eid.",
+    "event": "An IslamicCalendar EventKind (JUMUAH, WHITE_DAYS, RAMADAN, LAST_TEN_NIGHTS, DHUL_HIJJAH_TEN, ARAFAH, EID_AL_FITR, EID_AL_ADHA, TASUA, ASHURA). The item is shown only on those days, and is preferred on them."
+  },
+  "reminders": [
+    {
+      "id": "jumuah_sunnah",
+      "kind": "fact",
+      "meaning": "Friday is the weekly day of gathering. The Sunnah is to bathe, come early to the Jumu'ah prayer, read Surah al-Kahf, and send many blessings on the Prophet ﷺ.",
+      "reference": "Sahih al-Bukhari 877, 881; Sunan Abi Dawud 1047 (sahih); Sahih al-Jami' 6470",
+      "tags": ["friday"],
+      "event": "JUMUAH"
+    },
+    {
+      "id": "jumuah_best_day",
+      "kind": "hadith",
+      "arabic": "خَيْرُ يَوْمٍ طَلَعَتْ عَلَيْهِ الشَّمْسُ يَوْمُ الْجُمُعَةِ، فِيهِ خُلِقَ آدَمُ، وَفِيهِ أُدْخِلَ الْجَنَّةَ، وَفِيهِ أُخْرِجَ مِنْهَا",
+      "meaning": "The best day on which the sun rises is Friday. On it Adam was created, on it he was brought into Paradise, and on it he was sent out of it.",
+      "reference": "Sahih Muslim 854",
+      "tags": ["friday"],
+      "event": "JUMUAH"
+    },
+    {
+      "id": "jumuah_hour",
+      "kind": "hadith",
+      "arabic": "فِيهِ سَاعَةٌ لاَ يُوَافِقُهَا عَبْدٌ مُسْلِمٌ وَهْوَ قَائِمٌ يُصَلِّي، يَسْأَلُ اللَّهَ تَعَالَى شَيْئًا إِلاَّ أَعْطَاهُ إِيَّاهُ",
+      "meaning": "On Friday there is an hour in which no Muslim stands in prayer asking Allah for something good, except that He gives it to him.",
+      "reference": "Sahih al-Bukhari 935; Sahih Muslim 852",
+      "tags": ["friday", "dua"],
+      "event": "JUMUAH"
+    },
+    {
+      "id": "jumuah_62_9_hasten",
+      "kind": "verse",
+      "arabic": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِذَا نُودِىَ لِلصَّلَوٰةِ مِن يَوْمِ ٱلْجُمُعَةِ فَٱسْعَوْا۟ إِلَىٰ ذِكْرِ ٱللَّهِ وَذَرُوا۟ ٱلْبَيْعَ ۚ ذَٰلِكُمْ خَيْرٌ لَّكُمْ إِن كُنتُمْ تَعْلَمُونَ",
+      "meaning": "You who believe, when the call is made for the prayer on Friday, hurry to the remembrance of Allah and leave off trading. That is better for you, if only you knew.",
+      "reference": "Surah al-Jumu'ah 62:9",
+      "tags": ["friday", "prayer"],
+      "event": "JUMUAH"
+    },
+    {
+      "id": "white_days_fact",
+      "kind": "fact",
+      "meaning": "The 13th, 14th and 15th of each Hijri month are called the white days, after their bright moonlit nights. The Prophet ﷺ encouraged fasting on them.",
+      "reference": "Jami' at-Tirmidhi 761 (hasan)",
+      "tags": ["fasting"],
+      "event": "WHITE_DAYS"
+    },
+    {
+      "id": "white_days_whole_year",
+      "kind": "hadith",
+      "arabic": "صَوْمُ ثَلاَثَةِ أَيَّامٍ صَوْمُ الدَّهْرِ كُلِّهِ",
+      "meaning": "Fasting three days of every month is like fasting all the time.",
+      "reference": "Sahih al-Bukhari 1979",
+      "tags": ["fasting"],
+      "event": "WHITE_DAYS"
+    },
+    {
+      "id": "white_days_three_advices",
+      "kind": "hadith",
+      "arabic": "أَوْصَانِي خَلِيلِي ﷺ بِثَلاَثٍ: صِيَامِ ثَلاَثَةِ أَيَّامٍ مِنْ كُلِّ شَهْرٍ، وَرَكْعَتَىِ الضُّحَى، وَأَنْ أُوتِرَ قَبْلَ أَنْ أَنَامَ",
+      "meaning": "Abu Hurairah said: My beloved friend ﷺ advised me to do three things: fast three days of every month, pray two units of the forenoon prayer, and pray witr before I sleep.",
+      "reference": "Sahih al-Bukhari 1981; Sahih Muslim 721",
+      "tags": ["fasting", "prayer"],
+      "event": "WHITE_DAYS"
+    },
+    {
+      "id": "ramadan_183_fasting_prescribed",
+      "kind": "verse",
+      "arabic": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ كُتِبَ عَلَيْكُمُ ٱلصِّيَامُ كَمَا كُتِبَ عَلَى ٱلَّذِينَ مِن قَبْلِكُمْ لَعَلَّكُمْ تَتَّقُونَ",
+      "meaning": "You who believe, fasting has been prescribed for you, as it was prescribed for those before you, so that you may become mindful of Allah.",
+      "reference": "Surah al-Baqarah 2:183",
+      "tags": ["ramadan", "fasting"],
+      "event": "RAMADAN"
+    },
+    {
+      "id": "ramadan_185_month_of_quran",
+      "kind": "verse",
+      "arabic": "شَهْرُ رَمَضَانَ ٱلَّذِىٓ أُنزِلَ فِيهِ ٱلْقُرْءَانُ هُدًى لِّلنَّاسِ وَبَيِّنَـٰتٍ مِّنَ ٱلْهُدَىٰ وَٱلْفُرْقَانِ",
+      "meaning": "Ramadan is the month in which the Qur'an was sent down: guidance for people, with clear signs of guidance and of the criterion between right and wrong.",
+      "reference": "Surah al-Baqarah 2:185 (part)",
+      "tags": ["ramadan"],
+      "event": "RAMADAN"
+    },
+    {
+      "id": "ramadan_faith_and_hope",
+      "kind": "hadith",
+      "arabic": "مَنْ صَامَ رَمَضَانَ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ",
+      "meaning": "Whoever fasts Ramadan with faith, hoping for Allah's reward, his past sins will be forgiven.",
+      "reference": "Sahih al-Bukhari 38; Sahih Muslim 760",
+      "tags": ["ramadan", "forgiveness"],
+      "event": "RAMADAN"
+    },
+    {
+      "id": "ramadan_gates_opened",
+      "kind": "hadith",
+      "arabic": "إِذَا جَاءَ رَمَضَانُ فُتِّحَتْ أَبْوَابُ الْجَنَّةِ، وَغُلِّقَتْ أَبْوَابُ النَّارِ، وَصُفِّدَتِ الشَّيَاطِينُ",
+      "meaning": "When Ramadan comes, the gates of Paradise are opened, the gates of the Fire are closed, and the devils are chained.",
+      "reference": "Sahih Muslim 1079",
+      "tags": ["ramadan", "mercy"],
+      "event": "RAMADAN"
+    },
+    {
+      "id": "ramadan_two_joys",
+      "kind": "hadith",
+      "arabic": "لِلصَّائِمِ فَرْحَتَانِ: فَرْحَةٌ عِنْدَ فِطْرِهِ، وَفَرْحَةٌ عِنْدَ لِقَاءِ رَبِّهِ",
+      "meaning": "The one who fasts has two joys: one when he breaks his fast, and one when he meets his Lord.",
+      "reference": "Sahih Muslim 1151",
+      "tags": ["ramadan", "fasting"],
+      "event": "RAMADAN"
+    },
+    {
+      "id": "qadr_97_3_better_than_a_thousand",
+      "kind": "verse",
+      "arabic": "لَيْلَةُ ٱلْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ",
+      "meaning": "The Night of Decree is better than a thousand months.",
+      "reference": "Surah al-Qadr 97:3",
+      "tags": ["ramadan"],
+      "event": "LAST_TEN_NIGHTS"
+    },
+    {
+      "id": "qadr_stand_in_prayer",
+      "kind": "hadith",
+      "arabic": "مَنْ قَامَ لَيْلَةَ الْقَدْرِ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ",
+      "meaning": "Whoever stands in prayer on the Night of Decree with faith, hoping for Allah's reward, his past sins will be forgiven.",
+      "reference": "Sahih al-Bukhari 1901; Sahih Muslim 760",
+      "tags": ["ramadan", "prayer", "forgiveness"],
+      "event": "LAST_TEN_NIGHTS"
+    },
+    {
+      "id": "qadr_seek_in_odd_nights",
+      "kind": "hadith",
+      "arabic": "تَحَرَّوْا لَيْلَةَ الْقَدْرِ فِي الْوِتْرِ مِنَ الْعَشْرِ الأَوَاخِرِ مِنْ رَمَضَانَ",
+      "meaning": "Look for the Night of Decree in the odd nights of the last ten nights of Ramadan.",
+      "reference": "Sahih al-Bukhari 2017",
+      "tags": ["ramadan"],
+      "event": "LAST_TEN_NIGHTS"
+    },
+    {
+      "id": "qadr_dua_for_pardon",
+      "kind": "hadith",
+      "arabic": "اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي",
+      "meaning": "'A'ishah asked what to say if she found the Night of Decree. He ﷺ said: Say, O Allah, You are the One who pardons, and You love to pardon, so pardon me.",
+      "reference": "Sunan Ibn Majah 3850 (sahih); Jami' at-Tirmidhi 3513",
+      "tags": ["ramadan", "dua", "forgiveness"],
+      "event": "LAST_TEN_NIGHTS"
+    },
+    {
+      "id": "last_ten_striving",
+      "kind": "hadith",
+      "arabic": "كَانَ رَسُولُ اللَّهِ ﷺ يَجْتَهِدُ فِي الْعَشْرِ الأَوَاخِرِ مَا لاَ يَجْتَهِدُ فِي غَيْرِهِ",
+      "meaning": "The Messenger of Allah ﷺ would strive in worship during the last ten nights more than at any other time.",
+      "reference": "Sahih Muslim 1175",
+      "tags": ["ramadan", "prayer"],
+      "event": "LAST_TEN_NIGHTS"
+    },
+    {
+      "id": "dhul_hijjah_best_days",
+      "kind": "hadith",
+      "arabic": "مَا مِنْ أَيَّامٍ الْعَمَلُ الصَّالِحُ فِيهِنَّ أَحَبُّ إِلَى اللَّهِ مِنْ هَذِهِ الأَيَّامِ الْعَشْرِ",
+      "meaning": "There are no days in which good deeds are more beloved to Allah than these ten days of Dhul Hijjah.",
+      "reference": "Jami' at-Tirmidhi 757 (sahih); similar in Sahih al-Bukhari 969",
+      "tags": ["dhul-hijjah"],
+      "event": "DHUL_HIJJAH_TEN"
+    },
+    {
+      "id": "dhul_hijjah_takbir",
+      "kind": "fact",
+      "meaning": "In the ten days of Dhul Hijjah, Ibn 'Umar and Abu Hurairah would go out to the market saying Allahu akbar, and the people would say it after them.",
+      "reference": "Sahih al-Bukhari, Book of the Two Eids, chapter before hadith 969",
+      "tags": ["dhul-hijjah", "dhikr"],
+      "event": "DHUL_HIJJAH_TEN"
+    },
+    {
+      "id": "dhul_hijjah_sacrifice_hair_nails",
+      "kind": "hadith",
+      "arabic": "إِذَا دَخَلَتِ الْعَشْرُ وَأَرَادَ أَحَدُكُمْ أَنْ يُضَحِّيَ فَلاَ يَمَسَّ مِنْ شَعَرِهِ وَبَشَرِهِ شَيْئًا",
+      "meaning": "When the ten days begin, whoever intends to offer a sacrifice should not cut anything of his hair or nails until he has sacrificed.",
+      "reference": "Sahih Muslim 1977",
+      "tags": ["dhul-hijjah"],
+      "event": "DHUL_HIJJAH_TEN"
+    },
+    {
+      "id": "arafah_fasting",
+      "kind": "hadith",
+      "arabic": "صِيَامُ يَوْمِ عَرَفَةَ أَحْتَسِبُ عَلَى اللَّهِ أَنْ يُكَفِّرَ السَّنَةَ الَّتِي قَبْلَهُ وَالسَّنَةَ الَّتِي بَعْدَهُ",
+      "meaning": "Fasting the Day of 'Arafah: I hope from Allah that it wipes away the sins of the year before it and the year after it.",
+      "reference": "Sahih Muslim 1162",
+      "tags": ["dhul-hijjah", "fasting", "forgiveness"],
+      "event": "ARAFAH"
+    },
+    {
+      "id": "arafah_freed_from_fire",
+      "kind": "hadith",
+      "arabic": "مَا مِنْ يَوْمٍ أَكْثَرَ مِنْ أَنْ يُعْتِقَ اللَّهُ فِيهِ عَبْدًا مِنَ النَّارِ مِنْ يَوْمِ عَرَفَةَ",
+      "meaning": "There is no day on which Allah frees more servants from the Fire than the Day of 'Arafah.",
+      "reference": "Sahih Muslim 1348",
+      "tags": ["dhul-hijjah", "mercy"],
+      "event": "ARAFAH"
+    },
+    {
+      "id": "arafah_5_3_religion_perfected",
+      "kind": "verse",
+      "arabic": "ٱلْيَوْمَ أَكْمَلْتُ لَكُمْ دِينَكُمْ وَأَتْمَمْتُ عَلَيْكُمْ نِعْمَتِى وَرَضِيتُ لَكُمُ ٱلْإِسْلَـٰمَ دِينًا",
+      "meaning": "Today I have perfected your religion for you, completed My favour upon you, and chosen Islam as your way of life. This was revealed on the Day of 'Arafah.",
+      "reference": "Surah al-Ma'idah 5:3 (part); Sahih al-Bukhari 45",
+      "tags": ["dhul-hijjah", "gratitude"],
+      "event": "ARAFAH"
+    },
+    {
+      "id": "adha_22_37_piety_reaches",
+      "kind": "verse",
+      "arabic": "لَن يَنَالَ ٱللَّهَ لُحُومُهَا وَلَا دِمَآؤُهَا وَلَـٰكِن يَنَالُهُ ٱلتَّقْوَىٰ مِنكُمْ",
+      "meaning": "Neither their meat nor their blood reaches Allah. What reaches Him is your devotion.",
+      "reference": "Surah al-Hajj 22:37 (part)",
+      "tags": ["eid", "dhul-hijjah"],
+      "event": "EID_AL_ADHA"
+    },
+    {
+      "id": "adha_days_of_tashriq",
+      "kind": "hadith",
+      "arabic": "أَيَّامُ التَّشْرِيقِ أَيَّامُ أَكْلٍ وَشُرْبٍ",
+      "meaning": "The days after Eid al-Adha (the days of Tashriq) are days of eating and drinking. Another narration adds: and of remembering Allah.",
+      "reference": "Sahih Muslim 1141",
+      "tags": ["eid", "dhikr"],
+      "event": "EID_AL_ADHA"
+    },
+    {
+      "id": "fitr_2_185_magnify_allah",
+      "kind": "verse",
+      "arabic": "وَلِتُكْمِلُوا۟ ٱلْعِدَّةَ وَلِتُكَبِّرُوا۟ ٱللَّهَ عَلَىٰ مَا هَدَىٰكُمْ وَلَعَلَّكُمْ تَشْكُرُونَ",
+      "meaning": "So that you complete the number of days, proclaim Allah's greatness for guiding you, and so that you may be grateful.",
+      "reference": "Surah al-Baqarah 2:185 (part)",
+      "tags": ["eid", "gratitude", "dhikr"],
+      "event": "EID_AL_FITR"
+    },
+    {
+      "id": "fitr_six_of_shawwal",
+      "kind": "hadith",
+      "arabic": "مَنْ صَامَ رَمَضَانَ ثُمَّ أَتْبَعَهُ سِتًّا مِنْ شَوَّالٍ كَانَ كَصِيَامِ الدَّهْرِ",
+      "meaning": "Whoever fasts Ramadan and follows it with six days of Shawwal, it is as if he fasted the whole year.",
+      "reference": "Sahih Muslim 1164",
+      "tags": ["eid", "fasting"],
+      "event": "EID_AL_FITR"
+    },
+    {
+      "id": "fitr_morning_sunnah",
+      "kind": "fact",
+      "meaning": "On the morning of Eid al-Fitr, the Prophet ﷺ would eat a few dates before going out, and Zakat al-Fitr is to be given before people leave for the Eid prayer.",
+      "reference": "Sahih al-Bukhari 953, 1509",
+      "tags": ["eid"],
+      "event": "EID_AL_FITR"
+    },
+    {
+      "id": "ashura_fasting",
+      "kind": "hadith",
+      "arabic": "صِيَامُ يَوْمِ عَاشُورَاءَ أَحْتَسِبُ عَلَى اللَّهِ أَنْ يُكَفِّرَ السَّنَةَ الَّتِي قَبْلَهُ",
+      "meaning": "Fasting the Day of 'Ashura: I hope from Allah that it wipes away the sins of the year before it.",
+      "reference": "Sahih Muslim 1162",
+      "tags": ["muharram", "fasting", "forgiveness"],
+      "event": "ASHURA"
+    },
+    {
+      "id": "ashura_musa_saved",
+      "kind": "fact",
+      "meaning": "'Ashura, the 10th of Muharram, is the day Allah saved Musa and his people from Pharaoh. The Prophet ﷺ fasted it and told the believers to fast it.",
+      "reference": "Sahih al-Bukhari 2004; Sahih Muslim 1130",
+      "tags": ["muharram", "fasting"],
+      "event": "ASHURA"
+    },
+    {
+      "id": "tasua_ninth",
+      "kind": "hadith",
+      "arabic": "لَئِنْ بَقِيتُ إِلَى قَابِلٍ لأَصُومَنَّ التَّاسِعَ",
+      "meaning": "If I live until next year, I will certainly fast the ninth as well.",
+      "reference": "Sahih Muslim 1134",
+      "tags": ["muharram", "fasting"],
+      "event": "TASUA"
+    }
+  ]
+}

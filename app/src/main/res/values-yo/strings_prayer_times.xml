@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Yoruba translation. DRAFT by Claude: must be reviewed by a native Yoruba speaker before release. -->
+<resources>
+    <string name="prayer_times_group_calculation">Ìṣirò</string>
+    <string name="prayer_times_calculated">Ìbẹ̀rẹ̀ ìṣirò %1$s</string>
+    <string name="prayer_times_reset">Padà sí àkọ́kọ́</string>
+    <string name="settings_prayer_times_adjusted">A ti fi àkókò mọ́ṣáláṣí yín sí i</string>
+    <string name="settings_prayer_times_default">Àkókò àkọ́kọ́ láti múra sí ìrun</string>
+</resources>

@@ -1,0 +1,161 @@
+{
+  "authority": "National Moonsighting Committee, Nigerian Supreme Council for Islamic Affairs (Sultan of Sokoto)",
+  "months": [
+    {
+      "hijri": "1448-02",
+      "start": "2026-07-16",
+      "decided": "reports",
+      "source": "https://www.vanguardngr.com/2026/07/sultan-declares-july-16-as-first-day-of-safar-1448ah-after-moon-sighting-review/"
+    },
+    {
+      "hijri": "1448-03",
+      "start": "2026-08-14",
+      "decided": "reports",
+      "source": "https://leadership.ng/sultan-calls-for-sighting-of-rabial-thani-crescent/ https://newsclickng.com/news/sultan-declares-friday-first-day-of-rabiul-awwal-1448-ah-after-confirmed-moon-sighting/ https://x.com/moonsightingng/status/2088083103784841253 https://x.com/moonsightingng/status/2088767217336729670 https://x.com/moonsightingng/status/2096735525432410602"
+    },
+    {
+      "hijri": "1448-04",
+      "start": "2026-09-13",
+      "decided": "reports",
+      "source": "https://x.com/moonsightingng https://x.com/moonsightingng/status/2098916457165840678 https://x.com/moonsightingng/status/2102545422296506868"
+    }
+  ],
+  "reports": [
+    {
+      "date": "2026-06-16",
+      "site": "annahda",
+      "kind": "declaration",
+      "url": "https://www.annahda.com.ng/2026/06/sultan-declares-tuesday-islamic-new.html",
+      "title": "Sultan Declares Tuesday Islamic New Year, Sokoto Announces Public Holiday"
+    },
+    {
+      "date": "2026-06-16",
+      "site": "annahda",
+      "kind": "previous",
+      "url": "https://www.annahda.com.ng/2026/07/sultan-declares-thursday-as-first-day.html",
+      "title": "Sultan Declares Thursday as First Day of Safar 1448AH in Nigeria"
+    },
+    {
+      "date": "2026-06-16",
+      "site": "moonsightingng",
+      "kind": "committee",
+      "url": "https://x.com/moonsightingng/status/2077167679543136516",
+      "title": "Today's date is Wednesday 30th Muharram 1448H/15th July 2026",
+      "hijri": "1448-01"
+    },
+    {
+      "date": "2026-06-16",
+      "site": "moonsightingng",
+      "kind": "committee",
+      "url": "https://x.com/moonsightingng/status/2069918901614358630",
+      "title": "Today's date is Thursday 10th Muharram 1448H/25th June 2026",
+      "hijri": "1448-01"
+    },
+    {
+      "date": "2026-06-16",
+      "site": "moonsightingng",
+      "kind": "committee",
+      "url": "https://x.com/moonsightingng/status/2073180823382368757",
+      "title": "Today's date is Saturday 19th Muharram 1448H/4th July 2026",
+      "hijri": "1448-01"
+    },
+    {
+      "date": "2026-07-16",
+      "site": "annahda",
+      "kind": "declaration",
+      "url": "https://www.annahda.com.ng/2026/07/sultan-declares-thursday-as-first-day.html",
+      "title": "Sultan Declares Thursday as First Day of Safar 1448AH in Nigeria"
+    },
+    {
+      "date": "2026-07-16",
+      "site": "annahda",
+      "kind": "lookout",
+      "url": "https://www.annahda.com.ng/2026/08/sultanate-urges-muslims-to-look-out-for.html",
+      "title": "Sultanate Urges Muslims to Look Out for Rabi'ul Awwal Moon on Thursday"
+    },
+    {
+      "date": "2026-07-16",
+      "site": "eagleonline",
+      "kind": "declaration",
+      "url": "https://theeagleonline.com.ng/safar-1448ah-sultan-declares-thursday-as-first-day-after-moon-sighting-review/",
+      "title": "Safar 1448AH: Sultan declares Thursday as first day after moon sighting review"
+    },
+    {
+      "date": "2026-07-16",
+      "site": "moonsightingng",
+      "kind": "committee",
+      "url": "https://x.com/moonsightingng/status/2077529485126099367",
+      "title": "Today's date is Thursday 1st Safar 1448H/16th July 2026",
+      "hijri": "1448-02"
+    },
+    {
+      "date": "2026-07-16",
+      "site": "newsclick",
+      "kind": "previous",
+      "url": "https://newsclickng.com/news/sultan-declares-friday-first-day-of-rabiul-awwal-1448-ah-after-confirmed-moon-sighting/",
+      "title": "Sultan declares Friday first day of Rabi'ul Awwal 1448 AH after confirmed moon sighting"
+    },
+    {
+      "date": "2026-08-14",
+      "site": "leadership",
+      "kind": "lookout",
+      "url": "https://leadership.ng/sultan-calls-for-sighting-of-rabial-thani-crescent/",
+      "title": "Sultan Calls For Sighting Of Rabi'Al-Thani Crescent"
+    },
+    {
+      "date": "2026-08-14",
+      "site": "moonsightingng",
+      "kind": "committee",
+      "url": "https://x.com/moonsightingng/status/2096735525432410602",
+      "title": "Today's date is Monday 25th Rabi'ul Awwal 1448H/7th September 2026",
+      "hijri": "1448-03"
+    },
+    {
+      "date": "2026-08-14",
+      "site": "moonsightingng",
+      "kind": "committee",
+      "url": "https://x.com/moonsightingng/status/2088767217336729670",
+      "title": "Today's date is Sunday 3rd Rabi'ul Awwal 1448H/16th August 2026",
+      "hijri": "1448-03"
+    },
+    {
+      "date": "2026-08-14",
+      "site": "moonsightingng",
+      "kind": "committee",
+      "url": "https://x.com/moonsightingng/status/2088083103784841253",
+      "title": "Today's date is Friday 1st Rabi'ul Awwal 1448H/14th August 2026",
+      "hijri": "1448-03"
+    },
+    {
+      "date": "2026-08-14",
+      "site": "newsclick",
+      "kind": "declaration",
+      "url": "https://newsclickng.com/news/sultan-declares-friday-first-day-of-rabiul-awwal-1448-ah-after-confirmed-moon-sighting/",
+      "title": "Sultan declares Friday first day of Rabi'ul Awwal 1448 AH after confirmed moon sighting"
+    },
+    {
+      "date": "2026-09-13",
+      "site": "moonsightingng",
+      "kind": "committee",
+      "url": "https://x.com/moonsightingng/status/2102545422296506868",
+      "title": "Today's date is Wednesday 11th Rabi'ul Thani 1448H/23rd September 2026",
+      "hijri": "1448-04"
+    },
+    {
+      "date": "2026-09-13",
+      "site": "moonsightingng",
+      "kind": "committee",
+      "url": "https://x.com/moonsightingng/status/2098916457165840678",
+      "title": "Today's date is Sunday 1st Rabi'ul Thani 1448H/13th September 2026",
+      "hijri": "1448-04"
+    },
+    {
+      "date": "2026-09-13",
+      "site": "moonsightingng",
+      "kind": "committee",
+      "url": "https://x.com/moonsightingng",
+      "title": "Today's date is Tuesday 10th Rabi'ul Thani 1448H/22nd September 2026",
+      "hijri": "1448-04"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Igbo translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="reminder_date_both">%1$s · %2$s</string>
+    <string name="reminder_gregorian_date">%1$s, %2$d %3$s %4$d</string>
+    <string name="reminder_kind_verse">Site na Kur\'an</string>
+    <string name="reminder_kind_hadith">Site na Sunnah</string>
+    <string name="reminder_kind_fact">Maka ụbọchị a</string>
+    <string name="reminder_save_image">Chekwaa foto</string>
+    <string name="reminder_saved">Echekwara ya na Pictures/Adhkaar</string>
+    <string name="reminder_save_failed">Enweghị ike ichekwa foto ahụ</string>
+    <string name="reminder_share_chooser">Kesaa ncheta</string>
+    <string name="reminder_image_preview">Nlele foto a ga-ekesa</string>
+
+    <string name="day_card_today_is">Taa bụ %1$s</string>
+    <string name="day_card_tag_month">%1$s %2$s</string>
+    <string name="day_card_year_ah">%1$sAH</string>
+    <string name="day_card_pill">%1$s. %2$s %3$s %4$s  ›  %5$s %6$s, %7$s</string>
+    <string-array name="day_card_month_short">
+        <item>Muharram</item>
+        <item>Safar</item>
+        <item>R/Awwal</item>
+        <item>R/Thani</item>
+        <item>J/Ula</item>
+        <item>J/Akhirah</item>
+        <item>Rajab</item>
+        <item>Shaʿban</item>
+        <item>Ramadan</item>
+        <item>Shawwal</item>
+        <item>Dhul-Qaʿdah</item>
+        <item>Dhul-Hijjah</item>
+    </string-array>
+    <string-array name="day_card_weekdays">
+        <item>Ahd</item>
+        <item>Ith</item>
+        <item>Thul</item>
+        <item>Arb</item>
+        <item>Kha</item>
+        <item>Jum</item>
+        <item>Sabt</item>
+    </string-array>
+</resources>

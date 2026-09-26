@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arabic translation. Draft by Claude; please have a native speaker review before release. -->
+<!-- Strings used outside the Compose UI: notifications, calendar reminders, Hijri calendar, Lockdown overlay. -->
+<resources>
+
+    <!-- Notification channels (shown in the system notification settings) -->
+    <string name="channel_session_name">وقت الأذكار</string>
+    <string name="channel_session_description">يفتح أذكار الصباح والمساء في الوقت الذي اخترته</string>
+    <string name="channel_gentle_name">التذكيرات</string>
+    <string name="channel_gentle_description">تنبيه قبل الجلسة، وتذكيرات الجمعة وأيام الصيام</string>
+
+    <!-- Session notifications -->
+    <string name="notif_title_morning">أذكار الصباح</string>
+    <string name="notif_title_evening">أذكار المساء</string>
+    <string name="notif_session_text_morning">حان وقت أذكار الصباح. المس للبدء.</string>
+    <string name="notif_session_text_evening">حان وقت أذكار المساء. المس للبدء.</string>
+    <!-- Notification action button. %1$d = number of minutes the session is postponed. -->
+    <!-- Heads-up before a session. %1$s = session title, %2$d = minutes until it starts. -->
+    <plurals name="notif_pre_reminder_title">
+        <item quantity="zero">%1$s بعد %2$d دقيقة</item>
+        <item quantity="one">%1$s بعد دقيقة</item>
+        <item quantity="two">%1$s بعد دقيقتين</item>
+        <item quantity="few">%1$s بعد %2$d دقائق</item>
+        <item quantity="many">%1$s بعد %2$d دقيقة</item>
+        <item quantity="other">%1$s بعد %2$d دقيقة</item>
+    </plurals>
+    <string name="notif_pre_reminder_text">لحظة لتُنهي ما بين يديك.</string>
+
+    <!-- Collection reminders -->
+    <string name="reminder_after_salah_title">بعد الصلاة</string>
+    <string name="reminder_after_salah_text">لحظات من الذكر تختم بها صلاتك.</string>
+    <string name="reminder_before_sleep_title">قبل النوم</string>
+    <string name="reminder_before_sleep_text">اختم يومك بأذكار النوم.</string>
+
+    <!-- Calendar reminders. %1$s = the event title, e.g. "The Day of Arafah". -->
+    <string name="reminder_eve_title">غدًا: %1$s</string>
+    <!-- Friday greeting. ﷺ = salla Allahu alayhi wa sallam, keep as is. -->
+    <string name="reminder_friday_title">جمعة مباركة</string>
+    <string name="reminder_friday_body">اقرأ سورة الكهف اليوم، وأكثِر من الصلاة على النبي ﷺ.</string>
+
+    <!-- Special days of the Islamic calendar. ﷺ = salla Allahu alayhi wa sallam, keep as is. -->
+    <string name="event_jumuah_title">الجمعة</string>
+    <string name="event_jumuah_body">اقرأ سورة الكهف، وأكثِر من الصلاة على النبي ﷺ.</string>
+    <string name="event_last_ten_nights_title">العشر الأواخر</string>
+    <!-- The dua is given in its original Arabic. -->
+    <string name="event_last_ten_nights_body">تحرَّ ليلة القدر، وقل: اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي.</string>
+    <string name="event_ramadan_title">رمضان</string>
+    <string name="event_ramadan_body">شهر القرآن. أكثِر من التلاوة والدعاء.</string>
+    <string name="event_eid_al_fitr_title">عيد الفطر</string>
+    <string name="event_eid_al_fitr_body">عيد مبارك. كبِّر، وأخرِج زكاة الفطر قبل الصلاة إن لم تكن أخرجتها.</string>
+    <string name="event_dhul_hijjah_ten_title">عشر ذي الحجة</string>
+    <string name="event_dhul_hijjah_ten_body">أكثِر من التهليل والتكبير والتحميد: لا إله إلا الله، الله أكبر، الحمد لله.</string>
+    <string name="event_arafah_title">يوم عرفة</string>
+    <string name="event_arafah_body">صيام هذا اليوم يكفّر السنة الماضية والسنة الباقية.</string>
+    <string name="event_eid_al_adha_title">عيد الأضحى</string>
+    <string name="event_eid_al_adha_body">عيد مبارك. اذكر الله بالتكبير في أيام التشريق.</string>
+    <!-- Tasu'a = the 9th of Muharram. -->
+    <string name="event_tasua_title">تاسوعاء</string>
+    <string name="event_tasua_body">صُم اليوم مع عاشوراء غدًا، كما عزم النبي ﷺ.</string>
+    <!-- Ashura = the 10th of Muharram. -->
+    <string name="event_ashura_title">عاشوراء</string>
+    <string name="event_ashura_body">صيام هذا اليوم يكفّر السنة الماضية.</string>
+    <!-- The 13th, 14th and 15th of each Hijri month. -->
+    <string name="event_white_days_title">الأيام البيض</string>
+    <string name="event_white_days_body">صيام الثالث عشر والرابع عشر والخامس عشر من الشهر سُنّة.</string>
+
+    <!-- Hijri (Islamic lunar) month names. -->
+    <string name="hijri_month_muharram">محرم</string>
+    <string name="hijri_month_safar">صفر</string>
+    <string name="hijri_month_rabi_al_awwal">ربيع الأول</string>
+    <string name="hijri_month_rabi_al_thani">ربيع الآخر</string>
+    <string name="hijri_month_jumada_al_ula">جمادى الأولى</string>
+    <string name="hijri_month_jumada_al_akhirah">جمادى الآخرة</string>
+    <string name="hijri_month_rajab">رجب</string>
+    <string name="hijri_month_shaban">شعبان</string>
+    <string name="hijri_month_ramadan">رمضان</string>
+    <string name="hijri_month_shawwal">شوال</string>
+    <string name="hijri_month_dhu_al_qadah">ذو القعدة</string>
+    <string name="hijri_month_dhu_al_hijjah">ذو الحجة</string>
+    <!-- Hijri date, e.g. "14 ربيع الآخر 1448 هـ". %1$d = day of month, %2$s = month name, %3$d = Hijri year. -->
+    <string name="hijri_month_date_format">%1$d %2$s %3$d هـ</string>
+
+    <!-- Lockdown overlay, drawn over other apps until the session is completed. -->
+</resources>

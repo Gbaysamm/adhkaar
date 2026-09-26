@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home-screen widgets: names and one-line descriptions shown in the launcher's widget picker. -->
+    <string name="widget_name_today">Today</string>
+    <string name="widget_name_next">Next session</string>
+    <string name="widget_name_sky">Day sky</string>
+    <string name="widget_name_dhikr">Dhikr of the moment</string>
+    <string name="widget_name_hijri">Hijri date</string>
+    <string name="widget_name_streak">Streak</string>
+    <string name="widget_name_collection">Collection shortcut</string>
+    <string name="widget_desc_today">Your next adhkaar, the countdown, and one tap to begin</string>
+    <string name="widget_desc_next">Your next adhkaar and when</string>
+    <string name="widget_desc_sky">The day from Fajr to Maghrib, with the sun where it is now</string>
+    <string name="widget_desc_dhikr">A short dhikr and its meaning, new every few hours</string>
+    <string name="widget_desc_hijri">Today\'s Hijri date and the next special day</string>
+    <string name="widget_desc_streak">Your streak, and this week\'s mornings and evenings</string>
+    <string name="widget_desc_collection">One tap into After salah, Before sleep, On waking or Everyday duas</string>
+
+    <!-- Widget styles, chosen when a widget is added. -->
+    <string name="widget_style_glass">Glass</string>
+    <string name="widget_style_glass_desc">Dark and softly lit, like the app</string>
+    <string name="widget_style_parchment">Parchment</string>
+    <string name="widget_style_parchment_desc">Warm cream, dark ink and gold</string>
+    <string name="widget_style_clear">Clear</string>
+    <string name="widget_style_clear_desc">No background: white text on your wallpaper</string>
+
+    <!-- Widget configuration screen. -->
+    <string name="widget_config_subtitle">Choose how it sits on your home screen.</string>
+    <string name="widget_config_style_title">Style</string>
+    <!-- Heading above the list of collections the shortcut widget can open. -->
+    <string name="widget_config_collection_title">Opens</string>
+    <string name="widget_config_save">Save</string>
+
+    <!-- Time until the next session. %1$s = a compact duration such as "4h 37m". -->
+    <string name="widget_countdown_in">in %1$s</string>
+
+    <!-- The next special day on the Hijri date widget. %1$s = its name, e.g. "The Day of Arafah". -->
+    <string name="widget_event_today">%1$s today</string>
+    <string name="widget_event_tomorrow">%1$s tomorrow</string>
+    <!-- Always two days or more away. %1$s = the day's name, %2$d = days. -->
+    <plurals name="widget_event_in_days">
+        <item quantity="one">%1$s in %2$d day</item>
+        <item quantity="other">%1$s in %2$d days</item>
+    </plurals>
+    <!-- Hijri month and year under the big day number. %1$s = month, %2$d = year. -->
+    <string name="widget_hijri_month_year">%1$s %2$d</string>
+    <!-- A number on its own, in the locale's digits. -->
+    <string name="widget_number" translatable="false">%1$d</string>
+
+    <!-- Under the big streak number. -->
+    <plurals name="widget_days_in_a_row">
+        <item quantity="one">day in a row</item>
+        <item quantity="other">days in a row</item>
+    </plurals>
+    <string name="widget_streak_start">Start your streak today</string>
+
+    <!-- Sample content for the widget picker's previews (layouts can't use plurals, so the streak label is a plain string). -->
+    <string name="widget_preview_days_in_a_row">days in a row</string>
+    <string name="widget_preview_dhikr_meaning">Glory be to Allah and praise be to Him.</string>
+    <string name="widget_preview_dhikr_arabic" translatable="false">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ</string>
+    <string name="widget_preview_time" translatable="false">6:35</string>
+    <string name="widget_preview_time_evening" translatable="false">4:52</string>
+    <string name="widget_preview_hijri_day" translatable="false">14</string>
+    <string name="widget_preview_streak" translatable="false">12</string>
+</resources>

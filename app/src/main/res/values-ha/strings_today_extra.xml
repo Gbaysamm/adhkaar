@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hausa translation. Draft by Claude; please have a native speaker review before release. -->
+<resources>
+    <string name="window_opens_time">Za a buɗe da %1$s</string>
+    <string name="window_opens_time_tomorrow">Za a buɗe gobe da %1$s</string>
+    <string name="window_late">An makara</string>
+    <string name="window_late_open_until">Mafi kyawun lokaci ya wuce · a buɗe har %1$s</string>
+
+    <string name="insights_on_time">A kan lokaci</string>
+    <plurals name="insights_on_time_count">
+        <item quantity="one">%1$d cikin zama %2$d a wannan wata</item>
+        <item quantity="other">%1$d cikin zama %2$d a wannan wata</item>
+    </plurals>
+    <string name="insights_on_time_body">A mafi kyawun lokaci: daga Asuba zuwa fitowar rana, daga La\'asar zuwa Magariba</string>
+    <string name="insights_on_time_none">Babu zama a wannan wata tukuna</string>
+    <string name="insights_day_late_morning">An yi azkar na safe bayan mafi kyawun lokacinsu</string>
+    <string name="insights_day_late_evening">An yi azkar na yamma bayan mafi kyawun lokacinsu</string>
+    <string name="insights_day_late_both">An yi duka biyu bayan mafi kyawun lokacinsu</string>
+    <string name="insights_day_cd_late">%1$s, an makara</string>
+    <string name="insights_hijri_month">%1$s %2$d</string>
+    <string name="insights_hijri_span">%1$s – %2$s %3$d</string>
+    <string name="insights_hijri_span_years">%1$s %2$d – %3$s %4$d</string>
+
+    <string name="today_section_collections">Tarin azkar</string>
+    <string name="today_collection_now">Na wannan lokaci</string>
+    <string name="today_collection_after_prayer">Bayan %1$s</string>
+    <string name="today_collection_next_after">Na gaba · %1$s · %2$s</string>
+    <string name="today_collection_next_at">Na gaba · %1$s</string>
+</resources>

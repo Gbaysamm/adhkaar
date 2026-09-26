@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hausa translation. DRAFT by Claude: must be reviewed by a native Hausa speaker before release. -->
+<resources>
+    <!-- Home-screen widgets: names and one-line descriptions shown in the launcher's widget picker. -->
+    <string name="widget_name_today">Yau</string>
+    <string name="widget_name_next">Zama na gaba</string>
+    <string name="widget_name_sky">Sararin yini</string>
+    <string name="widget_name_dhikr">Zikirin wannan lokaci</string>
+    <string name="widget_name_hijri">Kwanan watan Hijira</string>
+    <string name="widget_name_streak">Jerin kwanaki</string>
+    <string name="widget_name_collection">Hanyar gajere zuwa tari</string>
+    <string name="widget_desc_today">Azkar ɗinka na gaba, lokacin da ya rage, da taɓawa ɗaya don farawa</string>
+    <string name="widget_desc_next">Azkar ɗinka na gaba da lokacinsu</string>
+    <string name="widget_desc_sky">Yini daga Asuba zuwa Magariba, da rana a inda take yanzu</string>
+    <string name="widget_desc_dhikr">Gajeren zikiri da ma\'anarsa, sabo bayan \'yan awanni</string>
+    <string name="widget_desc_hijri">Kwanan watan Hijira na yau da rana ta musamman mai zuwa</string>
+    <string name="widget_desc_streak">Jerin kwanakinka, da safiya da maraicen wannan mako</string>
+    <string name="widget_desc_collection">Taɓa sau ɗaya zuwa Bayan sallah, Kafin barci, Da farkawa ko Addu\'o\'in yau da kullum</string>
+
+    <!-- Widget styles, chosen when a widget is added. -->
+    <string name="widget_style_glass">Gilashi</string>
+    <string name="widget_style_glass_desc">Duhu mai haske a hankali, kamar manhajar</string>
+    <string name="widget_style_parchment">Takarda</string>
+    <string name="widget_style_parchment_desc">Launin madara mai ɗumi, tawada mai duhu da zinariya</string>
+    <string name="widget_style_clear">Bayyananne</string>
+    <string name="widget_style_clear_desc">Babu bango: farin rubutu a kan hoton bangon wayarka</string>
+
+    <!-- Widget configuration screen. -->
+    <string name="widget_config_subtitle">Zaɓi yadda zai bayyana a allon gidanka.</string>
+    <string name="widget_config_style_title">Salo</string>
+    <string name="widget_config_collection_title">Yana buɗe</string>
+    <string name="widget_config_save">Ajiye</string>
+
+    <string name="widget_countdown_in">cikin %1$s</string>
+
+    <string name="widget_event_today">%1$s yau</string>
+    <string name="widget_event_tomorrow">%1$s gobe</string>
+    <!-- Always two days or more away. %1$s = the day's name, %2$d = days. -->
+    <plurals name="widget_event_in_days">
+        <item quantity="one">%1$s cikin kwana %2$d</item>
+        <item quantity="other">%1$s cikin kwanaki %2$d</item>
+    </plurals>
+    <string name="widget_hijri_month_year">%1$s %2$d</string>
+
+    <plurals name="widget_days_in_a_row">
+        <item quantity="one">rana a jere</item>
+        <item quantity="other">kwanaki a jere</item>
+    </plurals>
+    <string name="widget_streak_start">Fara jerin kwanakinka yau</string>
+
+    <string name="widget_preview_days_in_a_row">kwanaki a jere</string>
+    <string name="widget_preview_dhikr_meaning">Tsarki ya tabbata ga Allah, da godiya gare Shi.</string>
+</resources>

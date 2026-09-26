@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ===== Session (morning / evening / collection sessions) ===== -->
+    <!-- Overline above the position counter at the top of a session -->
+    <string name="session_overline_morning">MORNING ADHKAAR</string>
+    <string name="session_overline_evening">EVENING ADHKAAR</string>
+    <!-- Play / pause the recitation of the current dhikr -->
+    <string name="session_listen">Listen</string>
+    <string name="session_pause">Pause</string>
+    <string name="session_tap_hint">Tap the orb or the card to count</string>
+    <string name="session_close">Close</string>
+    <!-- Position in the session, e.g. "3 of 19". %1$d = current, %2$d = total -->
+    <string name="session_position">%1$d of %2$d</string>
+    <string name="session_reading_options">Reading options</string>
+    <string name="session_reading_overline">READING</string>
+    <string name="session_arabic_size">Arabic size</string>
+    <!-- Arabic text size as a percentage. %1$d = percent -->
+    <string name="session_arabic_scale_percent">%1$d%%</string>
+    <string name="session_transliteration">Transliteration</string>
+    <string name="session_translation">Translation</string>
+    <string name="session_auto_advance">Auto-advance</string>
+    <string name="session_auto_play_recitation">Auto-play recitation</string>
+    <string name="session_haptics">Haptics</string>
+    <!-- Pill on a dhikr card once it has been said the required number of times -->
+    <string name="session_done">Done</string>
+    <!-- Accessibility labels for the heart button -->
+    <string name="session_favourite_add">Add to favourites</string>
+    <string name="session_favourite_remove">Remove from favourites</string>
+
+    <!-- ===== Counter ===== -->
+    <!-- How many times a dhikr is said, e.g. "×3". %1$d = repetitions -->
+    <plurals name="counter_times">
+        <item quantity="one">×%1$d</item>
+        <item quantity="other">×%1$d</item>
+    </plurals>
+    <!-- Under the big count in the counter orb, e.g. "of 33". %1$d = target count -->
+    <string name="counter_of_target">of %1$d</string>
+    <!-- Accessibility label for the check mark shown when the count is complete -->
+    <string name="counter_done">Done</string>
+
+    <!-- ===== Completion screen ===== -->
+    <string name="completion_morning_headline">Your day begins\nin His care</string>
+    <string name="completion_evening_headline">Your night rests\nin His care</string>
+    <!-- Hadith about the dhikr "Bismillahil-ladhi la yadurru…" (Abu Dawud 5088), morning wording -->
+    <string name="completion_morning_quote">Whoever says it three times in the morning will not be struck by sudden affliction until the evening.</string>
+    <!-- Same hadith, evening wording -->
+    <string name="completion_evening_quote">Whoever says it three times in the evening will not be struck by sudden affliction until the morning.</string>
+    <!-- Source line under the hadith: opening words of the dhikr (transliterated) and the hadith reference -->
+    <string name="completion_reference">Bismillāhil-ladhī lā yaḍurru… · Abu Dawud 5088</string>
+    <!-- Wraps the hadith text in quotation marks. %1$s = the quote -->
+    <string name="completion_quote_format">“%1$s”</string>
+    <!-- Headline when a collection has no completion text of its own. %1$s = collection name -->
+    <string name="completion_collection_headline">%1$s\ncomplete</string>
+    <!-- Stat label under the number of adhkaar said -->
+    <plurals name="completion_stat_adhkaar">
+        <item quantity="one">Adhkaar</item>
+        <item quantity="other">Adhkaar</item>
+    </plurals>
+    <!-- Stat label under the time taken -->
+    <string name="completion_stat_time">Time</string>
+    <!-- Time taken, shown as a stat. %1$d = minutes -->
+    <string name="completion_minutes">%1$d min</string>
+    <!-- Stat label under the streak length (in days) -->
+    <plurals name="completion_day_streak">
+        <item quantity="one">Day streak</item>
+        <item quantity="other">Day streak</item>
+    </plurals>
+    <!-- Stat label under how many times a collection has been completed today -->
+    <plurals name="completion_times_today">
+        <item quantity="one">Time today</item>
+        <item quantity="other">Times today</item>
+    </plurals>
+    <string name="completion_done">Done</string>
+
+    <!-- ===== Library (Adhkaar tab) ===== -->
+    <string name="library_title">Adhkaar</string>
+    <string name="library_subtitle">From Hisn al-Muslim, with their sources</string>
+    <string name="library_every_day">Every day</string>
+    <string name="library_morning">Morning</string>
+    <string name="library_evening">Evening</string>
+    <!-- Morning shelf tile. %1$d = number of adhkaar; Fajr is the dawn prayer -->
+    <plurals name="library_morning_tile">
+        <item quantity="one">%1$d adhkaar · after Fajr</item>
+        <item quantity="other">%1$d adhkaar · after Fajr</item>
+    </plurals>
+    <!-- Evening shelf tile. %1$d = number of adhkaar; Asr is the afternoon prayer -->
+    <plurals name="library_evening_tile">
+        <item quantity="one">%1$d adhkaar · after Asr</item>
+        <item quantity="other">%1$d adhkaar · after Asr</item>
+    </plurals>
+    <string name="library_collections">Collections</string>
+    <!-- Number of items in a collection. %1$d = count -->
+    <plurals name="library_count_adhkaar">
+        <item quantity="one">%1$d adhkaar</item>
+        <item quantity="other">%1$d adhkaar</item>
+    </plurals>
+    <!-- Number of items in a reference collection of duas. %1$d = count -->
+    <plurals name="library_count_duas">
+        <item quantity="one">%1$d duas</item>
+        <item quantity="other">%1$d duas</item>
+    </plurals>
+    <string name="library_favourites">Favourites</string>
+    <string name="library_favourites_none">None yet</string>
+    <!-- Favourites tile subtitle. %1$d = number of saved adhkaar -->
+    <plurals name="library_favourites_saved">
+        <item quantity="one">%1$d saved</item>
+        <item quantity="other">%1$d saved</item>
+    </plurals>
+    <string name="library_my_duas">My duas</string>
+    <string name="library_my_duas_empty">Write your own</string>
+    <!-- My duas tile subtitle. %1$d = number of duas the user has written -->
+    <plurals name="library_my_duas_written">
+        <item quantity="one">%1$d written</item>
+        <item quantity="other">%1$d written</item>
+    </plurals>
+    <string name="library_morning_title">Morning adhkaar</string>
+    <string name="library_evening_title">Evening adhkaar</string>
+    <!-- When the morning adhkaar are said -->
+    <string name="library_morning_subtitle">After Fajr, until 7:30 AM</string>
+    <!-- When the evening adhkaar are said -->
+    <string name="library_evening_subtitle">After Asr, until Maghrib</string>
+    <string name="library_favourites_subtitle">The adhkaar you saved</string>
+    <!-- Shelf subtitle with its size. %1$s = subtitle, %2$s = count such as "12 adhkaar" -->
+    <string name="library_detail_subtitle">%1$s · %2$s</string>
+    <string name="library_back">Back</string>
+    <string name="library_begin">Begin</string>
+    <string name="library_favourites_empty_title">No favourites yet</string>
+    <string name="library_favourites_empty_body">Tap the heart on any dhikr to keep it here.</string>
+    <string name="library_my_duas_description">Your own words to Allah, kept here, and added to your adhkaar if you choose.</string>
+    <string name="library_write_dua">Write a dua</string>
+
+    <!-- ===== Dua editor ===== -->
+    <string name="dua_new">New dua</string>
+    <string name="dua_edit">Edit dua</string>
+    <string name="dua_intro">Write it in Arabic, in your own language, or both.</string>
+    <string name="dua_field_title">Title</string>
+    <!-- Placeholder in the dua title field -->
+    <string name="dua_field_title_placeholder">e.g. For my parents</string>
+    <string name="dua_field_arabic">Arabic</string>
+    <string name="dua_field_transliteration">Transliteration</string>
+    <string name="dua_field_transliteration_placeholder">Optional</string>
+    <!-- Label of the field for the dua's meaning / translation -->
+    <string name="dua_field_meaning">Meaning</string>
+    <string name="dua_field_meaning_placeholder">What you are asking for</string>
+    <!-- How many times the dua is repeated -->
+    <string name="dua_repeat">Repeat</string>
+    <string name="dua_in_morning">In my morning adhkaar</string>
+    <string name="dua_in_evening">In my evening adhkaar</string>
+    <string name="dua_delete">Delete this dua</string>
+    <string name="dua_invalid_hint">Add a title, and the Arabic or its meaning.</string>
+    <string name="dua_save">Save</string>
+    <string name="dua_voice_overline">YOUR VOICE</string>
+    <string name="dua_voice_recording">Recording</string>
+    <string name="dua_voice_stop">Stop</string>
+    <string name="dua_voice_play">Play</string>
+    <string name="dua_voice_pause">Pause</string>
+    <string name="dua_voice_your_recording">Your recording</string>
+    <string name="dua_voice_plays_with">Plays with this dua in your sessions</string>
+    <string name="dua_voice_record_again">Record again</string>
+    <string name="dua_voice_delete">Delete recording</string>
+    <string name="dua_voice_record">Record</string>
+    <string name="dua_voice_record_prompt">Record it in your voice</string>
+    <string name="dua_voice_mic_denied">Microphone access was declined. You can allow it in system settings.</string>
+    <!-- The recording limit is 3 minutes (MAX_SECONDS in DuaEditor.kt) -->
+    <string name="dua_voice_limit">Up to 3 minutes. It stays on this phone.</string>
+
+    <!-- ===== Share ===== -->
+    <string name="share_action">Share</string>
+    <string name="share_cancel">Cancel</string>
+    <!-- Title of the system share chooser -->
+    <string name="share_chooser_title">Share dhikr</string>
+    <!-- Recitation mini player (inside the dhikr card). -->
+    <string name="player_play">Play recitation</string>
+    <string name="player_pause">Pause recitation</string>
+    <string name="player_repeat">Repeat recitation</string>
+    <!-- Share card looks. Midnight: dark blue night. Dawn: sunrise colours. Parchment: ink and gold on paper. -->
+    <string name="share_style_midnight">Midnight</string>
+    <string name="share_style_dawn">Dawn</string>
+    <string name="share_style_parchment">Parchment</string>
+    <string name="library_done_today">Done today</string>
+    <string name="library_read_again">Read again</string>
+    <string name="prayer_times_edit_hint">Tap a time to change it to your masjid\'s.</string>
+    <string name="collection_after_salah">After salah</string>
+    <string name="collection_after_salah_subtitle">After each obligatory prayer</string>
+    <string name="collection_before_sleep">Before sleep</string>
+    <string name="collection_before_sleep_subtitle">As you lie down at night</string>
+    <string name="collection_waking">On waking</string>
+    <string name="collection_waking_subtitle">The first words of the day</string>
+    <string name="collection_daily">Everyday duas</string>
+    <string name="collection_daily_subtitle">For the moments of the day</string>
+</resources>

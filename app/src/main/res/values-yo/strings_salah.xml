@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Yoruba translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="channel_salah_name">Ìránlétí ìrun</string>
+    <string name="channel_salah_description">Ìránlétí jẹ́jẹ́ láti múra sí ìrun kọ̀ọ̀kan, ní àkókò tí ẹ yàn</string>
+    <string name="notif_salah_title">Àkókò láti múra sí ìrun %1$s</string>
+    <string name="notif_salah_text">Ìránlétí láti múra sí ìrun — ẹ tẹ̀lé adhan mọ́ṣáláṣí yín.</string>
+    <string name="prayer_times_begin_note">Tí ẹ bá ṣètò ibi tí ẹ wà, ìrun kọ̀ọ̀kan yóò tún fi ìgbà tí àkókò rẹ̀ ń wọlé hàn nípa ìṣirò. Fún àfiwé nìkan ni: àkókò tiyín lókè ni áàpù máa ń tẹ̀lé nígbà gbogbo.</string>
+    <string name="salah_reminders_title">Ìránlétí ìrun</string>
+    <string name="salah_reminders_note">Ìránlétí láti múra sí ìrun nìwọ̀nyí, kì í ṣe àkókò ìrun gan-an. Ẹ fi àkókò mọ́ṣáláṣí yín sí i, yóò sì rọ́pò ìwọ̀nyí.</string>
+    <string name="today_prayer_times_caption">Àkókò láti múra sí ìrun, kì í ṣe àkókò ìrun gan-an.</string>
+    <string name="today_day_reminder">Ìránlétí òní</string>
+    <string name="channel_reminder_name">Ìránnilétí</string>
+    <string name="channel_reminder_description">Lẹ́yìn ìrun, kí o tó sùn àti ìkìlọ̀ ṣáájú adhkaar. Wọ́n ń dún, wọ́n sì ń mì.</string>
+    <string name="popup_salah_body">Fi ohun tí ò ń ṣe sílẹ̀ fún ìṣẹ́jú díẹ̀. Ṣe aluwala, kí o sì lọ sí mọ́ṣáláṣí tí o bá lè ṣe é.</string>
+    <string name="popup_step_wudu">Aluwala</string>
+    <string name="popup_step_masjid">Mọ́ṣáláṣí</string>
+    <string name="popup_step_phone">Gbé fóònù sílẹ̀</string>
+    <string name="popup_salah_hadith">Iṣẹ́ tí Allah fẹ́ràn jù: ìrun ní àkókò rẹ̀.</string>
+    <string name="popup_salah_source">Sahih al-Bukhari 527</string>
+    <string name="popup_ready">Mo ń múra</string>
+    <string name="popup_open">Ṣí i</string>
+    <string name="popup_later">Nígbà míì</string>
+</resources>

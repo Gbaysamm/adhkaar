@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Bottom tab bar -->
+    <string name="tab_today">Today</string>
+    <!-- Tab that opens the library of adhkaar (remembrances), not the app name -->
+    <string name="tab_adhkaar">Adhkaar</string>
+    <string name="tab_insights">Insights</string>
+    <string name="tab_settings">Settings</string>
+
+    <!-- Reminder modes (strictness levels) -->
+    <string name="mode_gentle">Gentle</string>
+    <string name="mode_full_screen">Full screen</string>
+    <string name="mode_lockdown">Lockdown</string>
+    <string name="mode_gentle_description">A notification reminds you at adhkaar time.</string>
+    <string name="mode_full_screen_description">The adhkaar open by themselves, even on the lock screen.</string>
+    <string name="mode_lockdown_description">Other apps pause until you finish. Calls always work.</string>
+    <!-- Small uppercase badge next to the recommended mode -->
+    <string name="mode_recommended">RECOMMENDED</string>
+
+    <!-- Prayer-time calculation methods -->
+    <string name="calc_muslim_world_league">Muslim World League</string>
+    <string name="calc_egyptian">Egyptian General Authority</string>
+    <string name="calc_karachi">University of Islamic Sciences, Karachi</string>
+    <string name="calc_umm_al_qura">Umm al-Qura, Makkah</string>
+    <string name="calc_dubai">Dubai</string>
+    <string name="calc_qatar">Qatar</string>
+    <string name="calc_kuwait">Kuwait</string>
+    <string name="calc_moonsighting_committee">Moonsighting Committee</string>
+    <string name="calc_singapore">Singapore</string>
+    <string name="calc_north_america">ISNA (North America)</string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_group_mode">Mode</string>
+    <string name="settings_mode_locked">You can change the mode once this session ends.</string>
+    <string name="settings_group_morning">Morning</string>
+    <string name="settings_group_evening">Evening</string>
+    <string name="settings_group_prayer_times">Prayer times</string>
+    <string name="settings_calc_method">Calculation method</string>
+    <string name="settings_asr_time">Asr time</string>
+    <!-- Asr calculation: the majority (Shafi'i, Maliki, Hanbali) method -->
+    <string name="settings_asr_standard">Standard</string>
+    <!-- Asr calculation: the Hanafi method (later Asr) -->
+    <string name="settings_asr_hanafi">Hanafi</string>
+    <!-- After the maximum time, Lockdown stops and only a reminder remains -->
+    <!-- Short duration: %1$d = minutes -->
+    <string name="settings_duration_minutes">%1$dm</string>
+    <!-- Short duration: %1$d = hours -->
+    <string name="settings_duration_hours">%1$dh</string>
+    <!-- Short duration: %1$d = hours, %2$d = minutes -->
+    <string name="settings_duration_hours_minutes">%1$dh %2$dm</string>
+    <string name="settings_group_reminders">Reminders</string>
+    <!-- A notification sent a few minutes before each session -->
+    <string name="settings_heads_up">Heads-up</string>
+    <string name="settings_heads_up_hint">Before each session</string>
+    <!-- Value shown when a reminder is switched off -->
+    <string name="settings_off">Off</string>
+    <!-- Short number of minutes: %1$d = minutes -->
+    <string name="settings_minutes_short">%1$d min</string>
+    <string name="settings_after_salah">After salah</string>
+    <!-- %1$d = number of minutes after each of the five daily prayers -->
+    <string name="settings_after_salah_hint">A nudge %1$d min after each prayer</string>
+    <string name="settings_before_sleep">Before sleep</string>
+    <string name="settings_before_sleep_hint">Tap to change the time</string>
+    <string name="settings_islamic_calendar">Islamic calendar</string>
+    <!-- "White days" = the 13th, 14th and 15th of each Hijri month (ayyam al-bid) -->
+    <string name="settings_islamic_calendar_hint">Friday, white days, Ramadan, Arafah, Ashura</string>
+    <string name="settings_friday_reminder">Friday reminder</string>
+    <string name="settings_friday_reminder_hint">Surah al-Kahf and salawat</string>
+    <string name="settings_group_hijri">Hijri date</string>
+    <string name="settings_hijri_date">Hijri date</string>
+    <!-- Explains the Hijri day offset. The Sultan of Sokoto is the authority who announces the new moon
+         for Muslims in Nigeria; translators may keep this example or swap in a locally familiar authority.
+         "−1" is the setting value the user would choose. -->
+    <string name="settings_moon_sighting">Follow Nigeria’s moon sighting</string>
+    <string name="settings_moon_sighting_hint">Dates as announced by the Sultan of Sokoto’s moon-sighting committee. Checked once a day.</string>
+    <string name="settings_hijri_hint">When a month isn’t announced yet, the calculated date is used. Adjust it here if needed; for example, if the Sultan of Sokoto announces the month a day after the calculated date, set −1.</string>
+    <string name="settings_group_reading">Reading</string>
+    <string name="settings_arabic_size">Arabic size</string>
+    <!-- Text size as a percentage: %1$d = percent -->
+    <string name="settings_percent">%1$d%%</string>
+    <string name="settings_auto_advance">Auto-advance</string>
+    <string name="settings_auto_advance_hint">Move on when a count is finished</string>
+    <string name="settings_auto_play">Auto-play recitation</string>
+    <string name="settings_auto_play_hint">When a recording exists</string>
+    <string name="settings_haptics">Haptics</string>
+    <string name="settings_haptics_hint">A light tap with every count</string>
+    <string name="settings_transliteration">Transliteration</string>
+    <string name="settings_translation">Translation</string>
+    <string name="settings_group_phone">Phone</string>
+    <string name="settings_permissions">Permissions &amp; battery</string>
+    <string name="settings_permissions_hint">Make sure your adhkaar arrive on time</string>
+    <string name="settings_test_hint">Test on this phone: a session starts in one minute with your current mode. Lock the screen or open another app while you wait.</string>
+    <string name="settings_test_morning">Test morning</string>
+    <string name="settings_test_evening">Test evening</string>
+    <!-- Toast after scheduling a test session -->
+    <string name="settings_test_toast">Starting in 1 minute</string>
+    <!-- Shown under the app name and version at the bottom of Settings -->
+    <string name="settings_footer_tagline">Open source · No ads · No tracking</string>
+    <string name="settings_prayer_fajr">Fajr</string>
+    <string name="settings_prayer_asr">Asr</string>
+    <string name="settings_morning_adhkaar">Morning adhkaar</string>
+    <string name="settings_evening_adhkaar">Evening adhkaar</string>
+    <!-- %1$s = time of the next session, e.g. "6:15 AM" -->
+    <string name="settings_next_at">Next at %1$s</string>
+    <!-- Segmented option: %1$s = prayer name (Fajr or Asr) -->
+    <string name="settings_after_prayer">After %1$s</string>
+    <string name="settings_fixed_time">Fixed time</string>
+    <!-- %1$s = prayer name (Fajr or Asr) -->
+    <string name="settings_minutes_after_prayer">Minutes after %1$s</string>
+    <string name="settings_time">Time</string>
+    <string name="settings_choose_time">Choose a time</string>
+    <string name="settings_set_time">Set time</string>
+    <!-- Accessibility label for the stepper's minus button -->
+    <string name="settings_decrease">Decrease</string>
+    <!-- Accessibility label for the stepper's plus button -->
+    <string name="settings_increase">Increase</string>
+    <string name="settings_location_error">Couldn’t get a location. Turn location on and try again.</string>
+    <string name="settings_location_denied">Location permission denied. Fixed times will be used.</string>
+    <string name="settings_location_set">Location set</string>
+    <string name="settings_use_location">Use my location</string>
+    <!-- %1$s = latitude, %2$s = longitude, already formatted like "6.52" -->
+    <string name="settings_location_coords">%1$s°, %2$s° · tap to update</string>
+    <string name="settings_location_hint">Used once to calculate Fajr and Asr on this phone</string>
+
+    <!-- Phone setup screen -->
+    <!-- Accessibility label for the back arrow -->
+    <string name="setup_back">Back</string>
+    <string name="setup_title">Phone setup</string>
+    <string name="setup_intro">Android saves battery by stopping apps in the background. Allow these once so your adhkaar arrive on time, every time.</string>
+    <string name="setup_all_set">All set</string>
+    <!-- Progress: %1$d = steps done, %2$d = total steps. Quantity is the number done. -->
+    <plurals name="setup_ready_count">
+        <item quantity="one">%1$d of %2$d ready</item>
+        <item quantity="other">%1$d of %2$d ready</item>
+    </plurals>
+    <!-- %1$s = phone brand(s), e.g. "Samsung" or "Xiaomi / Redmi / POCO" -->
+    <string name="setup_oem_title">%1$s phones</string>
+    <string name="setup_oem_body">Your phone stops background apps unless you allow them.</string>
+    <string name="setup_open_settings">Open settings</string>
+    <!-- Button that opens an online guide for this phone brand -->
+    <string name="setup_guide">Guide</string>
+    <string name="setup_oem_done">I’ve done this</string>
+    <!-- Small uppercase badge on a permission card -->
+    <string name="setup_required">REQUIRED</string>
+    <!-- Small uppercase badge on a permission card -->
+    <string name="setup_recommended">RECOMMENDED</string>
+    <!-- Accessibility label for the tick on a granted permission -->
+    <string name="setup_allowed">Allowed</string>
+    <string name="setup_allow">Allow</string>
+
+    <!-- Permission requirements -->
+    <string name="req_notifications">Notifications</string>
+    <string name="req_notifications_why">So the app can alert you at adhkaar time.</string>
+    <string name="req_exact_alarms">Alarms &amp; reminders</string>
+    <string name="req_exact_alarms_why">Starts your session at the exact minute, even when the phone is asleep.</string>
+    <string name="req_full_screen">Full-screen alerts</string>
+    <string name="req_full_screen_why">Opens the adhkaar over the lock screen, like an alarm clock.</string>
+    <string name="req_overlay">Display over other apps</string>
+    <string name="req_overlay_why">Opens the adhkaar while you’re using another app, and pauses other apps in Lockdown.</string>
+    <string name="req_usage_access">Usage access</string>
+    <string name="req_usage_access_why">Lets Lockdown see which app is open. Nothing is recorded or leaves your phone.</string>
+    <string name="req_battery">Unrestricted battery</string>
+    <string name="req_battery_why">Stops Android from putting the app to sleep and missing your adhkaar time.</string>
+
+    <!-- Brand-specific auto-start steps. Quoted names are the labels in the phone maker's own settings screens;
+         use the name that phone shows in your language if you know it. -->
+    <string name="oem_xiaomi_step_autostart">Turn on Autostart for Adhkaar</string>
+    <string name="oem_xiaomi_step_other_permissions">In Other permissions, allow “Display pop-up windows while running in the background” and “Show on lock screen”</string>
+    <string name="oem_xiaomi_step_battery">Battery saver: set Adhkaar to “No restrictions”</string>
+    <string name="oem_oppo_step_autolaunch">Allow Auto launch for Adhkaar</string>
+    <string name="oem_oppo_step_battery">Battery: allow background activity</string>
+    <string name="oem_vivo_step_autostart">Allow Auto-start for Adhkaar</string>
+    <string name="oem_vivo_step_battery">Battery: allow high background power consumption</string>
+    <string name="oem_huawei_step_app_launch">App launch: switch Adhkaar to “Manage manually” and enable all three toggles</string>
+    <string name="oem_samsung_step_sleeping">Battery: make sure Adhkaar is not in “Sleeping apps” or “Deep sleeping apps”</string>
+    <string name="oem_samsung_step_never_sleeping">Add it to “Never sleeping apps”</string>
+    <string name="oem_oneplus_step_autolaunch">Allow Auto-launch for Adhkaar</string>
+    <string name="oem_oneplus_step_battery">Battery optimisation: Don’t optimise</string>
+    <string name="oem_tecno_step_autostart">Phone Master → Auto-start: allow Adhkaar</string>
+    <string name="oem_tecno_step_power_saving">Turn off “Power saving” restrictions for Adhkaar</string>
+    <string name="oem_asus_step_autostart">Mobile Manager → Auto-start: allow Adhkaar</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_finish_blocked">Allow everything above to finish. If your phone won\'t allow one, go back and choose a gentler mode.</string>
+    <string name="setup_oem_checked_ok">Checked on your phone: allowed.</string>
+    <string name="setup_oem_checked_missing">Not allowed yet. Open settings and switch these on, then come back.</string>
+    <string name="onboarding_finish">Finish</string>
+    <string name="onboarding_continue">Continue</string>
+    <!-- Translation of Qur'an 2:152. %1$s is replaced by onboarding_verse_emphasis, shown in italics;
+         move it to wherever the emphasised word falls in your language. -->
+    <string name="onboarding_verse">Remember Me,\nI will remember %1$s</string>
+    <!-- The emphasised (italic) last word(s) of onboarding_verse -->
+    <string name="onboarding_verse_emphasis">you.</string>
+    <!-- Qur'an reference: surah Al-Baqarah, chapter 2, verse 152 -->
+    <string name="onboarding_verse_reference">Al-Baqarah 2:152</string>
+    <string name="onboarding_pill_on_time">On time</string>
+    <string name="onboarding_pill_focused">Focused</string>
+    <string name="onboarding_pill_private">Private</string>
+    <string name="onboarding_get_started">Get started</string>
+    <string name="onboarding_mode_title">How firm should\nthe reminder be?</string>
+    <string name="onboarding_mode_body">You can change this any time. Calls and emergency calls always work.</string>
+    <string name="onboarding_times_title">When should\nit begin?</string>
+    <string name="onboarding_times_body">Morning adhkaar begin after Fajr is prayed, and evening adhkaar after Asr. The times are set to common local times; change them to your masjid\'s anytime.</string>
+    <string name="onboarding_morning">Morning</string>
+    <string name="onboarding_evening">Evening</string>
+    <!-- %1$d = minutes, %2$s = prayer name (Fajr or Asr) -->
+    <string name="onboarding_minutes_after_prayer">%1$d min after %2$s</string>
+    <string name="onboarding_fine_tune">You can fine-tune both times in Settings.</string>
+    <!-- Language setting -->
+    <string name="settings_group_language">Language</string>
+    <string name="settings_language">App language</string>
+    <!-- Option to use the phone's own language instead of choosing one. -->
+    <string name="settings_language_system">Follow phone</string>
+</resources>

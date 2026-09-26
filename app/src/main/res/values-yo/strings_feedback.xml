@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="contact_title">Kàn sí wa</string>
+    <string name="contact_intro">Sọ fún wa nípa ìṣòro kan, èrò kan tàbí àṣìṣe nínú ọ̀rọ̀. A ń ka gbogbo ìfiránṣẹ́.</string>
+    <string name="contact_topic_label">Nípa</string>
+    <string name="contact_topic_problem">Ìṣòro</string>
+    <string name="contact_topic_suggestion">Àbá</string>
+    <string name="contact_topic_correction">Àtúnṣe</string>
+    <string name="contact_topic_other">Òmíràn</string>
+    <string name="contact_message_problem">Kí ló ṣẹlẹ̀?</string>
+    <string name="contact_message_suggestion">Èrò rẹ</string>
+    <string name="contact_message_correction">Kí ló yẹ kí a yí padà?</string>
+    <string name="contact_message_other">Ọ̀rọ̀ rẹ</string>
+    <string name="contact_placeholder_problem">Kí lo ń ṣe, kí ló sì bàjẹ́?</string>
+    <string name="contact_placeholder_suggestion">Kí ló máa mú kí áàpù yìí dára sí i fún ọ?</string>
+    <string name="contact_placeholder_correction">Èwo nínú àwọn àdúà tàbí ìtúmọ̀, kí ló sì yẹ kó sọ?</string>
+    <string name="contact_placeholder_other">Kọ̀wé sí wa níbí</string>
+    <string name="contact_reply_label">Ímeèlì tàbí nọ́mbà fóònù rẹ (kí a lè dá ọ lóhùn)</string>
+    <string name="contact_reply_placeholder">Kò pọn dandan</string>
+    <string name="contact_details_title">Àwọn àlàyé tí a ń fi kún un</string>
+    <string name="contact_details_note">Ìwọ̀nyí nìkan, kí a lè rí ìṣòro. Kò sí nǹkan àdáni.</string>
+    <string name="contact_min_hint">Kọ ọ̀rọ̀ díẹ̀ sí i kí o tó fi ránṣẹ́</string>
+    <string name="contact_send">Fi ránṣẹ́</string>
+    <string name="contact_sending">À ń fi ránṣẹ́…</string>
+    <string name="contact_failed">A kò lè fi ránṣẹ́. Ṣàyẹ̀wò ìsopọ̀ íńtánẹ́ẹ̀tì rẹ.</string>
+    <string name="contact_try_again">Tún gbìyànjú</string>
+    <string name="contact_email_instead">Fi ímeèlì ránṣẹ́ dípò</string>
+    <string name="contact_sent_title">JazakAllahu khayran</string>
+    <string name="contact_sent_body">Ọ̀rọ̀ rẹ ti dé ọ̀dọ̀ wa. Tí o bá fi ọ̀nà tí a lè gbà kàn sí ọ sílẹ̀, a ó dá ọ lóhùn níbẹ̀.</string>
+    <string name="contact_back">Padà sí Ètò</string>
+    <string name="contact_copy">Da ọ̀rọ̀ àti àlàyé fóònù kọ</string>
+    <string name="contact_copied">A ti dà á kọ. Lẹ̀ ẹ́ síbikíbi láti fi ránṣẹ́ sí wa.</string>
+</resources>

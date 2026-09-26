@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hausa translation. DRAFT by Claude: must be reviewed by a native Hausa speaker before release. -->
+<resources>
+    <!-- ===== Pacing and leaving a session ===== -->
+    <string name="pacing_take_your_time">Yi a hankali da wannan</string>
+    <string name="pacing_leave_collection">Za ka tafi kafin ka gama?</string>
+    <string name="pacing_remaining">Saura %1$d cikin %2$d</string>
+    <string name="pacing_keep_going">Ci gaba</string>
+    <string name="pacing_leave">Tafi</string>
+</resources>

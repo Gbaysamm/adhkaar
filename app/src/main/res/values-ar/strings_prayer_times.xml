@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arabic translation. Draft by Claude; please have a native speaker review before release. -->
+<resources>
+    <string name="prayer_times_group_calculation">الحساب</string>
+    <string name="prayer_times_calculated">بداية الوقت حسابًا %1$s</string>
+    <string name="prayer_times_reset">استعادة الافتراضي</string>
+    <string name="settings_prayer_times_adjusted">مضبوطة على مواقيت مسجدك</string>
+    <string name="settings_prayer_times_default">أوقات افتراضية للاستعداد للصلاة</string>
+</resources>

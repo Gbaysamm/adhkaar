@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hausa translation. DRAFT by Claude: must be reviewed by a native Hausa speaker before release. -->
+<resources>
+    <!-- Bottom tab bar -->
+    <string name="tab_today">Yau</string>
+    <!-- Tab that opens the library of adhkaar (remembrances), not the app name -->
+    <string name="tab_adhkaar">Azkar</string>
+    <string name="tab_insights">Ƙididdiga</string>
+    <string name="tab_settings">Saituna</string>
+
+    <!-- Reminder modes (strictness levels) -->
+    <string name="mode_gentle">Sassauƙa</string>
+    <string name="mode_full_screen">Cikakken allo</string>
+    <string name="mode_lockdown">Kulle</string>
+    <string name="mode_gentle_description">Sanarwa tana tunatar da kai a lokacin azkar.</string>
+    <string name="mode_full_screen_description">Azkar suna buɗewa da kansu, har a kan allon kulle.</string>
+    <string name="mode_lockdown_description">Sauran manhajoji suna tsayawa har sai ka gama. Kira kullum yana aiki.</string>
+    <!-- Small uppercase badge next to the recommended mode -->
+    <string name="mode_recommended">SHAWARARMU</string>
+
+    <!-- Prayer-time calculation methods -->
+    <string name="calc_muslim_world_league">Ƙungiyar Musulmin Duniya (MWL)</string>
+    <string name="calc_egyptian">Hukumar Masar</string>
+    <string name="calc_karachi">Jami\'ar Ilimin Musulunci, Karachi</string>
+    <string name="calc_umm_al_qura">Ummul Ƙura, Makka</string>
+    <string name="calc_dubai">Dubai</string>
+    <string name="calc_qatar">Ƙatar</string>
+    <string name="calc_kuwait">Kuwait</string>
+    <string name="calc_moonsighting_committee">Kwamitin Duban Wata</string>
+    <string name="calc_singapore">Singapore</string>
+    <string name="calc_north_america">ISNA (Arewacin Amurka)</string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">Saituna</string>
+    <string name="settings_group_mode">Yanayi</string>
+    <string name="settings_mode_locked">Za ka iya canza yanayi idan wannan zama ya ƙare.</string>
+    <string name="settings_group_morning">Safe</string>
+    <string name="settings_group_evening">Yamma</string>
+    <string name="settings_group_prayer_times">Lokutan sallah</string>
+    <string name="settings_calc_method">Hanyar lissafi</string>
+    <string name="settings_asr_time">Lokacin La\'asar</string>
+    <!-- Asr calculation: the majority (Shafi'i, Maliki, Hanbali) method -->
+    <string name="settings_asr_standard">Na gama-gari</string>
+    <!-- Asr calculation: the Hanafi method (later Asr) -->
+    <string name="settings_asr_hanafi">Hanafi</string>
+    <!-- After the maximum time, Lockdown stops and only a reminder remains -->
+    <!-- Short duration: %1$d = minutes -->
+    <string name="settings_duration_minutes">Minti %1$d</string>
+    <!-- Short duration: %1$d = hours -->
+    <string name="settings_duration_hours">Awa %1$d</string>
+    <!-- Short duration: %1$d = hours, %2$d = minutes -->
+    <string name="settings_duration_hours_minutes">Awa %1$d, minti %2$d</string>
+    <string name="settings_group_reminders">Tunatarwa</string>
+    <!-- A notification sent a few minutes before each session -->
+    <string name="settings_heads_up">Sanarwar gaba</string>
+    <string name="settings_heads_up_hint">Kafin kowane zama</string>
+    <!-- Value shown when a reminder is switched off -->
+    <string name="settings_off">A kashe</string>
+    <!-- Short number of minutes: %1$d = minutes -->
+    <string name="settings_minutes_short">Minti %1$d</string>
+    <string name="settings_after_salah">Bayan sallah</string>
+    <!-- %1$d = number of minutes after each of the five daily prayers -->
+    <string name="settings_after_salah_hint">Tunatarwa minti %1$d bayan kowace sallah</string>
+    <string name="settings_before_sleep">Kafin barci</string>
+    <string name="settings_before_sleep_hint">Taɓa don canza lokaci</string>
+    <string name="settings_islamic_calendar">Kalandar Musulunci</string>
+    <!-- "Kwanaki farare" = the 13th, 14th and 15th of each Hijri month (ayyamul bidh) -->
+    <string name="settings_islamic_calendar_hint">Juma\'a, kwanaki farare, Ramadan, Arafa, Ashura</string>
+    <string name="settings_friday_reminder">Tunatarwar Juma\'a</string>
+    <string name="settings_friday_reminder_hint">Suratul Kahfi da salati</string>
+    <string name="settings_group_hijri">Kwanan watan Hijira</string>
+    <string name="settings_hijri_date">Kwanan watan Hijira</string>
+    <!-- Explains the Hijri day offset. The Sultan of Sokoto (Sarkin Musulmi) announces the new moon in Nigeria. "−1" is the setting value. -->
+    <string name="settings_moon_sighting">Bi ganin wata na Najeriya</string>
+    <string name="settings_moon_sighting_hint">Kwanakin da kwamitin ganin wata na Sarkin Musulmi ya sanar. Ana dubawa sau ɗaya a rana.</string>
+    <string name="settings_hijri_hint">Idan ba a sanar da wata ba tukuna, ana amfani da kwanan da aka ƙididdige. Gyara shi a nan idan akwai buƙata; misali, idan Sarkin Musulmi ya sanar da farkon wata kwana ɗaya bayan wanda aka ƙididdige, zaɓi −1.</string>
+    <string name="settings_group_reading">Karatu</string>
+    <string name="settings_arabic_size">Girman Larabci</string>
+    <!-- Text size as a percentage: %1$d = percent -->
+    <string name="settings_percent">%1$d%%</string>
+    <string name="settings_auto_advance">Wucewa kai tsaye</string>
+    <string name="settings_auto_advance_hint">Wuce gaba idan an gama ƙirga</string>
+    <string name="settings_auto_play">Kunna karatu kai tsaye</string>
+    <string name="settings_auto_play_hint">Idan akwai naɗaɗɗen karatu</string>
+    <string name="settings_haptics">Girgiza</string>
+    <string name="settings_haptics_hint">Ɗan girgiza a kowace ƙirga</string>
+    <string name="settings_transliteration">Rubutun Boko</string>
+    <string name="settings_translation">Fassara</string>
+    <string name="settings_group_phone">Waya</string>
+    <string name="settings_permissions">Izini &amp; batir</string>
+    <string name="settings_permissions_hint">Tabbatar azkar suna zuwa a kan lokaci</string>
+    <string name="settings_test_hint">Gwada a wannan waya: zama zai fara nan da minti ɗaya da yanayin da kake amfani da shi yanzu. Kulle allo ko buɗe wata manhaja yayin da kake jira.</string>
+    <string name="settings_test_morning">Gwada na safe</string>
+    <string name="settings_test_evening">Gwada na yamma</string>
+    <!-- Toast after scheduling a test session -->
+    <string name="settings_test_toast">Zai fara nan da minti 1</string>
+    <!-- Shown under the app name and version at the bottom of Settings -->
+    <string name="settings_footer_tagline">Buɗaɗɗen tushe · Babu talla · Babu bin diddigi</string>
+    <string name="settings_prayer_fajr">Asuba</string>
+    <string name="settings_prayer_asr">La\'asar</string>
+    <string name="settings_morning_adhkaar">Azkar na safe</string>
+    <string name="settings_evening_adhkaar">Azkar na yamma</string>
+    <!-- %1$s = time of the next session, e.g. "6:15 AM" -->
+    <string name="settings_next_at">Na gaba: %1$s</string>
+    <!-- Segmented option: %1$s = prayer name (Asuba or La'asar) -->
+    <string name="settings_after_prayer">Bayan %1$s</string>
+    <string name="settings_fixed_time">Ƙayyadadden lokaci</string>
+    <!-- %1$s = prayer name (Asuba or La'asar) -->
+    <string name="settings_minutes_after_prayer">Minti bayan %1$s</string>
+    <string name="settings_time">Lokaci</string>
+    <string name="settings_choose_time">Zaɓi lokaci</string>
+    <string name="settings_set_time">Saita lokaci</string>
+    <!-- Accessibility label for the stepper's minus button -->
+    <string name="settings_decrease">Rage</string>
+    <!-- Accessibility label for the stepper's plus button -->
+    <string name="settings_increase">Ƙara</string>
+    <string name="settings_location_error">An kasa samun wuri. Kunna wuri (location) sannan a sake gwadawa.</string>
+    <string name="settings_location_denied">An ƙi izinin wuri. Za a yi amfani da ƙayyadaddun lokuta.</string>
+    <string name="settings_location_set">An saita wuri</string>
+    <string name="settings_use_location">Yi amfani da wurina</string>
+    <!-- %1$s = latitude, %2$s = longitude, already formatted like "6.52" -->
+    <string name="settings_location_coords">%1$s°, %2$s° · taɓa don sabuntawa</string>
+    <string name="settings_location_hint">Ana amfani da shi sau ɗaya don lissafin Asuba da La\'asar a wannan waya</string>
+
+    <!-- Phone setup screen -->
+    <!-- Accessibility label for the back arrow -->
+    <string name="setup_back">Koma baya</string>
+    <string name="setup_title">Saitin waya</string>
+    <string name="setup_intro">Android na adana batir ta hanyar dakatar da manhajoji a bayan fage. Ba da izinin waɗannan sau ɗaya domin azkar su riƙa zuwa a kan lokaci, kowane lokaci.</string>
+    <string name="setup_all_set">Komai ya kammala</string>
+    <!-- Progress: %1$d = steps done, %2$d = total steps. Quantity is the number done. -->
+    <plurals name="setup_ready_count">
+        <item quantity="one">%1$d cikin %2$d a shirye</item>
+        <item quantity="other">%1$d cikin %2$d a shirye</item>
+    </plurals>
+    <!-- %1$s = phone brand(s), e.g. "Samsung" or "Xiaomi / Redmi / POCO" -->
+    <string name="setup_oem_title">Wayoyin %1$s</string>
+    <string name="setup_oem_body">Wayarka tana dakatar da manhajoji a bayan fage sai ka ba su izini.</string>
+    <string name="setup_open_settings">Buɗe saituna</string>
+    <!-- Button that opens an online guide for this phone brand -->
+    <string name="setup_guide">Jagora</string>
+    <string name="setup_oem_done">Na yi haka</string>
+    <!-- Small uppercase badge on a permission card -->
+    <string name="setup_required">DOLE</string>
+    <!-- Small uppercase badge on a permission card -->
+    <string name="setup_recommended">SHAWARARMU</string>
+    <!-- Accessibility label for the tick on a granted permission -->
+    <string name="setup_allowed">An ba da izini</string>
+    <string name="setup_allow">Ba da izini</string>
+
+    <!-- Permission requirements -->
+    <string name="req_notifications">Sanarwa</string>
+    <string name="req_notifications_why">Don manhajar ta sanar da kai a lokacin azkar.</string>
+    <string name="req_exact_alarms">Ƙararrawa &amp; tunatarwa</string>
+    <string name="req_exact_alarms_why">Tana fara zamanka a daidai minti, ko da wayar tana barci.</string>
+    <string name="req_full_screen">Sanarwar cikakken allo</string>
+    <string name="req_full_screen_why">Tana buɗe azkar a kan allon kulle, kamar agogon ƙararrawa.</string>
+    <string name="req_overlay">Nunawa a kan sauran manhajoji</string>
+    <string name="req_overlay_why">Tana buɗe azkar yayin da kake amfani da wata manhaja, kuma tana dakatar da sauran manhajoji a yanayin Kulle.</string>
+    <string name="req_usage_access">Damar ganin amfani</string>
+    <string name="req_usage_access_why">Yana bar wa Kulle ganin wace manhaja ce a buɗe. Ba a rubuta komai, kuma babu abin da ke fita daga wayarka.</string>
+    <string name="req_battery">Batir ba tare da taƙaitawa ba</string>
+    <string name="req_battery_why">Yana hana Android sa manhajar barci har ta rasa lokacin azkar ɗinka.</string>
+
+    <!-- Brand-specific auto-start steps. Quoted names are the labels in the phone maker's own settings screens;
+         kept in English because Hausa is rarely available as a phone system language. -->
+    <string name="oem_xiaomi_step_autostart">Kunna Autostart don Adhkaar</string>
+    <string name="oem_xiaomi_step_other_permissions">A cikin Other permissions, ba da izinin “Display pop-up windows while running in the background” da “Show on lock screen”</string>
+    <string name="oem_xiaomi_step_battery">Battery saver: saka Adhkaar a “No restrictions”</string>
+    <string name="oem_oppo_step_autolaunch">Ba da izinin Auto launch don Adhkaar</string>
+    <string name="oem_oppo_step_battery">Battery: ba da izinin aiki a bayan fage</string>
+    <string name="oem_vivo_step_autostart">Ba da izinin Auto-start don Adhkaar</string>
+    <string name="oem_vivo_step_battery">Battery: ba da izinin amfani da caji mai yawa a bayan fage</string>
+    <string name="oem_huawei_step_app_launch">App launch: mayar da Adhkaar zuwa “Manage manually” sannan ka kunna maɓallai uku duka</string>
+    <string name="oem_samsung_step_sleeping">Battery: tabbatar Adhkaar ba ya cikin “Sleeping apps” ko “Deep sleeping apps”</string>
+    <string name="oem_samsung_step_never_sleeping">Saka shi cikin “Never sleeping apps”</string>
+    <string name="oem_oneplus_step_autolaunch">Ba da izinin Auto-launch don Adhkaar</string>
+    <string name="oem_oneplus_step_battery">Battery optimisation: Don’t optimise</string>
+    <string name="oem_tecno_step_autostart">Phone Master → Auto-start: ba da izini ga Adhkaar</string>
+    <string name="oem_tecno_step_power_saving">Kashe ƙa\'idojin “Power saving” don Adhkaar</string>
+    <string name="oem_asus_step_autostart">Mobile Manager → Auto-start: ba da izini ga Adhkaar</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_finish_blocked">Ka ba da izinin duk abubuwan da ke sama kafin ka gama. Idan wayarka ba ta yarda da ɗaya ba, koma baya ka zaɓi yanayi mai sauƙi.</string>
+    <string name="setup_oem_checked_ok">An duba a wayarka: an yarda.</string>
+    <string name="setup_oem_checked_missing">Ba a yarda ba tukuna. Buɗe saituna ka kunna waɗannan, sannan ka dawo.</string>
+    <string name="onboarding_finish">Kammala</string>
+    <string name="onboarding_continue">Ci gaba</string>
+    <!-- Translation of Qur'an 2:152. %1$s is replaced by onboarding_verse_emphasis, shown in italics. -->
+    <string name="onboarding_verse">Ku tuna Ni,\nIn tuna %1$s</string>
+    <!-- The emphasised (italic) last word(s) of onboarding_verse -->
+    <string name="onboarding_verse_emphasis">ku.</string>
+    <!-- Qur'an reference: surah Al-Baqarah, chapter 2, verse 152 -->
+    <string name="onboarding_verse_reference">Suratul Baƙara 2:152</string>
+    <string name="onboarding_pill_on_time">A kan lokaci</string>
+    <string name="onboarding_pill_focused">Da natsuwa</string>
+    <string name="onboarding_pill_private">Cikin sirri</string>
+    <string name="onboarding_get_started">Mu fara</string>
+    <string name="onboarding_mode_title">Yaya ƙarfin\ntunatarwar zai kasance?</string>
+    <string name="onboarding_mode_body">Za ka iya canza wannan a kowane lokaci. Kira da kiran gaggawa kullum suna aiki.</string>
+    <string name="onboarding_times_title">Yaushe\nzai fara?</string>
+    <string name="onboarding_times_body">Azkar na safe suna farawa bayan an yi sallar Asuba, na yamma kuma bayan La\'asar. An saita lokutan zuwa na gari da aka saba; canza su zuwa na masallacinka a kowane lokaci.</string>
+    <string name="onboarding_morning">Safe</string>
+    <string name="onboarding_evening">Yamma</string>
+    <!-- %1$d = minutes, %2$s = prayer name (Asuba or La'asar) -->
+    <string name="onboarding_minutes_after_prayer">Minti %1$d bayan %2$s</string>
+    <string name="onboarding_fine_tune">Za ka iya gyara lokutan biyu a Saituna.</string>
+    <!-- Language setting -->
+    <string name="settings_group_language">Harshe</string>
+    <string name="settings_language">Harshen manhaja</string>
+    <!-- Option to use the phone's own language instead of choosing one. -->
+    <string name="settings_language_system">Bi harshen waya</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Igbo translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="day_design_share_image">Kesaa foto</string>
+    <string name="day_design_save">Chekwaa</string>
+    <string name="day_design_year_ah">%1$s AH</string>
+    <string name="day_design_salam">Assalamu alaikum</string>
+    <string name="hero_reminder_in">Ncheta n\'ime %1$s</string>
+    <string name="moment_around">%1$s · ihe dịka %2$s</string>
+    <string name="moment_now">%1$s · ugbu a</string>
+    <string name="moment_tonight_around">Abalị a · ihe dịka %1$s</string>
+    <string name="moment_title_after_salah">Adhkaar mgbe salah gasịrị</string>
+    <string name="moment_title_before_sleep">Adhkaar tupu ụra</string>
+    <string name="moment_title_waking">Adhkaar mgbe ị tetara</string>
+    <string name="hero_best_until">Kacha mma tupu %1$s</string>
+    <string name="hero_best_read_times">Kacha mma ịgụ ya site na %1$s ruo %2$s.</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Credits for the daily reminders. The sources' licences require them (docs/REMINDERS.md):
+         show all four lines together, e.g. on an About or Sources screen. Keep the names, links
+         and "%1$s" (the source's version) exactly as they are in every language. -->
+    <string name="reminder_sources_title">Sources of the daily reminders</string>
+    <!-- %1$s = reminder_sources_tanzil_version -->
+    <string name="reminder_sources_quran_arabic">Qur\'an Arabic: Tanzil Quran Text (Uthmani, version %1$s), © Tanzil Project, under the Creative Commons Attribution 3.0 licence, unchanged. tanzil.net</string>
+    <!-- %1$s = reminder_sources_rowwad_version -->
+    <string name="reminder_sources_quran_meaning">Meanings of the Qur\'an: English Translation – Rowwad Translation Center, version %1$s, from QuranEnc.com (Encyclopedia of the Noble Qur\'an).</string>
+    <!-- %1$s = reminder_sources_hadeethenc_version -->
+    <string name="reminder_sources_hadith">Hadith in Arabic and English: HadeethEnc.com (Encyclopedia of Translated Prophetic Hadiths), version %1$s.</string>
+    <string name="reminder_sources_unchanged">Texts from these sources are shown exactly as published.</string>
+    <!-- Written by tools/reminders/build.py from the sources it built the reminders from. -->
+    <string name="reminder_sources_tanzil_version" translatable="false">1.1</string>
+    <string name="reminder_sources_rowwad_version" translatable="false">1.0.19</string>
+    <string name="reminder_sources_hadeethenc_version" translatable="false">1.25.0</string>
+</resources>

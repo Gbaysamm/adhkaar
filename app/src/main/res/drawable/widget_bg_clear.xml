@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Clear: no panel, only a faint shadow gathered behind the text, fading to nothing well
+     before the edges, so white text stays legible on a bright wallpaper. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient
+        android:type="radial"
+        android:centerX="0.5"
+        android:centerY="0.5"
+        android:gradientRadius="150dp"
+        android:startColor="#47000000"
+        android:centerColor="#24000000"
+        android:endColor="#00000000" />
+</shape>

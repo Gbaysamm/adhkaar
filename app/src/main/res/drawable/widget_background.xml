@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Glass: the app's midnight glass, as far as a launcher allows. Slightly translucent so the
+     wallpaper shows through, with the evening glow in one corner and a fine light edge. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="315"
+                android:startColor="#EB1A2A6B"
+                android:centerColor="#EB0C1433"
+                android:endColor="#F205070F" />
+            <corners android:radius="28dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:centerX="0.12"
+                android:centerY="0.05"
+                android:gradientRadius="170dp"
+                android:startColor="#552B5BFF"
+                android:endColor="#002B5BFF" />
+            <corners android:radius="28dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <stroke android:width="1dp" android:color="#26FFFFFF" />
+            <corners android:radius="28dp" />
+        </shape>
+    </item>
+</layer-list>

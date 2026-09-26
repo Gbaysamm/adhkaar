@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Yoruba translation. DRAFT by Claude: must be reviewed by a native Yoruba speaker before release. -->
+<resources>
+    <!-- Shared formatting -->
+    <!-- Countdown when the target time has arrived (lowercase, used inline). -->
+    <string name="format_now">nísinsìnyí</string>
+    <!-- Compact countdown. %1$d = hours, %2$d = minutes. h/m kept as widely understood abbreviations; reviewer may prefer wákàtí/ìṣẹ́jú. -->
+    <string name="format_hours_minutes">%1$dh %2$dm</string>
+    <string name="format_minutes">%1$dm</string>
+    <!-- Full date. %1$s = weekday name, %2$d = day of month, %3$s = month name. -->
+    <string name="format_gregorian_date">%1$s, %2$d %3$s</string>
+
+    <!-- Prayer names -->
+    <string name="prayer_fajr">Suubi</string>
+    <string name="prayer_sunrise">Ìyọ òòrùn</string>
+    <string name="prayer_dhuhr">Ìmọ́lẹ̀</string>
+    <string name="prayer_asr">Ààsàn</string>
+    <string name="prayer_maghrib">Mọ́gárí</string>
+    <string name="prayer_isha">Iṣai</string>
+
+    <!-- Today screen -->
+    <!-- Greeting. %1$s = time-of-day word, shown in italics: "Ẹ kú àárọ̀" etc. -->
+    <string name="today_greeting">Ẹ kú %1$s</string>
+    <string name="today_greeting_morning">àárọ̀</string>
+    <string name="today_greeting_afternoon">ọ̀sán</string>
+    <string name="today_greeting_evening">ìrọ̀lẹ́</string>
+
+    <string name="today_section_prayer_times">Ìránnilétí ìrun</string>
+    <string name="today_section_this_week">Ọ̀sẹ̀ yìí</string>
+    <string name="today_section_last_30_days">Ọjọ́ 30 tó kọjá</string>
+    <string name="today_section_today">Òní</string>
+
+    <plurals name="today_streak_days">
+        <item quantity="other">Ọjọ́ %1$d ní títẹ̀léra</item>
+    </plurals>
+    <string name="today_start_streak">Ẹ bẹ̀rẹ̀ ìtẹ̀léra yín lónìí</string>
+    <plurals name="today_days_of_total">
+        <item quantity="other">%1$d nínú ọjọ́ %2$d</item>
+    </plurals>
+
+    <string name="today_morning">Àárọ̀</string>
+    <string name="today_evening">Ìrọ̀lẹ́</string>
+    <string name="today_both">Méjèèjì</string>
+
+    <string name="today_stat_sessions">Ìjókòó</string>
+    <string name="today_stat_full_days">Ọjọ́ pípé</string>
+    <string name="today_stat_best_streak">Ìtẹ̀léra tó gùn jù</string>
+
+    <!-- Session status pills. -->
+    <string name="today_status_done">Ó ti parí</string>
+    <string name="today_status_waiting">Ó ń dúró</string>
+    <string name="today_status_off">Pípa</string>
+    <string name="today_status_upcoming">Ó ń bọ̀</string>
+    <string name="today_status_not_done">Kò parí</string>
+    <string name="today_turned_off">A ti pa á</string>
+    <!-- %1$s = a clock time, e.g. "5:26 AM". -->
+    <string name="today_today_at">Lónìí, %1$s</string>
+
+    <string name="today_hero_morning">Adhkaar àárọ̀</string>
+    <string name="today_hero_evening">Adhkaar ìrọ̀lẹ́</string>
+    <string name="today_hero_waiting">Ó Ń DÚRÓ DÈ YÍN</string>
+    <string name="today_hero_up_next">Ó KÀN</string>
+    <string name="today_hero_its_time">Àkókò ti tó</string>
+    <string name="today_hero_not_scheduled">Kò sí àkókò tí a yàn</string>
+    <string name="today_today">Òní</string>
+    <string name="today_tomorrow">Ọ̀la</string>
+    <plurals name="today_adhkaar_count">
+        <item quantity="other">Adhkaar %1$d</item>
+    </plurals>
+    <plurals name="today_about_minutes">
+        <item quantity="other">bí ìṣẹ́jú %1$d</item>
+    </plurals>
+    <string name="today_continue">Ẹ tẹ̀síwájú</string>
+    <string name="today_begin_now">Ẹ bẹ̀rẹ̀ báyìí</string>
+    <string name="today_timeline_begin">Ìbẹ̀rẹ̀</string>
+
+    <string name="today_events_overline">ÒNÍ</string>
+
+    <!-- %1$s = prayer name. "X ti wọlé" = the time for X has come in. -->
+    <string name="today_prayer_now">%1$s ti wọlé</string>
+    <!-- %1$s = prayer name, %2$s = countdown such as "1h 20m". -->
+    <string name="today_prayer_in">%1$s: ó kù %2$s</string>
+    <string name="today_next_prayer">Tó kàn</string>
+
+    <string name="today_setup_title">Ẹ parí ètò fóònù</string>
+    <!-- %1$s = reminder mode name, %2$d = number of missing permissions. -->
+    <plurals name="today_setup_body">
+        <item quantity="other">%1$s nílò ìyọ̀ǹda %2$d sí i láti ṣiṣẹ́ déédéé.</item>
+    </plurals>
+
+    <!-- Insights screen -->
+    <string name="insights_title">Àgbéyẹ̀wò</string>
+    <string name="insights_subtitle">Ìrántí Ọlọ́hun yín, bí àkókò ti ń lọ</string>
+    <plurals name="insights_day_streak">
+        <item quantity="other">Ọjọ́ ní títẹ̀léra</item>
+    </plurals>
+    <string name="insights_best_streak">Ìtẹ̀léra tó gùn jù</string>
+    <string name="insights_sessions_this_month">Ìjókòó oṣù yìí</string>
+    <string name="insights_full_days_this_month">Ọjọ́ pípé oṣù yìí</string>
+    <string name="insights_section_calendar">Kàlẹ́ńdà</string>
+    <string name="insights_section_rhythm">Àṣà yín</string>
+    <string name="insights_section_collections">Àkójọpọ̀ oṣù yìí</string>
+    <string name="insights_morning">Àárọ̀</string>
+    <string name="insights_evening">Ìrọ̀lẹ́</string>
+    <string name="insights_both">Méjèèjì</string>
+    <string name="insights_weekday_title">Ọjọ́ tí ẹ ṣe adhkaar · ọ̀sẹ̀ 8 tó kọjá</string>
+    <string name="insights_collection_count">×%1$d</string>
+    <string name="insights_not_enough_data">Ìsọfúnni kò tíì tó</string>
+    <string name="insights_usually_around">Ẹ sábà máa ń parí ní nǹkan bí</string>
+    <!-- Calendar header. %1$s = month name, %2$d = year. -->
+    <string name="insights_month_year">%1$s %2$d</string>
+    <string name="insights_previous_month">Oṣù tó kọjá</string>
+    <string name="insights_next_month">Oṣù tó ń bọ̀</string>
+    <string name="insights_day_both_done">Adhkaar àárọ̀ àti ìrọ̀lẹ́ ti parí</string>
+    <string name="insights_day_morning_done">Adhkaar àárọ̀ ti parí</string>
+    <string name="insights_day_evening_done">Adhkaar ìrọ̀lẹ́ ti parí</string>
+    <string name="insights_day_still_to_come">Ó ń bọ̀</string>
+    <string name="insights_day_none">Kò sí adhkaar tí a kọ sílẹ̀</string>
+    <!-- Screen reader label. %1$s = date, %2$s = what was done. -->
+    <string name="insights_day_cd">%1$s: %2$s</string>
+    <string name="insights_day_cd_both">àárọ̀ àti ìrọ̀lẹ́</string>
+    <string name="insights_day_cd_morning">àárọ̀</string>
+    <string name="insights_day_cd_evening">ìrọ̀lẹ́</string>
+    <string name="insights_day_cd_none">kò sí</string>
+    <!-- %1$s = weekday name, %2$d = days done, %3$d = total days. -->
+    <plurals name="insights_weekday_cd">
+        <item quantity="other">%1$s: %2$d nínú ọjọ́ %3$d</item>
+    </plurals>
+
+    <!-- Home-screen widget -->
+    <string name="widget_morning">Àárọ̀</string>
+    <string name="widget_evening">Ìrọ̀lẹ́</string>
+    <string name="widget_now">Nísinsìnyí</string>
+    <string name="widget_waiting">Ó ń dúró dè yín</string>
+    <plurals name="widget_streak_days">
+        <item quantity="other">Ọjọ́ %1$d ní títẹ̀léra</item>
+    </plurals>
+    <string name="widget_continue">Tẹ̀síwájú</string>
+    <string name="widget_opens_at">Yóò ṣí ní %1$s</string>
+    <string name="widget_begin">Bẹ̀rẹ̀</string>
+    <string name="widget_done">Ó ti parí</string>
+    <string name="widget_today">Òní</string>
+    <string name="widget_tomorrow">Ọ̀la</string>
+    <!-- After the countdown: "6:52 left". -->
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Yoruba translation. DRAFT by Claude: must be reviewed by a native Yoruba speaker before release. -->
+<!-- The session alert (ringing, Settings > Alert sound) and the Lockdown blocking screen. -->
+<resources>
+
+    <!-- Notification button that stops the ringing alert. -->
+    <string name="alert_stop">Dúró</string>
+
+    <!-- Lockdown blocking screen, shown over other apps until the user returns to the session. "Adhkaar" = the daily remembrances of Allah (transliterated Arabic); "dhikr" = one of them. -->
+    <string name="block_title_morning">Adhkaar àárọ̀ yín ń dúró dè yín</string>
+    <string name="block_title_evening">Adhkaar ìrọ̀lẹ́ yín ń dúró dè yín</string>
+    <string name="block_body">Àwọn áàpù mìíràn ti dúró fún ìsinsìnyí. Ìṣẹ́jú díẹ̀ pẹ̀lú Allah ní ìbàlẹ̀ ọkàn, lẹ́yìn náà wọ́n á padà sí ọwọ́ yín.</string>
+    <!-- %1$d = adhkaar not yet finished in this session. -->
+    <plurals name="block_remaining">
+        <item quantity="other">Ó ku adhkaar %1$d</item>
+    </plurals>
+    <string name="block_start">Bẹ̀rẹ̀ àdúà rẹ</string>
+    <string name="block_return">Ẹ padà sí adhkaar yín</string>
+    <string name="block_call">Ìpè tàbí pàjáwìrì</string>
+
+    <!-- Settings > Reminders > Alert sound. -->
+    <string name="settings_alert_sound">Ohùn ìdágìrì</string>
+    <!-- %1$d = minutes until the second ring (10). -->
+    <plurals name="settings_alert_sound_hint">
+        <item quantity="other">Ó ń dún fún ìṣẹ́jú kan ní àkókò ìjókòó, yóò sì tún dún lẹ́ẹ̀kan sí i lẹ́yìn ìṣẹ́jú %1$d tí ẹ kò bá ṣí i</item>
+    </plurals>
+    <!-- The two choices: the app’s own bell sound, or the user’s recorded voice. -->
+    <string name="settings_alert_chime">Agogo</string>
+    <string name="settings_alert_recording">Ohùn mi</string>
+    <string name="settings_alert_chime_title">Agogo Adhkaar</string>
+    <string name="settings_alert_chime_text">Agogo jẹ́jẹ́ tó ń gòkè, tí a ṣe fún áàpù yìí</string>
+    <string name="settings_alert_your_recording">Ìdágìrì yín</string>
+    <string name="settings_alert_repeats">Ó ń tún dún pẹ̀lú ìdákẹ́ díẹ̀ láàárín nígbà tó bá ń dún</string>
+    <string name="settings_alert_record_prompt">Ẹ gba ìdágìrì tiyín sílẹ̀</string>
+    <string name="settings_alert_record_example">Ẹ sọ nǹkan bíi “Àkókò adhkaar àárọ̀ yín ti tó.” Títí di ìgbà náà, agogo ni yóò dún.</string>
+</resources>

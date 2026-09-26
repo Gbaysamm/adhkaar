@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The session alert (ringing, Settings > Alert sound) and the Lockdown blocking screen. -->
+<resources>
+
+    <!-- Notification button that stops the ringing alert. -->
+    <string name="alert_stop">Stop</string>
+
+    <!-- Lockdown blocking screen, shown over other apps until the user returns to the session. "Adhkaar" = the daily remembrances of Allah (transliterated Arabic); "dhikr" = one of them. -->
+    <string name="block_title_morning">Your morning adhkaar is waiting</string>
+    <string name="block_title_evening">Your evening adhkaar is waiting</string>
+    <string name="block_body">Other apps are paused for now. A few calm minutes with Allah, then they’re yours again.</string>
+    <!-- %1$d = adhkaar not yet finished in this session. -->
+    <plurals name="block_remaining">
+        <item quantity="one">%1$d dhikr left</item>
+        <item quantity="other">%1$d adhkaar left</item>
+    </plurals>
+    <string name="block_start">Start your adhkaar</string>
+    <string name="block_return">Return to your adhkaar</string>
+    <string name="block_call">Call or emergency</string>
+
+    <!-- Settings > Reminders > Alert sound. -->
+    <string name="settings_alert_sound">Alert sound</string>
+    <!-- %1$d = minutes until the second ring (10). -->
+    <plurals name="settings_alert_sound_hint">
+        <item quantity="one">Rings for a minute at the session time, and once more %1$d minute later if it isn’t opened</item>
+        <item quantity="other">Rings for a minute at the session time, and once more %1$d minutes later if it isn’t opened</item>
+    </plurals>
+    <!-- The two choices: the app’s own bell sound, or the user’s recorded voice. -->
+    <string name="settings_alert_chime">Chime</string>
+    <string name="settings_alert_recording">My recording</string>
+    <string name="settings_alert_chime_title">The Adhkaar chime</string>
+    <string name="settings_alert_chime_text">A soft, rising bell, made for this app</string>
+    <string name="settings_alert_your_recording">Your alert</string>
+    <string name="settings_alert_repeats">Repeats with short pauses while it rings</string>
+    <string name="settings_alert_record_prompt">Record your own alert</string>
+    <string name="settings_alert_record_example">Say something like “It’s time for your morning adhkaar.” Until then, the chime plays.</string>
+</resources>

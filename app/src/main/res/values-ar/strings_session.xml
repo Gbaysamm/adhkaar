@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arabic translation. Draft by Claude; please have a native speaker review before release. -->
+<resources>
+    <!-- ===== Session (morning / evening / collection sessions) ===== -->
+    <!-- Overline above the position counter at the top of a session -->
+    <string name="session_overline_morning">أذكار الصباح</string>
+    <string name="session_overline_evening">أذكار المساء</string>
+    <!-- Play / pause the recitation of the current dhikr -->
+    <string name="session_listen">استمع</string>
+    <string name="session_pause">إيقاف مؤقت</string>
+    <string name="session_tap_hint">المس الدائرة أو البطاقة للعدّ</string>
+    <string name="session_close">إغلاق</string>
+    <!-- Position in the session, e.g. "3 of 19". %1$d = current, %2$d = total -->
+    <string name="session_position">%1$d من %2$d</string>
+    <string name="session_reading_options">خيارات القراءة</string>
+    <string name="session_reading_overline">القراءة</string>
+    <string name="session_arabic_size">حجم الخط العربي</string>
+    <!-- Arabic text size as a percentage. %1$d = percent -->
+    <string name="session_arabic_scale_percent">%1$d%%</string>
+    <string name="session_transliteration">الكتابة الصوتية</string>
+    <string name="session_translation">الترجمة</string>
+    <string name="session_auto_advance">الانتقال التلقائي</string>
+    <string name="session_auto_play_recitation">تشغيل التلاوة تلقائيًا</string>
+    <string name="session_haptics">الاهتزاز</string>
+    <!-- Pill on a dhikr card once it has been said the required number of times -->
+    <string name="session_done">تمّ</string>
+    <!-- Accessibility labels for the heart button -->
+    <string name="session_favourite_add">أضف إلى المفضلة</string>
+    <string name="session_favourite_remove">أزل من المفضلة</string>
+
+    <!-- ===== Counter ===== -->
+    <!-- How many times a dhikr is said, e.g. "×3". %1$d = repetitions -->
+    <plurals name="counter_times">
+        <item quantity="zero">×%1$d</item>
+        <item quantity="one">×%1$d</item>
+        <item quantity="two">×%1$d</item>
+        <item quantity="few">×%1$d</item>
+        <item quantity="many">×%1$d</item>
+        <item quantity="other">×%1$d</item>
+    </plurals>
+    <!-- Under the big count in the counter orb, e.g. "of 33". %1$d = target count -->
+    <string name="counter_of_target">من %1$d</string>
+    <!-- Accessibility label for the check mark shown when the count is complete -->
+    <string name="counter_done">تمّ</string>
+
+    <!-- ===== Completion screen ===== -->
+    <string name="completion_morning_headline">يبدأ يومك\nفي حفظ الله</string>
+    <string name="completion_evening_headline">يسكن ليلك\nفي حفظ الله</string>
+    <!-- Hadith about the dhikr "Bismillahil-ladhi la yadurru…" (Abu Dawud 5088), morning wording; original Arabic wording used -->
+    <string name="completion_morning_quote">من قالها حين يصبح ثلاث مرات لم تصبه فجأة بلاء حتى يمسي.</string>
+    <!-- Same hadith, evening wording -->
+    <string name="completion_evening_quote">من قالها حين يمسي ثلاث مرات لم تصبه فجأة بلاء حتى يصبح.</string>
+    <!-- Source line under the hadith: opening words of the dhikr and the hadith reference -->
+    <string name="completion_reference">بِسْمِ اللهِ الَّذِي لَا يَضُرُّ… · أبو داود ٥٠٨٨</string>
+    <!-- Wraps the hadith text in quotation marks. %1$s = the quote -->
+    <string name="completion_quote_format">«%1$s»</string>
+    <!-- Headline when a collection has no completion text of its own. %1$s = collection name -->
+    <string name="completion_collection_headline">%1$s\nاكتملت</string>
+    <!-- Stat label under the number of adhkaar said -->
+    <plurals name="completion_stat_adhkaar">
+        <item quantity="zero">ذكر</item>
+        <item quantity="one">ذكر</item>
+        <item quantity="two">ذكران</item>
+        <item quantity="few">أذكار</item>
+        <item quantity="many">ذكرًا</item>
+        <item quantity="other">ذكر</item>
+    </plurals>
+    <!-- Stat label under the time taken -->
+    <string name="completion_stat_time">المدة</string>
+    <!-- Time taken, shown as a stat. %1$d = minutes -->
+    <string name="completion_minutes">%1$d د</string>
+    <!-- Stat label under the streak length (in days) -->
+    <plurals name="completion_day_streak">
+        <item quantity="zero">يوم متتالٍ</item>
+        <item quantity="one">يوم متتالٍ</item>
+        <item quantity="two">يومان متتاليان</item>
+        <item quantity="few">أيام متتالية</item>
+        <item quantity="many">يومًا متتاليًا</item>
+        <item quantity="other">يوم متتالٍ</item>
+    </plurals>
+    <!-- Stat label under how many times a collection has been completed today -->
+    <plurals name="completion_times_today">
+        <item quantity="zero">مرة اليوم</item>
+        <item quantity="one">مرة اليوم</item>
+        <item quantity="two">مرتان اليوم</item>
+        <item quantity="few">مرات اليوم</item>
+        <item quantity="many">مرة اليوم</item>
+        <item quantity="other">مرة اليوم</item>
+    </plurals>
+    <string name="completion_done">تمّ</string>
+
+    <!-- ===== Library (Adhkaar tab) ===== -->
+    <string name="library_title">الأذكار</string>
+    <string name="library_subtitle">من حصن المسلم، مع مصادرها</string>
+    <string name="library_every_day">كل يوم</string>
+    <string name="library_morning">الصباح</string>
+    <string name="library_evening">المساء</string>
+    <!-- Morning shelf tile. %1$d = number of adhkaar -->
+    <plurals name="library_morning_tile">
+        <item quantity="zero">%1$d ذكر · بعد الفجر</item>
+        <item quantity="one">ذكر واحد · بعد الفجر</item>
+        <item quantity="two">ذكران · بعد الفجر</item>
+        <item quantity="few">%1$d أذكار · بعد الفجر</item>
+        <item quantity="many">%1$d ذكرًا · بعد الفجر</item>
+        <item quantity="other">%1$d ذكر · بعد الفجر</item>
+    </plurals>
+    <!-- Evening shelf tile. %1$d = number of adhkaar -->
+    <plurals name="library_evening_tile">
+        <item quantity="zero">%1$d ذكر · بعد العصر</item>
+        <item quantity="one">ذكر واحد · بعد العصر</item>
+        <item quantity="two">ذكران · بعد العصر</item>
+        <item quantity="few">%1$d أذكار · بعد العصر</item>
+        <item quantity="many">%1$d ذكرًا · بعد العصر</item>
+        <item quantity="other">%1$d ذكر · بعد العصر</item>
+    </plurals>
+    <string name="library_collections">المجموعات</string>
+    <!-- Number of items in a collection. %1$d = count -->
+    <plurals name="library_count_adhkaar">
+        <item quantity="zero">%1$d ذكر</item>
+        <item quantity="one">ذكر واحد</item>
+        <item quantity="two">ذكران</item>
+        <item quantity="few">%1$d أذكار</item>
+        <item quantity="many">%1$d ذكرًا</item>
+        <item quantity="other">%1$d ذكر</item>
+    </plurals>
+    <!-- Number of items in a reference collection of duas. %1$d = count -->
+    <plurals name="library_count_duas">
+        <item quantity="zero">%1$d دعاء</item>
+        <item quantity="one">دعاء واحد</item>
+        <item quantity="two">دعاءان</item>
+        <item quantity="few">%1$d أدعية</item>
+        <item quantity="many">%1$d دعاءً</item>
+        <item quantity="other">%1$d دعاء</item>
+    </plurals>
+    <string name="library_favourites">المفضلة</string>
+    <string name="library_favourites_none">لا شيء بعد</string>
+    <!-- Favourites tile subtitle. %1$d = number of saved adhkaar -->
+    <plurals name="library_favourites_saved">
+        <item quantity="zero">%1$d ذكر محفوظ</item>
+        <item quantity="one">ذكر واحد محفوظ</item>
+        <item quantity="two">ذكران محفوظان</item>
+        <item quantity="few">%1$d أذكار محفوظة</item>
+        <item quantity="many">%1$d ذكرًا محفوظًا</item>
+        <item quantity="other">%1$d ذكر محفوظ</item>
+    </plurals>
+    <string name="library_my_duas">أدعيتي</string>
+    <string name="library_my_duas_empty">اكتب دعاءك</string>
+    <!-- My duas tile subtitle. %1$d = number of duas the user has written -->
+    <plurals name="library_my_duas_written">
+        <item quantity="zero">%1$d دعاء</item>
+        <item quantity="one">دعاء واحد</item>
+        <item quantity="two">دعاءان</item>
+        <item quantity="few">%1$d أدعية</item>
+        <item quantity="many">%1$d دعاءً</item>
+        <item quantity="other">%1$d دعاء</item>
+    </plurals>
+    <string name="library_morning_title">أذكار الصباح</string>
+    <string name="library_evening_title">أذكار المساء</string>
+    <!-- When the morning adhkaar are said -->
+    <string name="library_morning_subtitle">بعد الفجر حتى السابعة والنصف صباحًا</string>
+    <!-- When the evening adhkaar are said -->
+    <string name="library_evening_subtitle">بعد العصر حتى المغرب</string>
+    <string name="library_favourites_subtitle">الأذكار التي حفظتها</string>
+    <!-- Shelf subtitle with its size. %1$s = subtitle, %2$s = count such as "12 adhkaar" -->
+    <string name="library_detail_subtitle">%1$s · %2$s</string>
+    <string name="library_back">رجوع</string>
+    <string name="library_begin">ابدأ</string>
+    <string name="library_favourites_empty_title">لا توجد أذكار مفضلة بعد</string>
+    <string name="library_favourites_empty_body">المس القلب على أي ذكر لتحفظه هنا.</string>
+    <string name="library_my_duas_description">كلماتك أنت إلى الله، محفوظة هنا، وتُضاف إلى أذكارك إن شئت.</string>
+    <string name="library_write_dua">اكتب دعاءً</string>
+
+    <!-- ===== Dua editor ===== -->
+    <string name="dua_new">دعاء جديد</string>
+    <string name="dua_edit">تعديل الدعاء</string>
+    <string name="dua_intro">اكتبه بالعربية، أو بلغتك، أو بكلتيهما.</string>
+    <string name="dua_field_title">العنوان</string>
+    <!-- Placeholder in the dua title field -->
+    <string name="dua_field_title_placeholder">مثلًا: لوالديّ</string>
+    <string name="dua_field_arabic">النص العربي</string>
+    <string name="dua_field_transliteration">الكتابة الصوتية</string>
+    <string name="dua_field_transliteration_placeholder">اختياري</string>
+    <!-- Label of the field for the dua's meaning / translation -->
+    <string name="dua_field_meaning">المعنى</string>
+    <string name="dua_field_meaning_placeholder">ما تدعو به</string>
+    <!-- How many times the dua is repeated -->
+    <string name="dua_repeat">التكرار</string>
+    <string name="dua_in_morning">ضمن أذكار صباحي</string>
+    <string name="dua_in_evening">ضمن أذكار مسائي</string>
+    <string name="dua_delete">احذف هذا الدعاء</string>
+    <string name="dua_invalid_hint">أضف عنوانًا، والنص العربي أو معناه.</string>
+    <string name="dua_save">حفظ</string>
+    <string name="dua_voice_overline">صوتك</string>
+    <string name="dua_voice_recording">جارٍ التسجيل</string>
+    <string name="dua_voice_stop">إيقاف</string>
+    <string name="dua_voice_play">تشغيل</string>
+    <string name="dua_voice_pause">إيقاف مؤقت</string>
+    <string name="dua_voice_your_recording">تسجيلك</string>
+    <string name="dua_voice_plays_with">يُشغَّل مع هذا الدعاء في جلساتك</string>
+    <string name="dua_voice_record_again">أعد التسجيل</string>
+    <string name="dua_voice_delete">احذف التسجيل</string>
+    <string name="dua_voice_record">تسجيل</string>
+    <string name="dua_voice_record_prompt">سجّله بصوتك</string>
+    <string name="dua_voice_mic_denied">رُفض الوصول إلى الميكروفون. يمكنك السماح به من إعدادات النظام.</string>
+    <!-- The recording limit is 3 minutes (MAX_SECONDS in DuaEditor.kt) -->
+    <string name="dua_voice_limit">حتى ٣ دقائق، ويبقى التسجيل على هذا الهاتف.</string>
+
+    <!-- ===== Share ===== -->
+    <string name="share_action">مشاركة</string>
+    <string name="share_cancel">إلغاء</string>
+    <!-- Title of the system share chooser -->
+    <string name="share_chooser_title">مشاركة الذكر</string>
+    <!-- Recitation mini player (inside the dhikr card). -->
+    <string name="player_play">تشغيل التلاوة</string>
+    <string name="player_pause">إيقاف التلاوة مؤقتًا</string>
+    <string name="player_repeat">تكرار التلاوة</string>
+    <!-- Share card looks. Midnight: dark blue night. Dawn: sunrise colours. Parchment: ink and gold on paper. -->
+    <string name="share_style_midnight">منتصف الليل</string>
+    <string name="share_style_dawn">الإشراق</string>
+    <string name="share_style_parchment">الرَّق</string>
+    <string name="library_done_today">تمت اليوم</string>
+    <string name="library_read_again">اقرأ مرة أخرى</string>
+    <string name="prayer_times_edit_hint">اضغط على الوقت لتغييره إلى وقت مسجدك.</string>
+    <string name="collection_after_salah">بعد الصلاة</string>
+    <string name="collection_after_salah_subtitle">بعد كل صلاة مكتوبة</string>
+    <string name="collection_before_sleep">قبل النوم</string>
+    <string name="collection_before_sleep_subtitle">حين تأوي إلى فراشك</string>
+    <string name="collection_waking">عند الاستيقاظ</string>
+    <string name="collection_waking_subtitle">أول الكلمات في يومك</string>
+    <string name="collection_daily">أدعية كل يوم</string>
+    <string name="collection_daily_subtitle">للحظات اليوم</string>
+</resources>

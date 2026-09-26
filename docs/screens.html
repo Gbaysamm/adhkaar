@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adhkaar Screens</title>
+<style>
+  :root {
+    --bg: #07090f;
+    --panel: #10131d;
+    --line: rgba(255,255,255,.08);
+    --text: #eef1fb;
+    --muted: rgba(238,241,251,.55);
+    --accent: #8fb1ff;
+    --pin: #ff8e5e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Inter, sans-serif;
+    display: grid; grid-template-columns: 1fr 340px; height: 100vh; overflow: hidden;
+  }
+  header { padding: 20px 24px 8px; }
+  h1 { margin: 0; font-size: 20px; font-weight: 650; letter-spacing: -.2px; }
+  header p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+  main { overflow: auto; }
+  .board { display: flex; flex-wrap: wrap; gap: 28px; padding: 16px 24px 48px; align-items: flex-start; }
+  figure { margin: 0; }
+  figcaption { font-size: 12px; font-weight: 600; letter-spacing: .6px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .shot { position: relative; width: 300px; border-radius: 28px; overflow: hidden; border: 1px solid var(--line); cursor: crosshair; background: #000; }
+  .shot.tall { width: 300px; }
+  .shot img { display: block; width: 100%; height: auto; user-select: none; -webkit-user-drag: none; }
+  .pin {
+    position: absolute; width: 24px; height: 24px; margin: -12px 0 0 -12px; border-radius: 50%;
+    background: var(--pin); color: #1a0d05; font-weight: 700; font-size: 12px;
+    display: grid; place-items: center; box-shadow: 0 0 0 3px rgba(255,142,94,.3), 0 4px 12px rgba(0,0,0,.5);
+    pointer-events: auto; cursor: pointer;
+  }
+  .pin.active { background: #fff; }
+  aside { border-left: 1px solid var(--line); background: var(--panel); display: flex; flex-direction: column; min-height: 0; }
+  aside .top { padding: 20px; border-bottom: 1px solid var(--line); }
+  aside h2 { margin: 0 0 4px; font-size: 15px; }
+  aside .hint { color: var(--muted); font-size: 12px; margin: 0; }
+  .notes { flex: 1; overflow: auto; padding: 12px 20px; display: flex; flex-direction: column; gap: 12px; }
+  .note { border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; background: rgba(255,255,255,.02); }
+  .note.active { border-color: var(--pin); }
+  .note .meta { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+  .note .num { color: var(--pin); font-weight: 700; margin-right: 6px; }
+  .note textarea {
+    width: 100%; min-height: 54px; resize: vertical; background: transparent; color: var(--text);
+    border: 0; outline: 0; font: inherit;
+  }
+  .note button { background: none; border: 0; color: var(--muted); cursor: pointer; font-size: 12px; padding: 0; }
+  .note button:hover { color: #ff7a7a; }
+  .empty { color: var(--muted); font-size: 13px; padding: 8px 0; }
+  .actions { padding: 16px 20px; border-top: 1px solid var(--line); display: flex; gap: 8px; }
+  .actions button {
+    flex: 1; height: 42px; border-radius: 999px; border: 1px solid var(--line); cursor: pointer;
+    font: 600 14px/1 inherit; color: var(--text); background: rgba(255,255,255,.06);
+  }
+  .actions .primary { background: linear-gradient(90deg, #4b74ff, #2a4bd8); border-color: transparent; }
+  .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #fff; color: #000; padding: 8px 14px; border-radius: 999px; font-weight: 600; opacity: 0; transition: opacity .2s; }
+  .toast.show { opacity: 1; }
+  @media (max-width: 800px) {
+    body { grid-template-columns: 1fr; grid-template-rows: 1fr 45vh; }
+    aside { border-left: 0; border-top: 1px solid var(--line); }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Adhkaar screens</h1>
+    <p>Click anywhere on a screen to pin a change, then write what you want in the panel. Reload after a new render to see updates.</p>
+    <p><b>New in this update</b> is first. Crops show the parts that changed; the full screens follow.</p>
+    <p>Welcome screen: three new directions are at the start of the board. Pin the one you want and write “use this” (or mix, e.g. “A’s cards with C’s headline”).</p>
+  </header>
+  <div class="board" id="board"></div>
+</main>
+<aside>
+  <div class="top">
+    <h2>Your feedback</h2>
+    <p class="hint">Pins are saved in this browser until you clear them.</p>
+  </div>
+  <div class="notes" id="notes"></div>
+  <div class="actions">
+    <button id="clear">Clear all</button>
+    <button id="copy" class="primary">Copy feedback</button>
+  </div>
+</aside>
+<div class="toast" id="toast">Copied, paste it into the chat</div>
+
+<script>
+// Rendered by ScreenshotTest into docs/screenshots/.
+const SCREENS = [
+  ["today-full", "NEW · Today, full length (pin notes anywhere)"],
+  ["today", "NEW · Today, first screen"],
+  ["day-sheet", "NEW · Day pop-up (tap a calendar date)"],
+  ["day-card", "NEW · Shareable day image"],
+  ["day-reminder-card", "NEW · Reminder for today card"],
+  ["day-calendar-360-hijri", "NEW · Calendar, Hijri first"],
+  ["day-calendar-360-gregorian", "NEW · Calendar, Gregorian first"],
+  ["motion-press-slow.gif", "NEW · Slow motion: press light following the finger, then fading"],
+  ["motion-counter-slow.gif", "NEW · Slow motion: counter taps, gold wave on the last"],
+  ["motion-dialog-slow.gif", "NEW · Slow motion: dialog rising with a glass bloom"],
+  ["motion-press.gif", "Real speed: press"],
+  ["motion-counter.gif", "Real speed: counter"],
+  ["motion-dialog.gif", "Real speed: dialog"],
+  ["grid-session-evening", "NEW · Alignment audit: session (pink = 20dp page margin, blue = card content)"],
+  ["grid-new-collection-after-salah", "NEW · Alignment audit: collection page"],
+  ["grid-new-my-duas", "NEW · Alignment audit: My duas"],
+  ["grid-today", "Alignment audit: Today"],
+  ["grid-library", "Alignment audit: Adhkaar"],
+  ["grid-new-insights", "Alignment audit: Insights"],
+  ["grid-settings", "Alignment audit: Settings"],
+  ["motion-tab-right-bar-slow.gif", "NEW · Slow motion (¼ speed): the liquid tab drop, moving right"],
+  ["motion-tab-left-bar-slow.gif", "NEW · Slow motion (¼ speed): the liquid tab drop, moving left"],
+  ["motion-tab-right-slow.gif", "NEW · Slow motion (¼ speed): page change, cards settling in one after another"],
+  ["motion-tab-right-bar.gif", "Real speed: the liquid tab drop, moving right"],
+  ["motion-tab-left-bar.gif", "Real speed: the liquid tab drop, moving left"],
+  ["motion-tab-right.gif", "Real speed: page change, Today to Insights"],
+  ["motion-tab-left.gif", "Real speed: page change, Insights to Adhkaar"],
+  ["new-welcome-dawn", "NEW · Welcome: dawn (plays once to night, ~4.5s)"],
+  ["new-welcome-noon", "NEW · Welcome: midday"],
+  ["new-welcome-night", "NEW · Welcome: night"],
+  ["new-sky-morning", "NEW · Today's sky: morning (sun rising)"],
+  ["new-sky-noon", "NEW · Today's sky: midday (sun high)"],
+  ["new-sky-afternoon", "NEW · Today's sky: late afternoon (sun lowering)"],
+  ["new-sky-evening", "NEW · Today's sky: evening (crescent)"],
+  ["new-settings-language", "NEW · Settings: language"],
+  ["new-language-picker", "NEW · Language picker"],
+  ["lang-ar-today", "NEW · Arabic interface: Today"],
+  ["lang-ar-session", "NEW · Arabic interface: Session"],
+  ["lang-ur-today", "NEW · Urdu: Today"],
+  ["lang-ha-today", "NEW · Hausa (draft): Today"],
+  ["lang-yo-today", "NEW · Yoruba (draft): Today"],
+  ["lang-ig-today", "NEW · Igbo (draft): Today"],
+  ["new-share-card-midnight", "NEW · Share card: Midnight"],
+  ["new-share-card-dawn", "NEW · Share card: Dawn"],
+  ["new-share-card-parchment", "NEW · Share card: Parchment"],
+  ["new-share-card-long", "NEW · Share card: longest text (Ayat al-Kursi)"],
+  ["new-widget", "NEW · Home-screen widget: small and wide"],
+  ["new-session-audio", "Session with a recitation (controls around the counter)"],
+  ["new-insights", "Phase 2 · Insights tab"],
+  ["new-my-duas", "Phase 2 · My duas"],
+  ["new-dua-editor", "NEW · Writing a dua, with your voice recording"],
+  ["library", "Phase 2 · Adhkaar tab gallery"],
+  ["new-collection-after-salah", "Phase 2 · Collection page: After salah"],
+  ["new-collection-session", "Phase 2 · Collection session"],
+  ["new-collection-complete", "Phase 2 · Collection completion"],
+  ["new-settings-reminders", "Settings: reminders"],
+  ["new-events", "Phase 1 · Today: special days"],
+  ["new-prayers", "Phase 1 · Today: prayer times"],
+  ["session-morning", "Phase 1 · Session: favourite + snooze"],
+  ["new-reading-menu", "Phase 1 · Session: reading menu"],
+  ["new-settings-hijri", "Phase 1 · Settings: Hijri date"],
+  ["new-settings-reading", "Settings: reading"],
+  ["new-favourites", "Phase 1 · Adhkaar: favourites"],
+  ["welcome-a", "Welcome concept A · Product glimpse"],
+  ["welcome-b", "Welcome concept B · Calligraphy"],
+  ["welcome-c", "Welcome concept C · Two moments"],
+  ["onboarding-welcome", "Onboarding · Welcome (current)"],
+  ["onboarding-mode", "Onboarding · Mode"],
+  ["today", "Today"],
+  ["today-full", "Today (full scroll)"],
+  ["session-morning", "Session · Morning"],
+  ["session-evening", "Session · Evening"],
+  ["complete", "Session complete"],
+  ["library", "Adhkaar list"],
+  ["settings", "Settings (full scroll)"],
+  ["setup", "Phone setup"],
+  ["icon", "App icon"],
+  ["font-a", "Arabic font · A · Scheherazade New"],
+  ["font-b", "Arabic font · B · Ruwudu"],
+  ["font-c", "Arabic font · C · Amiri Quran (now in use)"],
+  ["font-d", "Arabic font · D · Madinah Mushaf (needs KFGQPC permission)"],
+  ["font-e", "Arabic font · E · Lateef"],
+  ["font-f", "Arabic font · F · Noto Naskh (previous)"],
+  ["font-g", "Arabic font · G · Aref Ruqaa (used for الحمد لله only)"],
+];
+
+const KEY = "adhkaar-screen-notes";
+let notes = [];
+let active = null;
+try { notes = JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { notes = []; }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(notes)); } catch (e) {} };
+const bust = Date.now();
+
+const board = document.getElementById("board");
+SCREENS.forEach(([file, title]) => {
+  const fig = document.createElement("figure");
+  fig.innerHTML = `<figcaption>${title}</figcaption><div class="shot" data-screen="${file}"><img src="screenshots/${file.includes('.') ? file : file + '.png'}?${bust}" alt="${title}"></div>`;
+  const shot = fig.querySelector(".shot");
+  shot.addEventListener("click", (e) => {
+    if (e.target.classList.contains("pin")) return;
+    const r = shot.getBoundingClientRect();
+    const x = Math.round(((e.clientX - r.left) / r.width) * 100);
+    const y = Math.round(((e.clientY - r.top) / r.height) * 100);
+    const note = { id: Date.now(), screen: file, x, y, text: "" };
+    notes.push(note);
+    active = note.id;
+    save(); render();
+    const ta = document.querySelector(`[data-note="${note.id}"] textarea`);
+    if (ta) ta.focus();
+  });
+  board.appendChild(fig);
+});
+
+function titleOf(file) { return (SCREENS.find(s => s[0] === file) || [file, file])[1]; }
+
+function render() {
+  document.querySelectorAll(".pin").forEach(p => p.remove());
+  notes.forEach((n, i) => {
+    const shot = document.querySelector(`.shot[data-screen="${n.screen}"]`);
+    if (!shot) return;
+    const pin = document.createElement("div");
+    pin.className = "pin" + (n.id === active ? " active" : "");
+    pin.style.left = n.x + "%";
+    pin.style.top = n.y + "%";
+    pin.textContent = i + 1;
+    pin.onclick = () => { active = n.id; render(); document.querySelector(`[data-note="${n.id}"] textarea`)?.focus(); };
+    shot.appendChild(pin);
+  });
+
+  const list = document.getElementById("notes");
+  list.innerHTML = notes.length ? "" : '<div class="empty">No pins yet. Click a screen to add one.</div>';
+  notes.forEach((n, i) => {
+    const el = document.createElement("div");
+    el.className = "note" + (n.id === active ? " active" : "");
+    el.dataset.note = n.id;
+    el.innerHTML = `<div class="meta"><span><span class="num">${i + 1}</span>${titleOf(n.screen)}</span><button>Remove</button></div><textarea placeholder="What should change here?"></textarea>`;
+    const ta = el.querySelector("textarea");
+    ta.value = n.text;
+    ta.addEventListener("input", () => { n.text = ta.value; save(); });
+    ta.addEventListener("focus", () => { if (active !== n.id) { active = n.id; highlight(); } });
+    el.querySelector("button").onclick = () => { notes = notes.filter(x => x.id !== n.id); save(); render(); };
+    list.appendChild(el);
+  });
+}
+
+function highlight() {
+  document.querySelectorAll(".note").forEach(el => el.classList.toggle("active", +el.dataset.note === active));
+  document.querySelectorAll(".pin").forEach((p, i) => p.classList.toggle("active", notes[i] && notes[i].id === active));
+}
+
+function describe(y) {
+  if (y < 15) return "top";
+  if (y < 40) return "upper";
+  if (y < 65) return "middle";
+  if (y < 85) return "lower";
+  return "bottom";
+}
+
+document.getElementById("copy").onclick = async () => {
+  const text = "UI feedback:\n" + notes.map((n, i) =>
+    `${i + 1}. [${titleOf(n.screen)}] ${describe(n.y)} area (x ${n.x}%, y ${n.y}%): ${n.text.trim() || "(no note)"}`
+  ).join("\n");
+  try { await navigator.clipboard.writeText(text); }
+  catch (e) {
+    const t = document.createElement("textarea"); t.value = text; document.body.appendChild(t); t.select();
+    document.execCommand("copy"); t.remove();
+  }
+  const toast = document.getElementById("toast");
+  toast.classList.add("show"); setTimeout(() => toast.classList.remove("show"), 1600);
+};
+
+document.getElementById("clear").onclick = () => {
+  if (!notes.length || !confirm("Remove all pins?")) return;
+  notes = []; active = null; save(); render();
+};
+
+render();
+</script>
+</body>
+</html>

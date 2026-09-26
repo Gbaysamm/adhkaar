@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arabic translation. Draft by Claude; please have a native speaker review before release. -->
+<resources>
+    <!-- Home-screen widgets: names and one-line descriptions shown in the launcher's widget picker. -->
+    <string name="widget_name_today">اليوم</string>
+    <string name="widget_name_next">الأذكار التالية</string>
+    <string name="widget_name_sky">سماء اليوم</string>
+    <string name="widget_name_dhikr">ذكر اللحظة</string>
+    <string name="widget_name_hijri">التاريخ الهجري</string>
+    <string name="widget_name_streak">المواظبة</string>
+    <string name="widget_name_collection">اختصار مجموعة</string>
+    <string name="widget_desc_today">أذكارك التالية، والعدّ التنازلي، ولمسة واحدة للبدء</string>
+    <string name="widget_desc_next">أذكارك التالية وموعدها</string>
+    <string name="widget_desc_sky">اليوم من الفجر إلى المغرب، والشمس حيث هي الآن</string>
+    <string name="widget_desc_dhikr">ذكر قصير ومعناه، يتجدد كل بضع ساعات</string>
+    <string name="widget_desc_hijri">تاريخ اليوم الهجري وأقرب يوم مميز</string>
+    <string name="widget_desc_streak">مواظبتك، وصباحات هذا الأسبوع وأمسياته</string>
+    <string name="widget_desc_collection">لمسة واحدة إلى أذكار بعد الصلاة أو قبل النوم أو عند الاستيقاظ أو الأدعية اليومية</string>
+
+    <!-- Widget styles, chosen when a widget is added. -->
+    <string name="widget_style_glass">زجاجي</string>
+    <string name="widget_style_glass_desc">داكن بإضاءة هادئة، مثل التطبيق</string>
+    <string name="widget_style_parchment">رَقّ</string>
+    <string name="widget_style_parchment_desc">لون كريمي دافئ، وحبر داكن، وذهبي</string>
+    <string name="widget_style_clear">شفاف</string>
+    <string name="widget_style_clear_desc">بلا خلفية: نص أبيض فوق خلفية شاشتك</string>
+
+    <!-- Widget configuration screen. -->
+    <string name="widget_config_subtitle">اختر كيف تظهر على شاشتك الرئيسية.</string>
+    <string name="widget_config_style_title">النمط</string>
+    <string name="widget_config_collection_title">تفتح</string>
+    <string name="widget_config_save">حفظ</string>
+
+    <string name="widget_countdown_in">بعد %1$s</string>
+
+    <string name="widget_event_today">%1$s اليوم</string>
+    <string name="widget_event_tomorrow">%1$s غدًا</string>
+    <!-- Always two days or more away. %1$s = the day's name, %2$d = days. -->
+    <plurals name="widget_event_in_days">
+        <item quantity="zero">%1$s بعد %2$d يوم</item>
+        <item quantity="one">%1$s بعد %2$d يوم</item>
+        <item quantity="two">%1$s بعد يومين</item>
+        <item quantity="few">%1$s بعد %2$d أيام</item>
+        <item quantity="many">%1$s بعد %2$d يومًا</item>
+        <item quantity="other">%1$s بعد %2$d يوم</item>
+    </plurals>
+    <string name="widget_hijri_month_year">%1$s %2$d هـ</string>
+
+    <plurals name="widget_days_in_a_row">
+        <item quantity="zero">يوم على التوالي</item>
+        <item quantity="one">يوم على التوالي</item>
+        <item quantity="two">يومان على التوالي</item>
+        <item quantity="few">أيام على التوالي</item>
+        <item quantity="many">يومًا على التوالي</item>
+        <item quantity="other">يوم على التوالي</item>
+    </plurals>
+    <string name="widget_streak_start">ابدأ مواظبتك اليوم</string>
+
+    <string name="widget_preview_days_in_a_row">أيام على التوالي</string>
+    <string name="widget_preview_dhikr_meaning">تنزيهٌ لله وحمدٌ له.</string>
+</resources>

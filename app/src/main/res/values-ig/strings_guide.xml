@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guide_title">Nduzi</string>
+    <string name="guide_intro">Otú Adhkaar si arụ ọrụ, na otú ị ga-esi mee ka ọ dabara ụbọchị gị.</string>
+    <string name="guide_group_times">Oge</string>
+    <string name="guide_times_title">Mgbe adhkaar na-emepe</string>
+    <string name="guide_times_body">Adhkaar ụtụtụ na-emepe nkeji 10 mgbe e kpechara Fajr n\'ọgbakọ (ihe dị ka elekere 6:00), ọ kachakwa mma ịgụ ya tupu 7:30. Adhkaar mgbede na-emepe ihe dị ka nkeji 30 mgbe e kpechara Asr (ihe dị ka 4:45), ọ kacha mma tupu Maghrib, a ka nwere ike ịgụ ya ruo Isha. Ihe niile na-eso oge salah gị, ya mere dozie ha mbụ.</string>
+    <string name="guide_salah_title">Oge salah gị</string>
+    <string name="guide_salah_body">Ngwa a na-amalite n\'oge obodo a na-ahụkarị. Gbanwee ha ka ha dị ka nke ụlọ alakụba gị na Ntọala › Ncheta salah: pịa oge iji dezie ya. Oge gị na-anọchi nke mbụ kpamkpam, ị nwekwara ike ịgbanye ma ọ bụ gbanyụọ ncheta salah ọ bụla ebe ahụ.</string>
+    <string name="guide_group_modes">Ọnọdụ</string>
+    <string name="guide_modes_intro">Ọnọdụ na-ekpebi otú ngwa a ga-esi jide gị na adhkaar ụtụtụ na mgbede. Ọ metụtara naanị abụọ ndị a; ihe ndị ọzọ bụ ọkwa.</string>
+    <string name="guide_gentle_body">Ụda dị nro otu na ọkwa mgbe adhkaar mepere. Ọ naghị akụ ọzọ.</string>
+    <string name="guide_gentle_pros">Ọ dị jụụ, ọ naghị egbochi gị. Ọ dị mma ma ọ bụrụ na ị marala omume ahụ.</string>
+    <string name="guide_gentle_cons">Ọ dị mfe ihichapụ ya ma chefuo.</string>
+    <string name="guide_full_body">Adhkaar na-emepe n\'onwe ha, ọbụna na ihuenyo mkpọchi. Mkpu na-akụ otu nkeji, na otu ugboro ọzọ mgbe nkeji 10 gasịrị ma ọ bụrụ na i megheghị ha. Mgbe ahụ ọ na-agbachi nkịtị, mana oge ọ bụla i meghere ekwentị gị ha na-alọghachi, ruo mgbe ị mechara ma ọ bụ oge gwụrụ.</string>
+    <string name="guide_full_pros">O siri ike ịtụfu ya, na-egbochighị gị iji ekwentị gị.</string>
+    <string name="guide_full_cons">Ọ na-akwụsị gị. Imechi ya abụghị njedebe: ọ na-alọghachi mgbe i meghere ekwentị gị ọzọ.</string>
+    <string name="guide_lockdown_body">Dị ka Ihuenyo zuru ezu, a na-ekpuchikwa ngwa ndị ọzọ ruo mgbe ị mechara adhkaar ma ọ bụ oge ha gwụrụ (7:30 ụtụtụ, Isha mgbede). Oku na-arụ ọrụ mgbe niile. Ọ naghị akwụsị n\'oge: ọ na-apụ mgbe ị mechara ma ọ bụ mgbe oge gafere.</string>
+    <string name="guide_lockdown_pros">Enyemaka kacha sie ike iji wuo omume: ekwentị na-echere ruo mgbe ị gụchara ha.</string>
+    <string name="guide_lockdown_cons">E mere ya ka ọ sie ike. Were ezumike ma ọ bụrụ na ị pụghị ịgụ ya ugbu a n\'ezie.</string>
+    <string name="guide_pros">Uru</string>
+    <string name="guide_cons">Cheta</string>
+    <string name="guide_breaks_title">Ezumike</string>
+    <string name="guide_breaks_body">Ọ na-agwụ gị mgbe adhkaar mepere? Were ezumike nkeji 10, 20, 30 ma ọ bụ 60. Ncheta ga-alọghachi mgbe ezumike gwụrụ, ma ọ bụrụ na oge adhkaar ka mepere emepe.</string>
+    <string name="guide_group_more">Ndị ọzọ</string>
+    <string name="guide_collections_title">Ncheta ndị ọzọ</string>
+    <string name="guide_collections_body">Nke ụra, ịteta, mgbe salah gasịrị na nchịkọta ndị ọzọ na-echetara gị naanị site na ọkwa; ọnọdụ adịghị emetụta ha. Gbanye ha na Ntọala › Ncheta.</string>
+    <string name="guide_calendar_title">Kalenda</string>
+    <string name="guide_calendar_body">Kalenda Islam na-eso ịhụ ọnwa a mara ọkwa na Naịjirịa mgbe ọ dị, ma ọ bụghị ya, ụbọchị a gbakọrọ. Ọ na-egosi Jumu\'ah, ụbọchị ọcha, Ramadan na ụbọchị pụrụ iche ndị ọzọ.</string>
+    <string name="guide_widgets_title">Wijetị</string>
+    <string name="guide_widgets_body">Tinye wijetị Adhkaar site n\'ihuenyo ụlọ: pịa ebe tọgbọrọ chakoo ogologo oge, pịa Widgets ma chọta Adhkaar. Nke ọ bụla nwere ụdị atọ.</string>
+    <string name="guide_phone_title">Mee ka ọ rụọ ọrụ na ekwentị gị</string>
+    <string name="guide_phone_body">Ụfọdụ ekwentị na-akwụsị ngwa n\'azụ iji chekwaa batrị. Ọ bụrụ na ncheta abịaghị, mepee Ntọala › Ikike ma kwe ihe niile e depụtara, wee nwalee ụtụtụ ma ọ bụ mgbede.</string>
+    <string name="settings_guide">Nduzi</string>
+    <string name="settings_guide_hint">Otú oge na ọnọdụ si arụ ọrụ</string>
+    <string name="settings_group_help">Enyemaka</string>
+    <string name="settings_report_bug">Kpọtụrụ anyị</string>
+    <string name="settings_report_bug_hint">Kọọ nsogbu ma ọ bụ kesaa echiche</string>
+</resources>

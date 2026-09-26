@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ===== Pacing and leaving a session ===== -->
+    <!-- Under the counter orb after a tap that came before the words could be said -->
+    <string name="pacing_take_your_time">Take your time with this one</string>
+    <!-- Title of the question asked before closing a collection (e.g. After salah) part-way -->
+    <string name="pacing_leave_collection">Leave before you finish?</string>
+    <!-- What is still to be said. %1$d = adhkaar left, %2$d = total in the session -->
+    <string name="pacing_remaining">%1$d of %2$d remaining</string>
+    <!-- The highlighted choice: stay in the session -->
+    <string name="pacing_keep_going">Keep going</string>
+    <!-- The quiet choice: leave the session -->
+    <string name="pacing_leave">Leave</string>
+</resources>

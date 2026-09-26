@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hausa translation. Draft by Claude, needs native review before release. -->
+<resources>
+    <string name="channel_salah_name">Tunatarwar sallah</string>
+    <string name="channel_salah_description">Tunatarwa a hankali don shirya wa kowace sallah, a lokutan da ka saita</string>
+    <string name="notif_salah_title">Lokacin shiryawa don sallar %1$s</string>
+    <string name="notif_salah_text">Tunatarwa don shirya wa sallah — bi kiran sallar masallacinka.</string>
+    <string name="prayer_times_begin_note">Idan an saita wurinka, kowace sallah za ta kuma nuna lokacin da take shiga bisa lissafi. Don kwatanta ne kawai: manhajar koyaushe tana bin lokutanka na sama.</string>
+    <string name="salah_reminders_title">Tunatarwar sallah</string>
+    <string name="salah_reminders_note">Tunatarwa ne don shirya wa sallah, ba ainihin lokutan sallah ba. Saita lokutan masallacinka kuma za su maye gurbin waɗannan.</string>
+    <string name="today_prayer_times_caption">Lokutan shirya wa sallah, ba ainihin lokutan sallah ba.</string>
+    <string name="today_day_reminder">Tunatarwar yau</string>
+    <string name="channel_reminder_name">Tunatarwa</string>
+    <string name="channel_reminder_description">Bayan sallah, kafin barci da sanarwa kafin azkar. Suna ƙara kuma suna girgiza.</string>
+    <string name="popup_salah_body">Bar abin da kake yi na ɗan mintuna. Yi alwala, ka tafi masallaci idan za ka iya.</string>
+    <string name="popup_step_wudu">Alwala</string>
+    <string name="popup_step_masjid">Masallaci</string>
+    <string name="popup_step_phone">Ajiye waya</string>
+    <string name="popup_salah_hadith">Aikin da Allah ya fi so: sallah a kan lokacinta.</string>
+    <string name="popup_salah_source">Sahih al-Bukhari 527</string>
+    <string name="popup_ready">Ina shiryawa</string>
+    <string name="popup_open">Buɗe</string>
+    <string name="popup_later">Anjima</string>
+</resources>
