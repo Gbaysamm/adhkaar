@@ -82,12 +82,12 @@
   function render(opts) {
     opts = opts || {};
     if (!opts.keepToast) toast(opts.toast || "");
-    screenEl.innerHTML = "";
     pager.hidden = true;
     notes(opts.note || noteKey());
-    if (cur.src === "mock") { screenEl.appendChild(mock(cur.id)); return; }
+    var token = ++renderToken;
+    if (cur.src === "mock") { screenEl.innerHTML = ""; screenEl.appendChild(mock(cur.id)); return; }
     var frame = document.createElement("div");
-    frame.className = "frame " + (opts.dir || (opts.quiet ? "" : "enter"));
+    frame.className = "frame";
     var img = document.createElement("img");
     img.draggable = false;
     frame.appendChild(img);
@@ -113,7 +113,26 @@
       }
     }
     if (opts.banner) banner(frame, "Morning adhkaar", "It's time · one soft chime, it won't ring again", function () { go(SESSION()); });
-    screenEl.appendChild(frame);
+    // The screen on show stays until the next one is decoded, then they swap in one go: no black
+    // flash while an image loads. Then the screens its buttons lead to load in the background.
+    var swap = function () {
+      if (token !== renderToken) return;
+      screenEl.innerHTML = "";
+      screenEl.appendChild(frame);
+      if (cur.src === "app") preload(st(cur));
+    };
+    if (img.decode) img.decode().then(swap, swap); else if (img.complete) swap(); else { img.onload = swap; img.onerror = swap; }
+  }
+
+  var renderToken = 0, loaded = {};
+  function preload(s) {
+    if (!s) return;
+    var next = s.hot.map(function (h) { return h.to; }).concat([s.scroll, s.up]);
+    next.forEach(function (to) {
+      if (!to || to.charAt(0) === "@" || loaded[to] || !CRAWL.app[to]) return;
+      loaded[to] = new Image();
+      loaded[to].src = "sim/app/" + to + ".webp";
+    });
   }
 
   function addHot(frame, h, act, hint) {
