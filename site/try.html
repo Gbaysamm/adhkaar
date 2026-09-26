@@ -33,14 +33,13 @@
 
   /* device */
   .device-col { display: grid; justify-items: center; gap: 14px; }
-  .device { position: relative; width: min(360px, 86vw); }
+  .device { position: relative; width: min(360px, 100%); }
+  @media (max-width: 720px) { .device-col, .device { width: 100%; } .device { max-width: none; } }
   .device .phone { width: 100%; }
   .screen { touch-action: pan-x; }
   .frame { position: absolute; inset: 0; }
   .frame img { width: 100%; height: 100%; object-fit: cover; user-select: none; -webkit-user-drag: none; }
-  .frame.enter { animation: fadein .28s ease-out; }
-  .frame.up { animation: slideup .32s ease-out; }
-  .frame.down { animation: slidedown .32s ease-out; }
+  /* Screens switch instantly, as they do in the app: no fade or slide between them. */
   @keyframes fadein { from { opacity: 0; transform: scale(.985); } }
   @keyframes slideup { from { transform: translateY(18%); opacity: .3; } }
   @keyframes slidedown { from { transform: translateY(-18%); opacity: .3; } }
@@ -65,7 +64,7 @@
   .lock .t { font: 300 76px/1 var(--sans); letter-spacing: -3px; }
   .lock .d { color: var(--text-2); font-size: 14px; margin-top: 8px; }
   .lock .bottom { margin-top: auto; margin-bottom: 30px; font-size: 12px; color: var(--text-3); }
-  .n-card { width: 92%; margin-top: 26px; display: flex; gap: 10px; align-items: center; padding: 12px; border-radius: 20px; background: rgba(40, 42, 56, .92); font-size: 12.5px; line-height: 1.35; animation: fadein .4s ease-out; text-align: left; }
+  .n-card { width: 92%; margin-top: 26px; display: flex; gap: 10px; align-items: center; padding: 12px; border-radius: 20px; background: rgba(40, 42, 56, .92); font-size: 12.5px; line-height: 1.35; text-align: left; }
   .n-card img { width: 34px; height: 34px; border-radius: 9px; flex: none; }
   .n-card b { display: block; font-size: 13.5px; }
   .n-card span { color: var(--text-2); }
