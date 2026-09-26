@@ -14,8 +14,8 @@
 <style>
   section { position: relative; }
   .pad { padding-block: clamp(80px, 11vw, 140px); }
-  .center { text-align: center; }
-  .center .lead { margin-inline: auto; }
+  /* One alignment for text across the page: left. Only the hero is centred, and only on wide screens. */
+  .center { text-align: left; }
 
   /* hero */
   .hero { overflow: hidden; padding-block: clamp(40px, 7vw, 80px) 0; }
@@ -43,7 +43,8 @@
 
   /* how it works */
   .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); margin-top: 64px; }
-  .step { display: grid; gap: 22px; justify-items: center; text-align: center; }
+  .step { display: grid; gap: 18px; justify-items: start; text-align: left; align-content: start; }
+  .step .phone { justify-self: center; margin-bottom: 8px; }
   .step .phone { width: 240px; }
   .step .num { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line-2); font: 600 14px/1 var(--sans); color: var(--dawn); }
   .step h3 { font: 400 28px/1.1 var(--serif); }
@@ -109,11 +110,11 @@
   .chips span { padding: 7px 12px; border-radius: 99px; background: rgba(255,255,255,.06); border: 1px solid var(--line); font-size: 13px; color: var(--text-2); }
 
   /* languages */
-  .langs { overflow-x: auto; margin-top: 56px; padding-bottom: 12px; scrollbar-width: thin; }
-  .langs ul { list-style: none; margin: 0 auto; padding: 0; display: flex; gap: 22px; width: max-content; }
+  .langs { overflow-x: auto; margin-top: 56px; max-width: 1200px; margin-inline: auto; padding-bottom: 12px; scrollbar-width: thin; }
+  .langs ul { list-style: none; margin: 0; padding: 0 var(--gutter); display: flex; gap: 22px; width: max-content; }
   .langs li { display: grid; gap: 14px; justify-items: center; }
-  .langs .phone { width: 190px; border-radius: 24px; padding: 6px; }
-  .langs .phone .screen { border-radius: 18px; }
+  .langs .phone { width: 190px; border-radius: 22px; padding: 3px; }
+  .langs .phone .screen { border-radius: 19px; }
   .langs .phone::before { top: 11px; width: 8px; height: 8px; margin-left: -4px; }
   .langs span { font-size: 14px; color: var(--text-2); }
 
@@ -143,6 +144,14 @@
   .get p { color: var(--text-2); font-size: 15px; }
   .get .btn { margin-top: auto; align-self: flex-start; }
   @media (max-width: 880px) { .get { grid-template-columns: minmax(0, 1fr); } }
+  /* last, so it wins on phones */
+  @media (max-width: 720px) {
+    .hero .container { text-align: left; }
+    .hero .lead { margin-inline: 0; }
+    .hero-cta, .trust { justify-content: flex-start; }
+    .hero-cta .btn { flex: 1 1 auto; }
+    .trust { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+  }
 </style>
 </head>
 <body>
@@ -159,7 +168,7 @@
     </nav>
     <div class="header-cta">
       <a class="btn ghost small" href="try.html">Try in browser</a>
-      <a class="btn primary small" href="#download">Download</a>
+      <a class="btn primary small" href="download/Adhkaar-0.1.0-test.apk" download>Download</a>
       <button class="menu-btn" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -173,7 +182,7 @@
       <h1 class="display">Remembrance,<br><em>at the right time.</em></h1>
       <p class="lead">Adhkaar brings the morning and evening adhkaar to your screen right after Fajr and Asr are prayed, and helps you keep them, every single day.</p>
       <div class="hero-cta">
-        <a class="btn primary" href="#download">
+        <a class="btn primary" href="download/Adhkaar-0.1.0-test.apk" download>
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18a.38.38 0 00-.66-.38l-1.87 3.23a11.4 11.4 0 00-9.82 0L5.22 5.92a.38.38 0 00-.66.38L6.4 9.48A10.8 10.8 0 001 18h22a10.8 10.8 0 00-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/></svg>
           Download for Android</a>
         <a class="btn ghost" href="try.html">Try it in your browser</a>
@@ -384,7 +393,7 @@
         <h2 class="title" style="margin-top:16px">Start with <em>tomorrow's Fajr.</em></h2>
       </div>
       <div class="get">
-        <div class="main"><span class="tag">Available now</span><h3>Android testing build</h3><p>Join the testing round and help shape the first release. Android 8 or newer.</p><a class="btn primary" href="https://github.com/Gbaysamm/adhkaar" target="_blank" rel="noopener">Get the test build</a></div>
+        <div class="main"><span class="tag">Available now</span><h3>Android testing build</h3><p>Version 0.1.0 · 4.9 MB · Android 8 or newer. After downloading, open the file and allow your browser to install apps.</p><a class="btn primary" href="download/Adhkaar-0.1.0-test.apk" download>Download the APK</a></div>
         <div><span class="tag">Coming next</span><h3>Google Play</h3><p>After the testing round, Adhkaar goes to Google Play for everyone.</p></div>
         <div><span class="tag">Planned</span><h3>iPhone</h3><p>A native iOS app is planned. Until then, try the simulator in your browser.</p><a class="btn ghost" href="try.html">Try the simulator</a></div>
       </div>
