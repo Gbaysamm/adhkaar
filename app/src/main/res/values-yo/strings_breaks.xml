@@ -36,6 +36,6 @@
     <string name="break_confirm_hadith">Àpẹẹrẹ ẹni tó ń ṣe ìrántí Olúwa rẹ̀ àti ẹni tí kò ṣe é dàbí alààyè àti òkú.</string>
     <string name="break_confirm_source">Sahih al-Bukhari 6407</string>
     <string name="break_confirm_stay">Dúró kí o parí</string>
-    <string name="break_confirm_pause">Dúró fún %1$s bẹ́ẹ̀ náà</string>
     <string name="session_end_test">Ìdánwò · Parí ìdánwò</string>
+    <string name="break_confirm_hold">Tẹ̀ mọ́lẹ̀ láti dúró fún %1$s</string>
 </resources>

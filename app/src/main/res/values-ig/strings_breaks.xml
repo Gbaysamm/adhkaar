@@ -36,6 +36,6 @@
     <string name="break_confirm_hadith">Ihe atụ nke onye na-echeta Onyenwe ya na onye na-adịghị echeta Ya dị ka onye dị ndụ na onye nwụrụ anwụ.</string>
     <string name="break_confirm_source">Sahih al-Bukhari 6407</string>
     <string name="break_confirm_stay">Nọrọ ma mechaa</string>
-    <string name="break_confirm_pause">Kwụsịtụ maka %1$s n\'agbanyeghị</string>
     <string name="session_end_test">Nnwale · Kwụsị nnwale</string>
+    <string name="break_confirm_hold">Pịa ma jide iji kwụsịtụ maka %1$s</string>
 </resources>

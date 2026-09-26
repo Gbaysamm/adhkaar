@@ -38,6 +38,6 @@
     <string name="break_confirm_hadith">جو اپنے رب کو یاد کرتا ہے اور جو نہیں کرتا، ان کی مثال زندہ اور مردہ کی سی ہے۔</string>
     <string name="break_confirm_source">صحیح بخاری ۶۴۰۷</string>
     <string name="break_confirm_stay">رکیں اور مکمل کریں</string>
-    <string name="break_confirm_pause">پھر بھی %1$s کے لیے روکیں</string>
     <string name="session_end_test">ٹیسٹ · ٹیسٹ ختم کریں</string>
+    <string name="break_confirm_hold">%1$s روکنے کے لیے دبائے رکھیں</string>
 </resources>

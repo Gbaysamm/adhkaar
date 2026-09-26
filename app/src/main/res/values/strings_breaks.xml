@@ -49,6 +49,6 @@
     <string name="break_confirm_hadith">The one who remembers his Lord and the one who does not are like the living and the dead.</string>
     <string name="break_confirm_source">Sahih al-Bukhari 6407</string>
     <string name="break_confirm_stay">Stay and finish</string>
-    <string name="break_confirm_pause">Pause for %1$s anyway</string>
     <string name="session_end_test">Test · End test</string>
+    <string name="break_confirm_hold">Hold to pause for %1$s</string>
 </resources>

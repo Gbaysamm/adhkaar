@@ -46,6 +46,6 @@
     <string name="break_confirm_hadith">مثل الذي يذكر ربه والذي لا يذكر ربه مثل الحي والميت.</string>
     <string name="break_confirm_source">صحيح البخاري ٦٤٠٧</string>
     <string name="break_confirm_stay">ابقَ وأكمل</string>
-    <string name="break_confirm_pause">توقف %1$s على أي حال</string>
     <string name="session_end_test">تجربة · إنهاء التجربة</string>
+    <string name="break_confirm_hold">اضغط مطولًا للتوقف %1$s</string>
 </resources>

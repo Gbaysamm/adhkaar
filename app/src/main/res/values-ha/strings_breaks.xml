@@ -38,6 +38,6 @@
     <string name="break_confirm_hadith">Misalin wanda ke ambaton Ubangijinsa da wanda ba ya ambatonSa kamar rayayye ne da matacce.</string>
     <string name="break_confirm_source">Sahih al-Bukhari 6407</string>
     <string name="break_confirm_stay">Tsaya ka gama</string>
-    <string name="break_confirm_pause">Duk da haka, dakata na %1$s</string>
     <string name="session_end_test">Gwaji · Kammala gwaji</string>
+    <string name="break_confirm_hold">Danna ka riƙe don dakata na %1$s</string>
 </resources>

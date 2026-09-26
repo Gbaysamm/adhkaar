@@ -122,6 +122,9 @@ object Notifications {
             .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle(title)
             .setContentText(text)
+            .setCategory(NotificationCompat.CATEGORY_REMINDER)
+            // With the phone locked, the card itself comes up over the lock screen.
+            .setFullScreenIntent(reminderCard(context, 304, ReminderPopup.Kind.Collection(collectionId)), true)
             .setAutoCancel(true)
             .setContentIntent(PendingIntent.getActivity(
                 context, 302,
@@ -145,6 +148,7 @@ object Notifications {
             .setCategory(NotificationCompat.CATEGORY_REMINDER)
             .setColor(0xFF6B8CFF.toInt())
             .setColorized(true)
+            .setFullScreenIntent(reminderCard(context, 305, ReminderPopup.Kind.Salah(prayer)), true)
             .setAutoCancel(true)
             .setContentIntent(PendingIntent.getActivity(
                 context, 303, Intent(context, MainActivity::class.java),
@@ -152,6 +156,12 @@ object Notifications {
             ))
             .build())
     }
+
+    private fun reminderCard(context: Context, requestCode: Int, kind: ReminderPopup.Kind): PendingIntent =
+        PendingIntent.getActivity(
+            context, requestCode, org.adhkaar.app.ui.ReminderActivity.intent(context, kind),
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
+        )
 
     private fun post(context: Context, id: Int, notification: Notification) {
         val manager = NotificationManagerCompat.from(context)

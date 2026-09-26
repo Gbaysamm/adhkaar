@@ -81,6 +81,9 @@ object ReminderPopup {
     private fun showNow(context: Context, kind: Kind) {
         // Never over the adhkaar themselves.
         if (SessionActivity.isVisible || !Settings.canDrawOverlays(context)) return
+        // Locked, the notification's full-screen card (ReminderActivity) shows instead: a window
+        // over other apps would only appear after unlocking, on top of that card.
+        if (context.getSystemService(android.app.KeyguardManager::class.java).isKeyguardLocked) return
         hide()
         val owner = OverlayOwner()
         val root = ComposeView(context).apply {

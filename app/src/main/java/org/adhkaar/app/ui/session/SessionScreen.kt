@@ -4,12 +4,15 @@ import android.os.SystemClock
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.foundation.border
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.rounded.Favorite
 import androidx.compose.material.icons.rounded.FavoriteBorder
 import androidx.compose.material.icons.rounded.IosShare
 import androidx.compose.material.icons.rounded.Schedule
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.input.pointer.pointerInput
 import org.adhkaar.app.session.AudioLibrary
 import org.adhkaar.app.session.RecitationPlayer
 import org.adhkaar.app.ui.components.GlassCard
@@ -527,7 +530,8 @@ internal fun BreakControl(
                 close()
             }
             Spacer(Modifier.height(Space.s))
-            QuietButton(stringResource(R.string.break_confirm_pause, breakLength(minutes))) {
+            // Pausing takes a deliberate hold, with the reminder above still in view while it fills.
+            HoldButton(stringResource(R.string.break_confirm_hold, breakLength(minutes))) {
                 close()
                 onBreak(minutes)
             }
@@ -569,6 +573,54 @@ private fun BreakChip(minutes: Int, selected: Boolean, modifier: Modifier, onCli
         )
     }
 }
+
+/**
+ * Press and hold for [HOLD_MS] to confirm: the pill fills while held, with a light tick each
+ * quarter and a firm one when it completes. Letting go early drains it and nothing happens.
+ */
+@Composable
+private fun HoldButton(text: String, onConfirmed: () -> Unit) {
+    val view = LocalView.current
+    val accent = LocalAura.current.accent
+    val progress = remember { Animatable(0f) }
+    val scope = rememberCoroutineScope()
+    val shape = RoundedCornerShape(50)
+    // A tick as each quarter passes, so the hold can be felt as well as seen.
+    val quarter = (progress.value * 4).toInt()
+    LaunchedEffect(quarter) { if (quarter in 1..3) Haptics.tick(view) }
+    Box(
+        Modifier
+            .fillMaxWidth()
+            .height(52.dp)
+            .clip(shape)
+            .background(Color.White.copy(alpha = 0.05f))
+            .border(1.dp, Color.White.copy(alpha = 0.1f), shape)
+            .pointerInput(Unit) {
+                detectTapGestures(onPress = {
+                    val hold = scope.launch {
+                        progress.animateTo(1f, tween(((1f - progress.value) * HOLD_MS).toInt(), easing = LinearEasing))
+                        Haptics.confirm(view)
+                        onConfirmed()
+                    }
+                    tryAwaitRelease()
+                    if (progress.value < 1f) {
+                        hold.cancel()
+                        scope.launch { progress.animateTo(0f, tween(250)) }
+                    }
+                })
+            },
+        contentAlignment = Alignment.Center,
+    ) {
+        Box(
+            Modifier
+                .matchParentSize()
+                .drawBehind { drawRect(accent.copy(alpha = 0.28f), size = size.copy(width = size.width * progress.value)) },
+        )
+        Text(text, style = Type.label.copy(color = if (progress.value > 0f) Nur.textPrimary else Nur.textSecondary))
+    }
+}
+
+private const val HOLD_MS = 5_000
 
 /** A text-only action, for the choice we'd rather people didn't take. */
 @Composable

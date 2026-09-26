@@ -70,6 +70,17 @@
             android:turnScreenOn="true"
             android:theme="@style/Theme.Adhkaar" />
 
+        <!-- The salah or collection reminder card over the lock screen, from its notification. -->
+        <activity
+            android:name=".ui.ReminderActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:taskAffinity=""
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"
+            android:theme="@style/Theme.Adhkaar.Card" />
+
         <receiver
             android:name=".schedule.SessionAlarmReceiver"
             android:exported="false" />
