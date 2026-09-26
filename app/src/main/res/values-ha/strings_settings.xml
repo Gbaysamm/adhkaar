@@ -126,7 +126,7 @@
     <!-- Accessibility label for the back arrow -->
     <string name="setup_back">Koma baya</string>
     <string name="setup_title">Saitin waya</string>
-    <string name="setup_intro">Android na adana batir ta hanyar dakatar da manhajoji a bayan fage. Ba da izinin waɗannan sau ɗaya domin azkar su riƙa zuwa a kan lokaci, kowane lokaci.</string>
+    <string name="setup_intro">Android yana dakatar da manhajoji a baya don ajiye batir, don haka azkar suna buƙatar izini kaɗan don zuwa a kan lokaci. Kowane yana faɗin dalilinsa. Babu ɗaya da ke ba Adhkaar damar ganin saƙonninka, hotuna, lambobin sadarwa ko wani abu na sirri, kuma babu abin da ke barin wayarka.</string>
     <string name="setup_all_set">Komai ya kammala</string>
     <!-- Progress: %1$d = steps done, %2$d = total steps. Quantity is the number done. -->
     <plurals name="setup_ready_count">
@@ -138,8 +138,6 @@
     <string name="setup_oem_body">Wayarka tana dakatar da manhajoji a bayan fage sai ka ba su izini.</string>
     <string name="setup_open_settings">Buɗe saituna</string>
     <!-- Button that opens an online guide for this phone brand -->
-    <string name="setup_guide">Jagora</string>
-    <string name="setup_oem_done">Na yi haka</string>
     <!-- Small uppercase badge on a permission card -->
     <string name="setup_required">DOLE</string>
     <!-- Small uppercase badge on a permission card -->
@@ -150,17 +148,17 @@
 
     <!-- Permission requirements -->
     <string name="req_notifications">Sanarwa</string>
-    <string name="req_notifications_why">Don manhajar ta sanar da kai a lokacin azkar.</string>
+    <string name="req_notifications_why">Don manhajar ta tunatar da kai lokacin azkar da sallah.</string>
     <string name="req_exact_alarms">Ƙararrawa &amp; tunatarwa</string>
-    <string name="req_exact_alarms_why">Tana fara zamanka a daidai minti, ko da wayar tana barci.</string>
+    <string name="req_exact_alarms_why">Yana fara azkar a daidai minti, ko da waya na barci. Kamar agogon ƙararrawa.</string>
     <string name="req_full_screen">Sanarwar cikakken allo</string>
-    <string name="req_full_screen_why">Tana buɗe azkar a kan allon kulle, kamar agogon ƙararrawa.</string>
+    <string name="req_full_screen_why">Yana nuna azkar a kan allon kulle idan lokacinsu ya yi, kamar agogon ƙararrawa.</string>
     <string name="req_overlay">Nunawa a kan sauran manhajoji</string>
-    <string name="req_overlay_why">Yana buɗe azkar yayin da kake amfani da wata manhaja, kuma yana dakatar da sauran a Kulle. Idan jeri ya buɗe, taɓa Adhkaar ka ba shi izini.</string>
+    <string name="req_overlay_why">Yana nuna azkar ko tunatarwar sallah yayin da kake wata manhaja, kuma yana rufe sauran a Kulle. Adhkaar ba ya ganin abin da ke kan allonka.</string>
     <string name="req_usage_access">Damar ganin amfani</string>
-    <string name="req_usage_access_why">Yana ba Kulle damar ganin wace manhaja ke buɗe. Ba a rubuta komai kuma ba ya barin wayarka. A cikin jerin, taɓa Adhkaar ka kunna shi.</string>
+    <string name="req_usage_access_why">Yana ba Kulle damar sanin wace manhaja ke buɗe, don ya rufe sauran kawai, ba kiranka ba. Sunayen manhajoji kawai yake gani, ba abin da ke cikinsu ba, kuma ba ya ajiye komai.</string>
     <string name="req_battery">Batir ba tare da taƙaitawa ba</string>
-    <string name="req_battery_why">Yana hana Android sa manhajar barci har ta rasa lokacin azkar ɗinka.</string>
+    <string name="req_battery_why">Yana hana Android sa Adhkaar barci, don kada azkar su wuce. Yana amfani da batir kaɗan ƙwarai.</string>
 
     <!-- Brand-specific auto-start steps. Quoted names are the labels in the phone maker's own settings screens;
          kept in English because Hausa is rarely available as a phone system language. -->
@@ -210,6 +208,8 @@
     <string name="settings_language">Harshen manhaja</string>
     <!-- Option to use the phone's own language instead of choosing one. -->
     <string name="settings_language_system">Bi harshen waya</string>
-    <string name="req_usage_access_find">Nemi Adhkaar a cikin jerin, taɓa shi, ka kunna samun damar amfani.</string>
     <string name="req_overlay_find">Nemi Adhkaar a cikin jerin, taɓa shi, ka ba shi izini.</string>
+    <string name="req_usage_step_find">Nemi Adhkaar a cikin jerin (gungura, ko yi amfani da bincike)</string>
+    <string name="req_usage_step_tap">Taɓa Adhkaar</string>
+    <string name="req_usage_step_on">Kunna maɓallin, sannan ka dawo nan</string>
 </resources>

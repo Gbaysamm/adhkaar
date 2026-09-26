@@ -126,7 +126,7 @@
     <!-- Accessibility label for the back arrow -->
     <string name="setup_back">Laghachi</string>
     <string name="setup_title">Nhazi ekwentị</string>
-    <string name="setup_intro">Android na-echekwa batrị site n\'ịkwụsị ngwa ndị na-arụ ọrụ n\'azụ. Kwe ndị a otu ugboro ka adhkaar gị na-abịa n\'oge, mgbe niile.</string>
+    <string name="setup_intro">Android na-akwụsị ngwa n\'azụ iji chekwaa batrị, ya mere adhkaar chọrọ ikike ole na ole iji bịa n\'oge. Nke ọ bụla na-ekwu ihe ọ bụ maka ya. Ọ dịghị nke na-enye Adhkaar ohere ịhụ ozi gị, foto, kọntaktị ma ọ bụ ihe onwe gị ọ bụla, ọ dịghịkwa ihe na-apụ na ekwentị gị.</string>
     <string name="setup_all_set">Ihe niile adịla njikere</string>
     <!-- Progress: %1$d = steps done, %2$d = total steps. -->
     <plurals name="setup_ready_count">
@@ -137,8 +137,6 @@
     <string name="setup_oem_body">Ekwentị gị na-akwụsị ngwa ndị na-arụ ọrụ n\'azụ ma ọ bụrụ na ị kweghị ha.</string>
     <string name="setup_open_settings">Mepee ntọala</string>
     <!-- Button that opens an online guide for this phone brand -->
-    <string name="setup_guide">Nduzi</string>
-    <string name="setup_oem_done">Emeela m nke a</string>
     <!-- Small uppercase badge on a permission card -->
     <string name="setup_required">Ọ DỊ MKPA</string>
     <!-- Small uppercase badge on a permission card -->
@@ -149,17 +147,17 @@
 
     <!-- Permission requirements -->
     <string name="req_notifications">Ọkwa</string>
-    <string name="req_notifications_why">Ka ngwa a nwee ike ịkpọtụrụ gị n\'oge adhkaar.</string>
+    <string name="req_notifications_why">Ka ngwa ahụ chetara gị n\'oge adhkaar na salah.</string>
     <string name="req_exact_alarms">Mkpu &amp; ncheta</string>
-    <string name="req_exact_alarms_why">Na-amalite nnọkọ gị n\'otu nkeji ahụ kpọmkwem, ọbụna mgbe ekwentị na-ehi ụra.</string>
+    <string name="req_exact_alarms_why">Ọ na-amalite adhkaar gị n\'otu nkeji ahụ, ọbụna mgbe ekwentị na-ehi ụra. Dị ka elekere mkpu.</string>
     <string name="req_full_screen">Ọkwa ihuenyo niile</string>
-    <string name="req_full_screen_why">Na-emepe adhkaar n\'elu ihuenyo mkpọchi, dịka elekere mkpu.</string>
+    <string name="req_full_screen_why">Ọ na-egosi adhkaar n\'elu ihuenyo mkpọchi mgbe oge ha ruru, dị ka elekere mkpu.</string>
     <string name="req_overlay">Gosi n\'elu ngwa ndị ọzọ</string>
-    <string name="req_overlay_why">Ọ na-emepe adhkaar mgbe ị na-eji ngwa ọzọ, ọ na-akwụsịkwa ndị ọzọ na Mkpọchi. Ọ bụrụ na ndepụta mepere, pịa Adhkaar ma kwe ya.</string>
+    <string name="req_overlay_why">Ọ na-ewepụta adhkaar ma ọ bụ ncheta salah mgbe ị nọ na ngwa ọzọ, ọ na-ekpuchikwa ndị ọzọ na Mkpọchi. Adhkaar enweghị ike ịhụ ihe dị n\'ihuenyo gị.</string>
     <string name="req_usage_access">Ohere ojiji ngwa</string>
-    <string name="req_usage_access_why">Ọ na-eme ka Mkpọchi mara ngwa mepere emepe. Ọ dịghị ihe a na-edekọ ma ọ bụ na-apụ na ekwentị gị. N’ime ndepụta, pịa Adhkaar ma gbanye ya.</string>
+    <string name="req_usage_access_why">Ọ na-eme ka Mkpọchi mara ngwa mepere emepe, ka ọ kpuchie naanị ndị ọzọ, ọ bụghị oku gị. Ọ na-ahụ naanị aha ngwa, ọ bụghị ihe dị n\'ime ha, ọ dịghịkwa ihe ọ na-edebe.</string>
     <string name="req_battery">Batrị na-enweghị mmachi</string>
-    <string name="req_battery_why">Na-egbochi Android ime ka ngwa a hie ụra ma tụfuo oge adhkaar gị.</string>
+    <string name="req_battery_why">Ọ na-egbochi Android ime ka Adhkaar hie ụra, ka adhkaar ghara ịgafe. Ọ na-eji obere batrị.</string>
 
     <!-- Brand-specific auto-start steps. Quoted names are the labels in the phone maker's own settings screens;
          phones do not offer an Igbo interface, so the English labels are kept as they appear on screen. -->
@@ -210,6 +208,8 @@
     <string name="settings_language">Asụsụ ngwa</string>
     <!-- Option to use the phone's own language instead of choosing one. -->
     <string name="settings_language_system">Dịka ekwentị</string>
-    <string name="req_usage_access_find">Chọta Adhkaar n’ime ndepụta, pịa ya, ma gbanye ohere ojiji.</string>
     <string name="req_overlay_find">Chọta Adhkaar n’ime ndepụta, pịa ya, ma kwe ya.</string>
+    <string name="req_usage_step_find">Chọta Adhkaar n\'ime ndepụta (fegharịa, ma ọ bụ jiri ọchụchọ)</string>
+    <string name="req_usage_step_tap">Pịa Adhkaar</string>
+    <string name="req_usage_step_on">Gbanye mgbanwe ahụ, wee laghachi ebe a</string>
 </resources>

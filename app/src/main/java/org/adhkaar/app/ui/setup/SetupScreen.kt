@@ -131,9 +131,9 @@ fun RequirementsList(strictness: Strictness) {
     val items = Requirement.relevantFor(strictness)
     val granted = remember(resumeTick, refresh, strictness) { items.associateWith { it.isGranted(context) } }
     val guide = remember { OemAutostart.guide() }
-    // On Xiaomi phones the background switches can be read; elsewhere the user confirms by hand.
-    val backgroundChecked = remember(resumeTick, refresh) { OemAutostart.xiaomiBackgroundAllowed(context) }
-    val backgroundOk = backgroundChecked ?: settings.oemAutostartDone
+    // Read from the phone: Xiaomi's own switches where they can be read, otherwise whether
+    // Android lets Adhkaar run unrestricted. Nothing to confirm by hand.
+    val backgroundOk = remember(resumeTick, refresh) { OemAutostart.backgroundDone(context) }
 
     val notificationPrompt = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { ok ->
         refresh++
@@ -173,6 +173,11 @@ fun RequirementsList(strictness: Strictness) {
                 body = stringResource(req.why),
                 required = strictness in req.requiredFor,
                 done = granted[req] == true,
+                steps = if (req == Requirement.USAGE_ACCESS) listOf(
+                    stringResource(R.string.req_usage_step_find),
+                    stringResource(R.string.req_usage_step_tap),
+                    stringResource(R.string.req_usage_step_on),
+                ) else emptyList(),
             ) {
                 if (req == Requirement.NOTIFICATIONS && Build.VERSION.SDK_INT >= 33) {
                     notificationPrompt.launch(Manifest.permission.POST_NOTIFICATIONS)
@@ -205,30 +210,18 @@ fun RequirementsList(strictness: Strictness) {
                 Spacer(Modifier.height(Space.s))
                 Row(Modifier.padding(start = 56.dp), horizontalArrangement = Arrangement.spacedBy(Space.s)) {
                     CompactButton(stringResource(R.string.setup_open_settings), filled = true) { OemAutostart.open(context, guide) }
-                    CompactButton(stringResource(R.string.setup_guide), filled = false) {
-                        context.startActivity(
-                            Intent(Intent.ACTION_VIEW, Uri.parse(OemAutostart.helpUrl(guide))).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
-                        )
-                    }
                 }
                 Spacer(Modifier.height(Space.m))
-                if (backgroundChecked != null) {
-                    // Read from the phone itself, so there is nothing to confirm by hand.
-                    Row(Modifier.padding(start = 56.dp), verticalAlignment = Alignment.CenterVertically) {
-                        Icon(
-                            if (backgroundChecked) Icons.Rounded.Check else Icons.Rounded.PhoneAndroid, null,
-                            tint = if (backgroundChecked) Nur.success else Nur.danger, modifier = Modifier.size(16.dp),
-                        )
-                        Spacer(Modifier.width(Space.s))
-                        Text(
-                            stringResource(if (backgroundChecked) R.string.setup_oem_checked_ok else R.string.setup_oem_checked_missing),
-                            style = Type.caption.copy(color = if (backgroundChecked) Nur.success else Nur.textSecondary),
-                        )
-                    }
-                } else {
-                    GlassSwitchRow(stringResource(R.string.setup_oem_done), settings.oemAutostartDone, Modifier.padding(start = 56.dp)) { v ->
-                        SettingsStore.get(context).update { it.copy(oemAutostartDone = v) }
-                    }
+                Row(Modifier.padding(start = 56.dp), verticalAlignment = Alignment.CenterVertically) {
+                    Icon(
+                        if (backgroundOk) Icons.Rounded.Check else Icons.Rounded.PhoneAndroid, null,
+                        tint = if (backgroundOk) Nur.success else Nur.danger, modifier = Modifier.size(16.dp),
+                    )
+                    Spacer(Modifier.width(Space.s))
+                    Text(
+                        stringResource(if (backgroundOk) R.string.setup_oem_checked_ok else R.string.setup_oem_checked_missing),
+                        style = Type.caption.copy(color = if (backgroundOk) Nur.success else Nur.textSecondary),
+                    )
                 }
             }
         }
@@ -236,7 +229,15 @@ fun RequirementsList(strictness: Strictness) {
 }
 
 @Composable
-private fun StepCard(icon: ImageVector, title: String, body: String, required: Boolean, done: Boolean, onAllow: () -> Unit) {
+private fun StepCard(
+    icon: ImageVector,
+    title: String,
+    body: String,
+    required: Boolean,
+    done: Boolean,
+    steps: List<String> = emptyList(),
+    onAllow: () -> Unit,
+) {
     GlassCard(Modifier.fillMaxWidth()) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             IconBadge(icon, if (done) Nur.success else LocalAura.current.accent)
@@ -261,6 +262,15 @@ private fun StepCard(icon: ImageVector, title: String, body: String, required: B
                     }
                 } else {
                     CompactButton(stringResource(R.string.setup_allow), filled = true, onClick = onAllow)
+                }
+            }
+        }
+        if (!done && steps.isNotEmpty()) {
+            Spacer(Modifier.height(Space.m))
+            steps.forEachIndexed { n, step ->
+                Row(Modifier.padding(start = 56.dp, bottom = Space.s)) {
+                    Text("${n + 1}", style = Type.caption.copy(color = LocalAura.current.accent), modifier = Modifier.width(16.dp))
+                    Text(step, style = Type.caption.copy(color = Nur.textSecondary))
                 }
             }
         }

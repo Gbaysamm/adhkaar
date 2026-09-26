@@ -114,7 +114,7 @@
     <!-- Phone setup screen -->
     <string name="setup_back">Padà</string>
     <string name="setup_title">Ètò fóònù</string>
-    <string name="setup_intro">Android máa ń dá àwọn áàpù dúró lẹ́yìn láti ṣọ́ bátìrì. Ẹ gba ìwọ̀nyí láàyè lẹ́ẹ̀kan, kí adhkaar yín lè máa dé lásìkò nígbà gbogbo.</string>
+    <string name="setup_intro">Android máa ń dá àwọn ohun èlò dúró lẹ́yìn láti fi bátìrì pamọ́, nítorí náà adhkaar nílò àwọn ìgbàláyè díẹ̀ láti dé lásìkò. Ọ̀kọ̀ọ̀kan sọ ohun tó wà fún. Kò sí èyí tó jẹ́ kí Adhkaar rí àwọn ìfiránṣẹ́, fọ́tò, olùbáṣepọ̀ tàbí ohunkóhun àdáni rẹ, kò sì sí ohun tó ń kúrò lórí fóònù rẹ.</string>
     <string name="setup_all_set">Gbogbo rẹ̀ ti ṣetán</string>
     <!-- Progress: %1$d = steps done, %2$d = total steps. -->
     <plurals name="setup_ready_count">
@@ -124,8 +124,6 @@
     <string name="setup_oem_title">Fóònù %1$s</string>
     <string name="setup_oem_body">Fóònù yín máa ń dá àwọn áàpù tó ń ṣiṣẹ́ lẹ́yìn dúró àfi tí ẹ bá gbà wọ́n láàyè.</string>
     <string name="setup_open_settings">Ṣí ètò</string>
-    <string name="setup_guide">Ìtọ́sọ́nà</string>
-    <string name="setup_oem_done">Mo ti ṣe é</string>
     <string name="setup_required">DANDAN</string>
     <string name="setup_recommended">A DÁBÀÁ RẸ̀</string>
     <string name="setup_allowed">A ti gbà á láàyè</string>
@@ -133,17 +131,17 @@
 
     <!-- Permission requirements -->
     <string name="req_notifications">Ìfitónilétí</string>
-    <string name="req_notifications_why">Kí áàpù lè sọ fún yín ní àkókò adhkaar.</string>
+    <string name="req_notifications_why">Kí ohun èlò náà lè rán ọ létí ní àkókò adhkaar àti ìrun.</string>
     <string name="req_exact_alarms">Aago ìdágìrì &amp; ìránlétí</string>
-    <string name="req_exact_alarms_why">Ó ń bẹ̀rẹ̀ ìjókòó yín ní ìṣẹ́jú gan-an, kódà nígbà tí fóònù bá ń sùn.</string>
+    <string name="req_exact_alarms_why">Ó ń bẹ̀rẹ̀ adhkaar rẹ ní ìṣẹ́jú gangan, kódà nígbà tí fóònù ń sùn. Bí aago ìjí.</string>
     <string name="req_full_screen">Ìkìlọ̀ ojú-ìbojú kíkún</string>
-    <string name="req_full_screen_why">Ó ń ṣí adhkaar lórí ojú títìpa, bí aago ìdágìrì.</string>
+    <string name="req_full_screen_why">Ó ń fi adhkaar hàn lórí ojú ìtìpa nígbà tí àkókò wọn bá tó, bí aago ìjí.</string>
     <string name="req_overlay">Hàn lórí àwọn áàpù mìíràn</string>
-    <string name="req_overlay_why">Ó ń ṣí adhkaar nígbà tí o bá ń lo ohun èlò mìíràn, ó sì ń dá àwọn mìíràn dúró ní Ìtìpa. Tí àkójọ bá ṣí, tẹ Adhkaar kí o sì gbà á láàyè.</string>
+    <string name="req_overlay_why">Ó ń mú adhkaar tàbí ìránnilétí ìrun wá nígbà tí o wà nínú ohun èlò mìíràn, ó sì ń bo àwọn mìíràn ní Ìtìpa. Adhkaar kò lè rí ohun tó wà lójú iboju rẹ.</string>
     <string name="req_usage_access">Ààyè ìlò áàpù</string>
-    <string name="req_usage_access_why">Ó jẹ́ kí Ìtìpa mọ ohun èlò tó ṣí. A kì í kọ nǹkan sílẹ̀, kò sì kúrò lórí fóònù rẹ. Nínú àkójọ, tẹ Adhkaar kí o sì tàn án.</string>
+    <string name="req_usage_access_why">Ó ń jẹ́ kí Ìtìpa mọ ohun èlò tó ṣí, kí ó lè bo àwọn mìíràn nìkan, kì í ṣe ìpè rẹ. Orúkọ ohun èlò nìkan ló ń rí, kì í ṣe ohun tó wà nínú wọn, kò sì tọ́jú nǹkan kan.</string>
     <string name="req_battery">Bátìrì láìsí ìdíwọ́</string>
-    <string name="req_battery_why">Kò ní jẹ́ kí Android mú áàpù sùn, kí àkókò adhkaar yín má bàa kọjá.</string>
+    <string name="req_battery_why">Ó ń dá Android dúró láti mú Adhkaar sùn, kí adhkaar má bàa kọjá. Ó ń lo bátìrì díẹ̀ gan-an.</string>
 
     <!-- Brand-specific auto-start steps. Quoted labels kept in English as shown in the phone maker's settings. -->
     <string name="oem_xiaomi_step_autostart">Ẹ tan Autostart fún Adhkaar</string>
@@ -190,6 +188,8 @@
     <string name="settings_language">Èdè áàpù</string>
     <!-- Option to use the phone's own language instead of choosing one. -->
     <string name="settings_language_system">Tẹ̀lé fóònù</string>
-    <string name="req_usage_access_find">Wá Adhkaar nínú àkójọ, tẹ ẹ, kí o sì tan ààyè sí ìlò.</string>
     <string name="req_overlay_find">Wá Adhkaar nínú àkójọ, tẹ ẹ, kí o sì gbà á láàyè.</string>
+    <string name="req_usage_step_find">Wá Adhkaar nínú àkójọ (yí i lọ, tàbí lo ìwákiri)</string>
+    <string name="req_usage_step_tap">Tẹ Adhkaar</string>
+    <string name="req_usage_step_on">Tan bọ́tìnnì náà, lẹ́yìn náà padà síbí</string>
 </resources>

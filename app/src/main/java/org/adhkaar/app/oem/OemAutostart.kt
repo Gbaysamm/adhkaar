@@ -142,8 +142,13 @@ object OemAutostart {
     private val XIAOMI_OPS = listOf(10008, 10021, 10020)
 
     /** Whether the brand's background step is done: checked where possible, else as the user confirmed. */
-    fun backgroundDone(context: Context, userConfirmed: Boolean): Boolean {
+    /**
+     * Whether the phone lets Adhkaar run in the background: Xiaomi's switches where they can be
+     * read, otherwise whether Android runs it without battery restrictions.
+     */
+    fun backgroundDone(context: Context): Boolean {
         if (guide() == null) return true
-        return xiaomiBackgroundAllowed(context) ?: userConfirmed
+        return xiaomiBackgroundAllowed(context)
+            ?: context.getSystemService(android.os.PowerManager::class.java).isIgnoringBatteryOptimizations(context.packageName)
     }
 }

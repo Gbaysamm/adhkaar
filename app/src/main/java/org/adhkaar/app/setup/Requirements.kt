@@ -82,7 +82,9 @@ enum class Requirement(
                 Intent(Settings.ACTION_MANAGE_APP_USE_FULL_SCREEN_INTENT, pkg)
             } else appDetails(pkg)
             OVERLAY -> Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, pkg)
-            USAGE_ACCESS -> Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS, pkg)
+            // The list of all apps: phones differ on whether they open one app's page, so the
+            // card's steps say how to find Adhkaar in the list.
+            USAGE_ACCESS -> Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS)
             BATTERY -> Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS, pkg)
         }
     }
@@ -102,7 +104,6 @@ enum class Requirement(
             // Some phones (Samsung among them) open the whole list for these two rather than
             // Adhkaar's own switch, so say what to look for as the list opens.
             val hint = when (requirement) {
-                USAGE_ACCESS -> R.string.req_usage_access_find
                 OVERLAY -> R.string.req_overlay_find
                 else -> null
             }

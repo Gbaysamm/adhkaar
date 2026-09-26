@@ -128,7 +128,7 @@
     <!-- Accessibility label for the back arrow -->
     <string name="setup_back">رجوع</string>
     <string name="setup_title">إعداد الهاتف</string>
-    <string name="setup_intro">يوفّر أندرويد البطارية بإيقاف التطبيقات في الخلفية. اسمح بهذه الإعدادات مرة واحدة لتصلك أذكارك في وقتها، كل مرة.</string>
+    <string name="setup_intro">يوقف أندرويد التطبيقات في الخلفية لتوفير البطارية، لذا تحتاج الأذكار إلى بعض الأذونات لتصل في وقتها. كل إذن يوضح سببه. لا يتيح أيٌّ منها للتطبيق رؤية رسائلك أو صورك أو جهات اتصالك أو أي شيء خاص، ولا يغادر شيء هاتفك أبدًا.</string>
     <string name="setup_all_set">كل شيء جاهز</string>
     <!-- Progress: %1$d = steps done, %2$d = total steps. Same wording for every quantity. -->
     <plurals name="setup_ready_count">
@@ -144,8 +144,6 @@
     <string name="setup_oem_body">يوقف هاتفك التطبيقات العاملة في الخلفية ما لم تسمح لها.</string>
     <string name="setup_open_settings">افتح الإعدادات</string>
     <!-- Button that opens an online guide for this phone brand -->
-    <string name="setup_guide">الدليل</string>
-    <string name="setup_oem_done">لقد فعلت ذلك</string>
     <!-- Small badge on a permission card -->
     <string name="setup_required">مطلوب</string>
     <!-- Small badge on a permission card -->
@@ -156,17 +154,17 @@
 
     <!-- Permission requirements -->
     <string name="req_notifications">الإشعارات</string>
-    <string name="req_notifications_why">ليتمكّن التطبيق من تنبيهك في وقت الأذكار.</string>
+    <string name="req_notifications_why">ليذكّرك التطبيق في وقت الأذكار والصلاة.</string>
     <string name="req_exact_alarms">المنبّهات والتذكيرات</string>
-    <string name="req_exact_alarms_why">يبدأ جلستك في الدقيقة المحددة، حتى والهاتف في وضع السكون.</string>
+    <string name="req_exact_alarms_why">يبدأ أذكارك في الدقيقة المحددة حتى والهاتف نائم، كالمنبّه.</string>
     <string name="req_full_screen">تنبيهات ملء الشاشة</string>
-    <string name="req_full_screen_why">يفتح الأذكار فوق شاشة القفل، كالمنبّه.</string>
+    <string name="req_full_screen_why">يعرض الأذكار فوق شاشة القفل حين يحين وقتها، كما يفعل المنبّه.</string>
     <string name="req_overlay">الظهور فوق التطبيقات الأخرى</string>
-    <string name="req_overlay_why">يفتح الأذكار وأنت تستخدم تطبيقًا آخر، ويوقف التطبيقات الأخرى في وضع الإغلاق. إن ظهرت قائمة، فاضغط على الأذكار واسمح له.</string>
+    <string name="req_overlay_why">يُظهر الأذكار أو تذكير الصلاة وأنت في تطبيق آخر، ويغطي التطبيقات الأخرى في وضع الإغلاق. لا يرى التطبيق ما على شاشتك.</string>
     <string name="req_usage_access">الوصول إلى بيانات الاستخدام</string>
-    <string name="req_usage_access_why">يتيح للإغلاق معرفة التطبيق المفتوح. لا يُسجَّل شيء ولا يغادر هاتفك. في القائمة، اضغط على الأذكار وفعّله.</string>
+    <string name="req_usage_access_why">يتيح للإغلاق معرفة التطبيق المفتوح، فيغطي التطبيقات الأخرى فقط دون مكالماتك. يرى أسماء التطبيقات فقط لا محتواها، ولا يحتفظ بشيء.</string>
     <string name="req_battery">بطارية غير مقيّدة</string>
-    <string name="req_battery_why">يمنع أندرويد من إيقاف التطبيق فيفوتك وقت أذكارك.</string>
+    <string name="req_battery_why">يمنع أندرويد من إيقاف التطبيق فلا تفوتك الأذكار. استهلاكه للبطارية ضئيل جدًا.</string>
 
     <!-- Brand-specific auto-start steps. Quoted names are the labels in the phone maker's own settings screens;
          the Arabic labels below are descriptive and should be checked against each brand's Arabic UI. -->
@@ -216,6 +214,8 @@
     <string name="settings_language">لغة التطبيق</string>
     <!-- Option to use the phone's own language instead of choosing one. -->
     <string name="settings_language_system">لغة الهاتف</string>
-    <string name="req_usage_access_find">ابحث عن الأذكار في القائمة، واضغط عليه، وفعّل الوصول إلى الاستخدام.</string>
     <string name="req_overlay_find">ابحث عن الأذكار في القائمة، واضغط عليه، واسمح له.</string>
+    <string name="req_usage_step_find">ابحث عن الأذكار في القائمة (مرّر أو استخدم البحث)</string>
+    <string name="req_usage_step_tap">اضغط على الأذكار</string>
+    <string name="req_usage_step_on">فعّل المفتاح، ثم عد إلى هنا</string>
 </resources>

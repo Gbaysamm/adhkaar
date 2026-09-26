@@ -127,10 +127,10 @@ fun OnboardingScreen(onFinished: () -> Unit) {
             // again whenever the user comes back from a system settings screen.
             val settings by SettingsStore.get(context).flow.collectAsState()
             val resumeTick = rememberResumeTick()
-            val ready = remember(resumeTick, settings.strictness, settings.oemAutostartDone, current) {
+            val ready = remember(resumeTick, settings.strictness, current) {
                 current != STEPS || (
                     Requirement.missingRequired(context, settings.strictness).isEmpty() &&
-                        OemAutostart.backgroundDone(context, settings.oemAutostartDone)
+                        OemAutostart.backgroundDone(context)
                     )
             }
             StepScaffold(

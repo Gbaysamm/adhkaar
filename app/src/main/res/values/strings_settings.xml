@@ -127,7 +127,7 @@
     <!-- Accessibility label for the back arrow -->
     <string name="setup_back">Back</string>
     <string name="setup_title">Phone setup</string>
-    <string name="setup_intro">Android saves battery by stopping apps in the background. Allow these once so your adhkaar arrive on time, every time.</string>
+    <string name="setup_intro">Android stops apps in the background to save battery, so the adhkaar need a few permissions to arrive on time. Each one says what it\'s for. None of them lets Adhkaar see your messages, photos, contacts or anything personal, and nothing ever leaves your phone.</string>
     <string name="setup_all_set">All set</string>
     <!-- Progress: %1$d = steps done, %2$d = total steps. Quantity is the number done. -->
     <plurals name="setup_ready_count">
@@ -139,8 +139,6 @@
     <string name="setup_oem_body">Your phone stops background apps unless you allow them.</string>
     <string name="setup_open_settings">Open settings</string>
     <!-- Button that opens an online guide for this phone brand -->
-    <string name="setup_guide">Guide</string>
-    <string name="setup_oem_done">I’ve done this</string>
     <!-- Small uppercase badge on a permission card -->
     <string name="setup_required">REQUIRED</string>
     <!-- Small uppercase badge on a permission card -->
@@ -151,17 +149,17 @@
 
     <!-- Permission requirements -->
     <string name="req_notifications">Notifications</string>
-    <string name="req_notifications_why">So the app can alert you at adhkaar time.</string>
+    <string name="req_notifications_why">So the app can remind you at adhkaar time and for salah.</string>
     <string name="req_exact_alarms">Alarms &amp; reminders</string>
-    <string name="req_exact_alarms_why">Starts your session at the exact minute, even when the phone is asleep.</string>
+    <string name="req_exact_alarms_why">Starts your adhkaar at the exact minute, even while the phone sleeps. Like an alarm clock.</string>
     <string name="req_full_screen">Full-screen alerts</string>
-    <string name="req_full_screen_why">Opens the adhkaar over the lock screen, like an alarm clock.</string>
+    <string name="req_full_screen_why">Shows the adhkaar over the lock screen when they\'re due, the way an alarm clock does.</string>
     <string name="req_overlay">Display over other apps</string>
-    <string name="req_overlay_why">Opens the adhkaar while you’re using another app, and pauses other apps in Lockdown. If a list opens, tap Adhkaar and allow it.</string>
+    <string name="req_overlay_why">Brings up the adhkaar or a salah reminder while you\'re in another app, and covers other apps in Lockdown. Adhkaar can\'t see what\'s on your screen.</string>
     <string name="req_usage_access">Usage access</string>
-    <string name="req_usage_access_why">Lets Lockdown see which app is open. Nothing is recorded or leaves your phone. In the list, tap Adhkaar and turn it on.</string>
+    <string name="req_usage_access_why">Lets Lockdown tell which app is open, so it only covers other apps, never your calls. It sees app names only, never what\'s inside them, and keeps nothing.</string>
     <string name="req_battery">Unrestricted battery</string>
-    <string name="req_battery_why">Stops Android from putting the app to sleep and missing your adhkaar time.</string>
+    <string name="req_battery_why">Stops Android putting Adhkaar to sleep, so the adhkaar aren\'t missed. It uses almost no battery.</string>
 
     <!-- Brand-specific auto-start steps. Quoted names are the labels in the phone maker's own settings screens;
          use the name that phone shows in your language if you know it. -->
@@ -212,6 +210,8 @@
     <string name="settings_language">App language</string>
     <!-- Option to use the phone's own language instead of choosing one. -->
     <string name="settings_language_system">Follow phone</string>
-    <string name="req_usage_access_find">Find Adhkaar in the list, tap it, and turn on usage access.</string>
     <string name="req_overlay_find">Find Adhkaar in the list, tap it, and allow it.</string>
+    <string name="req_usage_step_find">Find Adhkaar in the list (scroll, or use search)</string>
+    <string name="req_usage_step_tap">Tap Adhkaar</string>
+    <string name="req_usage_step_on">Turn the switch on, then come back here</string>
 </resources>

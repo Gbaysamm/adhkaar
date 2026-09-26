@@ -127,7 +127,7 @@
     <!-- Accessibility label for the back arrow -->
     <string name="setup_back">واپس</string>
     <string name="setup_title">فون کی ترتیب</string>
-    <string name="setup_intro">Android بیٹری بچانے کے لیے پس منظر میں ایپس روک دیتا ہے۔ انہیں ایک بار اجازت دیں تاکہ آپ کے اذکار ہر بار وقت پر پہنچیں۔</string>
+    <string name="setup_intro">اینڈرائیڈ بیٹری بچانے کے لیے پس منظر میں ایپس روک دیتا ہے، اس لیے اذکار وقت پر آنے کے لیے چند اجازتیں درکار ہیں۔ ہر ایک بتاتی ہے کہ کیوں۔ ان میں سے کوئی بھی ایپ کو آپ کے پیغامات، تصاویر، رابطے یا کوئی ذاتی چیز دیکھنے نہیں دیتی، اور کچھ بھی فون سے باہر نہیں جاتا۔</string>
     <string name="setup_all_set">سب تیار ہے</string>
     <!-- Progress: %1$d = steps done, %2$d = total steps. Quantity is the number done. -->
     <plurals name="setup_ready_count">
@@ -139,8 +139,6 @@
     <string name="setup_oem_body">آپ کا فون پس منظر کی ایپس کو روک دیتا ہے، جب تک آپ اجازت نہ دیں۔</string>
     <string name="setup_open_settings">ترتیبات کھولیں</string>
     <!-- Button that opens an online guide for this phone brand -->
-    <string name="setup_guide">رہنمائی</string>
-    <string name="setup_oem_done">میں نے یہ کر لیا</string>
     <!-- Small uppercase badge on a permission card -->
     <string name="setup_required">ضروری</string>
     <!-- Small uppercase badge on a permission card -->
@@ -151,17 +149,17 @@
 
     <!-- Permission requirements -->
     <string name="req_notifications">اطلاعات</string>
-    <string name="req_notifications_why">تاکہ ایپ اذکار کے وقت آپ کو اطلاع دے سکے۔</string>
+    <string name="req_notifications_why">تاکہ ایپ اذکار اور نماز کے وقت یاد دلا سکے۔</string>
     <string name="req_exact_alarms">الارم اور یاد دہانیاں</string>
-    <string name="req_exact_alarms_why">فون سویا ہوا ہو تب بھی آپ کی نشست ٹھیک وقت پر شروع کرتا ہے۔</string>
+    <string name="req_exact_alarms_why">فون سویا ہو تب بھی اذکار ٹھیک وقت پر شروع کرتا ہے، الارم کی طرح۔</string>
     <string name="req_full_screen">پوری اسکرین والی اطلاعات</string>
-    <string name="req_full_screen_why">الارم کلاک کی طرح لاک اسکرین پر اذکار کھولتا ہے۔</string>
+    <string name="req_full_screen_why">وقت آنے پر اذکار لاک اسکرین پر دکھاتا ہے، جیسے الارم کرتا ہے۔</string>
     <string name="req_overlay">دیگر ایپس کے اوپر دکھائیں</string>
-    <string name="req_overlay_why">دوسری ایپ استعمال کرتے ہوئے اذکار کھولتا ہے، اور لاک ڈاؤن میں دوسری ایپس روکتا ہے۔ اگر فہرست کھلے تو Adhkaar پر ٹیپ کر کے اجازت دیں۔</string>
+    <string name="req_overlay_why">دوسری ایپ میں ہوتے ہوئے اذکار یا نماز کی یاد دہانی دکھاتا ہے، اور لاک ڈاؤن میں دوسری ایپس ڈھکتا ہے۔ ایپ آپ کی اسکرین نہیں دیکھ سکتی۔</string>
     <string name="req_usage_access">استعمال تک رسائی</string>
-    <string name="req_usage_access_why">لاک ڈاؤن کو پتا چلتا ہے کہ کون سی ایپ کھلی ہے۔ کچھ ریکارڈ نہیں ہوتا نہ فون سے باہر جاتا ہے۔ فہرست میں Adhkaar پر ٹیپ کریں اور آن کریں۔</string>
+    <string name="req_usage_access_why">لاک ڈاؤن کو بتاتا ہے کہ کون سی ایپ کھلی ہے، تاکہ صرف دوسری ایپس ڈھکے، کالز کبھی نہیں۔ صرف ایپس کے نام دیکھتا ہے، اندر کا کچھ نہیں، اور کچھ محفوظ نہیں کرتا۔</string>
     <string name="req_battery">غیر محدود بیٹری</string>
-    <string name="req_battery_why">Android کو ایپ سلانے اور آپ کے اذکار کا وقت چھوٹنے سے روکتا ہے۔</string>
+    <string name="req_battery_why">اینڈرائیڈ کو ایپ سلانے سے روکتا ہے تاکہ اذکار نہ رہ جائیں۔ بیٹری بہت کم خرچ ہوتی ہے۔</string>
 
     <!-- Brand-specific auto-start steps. Quoted names are the labels in the phone maker's own settings screens;
          kept in English, as most Urdu-speaking users see these menus in English. -->
@@ -211,6 +209,8 @@
     <string name="settings_language">ایپ کی زبان</string>
     <!-- Option to use the phone's own language instead of choosing one. -->
     <string name="settings_language_system">فون کے مطابق</string>
-    <string name="req_usage_access_find">فہرست میں Adhkaar تلاش کریں، اس پر ٹیپ کریں اور استعمال تک رسائی آن کریں۔</string>
     <string name="req_overlay_find">فہرست میں Adhkaar تلاش کریں، اس پر ٹیپ کریں اور اجازت دیں۔</string>
+    <string name="req_usage_step_find">فہرست میں Adhkaar تلاش کریں (اسکرول کریں یا سرچ کریں)</string>
+    <string name="req_usage_step_tap">Adhkaar پر ٹیپ کریں</string>
+    <string name="req_usage_step_on">سوئچ آن کریں، پھر یہاں واپس آئیں</string>
 </resources>
