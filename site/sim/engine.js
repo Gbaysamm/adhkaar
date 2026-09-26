@@ -1,193 +1,145 @@
-/* Adhkaar simulator: the app's real screens (rendered from its code by SiteCaptureTest) with the
-   places you can tap, wired to what the app does. Longer pages scroll a screen at a time. */
+/* Adhkaar simulator. The screens are the app's own, and so is what each tap does: SiteCrawlTest
+   explored the app, tapping every button and recording where it led (sim/crawl.js). A few phone
+   states the app doesn't draw itself (lock screen, another app, the dialer) are drawn here. */
 (function () {
   "use strict";
-  var SCREENS = window.SIM_SCREENS || {};
+  var CRAWL = window.SIM_CRAWL || {};
+  var STATIC = window.SIM_SCREENS || {};
   var screenEl = document.getElementById("screen");
   var pager = document.getElementById("pager"), posEl = document.getElementById("pos");
   var upBtn = document.getElementById("up"), downBtn = document.getElementById("down");
   var toastEl = document.getElementById("toast");
   var W = 786, H = 1704;
 
-  // A view is one screen of the app; a page that scrolls has several frames.
-  function frames(view) {
-    if (SCREENS[view]) return [view];
-    var list = [], i = 1;
-    while (SCREENS[view + "-" + i]) { list.push(view + "-" + i); i++; }
-    return list;
-  }
+  // A place in the simulator: a crawled screen ("app"/"session" + id), a static render, or a mock.
+  var cur = { src: "app", id: 0 };
+  var history = [];
 
-  var NOTES = {
+  function st(p) { return CRAWL[p.src] && CRAWL[p.src][p.id]; }
+  function clean(s) { return (s || "").replace(/[⁦-⁩]/g, ""); }
+  function toast(m) { toastEl.textContent = m || ""; }
+  function vibrate(p) { try { navigator.vibrate && navigator.vibrate(p); } catch (e) {} }
+  function pct(v, of) { return (v / of * 100).toFixed(3) + "%"; }
+  function findPath(src, test) { var list = CRAWL[src] || []; for (var i = 0; i < list.length; i++) if (test(list[i].path)) return list[i].id; return 0; }
+
+  // ---- what the panel says about where you are ----
+  var NOTE = {
+    today: ["Today", "Your day at a glance", "The sky shows where the day is, the card shows what's due, then your salah reminders, collections and the Hijri calendar.", "Tap Continue, the streak, the day's reminder, or scroll."],
+    adhkaar: ["Adhkaar", "Every collection", "Morning and evening, after salah, before sleep, on waking, everyday duas, favourites and your own duas.", "Open a collection, or tap the heart on any dhikr."],
+    insights: ["Insights", "Your progress", "Your streak, this month's sessions, the calendar with Hijri dates, and your week.", "Tap a day in the calendar, or switch Hijri and Gregorian."],
+    settings: ["Settings", "Make it yours", "The mode, your times, reminders, the Hijri calendar, language and reading options. Help is at the top.", "Open the Guide, Test kit or Contact us, or change a setting."],
+    session: ["Morning adhkaar", "Read, then tap to count", "Tap the ring or the card to count; each dhikr moves on by itself. The heart saves a favourite; Tr changes the reading options.", "Count, or tap Take a break."],
+    brk: ["Take a break", "A pause, never a skip", "Only breaks that end before the adhkaar time closes are offered. Before pausing, the app asks once more.", "Choose a time, then hold to pause."],
     lock: ["6:00 AM · Lock screen", "The morning adhkaar arrive", "In Full screen and Lockdown the phone rings for a minute and the adhkaar open by themselves, even with the screen locked.", "Tap the notification, or wait a moment."],
-    today: ["Today", "Your day at a glance", "The sky shows where the day is, the card shows what's due, and below it are your salah reminders, collections and the Hijri calendar.", "Tap Continue, or scroll down."],
-    "session-0": ["Morning adhkaar", "Read, then tap to count", "Tap the ring or the card to count. Each dhikr moves on by itself when its count is reached. The app waits for the words to be read before counting.", "Tap the counter."],
-    session: ["Morning adhkaar", "Counting", "Surah al-Ikhlas is said three times in the morning and evening. Watch the ring fill.", "Keep tapping, or take a break."],
-    "break-1": ["Take a break", "Need a moment?", "Only breaks that end before the adhkaar time closes are offered, so they're still said today.", "Choose 20 min."],
-    "break-2": ["Take a break", "Back at a set time", "The alert rings again when the break ends.", "Tap Pause for 20 minutes."],
-    "break-3": ["Before you pause", "One more gentle ask", "How much is left, your streak, and a hadith. Pausing takes a five-second hold.", "Press and hold the bottom button for 5 seconds, or Stay and finish."],
-    onbreak: ["On a break", "Your phone is free", "Nothing rings or blocks until the break ends. Then the alert rings again, and in Full screen and Lockdown the adhkaar come back.", "Tap the notification to go back early."],
-    complete: ["Done", "Your day begins in His care", "The session is recorded, the streak grows, and any Lockdown lifts.", "Tap Done."],
     other: ["Another app", "Opening something else…", "In Lockdown, any other app is covered until the adhkaar are done or their time ends.", "Wait a moment."],
-    lockdown: ["Lockdown", "Your morning adhkaar is waiting", "There's no close button and back doesn't work. Calls and emergencies always do. The only way out is a short break.", "Return to your adhkaar, or tap Call or emergency."],
-    dialer: ["Phone", "Calls always work", "Even in Lockdown the phone app opens and stays open for as long as you need it.", "Tap anywhere to go back."],
-    "popup-salah": ["6:35 PM · Salah reminder", "Time to get ready for Maghrib", "A frosted card over whatever is open (or the lock screen), with a chime at alarm volume and a vibration.", "Tap I'm getting ready."],
+    lockdown: ["Lockdown", "Your morning adhkaar is waiting", "No close button, and back doesn't work. Calls and emergencies always do. The only way out is a short break.", "Return to your adhkaar, or tap Call or emergency."],
+    dialer: ["Phone", "Calls always work", "Even in Lockdown the phone app opens and stays open as long as you need it.", "Tap anywhere to go back."],
+    onbreak: ["On a break", "Your phone is free", "Nothing rings or blocks until the break ends. Then the alert rings again, and the adhkaar come back.", "Tap the notification to go back early."],
+    "popup-salah": ["6:35 PM · Salah reminder", "Time to get ready for Maghrib", "A frosted card over whatever is open, or the lock screen, with a chime at alarm volume and a vibration.", "Tap I'm getting ready."],
     "popup-after": ["1:22 PM · After Dhuhr", "Adhkaar after salah", "Collections remind you with a card like this. After Fajr and Maghrib the three Quls are said three times.", "Tap Open or Later."],
-    adhkaar: ["Adhkaar tab", "Every collection", "Morning and evening, after salah, before sleep, on waking and everyday duas, with your favourites and your own duas.", "Open Morning."],
-    "shelf-morning": ["Morning adhkaar", "The list, with sources", "Every dhikr with its count and reference. Tap Begin to read them as a session.", "Tap Begin, or scroll."],
-    insights: ["Insights", "Your progress", "Streak, sessions this month, the calendar with Hijri dates, and your week.", "Scroll down."],
-    settings: ["Settings", "Make it yours", "Pick the mode, the times, the reminders and the reading options. Help is at the top.", "Open Guide, Test kit or Contact us, or scroll to Salah reminders."],
-    "salah-reminders": ["Salah reminders", "Your masjid's times", "Tap a time to change it. Your times replace the defaults, and each reminder can be switched off.", "Tap Back."],
-    guide: ["Guide", "How it all works", "The times, the three modes with their trade-offs, breaks and the rest, in plain words.", "Scroll, then tap Back."],
-    "test-kit": ["Test kit", "Try every alert now", "For testers who can't wait for Fajr: each alert arrives ten seconds after tapping, and the phone's permissions are checked.", "Scroll, then tap Back."],
-    contact: ["Contact us", "Tell us, in the app", "A message goes straight to the maintainers with your phone's details. No account, no GitHub.", "Tap Back."],
+    complete: ["Done", "Your day begins in His care", "The session is recorded, the streak grows, and any Lockdown lifts.", "Tap Done."],
     gentle: ["Gentle mode", "One soft reminder", "Gentle plays one chime and shows a notification. It never rings again.", "Tap the notification to begin."],
   };
-
-  var SCENARIOS = [
-    { title: "The morning alarm", sub: "6:00 AM, after Fajr is prayed", run: function () { go("lock"); } },
-    { title: "Count the adhkaar", sub: "Read, tap, and it moves on", run: function () { go("session-0", { hint: "0 of 1" }); } },
-    { title: "Take a break", sub: "A pause, never a skip", run: function () { go("session-4", { hint: "Take a break" }); } },
-    { title: "Lockdown", sub: "Try to open another app", run: function () { go("other"); setTimeout(function () { if (state.view === "other") go("lockdown"); }, 1600); } },
-    { title: "Salah reminder", sub: "6:35 PM, Maghrib", run: function () { go("popup-salah", { hint: "I'm getting ready" }); } },
-    { title: "After salah", sub: "1:22 PM, after Dhuhr", run: function () { go("popup-after"); } },
-    { title: "Gentle mode", sub: "Just a chime and a notification", run: function () { go("today", { banner: true }); } },
-    { title: "Explore the app", sub: "Today, Adhkaar, Insights, Settings", run: function () { go("today"); } },
-  ];
-
-  var state = { view: "today", frame: 0, history: [], scenario: 7 };
-
-  function toast(msg) { toastEl.textContent = msg || ""; }
-
-  function notes(view) {
-    var key = NOTES[view] ? view : /^session-[1-4]$/.test(view) ? "session" : view;
-    var n = NOTES[key] || ["", "", "", ""];
+  function noteKey() {
+    if (cur.src === "mock" || cur.src === "static") return cur.id;
+    var s = st(cur); var p = s ? s.path : "";
+    if (cur.src === "session") return /break|Pause|min|hour/.test(p) ? "brk" : "session";
+    var tab = (p.match(/(Adhkaar|Insights|Settings|Today)(?!.*(Adhkaar|Insights|Settings|Today))/) || [])[1];
+    return { Adhkaar: "adhkaar", Insights: "insights", Settings: "settings" }[tab] || "today";
+  }
+  function notes(key) {
+    var n = NOTE[key] || NOTE.today;
     document.getElementById("n-where").textContent = n[0];
     document.getElementById("n-title").textContent = n[1];
     document.getElementById("n-text").textContent = n[2];
     document.getElementById("n-next").textContent = n[3];
   }
 
-  function stripMarks(s) { return (s || "").replace(/[⁦-⁩]/g, ""); }
+  function go(place, opts) {
+    opts = opts || {};
+    if (!opts.replace) history.push(cur);
+    cur = place;
+    render(opts);
+  }
+  function back() { cur = history.pop() || { src: "app", id: 0 }; render({}); }
+  var HOME = function () { return { src: "app", id: 0 }; };
+  var SESSION = function () { return { src: "session", id: 0 }; };
 
-  // What tapping [label] does on [view]. Returns a function, or null for things outside the demo.
-  function action(view, label) {
-    var L = stripMarks(label);
-    var starts = function (p) { return L.indexOf(p) === 0; };
-    var tabs = { Today: "today", Adhkaar: "adhkaar", Insights: "insights", Settings: "settings" };
-    if (tabs[L] && frames(tabs[L]).length && /^(today|adhkaar|insights|settings|shelf-morning)$/.test(view)) return function () { go(tabs[L], { replace: true }); };
-    if (L === "Back") return back;
-    switch (view) {
-      case "today":
-        if (starts("Continue") || starts("It's time")) return function () { go("session-0"); };
-        break;
-      case "adhkaar":
-        if (starts("Morning")) return function () { go("shelf-morning"); };
-        break;
-      case "shelf-morning":
-        if (starts("Begin")) return function () { go("session-0"); };
-        break;
-      case "settings":
-        if (starts("Guide")) return function () { go("guide"); };
-        if (starts("Test kit")) return function () { go("test-kit"); };
-        if (starts("Contact us")) return function () { go("contact"); };
-        if (starts("Salah reminders")) return function () { go("salah-reminders"); };
-        if (starts("Gentle") || starts("Full screen") || starts("Lockdown")) return function () { toast("Mode chosen. Try the moments on the left to see each mode."); };
-        break;
-      case "session-0": if (starts("0 of 1")) return count("session-1"); break;
-      case "session-1": if (starts("0 of 3")) return count("session-2"); break;
-      case "session-2": if (starts("1 of 3")) return count("session-3"); break;
-      case "session-3": if (starts("2 of 3")) return count("session-4"); break;
-      case "session-4":
-        if (starts("0 of 3")) return function () { toast("Skipping ahead to the end of the session."); go("complete"); };
-        break;
-      case "break-1":
-        if (starts("20 min")) return function () { go("break-2", { replace: true }); };
-        if (/^(10 min|30 min|1 hour)/.test(L)) return function () { toast("In this demo, choose 20 min."); };
-        if (starts("Keep reading")) return function () { go("session-4", { replace: true }); };
-        return "dead";
-      case "break-2":
-        if (starts("Pause for 20")) return function () { go("break-3", { replace: true }); };
-        if (starts("Keep reading")) return function () { go("session-4", { replace: true }); };
-        if (/^(10 min|30 min|1 hour)/.test(L)) return function () { toast("In this demo, choose 20 min."); };
-        return "dead";
-      case "break-3":
-        if (starts("Stay and finish")) return function () { toast("Good. Keep going."); go("session-4", { replace: true }); };
-        return "dead";
-      case "complete": if (starts("Done")) return function () { go("today", { reset: true }); }; break;
-      case "lockdown":
-        if (starts("Return")) return function () { go("session-4"); };
-        if (starts("Call")) return function () { go("dialer"); };
-        break;
-      case "popup-salah": if (starts("I'm getting ready")) return function () { go("today", { replace: true }); }; return "dead";
-      case "popup-after": if (starts("Open") || starts("Later")) return function () { if (starts("Open")) toast("In the app this opens the after-salah adhkaar."); go("today", { replace: true }); }; return "dead";
-      case "test-kit": if (starts("Try it")) return function () { toast("In the app, the alert arrives in 10 seconds."); setTimeout(function () { go("popup-salah"); }, 1200); }; break;
+  // Taps the crawl couldn't follow because they leave the app's screen (another activity, the
+  // system share sheet) are wired here.
+  function special(label, s) {
+    var L = clean(label);
+    if (cur.src === "app" && /^(Continue|Begin|It.s time)/.test(L)) return function () { go(SESSION()); };
+    if (cur.src === "session") {
+      if (/^Close/.test(L)) return function () { toast("Closed. In Full screen the adhkaar come back at your next unlock."); history = []; go(HOME(), { replace: true }); };
+      if (/^\d+ of \d+$/.test(L)) return function () { toast("Skipping ahead to the end of the session."); go({ src: "static", id: "complete" }); };
     }
-    if (/^session-/.test(view)) {
-      if (starts("Take a break")) return function () { go("break-1"); };
-      if (starts("Close")) return function () { toast("Closed. In Full screen the adhkaar come back at your next unlock."); go("today", { reset: true }); };
-    }
+    if (/^Share/.test(L)) return function () { toast("In the app this opens your phone's share sheet, with the day's card."); };
     return null;
   }
 
-  function count(next) { return function () { vibrate(12); go(next, { replace: true, quiet: true }); }; }
-  function vibrate(p) { try { navigator.vibrate && navigator.vibrate(p); } catch (e) {} }
-
-  function go(view, opts) {
-    opts = opts || {};
-    if (!opts.replace && !opts.reset && state.view !== view) state.history.push(state.view);
-    if (opts.reset) state.history = [];
-    state.view = view; state.frame = 0;
-    render(opts);
-  }
-  function back() { var v = state.history.pop() || "today"; state.view = v; state.frame = 0; render({}); }
-
-  function pct(v, of) { return (v / of * 100).toFixed(3) + "%"; }
-
   function render(opts) {
     opts = opts || {};
-    var view = state.view;
-    notes(view);
     if (!opts.keepToast) toast(opts.toast || "");
     screenEl.innerHTML = "";
-    var mock = mockFor(view);
-    var fr = frames(view);
-    pager.hidden = fr.length < 2;
-    if (mock) { screenEl.appendChild(mock); return; }
-    if (!fr.length) return;
-    var name = fr[state.frame];
-    var data = SCREENS[name];
-    var div = document.createElement("div");
-    div.className = "frame " + (opts.dir || (opts.quiet ? "" : "enter"));
+    pager.hidden = true;
+    notes(opts.note || noteKey());
+    if (cur.src === "mock") { screenEl.appendChild(mock(cur.id)); return; }
+    var frame = document.createElement("div");
+    frame.className = "frame " + (opts.dir || (opts.quiet ? "" : "enter"));
     var img = document.createElement("img");
-    img.src = "sim/img/" + name + ".webp"; img.alt = (NOTES[view] || NOTES[view.replace(/-\d+$/, "")] || ["", ""])[1] || view;
     img.draggable = false;
-    div.appendChild(img);
-    (data.hot || []).forEach(function (h) {
-      var act = action(view, h.label);
-      if (act === "dead" || (act === null && /^(break-|popup-)/.test(view))) return;
-      var b = document.createElement("button");
-      b.type = "button"; b.className = "hot" + (act ? "" : " dead");
-      b.style.left = pct(h.x, W); b.style.top = pct(h.y, H); b.style.width = pct(h.w, W); b.style.height = pct(h.h, H);
-      b.setAttribute("aria-label", stripMarks(h.label).slice(0, 80));
-      if (opts.hint && stripMarks(h.label).indexOf(opts.hint) === 0) b.classList.add("hint");
-      b.addEventListener("click", function (e) {
-        ripple(e, div);
-        if (act) act(); else toast("That opens more of the app than this demo covers.");
+    frame.appendChild(img);
+    if (cur.src === "static") {
+      img.src = "sim/img/" + cur.id + ".webp";
+      img.alt = (NOTE[cur.id] || ["", ""])[1];
+      staticHots(frame);
+    } else {
+      var s = st(cur);
+      img.src = "sim/crawl/" + cur.src + "-" + s.id + ".webp";
+      img.alt = NOTE[noteKey()][1];
+      s.hot.forEach(function (h) {
+        var act = special(h.l, s) || (h.to !== null && h.to !== s.id ? (function (to) { return function () { if (/^\d+ of \d+$/.test(clean(h.l))) vibrate(12); go({ src: cur.src, id: to }, { quiet: /^\d+ of \d+$/.test(clean(h.l)) }); }; })(h.to) : null);
+        addHot(frame, h, act, opts.hint);
       });
-      div.appendChild(b);
-    });
-    if (view === "break-3") addHold(div, data);
-    if (opts.banner) addBanner(div, "Morning adhkaar", "It's time · one soft chime, it won't ring again", function () { go("session-0"); }, "gentle");
-    screenEl.appendChild(div);
-    if (fr.length > 1) {
-      var bar = document.createElement("div"); bar.className = "scrollbar";
-      var thumb = document.createElement("i"); var hgt = 100 / fr.length;
-      thumb.style.height = hgt + "%"; thumb.style.top = (state.frame * hgt) + "%";
-      bar.appendChild(thumb); screenEl.appendChild(bar);
-      posEl.textContent = (state.frame + 1) + " / " + fr.length;
-      upBtn.disabled = state.frame === 0; downBtn.disabled = state.frame === fr.length - 1;
+      if (s.hot.some(function (h) { return clean(h.l).indexOf("Stay and finish") === 0; })) addHold(frame, s.hot);
+      var hasScroll = s.scroll !== null || (history.length && history[history.length - 1].src === cur.src && st(history[history.length - 1]) && st(history[history.length - 1]).scroll === s.id);
+      if (hasScroll) {
+        pager.hidden = false;
+        upBtn.disabled = !(history.length && st(history[history.length - 1]) && st(history[history.length - 1]).scroll === s.id);
+        downBtn.disabled = s.scroll === null;
+        posEl.textContent = "Scroll";
+      }
     }
-    if (opts.banner) notes("gentle");
+    if (opts.banner) banner(frame, "Morning adhkaar", "It's time · one soft chime, it won't ring again", function () { go(SESSION()); });
+    screenEl.appendChild(frame);
+  }
+
+  function addHot(frame, h, act, hint) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "hot" + (act ? "" : " dead");
+    b.style.left = pct(h.x, W); b.style.top = pct(h.y, H); b.style.width = pct(h.w, W); b.style.height = pct(h.h, H);
+    var label = clean(h.l || h.label);
+    b.setAttribute("aria-label", label.slice(0, 80));
+    if (hint && label.indexOf(hint) === 0) b.classList.add("hint");
+    b.addEventListener("click", function (e) {
+      ripple(e, frame);
+      if (act) act(); else toast("Nothing more to see there in this demo.");
+    });
+    frame.appendChild(b);
+  }
+
+  // Static renders (Lockdown, the reminder cards, Done) keep their hand-wired buttons.
+  function staticHots(frame) {
+    var data = STATIC[cur.id]; if (!data) return;
+    data.hot.forEach(function (h) {
+      var L = clean(h.label), act = null;
+      if (cur.id === "lockdown") act = /^Return/.test(L) ? function () { go(SESSION()); } : /^Call/.test(L) ? function () { go({ src: "mock", id: "dialer" }); } : null;
+      if (cur.id === "popup-salah") { if (!/^I.m getting ready/.test(L)) return; act = function () { history = []; go(HOME(), { replace: true }); }; }
+      if (cur.id === "popup-after") { if (!/^(Open|Later)/.test(L)) return; act = function () { if (/^Open/.test(L)) toast("In the app this opens the after-salah adhkaar."); history = []; go(HOME(), { replace: true }); }; }
+      if (cur.id === "complete") act = /^Done/.test(L) ? function () { history = []; go(HOME(), { replace: true }); } : null;
+      addHot(frame, h, act, cur.id === "popup-salah" ? "I'm getting ready" : null);
+    });
   }
 
   function ripple(e, host) {
@@ -197,117 +149,107 @@
     host.appendChild(s); setTimeout(function () { s.remove(); }, 520);
   }
 
-  // The hold-to-pause pill sits under "Stay and finish" and isn't a tap target, so it's placed from it.
-  function addHold(div, data) {
-    var stay = (data.hot || []).filter(function (h) { return h.label.indexOf("Stay and finish") === 0; })[0];
-    if (!stay) return;
+  // Hold to pause sits under "Stay and finish" and isn't a tap target, so it's placed from it.
+  function addHold(frame, hots) {
+    var stay = hots.filter(function (h) { return clean(h.l).indexOf("Stay and finish") === 0; })[0];
     var y = stay.y + stay.h + 16, h = 104;
-    var fill = document.createElement("div"); fill.className = "holdfill";
-    [fill].forEach(function (el) { el.style.left = pct(stay.x, W); el.style.top = pct(y, H); el.style.width = pct(stay.w, W); el.style.height = pct(h, H); });
-    fill.innerHTML = "<i></i>";
-    var b = document.createElement("button");
-    b.type = "button"; b.className = "hot hint"; b.setAttribute("aria-label", "Hold to pause for 20 minutes");
-    b.style.left = pct(stay.x, W); b.style.top = pct(y, H); b.style.width = pct(stay.w, W); b.style.height = pct(h, H); b.style.borderRadius = "999px";
-    var raf = 0, start = 0, q = 0;
+    var fill = document.createElement("div"); fill.className = "holdfill"; fill.innerHTML = "<i></i>";
+    var b = document.createElement("button"); b.type = "button"; b.className = "hot hint"; b.setAttribute("aria-label", "Hold to pause");
+    [fill, b].forEach(function (el) { el.style.left = pct(stay.x, W); el.style.top = pct(y, H); el.style.width = pct(stay.w, W); el.style.height = pct(h, H); });
+    b.style.borderRadius = "999px";
+    var raf = 0, t0 = 0, q = 0;
     function step(t) {
-      var p = Math.min(1, (t - start) / 5000);
-      fill.firstChild.style.width = (p * 100) + "%";
+      var p = Math.min(1, (t - t0) / 5000);
+      fill.firstChild.style.width = p * 100 + "%";
       var nq = Math.floor(p * 4); if (nq > q && nq < 4) { q = nq; vibrate(10); }
-      if (p >= 1) { vibrate(40); go("onbreak", { replace: true }); return; }
+      if (p >= 1) { raf = 0; vibrate(40); go({ src: "mock", id: "onbreak" }, { replace: true }); return; }
       raf = requestAnimationFrame(step);
     }
-    function down(e) { e.preventDefault(); b.classList.remove("hint"); start = performance.now(); q = 0; toast("Keep holding…"); raf = requestAnimationFrame(step); }
-    function up() { if (!raf) return; cancelAnimationFrame(raf); raf = 0; if (state.view === "break-3") { fill.firstChild.style.width = "0"; toast("Let go early, so nothing happened. You're still reading."); } }
+    function down(e) { e.preventDefault(); b.classList.remove("hint"); t0 = performance.now(); q = 0; toast("Keep holding…"); raf = requestAnimationFrame(step); }
+    function up() { if (!raf) return; cancelAnimationFrame(raf); raf = 0; fill.firstChild.style.width = "0"; toast("Let go early, so nothing happened. You're still reading."); }
     b.addEventListener("pointerdown", down);
-    b.addEventListener("pointerup", up); b.addEventListener("pointerleave", up); b.addEventListener("pointercancel", up);
+    ["pointerup", "pointerleave", "pointercancel"].forEach(function (ev) { b.addEventListener(ev, up); });
     b.addEventListener("keydown", function (e) { if ((e.key === " " || e.key === "Enter") && !e.repeat) down(e); });
     b.addEventListener("keyup", function (e) { if (e.key === " " || e.key === "Enter") up(); });
-    b.addEventListener("click", function (e) { e.preventDefault(); });
-    div.appendChild(fill); div.appendChild(b);
+    frame.appendChild(fill); frame.appendChild(b);
   }
 
-  function addBanner(host, title, text, onTap, note) {
+  function banner(host, title, text, onTap) {
     var wrap = document.createElement("div"); wrap.className = "banner";
     wrap.innerHTML = '<div class="n-card" role="button" tabindex="0"><img src="img/icon.webp" alt=""><div><b>' + title + "</b><span>" + text + "</span></div></div>";
-    var card = wrap.firstChild;
-    card.addEventListener("click", onTap);
-    card.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onTap(); } });
+    wrap.firstChild.addEventListener("click", onTap);
+    wrap.firstChild.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onTap(); } });
     host.appendChild(wrap);
   }
 
-  // Phone states the app doesn't draw itself: the lock screen, another app, the dialer, a break.
-  function mockFor(view) {
+  function chats(extra) {
+    return "<header>Chats</header>" + ["Aisha", "Study group", "Ibrahim", "Family", "Musa"].map(function (n, i) {
+      return '<div class="row"><span class="av" style="background:hsl(' + (i * 70 + 20) + ',45%,45%)"></span><div><b>' + n + "</b><span>" + extra + "</span></div></div>";
+    }).join("");
+  }
+
+  function mock(kind) {
     var el = document.createElement("div");
-    if (view === "lock") {
+    if (kind === "lock") {
       el.className = "mock lock enter";
-      el.innerHTML = '<div class="t">6:00</div><div class="d">Sunday, 27 September</div>' +
-        '<div class="n-card ringing" role="button" tabindex="0"><img src="img/icon.webp" alt=""><div><b>Morning adhkaar</b><span>It\'s time · ringing · tap to begin</span></div></div>' +
-        '<div class="bottom">Swipe up to unlock</div>';
-      var open = function () { if (state.view === "lock") go("session-0", { hint: "0 of 1" }); };
+      el.innerHTML = '<div class="t">6:00</div><div class="d">Sunday, 27 September</div><div class="n-card ringing" role="button" tabindex="0"><img src="img/icon.webp" alt=""><div><b>Morning adhkaar</b><span>It\'s time · ringing · tap to begin</span></div></div><div class="bottom">Swipe up to unlock</div>';
+      var open = function () { if (cur.src === "mock" && cur.id === "lock") go(SESSION(), { replace: true, hint: "0 of 1" }); };
       el.querySelector(".n-card").addEventListener("click", open);
       setTimeout(open, 3500);
-      return el;
-    }
-    if (view === "other") {
-      el.className = "mock other enter";
-      el.innerHTML = "<header>Chats</header>" + ["Aisha", "Study group", "Ibrahim", "Family", "Musa"].map(function (n, i) {
-        return '<div class="row"><span class="av" style="background:hsl(' + (i * 70 + 20) + ',45%,45%)"></span><div><b>' + n + "</b><span>Did you see the message from…</span></div></div>";
-      }).join("");
-      return el;
-    }
-    if (view === "dialer") {
+    } else if (kind === "other") {
+      el.className = "mock other enter"; el.innerHTML = chats("Did you see the message from…");
+      setTimeout(function () { if (cur.src === "mock" && cur.id === "other") go({ src: "static", id: "lockdown" }, { replace: true }); }, 1600);
+    } else if (kind === "dialer") {
       el.className = "mock dialer enter";
-      el.innerHTML = '<div style="font-size:28px;letter-spacing:2px">112</div><div style="color:var(--text-3);font-size:13px">Emergency number</div><div class="keys">' +
-        "123456789*0#".split("").map(function (k) { return "<i>" + k + "</i>"; }).join("") + "</div>";
+      el.innerHTML = '<div style="font-size:28px;letter-spacing:2px">112</div><div style="color:var(--text-3);font-size:13px">Emergency number</div><div class="keys">' + "123456789*0#".split("").map(function (k) { return "<i>" + k + "</i>"; }).join("") + "</div>";
       el.addEventListener("click", back);
-      return el;
+    } else if (kind === "onbreak") {
+      el.className = "mock other enter"; el.innerHTML = chats("Your phone is free during the break");
+      banner(el, "On a break", "Until 6:32 AM · must be done by 7:29 AM. Tap to go back early.", function () { go(SESSION(), { replace: true }); });
     }
-    if (view === "onbreak") {
-      el.className = "mock other enter";
-      el.innerHTML = "<header>Chats</header>" + ["Aisha", "Study group", "Ibrahim"].map(function (n, i) {
-        return '<div class="row"><span class="av" style="background:hsl(' + (i * 70 + 20) + ',45%,45%)"></span><div><b>' + n + "</b><span>Your phone is free during the break</span></div></div>";
-      }).join("");
-      addBanner(el, "On a break", "Until 6:32 AM · must be done by 7:29 AM. Tap to go back early.", function () { go("session-4"); });
-      return el;
-    }
-    return null;
+    return el;
   }
 
-  // Scrolling a long page: a wheel turn, a swipe, or the arrows move a screen at a time.
-  function scrollBy(d) {
-    var fr = frames(state.view);
-    var next = Math.max(0, Math.min(fr.length - 1, state.frame + d));
-    if (next === state.frame) return;
-    state.frame = next;
-    render({ dir: d > 0 ? "up" : "down", keepToast: true });
+  // Scrolling: a wheel turn, a swipe or the arrows move a screen at a time.
+  function scroll(d) {
+    if (cur.src !== "app" && cur.src !== "session") return;
+    var s = st(cur);
+    if (d > 0 && s.scroll !== null) { history.push(cur); cur = { src: cur.src, id: s.scroll }; render({ dir: "up", keepToast: true }); }
+    else if (d < 0) { var p = history[history.length - 1]; if (p && st(p) && st(p).scroll === s.id) { history.pop(); cur = p; render({ dir: "down", keepToast: true }); } }
   }
-  var wheelLock = 0;
+  var wheelAt = 0;
   screenEl.addEventListener("wheel", function (e) {
-    if (frames(state.view).length < 2) return;
+    if (cur.src !== "app" && cur.src !== "session") return;
     e.preventDefault();
-    var now = Date.now(); if (now - wheelLock < 450 || Math.abs(e.deltaY) < 8) return;
-    wheelLock = now; scrollBy(e.deltaY > 0 ? 1 : -1);
+    var now = Date.now(); if (now - wheelAt < 450 || Math.abs(e.deltaY) < 8) return;
+    wheelAt = now; scroll(e.deltaY > 0 ? 1 : -1);
   }, { passive: false });
-  var touchY = null;
-  screenEl.addEventListener("touchstart", function (e) { touchY = e.touches[0].clientY; }, { passive: true });
-  screenEl.addEventListener("touchend", function (e) {
-    if (touchY === null) return;
-    var dy = touchY - e.changedTouches[0].clientY; touchY = null;
-    if (Math.abs(dy) > 40) scrollBy(dy > 0 ? 1 : -1);
-  }, { passive: true });
-  upBtn.addEventListener("click", function () { scrollBy(-1); });
-  downBtn.addEventListener("click", function () { scrollBy(1); });
+  var y0 = null;
+  screenEl.addEventListener("touchstart", function (e) { y0 = e.touches[0].clientY; }, { passive: true });
+  screenEl.addEventListener("touchend", function (e) { if (y0 === null) return; var dy = y0 - e.changedTouches[0].clientY; y0 = null; if (Math.abs(dy) > 40) scroll(dy > 0 ? 1 : -1); }, { passive: true });
+  upBtn.addEventListener("click", function () { scroll(-1); });
+  downBtn.addEventListener("click", function () { scroll(1); });
 
-  // The moments list.
+  // Moments of the day.
+  var SCENARIOS = [
+    ["The morning alarm", "6:00 AM, after Fajr is prayed", function () { go({ src: "mock", id: "lock" }); }],
+    ["Count the adhkaar", "Read, tap, and it moves on", function () { go(SESSION(), { hint: "0 of 1" }); }],
+    ["Take a break", "A pause, never a skip", function () { go(SESSION(), { hint: "Take a break" }); }],
+    ["Lockdown", "Try to open another app", function () { go({ src: "mock", id: "other" }); }],
+    ["Salah reminder", "6:35 PM, Maghrib", function () { go({ src: "static", id: "popup-salah" }); }],
+    ["After salah", "1:22 PM, after Dhuhr", function () { go({ src: "static", id: "popup-after" }); }],
+    ["Gentle mode", "Just a chime and a notification", function () { go(HOME(), { banner: true, note: "gentle" }); }],
+    ["Explore the app", "Every tab, button and setting", function () { go(HOME()); }],
+  ];
   var list = document.getElementById("scenarios");
   SCENARIOS.forEach(function (s, i) {
     var li = document.createElement("li");
-    li.innerHTML = '<button type="button" class="scenario"><span class="n">' + (i + 1) + "</span><span><b>" + s.title + "</b><span>" + s.sub + "</span></span></button>";
+    li.innerHTML = '<button type="button" class="scenario"><span class="n">' + (i + 1) + "</span><span><b>" + s[0] + "</b><span>" + s[1] + "</span></span></button>";
     li.firstChild.addEventListener("click", function () {
       list.querySelectorAll(".scenario").forEach(function (b) { b.removeAttribute("aria-current"); });
       li.firstChild.setAttribute("aria-current", "true");
-      state.history = [];
-      s.run();
+      history = [];
+      s[2]();
       if (innerWidth < 720) document.querySelector(".device").scrollIntoView({ behavior: "smooth", block: "center" });
     });
     list.appendChild(li);

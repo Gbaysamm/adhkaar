@@ -91,7 +91,6 @@ h1, h2, h3 { font-weight: 400; text-wrap: balance; }
 .site-footer { position: relative; margin-top: 40px; border-top: 1px solid var(--line); background: linear-gradient(180deg, rgba(10,13,28,.6), var(--ink)); }
 .footer-top { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 40px; padding-block: 64px 48px; }
 .footer-brand p { margin-top: 16px; color: var(--text-2); font-size: 15px; max-width: 26em; }
-.footer-brand .dhikr { margin-top: 22px; font: 400 28px/1.6 var(--quran); color: var(--gold); direction: rtl; text-align: left; }
 .footer-col h4 { margin: 0 0 16px; font: 600 12px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); }
 .footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; font-size: 15px; color: var(--text-2); }
 .footer-col a:hover { color: var(--text); }
