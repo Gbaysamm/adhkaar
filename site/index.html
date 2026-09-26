@@ -1,0 +1,371 @@
+<title>Adhkaar</title>
+<meta name="description" content="Morning and evening adhkaar at the right time, for Android. Free, private and open.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Aref+Ruqaa:wght@400;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="sim.css">
+
+<div class="sky" aria-hidden="true"><i class="dawn"></i><i class="noon"></i><i class="night"></i></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="orb" aria-hidden="true"></span><b>Adhkaar</b></a>
+    <nav aria-label="Sections">
+      <a href="#times">Times</a>
+      <a href="#modes">Modes</a>
+      <a href="#features">Features</a>
+      <a href="#open">Open source</a>
+      <a class="cta" href="#get">Get the app</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero: the thesis, and the app itself to try -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="stamp">For Android · Free · No ads, no account</p>
+        <h1>Your adhkaar, <em>at the right time</em>, every day.</h1>
+        <p class="lede">Adhkaar opens the morning and evening remembrance right after Fajr and Asr are prayed, while your phone is in your hand. Choose how firmly it holds you to them: a gentle chime, the adhkaar on your screen, or other apps paused until you're done.</p>
+        <div class="actions">
+          <a class="btn primary" href="#get">Get the Android app</a>
+          <a class="btn ghost" href="#sim">Try it here →</a>
+        </div>
+        <p class="facts"><span>Six languages</span><span>Works offline</span><span>Nigerian moon sighting</span><span>1,231 daily reminders</span></p>
+        <p class="mark" aria-hidden="true">أذكار الصباح والمساء</p>
+      </div>
+
+      <div class="sim" id="sim" aria-label="Adhkaar simulator">
+        <div class="phone" data-aura="dawn"><div class="screen" aria-live="polite"></div></div>
+        <div class="controls glass">
+          <div>
+            <div class="clockline"><output id="sim-time" for="sim-clock">5:50 AM</output><span id="sim-where">Between times</span></div>
+            <label class="cap" for="sim-clock" style="margin:10px 0 4px">Move through the day</label>
+            <input type="range" id="sim-clock" min="240" max="1380" step="5" value="350">
+            <div class="jumps" id="sim-jumps" aria-label="Jump to a time"></div>
+          </div>
+          <div class="row">
+            <div class="seg" role="group" aria-label="Mode">
+              <button type="button" data-sim-mode="gentle" aria-pressed="false">Gentle</button>
+              <button type="button" data-sim-mode="full" aria-pressed="true">Full screen</button>
+              <button type="button" data-sim-mode="lockdown" aria-pressed="false">Lockdown</button>
+            </div>
+            <div class="seg" role="group" aria-label="Language">
+              <button type="button" data-sim-lang="en" aria-pressed="true">English</button>
+              <button type="button" data-sim-lang="ar" aria-pressed="false">العربية</button>
+            </div>
+          </div>
+          <div class="row">
+            <button type="button" class="btn ghost" id="sim-lock" style="min-height:40px;padding:0 16px;font-size:14px">Lock phone</button>
+            <button type="button" class="btn ghost" id="sim-other" style="min-height:40px;padding:0 16px;font-size:14px">Open another app</button>
+          </div>
+          <p class="log" id="sim-log" role="status"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5:30 AM: the day begins with salah -->
+  <section class="hour" id="times">
+    <div class="wrap">
+      <div class="head">
+        <p class="clock">5:30<small>Fajr · reminder</small></p>
+        <div>
+          <h2>The adhkaar follow <em>your masjid</em>, not a formula.</h2>
+          <p class="intro">Everything hangs off the salah times you set. The app starts with common local times; change them to your masjid's and they replace the defaults completely. The adhkaar open after the prayer has been prayed in congregation, not the moment its time begins.</p>
+        </div>
+      </div>
+      <div class="body">
+        <div class="glass ribbon">
+          <ol>
+            <li><b>5:30</b><span>Fajr reminder</span></li>
+            <li><b>5:50</b><span>Congregation</span></li>
+            <li class="open"><b>6:00</b><span>Morning adhkaar open</span></li>
+            <li class="open"><b>7:30</b><span>Best read by</span></li>
+            <li><b>3:55</b><span>Asr reminder</span></li>
+            <li class="eve"><b>4:45</b><span>Evening adhkaar open</span></li>
+            <li class="eve"><b>6:35</b><span>Best before Maghrib</span></li>
+            <li class="eve"><b>7:50</b><span>Still open until Isha</span></li>
+          </ol>
+          <p class="note">Default times shown. Congregation is taken as 20 minutes after each time; the morning opens 10 minutes after it, the evening 30.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6:00 AM: the morning adhkaar open, and the mode decides what happens -->
+  <section class="hour" id="modes">
+    <div class="wrap">
+      <div class="head">
+        <p class="clock">6:00<small>Morning adhkaar open</small></p>
+        <div>
+          <h2>Three ways to be reminded. <em>You choose how firm.</em></h2>
+          <p class="intro">The mode applies to the morning and evening adhkaar only. Everything else in the app is a notification.</p>
+        </div>
+      </div>
+      <div class="body">
+        <div class="modes">
+          <article class="glass mode">
+            <h3>Gentle</h3>
+            <p class="what">One soft chime and a notification when the adhkaar open. It doesn't ring again.</p>
+            <dl><div><dt>Good</dt><dd>Calm and never in the way. For when the habit is already yours.</dd></div>
+                <div><dt class="con">Keep in mind</dt><dd>Easy to swipe away and forget.</dd></div></dl>
+          </article>
+          <article class="glass mode">
+            <h3>Full screen</h3>
+            <p class="what">The adhkaar open by themselves, even on the lock screen. The alert rings for a minute, once more ten minutes later, then they return every time you unlock.</p>
+            <dl><div><dt>Good</dt><dd>Hard to miss, and you can still use your phone.</dd></div>
+                <div><dt class="con">Keep in mind</dt><dd>Closing it isn't the end: it comes back at your next unlock.</dd></div></dl>
+          </article>
+          <article class="glass mode strong">
+            <span class="tag">STRONGEST HELP</span>
+            <h3>Lockdown</h3>
+            <p class="what">Like Full screen, and other apps are covered until you finish or the adhkaar time ends: 7:30 AM in the morning, Isha in the evening. Calls and emergencies always work.</p>
+            <dl><div><dt>Good</dt><dd>The phone waits for you. There's no close button; the only way out is a short break.</dd></div>
+                <div><dt class="con">Keep in mind</dt><dd>Strict by design, and the mode can't be changed while it's on.</dd></div></dl>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6:10 AM: busy? a break, not a skip -->
+  <section class="hour">
+    <div class="wrap">
+      <div class="head">
+        <p class="clock">6:10<small>Busy moment</small></p>
+        <div>
+          <h2>A break, <em>never a skip.</em></h2>
+          <p class="intro">If you truly can't read now, pause for 10, 20, 30 or 60 minutes. Only breaks that end before the adhkaar time closes are offered, so they're still said today. Before it pauses, the app asks once more, gently.</p>
+        </div>
+      </div>
+      <div class="body split">
+        <div class="points">
+          <div><b>How much is left</b><p>"Just 9 adhkaar left. A few minutes, and today's adhkaar are done."</p></div>
+          <div><b>What you've built</b><p>"You have kept them for 22 days in a row. Don't let today be the gap."</p></div>
+          <div><b>A deliberate hold</b><p>Pausing takes a five-second press and hold that fills as you hold, felt as well as seen. Let go and nothing happens.</p></div>
+          <div class="glass hadith" style="border-left:1px solid var(--line)">
+            <p class="ar">مَثَلُ الَّذِي يَذْكُرُ رَبَّهُ وَالَّذِي لَا يَذْكُرُ رَبَّهُ مَثَلُ الْحَيِّ وَالْمَيِّتِ</p>
+            <p class="en">The one who remembers his Lord and the one who does not are like the living and the dead.</p>
+            <p class="src">Sahih al-Bukhari 6407</p>
+          </div>
+        </div>
+        <div class="pair">
+          <div class="shot"><img src="assets/session-break.webp" alt="Choosing a break of 10, 20, 30 minutes or 1 hour" loading="lazy" width="360" height="780"></div>
+          <div class="shot"><img src="assets/session-break-confirm.webp" alt="Before you pause: adhkaar left, streak and hadith" loading="lazy" width="360" height="780"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1:00 PM: salah reminders -->
+  <section class="hour" id="features">
+    <div class="wrap">
+      <div class="head">
+        <p class="clock">1:00<small>Dhuhr · reminder</small></p>
+        <div>
+          <h2>Salah reminders that <em>you won't scroll past.</em></h2>
+          <p class="intro">At each time you set, a frosted card comes up over whatever is open, or over the lock screen, with a chime at alarm volume and a vibration you feel in a pocket. It's worded as a reminder to get ready, so it can't pass for the adhan.</p>
+        </div>
+      </div>
+      <div class="body split rev">
+        <div class="shot"><img src="assets/salah-popup.webp" alt="Time to get ready for Maghrib: Wudu, Masjid, Phone down" loading="lazy" width="360" height="780"></div>
+        <div class="points">
+          <div><b>Three small steps</b><p>Wudu · Masjid · Phone down. What getting ready means, right now.</p></div>
+          <div class="glass hadith">
+            <p class="ar">الصَّلَاةُ عَلَى وَقْتِهَا</p>
+            <p class="en">The most beloved deed to Allah: salah at its proper time.</p>
+            <p class="src">Sahih al-Bukhari 527</p>
+          </div>
+          <div><b>The current salah stays lit</b><p>On the Today screen a salah shows as "Now" for 30 minutes from its time, through the congregation, then the next one lights.</p></div>
+          <div><b>Your masjid's times</b><p>Tap any time on the Salah reminders page to change it, and switch each reminder on or off.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1:20 PM: after salah and the other collections -->
+  <section class="hour">
+    <div class="wrap">
+      <div class="head">
+        <p class="clock">1:20<small>After Dhuhr</small></p>
+        <div>
+          <h2>The adhkaar for <em>every moment</em> of the day.</h2>
+          <p class="intro">Beyond morning and evening, the collections come with their own reminder at their own time. They're read the same way: tap to count, and each moves on by itself when its count is reached.</p>
+        </div>
+      </div>
+      <div class="body">
+        <div class="tiles">
+          <div class="glass tile"><span class="when">After each salah</span><b>After salah</b><p>Istighfar, Ayat al-Kursi, tasbih, and the three Quls, counted three times after Fajr and Maghrib.</p></div>
+          <div class="glass tile"><span class="when">At night</span><b>Before sleep</b><p>The last two verses of al-Baqarah and the duas for lying down. On by default at 10 PM.</p></div>
+          <div class="glass tile"><span class="when">On waking</span><b>The first words</b><p>What the Prophet ﷺ said when he woke.</p></div>
+          <div class="glass tile"><span class="when">Any time</span><b>Everyday duas</b><p>Leaving home, eating, travelling and the other moments of the day.</p></div>
+          <div class="glass tile"><span class="when">Yours</span><b>My duas</b><p>Add your own and place them after the morning or evening adhkaar.</p></div>
+          <div class="glass tile"><span class="when">Always</span><b>Favourites and audio</b><p>Keep the ones you return to, and listen to the recitation while you read.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3:00 PM: the day's reminder, calendar, insights -->
+  <section class="hour">
+    <div class="wrap">
+      <div class="head">
+        <p class="clock">3:00<small>A quiet hour</small></p>
+        <div>
+          <h2>A reminder for today, and <em>the month by the moon.</em></h2>
+          <p class="intro">Each day brings one verse or hadith from 1,231, in the order of the days, shown exactly as published by Tanzil, QuranEnc and HadeethEnc. Special days bring their own: Jumu'ah, the white days, Ramadan, 'Ashura, Arafah.</p>
+        </div>
+      </div>
+      <div class="body split">
+        <div class="points">
+          <div><b>Dual calendar</b><p>Hijri and Gregorian side by side. In Nigeria it follows the moon sightings announced by the NSCIA, and calculated dates everywhere else.</p></div>
+          <div><b>Share a card</b><p>Turn the day's reminder into an image in dawn, midnight or parchment, ready for WhatsApp.</p></div>
+          <div><b>Insights</b><p>Your streak, the month at a glance, and which weekdays slip, so the habit is something you can see.</p></div>
+          <div><b>Seven widgets</b><p>Next adhkaar, today, the Hijri date, the sky, your streak, a dhikr and a collection, each in three styles.</p></div>
+        </div>
+        <div class="pair">
+          <div class="shot"><img src="assets/day-card.webp" alt="Share card with the date and the day's hadith" loading="lazy" width="360" height="450"></div>
+          <div class="shot"><img src="assets/day-calendar-hijri.webp" alt="Hijri and Gregorian calendar" loading="lazy" width="360" height="780"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4:45 PM: evening, in six languages -->
+  <section class="hour night-part">
+    <div class="wrap">
+      <div class="head">
+        <p class="clock">4:45<small>Evening adhkaar open</small></p>
+        <div>
+          <h2>In the language <em>you pray in.</em></h2>
+          <p class="intro">The whole app, including this guide's wording, in six languages. The Arabic of the adhkaar is never translated; the meanings are shown in English for now while native reviewers check each language.</p>
+        </div>
+      </div>
+      <div class="body">
+        <div class="langs" id="langs"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6:35 PM: the screens themselves -->
+  <section class="hour night-part">
+    <div class="wrap">
+      <div class="head">
+        <p class="clock">6:35<small>Maghrib · reminder</small></p>
+        <div>
+          <h2>Every screen, <em>as it is.</em></h2>
+          <p class="intro">Rendered straight from the app's code.</p>
+        </div>
+      </div>
+      <div class="body">
+        <div class="strip" tabindex="0" aria-label="App screens">
+          <ul>
+            <li><img src="assets/today.webp" alt="" loading="lazy" width="190" height="411"><span>Today</span></li>
+            <li><img src="assets/session-morning.webp" alt="" loading="lazy" width="190" height="411"><span>Morning session</span></li>
+            <li><img src="assets/lockdown.webp" alt="" loading="lazy" width="190" height="411"><span>Lockdown</span></li>
+            <li><img src="assets/salah-reminders.webp" alt="" loading="lazy" width="190" height="411"><span>Salah reminders</span></li>
+            <li><img src="assets/library.webp" alt="" loading="lazy" width="190" height="411"><span>Adhkaar</span></li>
+            <li><img src="assets/new-collection-after-salah.webp" alt="" loading="lazy" width="190" height="411"><span>After salah</span></li>
+            <li><img src="assets/new-insights.webp" alt="" loading="lazy" width="190" height="411"><span>Insights</span></li>
+            <li><img src="assets/new-widget.webp" alt="" loading="lazy" width="190" height="411"><span>Widgets</span></li>
+            <li><img src="assets/new-share-card-parchment.webp" alt="" loading="lazy" width="190" height="411"><span>Share card</span></li>
+            <li><img src="assets/new-my-duas.webp" alt="" loading="lazy" width="190" height="411"><span>My duas</span></li>
+            <li><img src="assets/settings.webp" alt="" loading="lazy" width="190" height="411"><span>Settings</span></li>
+            <li><img src="assets/guide.webp" alt="" loading="lazy" width="190" height="411"><span>Guide</span></li>
+            <li><img src="assets/test-kit.webp" alt="" loading="lazy" width="190" height="411"><span>Test kit</span></li>
+            <li><img src="assets/contact.webp" alt="" loading="lazy" width="190" height="411"><span>Contact us</span></li>
+            <li><img src="assets/lang-ar-today.webp" alt="" loading="lazy" width="190" height="411"><span>Arabic</span></li>
+            <li><img src="assets/lang-ha-today.webp" alt="" loading="lazy" width="190" height="411"><span>Hausa</span></li>
+            <li><img src="assets/new-welcome-dawn.webp" alt="" loading="lazy" width="190" height="411"><span>Welcome</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7:50 PM: principles and the open project -->
+  <section class="hour night-part" id="open">
+    <div class="wrap">
+      <div class="head">
+        <p class="clock">7:50<small>Isha</small></p>
+        <div>
+          <h2>Built in the open, <em>held to a source.</em></h2>
+          <p class="intro">The code is on GitHub for anyone to read and improve. Religious text changes only with a content reviewer's approval and a cited source: a book and number, or the publisher's page.</p>
+        </div>
+      </div>
+      <div class="body">
+        <div class="principles">
+          <div><b>No ads, no tracking</b><p>No account, no analytics, nothing sold. Your data stays on your phone.</p></div>
+          <div><b>Works offline</b><p>The only thing it ever downloads is the moon-sighting list.</p></div>
+          <div><b>Calls always work</b><p>Even in Lockdown, the phone and emergency are one tap away.</p></div>
+          <div><b>Shown as published</b><p>Qur'an text from Tanzil and meanings from QuranEnc and HadeethEnc, never edited here.</p></div>
+          <div><b>Free, not for sale</b><p>Code under PolyForm Noncommercial 1.0.0, content under CC BY-NC-SA 4.0: free to use and share, not to sell.</p></div>
+          <div><b>Help from the app</b><p>A guide, a test kit that tries every alert in ten seconds, and Contact us, all inside Settings.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hour night-part" id="get">
+    <div class="wrap">
+      <div class="head">
+        <p class="clock">10:00<small>Before sleep</small></p>
+        <div>
+          <h2>Get Adhkaar.</h2>
+          <p class="intro">The Android app is in testing now. Google Play comes next, then iPhone.</p>
+        </div>
+      </div>
+      <div class="body">
+        <div class="get">
+          <div class="glass tile"><span class="when">Now</span><b>Android testing build</b><p>Ask for the test APK, or build it yourself from the code. Android 8 or newer.</p><a class="btn primary" href="https://github.com/Gbaysamm/adhkaar" target="_blank" rel="noopener">Open on GitHub</a></div>
+          <div class="glass tile"><span class="when">Next</span><b>Google Play</b><p>After the testing round, through closed testing to a public release.</p></div>
+          <div class="glass tile"><span class="when">Later</span><b>iPhone</b><p>A native iOS app is planned. Until then, try the simulator at the top of this page.</p><a class="btn ghost" href="#sim">Try the simulator</a></div>
+          <div class="glass tile"><span class="when">Always</span><b>Help build it</b><p>Test on your phone, review content, translate, record audio or write code.</p><a class="btn ghost" href="https://github.com/Gbaysamm/adhkaar/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">How to contribute</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="ar">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ</p>
+    <p>Qur'an text: Tanzil Project (tanzil.net), CC BY 3.0, unchanged. Translations of the meanings: QuranEnc.com. Hadith: HadeethEnc.com. Fonts: Amiri Quran, Aref Ruqaa, Instrument Serif, Inter and Noto Sans Arabic, SIL Open Font License.</p>
+    <p>Adhkaar · Code PolyForm Noncommercial 1.0.0 · Content CC BY-NC-SA 4.0 · <a href="https://github.com/Gbaysamm/adhkaar" target="_blank" rel="noopener">github.com/Gbaysamm/adhkaar</a></p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="sim.js"></script>
+<script>
+  // The page is one day: the sky moves from dawn to night as you scroll.
+  (function () {
+    var r = document.documentElement;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function sky() {
+      var max = Math.max(1, document.body.scrollHeight - innerHeight);
+      var d = Math.min(1, Math.max(0, scrollY / max));
+      r.style.setProperty("--o-dawn", Math.max(0, 1 - d * 2.2).toFixed(3));
+      r.style.setProperty("--o-noon", Math.max(0, 1 - Math.abs(d - 0.45) * 3.2).toFixed(3));
+      r.style.setProperty("--o-night", Math.max(0, d * 2.2 - 1).toFixed(3));
+    }
+    sky();
+    if (!reduce) addEventListener("scroll", sky, { passive: true });
+    else addEventListener("scroll", sky, { passive: true });
+
+    // The six languages, in the app's own words.
+    var S = (window.ADHKAAR_DATA || {}).strings || {};
+    var langs = [["en", "English", "ltr"], ["ar", "العربية", "rtl"], ["ur", "اردو", "rtl"], ["ha", "Hausa", "ltr"], ["yo", "Yorùbá", "ltr"], ["ig", "Igbo", "ltr"]];
+    var host = document.getElementById("langs");
+    if (host) host.innerHTML = langs.map(function (l) {
+      var s = S[l[0]] || {};
+      var hello = s.day_design_salam || "Assalamu alaikum";
+      var line = (s.mode_lockdown_description || "").replace(/\\'/g, "'");
+      var name = (s.today_hero_morning || "Morning adhkaar");
+      return '<div class="glass lang" dir="' + l[2] + '"><span class="name">' + l[1] + '</span><span class="hello">' + hello + '</span><span class="line">' + name + " · " + line + "</span></div>";
+    }).join("");
+  })();
+</script>
