@@ -12,7 +12,7 @@
   var W = 786, H = 1704;
 
   // A place in the simulator: a crawled screen ("app"/"session" + id), a static render, or a mock.
-  var cur = { src: "app", id: 0 };
+  var cur = { src: "app", id: "today-1" };
   var history = [];
 
   function st(p) { return CRAWL[p.src] && CRAWL[p.src][p.id]; }
@@ -20,7 +20,6 @@
   function toast(m) { toastEl.textContent = m || ""; }
   function vibrate(p) { try { navigator.vibrate && navigator.vibrate(p); } catch (e) {} }
   function pct(v, of) { return (v / of * 100).toFixed(3) + "%"; }
-  function findPath(src, test) { var list = CRAWL[src] || []; for (var i = 0; i < list.length; i++) if (test(list[i].path)) return list[i].id; return 0; }
 
   // ---- what the panel says about where you are ----
   var NOTE = {
@@ -42,10 +41,13 @@
   };
   function noteKey() {
     if (cur.src === "mock" || cur.src === "static") return cur.id;
-    var s = st(cur); var p = s ? s.path : "";
-    if (cur.src === "session") return /break|Pause|min|hour/.test(p) ? "brk" : "session";
-    var tab = (p.match(/(Adhkaar|Insights|Settings|Today)(?!.*(Adhkaar|Insights|Settings|Today))/) || [])[1];
-    return { Adhkaar: "adhkaar", Insights: "insights", Settings: "settings" }[tab] || "today";
+    var id = String(cur.id);
+    if (/^b\d/.test(id)) return "brk";
+    if (/^(s\d|s-)/.test(id)) return "session";
+    if (/^(adhkaar|shelf|after-salah|before-sleep|on-waking|everyday|favourites|my-duas|dua-editor)/.test(id)) return "adhkaar";
+    if (/^insights/.test(id)) return "insights";
+    if (/^(settings|guide|test-kit|contact|salah-)/.test(id)) return "settings";
+    return "today";
   }
   function notes(key) {
     var n = NOTE[key] || NOTE.today;
@@ -61,20 +63,19 @@
     cur = place;
     render(opts);
   }
-  function back() { cur = history.pop() || { src: "app", id: 0 }; render({}); }
-  var HOME = function () { return { src: "app", id: 0 }; };
-  var SESSION = function () { return { src: "session", id: 0 }; };
+  function back() { cur = history.pop() || HOME(); render({}); }
+  function HOME() { return { src: "app", id: "today-1" }; }
+  function SESSION() { return { src: "app", id: "s0" }; }
 
-  // Taps the crawl couldn't follow because they leave the app's screen (another activity, the
-  // system share sheet) are wired here.
-  function special(label, s) {
-    var L = clean(label);
-    if (cur.src === "app" && /^(Continue|Begin|It.s time)/.test(L)) return function () { go(SESSION()); };
-    if (cur.src === "session") {
-      if (/^Close/.test(L)) return function () { toast("Closed. In Full screen the adhkaar come back at your next unlock."); history = []; go(HOME(), { replace: true }); };
-      if (/^\d+ of \d+$/.test(L)) return function () { toast("Skipping ahead to the end of the session."); go({ src: "static", id: "complete" }); };
+  function link(to, label) {
+    if (to === "@back") return back;
+    if (to === "@home") return function () { toast("Closed. In Full screen the adhkaar come back at your next unlock."); history = []; go(HOME(), { replace: true }); };
+    if (to === "@complete") return function () { toast("Skipping ahead to the end of the session."); go({ src: "static", id: "complete" }); };
+    if (to && CRAWL.app[to]) {
+      var count = /^\d+ of \d+$/.test(clean(label));
+      return function () { if (count) vibrate(12); go({ src: "app", id: to }, { quiet: count }); };
     }
-    if (/^Share/.test(L)) return function () { toast("In the app this opens your phone's share sheet, with the day's card."); };
+    if (/^Share/.test(clean(label))) return function () { toast("In the app this opens your phone's share sheet."); };
     return null;
   }
 
@@ -96,19 +97,19 @@
       staticHots(frame);
     } else {
       var s = st(cur);
-      img.src = "sim/crawl/" + cur.src + "-" + s.id + ".webp";
+      img.src = "sim/app/" + s.id + ".webp";
       img.alt = NOTE[noteKey()][1];
       s.hot.forEach(function (h) {
-        var act = special(h.l, s) || (h.to !== null && h.to !== s.id ? (function (to) { return function () { if (/^\d+ of \d+$/.test(clean(h.l))) vibrate(12); go({ src: cur.src, id: to }, { quiet: /^\d+ of \d+$/.test(clean(h.l)) }); }; })(h.to) : null);
-        addHot(frame, h, act, opts.hint);
+        addHot(frame, h, h.to === s.id ? null : link(h.to, h.l), opts.hint);
       });
       if (s.hot.some(function (h) { return clean(h.l).indexOf("Stay and finish") === 0; })) addHold(frame, s.hot);
-      var hasScroll = s.scroll !== null || (history.length && history[history.length - 1].src === cur.src && st(history[history.length - 1]) && st(history[history.length - 1]).scroll === s.id);
-      if (hasScroll) {
+      if (s.scroll || s.up) {
         pager.hidden = false;
-        upBtn.disabled = !(history.length && st(history[history.length - 1]) && st(history[history.length - 1]).scroll === s.id);
-        downBtn.disabled = s.scroll === null;
-        posEl.textContent = "Scroll";
+        upBtn.disabled = !s.up;
+        downBtn.disabled = !s.scroll;
+        var n = 1, u = s; while (u.up) { n++; u = CRAWL.app[u.up]; }
+        var total = n, d = s; while (d.scroll) { total++; d = CRAWL.app[d.scroll]; }
+        posEl.textContent = n + " / " + total;
       }
     }
     if (opts.banner) banner(frame, "Morning adhkaar", "It's time · one soft chime, it won't ring again", function () { go(SESSION()); });
@@ -211,15 +212,17 @@
   }
 
   // Scrolling: a wheel turn, a swipe or the arrows move a screen at a time.
+  // Scrolling moves between the frames of one page, so it doesn't add to Back's history.
   function scroll(d) {
-    if (cur.src !== "app" && cur.src !== "session") return;
-    var s = st(cur);
-    if (d > 0 && s.scroll !== null) { history.push(cur); cur = { src: cur.src, id: s.scroll }; render({ dir: "up", keepToast: true }); }
-    else if (d < 0) { var p = history[history.length - 1]; if (p && st(p) && st(p).scroll === s.id) { history.pop(); cur = p; render({ dir: "down", keepToast: true }); } }
+    if (cur.src !== "app") return;
+    var s = st(cur), to = d > 0 ? s.scroll : s.up;
+    if (!to) return;
+    cur = { src: "app", id: to };
+    render({ dir: d > 0 ? "up" : "down", keepToast: true });
   }
   var wheelAt = 0;
   screenEl.addEventListener("wheel", function (e) {
-    if (cur.src !== "app" && cur.src !== "session") return;
+    if (cur.src !== "app" || !(st(cur).scroll || st(cur).up)) return;
     e.preventDefault();
     var now = Date.now(); if (now - wheelAt < 450 || Math.abs(e.deltaY) < 8) return;
     wheelAt = now; scroll(e.deltaY > 0 ? 1 : -1);
