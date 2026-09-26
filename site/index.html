@@ -160,7 +160,8 @@
   .people p { color: var(--text-2); font-size: 14.5px; }
   @media (max-width: 560px) { .people { grid-template-columns: minmax(0, 1fr); } }
   .story { display: flex; justify-content: center; }
-  .chat-figure { position: relative; margin: 0; }
+  /* Sized by its column, never by its content, so it keeps the page's margins on phones. */
+  .chat-figure { position: relative; margin: 0; width: 100%; max-width: 340px; min-width: 0; }
   .chat-phone { width: 340px; max-width: 100%; box-shadow: 0 60px 120px -40px rgba(0,0,0,.95), 0 0 0 1px rgba(255,255,255,.07), inset 0 0 0 1.5px rgba(255,255,255,.08); }
   .note-missed { position: absolute; left: calc(100% + 36px); bottom: 170px; width: 210px; padding: 16px 18px; border-radius: 20px; display: grid; gap: 4px;
     background: linear-gradient(160deg, rgba(255,142,94,.22), rgba(20,14,26,.92)); border: 1px solid rgba(255,184,138,.35);
@@ -170,7 +171,7 @@
   .note-missed b { font-weight: 600; font-size: 15px; }
   .note-missed span:not(.clock) { font-size: 13.5px; color: var(--text-2); }
   @media (max-width: 1360px) { .note-missed { position: static; width: auto; margin-top: 18px; } .note-missed::before { display: none; } }
-  @media (max-width: 720px) { .chat-phone { width: 100%; } }
+  @media (max-width: 720px) { .chat-phone { width: 100%; } .chat-figure { max-width: none; } .why > * { min-width: 0; } }
 
   /* An Android chat app, drawn: Roboto, true sizes, a doodle wallpaper. */
   .chat { --bg: #0b141a; --bar: #1f2c34; --in: #202c33; --out: #005c4b; --tx: #e9edef; --mut: #8696a0;
