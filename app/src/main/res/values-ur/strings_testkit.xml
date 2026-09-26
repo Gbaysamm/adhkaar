@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="kit_title">ٹیسٹ کٹ</string>
+    <string name="kit_row_hint">ہر الرٹ ابھی آزمائیں، انتظار کے بغیر</string>
+    <string name="kit_intro">ہر الرٹ اس کے وقت کا انتظار کیے بغیر ابھی آزمائیں۔ ٹیسٹ کبھی ریکارڈ نہیں ہوتے اور آپ کا دن نہیں بدلتے۔</string>
+    <string name="kit_group_phone">یہ فون</string>
+    <string name="kit_fix">اجازتوں میں درست کریں</string>
+    <string name="kit_check_notifications">اطلاعات کی اجازت ہے</string>
+    <string name="kit_check_alarms">درست الارم کی اجازت ہے</string>
+    <string name="kit_check_overlay">دوسری ایپس کے اوپر دکھانا (پاپ اپ، لاک ڈاؤن)</string>
+    <string name="kit_check_battery">بیٹری پر پابندی نہیں</string>
+    <string name="kit_check_usage">استعمال تک رسائی (لاک ڈاؤن)</string>
+    <string name="kit_group_sessions">اذکار سیشن</string>
+    <string name="kit_sessions_note">آپ کا موجودہ موڈ استعمال ہوتا ہے: %1$s۔ دوسرے آزمانے کے لیے ترتیبات میں بدلیں۔</string>
+    <string name="kit_session_expect">10 سیکنڈ میں شروع ہوگا۔ آتا دیکھنے کے لیے اسکرین لاک کریں یا کوئی اور ایپ کھولیں۔ 10 منٹ بعد خود ختم، یا ٹیسٹ ختم کریں دبائیں۔</string>
+    <string name="kit_group_reminders">یاد دہانیاں</string>
+    <string name="kit_salah">نماز کی یاد دہانی</string>
+    <string name="kit_salah_expect">10 سیکنڈ میں: جو بھی کھلا ہو اس کے اوپر ایک کارڈ، آواز اور وائبریشن کے ساتھ۔</string>
+    <string name="kit_collection_expect">10 سیکنڈ میں: کھولیں اور بعد میں والا کارڈ، اور بجنے والی اطلاع۔</string>
+    <string name="kit_heads_up">اذکار سے پہلے اطلاع</string>
+    <string name="kit_heads_up_expect">10 سیکنڈ میں: بجنے والی اطلاع کہ اذکار آنے والے ہیں۔</string>
+    <string name="kit_calendar">خاص دن کا نوٹ</string>
+    <string name="kit_calendar_expect">10 سیکنڈ میں: خاموش اطلاع جو کیلنڈر خاص دنوں پر بھیجتا ہے۔</string>
+    <string name="kit_calendar_sample_title">ٹیسٹ: کل جمعہ ہے</string>
+    <string name="kit_calendar_sample_body">کیلنڈر اطلاع کا ٹیسٹ۔</string>
+    <string name="kit_try">آزمائیں</string>
+    <string name="kit_toast">10 سیکنڈ میں آ رہا ہے۔ کوئی اور ایپ کھولیں یا اسکرین لاک کریں۔</string>
+</resources>

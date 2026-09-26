@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="kit_title">أدوات التجربة</string>
+    <string name="kit_row_hint">جرّب كل تنبيه الآن دون انتظار</string>
+    <string name="kit_intro">جرّب كل تنبيه الآن بدل انتظار وقته. التجارب لا تُسجَّل ولا تغيّر يومك.</string>
+    <string name="kit_group_phone">هذا الهاتف</string>
+    <string name="kit_fix">أصلح من الأذونات</string>
+    <string name="kit_check_notifications">الإشعارات مسموحة</string>
+    <string name="kit_check_alarms">المنبهات الدقيقة مسموحة</string>
+    <string name="kit_check_overlay">العرض فوق التطبيقات (النوافذ المنبثقة، الإغلاق)</string>
+    <string name="kit_check_battery">البطارية بلا قيود</string>
+    <string name="kit_check_usage">الوصول إلى الاستخدام (الإغلاق)</string>
+    <string name="kit_group_sessions">جلسات الأذكار</string>
+    <string name="kit_sessions_note">تستخدم وضعك الحالي: %1$s. غيّره من الإعدادات لتجربة غيره.</string>
+    <string name="kit_session_expect">تبدأ بعد ١٠ ثوانٍ. اقفل الشاشة أو افتح تطبيقًا آخر لترى وصولها. تنتهي وحدها بعد ١٠ دقائق، أو اضغط إنهاء التجربة.</string>
+    <string name="kit_group_reminders">التذكيرات</string>
+    <string name="kit_salah">تذكير الصلاة</string>
+    <string name="kit_salah_expect">بعد ١٠ ثوانٍ: بطاقة تظهر فوق ما هو مفتوح، مع نغمة واهتزاز.</string>
+    <string name="kit_collection_expect">بعد ١٠ ثوانٍ: بطاقة فيها افتح ولاحقًا، وإشعار يرن.</string>
+    <string name="kit_heads_up">تنبيه قبل الأذكار</string>
+    <string name="kit_heads_up_expect">بعد ١٠ ثوانٍ: إشعار يرن بأن الأذكار قادمة.</string>
+    <string name="kit_calendar">ملاحظة يوم خاص</string>
+    <string name="kit_calendar_expect">بعد ١٠ ثوانٍ: الإشعار الهادئ الذي يرسله التقويم في الأيام الخاصة.</string>
+    <string name="kit_calendar_sample_title">تجربة: غدًا الجمعة</string>
+    <string name="kit_calendar_sample_body">تجربة لإشعار التقويم.</string>
+    <string name="kit_try">جرّب</string>
+    <string name="kit_toast">بعد ١٠ ثوانٍ. افتح تطبيقًا آخر أو اقفل الشاشة.</string>
+</resources>

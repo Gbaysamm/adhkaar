@@ -68,6 +68,7 @@ import org.adhkaar.app.session.SessionLauncher
 import org.adhkaar.app.ui.library.LibraryScreen
 import org.adhkaar.app.ui.session.CollectionSessionScreen
 import org.adhkaar.app.ui.settings.SettingsScreen
+import org.adhkaar.app.ui.settings.TestKitScreen
 import org.adhkaar.app.ui.setup.OnboardingScreen
 import org.adhkaar.app.ui.setup.SetupScreen
 import org.adhkaar.app.ui.theme.AdhkaarTheme
@@ -145,6 +146,7 @@ fun AppRoot(openCollectionRequest: String? = null, onRequestHandled: () -> Unit 
         var showSetup by rememberSaveable { mutableStateOf(false) }
         var showPrayerTimes by rememberSaveable { mutableStateOf(false) }
         var showGuide by rememberSaveable { mutableStateOf(false) }
+        var showTestKit by rememberSaveable { mutableStateOf(false) }
         var showContact by rememberSaveable { mutableStateOf(false) }
         var openCollection by rememberSaveable { mutableStateOf<String?>(null) }
         // A shelf Today asked the Adhkaar tab to open (Everyday duas is a list, not a session).
@@ -163,11 +165,12 @@ fun AppRoot(openCollectionRequest: String? = null, onRequestHandled: () -> Unit 
             }
         }
         val haze = remember { HazeState() }
-        BackHandler(enabled = showSetup || showPrayerTimes || showGuide || showContact || tab != 0 || openCollection != null) {
+        BackHandler(enabled = showSetup || showPrayerTimes || showGuide || showTestKit || showContact || tab != 0 || openCollection != null) {
             when {
                 openCollection != null -> openCollection = null
                 showPrayerTimes -> showPrayerTimes = false
                 showGuide -> showGuide = false
+                showTestKit -> showTestKit = false
                 showContact -> showContact = false
                 showSetup -> showSetup = false
                 else -> tab = 0
@@ -209,7 +212,7 @@ fun AppRoot(openCollectionRequest: String? = null, onRequestHandled: () -> Unit 
                                     onShelfOpened = { shelfRequest = null },
                                 )
                                 2 -> InsightsScreen()
-                                else -> SettingsScreen(onOpenSetup = { showSetup = true }, onOpenPrayerTimes = { showPrayerTimes = true }, onOpenGuide = { showGuide = true }, onOpenContact = { showContact = true })
+                                else -> SettingsScreen(onOpenSetup = { showSetup = true }, onOpenPrayerTimes = { showPrayerTimes = true }, onOpenGuide = { showGuide = true }, onOpenContact = { showContact = true }, onOpenTestKit = { showTestKit = true })
                             }
                         }
                     }
@@ -256,6 +259,16 @@ fun AppRoot(openCollectionRequest: String? = null, onRequestHandled: () -> Unit 
                 exit = slideOutHorizontally(Motion.enter()) { it } + fadeOut(Motion.exit()),
             ) {
                 AuraBackground(Modifier.fillMaxSize()) { ContactScreen(onBack = { showContact = false }) }
+            }
+
+            AnimatedVisibility(
+                visible = showTestKit,
+                enter = slideInHorizontally(Motion.enter()) { it } + fadeIn(Motion.enter()),
+                exit = slideOutHorizontally(Motion.enter()) { it } + fadeOut(Motion.exit()),
+            ) {
+                AuraBackground(Modifier.fillMaxSize()) {
+                    TestKitScreen(onBack = { showTestKit = false }, onOpenSetup = { showSetup = true })
+                }
             }
 
             // A collection session rises over everything, like a sheet.

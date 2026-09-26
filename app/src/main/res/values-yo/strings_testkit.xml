@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="kit_title">Ohun èlò ìdánwò</string>
+    <string name="kit_row_hint">Dán gbogbo ìkìlọ̀ wò báyìí, láìdúró</string>
+    <string name="kit_intro">Dán ìkìlọ̀ kọ̀ọ̀kan wò báyìí dípò kí o dúró de àkókò rẹ̀. A kì í kọ ìdánwò sílẹ̀, kò sì ní yí ọjọ́ rẹ padà.</string>
+    <string name="kit_group_phone">Fóònù yìí</string>
+    <string name="kit_fix">Ṣàtúnṣe ní Àwọn ìgbàláyè</string>
+    <string name="kit_check_notifications">A gba ìfitónilétí láàyè</string>
+    <string name="kit_check_alarms">A gba aago tó péye láàyè</string>
+    <string name="kit_check_overlay">Fífihàn lórí àwọn ohun èlò mìíràn (àgbéjáde, Ìtìpa)</string>
+    <string name="kit_check_battery">Bátìrì láìsí ìdíwọ́</string>
+    <string name="kit_check_usage">Ààyè sí ìlò (Ìtìpa)</string>
+    <string name="kit_group_sessions">Àkókò adhkaar</string>
+    <string name="kit_sessions_note">Ó ń lo ìpò rẹ lọ́wọ́lọ́wọ́: %1$s. Yí i padà ní Ètò láti dán àwọn yòókù wò.</string>
+    <string name="kit_session_expect">Á bẹ̀rẹ̀ ní ìṣẹ́jú-àáyá 10. Ti ojú iboju tàbí ṣí ohun èlò mìíràn láti rí i tó ń dé. Á parí fúnra rẹ̀ lẹ́yìn ìṣẹ́jú 10, tàbí tẹ Parí ìdánwò.</string>
+    <string name="kit_group_reminders">Ìránnilétí</string>
+    <string name="kit_salah">Ìránnilétí ìrun</string>
+    <string name="kit_salah_expect">Ní ìṣẹ́jú-àáyá 10: káàdì á yọ jáde lórí ohun tó ṣí, pẹ̀lú ohùn àti ìmìtìtì.</string>
+    <string name="kit_collection_expect">Ní ìṣẹ́jú-àáyá 10: káàdì pẹ̀lú Ṣí i àti Nígbà míì, àti ìfitónilétí tó ń dún.</string>
+    <string name="kit_heads_up">Ìkìlọ̀ ṣáájú adhkaar</string>
+    <string name="kit_heads_up_expect">Ní ìṣẹ́jú-àáyá 10: ìfitónilétí tó ń dún pé adhkaar ń bọ̀.</string>
+    <string name="kit_calendar">Àkọsílẹ̀ ọjọ́ pàtàkì</string>
+    <string name="kit_calendar_expect">Ní ìṣẹ́jú-àáyá 10: ìfitónilétí jẹ́jẹ́ tí kàlẹ́ńdà ń fi ránṣẹ́ ní ọjọ́ pàtàkì.</string>
+    <string name="kit_calendar_sample_title">Ìdánwò: ọ̀la ni Jímọ̀ọ̀</string>
+    <string name="kit_calendar_sample_body">Ìdánwò ìfitónilétí kàlẹ́ńdà.</string>
+    <string name="kit_try">Dán an wò</string>
+    <string name="kit_toast">Ń bọ̀ ní ìṣẹ́jú-àáyá 10. Ṣí ohun èlò mìíràn tàbí ti ojú iboju.</string>
+</resources>

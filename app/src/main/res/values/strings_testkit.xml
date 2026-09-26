@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="kit_title">Test kit</string>
+    <string name="kit_row_hint">Try every alert now, without waiting</string>
+    <string name="kit_intro">Try each alert now instead of waiting for its time. Tests are never recorded and don\'t change your day.</string>
+    <string name="kit_group_phone">This phone</string>
+    <string name="kit_fix">Fix in Permissions</string>
+    <string name="kit_check_notifications">Notifications allowed</string>
+    <string name="kit_check_alarms">Exact alarms allowed</string>
+    <string name="kit_check_overlay">Display over other apps (pop-ups, Lockdown)</string>
+    <string name="kit_check_battery">Battery unrestricted</string>
+    <string name="kit_check_usage">Usage access (Lockdown)</string>
+    <string name="kit_group_sessions">Adhkaar sessions</string>
+    <string name="kit_sessions_note">Uses your current mode: %1$s. Change it in Settings to try the others.</string>
+    <string name="kit_session_expect">Starts in 10 seconds. Lock the screen or open another app to see it arrive. Ends by itself after 10 minutes, or tap End test.</string>
+    <string name="kit_group_reminders">Reminders</string>
+    <string name="kit_salah">Salah reminder</string>
+    <string name="kit_salah_expect">In 10 seconds: a card pops up over whatever is open, with a chime and vibration.</string>
+    <string name="kit_collection_expect">In 10 seconds: a card pops up with Open and Later, and a ringing notification.</string>
+    <string name="kit_heads_up">Heads-up before adhkaar</string>
+    <string name="kit_heads_up_expect">In 10 seconds: a ringing notification that the adhkaar are coming up.</string>
+    <string name="kit_calendar">Special day note</string>
+    <string name="kit_calendar_expect">In 10 seconds: the quiet notification the calendar sends on special days.</string>
+    <string name="kit_calendar_sample_title">Test: tomorrow is Friday</string>
+    <string name="kit_calendar_sample_body">A test of the calendar notification.</string>
+    <string name="kit_try">Try it</string>
+    <string name="kit_toast">Coming in 10 seconds. Open another app or lock the screen.</string>
+</resources>

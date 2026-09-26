@@ -406,6 +406,10 @@ class ScreenshotTest {
     }
 
     @Test
+    @Config(qualifiers = "w393dp-h2400dp-xhdpi")
+    fun testKit() = shoot("test-kit") { Screen { org.adhkaar.app.ui.settings.TestKitScreen(onBack = {}, onOpenSetup = {}) } }
+
+    @Test
     fun completion() = shoot("complete") {
         AdhkaarTheme(Auras.dawn) { CompletionView(SessionType.MORNING, Summary(19, 8, 5), onDone = {}) }
     }

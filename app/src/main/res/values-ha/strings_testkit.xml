@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="kit_title">Kayan gwaji</string>
+    <string name="kit_row_hint">Gwada kowace faɗakarwa yanzu, ba tare da jira ba</string>
+    <string name="kit_intro">Gwada kowace faɗakarwa yanzu maimakon jiran lokacinta. Ba a rubuta gwaji kuma ba ya canza ranarka.</string>
+    <string name="kit_group_phone">Wannan waya</string>
+    <string name="kit_fix">Gyara a Izini</string>
+    <string name="kit_check_notifications">An ba da izinin sanarwa</string>
+    <string name="kit_check_alarms">An ba da izinin ƙararrawa daidai</string>
+    <string name="kit_check_overlay">Nunawa a kan sauran manhajoji (fitowa, Kulle)</string>
+    <string name="kit_check_battery">Batir ba tare da taƙaitawa ba</string>
+    <string name="kit_check_usage">Samun damar amfani (Kulle)</string>
+    <string name="kit_group_sessions">Zaman azkar</string>
+    <string name="kit_sessions_note">Yana amfani da yanayinka na yanzu: %1$s. Canza shi a Saituna don gwada sauran.</string>
+    <string name="kit_session_expect">Zai fara cikin daƙiƙa 10. Kulle allo ko buɗe wata manhaja don ganin zuwansa. Yana ƙarewa da kansa bayan minti 10, ko taɓa Kammala gwaji.</string>
+    <string name="kit_group_reminders">Tunatarwa</string>
+    <string name="kit_salah">Tunatarwar sallah</string>
+    <string name="kit_salah_expect">Cikin daƙiƙa 10: kati zai fito a kan abin da ke buɗe, da ƙara da girgiza.</string>
+    <string name="kit_collection_expect">Cikin daƙiƙa 10: kati mai Buɗe da Anjima, da sanarwa mai ƙara.</string>
+    <string name="kit_heads_up">Sanarwa kafin azkar</string>
+    <string name="kit_heads_up_expect">Cikin daƙiƙa 10: sanarwa mai ƙara cewa azkar na zuwa.</string>
+    <string name="kit_calendar">Bayanin rana ta musamman</string>
+    <string name="kit_calendar_expect">Cikin daƙiƙa 10: sanarwar shiru da kalanda ke aikawa a ranaku na musamman.</string>
+    <string name="kit_calendar_sample_title">Gwaji: gobe Juma\'a ce</string>
+    <string name="kit_calendar_sample_body">Gwajin sanarwar kalanda.</string>
+    <string name="kit_try">Gwada</string>
+    <string name="kit_toast">Zai zo cikin daƙiƙa 10. Buɗe wata manhaja ko kulle allo.</string>
+</resources>

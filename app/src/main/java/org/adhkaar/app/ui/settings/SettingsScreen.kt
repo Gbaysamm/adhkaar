@@ -18,6 +18,7 @@ import androidx.compose.material.icons.rounded.ChatBubbleOutline
 import androidx.compose.material.icons.rounded.DeleteOutline
 import androidx.compose.material.icons.rounded.Mic
 import androidx.compose.material.icons.rounded.PlayArrow
+import androidx.compose.material.icons.rounded.Science
 import androidx.compose.material.icons.rounded.Stop
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -125,7 +126,7 @@ import java.time.ZonedDateTime
 import kotlin.math.roundToInt
 
 @Composable
-fun SettingsScreen(onOpenSetup: () -> Unit, onOpenPrayerTimes: () -> Unit, onOpenGuide: () -> Unit, onOpenContact: () -> Unit = {}) {
+fun SettingsScreen(onOpenSetup: () -> Unit, onOpenPrayerTimes: () -> Unit, onOpenGuide: () -> Unit, onOpenContact: () -> Unit = {}, onOpenTestKit: () -> Unit = {}) {
     val context = LocalContext.current
     val settings by SettingsStore.get(context).flow.collectAsState()
     // A break pauses Lockdown without ending it, so the mode stays locked until the window closes.
@@ -149,6 +150,8 @@ fun SettingsScreen(onOpenSetup: () -> Unit, onOpenPrayerTimes: () -> Unit, onOpe
         GroupTitle(stringResource(R.string.settings_group_help))
         SettingsGroup {
             SettingsRow(stringResource(R.string.settings_guide), stringResource(R.string.settings_guide_hint), Icons.AutoMirrored.Rounded.MenuBook, onClick = onOpenGuide)
+            RowDivider()
+            SettingsRow(stringResource(R.string.kit_title), stringResource(R.string.kit_row_hint), Icons.Rounded.Science, onClick = onOpenTestKit)
             RowDivider()
             SettingsRow(stringResource(R.string.settings_report_bug), stringResource(R.string.settings_report_bug_hint), Icons.Rounded.ChatBubbleOutline, onClick = onOpenContact)
         }
@@ -313,20 +316,6 @@ fun SettingsScreen(onOpenSetup: () -> Unit, onOpenPrayerTimes: () -> Unit, onOpe
         GroupTitle(stringResource(R.string.settings_group_phone))
         SettingsGroup {
             SettingsRow(stringResource(R.string.settings_permissions), stringResource(R.string.settings_permissions_hint), Icons.Rounded.HealthAndSafety, onClick = onOpenSetup)
-        }
-        Spacer(Modifier.height(Space.m))
-        Text(
-            stringResource(R.string.settings_test_hint),
-            style = Type.caption,
-        )
-        Spacer(Modifier.height(Space.m))
-        Row(horizontalArrangement = Arrangement.spacedBy(Space.m)) {
-            SessionType.entries.forEach { type ->
-                SecondaryButton(stringResource(if (type == SessionType.MORNING) R.string.settings_test_morning else R.string.settings_test_evening), Modifier.weight(1f)) {
-                    AlarmScheduler.scheduleTest(context, type, 60_000L)
-                    Toast.makeText(context, context.getString(R.string.settings_test_toast), Toast.LENGTH_SHORT).show()
-                }
-            }
         }
 
         // The daily reminders' sources require this credit (docs/REMINDERS.md): all lines together, unchanged.

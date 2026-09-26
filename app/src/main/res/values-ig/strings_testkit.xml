@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="kit_title">Ngwa nnwale</string>
+    <string name="kit_row_hint">Nwalee mkpu ọ bụla ugbu a, na-echeghị</string>
+    <string name="kit_intro">Nwalee mkpu ọ bụla ugbu a kama ichere oge ya. A naghị edekọ nnwale, ọ naghịkwa agbanwe ụbọchị gị.</string>
+    <string name="kit_group_phone">Ekwentị a</string>
+    <string name="kit_fix">Dozie na Ikike</string>
+    <string name="kit_check_notifications">Ekwere ọkwa</string>
+    <string name="kit_check_alarms">Ekwere mkpu oge ziri ezi</string>
+    <string name="kit_check_overlay">Igosi n\'elu ngwa ndị ọzọ (mpụta, Mkpọchi)</string>
+    <string name="kit_check_battery">Batrị enweghị mmachi</string>
+    <string name="kit_check_usage">Ohere ojiji (Mkpọchi)</string>
+    <string name="kit_group_sessions">Oge adhkaar</string>
+    <string name="kit_sessions_note">Ọ na-eji ọnọdụ gị ugbu a: %1$s. Gbanwee ya na Ntọala iji nwalee ndị ọzọ.</string>
+    <string name="kit_session_expect">Ọ ga-amalite na sekọnd 10. Kpọchie ihuenyo ma ọ bụ mepee ngwa ọzọ ka ị hụ ka ọ na-abịa. Ọ na-akwụsị n\'onwe ya mgbe nkeji 10 gasịrị, ma ọ bụ pịa Kwụsị nnwale.</string>
+    <string name="kit_group_reminders">Ncheta</string>
+    <string name="kit_salah">Ncheta salah</string>
+    <string name="kit_salah_expect">Na sekọnd 10: kaadị ga-apụta n\'elu ihe ọ bụla mepere emepe, ya na ụda na ịma jijiji.</string>
+    <string name="kit_collection_expect">Na sekọnd 10: kaadị nwere Mepee na Emesịa, na ọkwa na-akụ.</string>
+    <string name="kit_heads_up">Ọkwa tupu adhkaar</string>
+    <string name="kit_heads_up_expect">Na sekọnd 10: ọkwa na-akụ na adhkaar na-abịa.</string>
+    <string name="kit_calendar">Ndetu ụbọchị pụrụ iche</string>
+    <string name="kit_calendar_expect">Na sekọnd 10: ọkwa dị jụụ kalenda na-ezite n\'ụbọchị pụrụ iche.</string>
+    <string name="kit_calendar_sample_title">Nnwale: echi bụ Fraịde</string>
+    <string name="kit_calendar_sample_body">Nnwale nke ọkwa kalenda.</string>
+    <string name="kit_try">Nwalee ya</string>
+    <string name="kit_toast">Ọ na-abịa na sekọnd 10. Mepee ngwa ọzọ ma ọ bụ kpọchie ihuenyo.</string>
+</resources>
