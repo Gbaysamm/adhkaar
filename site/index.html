@@ -146,6 +146,10 @@
   @media (max-width: 880px) { .get { grid-template-columns: minmax(0, 1fr); } }
   /* last, so it wins on phones */
   @media (max-width: 720px) {
+    /* A single phone fills the width, less the page's gutters, instead of floating in space. */
+    .step .phone, .visual:not(.two) .phone, .modes-wrap .phone { width: min(100%, 360px); }
+    .card .shot img { width: min(100%, 320px); }
+    .try .phone { width: min(78%, 300px); }
     .hero .container { text-align: left; }
     .hero .lead { margin-inline: 0; }
     .hero-cta, .trust { justify-content: flex-start; }
