@@ -538,12 +538,24 @@ private fun QuietShareButton(onClick: () -> Unit) {
 }
 
 /** The next prayer today, or tomorrow's Fajr once Isha has passed (sunrise isn't a prayer). */
+/**
+ * The salah under way: from its time until [PRAYER_ACTIVE_MINUTES] later, which covers getting
+ * ready, the congregation 20 minutes in, and the prayer itself.
+ */
+private fun activePrayer(prayers: List<PrayerTime>, now: ZonedDateTime): PrayerTime? {
+    val t = now.toLocalTime()
+    return prayers.filter { it.name != "Sunrise" }.firstOrNull { !t.isBefore(it.time) && t.isBefore(it.time.plusMinutes(PRAYER_ACTIVE_MINUTES)) }
+}
+
+private const val PRAYER_ACTIVE_MINUTES = 30L
+
 private fun nextPrayer(prayers: List<PrayerTime>, now: ZonedDateTime): PrayerTime =
     prayers.filter { it.name != "Sunrise" }.firstOrNull { it.time.isAfter(now.toLocalTime()) } ?: prayers.first()
 
 /** "10h 52m" with the numbers large and the units small, like "32°C". */
 /** "Asr in 1h 20m", "Fajr in 9h 35m", or "Asr now". */
 private fun nextPrayerLabel(context: android.content.Context, prayers: List<PrayerTime>, now: ZonedDateTime): String {
+    activePrayer(prayers, now)?.let { return context.getString(R.string.today_prayer_now, context.getString(prayerNameRes(it.name))) }
     val p = nextPrayer(prayers, now)
     var at = now.with(p.time)
     if (!at.isAfter(now)) at = at.plusDays(1)
@@ -563,7 +575,9 @@ private val PrayerCardRadius = 20.dp
 private fun PrayerTimesCard(prayers: List<PrayerTime>, now: ZonedDateTime, onOpen: () -> Unit) {
     val context = LocalContext.current
     val accent = LocalAura.current.accent
-    val next = nextPrayer(prayers, now)
+    val active = activePrayer(prayers, now)
+    // While a salah is under way it stays lit as "Now"; otherwise the next one is.
+    val next = active ?: nextPrayer(prayers, now)
     // Like an hourly forecast: one glass pill per time, the next prayer raised and lit.
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp), verticalAlignment = Alignment.Bottom) {
         prayers.forEach { p ->
@@ -586,7 +600,11 @@ private fun PrayerTimesCard(prayers: List<PrayerTime>, now: ZonedDateTime, onOpe
                 verticalArrangement = Arrangement.SpaceBetween,
             ) {
                 Text(
-                    if (isNext) stringResource(R.string.today_next_prayer) else stringResource(prayerNameRes(p.name)),
+                    when {
+                        isNext && active != null -> stringResource(R.string.today_now_prayer)
+                        isNext -> stringResource(R.string.today_next_prayer)
+                        else -> stringResource(prayerNameRes(p.name))
+                    },
                     style = Type.caption.copy(color = if (isNext) Nur.textPrimary else Nur.textTertiary, fontSize = 11.sp),
                     maxLines = 1,
                 )

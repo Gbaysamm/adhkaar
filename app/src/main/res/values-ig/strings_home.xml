@@ -163,4 +163,5 @@
     <string name="widget_today">Taa</string>
     <string name="widget_tomorrow">Echi</string>
     <!-- After the countdown: "6:52 left". -->
+    <string name="today_now_prayer">Ugbu a</string>
 </resources>

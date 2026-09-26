@@ -30,6 +30,11 @@ class ReminderActivity : ComponentActivity() {
             @Suppress("DEPRECATION")
             window.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED or WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON)
         }
+        // The lock screen or app behind is blurred, like the pop-up's window (Android 12+).
+        if (Build.VERSION.SDK_INT >= 31) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND)
+            window.attributes = window.attributes.also { it.blurBehindRadius = ReminderPopup.BLUR_RADIUS }
+        }
         val kind = kindOf(intent) ?: return finish()
         setContent {
             AdhkaarTheme(aura = if (kind is ReminderPopup.Kind.Collection && kind.id == "before_sleep") Auras.evening else Auras.dawn) {

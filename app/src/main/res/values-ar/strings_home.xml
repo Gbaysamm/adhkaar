@@ -205,4 +205,5 @@
     <string name="widget_today">اليوم</string>
     <string name="widget_tomorrow">غدًا</string>
     <!-- After the countdown: "6:52 left". -->
+    <string name="today_now_prayer">الآن</string>
 </resources>

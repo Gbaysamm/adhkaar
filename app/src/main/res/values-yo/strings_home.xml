@@ -142,4 +142,5 @@
     <string name="widget_today">Òní</string>
     <string name="widget_tomorrow">Ọ̀la</string>
     <!-- After the countdown: "6:52 left". -->
+    <string name="today_now_prayer">Nísinsìnyí</string>
 </resources>

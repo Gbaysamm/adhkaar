@@ -11,6 +11,7 @@ import android.view.WindowManager
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -23,6 +24,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Bedtime
 import androidx.compose.material.icons.rounded.Mosque
@@ -34,6 +36,9 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.ComposeView
@@ -47,7 +52,6 @@ import org.adhkaar.app.data.Prayer
 import org.adhkaar.app.enforce.OverlayOwner
 import org.adhkaar.app.ui.MainActivity
 import org.adhkaar.app.ui.SessionActivity
-import org.adhkaar.app.ui.components.GlassCard
 import org.adhkaar.app.ui.components.GlassPill
 import org.adhkaar.app.ui.components.IconBadge
 import org.adhkaar.app.ui.components.PrimaryButton
@@ -72,6 +76,7 @@ object ReminderPopup {
     }
 
     private const val SHOWN_FOR_MS = 3 * 60_000L
+    const val BLUR_RADIUS = 48
     private val main = Handler(Looper.getMainLooper())
     private var view: View? = null
     private var owner: OverlayOwner? = null
@@ -101,7 +106,13 @@ object ReminderPopup {
             WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
             PixelFormat.TRANSLUCENT,
-        )
+        ).apply {
+            // Android 12+ can blur the app behind the window: the frost the card sits on.
+            if (android.os.Build.VERSION.SDK_INT >= 31) {
+                flags = flags or WindowManager.LayoutParams.FLAG_BLUR_BEHIND
+                blurBehindRadius = BLUR_RADIUS
+            }
+        }
         try {
             context.getSystemService(WindowManager::class.java).addView(root, params)
             view = root
@@ -136,11 +147,17 @@ internal fun PopupCard(kind: ReminderPopup.Kind, onDismiss: () -> Unit, onOpen: 
     Box(
         Modifier
             .fillMaxSize()
-            .background(Color.Black.copy(alpha = 0.45f * rise.value))
+            // A deeper dim than in-app dialogs: behind it may be any app, bright or busy.
+            .background(Color.Black.copy(alpha = 0.6f * rise.value))
             .clickable(remember { MutableInteractionSource() }, indication = null, onClick = onDismiss),
         contentAlignment = Alignment.Center,
     ) {
-        GlassCard(
+        // Frosted rather than liquid glass: over another app or the lock screen a see-through card
+        // lets whatever is behind it show through the text, so this one is nearly solid, in the
+        // aura's own colours, with the glass edge and a soft light at the top.
+        val aura = LocalAura.current
+        val shape = RoundedCornerShape(28.dp)
+        Column(
             Modifier
                 .padding(horizontal = Space.gutter)
                 .widthIn(max = 420.dp)
@@ -149,9 +166,13 @@ internal fun PopupCard(kind: ReminderPopup.Kind, onDismiss: () -> Unit, onOpen: 
                     alpha = rise.value
                     translationY = (1f - rise.value) * 60.dp.toPx()
                 }
+                .clip(shape)
+                .background(Brush.verticalGradient(listOf(aura.base[0].copy(alpha = 0.97f), aura.base.last().copy(alpha = 0.97f))))
+                .background(Brush.radialGradient(listOf(aura.glows[0].copy(alpha = 0.22f), Color.Transparent), radius = 900f, center = Offset(0f, 0f)))
+                .border(1.dp, Brush.verticalGradient(listOf(Color.White.copy(alpha = 0.22f), Color.White.copy(alpha = 0.06f))), shape)
                 // Taps on the card stay on the card.
-                .clickable(remember { MutableInteractionSource() }, indication = null) {},
-            level = 2,
+                .clickable(remember { MutableInteractionSource() }, indication = null) {}
+                .padding(Space.gutter),
         ) {
             when (kind) {
                 is ReminderPopup.Kind.Salah -> SalahContent(kind.prayer, onDismiss)

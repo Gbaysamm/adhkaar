@@ -28,7 +28,7 @@ fun CollectionSessionScreen(collectionId: String, onFinish: () -> Unit) {
         DhikrSession(
             key = collectionId,
             overline = collection.title.uppercase(),
-            items = collection.items,
+            items = remember(collectionId) { forPrayerJustPrayed(context, collectionId, collection.items) },
             // Kept nowhere but on screen (saved with it, so a killed process doesn't lose them).
             initialProgress = null,
             onProgress = {},
@@ -62,4 +62,25 @@ fun CollectionSessionScreen(collectionId: String, onFinish: () -> Unit) {
             onFinish = onFinish,
         )
     }
+}
+
+/** The three Quls, which after Fajr and Maghrib are each said three times. */
+private val QULS = setOf("al_ikhlas", "al_falaq", "an_nas")
+
+/**
+ * After salah, the counts follow the prayer just prayed: the latest of the day's five whose time
+ * has come (Isha's, before Fajr). After Fajr or Maghrib the Quls are said three times each.
+ */
+private fun forPrayerJustPrayed(
+    context: android.content.Context,
+    collectionId: String,
+    items: List<org.adhkaar.app.data.SessionDhikr>,
+): List<org.adhkaar.app.data.SessionDhikr> {
+    if (collectionId != "after_salah") return items
+    val settings = org.adhkaar.app.data.SettingsStore.get(context).current
+    val now = java.time.LocalTime.now()
+    val prayed = org.adhkaar.app.data.Prayer.five.lastOrNull { !now.isBefore(org.adhkaar.app.schedule.PrayerClock.time(settings, it)) }
+        ?: org.adhkaar.app.data.Prayer.ISHA
+    if (prayed != org.adhkaar.app.data.Prayer.FAJR && prayed != org.adhkaar.app.data.Prayer.MAGHRIB) return items
+    return items.map { if (it.id in QULS) it.copy(count = 3) else it }
 }
