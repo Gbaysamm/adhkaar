@@ -16,8 +16,8 @@
   .sim-head { position: relative; z-index: 1; text-align: center; }
   .sim-head .title { margin-top: 14px; }
   .sim-head .lead { margin: 14px auto 0; }
-  .sim-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 330px) auto minmax(0, 330px); gap: clamp(24px, 4vw, 56px); justify-content: center; align-items: start; margin-top: 44px; }
-  @media (max-width: 1080px) { .sim-grid { grid-template-columns: auto minmax(0, 360px); } .scenarios { grid-column: 1 / -1; order: 3; } }
+  .sim-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 330px) 360px minmax(0, 330px); gap: clamp(24px, 4vw, 56px); justify-content: center; align-items: start; margin-top: 44px; }
+  @media (max-width: 1080px) { .sim-grid { grid-template-columns: 360px minmax(0, 360px); } .scenarios { grid-column: 1 / -1; order: 3; } }
   @media (max-width: 720px) { .sim-grid { grid-template-columns: minmax(0, 1fr); } .device-col { order: 0; } .notes { order: 1; } }
 
   /* scenarios */
@@ -33,7 +33,7 @@
 
   /* device */
   .device-col { display: grid; justify-items: center; gap: 14px; }
-  .device { position: relative; width: min(360px, 100%); }
+  .device { position: relative; width: 360px; max-width: 100%; }
   @media (max-width: 720px) { .device-col, .device { width: 100%; } .device { max-width: none; } }
   .device .phone { width: 100%; }
   .screen { touch-action: pan-x; }
