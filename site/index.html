@@ -240,6 +240,41 @@
   .shift p { font-size: 15px; color: var(--text); }
   @media (max-width: 560px) { .shift { grid-template-columns: minmax(0, 1fr); } }
 
+
+  /* ---- editorial treatments: ideas set in type, not boxed in cards ---- */
+  /* Before / with Adhkaar: the old habit struck through, the new one set large beneath it. */
+  .shift { display: grid; gap: 14px; margin-top: 30px; max-width: 620px; border: 0; border-radius: 0; overflow: visible; background: none; grid-template-columns: minmax(0, 1fr); }
+  .shift > div, .shift > div:last-child { padding: 0 0 0 20px; background: none; border-left: 2px solid var(--line-2); }
+  .shift > div:last-child { border-left-color: var(--dawn); }
+  .shift b { margin-bottom: 6px; }
+  .shift > div:first-child p { color: var(--text-3); font-size: 15.5px; text-decoration: line-through; text-decoration-color: rgba(255,184,138,.55); text-decoration-thickness: 1.5px; }
+  .shift > div:last-child p { font: 400 clamp(22px, 2.2vw, 27px)/1.25 var(--serif); color: var(--text); }
+  @media (max-width: 560px) { .shift { grid-template-columns: minmax(0, 1fr); } }
+
+  /* Who it's for: two columns of text under a hairline. */
+  .people { gap: 0 36px; margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .people > div { padding: 0; border: 0; border-radius: 0; background: none; }
+  .people b { font: 400 23px/1.15 var(--serif); margin-bottom: 8px; }
+  @media (max-width: 560px) { .people { gap: 22px; } }
+
+  /* Feature lists: rows divided by hairlines, the icon small and in line. */
+  .list { gap: 0; margin-top: 28px; border-top: 1px solid var(--line); }
+  .list > div { grid-template-columns: 22px minmax(0, 1fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .list svg { width: 18px; height: 18px; margin-top: 4px; }
+  .list b { font: 400 21px/1.2 var(--serif); }
+  .list p { margin-top: 4px; }
+
+  /* The hadith: a pull-quote, centred, with a small ornament above it. */
+  .quote { margin-top: 36px; padding: 0; border: 0; border-radius: 0; background: none; text-align: center; }
+  .quote::before { content: "✦"; display: block; margin-bottom: 14px; color: var(--gold); font-size: 14px; letter-spacing: 0; }
+  .quote .ar { font-size: clamp(30px, 3vw, 38px); line-height: 1.8; text-align: center; color: var(--gold); }
+  .quote p:not(.ar) { margin-top: 8px; font: italic 400 clamp(20px, 2vw, 24px)/1.35 var(--serif); color: var(--text); }
+  .quote small { margin-top: 14px; }
+
+  /* Modes' trade-offs: two columns under a hairline, like the rest. */
+  .procon { gap: 0 32px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .procon div { padding: 0; border: 0; border-radius: 0; background: none; }
+
   /* last, so it wins on phones */
   @media (max-width: 720px) {
     /* A single phone fills the width, less the page's gutters, instead of floating in space. */
