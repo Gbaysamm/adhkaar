@@ -144,6 +144,20 @@
   .get p { color: var(--text-2); font-size: 15px; }
   .get .btn { margin-top: auto; align-self: flex-start; }
   @media (max-width: 880px) { .get { grid-template-columns: minmax(0, 1fr); } }
+
+  /* FAQ */
+  .faq-wrap { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+  @media (max-width: 880px) { .faq-wrap { grid-template-columns: minmax(0, 1fr); } }
+  .faq { display: grid; gap: 10px; }
+  .faq details { border-radius: 20px; border: 1px solid var(--line); background: rgba(255,255,255,.035); transition: background .2s, border-color .2s; }
+  .faq details[open] { background: rgba(255,255,255,.06); border-color: var(--line-2); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 22px; font-weight: 600; font-size: 16.5px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: ""; flex: none; width: 10px; height: 10px; border-right: 2px solid var(--text-2); border-bottom: 2px solid var(--text-2); transform: rotate(45deg) translateY(-3px); transition: transform .2s; }
+  .faq details[open] summary::after { transform: rotate(-135deg) translateY(-3px); }
+  .faq .a { padding: 0 22px 22px; color: var(--text-2); font-size: 15.5px; }
+  .faq .a p + p { margin-top: 10px; }
+
   /* last, so it wins on phones */
   @media (max-width: 720px) {
     /* A single phone fills the width, less the page's gutters, instead of floating in space. */
@@ -171,6 +185,7 @@
       <a href="#modes">Modes</a>
       <a href="#features">Features</a>
       <a href="#open">Open source</a>
+      <a href="#faq">FAQ</a>
       <a href="try.html">Try it</a>
     </nav>
     <div class="header-cta">
@@ -393,6 +408,30 @@
     </div>
   </section>
 
+  <section class="pad" id="faq" style="padding-top:0">
+    <div class="container faq-wrap">
+      <div>
+        <span class="eyebrow">Questions</span>
+        <h2 class="title" style="margin-top:16px">Asked, <em>and answered.</em></h2>
+        <p class="lead" style="margin-top:18px">Still wondering about something? Ask in the app under Settings › Help › Contact us.</p>
+      </div>
+      <div class="faq">
+          <details><summary>Who is Adhkaar for?</summary><div class="a"><p>People who want to keep the morning and evening adhkaar but lose them to a busy phone: the few minutes after Fajr and after Asr are when most of us are scrolling, not working. That's exactly when the adhkaar open.</p><p>If you already keep them easily, Gentle mode is a simple reminder. If the phone keeps winning, Full screen and Lockdown help more.</p></div></details>
+          <details><summary>How is it different from apps that just send a notification?</summary><div class="a"><p>A notification is easy to swipe away. Adhkaar can open the adhkaar on your screen by themselves, even on the lock screen (Full screen), or pause your other apps until you've read them (Lockdown). You choose how firm it is, and you can change it any time it isn't active.</p></div></details>
+          <details><summary>What if I'm not holding my phone when the time comes?</summary><div class="a"><p>The alert rings for a minute, and once more ten minutes later. After that it stays quiet, and in Full screen and Lockdown the adhkaar are there the next time you unlock your phone, until you finish or the adhkaar time ends (7:30 AM in the morning, Isha in the evening).</p></div></details>
+          <details><summary>Isn't blocking my phone forcing me? Does that build a habit?</summary><div class="a"><p>Blocking alone doesn't build a habit, and the app isn't built on it. It's built to make the adhkaar easy to start at the right moment: they open right after you pray, with the counter ready, and each dhikr moves on by itself.</p><p>It also shows how little is left, keeps your streak and your month in view, and asks gently, with a hadith, before you pause. Lockdown is there for the days the phone keeps winning, and you choose it yourself.</p></div></details>
+          <details><summary>Can I just close it?</summary><div class="a"><p>In Gentle, yes. In Full screen, yes, but it comes back the next time you unlock, until you finish or the time ends. In Lockdown there's no close button: you can take a break of 10, 20, 30 or 60 minutes, after a five-second hold, and the adhkaar come back when it ends.</p></div></details>
+          <details><summary>Can people get around Lockdown?</summary><div class="a"><p>Someone determined can always uninstall an app, and Adhkaar doesn't try to stop that. What it does is remove the easy escapes: no close button, back doesn't work, and the mode can't be changed while Lockdown is on. What's left is a pause, which still brings the adhkaar back today.</p></div></details>
+          <details><summary>What about calls and emergencies?</summary><div class="a"><p>They always work. Even in Lockdown, "Call or emergency" opens your phone app and it stays open for as long as you need it. Incoming calls are never blocked.</p></div></details>
+          <details><summary>Does it follow my masjid's times?</summary><div class="a"><p>Yes. It starts with common local times, and you set your masjid's times in Settings › Salah reminders. The morning adhkaar open about ten minutes after the congregation for Fajr, and the evening adhkaar about thirty minutes after Asr is prayed.</p></div></details>
+          <details><summary>Where do the adhkaar and reminders come from?</summary><div class="a"><p>The adhkaar are from Hisn al-Muslim with their sources shown. The daily reminders are verses and hadith from Tanzil, QuranEnc and HadeethEnc, shown exactly as published. Any change to religious text needs a content reviewer's approval and a cited source.</p></div></details>
+          <details><summary>Is my data private? Does it need the internet?</summary><div class="a"><p>There are no ads, no account and no tracking, and nothing leaves your phone. It works offline; the only thing it downloads is the Nigerian moon-sighting list for the Hijri calendar.</p></div></details>
+          <details><summary>Is it free? Is there an iPhone version?</summary><div class="a"><p>It's free, with no ads and nothing to buy. It's on Android now in testing, Google Play comes next, and an iPhone version is planned. Until then, anyone can try it in the browser simulator.</p></div></details>
+          <details><summary>A reminder didn't come. What do I do?</summary><div class="a"><p>Some phones stop apps in the background to save battery. Open Settings › Help › Test kit: it checks the permissions reminders need and lets you try every alert in ten seconds. If something's still wrong, Contact us in the same place sends your message with your phone's details.</p></div></details>
+      </div>
+    </div>
+  </section>
+
   <section class="pad" id="download" style="padding-top:0">
     <div class="container">
       <div class="center">
@@ -415,7 +454,7 @@
         <a class="logo" href="index.html"><img src="img/icon.webp" alt="" width="36" height="36"><span>Adhkaar</span></a>
         <p>The morning and evening adhkaar, at the right time. Free, private and open source.</p>
       </div>
-      <div class="footer-col"><h4>App</h4><ul><li><a href="#how">How it works</a></li><li><a href="#modes">Modes</a></li><li><a href="#features">Features</a></li><li><a href="try.html">Try it</a></li><li><a href="#download">Download</a></li></ul></div>
+      <div class="footer-col"><h4>App</h4><ul><li><a href="#how">How it works</a></li><li><a href="#modes">Modes</a></li><li><a href="#features">Features</a></li><li><a href="try.html">Try it</a></li><li><a href="#faq">FAQ</a></li><li><a href="#download">Download</a></li></ul></div>
       <div class="footer-col"><h4>Project</h4><ul><li><a href="https://github.com/Gbaysamm/adhkaar" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://github.com/Gbaysamm/adhkaar/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribute</a></li><li><a href="https://github.com/Gbaysamm/adhkaar/blob/main/GOVERNANCE.md" target="_blank" rel="noopener">Governance</a></li><li><a href="https://github.com/Gbaysamm/adhkaar/blob/main/LICENSE" target="_blank" rel="noopener">Licence</a></li></ul></div>
       <div class="footer-col"><h4>Sources</h4><ul><li><a href="https://tanzil.net" target="_blank" rel="noopener">Tanzil (Qur'an text)</a></li><li><a href="https://quranenc.com" target="_blank" rel="noopener">QuranEnc</a></li><li><a href="https://hadeethenc.com" target="_blank" rel="noopener">HadeethEnc</a></li></ul></div>
     </div>
