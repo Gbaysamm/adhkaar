@@ -30,6 +30,7 @@
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
+  margin: 0;
   background: var(--ink);
   color: var(--text);
   font: 400 16px/1.6 var(--sans);
@@ -37,6 +38,9 @@ body {
   overflow-x: hidden;
 }
 a { color: inherit; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+html { padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px); }
 :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 8px; }
 h1, h2, h3 { text-wrap: balance; font-weight: 400; margin: 0; }
 p { margin: 0; }
