@@ -76,9 +76,15 @@ class PrayerClockTest {
         val settings = testSettings()
         val morning = AdhkaarWindows.window(settings, SessionType.MORNING, day, lagos)
         assertEquals(ZonedDateTime.of(day, LocalTime.of(5, 50).plusMinutes(settings.morning.offsetMinutes.toLong()), lagos), morning.opens)
-        // The morning adhkaar are done by 7:30: that's both their best time and when the lock lifts.
-        assertEquals(ZonedDateTime.of(day, LocalTime.of(7, 30), lagos), morning.idealEnd)
-        assertEquals(ZonedDateTime.of(day, LocalTime.of(7, 30), lagos), morning.closes)
+        // By default the morning adhkaar are done by 8:30: their best time and when the lock lifts.
+        assertEquals(ZonedDateTime.of(day, LocalTime.of(8, 30), lagos), morning.idealEnd)
+        assertEquals(ZonedDateTime.of(day, LocalTime.of(8, 30), lagos), morning.closes)
+        // A time the user chose instead.
+        val early = settings.copy(morning = settings.morning.copy(endMinuteOfDay = 7 * 60 + 45))
+        assertEquals(ZonedDateTime.of(day, LocalTime.of(7, 45), lagos), AdhkaarWindows.window(early, SessionType.MORNING, day, lagos).closes)
+        // An evening that ends at Maghrib instead of Isha.
+        val atMaghrib = settings.copy(evening = settings.evening.copy(endMinuteOfDay = org.adhkaar.app.data.SessionSchedule.UNTIL_MAGHRIB))
+        assertEquals(ZonedDateTime.of(day, LocalTime.of(18, 35), lagos), AdhkaarWindows.window(atMaghrib, SessionType.EVENING, day, lagos).closes)
         val evening = AdhkaarWindows.window(settings, SessionType.EVENING, day, lagos)
         assertEquals(ZonedDateTime.of(day, LocalTime.of(16, 15).plusMinutes(settings.evening.offsetMinutes.toLong()), lagos), evening.opens)
         assertEquals(ZonedDateTime.of(day, LocalTime.of(18, 35), lagos), evening.idealEnd)

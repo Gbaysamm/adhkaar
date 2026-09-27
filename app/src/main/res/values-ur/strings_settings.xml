@@ -218,4 +218,6 @@
     <string name="req_restricted_step_menu">ایپ کی معلومات میں اوپر ⋮ پر ٹیپ کریں</string>
     <string name="req_restricted_step_allow">محدود سیٹنگز کی اجازت دیں چن کر تصدیق کریں</string>
     <string name="req_restricted_step_back">یہاں واپس آئیں، خود ہی نشان لگ جائے گا</string>
+    <string name="settings_until">اذکار کب تک</string>
+    <string name="settings_until_hint">اس وقت تک کھلے رہتے ہیں، اور لاک ڈاؤن بھی تب تک رہتا ہے۔</string>
 </resources>

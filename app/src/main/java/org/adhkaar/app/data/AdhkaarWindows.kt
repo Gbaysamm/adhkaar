@@ -45,14 +45,17 @@ object AdhkaarWindows {
         val session = SessionTimeCalculator.sessionTime(settings.schedule(type), date, PrayerClock.provider(settings, type))
         val opens = ZonedDateTime.of(date, session, zone)
         val opened = if (opens > base.opens && opens < base.closes) base.copy(opens = opens) else base
-        if (type != SessionType.MORNING) return opened
-        // The morning adhkaar are done by 7:30: an hour and a half after they open, and the time
-        // the lock lifts. Kept later than sunrise, which often comes before people finish.
-        val ends = ZonedDateTime.of(date, MORNING_ENDS, zone)
+        val end = settings.schedule(type).endMinuteOfDay
+        if (type != SessionType.MORNING) {
+            // Evening: best before Maghrib, open until Isha, unless the user ends it at Maghrib.
+            return if (end == SessionSchedule.UNTIL_MAGHRIB) opened.copy(closes = opened.idealEnd) else opened
+        }
+        // Morning: by default until 8:30, later than sunrise (which often comes before people
+        // finish); the user can choose another time. That's also when the lock lifts.
+        val minute = if (end >= 0) end else SessionSchedule.MORNING_DEFAULT_END
+        val ends = ZonedDateTime.of(date, LocalTime.of(minute / 60, minute % 60), zone)
         return if (ends > opened.opens) opened.copy(idealEnd = ends, closes = ends) else opened
     }
-
-    private val MORNING_ENDS: LocalTime = LocalTime.of(7, 30)
 
     /** The window from a day's prayer times (as [PrayerClock.day] gives them). */
     fun window(prayers: List<PrayerTime>, type: SessionType, date: LocalDate, zone: ZoneId): Window {

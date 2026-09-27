@@ -59,7 +59,19 @@ data class SessionSchedule(
     val fixedMinuteOfDay: Int,
     /** Minutes after the prayer (Fajr for morning, Asr for evening) in PRAYER mode. */
     val offsetMinutes: Int,
-)
+    /**
+     * When the adhkaar time ends, and with it the lock. Morning: minutes after midnight, or
+     * [SessionSchedule.DEFAULT_END] for 8:30 AM. Evening: [DEFAULT_END] for Isha, [UNTIL_MAGHRIB] for Maghrib.
+     */
+    val endMinuteOfDay: Int = DEFAULT_END,
+) {
+    companion object {
+        const val DEFAULT_END = -1
+        const val UNTIL_MAGHRIB = -2
+        /** The morning adhkaar's default end: 8:30 AM, two and a half hours after they open. */
+        const val MORNING_DEFAULT_END = 8 * 60 + 30
+    }
+}
 
 data class AppSettings(
     val morning: SessionSchedule,
@@ -199,6 +211,7 @@ class SettingsStore private constructor(context: Context) {
                 else -> MORNING_OFFSET
             }
         },
+        endMinuteOfDay = prefs.getInt("${prefix}_end", SessionSchedule.DEFAULT_END),
     )
 
     private fun write(s: AppSettings) {
@@ -259,6 +272,7 @@ class SettingsStore private constructor(context: Context) {
         e.putString("${prefix}_mode", s.mode.name)
         e.putInt("${prefix}_fixed", s.fixedMinuteOfDay)
         e.putInt("${prefix}_offset", s.offsetMinutes)
+        e.putInt("${prefix}_end", s.endMinuteOfDay)
     }
 
     private inline fun <reified T : Enum<T>> enumOr(name: String?, default: T): T =

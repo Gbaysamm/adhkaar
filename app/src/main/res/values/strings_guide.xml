@@ -4,7 +4,7 @@
     <string name="guide_intro">How Adhkaar works, and how to make it fit your day.</string>
     <string name="guide_group_times">Times</string>
     <string name="guide_times_title">When the adhkaar open</string>
-    <string name="guide_times_body">Morning adhkaar open 10 minutes after Fajr is prayed in congregation (about 6:00 AM) and are best read by 7:30 AM. Evening adhkaar open about 30 minutes after Asr is prayed (about 4:45 PM) and are best read before Maghrib; they can still be read until Isha. Everything follows your salah times, so set those first.</string>
+    <string name="guide_times_body">Morning adhkaar open 10 minutes after Fajr is prayed in congregation (about 6:00 AM) and are best read by 8:30 AM (you can change this). Evening adhkaar open about 30 minutes after Asr is prayed (about 4:45 PM) and are best read before Maghrib; they can still be read until Isha. Everything follows your salah times, so set those first.</string>
     <string name="guide_salah_title">Your salah times</string>
     <string name="guide_salah_body">The app starts with common local times. Change them to your masjid\'s in Settings › Salah reminders: tap a time to edit it. Your times replace the defaults completely, and you can switch each salah reminder on or off there.</string>
     <string name="guide_group_modes">Modes</string>
@@ -15,7 +15,7 @@
     <string name="guide_full_body">The adhkaar open by themselves, even on the lock screen. The alert rings for a minute, and once more 10 minutes later if you haven\'t opened them. After that it stays quiet, but each time you unlock your phone they come back, until you finish or the time ends.</string>
     <string name="guide_full_pros">Hard to miss, without stopping you from using your phone.</string>
     <string name="guide_full_cons">It interrupts you. Closing it isn\'t the end: it comes back the next time you unlock your phone.</string>
-    <string name="guide_lockdown_body">Like Full screen, and other apps are covered until you finish the adhkaar or their time ends (7:30 AM in the morning, Isha in the evening). Calls always work. It is not a reminder that ends early: it lifts when you finish or when the time is over.</string>
+    <string name="guide_lockdown_body">Like Full screen, and other apps are covered until you finish the adhkaar or their time ends (8:30 AM in the morning, or the time you set, Isha in the evening). Calls always work. It is not a reminder that ends early: it lifts when you finish or when the time is over.</string>
     <string name="guide_lockdown_pros">The strongest help for building the habit: the phone waits until you have read them.</string>
     <string name="guide_lockdown_cons">Strict by design. Use a break if you truly can\'t read now.</string>
     <string name="guide_pros">Good</string>

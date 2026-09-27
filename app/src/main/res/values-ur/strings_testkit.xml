@@ -25,4 +25,6 @@
     <string name="kit_calendar_sample_body">کیلنڈر اطلاع کا ٹیسٹ۔</string>
     <string name="kit_try">آزمائیں</string>
     <string name="kit_toast">10 سیکنڈ میں آ رہا ہے۔ کوئی اور ایپ کھولیں یا اسکرین لاک کریں۔</string>
+    <string name="kit_missed">رہ جانے والے اذکار</string>
+    <string name="kit_missed_expect">10 سیکنڈ میں: وہ کارڈ جو اذکار کا وقت پڑھے بغیر ختم ہونے پر آتا ہے، جو کھلا ہو اس کے اوپر۔</string>
 </resources>

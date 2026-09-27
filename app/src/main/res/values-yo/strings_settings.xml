@@ -197,4 +197,6 @@
     <string name="req_restricted_step_menu">Nínú Ìwífún ohun èlò, tẹ ⋮ lókè lọ́tùn-ún</string>
     <string name="req_restricted_step_allow">Yan Gba àwọn ètò tí a dènà láàyè kí o sì jẹ́rìí</string>
     <string name="req_restricted_step_back">Padà síbí; á fi àmì sí i fúnra rẹ̀</string>
+    <string name="settings_until">Adhkaar títí di</string>
+    <string name="settings_until_hint">Wọ́n á ṣí títí di ìgbà náà, Ìtìpa náà á dúró títí di ìgbà náà.</string>
 </resources>

@@ -141,6 +141,9 @@ fun TestKitScreen(onBack: () -> Unit, onOpenSetup: () -> Unit) {
             TryCard(Icons.Rounded.Bedtime, R.string.moment_title_before_sleep, R.string.kit_collection_expect) {
                 later(context) { org.adhkaar.app.session.SessionLauncher.onCollectionTime(it, "before_sleep") }
             }
+            TryCard(Icons.Rounded.WbTwilight, R.string.kit_missed, R.string.kit_missed_expect) {
+                later(context) { Notifications.showMissed(it, SessionType.MORNING) }
+            }
             TryCard(Icons.Rounded.NotificationsActive, R.string.kit_heads_up, R.string.kit_heads_up_expect) {
                 later(context) { Notifications.showPreReminder(it, SessionType.MORNING, 10) }
             }

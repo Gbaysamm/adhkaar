@@ -25,4 +25,6 @@
     <string name="kit_calendar_sample_body">Nnwale nke ọkwa kalenda.</string>
     <string name="kit_try">Nwalee ya</string>
     <string name="kit_toast">Ọ na-abịa na sekọnd 10. Mepee ngwa ọzọ ma ọ bụ kpọchie ihuenyo.</string>
+    <string name="kit_missed">Adhkaar gafere</string>
+    <string name="kit_missed_expect">Na sekọnd 10: kaadị na-abịa mgbe oge adhkaar gwụrụ na a gụghị ha, n’elu ihe mepere emepe.</string>
 </resources>

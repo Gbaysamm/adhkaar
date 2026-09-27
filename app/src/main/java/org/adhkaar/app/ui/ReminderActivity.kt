@@ -36,8 +36,11 @@ class ReminderActivity : ComponentActivity() {
             window.attributes = window.attributes.also { it.blurBehindRadius = ReminderPopup.BLUR_RADIUS }
         }
         val kind = kindOf(intent) ?: return finish()
+        if (kind is ReminderPopup.Kind.Missed) {
+            org.adhkaar.app.session.MissedAdhkaar.markSeen(this, org.adhkaar.app.session.MissedAdhkaar.Missed(kind.type, java.time.LocalDate.now()))
+        }
         setContent {
-            AdhkaarTheme(aura = if (kind is ReminderPopup.Kind.Collection && kind.id == "before_sleep") Auras.evening else Auras.dawn) {
+            AdhkaarTheme(aura = org.adhkaar.app.session.auraFor(kind)) {
                 PopupCard(kind, onDismiss = ::finish, onOpen = { open(kind) })
             }
         }
@@ -48,6 +51,7 @@ class ReminderActivity : ComponentActivity() {
         val start = {
             val app = Intent(this, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)
             if (kind is ReminderPopup.Kind.Collection) app.putExtra(Notifications.EXTRA_OPEN_COLLECTION, kind.id)
+            if (kind is ReminderPopup.Kind.Missed) app.putExtra(Notifications.EXTRA_OPEN_COLLECTION, kind.type.key)
             startActivity(app)
             finish()
         }
@@ -64,6 +68,7 @@ class ReminderActivity : ComponentActivity() {
     companion object {
         private const val EXTRA_PRAYER = "prayer"
         private const val EXTRA_COLLECTION = "collection"
+        private const val EXTRA_MISSED = "missed"
 
         fun intent(context: Context, kind: ReminderPopup.Kind): Intent =
             Intent(context, ReminderActivity::class.java)
@@ -72,6 +77,7 @@ class ReminderActivity : ComponentActivity() {
                     when (kind) {
                         is ReminderPopup.Kind.Salah -> putExtra(EXTRA_PRAYER, kind.prayer.id)
                         is ReminderPopup.Kind.Collection -> putExtra(EXTRA_COLLECTION, kind.id)
+                        is ReminderPopup.Kind.Missed -> putExtra(EXTRA_MISSED, kind.type.key)
                     }
                 }
 
@@ -79,6 +85,7 @@ class ReminderActivity : ComponentActivity() {
             intent.getStringExtra(EXTRA_PRAYER)?.let { id ->
                 return Prayer.entries.firstOrNull { it.id == id }?.let { ReminderPopup.Kind.Salah(it) }
             }
+            intent.getStringExtra(EXTRA_MISSED)?.let { key -> org.adhkaar.app.data.SessionType.fromKey(key)?.let { return ReminderPopup.Kind.Missed(it) } }
             return intent.getStringExtra(EXTRA_COLLECTION)?.let { ReminderPopup.Kind.Collection(it) }
         }
     }

@@ -381,7 +381,7 @@
               </div>
             </div>
           </div>
-          <figcaption class="note-missed"><span class="clock">7:30 AM</span><b>The adhkaar time ends.</b><span>Missed again, and the phone was in hand the whole time.</span></figcaption>
+          <figcaption class="note-missed"><span class="clock">8:30 AM</span><b>The adhkaar time ends.</b><span>Missed again, and the phone was in hand the whole time.</span></figcaption>
         </figure>
       </div>
     </div>
@@ -586,7 +586,7 @@
       <div class="faq">
           <details><summary>Who is Adhkaar for?</summary><div class="a"><p>People who want to keep the morning and evening adhkaar but lose them to a busy phone: the few minutes after Fajr and after Asr are when most of us are scrolling, not working. That's exactly when the adhkaar open.</p><p>If you already keep them easily, Gentle mode is a simple reminder. If the phone keeps winning, Full screen and Lockdown help more.</p></div></details>
           <details><summary>How is it different from apps that just send a notification?</summary><div class="a"><p>A notification is easy to swipe away. Adhkaar can open the adhkaar on your screen by themselves, even on the lock screen (Full screen), or pause your other apps until you've read them (Lockdown). You choose how firm it is, and you can change it any time it isn't active.</p></div></details>
-          <details><summary>What if I'm not holding my phone when the time comes?</summary><div class="a"><p>The alert rings for a minute, and once more ten minutes later. After that it stays quiet, and in Full screen and Lockdown the adhkaar are there the next time you unlock your phone, until you finish or the adhkaar time ends (7:30 AM in the morning, Isha in the evening).</p></div></details>
+          <details><summary>What if I'm not holding my phone when the time comes?</summary><div class="a"><p>The alert rings for a minute, and once more ten minutes later. After that it stays quiet, and in Full screen and Lockdown the adhkaar are there the next time you unlock your phone, until you finish or the adhkaar time ends (8:30 AM in the morning, or the time you choose, and Isha in the evening).</p></div></details>
           <details><summary>Isn't blocking my phone forcing me? Does that build a habit?</summary><div class="a"><p>Blocking alone doesn't build a habit, and the app isn't built on it. It's built to make the adhkaar easy to start at the right moment: they open right after you pray, with the counter ready, and each dhikr moves on by itself.</p><p>It also shows how little is left, keeps your streak and your month in view, and asks gently, with a hadith, before you pause. Lockdown is there for the days the phone keeps winning, and you choose it yourself.</p></div></details>
           <details><summary>Can I just close it?</summary><div class="a"><p>In Gentle, yes. In Full screen, yes, but it comes back the next time you unlock, until you finish or the time ends. In Lockdown there's no close button: you can take a break of 10, 20, 30 or 60 minutes, after a five-second hold, and the adhkaar come back when it ends.</p></div></details>
           <details><summary>Can people get around Lockdown?</summary><div class="a"><p>Someone determined can always uninstall an app, and Adhkaar doesn't try to stop that. What it does is remove the easy escapes: no close button, back doesn't work, and the mode can't be changed while Lockdown is on. What's left is a pause, which still brings the adhkaar back today.</p></div></details>
@@ -646,7 +646,7 @@
     var MODES = {
       gentle: { img: "img/today.webp", notif: true, title: "Gentle", text: "One soft chime and a notification when the adhkaar open. It doesn't ring again.", pro: "Calm and never in the way. For when the habit is already yours.", con: "Easy to swipe away and forget." },
       full: { img: "img/session.webp", title: "Full screen", text: "The adhkaar open by themselves, even on the lock screen. The alert rings for a minute, once more ten minutes later, then they come back every time you unlock.", pro: "Hard to miss, and you can still use your phone.", con: "Closing it isn't the end: it returns at your next unlock." },
-      lock: { img: "img/lockdown.webp", title: "Lockdown", text: "Other apps are covered until you finish, or until the adhkaar time ends: 7:30 AM in the morning, Isha in the evening. Calls and emergencies always work.", pro: "The strongest help: the phone waits for you. The only way out is a short break.", con: "Strict by design, and it can't be switched off while it's on." }
+      lock: { img: "img/lockdown.webp", title: "Lockdown", text: "Other apps are covered until you finish, or until the adhkaar time ends: 8:30 AM in the morning (or the time you choose), Isha in the evening. Calls and emergencies always work.", pro: "The strongest help: the phone waits for you. The only way out is a short break.", con: "Strict by design, and it can't be switched off while it's on." }
     };
     var panel = document.getElementById("mode-panel"), img = document.getElementById("mode-img"), screen = img.parentNode;
     function show(key) {

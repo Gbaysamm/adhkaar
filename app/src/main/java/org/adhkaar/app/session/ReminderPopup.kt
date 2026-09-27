@@ -30,6 +30,7 @@ import androidx.compose.material.icons.rounded.Bedtime
 import androidx.compose.material.icons.rounded.Mosque
 import androidx.compose.material.icons.rounded.PhonelinkErase
 import androidx.compose.material.icons.rounded.WaterDrop
+import androidx.compose.material.icons.rounded.WbTwilight
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -73,6 +74,8 @@ object ReminderPopup {
     sealed interface Kind {
         data class Salah(val prayer: Prayer) : Kind
         data class Collection(val id: String) : Kind
+        /** The morning or evening adhkaar's time ended unread. */
+        data class Missed(val type: org.adhkaar.app.data.SessionType) : Kind
     }
 
     private const val SHOWN_FOR_MS = 3 * 60_000L
@@ -95,7 +98,7 @@ object ReminderPopup {
             setViewTreeLifecycleOwner(owner)
             setViewTreeSavedStateRegistryOwner(owner)
             setContent {
-                AdhkaarTheme(aura = if (kind is Kind.Collection && kind.id == "before_sleep") Auras.evening else Auras.dawn) {
+                AdhkaarTheme(aura = auraFor(kind)) {
                     PopupCard(kind, onDismiss = ::hide, onOpen = { open(context, kind) })
                 }
             }
@@ -118,6 +121,8 @@ object ReminderPopup {
             view = root
             this.owner = owner
             main.postDelayed(::hide, SHOWN_FOR_MS)
+            // Shown here, it needn't be shown again as a card in the app.
+            if (kind is Kind.Missed) MissedAdhkaar.markSeen(context, MissedAdhkaar.Missed(kind.type, java.time.LocalDate.now()))
         } catch (_: RuntimeException) {
             owner.destroy()
         }
@@ -136,6 +141,8 @@ object ReminderPopup {
         hide()
         val intent = Intent(context, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)
         if (kind is Kind.Collection) intent.putExtra(Notifications.EXTRA_OPEN_COLLECTION, kind.id)
+        // Missed: "read them anyway" opens that session's list in the Adhkaar tab.
+        if (kind is Kind.Missed) intent.putExtra(Notifications.EXTRA_OPEN_COLLECTION, kind.type.key)
         runCatching { context.startActivity(intent) }
     }
 }
@@ -177,6 +184,7 @@ internal fun PopupCard(kind: ReminderPopup.Kind, onDismiss: () -> Unit, onOpen: 
             when (kind) {
                 is ReminderPopup.Kind.Salah -> SalahContent(kind.prayer, onDismiss)
                 is ReminderPopup.Kind.Collection -> CollectionContent(kind.id, onOpen, onDismiss)
+                is ReminderPopup.Kind.Missed -> MissedContent(kind.type, onOpen, onDismiss)
             }
         }
     }
@@ -233,6 +241,42 @@ private fun CollectionContent(id: String, onOpen: () -> Unit, onDismiss: () -> U
         PrimaryButton(stringResource(R.string.popup_open), Modifier.fillMaxWidth(), onClick = onOpen)
         Box(Modifier.fillMaxWidth().height(48.dp).pressable(onClick = onDismiss), contentAlignment = Alignment.Center) {
             Text(stringResource(R.string.popup_later), style = Type.label.copy(color = Nur.textSecondary))
+        }
+    }
+}
+
+/** Before sleep and a missed evening are night; everything else is dawn. */
+internal fun auraFor(kind: ReminderPopup.Kind) = when {
+    kind is ReminderPopup.Kind.Collection && kind.id == "before_sleep" -> Auras.evening
+    kind is ReminderPopup.Kind.Missed && kind.type == org.adhkaar.app.data.SessionType.EVENING -> Auras.evening
+    else -> Auras.dawn
+}
+
+@Composable
+private fun MissedContent(type: org.adhkaar.app.data.SessionType, onOpen: () -> Unit, onDismiss: () -> Unit) {
+    val morning = type == org.adhkaar.app.data.SessionType.MORNING
+    Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
+        IconBadge(if (morning) Icons.Rounded.WbTwilight else Icons.Rounded.Bedtime, size = 56.dp)
+        Spacer(Modifier.height(Space.m))
+        Text(
+            stringResource(if (morning) R.string.missed_title_morning else R.string.missed_title_evening),
+            style = Type.titleL, textAlign = TextAlign.Center,
+        )
+        Spacer(Modifier.height(Space.s))
+        Text(stringResource(R.string.missed_body), style = Type.bodyM, textAlign = TextAlign.Center)
+        Spacer(Modifier.height(Space.l))
+        Text("أَحَبُّ الأَعْمَالِ إِلَى اللَّهِ أَدْوَمُهَا وَإِنْ قَلَّ", style = Type.arabicAccent, textAlign = TextAlign.Center)
+        Spacer(Modifier.height(Space.xs))
+        Text(stringResource(R.string.missed_hadith), style = Type.bodyM.copy(color = Nur.textPrimary), textAlign = TextAlign.Center)
+        Spacer(Modifier.height(Space.xs))
+        Text(
+            stringResource(R.string.missed_hadith_source).uppercase(),
+            style = Type.overline.copy(color = LocalAura.current.accent), textAlign = TextAlign.Center,
+        )
+        Spacer(Modifier.height(Space.l))
+        PrimaryButton(stringResource(R.string.missed_ok), Modifier.fillMaxWidth(), icon = null, onClick = onDismiss)
+        Box(Modifier.fillMaxWidth().height(48.dp).pressable(onClick = onOpen), contentAlignment = Alignment.Center) {
+            Text(stringResource(R.string.missed_read), style = Type.label.copy(color = Nur.textSecondary))
         }
     }
 }

@@ -217,4 +217,6 @@
     <string name="req_restricted_step_menu">N’Ozi ngwa, pịa ⋮ n’elu aka nri</string>
     <string name="req_restricted_step_allow">Họrọ Kwe ntọala amachibidoro ma kwado</string>
     <string name="req_restricted_step_back">Laghachi ebe a; ọ ga-akara onwe ya</string>
+    <string name="settings_until">Adhkaar ruo</string>
+    <string name="settings_until_hint">Ha na-emeghe ruo mgbe ahụ, Mkpọchi na-ejikwa ruo mgbe ahụ.</string>
 </resources>

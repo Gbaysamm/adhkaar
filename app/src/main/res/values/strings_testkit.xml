@@ -25,4 +25,6 @@
     <string name="kit_calendar_sample_body">A test of the calendar notification.</string>
     <string name="kit_try">Try it</string>
     <string name="kit_toast">Coming in 10 seconds. Open another app or lock the screen.</string>
+    <string name="kit_missed">Missed adhkaar</string>
+    <string name="kit_missed_expect">In 10 seconds: the card that comes when the adhkaar time ends unread, over whatever is open.</string>
 </resources>

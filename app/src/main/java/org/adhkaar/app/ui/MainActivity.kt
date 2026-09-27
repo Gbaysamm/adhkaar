@@ -56,6 +56,7 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import org.adhkaar.app.data.ResumeState
 import org.adhkaar.app.data.SessionState
+import org.adhkaar.app.data.SessionType
 import org.adhkaar.app.data.SettingsStore
 import org.adhkaar.app.ui.components.AuraBackground
 import org.adhkaar.app.ui.components.GlassTabBar
@@ -154,7 +155,8 @@ fun AppRoot(openCollectionRequest: String? = null, onRequestHandled: () -> Unit 
         LaunchedEffect(openCollectionRequest) {
             if (openCollectionRequest != null) {
                 // A reference list (Everyday duas) opens in the Adhkaar tab; the rest are sessions.
-                val list = CollectionsRepository.all(context).firstOrNull { it.id == openCollectionRequest }?.mode == CollectionMode.REFERENCE
+                val list = CollectionsRepository.all(context).firstOrNull { it.id == openCollectionRequest }?.mode == CollectionMode.REFERENCE ||
+                    SessionType.fromKey(openCollectionRequest) != null
                 if (list) {
                     shelfRequest = openCollectionRequest
                     tab = 1

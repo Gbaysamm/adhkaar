@@ -219,4 +219,6 @@
     <string name="req_restricted_step_menu">In App info, tap ⋮ at the top right</string>
     <string name="req_restricted_step_allow">Choose Allow restricted settings and confirm</string>
     <string name="req_restricted_step_back">Come back here; it ticks itself</string>
+    <string name="settings_until">Adhkaar until</string>
+    <string name="settings_until_hint">They stay open until then, and Lockdown holds until then.</string>
 </resources>

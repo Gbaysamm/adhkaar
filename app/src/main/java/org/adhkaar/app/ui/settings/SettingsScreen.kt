@@ -406,6 +406,7 @@ fun SettingsScreen(onOpenSetup: () -> Unit, onOpenPrayerTimes: () -> Unit, onOpe
 private fun ScheduleGroup(type: SessionType, schedule: SessionSchedule, onChange: (SessionSchedule) -> Unit) {
     val context = LocalContext.current
     var picker by remember { mutableStateOf(false) }
+    var endPicker by remember { mutableStateOf(false) }
     val prayer = stringResource(if (type == SessionType.MORNING) R.string.settings_prayer_fajr else R.string.settings_prayer_asr)
     val aura = Auras.of(type)
     SettingsGroup {
@@ -453,11 +454,42 @@ private fun ScheduleGroup(type: SessionType, schedule: SessionSchedule, onChange
                 },
             )
         }
+        RowDivider()
+        // Until when the adhkaar stay open (and Lockdown holds). Morning: a time; evening: Maghrib or Isha.
+        if (type == SessionType.MORNING) {
+            val end = if (schedule.endMinuteOfDay >= 0) schedule.endMinuteOfDay else SessionSchedule.MORNING_DEFAULT_END
+            SettingsRow(
+                stringResource(R.string.settings_until),
+                stringResource(R.string.settings_until_hint),
+                Icons.Rounded.Schedule,
+                iconTint = Nur.textTertiary,
+                onClick = { endPicker = true },
+                trailing = { ValueText(formatTime(context, ZonedDateTime.now().withHour(end / 60).withMinute(end % 60))) },
+            )
+        } else {
+            Column(Modifier.padding(horizontal = Space.gutter, vertical = Space.m)) {
+                Text(stringResource(R.string.settings_until), style = Type.label)
+                Spacer(Modifier.height(Space.s))
+                GlassSegmented(
+                    listOf(stringResource(R.string.prayer_maghrib), stringResource(R.string.prayer_isha)),
+                    if (schedule.endMinuteOfDay == SessionSchedule.UNTIL_MAGHRIB) 0 else 1,
+                ) { i -> onChange(schedule.copy(endMinuteOfDay = if (i == 0) SessionSchedule.UNTIL_MAGHRIB else SessionSchedule.DEFAULT_END)) }
+                Spacer(Modifier.height(Space.xs))
+                Text(stringResource(R.string.settings_until_hint), style = Type.caption)
+            }
+        }
     }
     if (picker) {
         TimeDialog(schedule.fixedMinuteOfDay, onDismiss = { picker = false }) { minute ->
             picker = false
             onChange(schedule.copy(fixedMinuteOfDay = minute))
+        }
+    }
+    if (endPicker) {
+        val current = if (schedule.endMinuteOfDay >= 0) schedule.endMinuteOfDay else SessionSchedule.MORNING_DEFAULT_END
+        TimeDialog(current, onDismiss = { endPicker = false }) { minute ->
+            endPicker = false
+            onChange(schedule.copy(endMinuteOfDay = minute))
         }
     }
 }

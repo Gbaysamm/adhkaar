@@ -25,4 +25,6 @@
     <string name="kit_calendar_sample_body">تجربة لإشعار التقويم.</string>
     <string name="kit_try">جرّب</string>
     <string name="kit_toast">بعد ١٠ ثوانٍ. افتح تطبيقًا آخر أو اقفل الشاشة.</string>
+    <string name="kit_missed">الأذكار الفائتة</string>
+    <string name="kit_missed_expect">بعد ١٠ ثوانٍ: البطاقة التي تظهر حين ينتهي وقت الأذكار دون قراءتها، فوق ما هو مفتوح.</string>
 </resources>

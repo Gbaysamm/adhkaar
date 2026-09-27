@@ -4,7 +4,7 @@
     <string name="guide_intro">Bí Adhkaar ṣe ń ṣiṣẹ́, àti bí o ṣe lè mú un bá ọjọ́ rẹ mu.</string>
     <string name="guide_group_times">Àkókò</string>
     <string name="guide_times_title">Ìgbà tí àwọn adhkaar ń ṣí</string>
-    <string name="guide_times_body">Adhkaar òwúrọ̀ máa ń ṣí ní ìṣẹ́jú 10 lẹ́yìn ìrun Subh ní jamā\'a (bí agogo 6:00), ó sì dára jù láti kà á kí agogo 7:30 tó lù. Adhkaar ìrọ̀lẹ́ máa ń ṣí ní bí ìṣẹ́jú 30 lẹ́yìn ìrun Asr (bí 4:45), ó dára jù kí Maghrib tó dé, a sì lè kà á títí di Isha. Gbogbo rẹ̀ ń tẹ̀lé àkókò ìrun rẹ, nítorí náà ṣètò wọn ná.</string>
+    <string name="guide_times_body">Adhkaar òwúrọ̀ máa ń ṣí ní ìṣẹ́jú 10 lẹ́yìn ìrun Subh ní jamā\'a (bí agogo 6:00), ó sì dára jù láti kà á kí agogo 8:30 tó lù. Adhkaar ìrọ̀lẹ́ máa ń ṣí ní bí ìṣẹ́jú 30 lẹ́yìn ìrun Asr (bí 4:45), ó dára jù kí Maghrib tó dé, a sì lè kà á títí di Isha. Gbogbo rẹ̀ ń tẹ̀lé àkókò ìrun rẹ, nítorí náà ṣètò wọn ná.</string>
     <string name="guide_salah_title">Àkókò ìrun rẹ</string>
     <string name="guide_salah_body">Ohun èlò náà bẹ̀rẹ̀ pẹ̀lú àkókò àdúgbò tó wọ́pọ̀. Yí wọn padà sí ti mọ́ṣáláṣí rẹ ní Ètò › Ìránnilétí ìrun: tẹ àkókò kan láti ṣàtúnṣe rẹ̀. Àkókò rẹ rọ́pò ti àtìbẹ̀rẹ̀ pátápátá, o sì lè tan tàbí pa ìránnilétí ìrun kọ̀ọ̀kan níbẹ̀.</string>
     <string name="guide_group_modes">Ìpò</string>
@@ -15,7 +15,7 @@
     <string name="guide_full_body">Àwọn adhkaar máa ń ṣí fúnra wọn, kódà lórí ojú ìtìpa. Ìkìlọ̀ á dún fún ìṣẹ́jú kan, àti lẹ́ẹ̀kan sí i lẹ́yìn ìṣẹ́jú 10 tí o kò bá ṣí wọn. Lẹ́yìn náà ó dákẹ́, ṣùgbọ́n nígbàkúùgbà tí o bá ṣí fóònù rẹ wọ́n á padà, títí o fi parí tàbí àkókò fi tán.</string>
     <string name="guide_full_pros">Ó ṣòro láti pàdánù, láìdá ọ dúró láti lo fóònù rẹ.</string>
     <string name="guide_full_cons">Ó ń dá ọ lọ́wọ́ dúró. Pípa á kì í ṣe òpin: ó máa padà nígbà tí o bá tún ṣí fóònù rẹ.</string>
-    <string name="guide_lockdown_body">Bíi Ojú-iboju kíkún, a sì bo àwọn ohun èlò mìíràn títí o fi parí adhkaar tàbí àkókò wọn fi tán (7:30 òwúrọ̀, Isha ìrọ̀lẹ́). Ìpè máa ń ṣiṣẹ́ nígbà gbogbo. Kò ní parí ṣáájú: ó máa ń kúrò nígbà tí o bá parí tàbí tí àkókò bá kọjá.</string>
+    <string name="guide_lockdown_body">Bíi Ojú-iboju kíkún, a sì bo àwọn ohun èlò mìíràn títí o fi parí adhkaar tàbí àkókò wọn fi tán (8:30 òwúrọ̀, Isha ìrọ̀lẹ́). Ìpè máa ń ṣiṣẹ́ nígbà gbogbo. Kò ní parí ṣáájú: ó máa ń kúrò nígbà tí o bá parí tàbí tí àkókò bá kọjá.</string>
     <string name="guide_lockdown_pros">Ìrànlọ́wọ́ tó lágbára jù fún kíkọ́ àṣà: fóònù máa dúró títí o fi kà wọ́n.</string>
     <string name="guide_lockdown_cons">Ó le ní ìmọ̀ọ́mọ̀. Gba ìsinmi tí o kò bá lè kà á nísinsìnyí lóòótọ́.</string>
     <string name="guide_pros">Àǹfààní</string>

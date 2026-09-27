@@ -4,7 +4,7 @@
     <string name="guide_intro">Otú Adhkaar si arụ ọrụ, na otú ị ga-esi mee ka ọ dabara ụbọchị gị.</string>
     <string name="guide_group_times">Oge</string>
     <string name="guide_times_title">Mgbe adhkaar na-emepe</string>
-    <string name="guide_times_body">Adhkaar ụtụtụ na-emepe nkeji 10 mgbe e kpechara Fajr n\'ọgbakọ (ihe dị ka elekere 6:00), ọ kachakwa mma ịgụ ya tupu 7:30. Adhkaar mgbede na-emepe ihe dị ka nkeji 30 mgbe e kpechara Asr (ihe dị ka 4:45), ọ kacha mma tupu Maghrib, a ka nwere ike ịgụ ya ruo Isha. Ihe niile na-eso oge salah gị, ya mere dozie ha mbụ.</string>
+    <string name="guide_times_body">Adhkaar ụtụtụ na-emepe nkeji 10 mgbe e kpechara Fajr n\'ọgbakọ (ihe dị ka elekere 6:00), ọ kachakwa mma ịgụ ya tupu 8:30. Adhkaar mgbede na-emepe ihe dị ka nkeji 30 mgbe e kpechara Asr (ihe dị ka 4:45), ọ kacha mma tupu Maghrib, a ka nwere ike ịgụ ya ruo Isha. Ihe niile na-eso oge salah gị, ya mere dozie ha mbụ.</string>
     <string name="guide_salah_title">Oge salah gị</string>
     <string name="guide_salah_body">Ngwa a na-amalite n\'oge obodo a na-ahụkarị. Gbanwee ha ka ha dị ka nke ụlọ alakụba gị na Ntọala › Ncheta salah: pịa oge iji dezie ya. Oge gị na-anọchi nke mbụ kpamkpam, ị nwekwara ike ịgbanye ma ọ bụ gbanyụọ ncheta salah ọ bụla ebe ahụ.</string>
     <string name="guide_group_modes">Ọnọdụ</string>
@@ -15,7 +15,7 @@
     <string name="guide_full_body">Adhkaar na-emepe n\'onwe ha, ọbụna na ihuenyo mkpọchi. Mkpu na-akụ otu nkeji, na otu ugboro ọzọ mgbe nkeji 10 gasịrị ma ọ bụrụ na i megheghị ha. Mgbe ahụ ọ na-agbachi nkịtị, mana oge ọ bụla i meghere ekwentị gị ha na-alọghachi, ruo mgbe ị mechara ma ọ bụ oge gwụrụ.</string>
     <string name="guide_full_pros">O siri ike ịtụfu ya, na-egbochighị gị iji ekwentị gị.</string>
     <string name="guide_full_cons">Ọ na-akwụsị gị. Imechi ya abụghị njedebe: ọ na-alọghachi mgbe i meghere ekwentị gị ọzọ.</string>
-    <string name="guide_lockdown_body">Dị ka Ihuenyo zuru ezu, a na-ekpuchikwa ngwa ndị ọzọ ruo mgbe ị mechara adhkaar ma ọ bụ oge ha gwụrụ (7:30 ụtụtụ, Isha mgbede). Oku na-arụ ọrụ mgbe niile. Ọ naghị akwụsị n\'oge: ọ na-apụ mgbe ị mechara ma ọ bụ mgbe oge gafere.</string>
+    <string name="guide_lockdown_body">Dị ka Ihuenyo zuru ezu, a na-ekpuchikwa ngwa ndị ọzọ ruo mgbe ị mechara adhkaar ma ọ bụ oge ha gwụrụ (8:30 ụtụtụ, Isha mgbede). Oku na-arụ ọrụ mgbe niile. Ọ naghị akwụsị n\'oge: ọ na-apụ mgbe ị mechara ma ọ bụ mgbe oge gafere.</string>
     <string name="guide_lockdown_pros">Enyemaka kacha sie ike iji wuo omume: ekwentị na-echere ruo mgbe ị gụchara ha.</string>
     <string name="guide_lockdown_cons">E mere ya ka ọ sie ike. Were ezumike ma ọ bụrụ na ị pụghị ịgụ ya ugbu a n\'ezie.</string>
     <string name="guide_pros">Uru</string>

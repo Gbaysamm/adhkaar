@@ -217,4 +217,6 @@
     <string name="req_restricted_step_menu">A Bayanin manhaja, taɓa ⋮ a sama dama</string>
     <string name="req_restricted_step_allow">Zaɓi Bada izinin saitunan da aka taƙaita ka tabbatar</string>
     <string name="req_restricted_step_back">Dawo nan; zai yi alama da kansa</string>
+    <string name="settings_until">Azkar har zuwa</string>
+    <string name="settings_until_hint">Suna buɗe har zuwa lokacin, kuma Kulle yana riƙewa har zuwa lokacin.</string>
 </resources>

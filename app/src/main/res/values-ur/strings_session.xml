@@ -189,4 +189,5 @@
     <string name="collection_waking_subtitle">دن کے پہلے الفاظ</string>
     <string name="collection_daily">روزمرہ کی دعائیں</string>
     <string name="collection_daily_subtitle">دن کے لمحات کے لیے</string>
+    <string name="library_morning_subtitle_until">فجر کے بعد، %1$s تک</string>
 </resources>

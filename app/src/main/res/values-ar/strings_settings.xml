@@ -223,4 +223,6 @@
     <string name="req_restricted_step_menu">في معلومات التطبيق، اضغط ⋮ في الأعلى</string>
     <string name="req_restricted_step_allow">اختر السماح بالإعدادات المقيدة وأكّد</string>
     <string name="req_restricted_step_back">عد إلى هنا، وسيُعلَّم تلقائيًا</string>
+    <string name="settings_until">الأذكار حتى</string>
+    <string name="settings_until_hint">تبقى مفتوحة حتى هذا الوقت، ويبقى الإغلاق حتى حينه.</string>
 </resources>

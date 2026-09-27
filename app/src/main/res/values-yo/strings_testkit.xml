@@ -25,4 +25,6 @@
     <string name="kit_calendar_sample_body">Ìdánwò ìfitónilétí kàlẹ́ńdà.</string>
     <string name="kit_try">Dán an wò</string>
     <string name="kit_toast">Ń bọ̀ ní ìṣẹ́jú-àáyá 10. Ṣí ohun èlò mìíràn tàbí ti ojú iboju.</string>
+    <string name="kit_missed">Adhkaar tó kọjá</string>
+    <string name="kit_missed_expect">Ní ìṣẹ́jú-àáyá 10: káàdì tó ń wá nígbà tí àkókò adhkaar bá tán láìkà, lórí ohun tó ṣí.</string>
 </resources>

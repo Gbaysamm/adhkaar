@@ -160,6 +160,8 @@ object Notifications {
 
     /** "Morning adhkaar missed": said once, kindly, when their time ends unread. Opens the app's card. */
     fun showMissed(context: Context, type: SessionType) {
+        // A card over whatever is open, or over the lock screen, as well as the notification.
+        ReminderPopup.show(context, ReminderPopup.Kind.Missed(type))
         val title = context.getString(if (type == SessionType.MORNING) R.string.missed_notif_morning else R.string.missed_notif_evening)
         val text = context.getString(R.string.missed_notif_text)
         post(context, MISSED_ID, NotificationCompat.Builder(context, CHANNEL_GENTLE)
@@ -167,6 +169,7 @@ object Notifications {
             .setContentTitle(title)
             .setContentText(text)
             .setStyle(NotificationCompat.BigTextStyle().bigText(text))
+            .setFullScreenIntent(reminderCard(context, 307, ReminderPopup.Kind.Missed(type)), true)
             .setAutoCancel(true)
             .setContentIntent(PendingIntent.getActivity(
                 context, 306, Intent(context, MainActivity::class.java),

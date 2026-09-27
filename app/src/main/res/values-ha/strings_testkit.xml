@@ -25,4 +25,6 @@
     <string name="kit_calendar_sample_body">Gwajin sanarwar kalanda.</string>
     <string name="kit_try">Gwada</string>
     <string name="kit_toast">Zai zo cikin daƙiƙa 10. Buɗe wata manhaja ko kulle allo.</string>
+    <string name="kit_missed">Azkar da suka wuce</string>
+    <string name="kit_missed_expect">Cikin daƙiƙa 10: katin da ke zuwa idan lokacin azkar ya ƙare ba a karanta ba, a kan abin da ke buɗe.</string>
 </resources>

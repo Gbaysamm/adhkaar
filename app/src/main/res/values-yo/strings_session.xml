@@ -153,4 +153,5 @@
     <string name="collection_waking_subtitle">Ọ̀rọ̀ àkọ́kọ́ ọjọ́</string>
     <string name="collection_daily">Àdúà ojoojúmọ́</string>
     <string name="collection_daily_subtitle">Fún àwọn àkókò ọjọ́</string>
+    <string name="library_morning_subtitle_until">Lẹ́yìn Suubi, títí di %1$s</string>
 </resources>

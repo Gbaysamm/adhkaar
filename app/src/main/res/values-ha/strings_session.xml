@@ -189,4 +189,5 @@
     <string name="collection_waking_subtitle">Kalmomin farko na rana</string>
     <string name="collection_daily">Addu\'o\'in yau da kullum</string>
     <string name="collection_daily_subtitle">Don lokutan yini</string>
+    <string name="library_morning_subtitle_until">Bayan Asuba, har zuwa %1$s</string>
 </resources>

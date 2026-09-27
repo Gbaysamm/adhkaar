@@ -4,7 +4,7 @@
     <string name="guide_intro">Yadda Adhkaar ke aiki, da yadda za ka sa ta dace da ranarka.</string>
     <string name="guide_group_times">Lokuta</string>
     <string name="guide_times_title">Lokacin da azkar ke buɗewa</string>
-    <string name="guide_times_body">Azkar na safe suna buɗewa minti 10 bayan an yi sallar Asuba a jam\'i (kusan ƙarfe 6:00) kuma mafi kyau a karanta kafin 7:30. Azkar na yamma suna buɗewa kusan minti 30 bayan sallar La\'asar (kusan 4:45), mafi kyau kafin Magariba, kuma ana iya karanta su har Isha. Komai yana bin lokutan sallarka, don haka ka saita su tukuna.</string>
+    <string name="guide_times_body">Azkar na safe suna buɗewa minti 10 bayan an yi sallar Asuba a jam\'i (kusan ƙarfe 6:00) kuma mafi kyau a karanta kafin 8:30. Azkar na yamma suna buɗewa kusan minti 30 bayan sallar La\'asar (kusan 4:45), mafi kyau kafin Magariba, kuma ana iya karanta su har Isha. Komai yana bin lokutan sallarka, don haka ka saita su tukuna.</string>
     <string name="guide_salah_title">Lokutan sallarka</string>
     <string name="guide_salah_body">Manhajar tana farawa da lokutan gari da aka saba. Canza su zuwa na masallacinka a Saituna › Tunatarwar sallah: taɓa lokaci don gyara shi. Lokutanka suna maye gurbin na asali gaba ɗaya, kuma za ka iya kunna ko kashe tunatarwar kowace sallah a can.</string>
     <string name="guide_group_modes">Yanayi</string>
@@ -15,7 +15,7 @@
     <string name="guide_full_body">Azkar suna buɗewa da kansu, har a allon kulle. Faɗakarwa tana ƙara na minti ɗaya, sannan sau ɗaya bayan minti 10 idan ba ka buɗe su ba. Bayan haka tana shiru, amma duk lokacin da ka buɗe wayarka suna dawowa, har ka gama ko lokaci ya ƙare.</string>
     <string name="guide_full_pros">Da wuya ka rasa shi, ba tare da hana ka amfani da wayarka ba.</string>
     <string name="guide_full_cons">Yana katse ka. Rufe shi ba ƙarshe ba ne: yana dawowa idan ka sake buɗe wayarka.</string>
-    <string name="guide_lockdown_body">Kamar Cikakken allo, kuma ana rufe sauran manhajoji har ka gama azkar ko lokacinsu ya ƙare (7:30 da safe, Isha da yamma). Kira koyaushe yana aiki. Ba ya ƙarewa da wuri: yana tashi idan ka gama ko lokaci ya wuce.</string>
+    <string name="guide_lockdown_body">Kamar Cikakken allo, kuma ana rufe sauran manhajoji har ka gama azkar ko lokacinsu ya ƙare (8:30 da safe, Isha da yamma). Kira koyaushe yana aiki. Ba ya ƙarewa da wuri: yana tashi idan ka gama ko lokaci ya wuce.</string>
     <string name="guide_lockdown_pros">Mafi ƙarfin taimako wajen gina ɗabi\'a: wayar tana jira har ka karanta.</string>
     <string name="guide_lockdown_cons">Mai tsauri ne da gangan. Ka ɗauki hutu idan da gaske ba za ka iya karantawa yanzu ba.</string>
     <string name="guide_pros">Amfani</string>

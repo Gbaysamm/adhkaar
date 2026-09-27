@@ -98,6 +98,7 @@ import org.adhkaar.app.ui.components.PrimaryButton
 import org.adhkaar.app.ui.components.SecondaryButton
 import org.adhkaar.app.ui.components.glass
 import org.adhkaar.app.ui.components.lateLabel
+import org.adhkaar.app.ui.components.formatTime
 import org.adhkaar.app.ui.components.opensLabel
 import org.adhkaar.app.ui.components.pressable
 import org.adhkaar.app.ui.components.withHonorifics
@@ -254,7 +255,12 @@ private fun ShelfDetail(shelf: String, onBack: () -> Unit, onOpenCollection: (St
     when {
         sessionType != null -> {
             title = stringResource(if (sessionType == SessionType.MORNING) R.string.library_morning_title else R.string.library_evening_title)
-            subtitle = stringResource(if (sessionType == SessionType.MORNING) R.string.library_morning_subtitle else R.string.library_evening_subtitle)
+            subtitle = if (sessionType == SessionType.MORNING) {
+                val ends = AdhkaarWindows.window(SettingsStore.get(context).current, SessionType.MORNING, java.time.LocalDate.now()).closes
+                stringResource(R.string.library_morning_subtitle_until, formatTime(context, ends))
+            } else {
+                stringResource(R.string.library_evening_subtitle)
+            }
             val mine by UserDuaStore.get(context).flow.collectAsState()
             items = remember(shelf, mine) { AdhkaarRepository.forSession(context, sessionType) + UserDuaStore.get(context).forSession(sessionType) }
         }

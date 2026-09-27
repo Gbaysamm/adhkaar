@@ -179,4 +179,5 @@
     <string name="collection_waking_subtitle">Okwu mbụ nke ụbọchị</string>
     <string name="collection_daily">Dua kwa ụbọchị</string>
     <string name="collection_daily_subtitle">Maka oge dị iche iche nke ụbọchị</string>
+    <string name="library_morning_subtitle_until">Mgbe Fajr gasịrị, ruo %1$s</string>
 </resources>
