@@ -121,7 +121,7 @@ POST_LIST = {
   <h1 class="h" style="font-size:100px">We know the adhkaar.<br><em>The phone wins anyway.</em></h1>
   <p class="sub" style="max-width:720px">The reminder arrives in the group at 6:02. By 8:30 the morning is gone, and the phone was in hand the whole time.</p>
 </div>
-""", stamp="A familiar morning", foot="center", css=CHAT_CSS + ".shade{position:absolute;left:0;right:0;top:620px;bottom:0;background:linear-gradient(transparent,rgba(5,7,15,.94) 30%,#05070F)}"),
+""", stamp="A familiar morning", css=CHAT_CSS + ".foot{width:auto;right:72px}.shade{position:absolute;left:0;right:0;top:620px;bottom:0;background:linear-gradient(transparent,rgba(5,7,15,.94) 30%,#05070F)}"),
 
     # 3. Before and after, side by side.
     "03-before-after": page(f"""
@@ -282,7 +282,8 @@ POST_LIST = {
   <li>The Hijri date, and a dhikr to hold onto</li>
 </ul>
 {widget_small("left:700px; top:800px; width:308px; height:308px; --u:2.095px")}
-""", stamp="Widgets", foot="center", css=WIDGET_CSS + """
+""", stamp="Widgets", css=WIDGET_CSS + """
+.foot{width:auto;right:72px}
 .what{position:absolute;left:72px;top:812px;width:560px;list-style:none}
 .what li{padding:20px 0 20px 34px;position:relative;font:400 34px/1.15 'Instrument Serif';border-bottom:1px solid var(--line)}
 .what li:first-child{padding-top:0}.what li:first-child::before{top:14px}
@@ -311,7 +312,8 @@ POST_LIST = {
 {phone("b2", "left:72px; top:700px; width:420px")}
 {phone("b3", "left:588px; top:700px; width:420px")}
 <div class="floor"></div>
-""", stamp="Take a break", foot="center", css=FLOOR + """
+""", stamp="Take a break", css=FLOOR + """
+.foot{width:auto;right:72px}
 .step{position:absolute;display:flex;align-items:center;gap:14px;font:500 21px/1 Inter;color:var(--text-2)}
 .step b{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:600 16px/1 Inter;color:#1a0f14;background:var(--dawn)}
 """),
