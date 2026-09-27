@@ -1,13 +1,39 @@
-# Marketing posts
+# Social posts
 
-Social posts for sharing Adhkaar, built from the app's real screens.
+Fourteen 1080 × 1350 (4:5) posts for sharing Adhkaar. The exported PNGs are 2160 × 2700, in `export/`.
 
-- `export/` holds the finished images (2160 × 2700, the 4:5 portrait size for Instagram, Facebook and WhatsApp).
-- `build.py` holds each post's words and layout. `post.css` is the shared grid:
+| Post | Story |
+|---|---|
+| 01-question | When did you last read the morning adhkaar on time? |
+| 02-the-phone-wins | The problem: the group-chat reminder, and the phone wins |
+| 03-before-after | The same morning, without and with Adhkaar |
+| 04-modes | Gentle, Full screen, Lockdown |
+| 05-your-day | The day as a timeline, from Fajr to sleep |
+| 06-salah | The card before salah |
+| 07-before-sleep | End the day with dhikr, not the feed |
+| 08-missed | Missed adhkaar, said kindly |
+| 09-streak | The streak |
+| 10-languages | Hausa, Yorùbá, English, Arabic, Igbo |
+| 11-trust | What it asks of you |
+| 12-widgets | Home-screen widgets |
+| 13-share | Share cards |
+| 14-pause | A break, even in Lockdown |
+
+## Editing
+
+- `post.css` holds the shared grid:
   - 72px margins
-  - the brand top-left and the story's time top-right
-  - the headline, then the paragraph, the note and the footer in the left column
-  - the phone in the right column, bleeding off the bottom edge
-- `assets/` holds the screens, taken from the app via the simulator's captures (`site/sim/app`) and the website (`site/img`).
+  - the brand top-left and the stamp top-right
+  - the footer
+  - the phone frame
+- `build.py` holds each post's composition.
+- Screens come from `assets/`, which holds real captures from the app.
 
-To change a post or add one, edit `build.py`, then run `python marketing/build.py`. It writes `posts/*.html` and exports them with headless Edge.
+To rebuild after a change, run:
+
+```
+python marketing/build.py            # every post
+python marketing/build.py 06-salah   # one post
+```
+
+The build renders each post with headless Microsoft Edge.
