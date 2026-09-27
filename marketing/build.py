@@ -337,6 +337,153 @@ POST_LIST = {
 .qr img{width:176px;height:176px;padding:14px;border-radius:22px;background:#fff;box-shadow:0 30px 60px -24px rgba(0,0,0,.8)}
 .qr b{display:block;font:400 36px/1.1 'Instrument Serif'}.qr span{display:block;margin-top:10px;font:400 18px/1.45 Inter;color:var(--text-2)}
 """),
+    # 16. The Hijri date as the committee announces it.
+    "16-moon-sighting": page("""
+<div class="moon"></div>
+<div style="position:absolute; left:72px; right:72px; top:470px; text-align:center">
+  <h1 class="h" style="font-size:100px">The Hijri date,<br><em>as announced.</em></h1>
+  <p class="sub" style="max-width:780px; margin:28px auto 0">Not a calculation. Dates follow the Sultan of Sokoto's moon-sighting committee, and when a new month is announced, the app updates on its own.</p>
+</div>
+<img class="card" src="../assets/settings-hijri.png" alt="">
+""", night=True, stamp="Hijri calendar", foot="center", css="""
+.moon{position:absolute;left:50%;top:150px;width:230px;height:230px;margin-left:-80px;border-radius:50%;box-shadow:-46px 22px 0 0 #F2CF8A;filter:drop-shadow(0 0 46px rgba(242,207,138,.55))}
+.card{position:absolute;left:50%;width:620px;margin-left:-310px;top:846px;border-radius:30px;box-shadow:0 50px 100px -30px rgba(0,0,0,.95),0 0 0 1px rgba(255,255,255,.1)}
+"""),
+
+    # 17. Both calendars in one month, filled in by what was read.
+    "17-calendar": page("""
+<div style="position:absolute; left:72px; right:72px; top:170px">
+  <h1 class="h" style="font-size:100px">Two calendars,<br><em>one month.</em></h1>
+</div>
+<div style="position:absolute; left:72px; top:480px; width:380px">
+  <p class="sub" style="max-width:380px; margin-top:0">Every day carries its Hijri and Gregorian date, filled in when you read.</p>
+  <ul class="key"><li><i class="m"></i>Morning</li><li><i class="e"></i>Evening</li><li><i class="b"></i>Both</li></ul>
+</div>
+<img class="cal" src="../assets/calendar-card.png" alt="">
+""", stamp="Calendar", css="""
+.cal{position:absolute;left:488px;top:480px;width:520px;border-radius:26px;box-shadow:0 60px 110px -30px rgba(0,0,0,.95),0 0 0 1px rgba(255,255,255,.1)}
+.key{list-style:none;margin-top:48px;display:grid;gap:20px}
+.key li{display:flex;align-items:center;gap:16px;font:400 36px/1 'Instrument Serif'}
+.key i{width:26px;height:26px;border-radius:8px}.key .m{background:#E0763A}.key .e{background:#5F86F0}.key .b{background:linear-gradient(135deg,#E0763A 50%,#5F86F0 50%)}
+"""),
+
+    # 18. The reminder of the day, and the card it makes.
+    "18-daily-reminder": page(f"""
+<div style="position:absolute; left:72px; right:72px; top:170px; text-align:center">
+  <h1 class="h" style="font-size:100px">A reminder<br><em>for every day.</em></h1>
+  <p class="sub" style="max-width:700px; margin:26px auto 0">A verse or a hadith each day, always with its source. Save it, or share it as an image.</p>
+</div>
+<img class="share" src="../assets/day-card.png" alt="">
+{phone("day-reminder", "left:600px; top:560px; width:360px; transform:rotate(4deg)")}
+<div class="floor"></div>
+""", night=True, stamp="Every day", foot="center", css=FLOOR + """
+.share{position:absolute;left:110px;top:600px;width:480px;border-radius:26px;transform:rotate(-4deg);box-shadow:0 60px 110px -30px rgba(0,0,0,.95),0 0 0 1px rgba(255,255,255,.1)}
+"""),
+
+    # 19. The special days: the lock screen at 8 PM the evening before.
+    "19-special-days": page("""
+<div style="position:absolute; left:72px; right:72px; top:170px">
+  <h1 class="h" style="font-size:96px">The days that matter,<br><em>the evening before.</em></h1>
+</div>
+<ul class="days">
+  <li><b>9 Dhul Hijjah</b><span>The Day of Arafah</span></li>
+  <li><b>10 Muharram</b><span>ʿAshura, with the 9th</span></li>
+  <li><b>13 · 14 · 15</b><span>The white days, every month</span></li>
+  <li><b>Friday</b><span>Surah al-Kahf and salawat</span></li>
+</ul>
+<div class="lock">
+  <div class="wall"></div>
+  <div class="clock"><small>Wednesday, 8 Dhul Hijjah</small>8:00</div>
+  <div class="nt main"><div class="hd"><img src="../assets/icon.webp" alt=""><span>Adhkaar · now</span></div><b>Tomorrow: The Day of Arafah</b><p>Fasting it expiates the sins of the past year and the coming year. Make the intention tonight.</p></div>
+  <div class="nt old"><div class="hd"><img src="../assets/icon.webp" alt=""><span>Adhkaar · Friday</span></div><b>Jumuʿah Mubarak</b><p>Read Surah al-Kahf today, and send abundant salawat on the Prophet ﷺ.</p></div>
+</div>
+<div class="floor"></div>
+""", night=True, stamp="Special days", css=FLOOR + """
+.floor{height:240px}
+.days{position:absolute;left:72px;top:470px;width:400px;list-style:none;border-left:1px solid rgba(242,207,138,.35);padding-left:32px}
+.days li{position:relative;padding:0 0 38px}
+.days li::before{content:"";position:absolute;left:-39px;top:12px;width:13px;height:13px;border-radius:50%;background:var(--gold);box-shadow:0 0 16px rgba(242,207,138,.7)}
+.days b{display:block;font:400 44px/1 'Instrument Serif';color:var(--gold)}
+.days span{display:block;margin-top:10px;font:400 20px/1.3 Inter;color:var(--text-2)}
+.lock{position:absolute;left:540px;top:430px;width:468px;height:1010px;border-radius:52px;padding:9px;background:linear-gradient(150deg,#3a3d48,#15171e 22%,#0b0c11 60%,#26282f);box-shadow:0 60px 120px -30px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.08)}
+.lock .wall{position:absolute;inset:9px;border-radius:44px;background:radial-gradient(70% 40% at 70% 12%,rgba(143,177,255,.45),transparent 70%),radial-gradient(80% 50% at 20% 100%,rgba(106,76,255,.35),transparent 70%),linear-gradient(#141a3d,#070a1c)}
+.lock .wall::after{content:"";position:absolute;right:64px;top:44px;width:46px;height:46px;border-radius:50%;box-shadow:-10px 5px 0 0 #F2CF8A;filter:drop-shadow(0 0 14px rgba(242,207,138,.6))}
+.lock .clock{position:absolute;left:0;right:0;top:120px;text-align:center;font:200 124px/1 Inter;letter-spacing:-4px}
+.lock .clock small{display:block;margin-bottom:10px;font:500 20px/1 Inter;letter-spacing:0;color:var(--text-2)}
+.nt{position:absolute;left:28px;right:28px;padding:18px 20px;border-radius:24px;background:rgba(30,34,58,.82);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1)}
+.nt .hd{display:flex;align-items:center;gap:10px;font:500 15px/1 Inter;color:var(--text-3)}
+.nt .hd img{width:26px;height:26px;border-radius:8px}
+.nt b{display:block;margin-top:12px;font:600 21px/1.25 Inter}
+.nt p{margin-top:6px;font:400 17px/1.4 Inter;color:var(--text-2)}
+.nt.main{top:340px}.nt.old{top:540px;opacity:.6;transform:scale(.96)}
+"""),
+
+    # 20. Insights: the numbers and the week.
+    "20-insights": page("""
+<div style="position:absolute; left:72px; right:72px; top:170px">
+  <h1 class="h" style="font-size:100px">Watch the habit<br><em>take root.</em></h1>
+</div>
+<div class="tiles">
+  <div><b>28</b><span>Day streak</span></div>
+  <div><b>28</b><span>Best streak</span></div>
+  <div><b>46</b><span>Sessions this month</span></div>
+  <div><b>20</b><span>Full days this month</span></div>
+</div>
+<div class="bars">
+  <p>Days with adhkaar · last 8 weeks</p>
+  <div class="cols">
+    <div style="--v:6"><i>6/8</i><em></em><span>S</span></div><div style="--v:6"><em></em><span>M</span></div><div style="--v:6"><em></em><span>T</span></div>
+    <div style="--v:6"><em></em><span>W</span></div><div style="--v:5"><em></em><span>T</span></div><div style="--v:6"><em></em><span>F</span></div><div style="--v:5"><em></em><span>S</span></div>
+  </div>
+</div>
+""", stamp="Insights", css="""
+.tiles{position:absolute;left:72px;right:72px;top:450px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tiles div{padding:28px 24px;border-radius:28px;background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12)}
+.tiles b{display:block;font:400 76px/1 'Instrument Serif'}.tiles div:first-child b{color:var(--dawn)}
+.tiles span{display:block;margin-top:12px;font:400 17px/1.3 Inter;color:var(--text-2)}
+.bars{position:absolute;left:72px;right:72px;top:710px;height:430px;padding:34px 40px;border-radius:32px;background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12)}
+.bars p{font:600 21px/1 Inter}
+.cols{position:absolute;left:40px;right:40px;bottom:30px;top:100px;display:grid;grid-template-columns:repeat(7,1fr);gap:28px;align-items:end}
+.cols div{position:relative;display:grid;justify-items:center;gap:14px}
+.cols em{width:56px;height:calc(var(--v) * 30px);border-radius:10px 10px 4px 4px;background:rgba(95,134,240,.7)}
+.cols div:first-child em{background:#6B8FFF;box-shadow:0 0 30px rgba(107,143,255,.5)}
+.cols span{font:500 18px/1 Inter;color:var(--text-3)}.cols i{position:absolute;top:-34px;font:600 17px/1 Inter;font-style:normal}
+.foot{width:auto;right:72px}
+"""),
+
+    # 21. Your own duas, written down and kept with the adhkaar.
+    "21-my-duas": page("""
+<div style="position:absolute; left:72px; right:72px; top:170px">
+  <h1 class="h" style="font-size:100px">Your duas,<br><em>kept close.</em></h1>
+  <p class="sub" style="max-width:560px">Write the duas that matter to you, and read them with your morning or evening adhkaar.</p>
+</div>
+<div class="dua back"><p class="t">Before my exam</p><p class="en">O Allah, make it easy for me, and let me remember what I have learnt.</p><div class="tags"><span>Morning</span></div></div>
+<div class="dua front">
+  <p class="t">For my parents</p>
+  <div class="ar">رَّبِّ ٱرْحَمْهُمَا كَمَا رَبَّيَانِى صَغِيرًا</div>
+  <p class="en">My Lord, have mercy on them, as they raised me when I was small.</p>
+  <div class="tags"><span class="n">×3</span><span>Morning</span><span class="ev">Evening</span><em>al-Isra 17:24</em></div>
+</div>
+<div class="pen"><i></i>Write a dua</div>
+""", stamp="My duas", css="""
+.dua{position:absolute;border-radius:36px;padding:40px 44px;background:linear-gradient(160deg,rgba(255,255,255,.13),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(20px);box-shadow:0 60px 110px -30px rgba(0,0,0,.95)}
+.dua .t{font:600 22px/1 Inter;color:var(--text-2)}
+.dua .en{margin-top:18px;font:italic 400 36px/1.25 'Instrument Serif'}
+.dua.front{left:72px;right:72px;top:620px;transform:rotate(-2deg)}
+.dua.front .ar{margin-top:26px;font:400 64px/1.6 'Amiri Quran';color:var(--gold);direction:rtl;text-align:center}
+.dua.front .en{text-align:center;font-size:32px}
+.dua.back{left:180px;right:40px;top:520px;padding-top:30px;transform:rotate(3deg);opacity:.55}
+.dua.back .en{font-size:26px}
+.tags{margin-top:26px;display:flex;align-items:center;gap:12px}
+.tags span{padding:9px 16px;border-radius:99px;border:1px solid rgba(255,255,255,.18);font:500 17px/1 Inter;color:var(--text-2)}
+.tags span:not(.n)::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--dawn);margin-right:9px;vertical-align:1px}
+.tags span.ev::before{background:var(--night)}
+.tags em{margin-left:auto;font:600 15px/1 Inter;font-style:normal;letter-spacing:.16em;text-transform:uppercase;color:var(--dawn)}
+.dua.front .tags{justify-content:center}
+.pen{position:absolute;right:72px;top:1100px;display:flex;align-items:center;gap:14px;padding:22px 34px;border-radius:99px;background:linear-gradient(90deg,#4a6cff,#6b8fff);font:600 22px/1 Inter;box-shadow:0 20px 50px -14px rgba(75,108,255,.8)}
+.pen i{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.25);position:relative}
+.pen i::before,.pen i::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;margin:-1px 0 0 -7px;background:#fff}.pen i::after{transform:rotate(90deg)}
+"""),
 }
 
 def main(only):

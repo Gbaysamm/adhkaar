@@ -1,6 +1,6 @@
 # Social posts
 
-Fifteen 1080 × 1350 (4:5) posts for sharing Adhkaar. The exported PNGs are 2160 × 2700, in `export/`.
+Twenty-one 1080 × 1350 (4:5) posts for sharing Adhkaar. The exported PNGs are 2160 × 2700, in `export/`.
 
 | Post | Story |
 |---|---|
@@ -19,6 +19,12 @@ Fifteen 1080 × 1350 (4:5) posts for sharing Adhkaar. The exported PNGs are 2160
 | 13-share | Share cards |
 | 14-pause | A break, even in Lockdown |
 | 15-update | For testers: version 0.1.7, with a QR code to the download |
+| 16-moon-sighting | The Hijri date as announced by the moon-sighting committee |
+| 17-calendar | Hijri and Gregorian in one month, filled in by what you read |
+| 18-daily-reminder | A verse or hadith each day, and its share card |
+| 19-special-days | Arafah, Ashura, the white days and Friday, the evening before |
+| 20-insights | Streaks, sessions and the week |
+| 21-my-duas | Your own duas beside the adhkaar |
 
 ## Editing
 
