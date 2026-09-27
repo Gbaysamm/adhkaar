@@ -1,0 +1,76 @@
+/* Adhkaar social posts: 1080 × 1350 (4:5). One grid for every post:
+   72px margins, brand top-left, the story's time top-right, headline in the upper third,
+   the real app screen as the visual, one line and the footer on a shared baseline. */
+@font-face { font-family: "Instrument Serif"; src: url("fonts/instrument_serif.ttf"); }
+@font-face { font-family: "Instrument Serif"; font-style: italic; src: url("fonts/instrument_serif_italic.ttf"); }
+@font-face { font-family: "Inter"; src: url("fonts/inter.ttf"); font-weight: 100 900; }
+@font-face { font-family: "Amiri Quran"; src: url("fonts/amiri_quran.ttf"); }
+
+:root {
+  --ink: #05070F; --text: #F5F7FF; --text-2: rgba(245,247,255,.72); --text-3: rgba(245,247,255,.48);
+  --line: rgba(255,255,255,.12); --dawn: #FFB88A; --night: #8FB1FF; --gold: #F2CF8A;
+  --m: 72px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1350px; overflow: hidden; background: var(--ink); }
+body { font-family: Inter, sans-serif; color: var(--text); -webkit-font-smoothing: antialiased; }
+
+.post { position: relative; width: 1080px; height: 1350px; overflow: hidden; isolation: isolate; }
+.sky { position: absolute; inset: 0; z-index: -1; }
+.sky.dawn { background:
+  radial-gradient(60% 42% at 12% 0%, rgba(255,122,89,.55), transparent 70%),
+  radial-gradient(55% 40% at 92% 10%, rgba(192,76,255,.34), transparent 70%),
+  radial-gradient(60% 45% at 70% 90%, rgba(43,91,255,.22), transparent 70%),
+  linear-gradient(#120A18, #05070F 70%); }
+.sky.night { background:
+  radial-gradient(60% 42% at 88% 0%, rgba(43,91,255,.55), transparent 70%),
+  radial-gradient(55% 40% at 8% 12%, rgba(106,76,255,.36), transparent 70%),
+  radial-gradient(60% 45% at 30% 95%, rgba(255,122,89,.16), transparent 70%),
+  linear-gradient(#070B1F, #05070F 70%); }
+.grain { position: absolute; inset: 0; z-index: -1; opacity: .05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+/* top bar */
+.top { position: absolute; top: var(--m); left: var(--m); right: var(--m); height: 48px; display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand img { width: 48px; height: 48px; border-radius: 14px; box-shadow: 0 8px 26px -8px rgba(75,116,255,.8); }
+.brand span { font: 400 36px/1 "Instrument Serif"; letter-spacing: -.3px; }
+.stamp { font: 600 17px/1 Inter; letter-spacing: .18em; text-transform: uppercase; color: var(--dawn); }
+.night-post .stamp { color: var(--night); }
+
+/* headline */
+.head { position: absolute; top: 176px; left: var(--m); right: var(--m); }
+.h { font: 400 104px/.95 "Instrument Serif"; letter-spacing: -2.2px; }
+.h em { font-style: italic; color: var(--dawn); }
+.night-post .h em { color: var(--night); }
+.sub { margin-top: 26px; max-width: 420px; font: 400 27px/1.42 Inter; color: var(--text-2); letter-spacing: -.1px; }
+
+/* footer: a hairline and one baseline */
+/* The footer lives in the left column only; the phone owns the right column and the bottom edge. */
+.foot { position: absolute; left: var(--m); width: 400px; bottom: var(--m); display: grid; gap: 12px; border-top: 1px solid var(--line); padding-top: 24px; }
+.foot span { order: 2; font: 500 18px/1.35 Inter; color: var(--text-3); }
+.foot b { order: 1; font: 600 22px/1 Inter; color: var(--text); display: flex; align-items: center; gap: 10px; }
+.foot b i { width: 9px; height: 9px; border-radius: 50%; background: var(--dawn); box-shadow: 0 0 12px var(--dawn); }
+.night-post .foot b i { background: var(--night); box-shadow: 0 0 12px var(--night); }
+
+/* the phone: the app's real screen */
+.phone { position: absolute; width: 470px; aspect-ratio: 786 / 1704; border-radius: 58px; padding: 8px;
+  background: linear-gradient(150deg, #3a3d48 0%, #15171e 22%, #0b0c11 60%, #26282f 100%);
+  box-shadow: 0 60px 120px -30px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.08), inset 0 0 0 2px rgba(255,255,255,.08); }
+.phone::before { content: ""; position: absolute; top: 22px; left: 50%; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; background: #06070b; box-shadow: inset 0 0 0 3px #15161c; z-index: 2; }
+.phone .scr { width: 100%; height: 100%; border-radius: 50px; overflow: hidden; background: #05070F; }
+.phone .scr img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+
+/* a glass note that points at the screen */
+.note { position: absolute; padding: 26px 28px; border-radius: 28px; background: linear-gradient(160deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
+  border: 1px solid rgba(255,255,255,.16); backdrop-filter: blur(18px); box-shadow: 0 30px 60px -24px rgba(0,0,0,.8); }
+.note .k { font: 600 15px/1 Inter; letter-spacing: .18em; text-transform: uppercase; color: var(--dawn); }
+.note .v { margin-top: 12px; font: 400 40px/1.08 "Instrument Serif"; letter-spacing: -.4px; }
+.note p { margin-top: 10px; font: 400 20px/1.4 Inter; color: var(--text-2); }
+
+/* the hadith as a pull-quote */
+.hadith .ar { font: 400 44px/1.8 "Amiri Quran"; color: var(--gold); direction: rtl; }
+.hadith .en { margin-top: 6px; font: italic 400 31px/1.3 "Instrument Serif"; }
+.hadith .src { margin-top: 14px; font: 600 15px/1 Inter; letter-spacing: .18em; text-transform: uppercase; color: var(--dawn); }
+.night-post .hadith .src { color: var(--night); }
+.orn { color: var(--gold); font-size: 18px; margin-bottom: 14px; }
