@@ -10,6 +10,7 @@ import android.content.Context
  *    basmala, and "L 5908:0-8e 5909:0-2" a line of text: ayah 5908 (0-based, in order) words 0–8
  *    then its number, then ayah 5909 words 0–2. A run with no words ("5911:e") is a number alone.
  */
+@androidx.compose.runtime.Stable
 class Mushaf private constructor(val ayahs: List<List<String>>, val pages: List<Page>) {
     /** One run of a line: words [from]..[to] of one ayah, and its number after them when [end]. */
     data class Run(val ayah: Int, val from: Int, val to: Int, val end: Boolean) {

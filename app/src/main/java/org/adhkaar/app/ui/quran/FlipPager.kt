@@ -87,7 +87,10 @@ fun FlipPager(
                     },
             ) {
                 CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
-                    MushafPage(mushaf, layouts, index + 1, colors, selectedAyah, onAyah, onBackground, modifier = pageModifier)
+                    // The paper fills the screen, under the bars; the page's text is inset in it.
+                    Box(Modifier.fillMaxSize().background(colors.paper)) {
+                        MushafPage(mushaf, layouts, index + 1, colors, selectedAyah, onAyah, onBackground, modifier = pageModifier)
+                    }
                 }
                 // Light and shadow, changed in the layer only, so the page itself is never redrawn.
                 Box(

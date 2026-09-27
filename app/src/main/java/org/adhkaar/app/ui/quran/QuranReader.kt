@@ -10,6 +10,8 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
+import androidx.compose.ui.draw.clip
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -144,20 +146,24 @@ fun QuranReader(startPage: Int, onClose: () -> Unit, target: Int? = null, onTarg
 
         // The bar: back, where you are, and the page's time.
         AnimatedVisibility(chrome, enter = fadeIn(), exit = fadeOut(), modifier = Modifier.align(Alignment.TopCenter)) {
-            Row(
-                Modifier.fillMaxWidth().statusBarsPadding().padding(horizontal = Space.s, vertical = 2.dp),
-                verticalAlignment = Alignment.CenterVertically,
+            Box(
+                Modifier.fillMaxWidth().background(colors.paper).statusBarsPadding().height(56.dp).padding(horizontal = Space.s),
             ) {
-                GlassIconButton(Icons.AutoMirrored.Rounded.ArrowBack, stringResource(R.string.quran_close), tint = colors.ink, onClick = onClose)
-                Column(Modifier.weight(1f).padding(horizontal = Space.s)) {
+                Box(
+                    Modifier.align(Alignment.CenterStart).size(48.dp).clip(CircleShape).pressable(onClick = onClose),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Icon(Icons.AutoMirrored.Rounded.ArrowBack, stringResource(R.string.quran_close), tint = colors.ink, modifier = Modifier.size(22.dp))
+                }
+                Column(Modifier.align(Alignment.Center), horizontalAlignment = Alignment.CenterHorizontally) {
                     val surah = mushaf.surahsOfPage(page).last()
-                    Text(Quran.latinNames[surah - 1], style = Type.titleM.copy(color = colors.ink))
+                    Text(Quran.latinNames[surah - 1], style = Type.titleM.copy(color = colors.ink, lineHeight = 20.sp))
                     Text(
                         stringResource(R.string.quran_page_juz, page, mushaf.juzOfPage(page)),
-                        style = Type.caption.copy(color = colors.ink.copy(alpha = 0.6f)),
+                        style = Type.caption.copy(color = colors.ink.copy(alpha = 0.6f), lineHeight = 14.sp),
                     )
                 }
-                PageTimer(seconds, settings.secondsPerPage, pageRead, colors)
+                Box(Modifier.align(Alignment.CenterEnd)) { PageTimer({ seconds }, settings.secondsPerPage, pageRead, colors) }
             }
         }
 
@@ -182,7 +188,9 @@ fun QuranReader(startPage: Int, onClose: () -> Unit, target: Int? = null, onTarg
 
 /** A ring that fills over the page's time, then a tick. */
 @Composable
-private fun PageTimer(seconds: Int, total: Int, read: Boolean, colors: PageColors) {
+private fun PageTimer(secondsOf: () -> Int, total: Int, read: Boolean, colors: PageColors) {
+    // Read here, not by the reader: the tick each second redraws only this ring.
+    val seconds = secondsOf()
     val left = (total - seconds).coerceAtLeast(0)
     Box(Modifier.size(48.dp), contentAlignment = Alignment.Center) {
         Canvas(Modifier.size(38.dp)) {

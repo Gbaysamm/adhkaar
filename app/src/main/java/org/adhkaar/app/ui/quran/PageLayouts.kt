@@ -44,6 +44,7 @@ class PageLayout(val words: List<Placed>, val ornaments: List<Ornament>)
  * Lays pages out off the main thread and keeps the last few, so a page is ready before it turns
  * into view and turning never waits on measuring. Positions only: colours are applied when drawn.
  */
+@androidx.compose.runtime.Stable
 class PageLayouts(context: Context, private val density: Density) {
     private val measurer = TextMeasurer(createFontFamilyResolver(context), density, LayoutDirection.Rtl, cacheSize = 0)
     private val cache = object : LinkedHashMap<String, PageLayout>(16, 0.75f, true) {

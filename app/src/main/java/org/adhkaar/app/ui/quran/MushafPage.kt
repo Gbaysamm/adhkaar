@@ -146,18 +146,27 @@ fun MushafPage(
     }
 }
 
-/** The page number, centred between two short rules, as a mushaf sets it. */
+/** The page number between two short rules, the rules level with the middle of the digits. */
 @Composable
 private fun PageNumber(number: Int, colors: PageColors) {
-    Row(Modifier.fillMaxWidth().padding(top = 2.dp), horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically) {
-        Box(Modifier.width(28.dp).height(1.dp).background(colors.frame.copy(alpha = 0.6f)))
+    val size = 19.sp
+    // Arabic digits sit on the baseline and rise about a third of the size: the rules go there.
+    val raise = with(LocalDensity.current) { (size.toPx() * 0.3f).toInt() }
+    Row(Modifier.fillMaxWidth().padding(top = 2.dp), horizontalArrangement = Arrangement.Center) {
+        val rule = Modifier.width(28.dp).height(1.dp).alignBy { it.measuredHeight + raise }.background(colors.frame.copy(alpha = 0.6f))
+        Box(rule)
         Spacer(Modifier.width(10.dp))
-        Text(Quran.arabicDigits(number), style = running(colors.accent, 19.sp))
+        Text(Quran.arabicDigits(number), style = running(colors.accent, size), modifier = Modifier.alignByBaseline())
         Spacer(Modifier.width(10.dp))
-        Box(Modifier.width(28.dp).height(1.dp).background(colors.frame.copy(alpha = 0.6f)))
+        Box(rule)
     }
 }
 
 /** The page's own lettering: Amiri, whose digits stay plain (in the mushaf font digits become ayah markers). */
-private fun running(color: Color, size: androidx.compose.ui.unit.TextUnit) =
-    TextStyle(fontFamily = org.adhkaar.app.ui.theme.AmiriQuran, fontSize = size, color = color, textDirection = TextDirection.Rtl)
+private fun running(color: Color, size: androidx.compose.ui.unit.TextUnit) = TextStyle(
+    fontFamily = org.adhkaar.app.ui.theme.AmiriQuran, fontSize = size, color = color, textDirection = TextDirection.Rtl,
+    // Amiri carries a deep space above and below; trimmed, the glyphs centre on what's beside them.
+    lineHeight = size, lineHeightStyle = androidx.compose.ui.text.style.LineHeightStyle(
+        androidx.compose.ui.text.style.LineHeightStyle.Alignment.Center, androidx.compose.ui.text.style.LineHeightStyle.Trim.Both,
+    ),
+)
