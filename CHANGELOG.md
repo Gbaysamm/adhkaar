@@ -2,6 +2,10 @@
 
 All notable changes are listed here, newest first. The format follows [Keep a Changelog](https://keepachangelog.com), and versions follow [semantic versioning](https://semver.org). How releases are made: [docs/RELEASING.md](docs/RELEASING.md).
 
+## 0.1.5 (testing)
+
+- Reading when the adhkaar time ends is no longer called missed: the ringing and Lockdown let go, you can finish, and the app looks again every 15 minutes (up to an hour) before saying anything.
+
 ## 0.1.4 (testing)
 
 - The morning adhkaar stay open until 8:30 AM by default, and each session's end can be chosen: a time for the morning, Maghrib or Isha for the evening.

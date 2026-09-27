@@ -182,12 +182,13 @@ object AlarmScheduler {
         )
 
     /** When [type]'s adhkaar time ends today: checks whether they were read (MissedAdhkaar). */
-    fun scheduleWindowEnd(context: Context, type: SessionType, atMillis: Long) {
+    fun scheduleWindowEnd(context: Context, type: SessionType, atMillis: Long, attempt: Int = 0) {
         val intent = PendingIntent.getBroadcast(
             context, 130 + type.ordinal,
             Intent(context, SessionAlarmReceiver::class.java)
                 .setAction(SessionAlarmReceiver.ACTION_WINDOW_END)
-                .putExtra(SessionAlarmReceiver.EXTRA_TYPE, type.key),
+                .putExtra(SessionAlarmReceiver.EXTRA_TYPE, type.key)
+                .putExtra(SessionAlarmReceiver.EXTRA_ATTEMPT, attempt),
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
         )
         setWakeup(context, atMillis, intent)

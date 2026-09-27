@@ -20,7 +20,7 @@ class SessionAlarmReceiver : BroadcastReceiver() {
             ACTION_RERING -> SessionLauncher.onReRing(context)
             ACTION_COLLECTION_END -> SessionLauncher.endCollection(context, intent.getStringExtra(EXTRA_COLLECTION))
             ACTION_WINDOW_END -> SessionType.fromKey(intent.getStringExtra(EXTRA_TYPE))
-                ?.let { org.adhkaar.app.session.MissedAdhkaar.onWindowEnd(context, it) }
+                ?.let { org.adhkaar.app.session.MissedAdhkaar.onWindowEnd(context, it, intent.getIntExtra(EXTRA_ATTEMPT, 0)) }
             ACTION_SILENCE -> SessionLauncher.silence(context)
             ACTION_CALENDAR -> CalendarReminders.onEveningCheck(context)
             ACTION_FRIDAY -> CalendarReminders.onFriday(context)
@@ -44,6 +44,8 @@ class SessionAlarmReceiver : BroadcastReceiver() {
         const val ACTION_PRE = "org.adhkaar.app.action.PRE"
         const val ACTION_RERING = "org.adhkaar.app.action.RERING"
         const val ACTION_WINDOW_END = "org.adhkaar.app.action.WINDOW_END"
+        /** How many times the end of the adhkaar time has been looked at again while someone was reading. */
+        const val EXTRA_ATTEMPT = "attempt"
         const val ACTION_COLLECTION_END = "org.adhkaar.app.action.COLLECTION_END"
         const val ACTION_SILENCE = "org.adhkaar.app.action.SILENCE"
         const val ACTION_CALENDAR = "org.adhkaar.app.action.CALENDAR"

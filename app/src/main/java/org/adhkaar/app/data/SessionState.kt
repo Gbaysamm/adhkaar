@@ -180,6 +180,12 @@ class SessionState private constructor(context: Context) {
      * Pauses the pending session until [untilMillis]. The alert is un-answered again, so it rings
      * when the break ends, like the second ring.
      */
+    /** The adhkaar time ended mid-reading: nothing is enforced any more, but they stay open to finish. */
+    fun relax() {
+        val current = pending ?: return
+        writePending(current.copy(enforced = false))
+    }
+
     fun startBreak(untilMillis: Long) {
         val current = pending ?: return
         prefs.edit().remove(KEY_ALERT_ACK).apply()

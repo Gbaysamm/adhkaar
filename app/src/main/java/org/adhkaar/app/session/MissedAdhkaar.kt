@@ -9,6 +9,7 @@ import org.adhkaar.app.data.SessionType
 import org.adhkaar.app.data.SettingsStore
 import org.adhkaar.app.data.Streaks
 import org.adhkaar.app.enforce.EnforcementService
+import org.adhkaar.app.schedule.AlarmScheduler
 import java.time.LocalDate
 import java.time.ZonedDateTime
 
@@ -29,7 +30,8 @@ object MissedAdhkaar {
     fun latest(context: Context, now: ZonedDateTime = ZonedDateTime.now()): Missed? {
         val settings = SettingsStore.get(context).current
         val state = SessionState.get(context)
-        return latest(settings, state.historyFlow.value, state.missedSeen(), state.firstSeen(), now)
+        val waiting = state.pending?.takeIf { it.collection == null && !it.test }?.let { Missed(it.type, it.date) }
+        return latest(settings, state.historyFlow.value, state.missedSeen(), state.firstSeen(), now).takeIf { it != waiting }
     }
 
     /** Pure, for tests: [history] as "date|type" keys, [seen] the missed keys already shown. */
@@ -48,17 +50,35 @@ object MissedAdhkaar {
         return null
     }
 
+    /** While someone is still reading when the time ends, how often and how long to wait before calling it missed. */
+    private const val GRACE_MINUTES = 15L
+    private const val GRACE_CHECKS = 4
+
     fun markSeen(context: Context, missed: Missed) = SessionState.get(context).markMissedSeen(missed.key)
 
     /**
      * When a session's adhkaar time ends (an alarm set when it rang): if they weren't read, let
      * the waiting session go and say so, gently.
      */
-    fun onWindowEnd(context: Context, type: SessionType) {
+    fun onWindowEnd(context: Context, type: SessionType, attempt: Int = 0) {
         val state = SessionState.get(context)
         val today = LocalDate.now()
         if (Streaks.isDone(state.historyFlow.value, today, type)) return
         val pending = state.pending
+        // Still reading when the time ends: that isn't missing them. Let go of the ringing and the
+        // lock, leave them open to finish, and look again in a while (up to an hour).
+        val mine = pending != null && pending.type == type && pending.collection == null && !pending.test
+        val reading = mine && (org.adhkaar.app.ui.SessionActivity.isVisible || state.progress().values.any { it > 0 })
+        if (reading && attempt < GRACE_CHECKS) {
+            AlertPlayer.stop()
+            AlarmScheduler.cancelReRing(context)
+            AlarmScheduler.cancelWatchdog(context)
+            state.relax()
+            EnforcementService.stop(context)
+            Notifications.refresh(context)
+            AlarmScheduler.scheduleWindowEnd(context, type, System.currentTimeMillis() + GRACE_MINUTES * 60_000L, attempt + 1)
+            return
+        }
         if (pending != null && pending.type == type && !pending.test) {
             state.clearPending()
             NotificationManagerCompat.from(context).cancel(Notifications.SESSION_ID)
