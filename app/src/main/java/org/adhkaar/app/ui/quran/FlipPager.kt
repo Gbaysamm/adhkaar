@@ -6,7 +6,10 @@ import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.PagerDefaults
 import androidx.compose.foundation.pager.PagerState
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.derivedStateOf
@@ -62,6 +65,8 @@ fun FlipPager(
                 },
             beyondViewportPageCount = 1,
             key = { it },
+            // A quick, firm finish when the finger lets go, like a page falling into place.
+            flingBehavior = PagerDefaults.flingBehavior(pager, snapAnimationSpec = tween(320, easing = FastOutSlowInEasing)),
         ) { index ->
             // How far this page is through its turn: 0 lying open, 1 turned away. Negative: underneath.
             fun turn() = (pager.currentPage - index) + pager.currentPageOffsetFraction
@@ -74,11 +79,16 @@ fun FlipPager(
                         val o = turn()
                         // Stay put: the pager would slide the page across; the turn replaces the slide.
                         translationX = -o * size.width
+                        // Every page now sits in one place, so only the page turning and the one
+                        // beneath it may show; the pages kept ready further off would cover them.
+                        alpha = if (o <= -1f || o >= 1f) 0f else 1f
                         if (o > 0f) {
                             transformOrigin = TransformOrigin(1f, 0.5f)
                             cameraDistance = 56f * density
-                            // Positive: the free edge lifts towards the reader, as a turned page does.
-                            rotationY = o * 90f
+                            // The free edge stays under the finger: seen from the front, a page turned
+                            // by θ reaches cos θ of its width, so θ = acos(1 − o). Positive: it lifts
+                            // towards the reader, as a turned page does.
+                            rotationY = Math.toDegrees(kotlin.math.acos((1f - o).coerceIn(0f, 1f).toDouble())).toFloat()
                             rotationZ = grab * 2.5f * sin(o * PI).toFloat()
                         } else {
                             rotationY = 0f
