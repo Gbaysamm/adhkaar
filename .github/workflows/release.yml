@@ -16,7 +16,7 @@ jobs:
     timeout-minutes: 45
     environment: release # add required reviewers to this environment in the repository settings
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-java@v4
         with:
