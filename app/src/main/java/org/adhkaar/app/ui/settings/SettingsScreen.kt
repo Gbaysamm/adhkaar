@@ -209,6 +209,9 @@ fun SettingsScreen(onOpenSetup: () -> Unit, onOpenPrayerTimes: () -> Unit, onOpe
             RowDivider()
             SettingsRow(stringResource(R.string.settings_after_salah), stringResource(R.string.settings_after_salah_hint, AlarmScheduler.AFTER_SALAH_DELAY_MINUTES), Icons.Rounded.Mosque, trailing = {
                 GlassSwitch(settings.afterSalahReminder, { v -> updateSettings(context) { it.copy(afterSalahReminder = v) } })
+            if (settings.afterSalahReminder) {
+                CollectionModeRow("after_salah", listOf(Strictness.GENTLE, Strictness.FULL_SCREEN), settings.collectionMode("after_salah"))
+            }
             })
             RowDivider()
             SettingsRow(
@@ -228,6 +231,9 @@ fun SettingsScreen(onOpenSetup: () -> Unit, onOpenPrayerTimes: () -> Unit, onOpe
                     }
                 },
             )
+            if (settings.bedtimeMinute >= 0) {
+                CollectionModeRow("before_sleep", listOf(Strictness.GENTLE, Strictness.FULL_SCREEN, Strictness.LOCKDOWN), settings.collectionMode("before_sleep"))
+            }
             RowDivider()
             SettingsRow(stringResource(R.string.settings_islamic_calendar), stringResource(R.string.settings_islamic_calendar_hint), Icons.Rounded.CalendarMonth, trailing = {
                 GlassSwitch(settings.calendarReminders, { v -> updateSettings(context) { it.copy(calendarReminders = v) } })
@@ -461,6 +467,28 @@ private fun ScheduleGroup(type: SessionType, schedule: SessionSchedule, onChange
  * (record → stop → listen, re-record or delete), made with the same recorder as a dua's voice.
  * With "My recording" chosen but nothing recorded yet, the chime plays.
  */
+/** How firmly a collection's reminder holds: the same three modes as the morning and evening, where allowed. */
+@Composable
+private fun CollectionModeRow(id: String, allowed: List<Strictness>, current: Strictness) {
+    val context = LocalContext.current
+    val labels = allowed.map {
+        stringResource(
+            when (it) {
+                Strictness.GENTLE -> R.string.mode_gentle
+                Strictness.FULL_SCREEN -> R.string.mode_full_screen
+                Strictness.LOCKDOWN -> R.string.mode_lockdown
+            },
+        )
+    }
+    Column(Modifier.padding(start = 64.dp, end = Space.l, bottom = Space.m)) {
+        GlassSegmented(labels, allowed.indexOf(current).coerceAtLeast(0)) { i ->
+            updateSettings(context) { s -> s.copy(collectionModes = s.collectionModes + (id to allowed[i])) }
+        }
+        Spacer(Modifier.height(Space.xs))
+        Text(stringResource(if (id == "after_salah") R.string.collection_mode_hint_salah else R.string.collection_mode_hint_sleep), style = Type.caption)
+    }
+}
+
 @Composable
 private fun AlertSoundSetting(sound: AlertSound) {
     val context = LocalContext.current

@@ -190,8 +190,17 @@ object Notifications {
         }
     }
 
-    fun title(context: Context, type: SessionType): String =
-        context.getString(if (type == SessionType.MORNING) R.string.notif_title_morning else R.string.notif_title_evening)
+    fun title(context: Context, type: SessionType): String {
+        collectionTitle(context)?.let { return it }
+        return context.getString(if (type == SessionType.MORNING) R.string.notif_title_morning else R.string.notif_title_evening)
+    }
+
+    /** The waiting collection's name, when a collection (not morning or evening) is what's waiting. */
+    private fun collectionTitle(context: Context): String? = when (SessionState.get(context).pending?.collection) {
+        "after_salah" -> context.getString(R.string.moment_title_after_salah)
+        "before_sleep" -> context.getString(R.string.moment_title_before_sleep)
+        else -> null
+    }
 
     /** On a break: when it ends and when the adhkaar must be done by. Otherwise what the session is. */
     private fun text(context: Context, type: SessionType): String {
@@ -200,6 +209,7 @@ object Notifications {
             val windowEnd = AlertPolicy.windowEndMillis(pending, SessionLauncher.windowMinutes(context, pending))
             return context.getString(R.string.break_notification, clock(context, pending.pausedUntilMillis), clock(context, windowEnd))
         }
+        if (pending?.collection != null) return context.getString(R.string.notif_collection_text)
         return context.getString(if (type == SessionType.MORNING) R.string.notif_session_text_morning else R.string.notif_session_text_evening)
     }
 
@@ -255,6 +265,7 @@ object Notifications {
     fun sessionIntent(context: Context, type: SessionType): Intent =
         Intent(context, SessionActivity::class.java)
             .putExtra(SessionActivity.EXTRA_TYPE, type.key)
+            .apply { SessionState.get(context).pending?.collection?.let { putExtra(SessionActivity.EXTRA_COLLECTION, it) } }
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
 
     private fun sessionPendingIntent(context: Context, type: SessionType): PendingIntent =

@@ -8,7 +8,7 @@
     <string name="guide_salah_title">Your salah times</string>
     <string name="guide_salah_body">The app starts with common local times. Change them to your masjid\'s in Settings › Salah reminders: tap a time to edit it. Your times replace the defaults completely, and you can switch each salah reminder on or off there.</string>
     <string name="guide_group_modes">Modes</string>
-    <string name="guide_modes_intro">The mode decides how firmly the app holds you to the morning and evening adhkaar. It applies only to those two; everything else is a notification.</string>
+    <string name="guide_modes_intro">The mode decides how firmly the app holds you to the morning and evening adhkaar. Before sleep and after salah can use it too, if you choose.</string>
     <string name="guide_gentle_body">One soft chime and a notification when the adhkaar open. It does not ring again.</string>
     <string name="guide_gentle_pros">Calm and never in the way. Good if you already have the habit.</string>
     <string name="guide_gentle_cons">Easy to swipe away and forget.</string>
@@ -24,7 +24,7 @@
     <string name="guide_breaks_body">Busy when the adhkaar open? Take a break of 10, 20, 30 or 60 minutes. The reminder comes back when the break ends, as long as the adhkaar time is still open.</string>
     <string name="guide_group_more">More</string>
     <string name="guide_collections_title">Other reminders</string>
-    <string name="guide_collections_body">Sleep, waking, after salah and the other collections remind you with a notification only; the modes don\'t apply to them. Turn them on in Settings › Reminders.</string>
+    <string name="guide_collections_body">Before sleep, after salah and on waking remind you with a notification and a card. In Settings › Reminders you can make before sleep and after salah firmer: Full screen, or Lockdown for before sleep.</string>
     <string name="guide_calendar_title">Calendar</string>
     <string name="guide_calendar_body">The Islamic calendar follows the moon sightings announced in Nigeria when they are available, and calculated dates otherwise. It marks Jumu\'ah, the white days, Ramadan and other special days.</string>
     <string name="guide_widgets_title">Widgets</string>

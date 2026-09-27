@@ -67,7 +67,7 @@ class BlockOverlay(
 
     /** [remaining] = adhkaar not yet finished in this session. */
     /** [started]: the user has counted before, so the button says Return rather than Start. */
-    fun show(type: SessionType, remaining: Int, started: Boolean) {
+    fun show(type: SessionType, remaining: Int, started: Boolean, title: String? = null) {
         if (view != null || !Settings.canDrawOverlays(context)) return
         val owner = OverlayOwner()
         val root = ComposeView(context).apply {
@@ -75,7 +75,7 @@ class BlockOverlay(
             setViewTreeSavedStateRegistryOwner(owner)
             setContent {
                 AdhkaarTheme(aura = Auras.evening) {
-                    BlockScreen(type, remaining, started, onReturn, onCall)
+                    BlockScreen(type, remaining, started, onReturn, onCall, title)
                 }
             }
         }
@@ -138,7 +138,7 @@ internal class OverlayOwner : SavedStateRegistryOwner {
 }
 
 @Composable
-internal fun BlockScreen(type: SessionType, remaining: Int, started: Boolean, onReturn: () -> Unit, onCall: () -> Unit) {
+internal fun BlockScreen(type: SessionType, remaining: Int, started: Boolean, onReturn: () -> Unit, onCall: () -> Unit, title: String? = null) {
     val sessionAura = Auras.of(type)
     AuraBackground(Modifier.fillMaxSize()) {
         Column(
@@ -152,7 +152,7 @@ internal fun BlockScreen(type: SessionType, remaining: Int, started: Boolean, on
             NurOrb(128.dp, aura = sessionAura)
             Spacer(Modifier.height(Space.xxl))
             Text(
-                stringResource(if (type == SessionType.MORNING) R.string.block_title_morning else R.string.block_title_evening),
+                title?.let { stringResource(R.string.block_title_collection, it) } ?: stringResource(if (type == SessionType.MORNING) R.string.block_title_morning else R.string.block_title_evening),
                 style = Type.displayM, textAlign = TextAlign.Center,
             )
             Spacer(Modifier.height(Space.m))

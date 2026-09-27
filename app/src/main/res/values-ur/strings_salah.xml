@@ -21,4 +21,8 @@
     <string name="popup_ready">میں تیاری کر رہا ہوں</string>
     <string name="popup_open">کھولیں</string>
     <string name="popup_later">بعد میں</string>
+    <string name="notif_collection_text">وقت ہو گیا · چند منٹ، پھر فارغ</string>
+    <string name="block_title_collection">آپ کے %1$s منتظر ہیں</string>
+    <string name="collection_mode_hint_salah">فل اسکرین ہر نماز کے بعد ۲۰ منٹ کے لیے انہیں کھولتی ہے۔</string>
+    <string name="collection_mode_hint_sleep">فل اسکرین سونے کے وقت انہیں کھولتی ہے؛ لاک ڈاؤن پڑھنے تک ایک گھنٹے تک دوسری ایپس روکتا ہے۔</string>
 </resources>

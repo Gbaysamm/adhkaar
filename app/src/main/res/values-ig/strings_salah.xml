@@ -21,4 +21,8 @@
     <string name="popup_ready">Ana m akwado</string>
     <string name="popup_open">Mepee</string>
     <string name="popup_later">Emesịa</string>
+    <string name="notif_collection_text">Oge eruola · nkeji ole na ole, ị mechaa</string>
+    <string name="block_title_collection">%1$s gị na-echere</string>
+    <string name="collection_mode_hint_salah">Ihuenyo zuru ezu na-emepe ha maka nkeji 20 mgbe salah ọ bụla gasịrị.</string>
+    <string name="collection_mode_hint_sleep">Ihuenyo zuru ezu na-emepe ha n’oge ụra; Mkpọchi na-akwụsịtụ ngwa ndị ọzọ ruo otu awa ruo mgbe a gụrụ ha.</string>
 </resources>

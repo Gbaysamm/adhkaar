@@ -21,4 +21,8 @@
     <string name="popup_ready">أستعد الآن</string>
     <string name="popup_open">افتح</string>
     <string name="popup_later">لاحقًا</string>
+    <string name="notif_collection_text">حان الوقت · دقائق قليلة وتنتهي</string>
+    <string name="block_title_collection">%1$s بانتظارك</string>
+    <string name="collection_mode_hint_salah">ملء الشاشة يفتحها لمدة ٢٠ دقيقة بعد كل صلاة.</string>
+    <string name="collection_mode_hint_sleep">ملء الشاشة يفتحها وقت النوم، والإغلاق يوقف التطبيقات الأخرى حتى ساعة حتى تُقرأ.</string>
 </resources>

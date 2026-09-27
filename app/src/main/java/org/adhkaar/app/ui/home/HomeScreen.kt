@@ -146,7 +146,7 @@ import java.util.Locale
 
 /** The session the app is "about" right now: the one waiting, else the next one, else by time of day. */
 fun heroSession(context: android.content.Context, pending: PendingSession?, now: ZonedDateTime): SessionType =
-    pending?.type
+    pending?.takeIf { it.collection == null }?.type
         ?: SessionType.entries.mapNotNull { t -> AlarmScheduler.nextTime(context, t, now)?.let { t to it } }.minByOrNull { it.second }?.first
         ?: if (now.hour < 12) SessionType.MORNING else SessionType.EVENING
 
@@ -173,7 +173,7 @@ fun TodayScreen(
     val settings by SettingsStore.get(context).flow.collectAsState()
     val state = remember { SessionState.get(context) }
     // A test session is not today's session: the home screen carries on as if it weren't there.
-    val pending = state.pendingFlow.collectAsState().value?.takeUnless { it.test }
+    val pending = state.pendingFlow.collectAsState().value?.takeUnless { it.test || it.collection != null }
     val completed by state.completedFlow.collectAsState()
     val history by state.historyFlow.collectAsState()
     val resumeTick = rememberResumeTick()

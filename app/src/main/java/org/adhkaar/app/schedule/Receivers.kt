@@ -18,6 +18,7 @@ class SessionAlarmReceiver : BroadcastReceiver() {
             ACTION_PRE -> SessionType.fromKey(intent.getStringExtra(EXTRA_TYPE))
                 ?.let { SessionLauncher.onPreReminder(context, it) }
             ACTION_RERING -> SessionLauncher.onReRing(context)
+            ACTION_COLLECTION_END -> SessionLauncher.endCollection(context, intent.getStringExtra(EXTRA_COLLECTION))
             ACTION_WINDOW_END -> SessionType.fromKey(intent.getStringExtra(EXTRA_TYPE))
                 ?.let { org.adhkaar.app.session.MissedAdhkaar.onWindowEnd(context, it) }
             ACTION_SILENCE -> SessionLauncher.silence(context)
@@ -25,7 +26,7 @@ class SessionAlarmReceiver : BroadcastReceiver() {
             ACTION_FRIDAY -> CalendarReminders.onFriday(context)
             ACTION_COLLECTION -> {
                 AlarmScheduler.scheduleCollections(context)
-                intent.getStringExtra(EXTRA_COLLECTION)?.let { Notifications.showCollection(context, it) }
+                intent.getStringExtra(EXTRA_COLLECTION)?.let { SessionLauncher.onCollectionTime(context, it) }
             }
             ACTION_SALAH -> {
                 AlarmScheduler.scheduleSalahReminders(context)
@@ -43,6 +44,7 @@ class SessionAlarmReceiver : BroadcastReceiver() {
         const val ACTION_PRE = "org.adhkaar.app.action.PRE"
         const val ACTION_RERING = "org.adhkaar.app.action.RERING"
         const val ACTION_WINDOW_END = "org.adhkaar.app.action.WINDOW_END"
+        const val ACTION_COLLECTION_END = "org.adhkaar.app.action.COLLECTION_END"
         const val ACTION_SILENCE = "org.adhkaar.app.action.SILENCE"
         const val ACTION_CALENDAR = "org.adhkaar.app.action.CALENDAR"
         const val ACTION_FRIDAY = "org.adhkaar.app.action.FRIDAY"

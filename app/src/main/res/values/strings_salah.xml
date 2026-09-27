@@ -26,4 +26,8 @@
     <string name="popup_ready">I\'m getting ready</string>
     <string name="popup_open">Open</string>
     <string name="popup_later">Later</string>
+    <string name="notif_collection_text">It\'s time · a few minutes, then you\'re done</string>
+    <string name="block_title_collection">Your %1$s are waiting</string>
+    <string name="collection_mode_hint_salah">Full screen opens them for 20 minutes after each salah.</string>
+    <string name="collection_mode_hint_sleep">Full screen opens them at bedtime; Lockdown pauses other apps for up to an hour until they\'re read.</string>
 </resources>

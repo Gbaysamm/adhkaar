@@ -8,7 +8,7 @@
     <string name="guide_salah_title">Lokutan sallarka</string>
     <string name="guide_salah_body">Manhajar tana farawa da lokutan gari da aka saba. Canza su zuwa na masallacinka a Saituna › Tunatarwar sallah: taɓa lokaci don gyara shi. Lokutanka suna maye gurbin na asali gaba ɗaya, kuma za ka iya kunna ko kashe tunatarwar kowace sallah a can.</string>
     <string name="guide_group_modes">Yanayi</string>
-    <string name="guide_modes_intro">Yanayin yana ƙayyade yadda manhajar za ta riƙe ka ga azkar na safe da yamma. Ya shafi waɗannan biyun kawai; sauran sanarwa ne.</string>
+    <string name="guide_modes_intro">Yanayin yana ƙayyade yadda manhajar za ta riƙe ka ga azkar na safe da yamma. Na kafin barci da bayan sallah ma za su iya amfani da shi, idan ka zaɓa.</string>
     <string name="guide_gentle_body">Ƙara mai laushi guda ɗaya da sanarwa lokacin da azkar suka buɗe. Ba ya sake ƙara.</string>
     <string name="guide_gentle_pros">Natsuwa kuma ba ya shiga hanya. Ya dace idan ka riga ka saba.</string>
     <string name="guide_gentle_cons">Yana da sauƙin sharewa a manta.</string>
@@ -24,7 +24,7 @@
     <string name="guide_breaks_body">Kana cikin aiki lokacin da azkar suka buɗe? Ka ɗauki hutun minti 10, 20, 30 ko 60. Tunatarwa za ta dawo idan hutun ya ƙare, muddin lokacin azkar yana buɗe.</string>
     <string name="guide_group_more">Ƙari</string>
     <string name="guide_collections_title">Sauran tunatarwa</string>
-    <string name="guide_collections_body">Na barci, farkawa, bayan sallah da sauran tarin suna tunatarwa da sanarwa kawai; yanayin ba ya shafar su. Kunna su a Saituna › Tunatarwa.</string>
+    <string name="guide_collections_body">Na kafin barci, bayan sallah da farkawa suna tunatarwa da sanarwa da kati. A Saituna › Tunatarwa za ka iya ƙara ƙarfin na kafin barci da bayan sallah: Cikakken allo, ko Kulle don kafin barci.</string>
     <string name="guide_calendar_title">Kalanda</string>
     <string name="guide_calendar_body">Kalandar Musulunci tana bin ganin wata da aka sanar a Najeriya idan akwai, in ba haka ba kwanakin da aka lissafa. Tana nuna Juma\'a, kwanakin fari, Ramadan da sauran ranaku na musamman.</string>
     <string name="guide_widgets_title">Widget</string>

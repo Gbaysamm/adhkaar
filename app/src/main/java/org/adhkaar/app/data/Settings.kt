@@ -94,6 +94,11 @@ data class AppSettings(
     val afterSalahReminder: Boolean = true,
     /** Minutes after midnight for the before-sleep reminder; -1 = off. */
     val bedtimeMinute: Int = SettingsStore.DEFAULT_BEDTIME,
+    /**
+     * How firmly each collection's reminder holds you, by collection id. Gentle (a notification and
+     * a card) unless chosen; after salah can go up to Full screen, before sleep up to Lockdown.
+     */
+    val collectionModes: Map<String, Strictness> = emptyMap(),
     /** Play the recitation (when one exists) as each dhikr comes up. */
     val autoPlayRecitation: Boolean = false,
     val alertSound: AlertSound = AlertSound.CHIME,
@@ -106,6 +111,8 @@ data class AppSettings(
     val salahRemindersOff: Set<Prayer> = emptySet(),
 ) {
     fun schedule(type: SessionType) = if (type == SessionType.MORNING) morning else evening
+
+    fun collectionMode(id: String): Strictness = collectionModes[id] ?: Strictness.GENTLE
     val hasLocation get() = latitude != null && longitude != null
     /** The one time the whole app uses for [prayer], in minutes after midnight. */
     fun prayerMinute(prayer: Prayer) = prayerMinutes[prayer] ?: prayer.defaultMinute
@@ -159,6 +166,7 @@ class SettingsStore private constructor(context: Context) {
         fridayReminderMinute = prefs.getInt("friday_minute", 10 * 60),
         afterSalahReminder = !prefs.getBoolean(REMINDERS_ON, false) || prefs.getBoolean("after_salah_reminder", true),
         bedtimeMinute = prefs.getInt("bedtime_minute", -1).let { if (it < 0 && !prefs.getBoolean(REMINDERS_ON, false)) DEFAULT_BEDTIME else it },
+        collectionModes = ENFORCEABLE.associateWith { enumOr(prefs.getString("collection_mode_$it", null), Strictness.GENTLE) },
         autoPlayRecitation = prefs.getBoolean("auto_play", false),
         alertSound = enumOr(prefs.getString("alert_sound", null), AlertSound.CHIME),
         prayerMinutes = Prayer.entries.mapNotNull { prayer -> readPrayerMinute(prayer)?.let { prayer to it } }.toMap(),
@@ -223,6 +231,7 @@ class SettingsStore private constructor(context: Context) {
             putInt("friday_minute", s.fridayReminderMinute)
             putBoolean("after_salah_reminder", s.afterSalahReminder)
             putInt("bedtime_minute", s.bedtimeMinute)
+            s.collectionModes.forEach { (id, mode) -> putString("collection_mode_$id", mode.name) }
             putBoolean("auto_play", s.autoPlayRecitation)
             putString("alert_sound", s.alertSound.name)
             Prayer.entries.forEach { prayer ->
@@ -263,6 +272,9 @@ class SettingsStore private constructor(context: Context) {
         private const val OFFSETS_V2 = "offsets_v2"
         /** Set once settings are saved after every reminder became on by default; see read. */
         private const val REMINDERS_ON = "reminders_on_v1"
+        /** Collections whose reminder can be made firmer than a notification. */
+        val ENFORCEABLE = listOf("after_salah", "before_sleep")
+
         /** The before-sleep reminder's default, 10:00 PM. */
         const val DEFAULT_BEDTIME = 22 * 60
 

@@ -29,6 +29,8 @@ import java.time.LocalTime
  */
 class SessionActivity : ComponentActivity() {
     private var type by mutableStateOf(SessionType.MORNING)
+    /** A collection held by its reminder (before sleep, after salah), shown instead of morning/evening. */
+    private var collection by mutableStateOf<String?>(null)
 
     override fun attachBaseContext(base: android.content.Context) {
         super.attachBaseContext(org.adhkaar.app.data.Languages.wrap(base))
@@ -55,6 +57,7 @@ class SessionActivity : ComponentActivity() {
         }
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         type = resolveType(intent)
+        collection = intent?.getStringExtra(EXTRA_COLLECTION)
 
         onBackPressedDispatcher.addCallback(this) {
             if (SessionLauncher.isLockdownActive(this@SessionActivity)) {
@@ -65,8 +68,17 @@ class SessionActivity : ComponentActivity() {
         }
 
         setContent {
-            AdhkaarTheme(aura = Auras.of(type)) {
-                SessionScreen(type = type, onFinish = { finish() })
+            val held = collection
+            if (held != null) {
+                // Read or closed (with the usual confirmation), the reminder lets go.
+                org.adhkaar.app.ui.session.CollectionSessionScreen(held, onFinish = {
+                    SessionLauncher.endCollection(this, held)
+                    finish()
+                })
+            } else {
+                AdhkaarTheme(aura = Auras.of(type)) {
+                    SessionScreen(type = type, onFinish = { finish() })
+                }
             }
         }
     }
@@ -75,6 +87,7 @@ class SessionActivity : ComponentActivity() {
         super.onNewIntent(intent)
         setIntent(intent)
         type = resolveType(intent)
+        collection = intent.getStringExtra(EXTRA_COLLECTION)
     }
 
     override fun onResume() {
@@ -94,6 +107,7 @@ class SessionActivity : ComponentActivity() {
 
     companion object {
         const val EXTRA_TYPE = "type"
+        const val EXTRA_COLLECTION = "collection"
 
         /** Read by the enforcement service: while this is on screen, nothing needs covering. */
         @Volatile

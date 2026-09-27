@@ -8,7 +8,7 @@
     <string name="guide_salah_title">أوقات صلاتك</string>
     <string name="guide_salah_body">يبدأ التطبيق بأوقات محلية شائعة. غيّرها إلى أوقات مسجدك من الإعدادات › تذكيرات الصلاة: اضغط على الوقت لتعديله. أوقاتك تحل محل الأوقات الافتراضية تمامًا، ويمكنك تشغيل تذكير كل صلاة أو إيقافه هناك.</string>
     <string name="guide_group_modes">الأوضاع</string>
-    <string name="guide_modes_intro">يحدد الوضع مدى إلزام التطبيق لك بأذكار الصباح والمساء. وهو خاص بهما فقط؛ وكل ما سواهما إشعار.</string>
+    <string name="guide_modes_intro">يحدد الوضع مدى إلزام التطبيق لك بأذكار الصباح والمساء. ويمكن لأذكار النوم وما بعد الصلاة استخدامه أيضًا إن اخترت.</string>
     <string name="guide_gentle_body">نغمة لطيفة واحدة وإشعار عند فتح الأذكار. لا يرن مرة أخرى.</string>
     <string name="guide_gentle_pros">هادئ ولا يعترض طريقك. مناسب إن كانت العادة راسخة لديك.</string>
     <string name="guide_gentle_cons">من السهل تجاهله ونسيانه.</string>
@@ -24,7 +24,7 @@
     <string name="guide_breaks_body">مشغول عند فتح الأذكار؟ خذ استراحة ١٠ أو ٢٠ أو ٣٠ أو ٦٠ دقيقة. يعود التذكير عند انتهائها ما دام وقت الأذكار مفتوحًا.</string>
     <string name="guide_group_more">المزيد</string>
     <string name="guide_collections_title">تذكيرات أخرى</string>
-    <string name="guide_collections_body">أذكار النوم والاستيقاظ وما بعد الصلاة وغيرها تذكّرك بإشعار فقط؛ ولا تنطبق عليها الأوضاع. فعّلها من الإعدادات › التذكيرات.</string>
+    <string name="guide_collections_body">أذكار النوم وبعد الصلاة والاستيقاظ تذكّرك بإشعار وبطاقة. ومن الإعدادات › التذكيرات يمكنك جعل أذكار النوم وبعد الصلاة أكثر إلزامًا: ملء الشاشة، أو الإغلاق لأذكار النوم.</string>
     <string name="guide_calendar_title">التقويم</string>
     <string name="guide_calendar_body">يتبع التقويم الهجري رؤية الهلال المعلنة في نيجيريا عند توفرها، والتواريخ المحسوبة فيما عدا ذلك. ويُبرز الجمعة والأيام البيض ورمضان وغيرها من المناسبات.</string>
     <string name="guide_widgets_title">الأدوات</string>

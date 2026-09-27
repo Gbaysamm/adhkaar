@@ -21,4 +21,8 @@
     <string name="popup_ready">Mo ń múra</string>
     <string name="popup_open">Ṣí i</string>
     <string name="popup_later">Nígbà míì</string>
+    <string name="notif_collection_text">Àkókò ti tó · ìṣẹ́jú díẹ̀, lẹ́yìn náà o ti parí</string>
+    <string name="block_title_collection">%1$s rẹ ń dúró</string>
+    <string name="collection_mode_hint_salah">Ojú-iboju kíkún ń ṣí wọn fún ìṣẹ́jú 20 lẹ́yìn ìrun kọ̀ọ̀kan.</string>
+    <string name="collection_mode_hint_sleep">Ojú-iboju kíkún ń ṣí wọn ní àkókò oorun; Ìtìpa ń dá àwọn ohun èlò mìíràn dúró fún wákàtí kan títí a ó fi kà wọ́n.</string>
 </resources>

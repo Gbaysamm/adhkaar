@@ -79,7 +79,7 @@ data class WidgetData(
                 is AdhkaarWindows.Status.Closed -> status.next.opens
                 else -> null
             }
-            val waiting = pending?.type == type
+            val waiting = pending?.collection == null && pending?.type == type
             return WidgetData(
                 type = type,
                 time = next?.let { formatTime(context, it) },

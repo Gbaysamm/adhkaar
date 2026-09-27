@@ -22,6 +22,8 @@ data class PendingSession(
     val pausedUntilMillis: Long = 0L,
     /** Started by Test morning/evening: never recorded, never shown as due, and can be ended. */
     val test: Boolean = false,
+    /** A collection (e.g. "before_sleep") held firmly by its reminder, instead of morning or evening. */
+    val collection: String? = null,
 )
 
 /** Completion history, stored as "2026-09-25|morning" entries. */
@@ -133,6 +135,12 @@ class SessionState private constructor(context: Context) {
         writePending(PendingSession(type, today, nowMillis, enforced))
     }
 
+    /** A collection's reminder, held like a session: it rings, opens and (in Lockdown) covers other apps. */
+    fun startCollection(id: String, type: SessionType, today: LocalDate, nowMillis: Long) {
+        prefs.edit().remove(KEY_PROGRESS).remove(KEY_PAGE).remove(KEY_ALERT_ACK).apply()
+        writePending(PendingSession(type, today, nowMillis, enforced = true, collection = id))
+    }
+
     fun progress(): Map<String, Int> =
         prefs.getString(KEY_PROGRESS, null)?.split(';')?.mapNotNull { entry ->
             val parts = entry.split('=')
@@ -186,7 +194,7 @@ class SessionState private constructor(context: Context) {
     private fun writePending(p: PendingSession) {
         // commit() rather than apply(): the process may be killed right after an alarm.
         prefs.edit()
-            .putString(KEY_PENDING, "${p.type.key}|${p.date}|${p.startedAtMillis}|${p.enforced}|${p.pausedUntilMillis}|${p.test}")
+            .putString(KEY_PENDING, "${p.type.key}|${p.date}|${p.startedAtMillis}|${p.enforced}|${p.pausedUntilMillis}|${p.test}|${p.collection.orEmpty()}")
             .commit()
         pendingState.value = p
     }
@@ -194,7 +202,7 @@ class SessionState private constructor(context: Context) {
     private fun readPending(): PendingSession? {
         val parts = prefs.getString(KEY_PENDING, null)?.split('|') ?: return null
         // Four fields were written before breaks existed; such a session has no break.
-        if (parts.size !in 4..6) return null
+        if (parts.size !in 4..7) return null
         return PendingSession(
             type = SessionType.fromKey(parts[0]) ?: return null,
             date = runCatching { LocalDate.parse(parts[1]) }.getOrNull() ?: return null,
@@ -202,6 +210,7 @@ class SessionState private constructor(context: Context) {
             enforced = parts[3].toBoolean(),
             pausedUntilMillis = parts.getOrNull(4)?.toLongOrNull() ?: 0L,
             test = parts.getOrNull(5).toBoolean(),
+            collection = parts.getOrNull(6)?.ifEmpty { null },
         )
     }
 

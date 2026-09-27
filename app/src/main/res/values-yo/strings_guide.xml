@@ -8,7 +8,7 @@
     <string name="guide_salah_title">Àkókò ìrun rẹ</string>
     <string name="guide_salah_body">Ohun èlò náà bẹ̀rẹ̀ pẹ̀lú àkókò àdúgbò tó wọ́pọ̀. Yí wọn padà sí ti mọ́ṣáláṣí rẹ ní Ètò › Ìránnilétí ìrun: tẹ àkókò kan láti ṣàtúnṣe rẹ̀. Àkókò rẹ rọ́pò ti àtìbẹ̀rẹ̀ pátápátá, o sì lè tan tàbí pa ìránnilétí ìrun kọ̀ọ̀kan níbẹ̀.</string>
     <string name="guide_group_modes">Ìpò</string>
-    <string name="guide_modes_intro">Ìpò ń pinnu bí ohun èlò náà ṣe máa di ọ́ mú sí adhkaar òwúrọ̀ àti ìrọ̀lẹ́. Ó kan àwọn méjèèjì yìí nìkan; ìyókù jẹ́ ìfitónilétí.</string>
+    <string name="guide_modes_intro">Ìpò ń pinnu bí ohun èlò ṣe máa di ọ́ mú sí adhkaar òwúrọ̀ àti ìrọ̀lẹ́. Ti kí o tó sùn àti lẹ́yìn ìrun lè lò ó pẹ̀lú, tí o bá yàn.</string>
     <string name="guide_gentle_body">Ohùn rírọ̀ kan àti ìfitónilétí nígbà tí adhkaar bá ṣí. Kò ní dún mọ́.</string>
     <string name="guide_gentle_pros">Ó farabalẹ̀, kò sì ní dí ọ lọ́wọ́. Ó dára tí o bá ti mọ́ ọ lára.</string>
     <string name="guide_gentle_cons">Ó rọrùn láti gbá a kúrò kí o sì gbàgbé.</string>
@@ -24,7 +24,7 @@
     <string name="guide_breaks_body">Ọwọ́ rẹ dí nígbà tí adhkaar ṣí? Gba ìsinmi ìṣẹ́jú 10, 20, 30 tàbí 60. Ìránnilétí máa padà nígbà tí ìsinmi bá parí, bí àkókò adhkaar bá ṣì ṣí.</string>
     <string name="guide_group_more">Síwájú sí i</string>
     <string name="guide_collections_title">Àwọn ìránnilétí mìíràn</string>
-    <string name="guide_collections_body">Ti oorun, jíjí, lẹ́yìn ìrun àti àwọn àkójọ mìíràn máa ń rán ọ létí pẹ̀lú ìfitónilétí nìkan; àwọn ìpò kò kàn wọ́n. Tan wọn ní Ètò › Ìránnilétí.</string>
+    <string name="guide_collections_body">Ti kí o tó sùn, lẹ́yìn ìrun àti jíjí ń rán ọ létí pẹ̀lú ìfitónilétí àti káàdì. Ní Ètò › Ìránnilétí o lè mú ti kí o tó sùn àti lẹ́yìn ìrun le sí i: Ojú-iboju kíkún, tàbí Ìtìpa fún kí o tó sùn.</string>
     <string name="guide_calendar_title">Kàlẹ́ńdà</string>
     <string name="guide_calendar_body">Kàlẹ́ńdà Islam ń tẹ̀lé rírí oṣù tí a kéde ní Nàìjíríà nígbà tí ó bá wà, àti ọjọ́ tí a ṣírò bí bẹ́ẹ̀ kọ́. Ó ń fi Jímọ̀ọ̀, àwọn ọjọ́ funfun, Ramadan àti àwọn ọjọ́ pàtàkì mìíràn hàn.</string>
     <string name="guide_widgets_title">Wíjẹ́ẹ̀tì</string>

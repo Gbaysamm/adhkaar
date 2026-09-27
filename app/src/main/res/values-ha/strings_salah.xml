@@ -21,4 +21,8 @@
     <string name="popup_ready">Ina shiryawa</string>
     <string name="popup_open">Buɗe</string>
     <string name="popup_later">Anjima</string>
+    <string name="notif_collection_text">Lokaci ya yi · mintuna kaɗan, sannan ka gama</string>
+    <string name="block_title_collection">%1$s naka suna jira</string>
+    <string name="collection_mode_hint_salah">Cikakken allo yana buɗe su na minti 20 bayan kowace sallah.</string>
+    <string name="collection_mode_hint_sleep">Cikakken allo yana buɗe su lokacin barci; Kulle yana dakatar da sauran manhajoji har awa ɗaya har a karanta su.</string>
 </resources>

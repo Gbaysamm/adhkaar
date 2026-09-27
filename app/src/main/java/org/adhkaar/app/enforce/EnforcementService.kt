@@ -110,7 +110,7 @@ class EnforcementService : Service() {
             stopSelf()
             return START_NOT_STICKY
         }
-        val strictness = SettingsStore.get(this).current.strictness
+        val strictness = SessionLauncher.strictnessFor(this, pending)
         val ring = intent?.getBooleanExtra(EXTRA_RING, false) == true
         // Ring first, so the first notification already carries the Stop button.
         if (ring) startRinging()
@@ -247,9 +247,14 @@ class EnforcementService : Service() {
 
     private fun showOverlay(type: SessionType) {
         if (overlay.isShowing) return
-        val targets = (AdhkaarRepository.forSession(this, type) + UserDuaStore.get(this).forSession(type)).map { it.id to it.count }
+        val collection = SessionState.get(this).pending?.collection
+        val targets = if (collection != null) {
+            org.adhkaar.app.data.CollectionsRepository.get(this, collection)?.items.orEmpty().map { it.id to it.count }
+        } else {
+            (AdhkaarRepository.forSession(this, type) + UserDuaStore.get(this).forSession(type)).map { it.id to it.count }
+        }
         val progress = SessionState.get(this).progress()
-        overlay.show(type, AlertPolicy.remaining(targets, progress), started = progress.values.any { it > 0 })
+        overlay.show(type, AlertPolicy.remaining(targets, progress), started = progress.values.any { it > 0 }, title = Notifications.title(this, type))
     }
 
     private fun returnToSession() {

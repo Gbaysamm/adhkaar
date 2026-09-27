@@ -136,10 +136,10 @@ fun TestKitScreen(onBack: () -> Unit, onOpenSetup: () -> Unit) {
                 later(context) { Notifications.showSalahReminder(it, Prayer.MAGHRIB) }
             }
             TryCard(Icons.Rounded.Mosque, R.string.moment_title_after_salah, R.string.kit_collection_expect) {
-                later(context) { Notifications.showCollection(it, "after_salah") }
+                later(context) { org.adhkaar.app.session.SessionLauncher.onCollectionTime(it, "after_salah") }
             }
             TryCard(Icons.Rounded.Bedtime, R.string.moment_title_before_sleep, R.string.kit_collection_expect) {
-                later(context) { Notifications.showCollection(it, "before_sleep") }
+                later(context) { org.adhkaar.app.session.SessionLauncher.onCollectionTime(it, "before_sleep") }
             }
             TryCard(Icons.Rounded.NotificationsActive, R.string.kit_heads_up, R.string.kit_heads_up_expect) {
                 later(context) { Notifications.showPreReminder(it, SessionType.MORNING, 10) }

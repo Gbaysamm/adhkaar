@@ -193,6 +193,18 @@ object AlarmScheduler {
         setWakeup(context, atMillis, intent)
     }
 
+    /** When a collection held by its reminder lets go (see SessionLauncher.onCollectionTime). */
+    fun scheduleCollectionEnd(context: Context, id: String, atMillis: Long) {
+        val intent = PendingIntent.getBroadcast(
+            context, 140 + org.adhkaar.app.data.SettingsStore.ENFORCEABLE.indexOf(id).coerceAtLeast(0),
+            Intent(context, SessionAlarmReceiver::class.java)
+                .setAction(SessionAlarmReceiver.ACTION_COLLECTION_END)
+                .putExtra(SessionAlarmReceiver.EXTRA_COLLECTION, id),
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
+        )
+        setWakeup(context, atMillis, intent)
+    }
+
     /** Fires a session shortly from now, so users (and testers) can check it works on their phone. */
     fun scheduleTest(context: Context, type: SessionType, delayMs: Long) {
         setAlarm(context, System.currentTimeMillis() + delayMs, sessionIntent(context, type, TEST_REQUEST, test = true))

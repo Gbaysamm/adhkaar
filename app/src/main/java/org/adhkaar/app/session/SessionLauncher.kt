@@ -20,12 +20,57 @@ object SessionLauncher {
     /** How long a test session is enforced before it lets go by itself. */
     private const val TEST_MINUTES = 10
 
+    /**
+     * How long a collection's reminder holds: after salah is a short moment between prayers, and
+     * before sleep has an hour.
+     */
+    private val COLLECTION_MINUTES = mapOf("after_salah" to 20, "before_sleep" to 60)
+
+    /** The mode that applies to what's waiting: a collection's own, or the morning/evening one. */
+    fun strictnessFor(context: Context, pending: PendingSession?): Strictness {
+        val settings = SettingsStore.get(context).current
+        return pending?.collection?.let { settings.collectionMode(it) } ?: settings.strictness
+    }
+
+    /**
+     * A collection's reminder time. Gentle is a notification and a card, as before; Full screen and
+     * Lockdown hold it like a session, for its window, and never record a streak or a miss.
+     */
+    fun onCollectionTime(context: Context, id: String) {
+        val mode = SettingsStore.get(context).current.collectionMode(id)
+        val state = SessionState.get(context)
+        // A morning or evening already waiting keeps its place; the collection is only a nudge then.
+        val busy = state.pending?.let { it.collection == null && AlertPolicy.isWindowOpen(it, windowMinutes(context, it), System.currentTimeMillis()) } == true
+        if (mode == Strictness.GENTLE || busy) {
+            Notifications.showCollection(context, id)
+            return
+        }
+        val now = System.currentTimeMillis()
+        val type = if (java.time.LocalTime.now().hour < 12) SessionType.MORNING else SessionType.EVENING
+        state.startCollection(id, type, LocalDate.now(), now)
+        AlarmScheduler.scheduleCollectionEnd(context, id, now + (COLLECTION_MINUTES[id] ?: 20) * 60_000L)
+        Notifications.show(context, type, fullScreen = true)
+        if (mode == Strictness.LOCKDOWN) AlarmScheduler.scheduleWatchdog(context)
+        ring(context)
+        AlarmScheduler.scheduleReRing(context, now + AlertPolicy.RERING_DELAY_MS)
+    }
+
+    /** The collection held by its reminder was read, closed, or its time ran out: let go quietly. */
+    fun endCollection(context: Context, id: String? = null) {
+        val state = SessionState.get(context)
+        val pending = state.pending ?: return
+        if (pending.collection == null || (id != null && pending.collection != id)) return
+        state.clearPending()
+        end(context)
+    }
+
     /** How long [pending] stays enforced: to its adhkaar window's close, at most the user's maximum. */
     fun windowMinutes(context: Context, pending: PendingSession?): Int {
         val settings = SettingsStore.get(context).current
         pending ?: return settings.lockdownMaxMinutes
         // A test shows how the mode behaves, then lets go by itself.
         if (pending.test) return TEST_MINUTES
+        pending.collection?.let { return COLLECTION_MINUTES[it] ?: 20 }
         val zone = java.time.ZoneId.systemDefault()
         val started = java.time.Instant.ofEpochMilli(pending.startedAtMillis).atZone(zone)
         val closes = AdhkaarWindows.window(settings, pending.type, started.toLocalDate(), zone).closes
@@ -171,7 +216,7 @@ object SessionLauncher {
         val pending = state.pending ?: return
         // A session already done today can only be left over from a test before tests were
         // marked as such; it must not show as due again.
-        if (!pending.test && state.lastCompleted(pending.type) == pending.date) {
+        if (pending.collection == null && !pending.test && state.lastCompleted(pending.type) == pending.date) {
             state.clearPending()
             return
         }
@@ -184,10 +229,11 @@ object SessionLauncher {
             return
         }
         val reRingAt = pending.startedAtMillis + AlertPolicy.RERING_DELAY_MS
-        if (settings.strictness != Strictness.GENTLE && !state.alertAcknowledged && reRingAt > nowMillis) {
+        val strictness = strictnessFor(context, pending)
+        if (strictness != Strictness.GENTLE && !state.alertAcknowledged && reRingAt > nowMillis) {
             AlarmScheduler.scheduleReRing(context, reRingAt)
         }
-        if (!AlertPolicy.opensOnUnlock(settings.strictness)) return
+        if (!AlertPolicy.opensOnUnlock(strictness)) return
         Notifications.show(context, pending.type, fullScreen = false)
         EnforcementService.start(context)
         if (isLockdownActive(context)) AlarmScheduler.scheduleWatchdog(context)
@@ -223,6 +269,7 @@ object SessionLauncher {
      * blocking, and keep a quiet reminder. The day stays unmarked, so it counts as missed.
      */
     fun onWindowClosed(context: Context) {
+        SessionState.get(context).pending?.collection?.let { endCollection(context, it); return }
         AlertPlayer.stop()
         AlarmScheduler.cancelWatchdog(context)
         AlarmScheduler.cancelReRing(context)
@@ -230,10 +277,9 @@ object SessionLauncher {
     }
 
     fun isLockdownActive(context: Context): Boolean {
-        val settings = SettingsStore.get(context).current
         val state = SessionState.get(context)
         return AlertPolicy.isLockdownActive(
-            state.pending, settings.strictness, windowMinutes(context, state.pending), System.currentTimeMillis(),
+            state.pending, strictnessFor(context, state.pending), windowMinutes(context, state.pending), System.currentTimeMillis(),
         )
     }
 
