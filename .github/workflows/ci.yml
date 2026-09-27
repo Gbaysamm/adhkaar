@@ -29,7 +29,7 @@ jobs:
           java-version: "17"
 
       # Caches Gradle's dependencies and build cache between runs.
-      - uses: gradle/actions/setup-gradle@v4
+      - uses: gradle/actions/setup-gradle@v6
 
       - name: Test, lint and build
         run: ./gradlew testDebugUnitTest lintDebug assembleDebug --stacktrace
@@ -66,7 +66,7 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      - uses: gradle/actions/setup-gradle@v4
+      - uses: gradle/actions/setup-gradle@v6
 
       # Needs the Roborazzi Gradle plugin (io.github.takahirom.roborazzi) applied in app/build.gradle.kts,
       # and the always-on "roborazzi.test.record" system property there made conditional. Until then
