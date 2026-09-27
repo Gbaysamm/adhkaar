@@ -1,6 +1,6 @@
 # Social posts
 
-Twenty-one 1080 × 1350 (4:5) posts for sharing Adhkaar. The exported PNGs are 2160 × 2700, in `export/`.
+Twenty-five 1080 × 1350 (4:5) posts for sharing Adhkaar. The exported PNGs are 2160 × 2700, in `export/`.
 
 | Post | Story |
 |---|---|
@@ -25,6 +25,10 @@ Twenty-one 1080 × 1350 (4:5) posts for sharing Adhkaar. The exported PNGs are 2
 | 19-special-days | Arafah, Ashura, the white days and Friday, the evening before |
 | 20-insights | Streaks, sessions and the week |
 | 21-my-duas | Your own duas beside the adhkaar |
+| 22-collections | On waking, after salah, before sleep, everyday duas |
+| 23-favourites | The adhkaar you return to |
+| 24-your-times | Your masjid's salah times, not calculated ones |
+| 25-reading | Arabic size, transliteration, translation, auto-advance, haptics |
 
 ## Editing
 

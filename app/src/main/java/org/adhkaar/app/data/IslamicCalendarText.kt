@@ -38,6 +38,16 @@ fun DayEvent.title(context: Context): String = context.getString(kind.titleRes()
 
 fun DayEvent.body(context: Context): String = context.getString(kind.bodyRes())
 
+/** The body for the evening before, when "today" would be wrong: the fast is tomorrow. */
+fun DayEvent.eveBody(context: Context): String = context.getString(
+    when (kind) {
+        EventKind.ARAFAH -> R.string.event_arafah_eve_body
+        EventKind.TASUA -> R.string.event_tasua_eve_body
+        EventKind.ASHURA -> R.string.event_ashura_eve_body
+        else -> kind.bodyRes()
+    },
+)
+
 private val hijriMonths = intArrayOf(
     R.string.hijri_month_muharram, R.string.hijri_month_safar, R.string.hijri_month_rabi_al_awwal,
     R.string.hijri_month_rabi_al_thani, R.string.hijri_month_jumada_al_ula, R.string.hijri_month_jumada_al_akhirah,

@@ -4,7 +4,7 @@ import android.content.Context
 import org.adhkaar.app.R
 import org.adhkaar.app.data.IslamicCalendar
 import org.adhkaar.app.data.SettingsStore
-import org.adhkaar.app.data.body
+import org.adhkaar.app.data.eveBody
 import org.adhkaar.app.data.title
 import org.adhkaar.app.schedule.AlarmScheduler
 import java.time.LocalDate
@@ -19,7 +19,7 @@ object CalendarReminders {
         if (!settings.calendarReminders) return
         val tomorrow = LocalDate.now().plusDays(1)
         val event = IslamicCalendar.eveReminder(tomorrow, org.adhkaar.app.data.MoonSighting.hijriFor(context, tomorrow, settings)) ?: return
-        Notifications.showCalendar(context, context.getString(R.string.reminder_eve_title, event.title(context)), event.body(context))
+        Notifications.showCalendar(context, context.getString(R.string.reminder_eve_title, event.title(context)), event.eveBody(context))
     }
 
     /** Friday morning: Surah al-Kahf and salawat. */

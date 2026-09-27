@@ -53,6 +53,9 @@
     <string name="event_tasua_body">Ẹ gba ààwẹ̀ lónìí pẹ̀lú Ashura lọ́la, gẹ́gẹ́ bí Ànọ́bì ﷺ ti gbèrò.</string>
     <string name="event_ashura_title">Ashura</string>
     <string name="event_ashura_body">Ààwẹ̀ òní ń pa ẹ̀ṣẹ̀ ọdún tó kọjá rẹ́.</string>
+    <string name="event_arafah_eve_body">Ààwẹ̀ ọjọ́ náà ń pa ẹ̀ṣẹ̀ ọdún tó kọjá àti ti ọdún tó ń bọ̀ rẹ́. Ẹ ṣe àníyàn lálẹ́ yìí.</string>
+    <string name="event_tasua_eve_body">Ẹ gba ààwẹ̀ lọ́la, àti Ashura ní ọjọ́ kejì, gẹ́gẹ́ bí Ànọ́bì ﷺ ti gbèrò.</string>
+    <string name="event_ashura_eve_body">Ààwẹ̀ ọjọ́ náà ń pa ẹ̀ṣẹ̀ ọdún tó kọjá rẹ́. Ẹ ṣe àníyàn lálẹ́ yìí.</string>
     <string name="event_white_days_title">Àwọn ọjọ́ funfun</string>
     <string name="event_white_days_body">Gbígba ààwẹ̀ ọjọ́ 13, 14 àti 15 oṣù jẹ́ sunnah.</string>
 

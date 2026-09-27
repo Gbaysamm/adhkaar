@@ -2,6 +2,11 @@
 
 All notable changes are listed here, newest first. The format follows [Keep a Changelog](https://keepachangelog.com), and versions follow [semantic versioning](https://semver.org). How releases are made: [docs/RELEASING.md](docs/RELEASING.md).
 
+## Unreleased
+
+- The evening-before reminder for Arafah, Tasuʿa and ʿAshura no longer says "fasting today" when the fast is tomorrow.
+- The wide Today widget no longer cuts off its countdown on short home-screen rows.
+
 ## 0.1.7 (testing)
 
 - The after-salah and before-sleep reminders come on time. They could run 15 minutes or more late (before sleep up to an hour), so a Full screen after-salah reminder arrived long after the salah.

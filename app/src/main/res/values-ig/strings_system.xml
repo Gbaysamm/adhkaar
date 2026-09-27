@@ -56,6 +56,9 @@
     <!-- "Ashura" = the 10th of Muharram, transliterated. -->
     <string name="event_ashura_title">Ashura</string>
     <string name="event_ashura_body">Ibu ọnụ taa na-ehichapụ mmehie nke afọ gara aga.</string>
+    <string name="event_arafah_eve_body">Ibu ọnụ n\'ụbọchị ahụ na-ehichapụ mmehie nke afọ gara aga na nke afọ na-abịa. Mee ebumnuche n\'abalị a.</string>
+    <string name="event_tasua_eve_body">Bụọ ọnụ echi, na Ashura n\'echi ya, dịka Onye Amụma ﷺ zubere.</string>
+    <string name="event_ashura_eve_body">Ibu ọnụ n\'ụbọchị ahụ na-ehichapụ mmehie nke afọ gara aga. Mee ebumnuche n\'abalị a.</string>
     <!-- The 13th, 14th and 15th of each Hijri month. -->
     <string name="event_white_days_title">Ụbọchị ọcha</string>
     <string name="event_white_days_body">Ibu ọnụ n\'ụbọchị nke 13, 14 na 15 nke ọnwa bụ sunnah.</string>

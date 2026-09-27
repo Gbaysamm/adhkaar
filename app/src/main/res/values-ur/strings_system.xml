@@ -55,6 +55,9 @@
     <!-- "Ashura" = the 10th of Muharram. -->
     <string name="event_ashura_title">عاشورہ</string>
     <string name="event_ashura_body">آج کا روزہ گزشتہ سال کے گناہوں کا کفارہ ہے۔</string>
+    <string name="event_arafah_eve_body">اس دن کا روزہ گزشتہ اور آئندہ سال کے گناہوں کا کفارہ ہے۔ آج رات روزے کی نیت کر لیں۔</string>
+    <string name="event_tasua_eve_body">کل روزہ رکھیں اور اس کے بعد عاشورہ کا بھی، جیسا کہ نبی ﷺ کا ارادہ تھا۔</string>
+    <string name="event_ashura_eve_body">اس دن کا روزہ گزشتہ سال کے گناہوں کا کفارہ ہے۔ آج رات روزے کی نیت کر لیں۔</string>
     <!-- The 13th, 14th and 15th of each Hijri month. -->
     <string name="event_white_days_title">ایامِ بیض</string>
     <string name="event_white_days_body">مہینے کی 13، 14 اور 15 تاریخ کا روزہ سنت ہے۔</string>

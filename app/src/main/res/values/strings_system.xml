@@ -57,6 +57,10 @@
     <!-- "Ashura" = the 10th of Muharram, transliterated. -->
     <string name="event_ashura_title">Ashura</string>
     <string name="event_ashura_body">Fasting today expiates the sins of the past year.</string>
+    <!-- The evening before (CalendarReminders): the fast is tomorrow, so these don't say "today". -->
+    <string name="event_arafah_eve_body">Fasting it expiates the sins of the past year and the coming year. Make the intention tonight.</string>
+    <string name="event_tasua_eve_body">Fast tomorrow, and Ashura the day after, as the Prophet ﷺ intended.</string>
+    <string name="event_ashura_eve_body">Fasting it expiates the sins of the past year. Make the intention tonight.</string>
     <!-- The 13th, 14th and 15th of each Hijri month. -->
     <string name="event_white_days_title">The white days</string>
     <string name="event_white_days_body">Fasting the 13th, 14th and 15th of the month is sunnah.</string>

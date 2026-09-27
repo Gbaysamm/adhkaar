@@ -60,6 +60,9 @@
     <!-- Ashura = the 10th of Muharram. -->
     <string name="event_ashura_title">عاشوراء</string>
     <string name="event_ashura_body">صيام هذا اليوم يكفّر السنة الماضية.</string>
+    <string name="event_arafah_eve_body">صيامه يكفّر السنة الماضية والسنة الباقية. انوِ الصيام الليلة.</string>
+    <string name="event_tasua_eve_body">صُم غدًا ثم عاشوراء بعده، كما عزم النبي ﷺ.</string>
+    <string name="event_ashura_eve_body">صيامه يكفّر السنة الماضية. انوِ الصيام الليلة.</string>
     <!-- The 13th, 14th and 15th of each Hijri month. -->
     <string name="event_white_days_title">الأيام البيض</string>
     <string name="event_white_days_body">صيام الثالث عشر والرابع عشر والخامس عشر من الشهر سُنّة.</string>

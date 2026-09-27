@@ -484,6 +484,94 @@ POST_LIST = {
 .pen i{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.25);position:relative}
 .pen i::before,.pen i::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;margin:-1px 0 0 -7px;background:#fff}.pen i::after{transform:rotate(90deg)}
 """),
+    # 22. Collections: a dhikr for each moment, and how it ends.
+    "22-collections": page(f"""
+<div style="position:absolute; left:72px; right:72px; top:170px; text-align:center">
+  <h1 class="h" style="font-size:100px">For every moment<br><em>of the day.</em></h1>
+  <p class="sub" style="max-width:720px; margin:26px auto 0">On waking, after each salah, before sleep, and the everyday duas. Each with its source, each a few minutes.</p>
+</div>
+{phone("library", "left:110px; top:580px; width:400px; transform:rotate(-5deg)")}
+{phone("sleep-complete", "left:560px; top:540px; width:410px; transform:rotate(4deg)")}
+<div class="floor"></div>
+""", night=True, stamp="Collections", foot="center", css=FLOOR),
+
+    # 23. Favourites: the ones you return to.
+    "23-favourites": page("""
+<div style="position:absolute; left:72px; right:72px; top:170px">
+  <h1 class="h" style="font-size:100px">Keep the ones<br><em>you return to.</em></h1>
+  <p class="sub" style="max-width:600px">Tap the heart on any dhikr, and it waits for you in Favourites, with its count and its source.</p>
+</div>
+<div class="heart"></div>
+<ol class="fav">
+  <li><i>1</i><div><b>Ayat al-Kursi</b><span>al-Baqarah 2:255</span></div><u class="on"></u></li>
+  <li class="lift"><i>2</i><div><b>Sayyid al-Istighfar</b><span>al-Bukhari 6306</span></div><u class="on"></u></li>
+  <li><i>3</i><div><b>Allah is sufficient for me</b><span>Abu Dawud 5081</span></div><em>×7</em><u class="on"></u></li>
+</ol>
+""", stamp="Favourites", css="""
+.heart{position:absolute;right:92px;top:190px;width:150px;height:150px;transform:rotate(-10deg);filter:drop-shadow(0 0 40px rgba(255,92,138,.6))}
+.heart::before{content:"";position:absolute;inset:0;background:#FF6B94;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.9 4.5c2.2 0 3.7 1.2 5.1 3 1.4-1.8 2.9-3 5.1-3 3.9 0 6 3.9 4.5 7.3C19.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat}
+.fav{position:absolute;left:72px;right:72px;top:580px;list-style:none;display:grid;gap:26px}
+.fav li{display:flex;align-items:center;gap:26px;padding:38px 36px;border-radius:30px;background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.13)}
+.fav li.lift{transform:translateX(26px) scale(1.02);background:linear-gradient(160deg,rgba(255,255,255,.16),rgba(255,255,255,.05));box-shadow:0 40px 80px -30px rgba(0,0,0,.9)}
+.fav i{width:52px;height:52px;flex:none;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font:500 20px/1 Inter;font-style:normal;color:var(--text-2)}
+.fav div{flex:1}.fav b{display:block;font:400 42px/1.05 'Instrument Serif'}.fav span{display:block;margin-top:8px;font:400 18px/1 Inter;color:var(--text-3)}
+.fav em{font:500 18px/1 Inter;font-style:normal;padding:9px 14px;border-radius:99px;border:1px solid rgba(255,255,255,.2);color:var(--text-2)}
+.fav u{width:34px;height:34px;flex:none;background:#FF6B94;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.9 4.5c2.2 0 3.7 1.2 5.1 3 1.4-1.8 2.9-3 5.1-3 3.9 0 6 3.9 4.5 7.3C19.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat}
+.foot{width:auto;right:72px}
+"""),
+
+    # 24. Salah times: the masjid's, set once.
+    "24-your-times": page("""
+<div style="position:absolute; left:72px; right:72px; top:170px">
+  <h1 class="h" style="font-size:100px">Your masjid's times,<br><em>not a guess.</em></h1>
+  <p class="sub" style="max-width:640px">Calculated times are only a starting point. Set the times your masjid prays once, and every reminder follows them.</p>
+</div>
+<img class="strip" src="../assets/prayers-strip.png" alt="">
+<div class="edit">
+  <div class="row"><span class="k">Maghrib</span><span class="calc">Calculated start 6:40 PM</span></div>
+  <div class="arrow"></div>
+  <div class="chip">6:35 PM<small>Your masjid</small></div>
+</div>
+""", night=True, stamp="Salah times", css="""
+.strip{position:absolute;left:72px;right:72px;width:936px;top:560px;border-radius:30px;box-shadow:0 50px 100px -30px rgba(0,0,0,.95),0 0 0 1px rgba(255,255,255,.08)}
+.edit{position:absolute;left:72px;right:72px;top:980px;display:flex;align-items:center;gap:30px}
+.edit .k{display:block;font:400 44px/1 'Instrument Serif'}.edit .calc{display:block;margin-top:10px;font:400 20px/1 Inter;color:var(--text-3);text-decoration:line-through;text-decoration-color:rgba(143,177,255,.6)}
+.edit .arrow{flex:1;height:1px;background:linear-gradient(90deg,rgba(143,177,255,.1),var(--night));position:relative}
+.edit .arrow::after{content:"";position:absolute;right:-2px;top:-6px;border:6px solid transparent;border-left:10px solid var(--night)}
+.chip{padding:20px 30px;border-radius:24px;background:linear-gradient(135deg,#3b5bdb,#6b8fff);font:600 36px/1 Inter;box-shadow:0 20px 50px -14px rgba(75,108,255,.8)}
+.chip small{display:block;margin-top:8px;font:500 16px/1 Inter;color:rgba(255,255,255,.8)}
+.foot{width:auto;right:72px}
+"""),
+
+    # 25. Reading: the page set the way you read.
+    "25-reading": page(f"""
+<div style="position:absolute; left:72px; right:72px; top:170px">
+  <h1 class="h" style="font-size:100px">Read it<br><em>your way.</em></h1>
+</div>
+{phone("reading-menu", "left:72px; top:470px; width:400px")}
+<div class="floor"></div>
+<ul class="opts">
+  <li><b>Arabic size</b><span class="sz"><i>−</i>100%<i>+</i></span></li>
+  <li><b>Transliteration</b><span class="tg on"></span></li>
+  <li><b>Translation</b><span class="tg on"></span></li>
+  <li><b>Auto-advance</b><span class="tg on"></span></li>
+  <li><b>Recitation</b><span class="tg"></span></li>
+  <li><b>Haptics</b><span class="tg on"></span></li>
+</ul>
+<p class="said">Large Arabic for older eyes, the Latin letters for those still learning, a light tap with every count.</p>
+""", stamp="Reading", css=FLOOR + """
+.floor{height:240px}
+.opts{position:absolute;left:540px;right:72px;top:470px;list-style:none;border-top:1px solid var(--line)}
+.opts li{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--line)}
+.opts b{font:400 38px/1 'Instrument Serif'}
+.tg{width:66px;height:38px;border-radius:99px;background:rgba(255,255,255,.14);position:relative}
+.tg::after{content:"";position:absolute;left:5px;top:5px;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.7)}
+.tg.on{background:#4a6cff}.tg.on::after{left:33px;background:#fff}
+.sz{display:flex;align-items:center;gap:16px;font:600 20px/1 Inter}
+.sz i{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-style:normal;font-weight:400}
+.said{position:absolute;left:540px;right:72px;top:1000px;font:italic 400 30px/1.3 'Instrument Serif';color:var(--text-2)}
+.foot{left:540px;width:auto;right:72px}
+"""),
 }
 
 def main(only):

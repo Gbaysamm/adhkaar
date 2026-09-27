@@ -57,6 +57,9 @@
     <!-- "Ashura" = the 10th of Muharram. -->
     <string name="event_ashura_title">Ashura</string>
     <string name="event_ashura_body">Azumin yau yana kankare zunuban shekarar da ta wuce.</string>
+    <string name="event_arafah_eve_body">Azumin ranar yana kankare zunuban shekarar da ta wuce da ta shekara mai zuwa. Ka yi niyya a daren nan.</string>
+    <string name="event_tasua_eve_body">Ka yi azumi gobe, da na Ashura a jibi, kamar yadda Annabi ﷺ ya yi niyya.</string>
+    <string name="event_ashura_eve_body">Azumin ranar yana kankare zunuban shekarar da ta wuce. Ka yi niyya a daren nan.</string>
     <!-- The 13th, 14th and 15th of each Hijri month (Ayyamul Bidh). -->
     <string name="event_white_days_title">Kwanaki farare</string>
     <string name="event_white_days_body">Azumin 13, 14 da 15 ga wata sunna ne.</string>

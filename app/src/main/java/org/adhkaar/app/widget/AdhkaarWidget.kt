@@ -128,6 +128,7 @@ private fun WidgetContent(context: Context, data: WidgetData, look: WidgetLook) 
     val wide = LocalSize.current.width >= AdhkaarWidget.WIDE.width
     val palette = look.palette
     val done = context.getString(R.string.widget_done)
+    val typeLabel = context.getString(if (data.type == SessionType.MORNING) R.string.widget_morning else R.string.widget_evening)
     WidgetFrame(look, openAppAction(context)) {
         DirRow(look.dir, GlanceModifier.fillMaxWidth().defaultWeight(), verticalAlignment = Alignment.Vertical.Top) {
             // The next session: what, when, and how long until it.
@@ -143,10 +144,13 @@ private fun WidgetContent(context: Context, data: WidgetData, look: WidgetLook) 
                         }
                         item { Spacer(GlanceModifier.width(6.dp)) }
                         item {
+                            // Wide, the session's name takes the brand's place: a 4×2 cell can be
+                            // under 100dp tall, and a line of its own cut off the countdown.
                             Text(
-                                context.getString(R.string.app_brand_caps),
-                                style = look.text(palette.tertiary, 10.sp, FontWeight.Bold),
+                                if (wide) typeLabel else context.getString(R.string.app_brand_caps),
+                                style = if (wide) look.text(palette.accent(data.type), 13.sp, FontWeight.Medium) else look.text(palette.tertiary, 10.sp, FontWeight.Bold),
                                 modifier = GlanceModifier.defaultWeight(),
+                                maxLines = 1,
                             )
                         }
                         if (wide && data.streak > 0) {
@@ -156,10 +160,7 @@ private fun WidgetContent(context: Context, data: WidgetData, look: WidgetLook) 
                         }
                     }
                     Spacer(GlanceModifier.defaultWeight())
-                    Text(
-                        context.getString(if (data.type == SessionType.MORNING) R.string.widget_morning else R.string.widget_evening),
-                        style = look.text(palette.accent(data.type), 14.sp, FontWeight.Medium),
-                    )
+                    if (!wide) Text(typeLabel, style = look.text(palette.accent(data.type), 14.sp, FontWeight.Medium))
                     Text(
                         if (data.waiting) context.getString(R.string.widget_now) else data.time ?: "—",
                         style = look.text(palette.text, 26.sp, FontWeight.Medium),
