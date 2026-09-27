@@ -112,8 +112,6 @@ fun QuranReader(startPage: Int, onClose: () -> Unit, target: Int? = null, onTarg
     // Where you are is where the reading continues from.
     LaunchedEffect(page) {
         store.setLastPage(page)
-        // The next pages, so turning is instant and they open offline later.
-        org.adhkaar.app.data.quran.PageFonts.prefetch(context.applicationContext, page)
     }
 
     // The page's time: counted only while the reader is in front, and only once a day per page.

@@ -4,24 +4,28 @@ import android.content.Context
 
 /**
  * The Madinah mushaf (1421 AH print) page by page, line by line, as the King Fahd Glorious Qur'an
- * Printing Complex set it. Built by tools/quran/build.py into assets/quran/:
+ * Printing Complex set it, recovered from its page fonts by tools/quran/build.py into assets/quran/:
+ *  * quran.txt: the Uthmanic Hafs text, one ayah per line (6236), in order.
  *  * mushaf.txt: every page's lines. "P590" starts a page, "H85" is surah 85's heading, "B" the
- *    basmala, and "L <glyphs>|5908x10,5909x4" a line in the page's own font (see [PageFonts]): its
- *    glyphs in reading order, then which ayah (0-based, in order) each run of them belongs to.
- *  * quran.txt: the Uthmanic Hafs text, one ayah per line, for the meaning sheet and saved ayahs.
+ *    basmala, and "L 5908:0-8e 5909:0-2" a line of text: ayah 5908 (0-based, in order) words 0–8
+ *    then its number, then ayah 5909 words 0–2. A run with no words ("5911:e") is a number alone.
  */
 class Mushaf private constructor(val ayahs: List<List<String>>, val pages: List<Page>) {
+    /** One run of a line: words [from]..[to] of one ayah, and its number after them when [end]. */
+    data class Run(val ayah: Int, val from: Int, val to: Int, val end: Boolean) {
+        val hasWords get() = from >= 0
+    }
+
     sealed interface Line {
         data class Header(val surah: Int) : Line
         data object Basmala : Line
-        /** [glyphs] in the page font; [ayahOf] gives each glyph's ayah. */
-        class Text(val glyphs: String, val ayahOf: IntArray) : Line
+        data class Text(val runs: List<Run>) : Line
     }
 
     /** [number] is 1-based, as printed. */
     data class Page(val number: Int, val lines: List<Line>) {
         /** Ayahs whose words (or number) are on this page, in order. */
-        val ayahIndices: List<Int> by lazy { lines.filterIsInstance<Line.Text>().flatMap { it.ayahOf.toList() }.distinct() }
+        val ayahIndices: List<Int> by lazy { lines.filterIsInstance<Line.Text>().flatMap { l -> l.runs.map { it.ayah } }.distinct() }
     }
 
     /** The page an ayah (0-based index) begins on. */
@@ -71,7 +75,7 @@ class Mushaf private constructor(val ayahs: List<List<String>>, val pages: List<
                         }
                         raw.startsWith("H") -> lines += Line.Header(raw.substring(1).toInt())
                         raw == "B" -> lines += Line.Basmala
-                        raw.startsWith("L ") -> lines += parseLine(raw.substring(2))
+                        raw.startsWith("L ") -> lines += Line.Text(raw.substring(2).split(' ').map(::parseRun))
                     }
                 }
             }
@@ -79,15 +83,13 @@ class Mushaf private constructor(val ayahs: List<List<String>>, val pages: List<
             return Mushaf(ayahs, pages)
         }
 
-        private fun parseLine(body: String): Line.Text {
-            val glyphs = body.substringBeforeLast('|')
-            val owners = IntArray(glyphs.length)
-            var at = 0
-            body.substringAfterLast('|').split(',').forEach { run ->
-                val ayah = run.substringBefore('x').toInt()
-                repeat(run.substringAfter('x').toInt()) { if (at < owners.size) owners[at++] = ayah }
-            }
-            return Line.Text(glyphs, owners)
+        private fun parseRun(token: String): Run {
+            val ayah = token.substringBefore(':').toInt()
+            var rest = token.substringAfter(':')
+            val end = rest.endsWith("e")
+            if (end) rest = rest.dropLast(1)
+            if (rest.isEmpty()) return Run(ayah, -1, -1, end)
+            return Run(ayah, rest.substringBefore('-').toInt(), rest.substringAfter('-').toInt(), end)
         }
     }
 }
