@@ -2,6 +2,11 @@
 
 All notable changes are listed here, newest first. The format follows [Keep a Changelog](https://keepachangelog.com), and versions follow [semantic versioning](https://semver.org). How releases are made: [docs/RELEASING.md](docs/RELEASING.md).
 
+## 0.1.4 (testing)
+
+- The morning adhkaar stay open until 8:30 AM by default, and each session's end can be chosen: a time for the morning, Maghrib or Isha for the evening.
+- Missed adhkaar now show a card over other apps or the lock screen, as well as the notification. Try it in the Test kit.
+
 ## 0.1.3 (testing)
 
 - Before sleep and after salah can be firmer: Full screen for both, and Lockdown for before sleep (Settings › Reminders).
