@@ -123,7 +123,8 @@ class SessionState private constructor(context: Context) {
             writePending(PendingSession(type, today, nowMillis, enforced, test = true))
             return
         }
-        if (current != null && current.type == type && current.date == today && !current.test) {
+        // A collection held by its reminder (after salah) is not this session: the session takes its place.
+        if (current != null && current.type == type && current.date == today && !current.test && current.collection == null) {
             if (enforced && !current.enforced) {
                 // Opened by hand earlier, and now the session time has come: it rings like any other.
                 prefs.edit().remove(KEY_ALERT_ACK).apply()

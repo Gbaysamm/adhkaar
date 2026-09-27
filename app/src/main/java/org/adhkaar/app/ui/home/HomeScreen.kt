@@ -147,6 +147,12 @@ import java.util.Locale
 /** The session the app is "about" right now: the one waiting, else the next one, else by time of day. */
 fun heroSession(context: android.content.Context, pending: PendingSession?, now: ZonedDateTime): SessionType =
     pending?.takeIf { it.collection == null }?.type
+        // A session whose time is open and not yet read comes before tomorrow's.
+        ?: SessionType.entries.firstOrNull { t ->
+            val settings = org.adhkaar.app.data.SettingsStore.get(context).current
+            org.adhkaar.app.data.AdhkaarWindows.canStart(settings, t, now) &&
+                org.adhkaar.app.data.SessionState.get(context).lastCompleted(t) != now.toLocalDate()
+        }
         ?: SessionType.entries.mapNotNull { t -> AlarmScheduler.nextTime(context, t, now)?.let { t to it } }.minByOrNull { it.second }?.first
         ?: if (now.hour < 12) SessionType.MORNING else SessionType.EVENING
 
