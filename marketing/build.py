@@ -48,6 +48,8 @@ CHAT_CSS = """
 .chat .m u { display:block; text-decoration:none; font:600 16px/1.3 Inter; color:#53bdeb; margin-bottom:2px; }
 .chat .m u.c3 { color:#7fd6a8; } .chat .m u.c4 { color:#d6a3ff; }
 .chat .m s { display:block; text-decoration:none; text-align:right; font:400 13px/1 Inter; color:rgba(233,237,239,.6); margin-top:6px; }
+.chat .ch > div{min-width:0;flex:1}
+.chat .ch b,.chat .ch em{overflow:hidden;text-overflow:ellipsis}
 """
 
 
@@ -152,11 +154,11 @@ POST_LIST = {
 <div class="col c2">{phone("s0", "")}<h3>Full screen</h3><p>The adhkaar open themselves, even on the lock screen.</p></div>
 <div class="col c3">{phone("lockdown", "")}<h3>Lockdown</h3><p>Other apps wait until you've read them. Calls always work.</p></div>
 """, stamp="Three modes", foot="center", css="""
-.col{position:absolute;top:440px;width:290px;text-align:center}.c1{left:72px}.c2{left:395px}.c3{left:718px}
-.col .phone{position:relative;width:290px;height:520px;aspect-ratio:auto;border-radius:40px;padding:6px}.col .phone .scr{border-radius:34px}.col .phone::before{top:15px;width:11px;height:11px;margin-left:-5.5px}
-.col h3{margin-top:28px;font:400 42px/1 'Instrument Serif'}.c3 h3{color:var(--dawn)}
+.col{position:absolute;top:410px;width:290px;text-align:center}.c1{left:72px}.c2{left:395px}.c3{left:718px}
+.col .phone{position:relative;width:260px;margin:0 auto;border-radius:38px;padding:6px}.col .phone .scr{border-radius:34px}.col .phone::before{top:15px;width:11px;height:11px;margin-left:-5.5px}
+.col h3{margin-top:26px;font:400 42px/1 'Instrument Serif'}.c3 h3{color:var(--dawn)}
 .col p{margin-top:12px;padding:0 6px;font:400 19px/1.4 Inter;color:var(--text-2)}
-.notif{position:absolute;left:16px;right:16px;top:40px;display:flex;gap:10px;align-items:center;padding:11px 12px;border-radius:18px;background:rgba(40,42,56,.97);box-shadow:0 12px 26px rgba(0,0,0,.55);text-align:left}
+.notif{position:absolute;left:28px;right:28px;top:38px;display:flex;gap:10px;align-items:center;padding:11px 12px;border-radius:18px;background:rgba(40,42,56,.97);box-shadow:0 12px 26px rgba(0,0,0,.55);text-align:left}
 .notif img{width:30px;height:30px;border-radius:8px}.notif b{display:block;font:600 14px/1.2 Inter}.notif span{font:400 12.5px/1.3 Inter;color:var(--text-2)}
 """),
 
