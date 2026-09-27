@@ -355,6 +355,17 @@ fun TodayScreen(
             missed = null
         }
     }
+    // A newer testing build, after the missed card rather than on top of it.
+    val latest by org.adhkaar.app.data.AppUpdate.latest(context).collectAsState()
+    var updateSnoozed by remember { mutableStateOf(false) }
+    if (missed == null && !updateSnoozed) {
+        org.adhkaar.app.data.AppUpdate.shouldShow(context, latest)?.let { update ->
+            UpdateSheet(update) {
+                org.adhkaar.app.data.AppUpdate.snooze(context, update)
+                updateSnoozed = true
+            }
+        }
+    }
 }
 
 @Composable

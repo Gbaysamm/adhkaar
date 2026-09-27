@@ -104,6 +104,8 @@ class MainActivity : ComponentActivity() {
         setContent { AppRoot(openRequest.value, onRequestHandled = { openRequest.value = null }) }
         // The moon-sighting list, at most twice a day; a plain download of a public file.
         Thread { org.adhkaar.app.data.MoonSighting.refreshIfDue(applicationContext) }.start()
+        // Whether a newer testing build is out, at most twice a day (see AppUpdate).
+        Thread { org.adhkaar.app.data.AppUpdate.refreshIfDue(applicationContext) }.start()
     }
 
     // A notification tapped while the app is alive, or while it's being restored after the process

@@ -18,12 +18,14 @@ android {
         buildConfigField("String", "REPORT_URL", "\"${project.findProperty("adhkaar.reportUrl") ?: ""}\"")
         // The project's repository (links in the app), and an optional support email (blank hides it).
         buildConfigField("String", "REPO_URL", "\"${project.findProperty("adhkaar.repoUrl") ?: "https://github.com/adhkaar-app/adhkaar"}\"")
+        // Where a sideloaded build learns a newer one is out (site/version.json); blank for store builds.
+        buildConfigField("String", "UPDATE_URL", "\"${project.findProperty("adhkaar.updateUrl") ?: ""}\"")
         buildConfigField("String", "CONTACT_EMAIL", "\"${project.findProperty("adhkaar.contactEmail") ?: ""}\"")
         applicationId = "org.adhkaar.app"
         minSdk = 26
         targetSdk = 36
-        versionCode = 7
-        versionName = "0.1.6"
+        versionCode = 8
+        versionName = "0.1.7"
     }
 
     buildTypes {

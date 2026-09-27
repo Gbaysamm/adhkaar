@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The card on Today when a newer testing build is out (data/AppUpdate.kt). %1$s = e.g. "0.1.7". -->
+    <string name="update_title">A new version is ready</string>
+    <string name="update_version">Version %1$s</string>
+    <string name="update_body">Install it over this one. Your progress, streak and settings stay as they are.</string>
+    <string name="update_download">Download</string>
+    <string name="update_later">Later</string>
+</resources>

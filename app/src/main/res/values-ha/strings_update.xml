@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The card on Today when a newer testing build is out (data/AppUpdate.kt). %1$s = e.g. "0.1.7". -->
+    <string name="update_title">Sabon sigar ta shirya</string>
+    <string name="update_version">Sigar %1$s</string>
+    <string name="update_body">Ka saka ta a kan wannan. Ci gabanka, jerin kwanakinka da saitunanka za su kasance yadda suke.</string>
+    <string name="update_download">Sauke</string>
+    <string name="update_later">Anjima</string>
+</resources>

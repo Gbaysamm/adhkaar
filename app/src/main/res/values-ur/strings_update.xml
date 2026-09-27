@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The card on Today when a newer testing build is out (data/AppUpdate.kt). %1$s = e.g. "0.1.7". -->
+    <string name="update_title">نیا ورژن تیار ہے</string>
+    <string name="update_version">ورژن %1$s</string>
+    <string name="update_body">اسے اسی کے اوپر انسٹال کریں۔ آپ کی پیش رفت، تسلسل اور ترتیبات ویسی ہی رہیں گی۔</string>
+    <string name="update_download">ڈاؤن لوڈ</string>
+    <string name="update_later">بعد میں</string>
+</resources>

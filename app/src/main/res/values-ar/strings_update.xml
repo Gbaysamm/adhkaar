@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The card on Today when a newer testing build is out (data/AppUpdate.kt). %1$s = e.g. "0.1.7". -->
+    <string name="update_title">إصدار جديد جاهز</string>
+    <string name="update_version">الإصدار %1$s</string>
+    <string name="update_body">ثبّته فوق هذا الإصدار. يبقى تقدّمك وسلسلتك وإعداداتك كما هي.</string>
+    <string name="update_download">تنزيل</string>
+    <string name="update_later">لاحقًا</string>
+</resources>

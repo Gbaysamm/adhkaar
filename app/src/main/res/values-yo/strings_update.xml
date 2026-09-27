@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The card on Today when a newer testing build is out (data/AppUpdate.kt). %1$s = e.g. "0.1.7". -->
+    <string name="update_title">Ẹ̀dà tuntun ti ṣetán</string>
+    <string name="update_version">Ẹ̀dà %1$s</string>
+    <string name="update_body">Fi sórí èyí tí o ní. Ìtẹ̀síwájú rẹ, ọjọ́ tí o tẹ̀lé ara wọn àti ètò rẹ yóò wà bí wọ́n ṣe wà.</string>
+    <string name="update_download">Gbà á sílẹ̀</string>
+    <string name="update_later">Nígbà míì</string>
+</resources>
