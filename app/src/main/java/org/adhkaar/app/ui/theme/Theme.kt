@@ -66,6 +66,14 @@ object Auras {
         action = listOf(Color(0xFFFF8E5E), Color(0xFFE0567E)),
     )
 
+    /** The Qur'an's own light: deep green and gold, so reading it never looks like the adhkaar. */
+    val mushaf = Aura(
+        base = listOf(Color(0xFF06120F), Color(0xFF040908)),
+        glows = listOf(Color(0xFF1F8A6E), Color(0xFFB58A3C), Color(0xFF0E6B5C)),
+        accent = Color(0xFFE6C27A),
+        action = listOf(Color(0xFF2FA283), Color(0xFF1C6E5A)),
+    )
+
     fun of(type: SessionType) = if (type == SessionType.MORNING) dawn else evening
 }
 
@@ -139,6 +147,12 @@ val InstrumentSerif = FontFamily(
 
 /** Reading: Amiri Quran, a Naskh drawn for Qur'anic text, with full tashkeel and ayah ornaments. */
 val AmiriQuran = FontFamily(Font(R.font.amiri_quran, FontWeight.Normal))
+
+/** The King Fahd Complex's Uthmanic Hafs, for the mushaf pages. */
+val UthmanicHafs = FontFamily(Font(R.font.uthmanic_hafs, FontWeight.Normal))
+
+/** The Complex's heading font: surah names, their framed band, and the basmala as printed. */
+val QcfHeadings = FontFamily(Font(R.font.qcf_bsml, FontWeight.Normal))
 
 /** Display only (short phrases such as الحمد لله): calligraphic Ruqaa. Never for adhkaar text. */
 val ArefRuqaa = FontFamily(Font(R.font.aref_ruqaa, FontWeight.Normal))

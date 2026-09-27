@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The Qur'an tab and the mushaf reader. -->
+    <string name="tab_quran">Qur\'an</string>
+    <string name="quran_title">Qur\'an</string>
+    <string name="quran_subtitle">A page a day, from the mushaf.</string>
+    <string name="quran_settings">Reading settings</string>
+    <string name="quran_close">Close</string>
+    <!-- While a page's font downloads, the first time the page is opened. Tapping retries. -->
+    <string name="quran_page_loading">Preparing this page… tap to retry if you\'re offline</string>
+    <!-- %1$d = page, %2$d = juz. -->
+    <string name="quran_page_juz">Page %1$d · Juz %2$d</string>
+    <!-- At the foot of the reader. %1$d = pages read today, %2$d = today's target. -->
+    <string name="quran_today_progress">Today · %1$d of %2$d pages</string>
+    <string name="quran_today">Today</string>
+    <!-- %1$d = pages still to read today. -->
+    <string name="quran_today_left">%1$d more to read today</string>
+    <string name="quran_today_done">Today\'s reading is done</string>
+    <!-- %1$d = page, %2$s = surah name. -->
+    <string name="quran_page_of">Page %1$d · %2$s</string>
+    <string name="quran_read_today">Read today\'s page</string>
+    <string name="quran_continue">Continue reading</string>
+    <string name="quran_pass">Through the Qur\'an</string>
+    <!-- %1$d = pages read in this pass, %2$d = 604. -->
+    <string name="quran_pass_pages">%1$d of %2$d pages</string>
+    <!-- %1$s = a date. -->
+    <string name="quran_pass_finish">At this pace you finish on %1$s</string>
+    <string name="quran_pass_start">Read a page, and the finish date appears here</string>
+    <!-- %1$d = times the whole Qur'an has been read here. -->
+    <string name="quran_passes_done">Completed %1$d×, alhamdulillah</string>
+    <string name="quran_sunnah_kahf">For Friday</string>
+    <string name="quran_sunnah_mulk">Before you sleep</string>
+    <!-- %1$d = number of saved ayahs. -->
+    <string name="quran_saved_title">Saved ayahs · %1$d</string>
+    <string name="quran_surahs">Surahs</string>
+    <string name="quran_juz">Juz</string>
+    <string name="quran_juz_n">Juz %1$d</string>
+    <string name="quran_page_n">Page %1$d</string>
+    <!-- %1$d = number of ayahs, %2$d = the page it begins on. -->
+    <string name="quran_surah_meta">%1$d ayahs · page %2$d</string>
+    <string name="quran_save">Save</string>
+    <string name="quran_saved">Saved</string>
+    <string name="quran_copy">Copy</string>
+    <string name="quran_done">Done</string>
+
+    <!-- Reading settings. -->
+    <string name="quran_set_daily">Pages a day</string>
+    <string name="quran_set_daily_hint">At least one, every day</string>
+    <string name="quran_set_time">Time on a page</string>
+    <string name="quran_set_time_hint">How long a page stays open before it counts as read</string>
+    <string name="quran_set_theme">Page</string>
+    <string name="quran_theme_auto">Auto</string>
+    <string name="quran_theme_sepia">Sepia</string>
+    <string name="quran_theme_night">Night</string>
+    <string name="quran_theme_white">White</string>
+    <string name="quran_set_order">Each day opens on</string>
+    <string name="quran_set_order_hint">Where you stopped, your chosen surahs in order, or a page at random</string>
+    <string name="quran_order_continue">Where I stopped</string>
+    <string name="quran_order_chosen">My surahs</string>
+    <string name="quran_order_random">Random</string>
+    <string name="quran_set_sunnah">Surahs of the day</string>
+    <string name="quran_set_sunnah_hint">al-Kahf on Fridays, al-Mulk at night</string>
+</resources>

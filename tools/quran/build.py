@@ -247,27 +247,43 @@ def main():
         debug[p] = [[stream_codes[id(g)] for g in page[a:b]] for a, b in breaks]
         lines_out.append(f"P{p}")
         if p in OPENING:
-            lines_out += OPENING[p]
-            continue
+            # The opening pages' breaks, from their written-out lines.
+            heads_out = [l for l in OPENING[p] if not l.startswith("L ")]
+            breaks, idx = [], 0
+            for spec in (l for l in OPENING[p] if l.startswith("L ")):
+                members = set()
+                for tok in spec[2:].split(" "):
+                    ay, rest = tok.split(":")
+                    end = rest.endswith("e")
+                    rest = rest.rstrip("e")
+                    if rest:
+                        w0, w1 = map(int, rest.split("-"))
+                        members |= {(int(ay), w) for w in range(w0, w1 + 1)}
+                    if end:
+                        members.add((int(ay), -1))
+                start = idx
+                while idx < len(page) and (page[idx][2], page[idx][3]) in members:
+                    idx += 1
+                breaks.append((start, idx))
+            assert idx == len(page), f"page {p}: the written lines don't cover the page"
+            lines_out += heads_out
         for a, b in breaks:
             first = page[a]
-            if first[2] in surah_starts and first[3] in (0, -1) and REFS[first[2]][1] == 1:
+            if p not in OPENING and first[2] in surah_starts and first[3] in (0, -1) and REFS[first[2]][1] == 1:
                 s = REFS[first[2]][0]
                 lines_out.append(f"H{s}")
                 if s not in (1, 9):
                     lines_out.append("B")
-            # A line: runs of "ayahIndex:firstWord-lastWord" with "e" when the ayah's number ends it.
+            # A line: the page font's glyphs in reading order, then which ayah each run of them is
+            # ("5908x10,5909x4": ten glyphs of ayah 5908, then four of 5909), for taps.
+            codes = "".join(chr(stream_codes[id(g)]) for g in page[a:b])
             runs = []
             for g in page[a:b]:
                 if runs and runs[-1][0] == g[2]:
-                    runs[-1][2 if g[3] >= 0 else 3] = g[3] if g[3] >= 0 else True
+                    runs[-1][1] += 1
                 else:
-                    runs.append([g[2], g[3] if g[3] >= 0 else None, g[3] if g[3] >= 0 else None, g[3] < 0])
-            parts = []
-            for ay, w0, w1, end in runs:
-                span = "" if w0 is None else f"{w0}-{w1}"
-                parts.append(f"{ay}:{span}{'e' if end else ''}")
-            lines_out.append("L " + " ".join(parts))
+                    runs.append([g[2], 1])
+            lines_out.append("L " + codes + "|" + ",".join(f"{ay}x{n}" for ay, n in runs))
     report.sort(reverse=True)
     print("pages over 3%:", len([1 for w, p in report if w > 0.03]), "over 6%:", [p for w, p in report if w > 0.06])
     print("widest line deviation, worst pages:", [(p, round(w, 3)) for w, p in report[:12]])
@@ -277,7 +293,30 @@ def main():
     (OUT / "mushaf.txt").write_text("\n".join(lines_out) + "\n", encoding="utf-8")
     (OUT / "quran.txt").write_text("\n".join(hafs) + "\n", encoding="utf-8")
     shutil.copyfile(CACHE / "uthmanic_hafs_v22.ttf", FONT_OUT)
+    # Surah headings and the basmala as printed: the Complex's heading font, shipped unchanged.
+    shutil.copyfile(fetch(f"{REPO}/mushaf-v2/QCF2BSML.ttf", CACHE / "v2/QCF2BSML.ttf"), FONT_OUT.with_name("qcf_bsml.ttf"))
+    write_meanings()
     print("wrote", OUT, "and", FONT_OUT)
+
+
+def write_meanings():
+    """The English meaning of every ayah, with its footnotes, from QuranEnc's Rowwad Translation
+    Center edition (the one the reminders use; tools/reminders fetches and checks it). Republished
+    unmodified, as QuranEnc requires, and credited in the app."""
+    import sqlite3
+    db = HERE.parent / "reminders/.cache/english_rwwad.sqlite"
+    if not db.exists():
+        raise SystemExit("run tools/reminders/build.py first: it downloads the QuranEnc translation")
+    lock = json.loads((HERE.parent / "reminders/sources.lock.json").read_text(encoding="utf-8"))
+    version = lock["english_rwwad.sqlite"]["version"]
+    rows = sqlite3.connect(db).execute("select sura, aya, translation, footnotes from translations order by sura, aya").fetchall()
+    assert len(rows) == 6236
+    out = [f"# English Translation - Rowwad Translation Center, QuranEnc.com, version {version}. Republished unmodified."]
+    # One ayah per line: the meaning, a tab, then its footnotes with their line breaks written as \n.
+    for sura, aya, text, notes in rows:
+        clean = lambda t: (t or "").replace("\r", "").replace("\t", " ").replace("\n", "\\n").strip()
+        out.append(f"{clean(text)}\t{clean(notes)}")
+    (OUT / "en.txt").write_text("\n".join(out) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

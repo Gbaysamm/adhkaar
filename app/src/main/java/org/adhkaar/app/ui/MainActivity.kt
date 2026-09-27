@@ -24,6 +24,7 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.MenuBook
+import androidx.compose.material.icons.rounded.AutoStories
 import androidx.compose.material.icons.rounded.Insights
 import androidx.compose.material.icons.rounded.Settings
 import androidx.compose.material.icons.rounded.WbTwilight
@@ -42,6 +43,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import org.adhkaar.app.R
+import org.adhkaar.app.ui.quran.QuranScreen
 import org.adhkaar.app.data.CollectionMode
 import org.adhkaar.app.data.CollectionsRepository
 import org.adhkaar.app.ui.settings.ContactScreen
@@ -129,6 +131,7 @@ fun AppRoot(openCollectionRequest: String? = null, onRequestHandled: () -> Unit 
     val tabs = listOf(
         Tab(stringResource(R.string.tab_today), Icons.Rounded.WbTwilight),
         Tab(stringResource(R.string.tab_adhkaar), Icons.AutoMirrored.Rounded.MenuBook),
+        Tab(stringResource(R.string.tab_quran), Icons.Rounded.AutoStories),
         Tab(stringResource(R.string.tab_insights), Icons.Rounded.Insights),
         Tab(stringResource(R.string.tab_settings), Icons.Rounded.Settings),
     )
@@ -152,6 +155,9 @@ fun AppRoot(openCollectionRequest: String? = null, onRequestHandled: () -> Unit 
         var showTestKit by rememberSaveable { mutableStateOf(false) }
         var showContact by rememberSaveable { mutableStateOf(false) }
         var openCollection by rememberSaveable { mutableStateOf<String?>(null) }
+        // The mushaf open on a page, and the reading settings.
+        var quranPage by rememberSaveable { mutableStateOf<Int?>(null) }
+        var showQuranSettings by rememberSaveable { mutableStateOf(false) }
         // A shelf Today asked the Adhkaar tab to open (Everyday duas is a list, not a session).
         var shelfRequest by rememberSaveable { mutableStateOf<String?>(null) }
         LaunchedEffect(openCollectionRequest) {
@@ -169,8 +175,9 @@ fun AppRoot(openCollectionRequest: String? = null, onRequestHandled: () -> Unit 
             }
         }
         val haze = remember { HazeState() }
-        BackHandler(enabled = showSetup || showPrayerTimes || showGuide || showTestKit || showContact || tab != 0 || openCollection != null) {
+        BackHandler(enabled = showSetup || showPrayerTimes || showGuide || showTestKit || showContact || tab != 0 || openCollection != null || quranPage != null) {
             when {
+                quranPage != null -> quranPage = null
                 openCollection != null -> openCollection = null
                 showPrayerTimes -> showPrayerTimes = false
                 showGuide -> showGuide = false
@@ -181,6 +188,8 @@ fun AppRoot(openCollectionRequest: String? = null, onRequestHandled: () -> Unit 
             }
         }
 
+        // The Qur'an has its own light, so reading it never looks like the adhkaar.
+        AdhkaarTheme(if (tab == 2 || quranPage != null) Auras.mushaf else aura) {
         Box(Modifier.fillMaxSize()) {
             // Everything under the tab bar is a haze source, so the bar blurs the aura and the content.
             AuraBackground(Modifier.fillMaxSize().hazeSource(haze)) {
@@ -215,7 +224,8 @@ fun AppRoot(openCollectionRequest: String? = null, onRequestHandled: () -> Unit 
                                     openShelf = shelfRequest,
                                     onShelfOpened = { shelfRequest = null },
                                 )
-                                2 -> InsightsScreen()
+                                2 -> QuranScreen(onRead = { quranPage = it }, onOpenSettings = { showQuranSettings = true })
+                                3 -> InsightsScreen()
                                 else -> SettingsScreen(onOpenSetup = { showSetup = true }, onOpenPrayerTimes = { showPrayerTimes = true }, onOpenGuide = { showGuide = true }, onOpenContact = { showContact = true }, onOpenTestKit = { showTestKit = true })
                             }
                         }
@@ -287,6 +297,19 @@ fun AppRoot(openCollectionRequest: String? = null, onRequestHandled: () -> Unit 
                 // collection starts with its own saved state (its page) rather than this one's.
                 lastCollection?.let { key(it) { CollectionSessionScreen(it, onFinish = { openCollection = null }) } }
             }
+
+            // The mushaf rises over everything, like a collection.
+            var lastQuranPage by remember { mutableStateOf(1) }
+            if (quranPage != null) lastQuranPage = quranPage!!
+            AnimatedVisibility(
+                visible = quranPage != null,
+                enter = slideInVertically(Motion.enter()) { it / 3 } + fadeIn(Motion.enter()),
+                exit = slideOutVertically(Motion.enter()) { it / 3 } + fadeOut(Motion.exit()),
+            ) {
+                key(lastQuranPage) { org.adhkaar.app.ui.quran.QuranReader(lastQuranPage, onClose = { quranPage = null }) }
+            }
+            if (showQuranSettings) org.adhkaar.app.ui.quran.QuranSettingsSheet { showQuranSettings = false }
+        }
         }
     }
 }
