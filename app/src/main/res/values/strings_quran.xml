@@ -41,6 +41,7 @@
     <string name="quran_save">Save</string>
     <string name="quran_saved">Saved</string>
     <string name="quran_copy">Copy</string>
+    <string name="quran_share">Share</string>
     <string name="quran_done">Done</string>
 
     <!-- Reading settings. -->

@@ -1,3 +1,5 @@
+@file:OptIn(eu.wewox.pagecurl.ExperimentalPageCurlApi::class)
+
 package org.adhkaar.app.ui.quran
 
 import android.content.ClipData
@@ -10,6 +12,16 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
+import eu.wewox.pagecurl.ExperimentalPageCurlApi
+import eu.wewox.pagecurl.page.rememberPageCurlState
+import androidx.compose.material.icons.rounded.IosShare
+import androidx.compose.ui.unit.em
+import androidx.compose.ui.text.style.TextDirection
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.graphics.TransformOrigin
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.CubicBezierEasing
+import androidx.compose.animation.core.Animatable
 import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.layout.Arrangement
@@ -26,8 +38,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.pager.HorizontalPager
-import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -100,8 +110,8 @@ fun QuranReader(startPage: Int, onClose: () -> Unit, target: Int? = null, onTarg
     val layouts = remember(density) { PageLayouts(context.applicationContext, density) }
     val settings by store.settings.collectAsState()
     val log by store.log.collectAsState()
-    val pager = rememberPagerState(initialPage = (startPage - 1).coerceIn(0, Quran.PAGES - 1)) { Quran.PAGES }
-    val page = pager.settledPage + 1
+    val curl = rememberPageCurlState(initialCurrent = (startPage - 1).coerceIn(0, Quran.PAGES - 1))
+    val page = curl.current + 1
     var chrome by rememberSaveable { mutableStateOf(true) }
     var selected by rememberSaveable { mutableStateOf<Int?>(null) }
     val night = remember { LocalTime.now().let { it.hour >= 19 || it.hour < 6 } }
@@ -135,10 +145,27 @@ fun QuranReader(startPage: Int, onClose: () -> Unit, target: Int? = null, onTarg
         if (target != null && readToday >= target) onTargetMet?.invoke()
     }
 
-    Box(Modifier.fillMaxSize().background(colors.paper)) {
-        // Turned like a book: right to left, as in a printed mushaf.
-        FlipPager(
-            pager, mushaf, layouts, colors, selected,
+    // Opening: the mushaf opens like a cover, turning out from its spine on the right as it comes up.
+    val open = remember { Animatable(0f) }
+    LaunchedEffect(Unit) { open.animateTo(1f, tween(620, easing = CubicBezierEasing(0.2f, 0.9f, 0.25f, 1f))) }
+
+    Box(
+        Modifier
+            .fillMaxSize()
+            .graphicsLayer {
+                val t = open.value
+                transformOrigin = TransformOrigin(1f, 0.5f)
+                cameraDistance = 40f * this.density
+                rotationY = -24f * (1f - t)
+                scaleX = 0.94f + 0.06f * t
+                scaleY = 0.94f + 0.06f * t
+                alpha = (t * 1.6f).coerceAtMost(1f)
+            }
+            .background(colors.paper),
+    ) {
+        // Turned like paper: right to left, as in a printed mushaf.
+        CurlPager(
+            curl, mushaf, layouts, colors, selected,
             onAyah = { selected = it },
             onBackground = { chrome = !chrome },
             pageModifier = Modifier.statusBarsPadding().navigationBarsPadding().padding(top = 52.dp, bottom = 44.dp),
@@ -210,7 +237,11 @@ private fun PageTimer(secondsOf: () -> Int, total: Int, read: Boolean, colors: P
     }
 }
 
-/** An ayah: its words, its meaning with footnotes, and what can be done with it. */
+/**
+ * An ayah: its words, its meaning with its footnotes, and what can be done with it. The Arabic
+ * reads right to left from the right edge, the meaning left to right from the left, both across
+ * the same width.
+ */
 @Composable
 private fun AyahSheet(ayah: Int, onDismiss: () -> Unit) {
     val context = LocalContext.current
@@ -221,25 +252,38 @@ private fun AyahSheet(ayah: Int, onDismiss: () -> Unit) {
     val (surah, number) = Quran.ref(ayah)
     val meaning = remember(ayah) { meanings.of(ayah) }
     val arabic = mushaf.ayahs[ayah].joinToString(" ")
-    GlassDialog("${Quran.latinNames[surah - 1]} $surah:$number", onDismiss) {
-        Column(Modifier.heightIn(max = 460.dp).verticalScroll(rememberScrollState())) {
-            Text(
-                arabic,
-                style = Type.arabicReading.copy(fontFamily = UthmanicHafs, fontSize = 24.sp, color = Nur.textPrimary),
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth(),
-            )
-            Spacer(Modifier.height(Space.m))
-            Text(meaning.text, style = Type.bodyL.copy(color = Nur.textPrimary))
-            meaning.footnotes.forEach {
-                Spacer(Modifier.height(Space.s))
-                Text(it, style = Type.caption)
+    val accent = LocalAura.current.accent
+    var sharing by remember { mutableStateOf(false) }
+    GlassDialog("${Quran.latinNames[surah - 1]} · $surah:$number", onDismiss) {
+        Column(Modifier.fillMaxWidth().heightIn(max = 460.dp).verticalScroll(rememberScrollState())) {
+            CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
+                Text(
+                    arabic + " " + Quran.arabicDigits(number),
+                    style = Type.arabicReading.copy(
+                        fontFamily = UthmanicHafs, fontSize = 25.sp, lineHeight = 2.05.em, color = Nur.textPrimary,
+                        textDirection = TextDirection.Rtl,
+                    ),
+                    textAlign = TextAlign.Start,
+                    modifier = Modifier.fillMaxWidth(),
+                )
             }
             Spacer(Modifier.height(Space.m))
-            Text(meanings.credit, style = Type.caption.copy(fontSize = 10.sp))
+            Box(Modifier.fillMaxWidth().height(1.dp).background(Nur.textPrimary.copy(alpha = 0.1f)))
+            Spacer(Modifier.height(Space.m))
+            CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
+                Column(Modifier.fillMaxWidth()) {
+                    Text(meaning.text, style = Type.bodyL.copy(color = Nur.textPrimary, textDirection = TextDirection.Ltr), textAlign = TextAlign.Start, modifier = Modifier.fillMaxWidth())
+                    meaning.footnotes.forEach {
+                        Spacer(Modifier.height(Space.s))
+                        Text(it, style = Type.caption.copy(textDirection = TextDirection.Ltr), textAlign = TextAlign.Start, modifier = Modifier.fillMaxWidth())
+                    }
+                    Spacer(Modifier.height(Space.m))
+                    Text(meanings.credit, style = Type.caption.copy(fontSize = 10.sp, color = accent.copy(alpha = 0.7f)), modifier = Modifier.fillMaxWidth())
+                }
+            }
         }
         Spacer(Modifier.height(Space.l))
-        Row(horizontalArrangement = Arrangement.spacedBy(Space.m)) {
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(Space.s)) {
             val isSaved = ayah in saved
             SheetAction(if (isSaved) Icons.Rounded.Bookmark else Icons.Rounded.BookmarkBorder, stringResource(if (isSaved) R.string.quran_saved else R.string.quran_save), Modifier.weight(1f)) {
                 store.toggleSaved(ayah)
@@ -248,9 +292,26 @@ private fun AyahSheet(ayah: Int, onDismiss: () -> Unit) {
                 val text = "$arabic\n\n${meaning.text}\n— ${Quran.latinNames[surah - 1]} $surah:$number"
                 (context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager).setPrimaryClip(ClipData.newPlainText("ayah", text))
             }
+            SheetAction(Icons.Rounded.IosShare, stringResource(R.string.quran_share), Modifier.weight(1f)) { sharing = true }
         }
-        Spacer(Modifier.height(Space.s))
+        Spacer(Modifier.height(Space.m))
         PrimaryButton(stringResource(R.string.quran_done), Modifier.fillMaxWidth(), icon = null, onClick = onDismiss)
+    }
+    if (sharing) {
+        // The card carries the meaning only when it has no footnote markers: QuranEnc allows no
+        // edits, and markers pointing at notes the card can't hold would mislead.
+        val withMeaning = meaning.footnotes.isEmpty() && !Regex("\\[\\d+]").containsMatchIn(meaning.text)
+        val card = org.adhkaar.app.data.SessionDhikr(
+            id = "ayah_$ayah",
+            title = "${Quran.latinNames[surah - 1]} · $surah:$number",
+            count = 1,
+            arabic = arabic,
+            transliteration = "",
+            translation = if (withMeaning) meaning.text else "",
+            reference = if (withMeaning) "Qur'an $surah:$number · Rowwad Translation Center, QuranEnc.com" else "Qur'an $surah:$number",
+            virtue = null,
+        )
+        org.adhkaar.app.ui.share.ShareSheet(card, quran = true, onDismiss = { sharing = false })
     }
 }
 

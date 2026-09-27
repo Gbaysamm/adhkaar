@@ -139,7 +139,7 @@ private fun palette(style: CardStyle) = when (style) {
  * exactly as shown, so what you see is what is sent.
  */
 @Composable
-fun ShareSheet(dhikr: SessionDhikr, onDismiss: () -> Unit) {
+fun ShareSheet(dhikr: SessionDhikr, quran: Boolean = false, onDismiss: () -> Unit) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     val layer = rememberGraphicsLayer()
@@ -162,7 +162,8 @@ fun ShareSheet(dhikr: SessionDhikr, onDismiss: () -> Unit) {
                 ShareCard(
                     dhikr,
                     style,
-                    Modifier
+                    quran = quran,
+                    modifier = Modifier
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(24.dp))
                         .drawWithContent {
@@ -232,7 +233,7 @@ private fun StylePicker(selected: CardStyle, onSelect: (CardStyle) -> Unit) {
  * hero (sized to fit, never cut off), a Rub el Hizb, the meaning, and the source.
  */
 @Composable
-fun ShareCard(dhikr: SessionDhikr, style: CardStyle = CardStyle.MIDNIGHT, modifier: Modifier = Modifier) {
+fun ShareCard(dhikr: SessionDhikr, style: CardStyle = CardStyle.MIDNIGHT, modifier: Modifier = Modifier, quran: Boolean = false) {
     val p = palette(style)
     val arabicShare = if (dhikr.arabic.isBlank()) 0f else
         (dhikr.arabic.length / (dhikr.arabic.length + dhikr.translation.length * 0.75f)).coerceIn(0.42f, 0.68f)
@@ -265,7 +266,11 @@ fun ShareCard(dhikr: SessionDhikr, style: CardStyle = CardStyle.MIDNIGHT, modifi
                 Box(Modifier.fillMaxWidth().weight(arabicShare), contentAlignment = Alignment.Center) {
                     BasicText(
                         dhikr.arabic,
-                        style = Type.arabicReading.copy(color = p.arabic, textAlign = TextAlign.Center, lineHeight = 1.85.em),
+                        // An ayah is set in the mushaf's own script.
+                        style = Type.arabicReading.copy(
+                            color = p.arabic, textAlign = TextAlign.Center, lineHeight = 1.85.em,
+                            fontFamily = if (quran) org.adhkaar.app.ui.theme.UthmanicHafs else Type.arabicReading.fontFamily,
+                        ),
                         autoSize = TextAutoSize.StepBased(minFontSize = 12.sp, maxFontSize = 36.sp, stepSize = 1.sp),
                     )
                 }
