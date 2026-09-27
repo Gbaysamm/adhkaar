@@ -38,7 +38,10 @@ class Placed(val layout: TextLayoutResult, val x: Float, val top: Float, val sca
 /** A heading glyph placed on the page. */
 class Ornament(val layout: TextLayoutResult, val x: Float, val top: Float, val ink: Ink)
 
-class PageLayout(val words: List<Placed>, val ornaments: List<Ornament>)
+/** A mark for the margin beside a line: a new quarter of a hizb (۞) or a place of prostration (۩). */
+class MarginMark(val y: Float, val sajdah: Boolean)
+
+class PageLayout(val words: List<Placed>, val ornaments: List<Ornament>, val marks: List<MarginMark> = emptyList())
 
 /**
  * Lays pages out off the main thread and keeps the last few, so a page is ready before it turns
@@ -110,12 +113,15 @@ class PageLayouts(context: Context, private val density: Density) {
         val space = measurer.measure(" ", style).size.width.toFloat()
         val words = mutableListOf<Placed>()
         val ornaments = mutableListOf<Ornament>()
+        val marks = mutableListOf<MarginMark>()
 
         page.lines.forEach { line ->
             val baseline = y + step * BASELINE
             when (line) {
                 is Mushaf.Line.Text -> {
                     val toks = tokens(mushaf, line)
+                    if (toks.any { '\u06DE' in it.second }) marks += MarginMark(y + step / 2, sajdah = false)
+                    if (toks.any { '\u06E9' in it.second }) marks += MarginMark(y + step / 2, sajdah = true)
                     val measured = toks.map { measurer.measure(it.second, style, softWrap = false) }
                     val sum = measured.sumOf { it.size.width }.toFloat()
                     val natural = sum + space * (toks.size - 1)
@@ -172,7 +178,7 @@ class PageLayouts(context: Context, private val density: Density) {
             }
             y += step
         }
-        return PageLayout(words, ornaments)
+        return PageLayout(words, ornaments, marks)
     }
 
     companion object {

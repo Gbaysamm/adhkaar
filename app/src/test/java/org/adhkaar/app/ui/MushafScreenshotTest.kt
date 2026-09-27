@@ -45,7 +45,7 @@ class MushafScreenshotTest {
             state = rememberCurlState(0)
             CurlPager(state, mushaf, layouts, PageColors.sepia, null, {}, {}, Modifier.fillMaxSize().padding(top = 40.dp, bottom = 30.dp))
         }
-        for (p in listOf(1, 2, 10, 50, 590, 604)) {
+        for (p in listOf(1, 2, 9, 10, 50, 176, 590, 604)) {
             compose.runOnIdle { state.snapTo(p - 1) }
             repeat(6) {
                 Thread.sleep(250)

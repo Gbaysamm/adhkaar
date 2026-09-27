@@ -1,3 +1,5 @@
+@file:OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
+
 package org.adhkaar.app.ui.quran
 
 import android.content.ClipData
@@ -10,6 +12,13 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
+import kotlin.math.roundToInt
+import androidx.compose.material3.SliderDefaults
+import androidx.compose.material3.Slider
+import androidx.compose.foundation.layout.navigationBarsIgnoringVisibility
+import androidx.compose.foundation.layout.statusBarsIgnoringVisibility
+import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.material.icons.rounded.IosShare
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.text.style.TextDirection
@@ -109,6 +118,8 @@ fun QuranReader(startPage: Int, onClose: () -> Unit, target: Int? = null, onTarg
     val curl = rememberCurlState((startPage - 1).coerceIn(0, Quran.PAGES - 1))
     val page = curl.current + 1
     var chrome by rememberSaveable { mutableStateOf(true) }
+    // Where the scrubber is while a finger is on it; null otherwise.
+    var scrubbing by remember { mutableStateOf<Float?>(null) }
     var selected by rememberSaveable { mutableStateOf<Int?>(null) }
     val night = remember { LocalTime.now().let { it.hour >= 19 || it.hour < 6 } }
     val colors = PageColors.of(settings.theme, night)
@@ -118,6 +129,16 @@ fun QuranReader(startPage: Int, onClose: () -> Unit, target: Int? = null, onTarg
 
     BackHandler { if (selected != null) selected = null else onClose() }
     KeepScreenOn()
+
+    // Full-screen reading: the bars step aside a few seconds after they appear or a page turns,
+    // and the phone's own bars with them. A tap on the page brings everything back.
+    LaunchedEffect(chrome, page, scrubbing) {
+        if (chrome && scrubbing == null && selected == null) {
+            delay(3500)
+            chrome = false
+        }
+    }
+    ImmersiveBars(visible = chrome)
 
     // Where you are is where the reading continues from.
     LaunchedEffect(page) {
@@ -164,13 +185,15 @@ fun QuranReader(startPage: Int, onClose: () -> Unit, target: Int? = null, onTarg
             curl, mushaf, layouts, colors, selected,
             onAyah = { selected = it },
             onBackground = { chrome = !chrome },
-            pageModifier = Modifier.statusBarsPadding().navigationBarsPadding().padding(top = 52.dp, bottom = 44.dp),
+            // Inset by the phone's bars even while they're hidden, so the page never jumps.
+            pageModifier = Modifier.windowInsetsPadding(WindowInsets.statusBarsIgnoringVisibility)
+                .windowInsetsPadding(WindowInsets.navigationBarsIgnoringVisibility).padding(top = 52.dp, bottom = 44.dp),
         )
 
         // The bar: back, where you are, and the page's time.
         AnimatedVisibility(chrome, enter = fadeIn(), exit = fadeOut(), modifier = Modifier.align(Alignment.TopCenter)) {
             Box(
-                Modifier.fillMaxWidth().background(colors.paper).statusBarsPadding().height(56.dp).padding(horizontal = Space.s),
+                Modifier.fillMaxWidth().background(colors.paper).windowInsetsPadding(WindowInsets.statusBarsIgnoringVisibility).height(56.dp).padding(horizontal = Space.s),
             ) {
                 Box(
                     Modifier.align(Alignment.CenterStart).size(48.dp).clip(CircleShape).pressable(onClick = onClose),
@@ -193,15 +216,36 @@ fun QuranReader(startPage: Int, onClose: () -> Unit, target: Int? = null, onTarg
         // Today's reading, at the foot of the page.
         AnimatedVisibility(chrome, enter = fadeIn(), exit = fadeOut(), modifier = Modifier.align(Alignment.BottomCenter)) {
             val goal = target ?: QuranPlan.target(settings, ramadan = false)
-            Row(
-                Modifier.navigationBarsPadding().padding(bottom = 8.dp)
-                    .background(colors.band, RoundedCornerShape(50)).padding(horizontal = 14.dp, vertical = 7.dp),
-                verticalAlignment = Alignment.CenterVertically,
+            Column(
+                Modifier.fillMaxWidth().background(colors.paper).windowInsetsPadding(WindowInsets.navigationBarsIgnoringVisibility)
+                    .padding(start = Space.l, end = Space.l, bottom = 6.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
             ) {
+                // While scrubbing: the page, its surah and juz, above the finger.
+                val at = scrubbing?.let { it.roundToInt().coerceIn(1, Quran.PAGES) }
                 Text(
-                    stringResource(R.string.quran_today_progress, readToday.coerceAtMost(goal), goal),
+                    if (at != null) stringResource(R.string.quran_scrub_label, at, Quran.latinNames[mushaf.surahsOfPage(at).last() - 1], mushaf.juzOfPage(at))
+                    else stringResource(R.string.quran_today_progress, readToday.coerceAtMost(goal), goal),
                     style = Type.caption.copy(color = colors.ink, fontSize = 13.sp),
+                    modifier = Modifier.background(colors.band, RoundedCornerShape(50)).padding(horizontal = 14.dp, vertical = 6.dp),
                 )
+                // The scrubber runs right to left, like the mushaf: page 1 at the right.
+                CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
+                    Slider(
+                        value = scrubbing ?: page.toFloat(),
+                        onValueChange = { scrubbing = it },
+                        onValueChangeFinished = {
+                            scrubbing?.let { curl.snapTo(it.roundToInt().coerceIn(1, Quran.PAGES) - 1) }
+                            scrubbing = null
+                        },
+                        valueRange = 1f..Quran.PAGES.toFloat(),
+                        colors = SliderDefaults.colors(
+                            thumbColor = colors.accent, activeTrackColor = colors.accent.copy(alpha = 0.7f),
+                            inactiveTrackColor = colors.frame.copy(alpha = 0.25f),
+                        ),
+                        modifier = Modifier.fillMaxWidth().height(32.dp),
+                    )
+                }
             }
         }
     }
@@ -324,6 +368,20 @@ private fun SheetAction(icon: androidx.compose.ui.graphics.vector.ImageVector, l
         Icon(icon, null, tint = LocalAura.current.accent, modifier = Modifier.size(18.dp))
         Spacer(Modifier.width(Space.s))
         Text(label, style = Type.label)
+    }
+}
+
+/** Hides the phone's status and navigation bars while [visible] is false; a swipe from the edge shows them briefly. */
+@Composable
+private fun ImmersiveBars(visible: Boolean) {
+    val view = androidx.compose.ui.platform.LocalView.current
+    val window = (LocalContext.current as? android.app.Activity)?.window ?: return
+    DisposableEffect(visible) {
+        val controller = androidx.core.view.WindowCompat.getInsetsController(window, view)
+        controller.systemBarsBehavior = androidx.core.view.WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        if (visible) controller.show(androidx.core.view.WindowInsetsCompat.Type.systemBars())
+        else controller.hide(androidx.core.view.WindowInsetsCompat.Type.systemBars())
+        onDispose { controller.show(androidx.core.view.WindowInsetsCompat.Type.systemBars()) }
     }
 }
 

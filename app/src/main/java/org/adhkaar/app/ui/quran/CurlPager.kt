@@ -83,6 +83,7 @@ fun CurlPager(
 ) {
     val scope = rememberCoroutineScope()
     val density = LocalDensity.current
+    val view = androidx.compose.ui.platform.LocalView.current
     // Where the folding page's corner is, while a turn is under way.
     val tip = remember { Animatable(Offset.Zero, Offset.VectorConverter) }
     var turn by remember { mutableStateOf<Turn?>(null) }
@@ -99,7 +100,11 @@ fun CurlPager(
                 val goal = if (t.forward == complete) over else flat
                 val distance = (goal - tip.value).getDistance()
                 tip.animateTo(goal, tween((180 + distance / w * 260).toInt().coerceIn(180, 420), easing = FastOutSlowInEasing))
-                if (complete) state.current = if (t.forward) t.beneath else t.top
+                if (complete) {
+                    state.current = if (t.forward) t.beneath else t.top
+                    // A light tick as the page lands.
+                    org.adhkaar.app.ui.components.Haptics.tick(view)
+                }
                 turn = null
             }
         }
@@ -174,7 +179,31 @@ fun CurlPager(
                 Canvas(Modifier.fillMaxSize().zIndex(3f)) {
                     drawFold(t.corner, tip.value, size.width, size.height, colors, density)
                 }
+                // The words showing faintly through the back of the page, mirrored, as through thin paper:
+                // the folding page reflected across the fold, clipped to the flap.
+                Box(Modifier.fillMaxSize().zIndex(4f).graphicsLayer { clip = true; shape = FlapShape(tip.value, t.corner) }) {
+                    Box(
+                        Modifier
+                            .fillMaxSize()
+                            .graphicsLayer {
+                                val fold = Fold(t.corner, tip.value)
+                                // Reflection across the fold: turn by twice its angle, then flip.
+                                val angle = Math.toDegrees(kotlin.math.atan2(fold.n.x.toDouble(), -fold.n.y.toDouble())).toFloat()
+                                transformOrigin = androidx.compose.ui.graphics.TransformOrigin(fold.mid.x / w, fold.mid.y / h)
+                                scaleY = -1f
+                                rotationZ = 2 * angle
+                                alpha = if (colors == PageColors.night) 0.10f else 0.13f
+                            },
+                    ) {
+                        MushafPage(mushaf, layouts, t.top + 1, colors.copy(paper = Color.Transparent), null, {}, {}, modifier = pageModifier)
+                    }
+                }
+                // The roll: light caught along the curve where the paper bends over.
+                Canvas(Modifier.fillMaxSize().zIndex(5f)) { drawRoll(t.corner, tip.value, size.width, size.height, colors, density) }
             }
+            // The edges of the pages either side, as a closed book shows them: the pages still to
+            // read on the left, those read on the right, each stack as thick as its share.
+            Canvas(Modifier.fillMaxSize().zIndex(6f)) { drawStacks(state.current, colors, density) }
         }
     }
 }
@@ -268,6 +297,54 @@ private fun androidx.compose.ui.graphics.drawscope.DrawScope.drawFold(corner: Of
             start = fold.mid, end = tip,
         ),
     )
+}
+
+/** Where the flap lies: the lifted part of the page, reflected over the fold. */
+private class FlapShape(private val tip: Offset, private val corner: Offset) : Shape {
+    override fun createOutline(size: androidx.compose.ui.geometry.Size, layoutDirection: LayoutDirection, density: Density): Outline {
+        if ((tip - corner).getDistance() < 1f) return Outline.Rectangle(androidx.compose.ui.geometry.Rect.Zero)
+        val fold = Fold(corner, tip)
+        val lifted = cut(fold, size.width, size.height, keepTipSide = false)
+        if (lifted.size < 3) return Outline.Rectangle(androidx.compose.ui.geometry.Rect.Zero)
+        return Outline.Generic(path(lifted.map(fold::reflect)))
+    }
+}
+
+/**
+ * The paper's roll along the fold: a band of shade where it turns under, a thin line of light on
+ * the curve, then the flat of the back. It narrows as the page lies down or turns away.
+ */
+private fun androidx.compose.ui.graphics.drawscope.DrawScope.drawRoll(corner: Offset, tip: Offset, w: Float, h: Float, colors: PageColors, density: Density) {
+    if ((tip - corner).getDistance() < 1f) return
+    val fold = Fold(corner, tip)
+    val lifted = cut(fold, w, h, keepTipSide = false)
+    if (lifted.size < 3) return
+    val flap = path(lifted.map(fold::reflect))
+    val progress = (tip.x / (2 * w)).coerceIn(0f, 1f)
+    val band = with(density) { (10 + 26 * 4 * progress * (1 - progress)).dp.toPx() }
+    val night = colors == PageColors.night
+    drawPath(
+        flap,
+        Brush.linearGradient(
+            0f to Color.Black.copy(alpha = if (night) 0.35f else 0.18f),
+            0.28f to Color.Transparent,
+            0.5f to Color.White.copy(alpha = if (night) 0.08f else 0.45f),
+            0.72f to Color.Transparent,
+            1f to Color.Transparent,
+            start = fold.mid, end = fold.mid + fold.n * band,
+        ),
+    )
+}
+
+/** The page edges down each side: a few fine lines, more on the side with more pages. */
+private fun androidx.compose.ui.graphics.drawscope.DrawScope.drawStacks(current: Int, colors: PageColors, density: Density) {
+    val gap = with(density) { 1.4.dp.toPx() }
+    val line = with(density) { 0.7.dp.toPx() }
+    val tone = if (colors == PageColors.night) Color.White.copy(alpha = 0.10f) else Color.Black.copy(alpha = 0.10f)
+    val ahead = 1 + ((Quran.PAGES - 1 - current) * 5 / (Quran.PAGES - 1))
+    val behind = 1 + (current * 5 / (Quran.PAGES - 1))
+    repeat(ahead) { i -> drawRect(tone, Offset(i * gap, 0f), androidx.compose.ui.geometry.Size(line, size.height)) }
+    repeat(behind) { i -> drawRect(tone, Offset(size.width - line - i * gap, 0f), androidx.compose.ui.geometry.Size(line, size.height)) }
 }
 
 private fun lerpColor(a: Color, b: Color, t: Float) = Color(

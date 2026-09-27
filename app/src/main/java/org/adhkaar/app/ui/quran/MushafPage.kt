@@ -16,6 +16,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.getValue
@@ -90,6 +95,12 @@ fun MushafPage(
     modifier: Modifier = Modifier,
 ) {
     val density = LocalDensity.current
+    // The chosen ayah fades in, and out again when it's let go.
+    var shownAyah by remember { mutableStateOf(selectedAyah) }
+    if (selectedAyah != null) shownAyah = selectedAyah
+    val glow by animateFloatAsState(if (selectedAyah != null) 1f else 0f, tween(260), label = "ayahGlow")
+    val markStyle = remember(colors) { TextStyle(fontFamily = UthmanicHafs, fontSize = 12.sp, color = colors.accent, textDirection = TextDirection.Ltr) }
+    val measurer = androidx.compose.ui.text.rememberTextMeasurer()
     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
         Column(modifier.fillMaxSize().background(colors.paper).padding(horizontal = 14.dp, vertical = 6.dp)) {
             // The running heading: the juz on the right, the surah on the left, as printed.
@@ -121,14 +132,21 @@ fun MushafPage(
                                 }
                             },
                     ) {
-                        if (selectedAyah != null) {
+                        val chosen = shownAyah
+                        if (chosen != null && glow > 0f) {
                             // The chosen ayah, one soft band per line it runs across.
-                            ready.words.filter { it.ayah == selectedAyah }.groupBy { it.box.top }.values.forEach { line ->
+                            ready.words.filter { it.ayah == chosen }.groupBy { it.box.top }.values.forEach { line ->
                                 val left = line.minOf { it.box.left }
                                 val right = line.maxOf { it.box.right }
                                 val box = line.first().box
-                                drawRoundRect(colors.highlight, Offset(left, box.top + 2f), Size(right - left, box.height - 4f), CornerRadius(12f))
+                                drawRoundRect(colors.highlight.copy(alpha = colors.highlight.alpha * glow), Offset(left, box.top + 2f), Size(right - left, box.height - 4f), CornerRadius(12f))
                             }
+                        }
+                        // In the margin, as printed: ۞ where a quarter of a hizb begins, ۩ at a prostration.
+                        ready.marks.forEach { mark ->
+                            val text = measurer.measure(if (mark.sajdah) "۩" else "۞", markStyle, softWrap = false, maxLines = 1)
+                            val x = -with(density) { 7.dp.toPx() } - text.size.width / 2f
+                            drawText(text, topLeft = Offset(x, mark.y - text.size.height / 2f))
                         }
                         ready.ornaments.forEach {
                             drawText(it.layout, color = if (it.ink == Ink.FRAME) colors.frame else colors.ink, topLeft = Offset(it.x, it.top))

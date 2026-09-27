@@ -42,6 +42,8 @@
     <string name="quran_saved">Saved</string>
     <string name="quran_copy">Copy</string>
     <string name="quran_share">Share</string>
+    <!-- Above the page scrubber while dragging. %1$d = page, %2$s = surah, %3$d = juz. -->
+    <string name="quran_scrub_label">Page %1$d · %2$s · Juz %3$d</string>
     <string name="quran_done">Done</string>
 
     <!-- Reading settings. -->
