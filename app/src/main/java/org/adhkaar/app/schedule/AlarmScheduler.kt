@@ -74,7 +74,10 @@ object AlarmScheduler {
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
         )
 
-    /** After-salah and bedtime nudges. Inexact: a few minutes late is fine for these. */
+    /**
+     * After-salah and bedtime. Exact: in Full screen or Lockdown they open the adhkaar, and an
+     * inexact alarm can land 15 minutes late on HyperOS, long after the salah is over.
+     */
     fun scheduleCollections(context: Context) {
         val am = context.getSystemService(AlarmManager::class.java)
         val settings = SettingsStore.get(context).current
@@ -85,17 +88,13 @@ object AlarmScheduler {
             CollectionTimes.nextAfterSalah(now, AFTER_SALAH_DELAY_MINUTES, Congregation.day(settings))
         } else null
         if (next != null) {
-            am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, next.toInstant().toEpochMilli(), afterSalah)
+            setWakeup(context, next.toInstant().toEpochMilli(), afterSalah)
         } else {
             am.cancel(afterSalah)
         }
         val bedtime = collectionIntent(context, BEDTIME_REQUEST, "before_sleep")
         if (settings.bedtimeMinute >= 0) {
-            am.setAndAllowWhileIdle(
-                AlarmManager.RTC_WAKEUP,
-                CollectionTimes.nextDaily(now, settings.bedtimeMinute).toInstant().toEpochMilli(),
-                bedtime,
-            )
+            setWakeup(context, CollectionTimes.nextDaily(now, settings.bedtimeMinute).toInstant().toEpochMilli(), bedtime)
         } else {
             am.cancel(bedtime)
         }
