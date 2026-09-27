@@ -54,11 +54,11 @@ body { font-family: Inter, sans-serif; color: var(--text); -webkit-font-smoothin
 .night-post .foot b i { background: var(--night); box-shadow: 0 0 12px var(--night); }
 
 /* the phone: the app's real screen */
-.phone { position: absolute; width: 470px; aspect-ratio: 786 / 1704; border-radius: 58px; padding: 8px;
+.phone { position: absolute; width: 470px; aspect-ratio: 786 / 1704; border-radius: 46px; padding: 8px;
   background: linear-gradient(150deg, #3a3d48 0%, #15171e 22%, #0b0c11 60%, #26282f 100%);
   box-shadow: 0 60px 120px -30px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.08), inset 0 0 0 2px rgba(255,255,255,.08); }
 .phone::before { content: ""; position: absolute; top: 22px; left: 50%; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; background: #06070b; box-shadow: inset 0 0 0 3px #15161c; z-index: 2; }
-.phone .scr { width: 100%; height: 100%; border-radius: 50px; overflow: hidden; background: #05070F; }
+.phone .scr { width: 100%; height: 100%; border-radius: 38px; overflow: hidden; background: #05070F; }
 .phone .scr img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
 
 /* a glass note that points at the screen */

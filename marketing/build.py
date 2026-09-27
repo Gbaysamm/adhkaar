@@ -29,7 +29,7 @@ def page(body, night=False, stamp="", foot="left", css=""):
 
 
 def phone(img, style, cls=""):
-    ext = "png" if img in ("missed", "new-widget") else "webp"
+    ext = "png" if img in ("missed", "new-widget", "complete") else "webp"
     return f'<div class="phone {cls}" style="{style}"><div class="scr"><img src="../assets/{img}.{ext}" alt=""></div></div>'
 
 
@@ -145,20 +145,25 @@ POST_LIST = {
 .post::before{content:"";position:absolute;left:540px;top:410px;height:720px;width:1px;background:linear-gradient(transparent,var(--line) 15%,var(--line) 85%,transparent)}
 """),
 
-    # 4. The three modes as a triptych.
+    # 4. The three modes as a staircase: each step firmer than the last.
     "04-modes": page(f"""
-<div style="position:absolute; left:72px; right:72px; top:170px; text-align:center">
+<div style="position:absolute; left:72px; right:72px; top:170px">
   <h1 class="h" style="font-size:96px">As gentle or as firm<br><em>as you need.</em></h1>
 </div>
-<div class="col c1">{phone("today-1", "")}<div class="notif"><img src="../assets/icon.webp" alt=""><div><b>Morning adhkaar</b><span>It's time · one soft chime</span></div></div><h3>Gentle</h3><p>A chime and a notice. For when the habit is already yours.</p></div>
-<div class="col c2">{phone("s0", "")}<h3>Full screen</h3><p>The adhkaar open themselves, even on the lock screen.</p></div>
-<div class="col c3">{phone("lockdown", "")}<h3>Lockdown</h3><p>Other apps wait until you've read them. Calls always work.</p></div>
-""", stamp="Three modes", foot="center", css="""
-.col{position:absolute;top:410px;width:290px;text-align:center}.c1{left:72px}.c2{left:395px}.c3{left:718px}
-.col .phone{position:relative;width:260px;margin:0 auto;border-radius:38px;padding:6px}.col .phone .scr{border-radius:34px}.col .phone::before{top:15px;width:11px;height:11px;margin-left:-5.5px}
-.col h3{margin-top:26px;font:400 42px/1 'Instrument Serif'}.c3 h3{color:var(--dawn)}
-.col p{margin-top:12px;padding:0 6px;font:400 19px/1.4 Inter;color:var(--text-2)}
-.notif{position:absolute;left:28px;right:28px;top:38px;display:flex;gap:10px;align-items:center;padding:11px 12px;border-radius:18px;background:rgba(40,42,56,.97);box-shadow:0 12px 26px rgba(0,0,0,.55);text-align:left}
+<div class="lab" style="left:72px; top:640px; width:260px"><span>01</span><h3>Gentle</h3><p>A chime and a notice, for when the habit is yours.</p></div>
+<div class="lab" style="left:356px; top:520px; width:300px"><span>02</span><h3>Full screen</h3><p>The adhkaar open themselves, even on the lock screen.</p></div>
+<div class="lab on" style="left:680px; top:400px; width:328px"><span>03</span><h3>Lockdown</h3><p>Other apps wait until you've read them. Calls always work.</p></div>
+<div class="step1">{phone("today-1", "left:72px; top:780px; width:260px", "m")}<div class="notif"><img src="../assets/icon.webp" alt=""><div><b>Morning adhkaar</b><span>It's time · one soft chime</span></div></div></div>
+{phone("s0", "left:356px; top:660px; width:300px", "m")}
+{phone("lockdown", "left:680px; top:540px; width:328px", "m")}
+<div class="floor"></div>
+""", stamp="Three modes", foot="none", css=FLOOR + """
+.floor{height:220px}
+.lab{position:absolute}.lab span{font:600 15px/1 Inter;letter-spacing:.2em;color:var(--text-3)}
+.lab h3{margin-top:10px;font:400 44px/1 'Instrument Serif'}.lab.on h3{color:var(--dawn)}.lab.on span{color:var(--dawn)}
+.lab p{margin-top:8px;font:400 17px/1.4 Inter;color:var(--text-2)}
+.phone.m{border-radius:32px;padding:6px}.phone.m .scr{border-radius:26px}.phone.m::before{top:15px;width:11px;height:11px;margin-left:-5.5px}
+.notif{position:absolute;left:88px;width:228px;top:818px;display:flex;gap:10px;align-items:center;padding:11px 12px;border-radius:16px;background:rgba(40,42,56,.97);box-shadow:0 12px 26px rgba(0,0,0,.55)}
 .notif img{width:30px;height:30px;border-radius:8px}.notif b{display:block;font:600 14px/1.2 Inter}.notif span{font:400 12.5px/1.3 Inter;color:var(--text-2)}
 """),
 
@@ -245,10 +250,10 @@ POST_LIST = {
 {phone("today-1", "left:365px; top:500px; width:350px", "f")}
 <div class="floor"></div>
 """, stamp="Five languages", foot="center", css=FLOOR + """
-.langs{margin-top:34px;display:flex;justify-content:center;gap:0;font:400 34px/1 'Instrument Serif';color:var(--text-2)}
+.langs{margin-top:34px;display:flex;justify-content:center;align-items:baseline;gap:0;font:400 34px/1 'Instrument Serif';color:var(--text-2)}
 .langs i{font-style:normal;margin:0 18px;color:var(--dawn)}
-.langs span{unicode-bidi:isolate}.langs span[lang]{font:400 30px/1 'Amiri Quran';position:relative;top:4px}
-.phone.f{border-radius:40px;padding:6px}.phone.f .scr{border-radius:34px}.phone.f::before{top:15px;width:11px;height:11px;margin-left:-5.5px}
+.langs span{unicode-bidi:isolate}.langs span[lang]{font:400 30px/1 'Amiri Quran'}
+.phone.f{border-radius:30px;padding:6px}.phone.f .scr{border-radius:24px}.phone.f::before{top:15px;width:11px;height:11px;margin-left:-5.5px}
 """),
 
     # 11. What it asks of you, as a ledger.
@@ -263,13 +268,12 @@ POST_LIST = {
   <div><dt>Your money</dt><dd>Free, and open source.</dd></div>
   <div><dt>Every dhikr</dt><dd>With its source.</dd></div>
 </dl>
-""", stamp="Why trust it", foot="left", css="""
-.ledger{position:absolute;left:72px;right:72px;top:560px}
-.ledger div{display:flex;align-items:baseline;gap:22px;padding:26px 0}
+""" + phone("complete", "left:628px; top:454px; width:380px"), stamp="Why trust it", foot="left", css="""
+.ledger{position:absolute;left:72px;width:520px;top:540px}
+.ledger div{display:flex;align-items:baseline;gap:16px;padding:22px 0}
 .ledger div::after{content:"";order:2;flex:1;border-bottom:2px dotted rgba(255,255,255,.28);transform:translateY(-8px)}
-.ledger dt{order:1;font:600 18px/1 Inter;letter-spacing:.18em;text-transform:uppercase;color:var(--text-3)}
-.ledger dd{order:3;font:400 48px/1 'Instrument Serif';letter-spacing:-.4px}
-.foot{width:auto;right:72px}
+.ledger dt{order:1;font:600 15px/1 Inter;letter-spacing:.18em;text-transform:uppercase;color:var(--text-3)}
+.ledger dd{order:3;font:400 38px/1 'Instrument Serif';letter-spacing:-.3px}
 """),
 
     # 12. Widgets: the home screen.
