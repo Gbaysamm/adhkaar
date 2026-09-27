@@ -1,5 +1,3 @@
-@file:OptIn(eu.wewox.pagecurl.ExperimentalPageCurlApi::class)
-
 package org.adhkaar.app.ui
 
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,11 +8,12 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
+import androidx.compose.ui.test.performTouchInput
 import androidx.compose.ui.unit.dp
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.github.takahirom.roborazzi.captureRoboImage
-import eu.wewox.pagecurl.page.PageCurlState
-import eu.wewox.pagecurl.page.rememberPageCurlState
+import org.adhkaar.app.ui.quran.CurlState
+import org.adhkaar.app.ui.quran.rememberCurlState
 import kotlinx.coroutines.runBlocking
 import org.adhkaar.app.data.quran.Mushaf
 import org.adhkaar.app.ui.quran.CurlPager
@@ -34,7 +33,7 @@ class MushafScreenshotTest {
     @get:Rule
     val compose = createComposeRule()
 
-    private lateinit var state: PageCurlState
+    private lateinit var state: CurlState
 
     @Test
     fun pages() {
@@ -43,16 +42,40 @@ class MushafScreenshotTest {
             val density = LocalDensity.current
             val mushaf = remember { Mushaf.get(context) }
             val layouts = remember { PageLayouts(context, density) }
-            state = rememberPageCurlState(initialCurrent = 0)
+            state = rememberCurlState(0)
             CurlPager(state, mushaf, layouts, PageColors.sepia, null, {}, {}, Modifier.fillMaxSize().padding(top = 40.dp, bottom = 30.dp))
         }
         for (p in listOf(1, 2, 10, 50, 590, 604)) {
-            compose.runOnIdle { runBlocking { state.snapTo(p - 1) } }
+            compose.runOnIdle { state.snapTo(p - 1) }
             repeat(6) {
                 Thread.sleep(250)
                 compose.waitForIdle()
             }
             compose.onRoot().captureRoboImage("build/mushaf/page-$p.png")
+        }
+    }
+
+    /** Half-way through a drag each way: forward (finger to the right) and back (finger to the left). */
+    @Test
+    fun drags() {
+        compose.setContent {
+            val context = LocalContext.current
+            val density = LocalDensity.current
+            val mushaf = remember { Mushaf.get(context) }
+            val layouts = remember { PageLayouts(context, density) }
+            state = rememberCurlState(9)
+            CurlPager(state, mushaf, layouts, PageColors.sepia, null, {}, {}, Modifier.fillMaxSize().padding(top = 40.dp, bottom = 30.dp))
+        }
+        repeat(6) { Thread.sleep(250); compose.waitForIdle() }
+        for ((name, from, by) in listOf(Triple("forward", 0.1f, 0.45f), Triple("back15", 0.95f, -0.15f), Triple("back45", 0.95f, -0.45f), Triple("back75", 0.95f, -0.75f))) {
+            compose.onRoot().performTouchInput {
+                down(androidx.compose.ui.geometry.Offset(width * from, height * 0.8f))
+                repeat(10) { moveBy(androidx.compose.ui.geometry.Offset(width * by / 10, -height * 0.01f)) }
+            }
+            compose.waitForIdle()
+            compose.onRoot().captureRoboImage("build/mushaf/drag-$name.png")
+            compose.onRoot().performTouchInput { cancel() }
+            compose.waitForIdle()
         }
     }
 }

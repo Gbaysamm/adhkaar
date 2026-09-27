@@ -251,7 +251,7 @@ def main():
             continue
         for a, b in breaks:
             first = page[a]
-            if first[2] in surah_starts and first[3] in (0, -1) and REFS[first[2]][1] == 1:
+            if first[2] in surah_starts and a == first_glyph[first[2]]:
                 s = REFS[first[2]][0]
                 lines_out.append(f"H{s}")
                 if s not in (1, 9):

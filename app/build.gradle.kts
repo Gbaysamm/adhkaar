@@ -83,8 +83,6 @@ dependencies {
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material:material-icons-extended")
-    // Page turns in the mushaf: a real page curl that follows the finger (Apache-2.0).
-    implementation("io.github.oleksandrbalan:pagecurl:1.5.1")
     // Backdrop blur for glass surfaces that content scrolls under (tab bar).
     implementation("dev.chrisbanes.haze:haze:1.6.10")
     // Home-screen widget.

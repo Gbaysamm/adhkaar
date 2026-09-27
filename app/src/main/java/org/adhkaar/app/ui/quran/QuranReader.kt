@@ -1,5 +1,3 @@
-@file:OptIn(eu.wewox.pagecurl.ExperimentalPageCurlApi::class)
-
 package org.adhkaar.app.ui.quran
 
 import android.content.ClipData
@@ -12,8 +10,6 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
-import eu.wewox.pagecurl.ExperimentalPageCurlApi
-import eu.wewox.pagecurl.page.rememberPageCurlState
 import androidx.compose.material.icons.rounded.IosShare
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.text.style.TextDirection
@@ -110,7 +106,7 @@ fun QuranReader(startPage: Int, onClose: () -> Unit, target: Int? = null, onTarg
     val layouts = remember(density) { PageLayouts(context.applicationContext, density) }
     val settings by store.settings.collectAsState()
     val log by store.log.collectAsState()
-    val curl = rememberPageCurlState(initialCurrent = (startPage - 1).coerceIn(0, Quran.PAGES - 1))
+    val curl = rememberCurlState((startPage - 1).coerceIn(0, Quran.PAGES - 1))
     val page = curl.current + 1
     var chrome by rememberSaveable { mutableStateOf(true) }
     var selected by rememberSaveable { mutableStateOf<Int?>(null) }

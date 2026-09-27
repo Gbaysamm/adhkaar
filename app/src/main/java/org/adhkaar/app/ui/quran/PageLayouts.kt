@@ -46,6 +46,23 @@ class PageLayout(val words: List<Placed>, val ornaments: List<Ornament>)
  */
 @androidx.compose.runtime.Stable
 class PageLayouts(context: Context, private val density: Density) {
+    private val headingFace = androidx.core.content.res.ResourcesCompat.getFont(context, org.adhkaar.app.R.font.qcf_bsml)
+    private val inkPaint = android.graphics.Paint(android.graphics.Paint.ANTI_ALIAS_FLAG).apply { typeface = headingFace }
+    private val inkBounds = android.graphics.Rect()
+
+    /**
+     * The middle of a heading glyph's ink, relative to its baseline (negative: above). The font's
+     * line box isn't centred on its glyphs, so centring boxes left names sitting high in the frame.
+     */
+    private fun inkMiddle(code: Int, sizeSp: Float): Float = ink(code, sizeSp).let { (top, bottom) -> (top + bottom) / 2f }
+
+    /** A heading glyph's ink, top and bottom, relative to its baseline. */
+    private fun ink(code: Int, sizeSp: Float): Pair<Float, Float> = synchronized(inkPaint) {
+        inkPaint.textSize = with(density) { sizeSp.sp.toPx() }
+        inkPaint.getTextBounds(code.toChar().toString(), 0, 1, inkBounds)
+        inkBounds.top.toFloat() to inkBounds.bottom.toFloat()
+    }
+
     private val measurer = TextMeasurer(createFontFamilyResolver(context), density, LayoutDirection.Rtl, cacheSize = 0)
     private val cache = object : LinkedHashMap<String, PageLayout>(16, 0.75f, true) {
         override fun removeEldestEntry(eldest: MutableMap.MutableEntry<String, PageLayout>) = size > 10
@@ -125,8 +142,11 @@ class PageLayouts(context: Context, private val density: Density) {
                 is Mushaf.Line.Header -> {
                     // The Complex's framed band across the line, with "سورة" and the name centred in it.
                     val probe = heading(Quran.HEADING_FRAME, 100f)
-                    val frame = heading(Quran.HEADING_FRAME, 100f * width / probe.size.width)
-                    val frameTop = y + (step - frame.size.height) / 2
+                    val frameSize = 100f * width / probe.size.width
+                    val frame = heading(Quran.HEADING_FRAME, frameSize)
+                    // The frame's ink centred in the line, and the name's ink centred in the frame.
+                    val frameBaseline = y + step / 2 - inkMiddle(Quran.HEADING_FRAME, frameSize)
+                    val frameTop = frameBaseline - frame.firstBaseline
                     ornaments += Ornament(frame, 0f, frameTop, Ink.FRAME)
                     val nameSize = size * 1.1f
                     val word = heading(Quran.HEADING_SURAH, nameSize)
@@ -134,10 +154,15 @@ class PageLayouts(context: Context, private val density: Density) {
                     val gap = space * 0.6f
                     val total = word.size.width + gap + name.size.width
                     val left = (width - total) / 2
-                    val middle = frameTop + frame.size.height / 2
+                    val middle = y + step / 2
+                    // The ink of both words together is what the eye centres.
+                    val (nameTop, nameBottom) = ink(Quran.headingCodes[line.surah - 1], nameSize)
+                    val (wordTop, wordBottom) = ink(Quran.HEADING_SURAH, nameSize)
+                    val nameBaseline = middle - (minOf(nameTop, wordTop) + maxOf(nameBottom, wordBottom)) / 2f
+                    // "سورة" shares the name's baseline, as the two words of one heading.
                     // Read right to left: "سورة" on the right, the name to its left.
-                    ornaments += Ornament(name, left, middle - name.size.height / 2, Ink.TEXT)
-                    ornaments += Ornament(word, left + name.size.width + gap, middle - word.size.height / 2, Ink.TEXT)
+                    ornaments += Ornament(name, left, nameBaseline - name.firstBaseline, Ink.TEXT)
+                    ornaments += Ornament(word, left + name.size.width + gap, nameBaseline - word.firstBaseline, Ink.TEXT)
                 }
                 Mushaf.Line.Basmala -> {
                     val probe = heading(Quran.HEADING_BASMALA, 100f)
