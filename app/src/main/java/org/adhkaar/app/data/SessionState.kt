@@ -131,9 +131,15 @@ class SessionState private constructor(context: Context) {
             }
             return
         }
-        prefs.edit().remove(KEY_PROGRESS).remove(KEY_PAGE).remove(KEY_ALERT_ACK).apply()
+        if (prefs.getString(KEY_PROGRESS_FOR, null) == progressKey(type, today)) {
+            prefs.edit().remove(KEY_ALERT_ACK).apply()
+        } else {
+            prefs.edit().remove(KEY_PROGRESS).remove(KEY_PAGE).remove(KEY_ALERT_ACK).remove(KEY_PROGRESS_FOR).apply()
+        }
         writePending(PendingSession(type, today, nowMillis, enforced))
     }
+
+    private fun progressKey(type: SessionType, date: LocalDate) = "${type.key}|$date"
 
     /** A collection's reminder, held like a session: it rings, opens and (in Lockdown) covers other apps. */
     fun startCollection(id: String, type: SessionType, today: LocalDate, nowMillis: Long) {
@@ -149,7 +155,12 @@ class SessionState private constructor(context: Context) {
         }?.toMap() ?: emptyMap()
 
     fun saveProgress(progress: Map<String, Int>) {
-        prefs.edit().putString(KEY_PROGRESS, progress.entries.joinToString(";") { "${it.key}=${it.value}" }).apply()
+        val owner = pending?.takeIf { !it.test && it.collection == null }?.let { progressKey(it.type, it.date) }
+        prefs.edit()
+            .putString(KEY_PROGRESS, progress.entries.joinToString(";") { "${it.key}=${it.value}" })
+            // Which morning or evening these counts belong to, so they outlive a lost pending session.
+            .apply { if (owner != null) putString(KEY_PROGRESS_FOR, owner) else if (pending?.test == true) remove(KEY_PROGRESS_FOR) }
+            .apply()
     }
 
     /**
@@ -173,19 +184,20 @@ class SessionState private constructor(context: Context) {
             .apply()
         historyState.value = history
         completedState.value = readCompleted()
+        prefs.edit().remove(KEY_PROGRESS).remove(KEY_PAGE).remove(KEY_PROGRESS_FOR).apply()
         clearPending()
     }
 
-    /**
-     * Pauses the pending session until [untilMillis]. The alert is un-answered again, so it rings
-     * when the break ends, like the second ring.
-     */
     /** The adhkaar time ended mid-reading: nothing is enforced any more, but they stay open to finish. */
     fun relax() {
         val current = pending ?: return
         writePending(current.copy(enforced = false))
     }
 
+    /**
+     * Pauses the pending session until [untilMillis]. The alert is un-answered again, so it rings
+     * when the break ends, like the second ring.
+     */
     fun startBreak(untilMillis: Long) {
         val current = pending ?: return
         prefs.edit().remove(KEY_ALERT_ACK).apply()
@@ -193,7 +205,10 @@ class SessionState private constructor(context: Context) {
     }
 
     fun clearPending() {
-        prefs.edit().remove(KEY_PENDING).remove(KEY_PROGRESS).remove(KEY_PAGE).remove(KEY_ALERT_ACK).commit()
+        val keepCounts = prefs.getString(KEY_PROGRESS_FOR, null) != null && pending?.let { !it.test && it.collection == null } != false
+        prefs.edit().remove(KEY_PENDING).remove(KEY_ALERT_ACK)
+            .apply { if (!keepCounts) remove(KEY_PROGRESS).remove(KEY_PAGE).remove(KEY_PROGRESS_FOR) }
+            .commit()
         pendingState.value = null
     }
 
@@ -247,6 +262,8 @@ class SessionState private constructor(context: Context) {
         private const val KEY_MISSED_SEEN = "missed_seen"
         private const val KEY_PENDING = "pending"
         private const val KEY_PROGRESS = "progress"
+        /** "type|date" the saved progress belongs to (see [saveProgress]). */
+        private const val KEY_PROGRESS_FOR = "progress_for"
         private const val KEY_PAGE = "page"
         private const val KEY_HISTORY = "history"
         private const val KEY_FAVORITES = "favorites"
