@@ -2,6 +2,11 @@
 
 All notable changes are listed here, newest first. The format follows [Keep a Changelog](https://keepachangelog.com), and versions follow [semantic versioning](https://semver.org). How releases are made: [docs/RELEASING.md](docs/RELEASING.md).
 
+## 0.1.3 (testing)
+
+- Before sleep and after salah can be firmer: Full screen for both, and Lockdown for before sleep (Settings › Reminders).
+- "Allow restricted settings" in Phone setup, shown and checked only where Android applies it.
+
 ## 0.1.2 (testing)
 
 - Phone setup explains why each permission is needed, and that none of them touches anything personal.
