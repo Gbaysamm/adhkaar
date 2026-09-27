@@ -44,6 +44,16 @@ enum class Requirement(
         setOf(Strictness.LOCKDOWN),
         recommendedFor = setOf(Strictness.FULL_SCREEN),
     ),
+    /**
+     * Android 13+ keeps some switches (Usage access among them) greyed out for apps installed
+     * from a downloaded file rather than a store, until "Allow restricted settings" is chosen in
+     * the app's App info. Only shown where that applies.
+     */
+    RESTRICTED(
+        R.string.req_restricted,
+        R.string.req_restricted_why,
+        setOf(Strictness.LOCKDOWN),
+    ),
     USAGE_ACCESS(
         R.string.req_usage_access,
         R.string.req_usage_access_why,
@@ -57,7 +67,11 @@ enum class Requirement(
     ),
     ;
 
+    /** Whether it applies to this phone at all; the restriction only exists for some installs. */
+    fun applies(context: Context): Boolean = this != RESTRICTED || RestrictedSettings.applies(context)
+
     fun isGranted(context: Context): Boolean = when (this) {
+        RESTRICTED -> RestrictedSettings.allowed(context)
         NOTIFICATIONS -> NotificationManagerCompat.from(context).areNotificationsEnabled()
         EXACT_ALARMS -> AlarmScheduler.canScheduleExact(context)
         FULL_SCREEN -> Build.VERSION.SDK_INT < 34 ||
@@ -85,6 +99,7 @@ enum class Requirement(
             // The list of all apps: phones differ on whether they open one app's page, so the
             // card's steps say how to find Adhkaar in the list.
             USAGE_ACCESS -> Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS)
+            RESTRICTED -> appDetails(pkg)
             BATTERY -> Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS, pkg)
         }
     }
@@ -93,13 +108,22 @@ enum class Requirement(
 
     companion object {
         /** Requirements that matter for the chosen level, in the order they should be granted. */
-        fun relevantFor(strictness: Strictness) =
-            entries.filter { strictness in it.requiredFor || strictness in it.recommendedFor }
+        fun relevantFor(strictness: Strictness, context: Context) =
+            entries.filter { (strictness in it.requiredFor || strictness in it.recommendedFor) && it.applies(context) }
 
         fun missingRequired(context: Context, strictness: Strictness) =
-            entries.filter { strictness in it.requiredFor && !it.isGranted(context) }
+            entries.filter { strictness in it.requiredFor && it.applies(context) && !it.isGranted(context) }
 
         /** Opens the settings screen, retrying without the package URI (some OEMs reject it). */
+        /** Adhkaar's App info screen, where "Allow restricted settings" lives (in its ⋮ menu). */
+        fun openAppInfo(context: Context) {
+            runCatching {
+                context.startActivity(
+                    Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:${context.packageName}")).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                )
+            }
+        }
+
         fun open(context: Context, requirement: Requirement) {
             // Some phones (Samsung among them) open the whole list for these two rather than
             // Adhkaar's own switch, so say what to look for as the list opens.

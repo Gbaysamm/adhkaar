@@ -192,4 +192,9 @@
     <string name="req_usage_step_find">Wá Adhkaar nínú àkójọ (yí i lọ, tàbí lo ìwákiri)</string>
     <string name="req_usage_step_tap">Tẹ Adhkaar</string>
     <string name="req_usage_step_on">Tan bọ́tìnnì náà, lẹ́yìn náà padà síbí</string>
+    <string name="req_restricted">Gba àwọn ètò tí a dènà láàyè</string>
+    <string name="req_restricted_why">A fi Adhkaar sórí láti fáìlì, nítorí náà Android ti ààyè sí ìlò pa títí o fi gbà á láàyè. Èyí ń ṣí bọ́tìnnì nìkan, kò fún ohun èlò ní nǹkan kan.</string>
+    <string name="req_restricted_step_menu">Nínú Ìwífún ohun èlò, tẹ ⋮ lókè lọ́tùn-ún</string>
+    <string name="req_restricted_step_allow">Yan Gba àwọn ètò tí a dènà láàyè kí o sì jẹ́rìí</string>
+    <string name="req_restricted_step_back">Padà síbí; á fi àmì sí i fúnra rẹ̀</string>
 </resources>

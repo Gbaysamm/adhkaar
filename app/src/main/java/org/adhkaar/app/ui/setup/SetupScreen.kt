@@ -38,6 +38,7 @@ import androidx.compose.material.icons.rounded.Alarm
 import androidx.compose.material.icons.rounded.BatteryChargingFull
 import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material.icons.rounded.Layers
+import androidx.compose.material.icons.rounded.Lock
 import androidx.compose.material.icons.rounded.Notifications
 import androidx.compose.material.icons.rounded.OpenInFull
 import androidx.compose.material.icons.rounded.PhoneAndroid
@@ -84,6 +85,7 @@ private fun Requirement.icon(): ImageVector = when (this) {
     Requirement.EXACT_ALARMS -> Icons.Rounded.Alarm
     Requirement.FULL_SCREEN -> Icons.Rounded.OpenInFull
     Requirement.OVERLAY -> Icons.Rounded.Layers
+    Requirement.RESTRICTED -> Icons.Rounded.Lock
     Requirement.USAGE_ACCESS -> Icons.Rounded.QueryStats
     Requirement.BATTERY -> Icons.Rounded.BatteryChargingFull
 }
@@ -128,7 +130,7 @@ fun RequirementsList(strictness: Strictness) {
     val settings by SettingsStore.get(context).flow.collectAsState()
     val resumeTick = rememberResumeTick()
     var refresh by remember { mutableIntStateOf(0) }
-    val items = Requirement.relevantFor(strictness)
+    val items = Requirement.relevantFor(strictness, context)
     val granted = remember(resumeTick, refresh, strictness) { items.associateWith { it.isGranted(context) } }
     val guide = remember { OemAutostart.guide() }
     // Read from the phone: Xiaomi's own switches where they can be read, otherwise whether
@@ -173,10 +175,14 @@ fun RequirementsList(strictness: Strictness) {
                 body = stringResource(req.why),
                 required = strictness in req.requiredFor,
                 done = granted[req] == true,
-                steps = if (req == Requirement.USAGE_ACCESS) listOf(
+                steps = if (req == Requirement.USAGE_ACCESS) listOfNotNull(
                     stringResource(R.string.req_usage_step_find),
                     stringResource(R.string.req_usage_step_tap),
                     stringResource(R.string.req_usage_step_on),
+                ) else if (req == Requirement.RESTRICTED) listOf(
+                    stringResource(R.string.req_restricted_step_menu),
+                    stringResource(R.string.req_restricted_step_allow),
+                    stringResource(R.string.req_restricted_step_back),
                 ) else emptyList(),
             ) {
                 if (req == Requirement.NOTIFICATIONS && Build.VERSION.SDK_INT >= 33) {
@@ -236,6 +242,7 @@ private fun StepCard(
     required: Boolean,
     done: Boolean,
     steps: List<String> = emptyList(),
+    extra: (@Composable () -> Unit)? = null,
     onAllow: () -> Unit,
 ) {
     GlassCard(Modifier.fillMaxWidth()) {
@@ -273,6 +280,7 @@ private fun StepCard(
                     Text(step, style = Type.caption.copy(color = Nur.textSecondary))
                 }
             }
+            extra?.let { Box(Modifier.padding(start = 56.dp, top = Space.xs)) { it() } }
         }
     }
 }

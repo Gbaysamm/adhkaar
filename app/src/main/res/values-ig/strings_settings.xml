@@ -212,4 +212,9 @@
     <string name="req_usage_step_find">Chọta Adhkaar n\'ime ndepụta (fegharịa, ma ọ bụ jiri ọchụchọ)</string>
     <string name="req_usage_step_tap">Pịa Adhkaar</string>
     <string name="req_usage_step_on">Gbanye mgbanwe ahụ, wee laghachi ebe a</string>
+    <string name="req_restricted">Kwe ntọala amachibidoro</string>
+    <string name="req_restricted_why">Etinyere Adhkaar site na faịlụ, ya mere Android na-emechi ohere ojiji ruo mgbe ị kwere. Nke a na-emeghe naanị mgbanwe ahụ, ọ naghị enye ngwa ihe ọ bụla.</string>
+    <string name="req_restricted_step_menu">N’Ozi ngwa, pịa ⋮ n’elu aka nri</string>
+    <string name="req_restricted_step_allow">Họrọ Kwe ntọala amachibidoro ma kwado</string>
+    <string name="req_restricted_step_back">Laghachi ebe a; ọ ga-akara onwe ya</string>
 </resources>

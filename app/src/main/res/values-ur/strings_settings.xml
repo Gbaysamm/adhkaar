@@ -213,4 +213,9 @@
     <string name="req_usage_step_find">فہرست میں Adhkaar تلاش کریں (اسکرول کریں یا سرچ کریں)</string>
     <string name="req_usage_step_tap">Adhkaar پر ٹیپ کریں</string>
     <string name="req_usage_step_on">سوئچ آن کریں، پھر یہاں واپس آئیں</string>
+    <string name="req_restricted">محدود سیٹنگز کی اجازت دیں</string>
+    <string name="req_restricted_why">Adhkaar فائل سے انسٹال ہوئی، اس لیے اینڈرائیڈ استعمال تک رسائی لاک رکھتا ہے جب تک آپ اجازت نہ دیں۔ یہ صرف سوئچ کھولتا ہے، خود ایپ کو کچھ نہیں دیتا۔</string>
+    <string name="req_restricted_step_menu">ایپ کی معلومات میں اوپر ⋮ پر ٹیپ کریں</string>
+    <string name="req_restricted_step_allow">محدود سیٹنگز کی اجازت دیں چن کر تصدیق کریں</string>
+    <string name="req_restricted_step_back">یہاں واپس آئیں، خود ہی نشان لگ جائے گا</string>
 </resources>

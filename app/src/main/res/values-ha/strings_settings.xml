@@ -212,4 +212,9 @@
     <string name="req_usage_step_find">Nemi Adhkaar a cikin jerin (gungura, ko yi amfani da bincike)</string>
     <string name="req_usage_step_tap">Taɓa Adhkaar</string>
     <string name="req_usage_step_on">Kunna maɓallin, sannan ka dawo nan</string>
+    <string name="req_restricted">Bada izinin saitunan da aka taƙaita</string>
+    <string name="req_restricted_why">An shigar da Adhkaar daga fayil, don haka Android yana kulle samun damar amfani har sai ka bada izini. Wannan yana buɗe maɓallin kawai, ba ya ba manhajar komai.</string>
+    <string name="req_restricted_step_menu">A Bayanin manhaja, taɓa ⋮ a sama dama</string>
+    <string name="req_restricted_step_allow">Zaɓi Bada izinin saitunan da aka taƙaita ka tabbatar</string>
+    <string name="req_restricted_step_back">Dawo nan; zai yi alama da kansa</string>
 </resources>

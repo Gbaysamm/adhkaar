@@ -214,4 +214,9 @@
     <string name="req_usage_step_find">Find Adhkaar in the list (scroll, or use search)</string>
     <string name="req_usage_step_tap">Tap Adhkaar</string>
     <string name="req_usage_step_on">Turn the switch on, then come back here</string>
+    <string name="req_restricted">Allow restricted settings</string>
+    <string name="req_restricted_why">Adhkaar was installed from a file, so Android locks Usage access until you allow it. This only unlocks the switch; it gives the app nothing by itself.</string>
+    <string name="req_restricted_step_menu">In App info, tap ⋮ at the top right</string>
+    <string name="req_restricted_step_allow">Choose Allow restricted settings and confirm</string>
+    <string name="req_restricted_step_back">Come back here; it ticks itself</string>
 </resources>

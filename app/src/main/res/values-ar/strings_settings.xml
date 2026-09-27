@@ -218,4 +218,9 @@
     <string name="req_usage_step_find">ابحث عن الأذكار في القائمة (مرّر أو استخدم البحث)</string>
     <string name="req_usage_step_tap">اضغط على الأذكار</string>
     <string name="req_usage_step_on">فعّل المفتاح، ثم عد إلى هنا</string>
+    <string name="req_restricted">السماح بالإعدادات المقيدة</string>
+    <string name="req_restricted_why">ثُبّت التطبيق من ملف، فيقفل أندرويد الوصول إلى الاستخدام حتى تسمح بذلك. هذا يفتح المفتاح فقط، ولا يمنح التطبيق شيئًا بذاته.</string>
+    <string name="req_restricted_step_menu">في معلومات التطبيق، اضغط ⋮ في الأعلى</string>
+    <string name="req_restricted_step_allow">اختر السماح بالإعدادات المقيدة وأكّد</string>
+    <string name="req_restricted_step_back">عد إلى هنا، وسيُعلَّم تلقائيًا</string>
 </resources>
