@@ -209,10 +209,10 @@ fun SettingsScreen(onOpenSetup: () -> Unit, onOpenPrayerTimes: () -> Unit, onOpe
             RowDivider()
             SettingsRow(stringResource(R.string.settings_after_salah), stringResource(R.string.settings_after_salah_hint, AlarmScheduler.AFTER_SALAH_DELAY_MINUTES), Icons.Rounded.Mosque, trailing = {
                 GlassSwitch(settings.afterSalahReminder, { v -> updateSettings(context) { it.copy(afterSalahReminder = v) } })
+            })
             if (settings.afterSalahReminder) {
                 CollectionModeRow("after_salah", listOf(Strictness.GENTLE, Strictness.FULL_SCREEN), settings.collectionMode("after_salah"))
             }
-            })
             RowDivider()
             SettingsRow(
                 stringResource(R.string.settings_before_sleep),
