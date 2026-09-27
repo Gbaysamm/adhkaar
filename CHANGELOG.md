@@ -2,6 +2,10 @@
 
 All notable changes are listed here, newest first. The format follows [Keep a Changelog](https://keepachangelog.com), and versions follow [semantic versioning](https://semver.org). How releases are made: [docs/RELEASING.md](docs/RELEASING.md).
 
+## 0.1.6 (testing)
+
+- A session's counts survive a restart: if the app is updated or closed by the phone mid-session, reopening the same morning or evening continues where you left off.
+
 ## 0.1.5 (testing)
 
 - Reading when the adhkaar time ends is no longer called missed: the ringing and Lockdown let go, you can finish, and the app looks again every 15 minutes (up to an hour) before saying anything.
