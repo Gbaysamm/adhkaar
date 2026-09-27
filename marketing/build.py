@@ -323,6 +323,20 @@ POST_LIST = {
 .step{position:absolute;display:flex;align-items:center;gap:14px;font:500 21px/1 Inter;color:var(--text-2)}
 .step b{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:600 16px/1 Inter;color:#1a0f14;background:var(--dawn)}
 """),
+    # 15. For testers: the fix, and where to get it.
+    "15-update": page(f"""
+<div style="position:absolute; left:72px; top:190px; width:520px">
+  <p class="kick">Update · For everyone testing</p>
+  <h1 class="h" style="font-size:96px; margin-top:26px">After salah,<br><em>right on time.</em></h1>
+  <p class="sub" style="max-width:500px">Version 0.1.7 fixes a delay that held back the after-salah and before-sleep reminders. Install it over the one you have. Nothing is lost: your progress, streak and settings stay.</p>
+</div>
+<div class="qr"><img src="../assets/qr-0.1.7.png" alt=""><div><b>Scan to download</b><span>Or tap the link in the message. From now on, the app tells you when an update is out.</span></div></div>
+{phone("after-salah", "left:628px; top:454px; width:380px")}
+""", stamp="Version 0.1.7", css=KICK + """
+.qr{position:absolute;left:72px;top:870px;width:520px;display:flex;gap:28px;align-items:center}
+.qr img{width:176px;height:176px;padding:14px;border-radius:22px;background:#fff;box-shadow:0 30px 60px -24px rgba(0,0,0,.8)}
+.qr b{display:block;font:400 36px/1.1 'Instrument Serif'}.qr span{display:block;margin-top:10px;font:400 18px/1.45 Inter;color:var(--text-2)}
+"""),
 }
 
 def main(only):

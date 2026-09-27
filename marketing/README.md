@@ -1,6 +1,6 @@
 # Social posts
 
-Fourteen 1080 × 1350 (4:5) posts for sharing Adhkaar. The exported PNGs are 2160 × 2700, in `export/`.
+Fifteen 1080 × 1350 (4:5) posts for sharing Adhkaar. The exported PNGs are 2160 × 2700, in `export/`.
 
 | Post | Story |
 |---|---|
@@ -18,6 +18,7 @@ Fourteen 1080 × 1350 (4:5) posts for sharing Adhkaar. The exported PNGs are 216
 | 12-widgets | Home-screen widgets |
 | 13-share | Share cards |
 | 14-pause | A break, even in Lockdown |
+| 15-update | For testers: version 0.1.7, with a QR code to the download |
 
 ## Editing
 
