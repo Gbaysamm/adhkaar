@@ -94,6 +94,8 @@ fun QuranReader(startPage: Int, onClose: () -> Unit, target: Int? = null, onTarg
     val context = LocalContext.current
     val mushaf = remember { Mushaf.get(context) }
     val store = remember { QuranStore.get(context) }
+    val density = androidx.compose.ui.platform.LocalDensity.current
+    val layouts = remember(density) { PageLayouts(context.applicationContext, density) }
     val settings by store.settings.collectAsState()
     val log by store.log.collectAsState()
     val pager = rememberPagerState(initialPage = (startPage - 1).coerceIn(0, Quran.PAGES - 1)) { Quran.PAGES }
@@ -132,19 +134,13 @@ fun QuranReader(startPage: Int, onClose: () -> Unit, target: Int? = null, onTarg
     }
 
     Box(Modifier.fillMaxSize().background(colors.paper)) {
-        // Right to left: the next page comes in from the left, as in a printed mushaf.
-        CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
-            HorizontalPager(pager, Modifier.fillMaxSize(), beyondViewportPageCount = 1, key = { it }) { index ->
-                CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
-                    MushafPage(
-                        mushaf, index + 1, colors, selected,
-                        onAyah = { selected = it },
-                        onBackground = { chrome = !chrome },
-                        modifier = Modifier.statusBarsPadding().navigationBarsPadding().padding(top = 52.dp, bottom = 44.dp),
-                    )
-                }
-            }
-        }
+        // Turned like a book: right to left, as in a printed mushaf.
+        FlipPager(
+            pager, mushaf, layouts, colors, selected,
+            onAyah = { selected = it },
+            onBackground = { chrome = !chrome },
+            pageModifier = Modifier.statusBarsPadding().navigationBarsPadding().padding(top = 52.dp, bottom = 44.dp),
+        )
 
         // The bar: back, where you are, and the page's time.
         AnimatedVisibility(chrome, enter = fadeIn(), exit = fadeOut(), modifier = Modifier.align(Alignment.TopCenter)) {
